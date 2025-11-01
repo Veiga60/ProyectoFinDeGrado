@@ -1,4 +1,5 @@
 import Header from './Header.jsx'
+import Login from './Login.jsx'
 import './style/App.css'
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <>
       <div>
         <Header />
+        <Login />
       </div>
     </>
   )

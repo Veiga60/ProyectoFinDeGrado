@@ -16,8 +16,20 @@
 body {
   margin: 0;
   display: flex;
+  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+}
+
+@font-face {
+    font-family: Inria Sans;
+    src: url('../assets/fonts/InriaSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: Inria Sans;
+    src: url('../assets/fonts/InriaSans-Bold.ttf');
+    font-weight: bold;
 }
 
 @media (prefers-color-scheme: light) {
