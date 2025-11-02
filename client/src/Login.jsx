@@ -8,7 +8,7 @@ function Login() {
             </div>
             <div id='inputsDiv'>
                 <input id='emailInput' type="text" placeholder='Email'/>
-                <input id='passwordInput' type="text" placeholder='Contraseña'/>
+                <input id='passwordInput' type="password" placeholder='Contraseña'/>
             </div>
             <div id='loginButtonDiv'>
                 <button>INICIAR SESIÓN</button>
