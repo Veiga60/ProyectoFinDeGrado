@@ -1,6 +1,6 @@
 import './style/Login.css'
 
-function Login() {
+function Login({changeHasAccount}) {
     return(
         <div id='mainDiv'>
             <div id='welcomeTextDiv'>
@@ -14,7 +14,7 @@ function Login() {
                 <button>INICIAR SESIÓN</button>
             </div>
             <div id='notHaveAccountDiv'>
-                <p id='notHaveAccount'>No tengo una cuenta</p>
+                <p id='notHaveAccount' onClick={changeHasAccount}>¿No tienes una cuenta? Crea una.</p>
             </div>
         </div>
     )

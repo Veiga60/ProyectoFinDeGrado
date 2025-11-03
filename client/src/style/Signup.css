@@ -1,4 +1,4 @@
-#login #mainDiv {
+#signup #mainDiv {
     background-color: white;
     width: 20em;
     min-width: 200px;
@@ -8,15 +8,15 @@
     box-shadow: 1px 1px 15px 1px rgb(7, 78, 200);
 }
 
-#login {
+#signup {
     margin-top: 20%;
 }
 
-#welcomeTextDiv {
+#signupTextDiv {
     padding-top: 0.5vw;   
 }
 
-#welcomeText {
+#signupText {
     margin-top: 8%;
     color: rgb(7, 78, 200);
     font-family: Inria Sans;
@@ -48,7 +48,7 @@ input {
     margin-bottom: 15px;
 }
 
-#loginButtonDiv {
+#signupButtonDiv {
     margin-top: 2vw;
 }
 
@@ -69,12 +69,11 @@ button:hover {
     cursor: pointer;
 }
 
-#notHaveAccountDiv {
-    border: 2px solid rgba(255, 255, 255, 0);
-    margin-top: 4.25em;
+#alreadyHaveAccountDiv {
+    margin-top: 1.75em;
 }
 
-#notHaveAccount {
+#alreadyHaveAccount {
     margin: 0 auto;
     width: 250px;
     color: rgb(0, 76, 255);
@@ -82,7 +81,7 @@ button:hover {
     text-decoration: underline;
 }
 
-#notHaveAccount:hover {
+#alreadyHaveAccount:hover {
     color: rgb(0, 162, 255);
     cursor: pointer;
 }
