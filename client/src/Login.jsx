@@ -1,4 +1,5 @@
 import './style/Login.css'
+import eyeOpened from './assets/icons/password-eye-opened.png'
 
 function Login({changeHasAccount}) {
     return(
