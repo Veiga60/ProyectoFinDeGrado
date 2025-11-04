@@ -10,6 +10,10 @@ function Signup({changeHasAccount}) {
                 <input id='nameInput' type="text" placeholder='Nombre'/>
                 <input id='emailInput' type="text" placeholder='Email'/>
                 <input id='passwordInput' type="password" placeholder='Contraseña'/>
+                <div id='isTrainerDiv'>
+                    <input id='isTrainerInput' type="checkbox"/>
+                    <label for='isTrainerInput' id='checkBoxLabel'>Soy entrenador</label>
+                </div>
             </div>
             <div id='signupButtonDiv'>
                 <button>CREAR CUENTA</button>

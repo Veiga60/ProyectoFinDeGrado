@@ -3,7 +3,7 @@
     width: 20em;
     min-width: 200px;
     min-height: 250px;
-    height: 25em;
+    height: 26.75em;
     border-radius: 3.25em;
     box-shadow: 1px 1px 15px 1px rgb(7, 78, 200);
 }
@@ -50,6 +50,32 @@ input {
 
 #signupButtonDiv {
     margin-top: 2vw;
+}
+
+#checkBoxLabel {
+    align-self: flex-start;
+    color: black;
+    font-family: Inria Sans;
+    font-size: medium;
+    padding-left: 0;
+}
+
+#isTrainerDiv { 
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-right: 0px;
+    width: 70%;
+}
+
+#isTrainerInput {
+    display: inline-block;
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    min-width: 0px;
 }
 
 button {
