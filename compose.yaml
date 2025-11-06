@@ -1,0 +1,38 @@
+services:
+  db:
+    container_name: 'mhc_database'
+    image: 'mysql:latest'
+    environment:
+      - 'MYSQL_DTABASE=mhcdatabase'
+      - 'MYSQL_PASSWORD=password'
+      - 'MYSQL_ROOT_PASSWORD=root'
+      - 'MYSQL_USER=user'
+    ports:
+      - "3306:3306"
+    volumes:
+      - mhcdatabase:/var/lib/mysql
+  
+  server:
+    build: server/.
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./server:/app
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/mhcdatabase
+    command: "mvn spring-boot:run"
+    
+  client:
+    build: client/.
+    ports:
+      - "5173:5173"
+    volumes:
+     - ./client:/app
+    depends_on:
+      - server
+    command: "npm run dev"
+
+volumes:
+  mhcdatabase:
