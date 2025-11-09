@@ -1,4 +1,4 @@
-#signup #mainDiv {
+#mainDiv {
     background-color: white;
     width: 20em;
     min-width: 200px;
@@ -8,7 +8,7 @@
     box-shadow: 1px 1px 15px 1px rgb(7, 78, 200);
 }
 
-#signup {
+#mainDiv {
     margin-top: 20%;
 }
 

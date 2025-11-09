@@ -1,4 +1,4 @@
-#login #mainDiv {
+#mainDiv {
     background-color: white;
     width: 20em;
     min-width: 200px;
@@ -8,7 +8,7 @@
     box-shadow: 1px 1px 15px 1px rgb(7, 78, 200);
 }
 
-#login {
+#mainDiv {
     margin-top: 20%;
 }
 
@@ -36,11 +36,13 @@ input {
     color: black;
     border: none;
     border-radius: 12px;
-    width: 12vw;
+    width: 100%;
     min-width: 100px;
+    max-width: 220px;
     height: 40px;
     font-family: Inria Sans;
     font-size: medium;
+    margin-right: 10px;
 }
 
 #emailInput {
@@ -48,7 +50,7 @@ input {
 }
 
 #loginButtonDiv {
-    margin-top: 2vw;
+    margin-top: 3vw;
 }
 
 button {
@@ -69,7 +71,7 @@ button:hover {
 }
 
 #notHaveAccountDiv {
-    margin-top: 3.5em;
+    margin-top: 4.25em;
 }
 
 #notHaveAccount {

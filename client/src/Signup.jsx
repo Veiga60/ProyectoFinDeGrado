@@ -1,7 +1,10 @@
 import './style/Signup.css'
+import Header from './Header.jsx'
 
 function Signup({changeHasAccount}) {
     return(
+        <>
+        <Header />
         <div id='mainDiv'>
             <div id='signupTextDiv'>
                 <p id='signupText'>BIENVENIDO</p>
@@ -22,6 +25,7 @@ function Signup({changeHasAccount}) {
                 <p id='alreadyHaveAccount' onClick={changeHasAccount}>¿Ya tienes una cuenta? Inicia sesión.</p>
             </div>
         </div>
+        </>
     )
 }
 
