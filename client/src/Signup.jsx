@@ -19,7 +19,7 @@ function Signup({changeHasAccount}) {
                 </div>
             </div>
             <div id='signupButtonDiv'>
-                <button>CREAR CUENTA</button>
+                <button route={"/"}>CREAR CUENTA</button>
             </div>
             <div id='alreadyHaveAccountDiv'>
                 <p id='alreadyHaveAccount' onClick={changeHasAccount}>¿Ya tienes una cuenta? Inicia sesión.</p>

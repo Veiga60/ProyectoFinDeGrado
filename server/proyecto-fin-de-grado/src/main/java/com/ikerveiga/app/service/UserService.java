@@ -1,5 +1,8 @@
 package com.ikerveiga.app.service;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +13,8 @@ import com.ikerveiga.app.DAO.UserRepository;
 public class UserService {
 
     UserRepository userDAO;
+
+    public Map<Long, User> activeUsers = new HashMap<Long, User>();
 
     @Autowired
     public UserService(UserRepository userDAO) {
@@ -24,5 +29,20 @@ public class UserService {
 
         User user = new User(name, email, password, isCoach);
         userDAO.save(user);
+    }
+
+    public long login(String email, String password) {
+        User user = userDAO.findByEmail(email);
+        if(user == null) {
+            throw new RuntimeException("User with that email does not exist");
+        }
+
+        if(!user.getPassword().equals(password)) {
+            throw new RuntimeException("Incorrect password");
+        } else {
+            long token = System.currentTimeMillis();
+            activeUsers.put(token, user);
+            return token;
+        }
     }
 }
