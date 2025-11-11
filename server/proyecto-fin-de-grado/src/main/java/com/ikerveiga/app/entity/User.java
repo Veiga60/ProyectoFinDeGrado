@@ -24,6 +24,10 @@ public class User {
     @Column(name = "user_isCoach", nullable = false, unique = false)
     private boolean isCoach;
 
+    public User() {
+        
+    }
+
     public User(String userName, String email, String password, boolean isCoach) {
         this.userName = userName;
         this.email = email;
@@ -62,5 +66,4 @@ public class User {
     public boolean getIsCoach() {
         return this.isCoach;
     }
-
 }
