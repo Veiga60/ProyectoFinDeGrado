@@ -5,7 +5,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ikerveiga.app.DTO.UserDTO;
@@ -24,7 +23,7 @@ public class UserController {
     @PostMapping("/users") 
     public ResponseEntity<Void> signup(@RequestBody UserDTO userDTO) {
         try{
-            userService.signup(userDTO.getName(), userDTO.getEmail(), userDTO.getName(), userDTO.getIsCoach());
+            userService.signup(userDTO.getName(), userDTO.getEmail(), userDTO.getPassword(), userDTO.getIsCoach());
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (RuntimeException e) {
             if (e.getMessage().equals("User already exists")) {
