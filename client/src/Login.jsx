@@ -1,5 +1,6 @@
 import './style/Login.css'
 import Header from './Header.jsx'
+import { Link } from 'react-router-dom'
 
 function Login() {
     return(
@@ -17,7 +18,7 @@ function Login() {
                 <button>INICIAR SESIÓN</button>
             </div>
             <div id='notHaveAccountDiv'>
-                <p id='notHaveAccount'>¿No tienes una cuenta? Crea una.</p>
+               <Link to={"/signup"}><p id='notHaveAccount'>¿No tienes una cuenta? Crea una.</p></Link>
             </div>
         </div>
         </>

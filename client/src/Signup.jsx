@@ -1,7 +1,8 @@
 import './style/Signup.css'
 import Header from './Header.jsx'
+import { Link } from 'react-router-dom'
 
-function Signup({changeHasAccount}) {
+function Signup() {
     return(
         <>
         <Header />
@@ -19,10 +20,10 @@ function Signup({changeHasAccount}) {
                 </div>
             </div>
             <div id='signupButtonDiv'>
-                <button route={"/"}>CREAR CUENTA</button>
+                <Link to={"/"}><button>CREAR CUENTA</button></Link>
             </div>
             <div id='alreadyHaveAccountDiv'>
-                <p id='alreadyHaveAccount' onClick={changeHasAccount}>¿Ya tienes una cuenta? Inicia sesión.</p>
+                <Link to={"/"}><p id='alreadyHaveAccount'>¿Ya tienes una cuenta? Inicia sesión.</p></Link>
             </div>
         </div>
         </>
