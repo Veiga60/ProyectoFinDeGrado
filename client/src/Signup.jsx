@@ -1,10 +1,12 @@
 import './style/Signup.css'
 import Header from './Header.jsx'
 import { Link } from 'react-router-dom'
-import { createUser } from './api/users.js'
 import { useState } from 'react'
+import axios from 'axios'
 
 function Signup() {
+
+    const SERVER_URL = "http://localhost:8081";
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -12,12 +14,29 @@ function Signup() {
     const [isCoach, setIsCoach] = useState(false);
 
     const signupUser = async () => {
+
         try {
-            await createUser(name, email, password, isCoach);
+            const response = await axios.post(`${SERVER_URL}/users`, 
+                    {
+                        'name': name,
+                        'email': email,
+                        'password': password,
+                        'isCoach': isCoach
+                    },
+                {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                } 
+            
+            );
             setName('');
-            setName('');
-            setName('');
+            setEmail('');
+            setPassword('');
             setIsCoach(false);
+
+            console.log(response);
+            return response;
         } catch (error) {
             console.error('Failed creating new user');
         }
@@ -54,9 +73,9 @@ function Signup() {
                     <input 
                         id='isTrainerInput' 
                         type="checkbox"
-                        onChange={(e)=>setIsCoach(e.target.value)}
+                        onChange={(e)=>setIsCoach(e.target.checked)}
                     />
-                    <label for='isTrainerInput' id='checkBoxLabel'>Soy entrenador</label>
+                    <label htmlFor='isTrainerInput' id='checkBoxLabel'>Soy entrenador</label>
                 </div>
             </div>
             <div id='signupButtonDiv'>
