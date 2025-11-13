@@ -1,8 +1,29 @@
 import './style/Signup.css'
 import Header from './Header.jsx'
 import { Link } from 'react-router-dom'
+import { createUser } from './api/users.js'
+import { useState } from 'react'
 
 function Signup() {
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [isCoach, setIsCoach] = useState(false);
+
+    const signupUser = async () => {
+        try {
+            await createUser(name, email, password, isCoach);
+            setName('');
+            setName('');
+            setName('');
+            setIsCoach(false);
+        } catch (error) {
+            console.error('Failed creating new user');
+        }
+    }
+
+
     return(
         <>
         <Header />
@@ -11,16 +32,35 @@ function Signup() {
                 <p id='signupText'>BIENVENIDO</p>
             </div>
             <div id='inputsDiv'>
-                <input id='nameInput' type="text" placeholder='Nombre'/>
-                <input id='emailInput' type="text" placeholder='Email'/>
-                <input id='passwordInput' type="password" placeholder='Contraseña'/>
+                <input
+                    id='nameInput' 
+                    type="text" 
+                    placeholder='Nombre'
+                    onChange={(e)=>setName(e.target.value)}
+                />
+                <input 
+                    id='emailInput' 
+                    type="text" 
+                    placeholder='Email'
+                    onChange={(e)=>setEmail(e.target.value)}
+                />
+                <input 
+                    id='passwordInput' 
+                    type="password" 
+                    placeholder='Contraseña'
+                    onChange={(e)=>setPassword(e.target.value)}
+                />
                 <div id='isTrainerDiv'>
-                    <input id='isTrainerInput' type="checkbox"/>
+                    <input 
+                        id='isTrainerInput' 
+                        type="checkbox"
+                        onChange={(e)=>setIsCoach(e.target.value)}
+                    />
                     <label for='isTrainerInput' id='checkBoxLabel'>Soy entrenador</label>
                 </div>
             </div>
             <div id='signupButtonDiv'>
-                <Link to={"/"}><button>CREAR CUENTA</button></Link>
+                <Link to={"/"}><button onClick={signupUser} >CREAR CUENTA</button></Link>
             </div>
             <div id='alreadyHaveAccountDiv'>
                 <Link to={"/"}><p id='alreadyHaveAccount'>¿Ya tienes una cuenta? Inicia sesión.</p></Link>
