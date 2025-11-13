@@ -12,14 +12,25 @@ function Signup() {
     const [isCoach, setIsCoach] = useState(false);
 
     const signupUser = async () => {
+
+        var content = {
+            name: name,
+            email: email,
+            password: password,
+            isCoach: isCoach 
+        };
+        
         try {
-            await createUser(name, email, password, isCoach);
+            
+            console.log(content);
+            await createUser(content, {headers: {'Content-Type': 'application/json'}});
             setName('');
             setName('');
             setName('');
             setIsCoach(false);
         } catch (error) {
             console.error('Failed creating new user');
+            console.log(error);
         }
     }
 
@@ -56,11 +67,11 @@ function Signup() {
                         type="checkbox"
                         onChange={(e)=>setIsCoach(e.target.value)}
                     />
-                    <label for='isTrainerInput' id='checkBoxLabel'>Soy entrenador</label>
+                    <label htmlFor='isTrainerInput' id='checkBoxLabel'>Soy entrenador</label>
                 </div>
             </div>
             <div id='signupButtonDiv'>
-                <Link to={"/"}><button onClick={signupUser} >CREAR CUENTA</button></Link>
+                <Link to={"/"}><button onClick={signupUser}>CREAR CUENTA</button></Link>
             </div>
             <div id='alreadyHaveAccountDiv'>
                 <Link to={"/"}><p id='alreadyHaveAccount'>¿Ya tienes una cuenta? Inicia sesión.</p></Link>

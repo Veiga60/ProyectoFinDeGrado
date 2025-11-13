@@ -2,14 +2,16 @@ package com.ikerveiga.app.DTO;
 
 public class UserDTO {
     
-    private String email;
     private String name;
+    private String email;
     private String password;
     private boolean isCoach;
 
-    public UserDTO(String name, String email) {
+    public UserDTO(String name, String email, String password, boolean isCoach) {
         this.name = name;
         this.email = email;
+        this.password = password;
+        this.isCoach = isCoach;
     }
         
     public String getName() {
