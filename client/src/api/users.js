@@ -2,11 +2,11 @@ import axios from 'axios';
 
 const SERVER_URL = 'http://localhost:8081'
 
-export const createUser = async (content) => {
+export const createUser = async (userDTO, headers) => {
     try {
-        const response = await axios.post(`${SERVER_URL}/users`, { content });
-        return response.data;
+        await axios.post(`${SERVER_URL}/users`, {userDTO}, {headers});
     } catch (error) {
+        console.log(error)
         throw error;
     }
 };
