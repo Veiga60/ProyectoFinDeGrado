@@ -13,7 +13,7 @@ function Signup() {
 
     const SERVER_URL = 'http://localhost:8081'
 
-    const signupUser = async () => {
+    const signup = async () => {
         
         try {
             const response = await axios.post(`${SERVER_URL}/users`, 
@@ -79,7 +79,7 @@ function Signup() {
                 </div>
             </div>
             <div id='signupButtonDiv'>
-                <Link to={"/"}><button onClick={signupUser}>CREAR CUENTA</button></Link>
+                <Link to={"/"}><button onClick={signup}>CREAR CUENTA</button></Link>
             </div>
             <div id='alreadyHaveAccountDiv'>
                 <Link to={"/"}><p id='alreadyHaveAccount'>¿Ya tienes una cuenta? Inicia sesión.</p></Link>
