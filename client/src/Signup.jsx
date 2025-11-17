@@ -39,6 +39,7 @@ function Signup() {
             return response;
         } catch (error) {
             console.error('Failed creating new user');
+            console.error(error);
         }
     }
 
