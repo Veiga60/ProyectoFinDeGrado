@@ -23,11 +23,11 @@ function Signup() {
                         'password': password,
                         'isCoach': isCoach
                     },
-                {
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                } 
+                    {
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    } 
             
             );
             setName('');
@@ -35,7 +35,6 @@ function Signup() {
             setPassword('');
             setIsCoach(false);
 
-            console.log(response);
             return response;
         } catch (error) {
             console.error('Failed creating new user');
