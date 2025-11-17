@@ -12,8 +12,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "user_name", nullable = false, unique = false)
-    private String name;
+    @Column(name = "user_Name", nullable = false, unique = false)
+    private String userName;
 
     @Column(name = "user_email", nullable = false, unique = true)
     private String email;
@@ -28,19 +28,19 @@ public class User {
         
     }
 
-    public User(String name, String email, String password, boolean isCoach) {
-        this.name = name;
+    public User(String userName, String email, String password, boolean isCoach) {
+        this.userName = userName;
         this.email = email;
         this.password = password;
         this.isCoach = isCoach;
     }
 
     public void setUserName(String userName) {
-        this.name = userName;
+        this.userName = userName;
     }
 
     public String getUserName() {
-        return this.name;
+        return this.userName;
     }
 
     public void setEmail(String email) {

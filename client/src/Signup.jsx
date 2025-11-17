@@ -1,12 +1,10 @@
 import './style/Signup.css'
 import Header from './Header.jsx'
 import { Link } from 'react-router-dom'
+import { createUser } from './api/users.js'
 import { useState } from 'react'
-import axios from 'axios'
 
 function Signup() {
-
-    const SERVER_URL = "http://localhost:8081";
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -15,6 +13,13 @@ function Signup() {
 
     const signupUser = async () => {
 
+        var content = {
+            name: name,
+            email: email,
+            password: password,
+            isCoach: isCoach 
+        };
+        
         try {
             const response = await axios.post(`${SERVER_URL}/users`, 
                     {
@@ -28,11 +33,13 @@ function Signup() {
                             'Content-Type': 'application/json'
                         }
                     } 
+                )
             
-            );
+            console.log(content);
+            await createUser(content, {headers: {'Content-Type': 'application/json'}});
             setName('');
-            setEmail('');
-            setPassword('');
+            setName('');
+            setName('');
             setIsCoach(false);
 
             return response;
@@ -73,13 +80,13 @@ function Signup() {
                     <input 
                         id='isTrainerInput' 
                         type="checkbox"
-                        onChange={(e)=>setIsCoach(e.target.checked)}
+                        onChange={(e)=>setIsCoach(e.target.value)}
                     />
                     <label htmlFor='isTrainerInput' id='checkBoxLabel'>Soy entrenador</label>
                 </div>
             </div>
             <div id='signupButtonDiv'>
-                <Link to={"/"}><button onClick={signupUser} >CREAR CUENTA</button></Link>
+                <Link to={"/"}><button onClick={signupUser}>CREAR CUENTA</button></Link>
             </div>
             <div id='alreadyHaveAccountDiv'>
                 <Link to={"/"}><p id='alreadyHaveAccount'>¿Ya tienes una cuenta? Inicia sesión.</p></Link>
