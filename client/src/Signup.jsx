@@ -1,7 +1,7 @@
 import './style/Signup.css'
 import Header from './Header.jsx'
 import { Link } from 'react-router-dom'
-import { createUser } from './api/users.js'
+import axios from 'axios'
 import { useState } from 'react'
 
 function Signup() {
@@ -11,14 +11,9 @@ function Signup() {
     const [password, setPassword] = useState('');
     const [isCoach, setIsCoach] = useState(false);
 
-    const signupUser = async () => {
+    const SERVER_URL = 'http://localhost:8081'
 
-        var content = {
-            name: name,
-            email: email,
-            password: password,
-            isCoach: isCoach 
-        };
+    const signupUser = async () => {
         
         try {
             const response = await axios.post(`${SERVER_URL}/users`, 
@@ -35,8 +30,6 @@ function Signup() {
                     } 
                 )
             
-            console.log(content);
-            await createUser(content, {headers: {'Content-Type': 'application/json'}});
             setName('');
             setName('');
             setName('');
