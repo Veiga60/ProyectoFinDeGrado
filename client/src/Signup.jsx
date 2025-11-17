@@ -30,7 +30,7 @@ function Signup() {
             setIsCoach(false);
         } catch (error) {
             console.error('Failed creating new user');
-            console.log(error);
+            console.error(error);
         }
     }
 
