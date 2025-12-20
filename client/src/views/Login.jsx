@@ -1,5 +1,5 @@
-import './style/Login.css'
-import Header from './Header.jsx'
+import '../style/Login.css'
+import Header from '../components/Header.jsx'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
@@ -22,7 +22,7 @@ function Login() {
                 },
                 { headers: { 'Content-Type': 'application/json' } }
             )
-            navigate("/index")
+            navigate("/matches")
             return token;
         } catch (error) {
             console.error("Failed logging in");

@@ -1,0 +1,29 @@
+#matchDiv {
+    margin-top: 50px;
+    width: 600px;
+    height: 100px;
+    background-color: white;
+    border: 2px solid rgb(7, 78, 200);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+
+#infoContainer {
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: large;
+    color: black;
+}
+
+img {
+    width: 10%;
+}

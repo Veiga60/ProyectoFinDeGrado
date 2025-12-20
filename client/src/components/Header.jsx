@@ -1,8 +1,8 @@
-import './style/Header.css'
-import logo from './assets/images/tigre-transparente.png'
+import '../style/Header.css'
+import logo from '../assets/images/tigre-transparente.png'
 
 function Header() {
-    return(
+    return (
         <div id='headerDiv'>
             <div id='titleDiv'>
                 <img id='logo' src={logo} alt="logoApp" />

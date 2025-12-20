@@ -1,47 +1,29 @@
-package com.ikerveiga.app.entity;
+package com.ikerveiga.app.DTO;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import com.ikerveiga.app.entity.Team;
 
-@Entity
-@Table(name = "Matches")
-public class Match {
+public class MatchDTO {
 
-    @Id
-    @Column(name = "match_id", nullable = false, unique = true)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
-    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Team localTeam;
-
-    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Team visitingTeam;
-
-    @Column(name = "match_date", nullable = true, unique = false)
     private LocalDate date;
-
-    @Column(name = "match_time", nullable = true, unique = false)
     private LocalTime time;
-
-    @Column(name = "match_played", nullable = false, unique = false)
     private boolean isPlayed;
 
-    public Match() {
-
+    public MatchDTO(Team localTeam, Team visitingTeam, LocalDate date, LocalTime time, boolean isPlayed) {
+        this.localTeam = localTeam;
+        this.visitingTeam = visitingTeam;
+        this.date = date;
+        this.time = time;
+        this.isPlayed = isPlayed;
     }
 
-    public Match(Team localTeam, Team visitingTeam, LocalDate date, LocalTime time, boolean isPlayed) {
+    public MatchDTO(long id, Team localTeam, Team visitingTeam, LocalDate date, LocalTime time, boolean isPlayed) {
+        this.id = id;
         this.localTeam = localTeam;
         this.visitingTeam = visitingTeam;
         this.date = date;
