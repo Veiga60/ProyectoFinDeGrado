@@ -17,13 +17,36 @@
     justify-content: center;
 }
 
-p {
+.matchText {
     font-family: Inria Sans;
     font-weight: bold;
     font-size: large;
     color: black;
+    margin: 0;
+}
+
+#localTeamDiv {
+    width: 45%;
+    height: 100px;
+    margin-top: 10px;
+}
+
+#centralDiv {
+    margin: 0 auto;
+    width: 10%;
+}
+
+#visitingTeamDiv {
+    width: 45%;
+    height: 100px;
+    margin-top: 10px;
+}
+
+.teamImageDiv {
+    width: 20%;
+    margin: 0 auto;
 }
 
 img {
-    width: 10%;
+    width: 100%;
 }

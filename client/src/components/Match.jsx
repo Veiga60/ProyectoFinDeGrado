@@ -6,15 +6,19 @@ export default function Match({ localTeam, visitingTeam }) {
             <div id="matchDiv">
                 <div id='infoContainer'>
                     <div id='localTeamDiv'>
-                        <img src={`/logos/${localTeam.logo}`} alt={localTeam.name} />
-                        <p>{localTeam.name}</p>
+                        <div className='teamImageDiv'>
+                            <img src={`/logos/${localTeam.logo}`} alt={localTeam.name} />
+                        </div>
+                        <p className='matchText'>{localTeam.name}</p>
                     </div>
-                    <div>
-                        <p> - </p>
+                    <div id='centralDiv'>
+                        <p className='matchText'> - </p>
                     </div>
                     <div id="visitingTeamDiv">
-                        <img src={`/logos/${visitingTeam.logo}`} alt={visitingTeam.name} />
-                        <p>{visitingTeam.name}</p>
+                        <div className='teamImageDiv'>
+                            <img src={`/logos/${visitingTeam.logo}`} alt={visitingTeam.name} />
+                        </div>
+                        <p className='matchText'>{visitingTeam.name}</p>
                     </div>
                 </div>
             </div >
