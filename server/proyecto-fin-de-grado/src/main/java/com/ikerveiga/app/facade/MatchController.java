@@ -33,7 +33,7 @@ public class MatchController {
                 MatchDTO matchDTO = new MatchDTO(match.getId(), match.getLocalTeam(), match.getLocalTeamGoals(),
                         match.getVisitingTeam(), match.getVisitingTeamGoals(),
                         match.getDate(), match.getTime(),
-                        match.getIsPlayed(), match.getBonusPoint());
+                        match.getIsPlayed(), match.getBonusPoint(), match.getPlayers());
                 matchesDTO.add(matchDTO);
             }
 

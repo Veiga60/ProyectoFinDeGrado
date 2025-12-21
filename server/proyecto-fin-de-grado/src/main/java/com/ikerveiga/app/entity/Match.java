@@ -2,6 +2,7 @@ package com.ikerveiga.app.entity;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -10,6 +11,9 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -46,12 +50,16 @@ public class Match {
     @Column(name = "match_bonus_point", nullable = true, unique = false)
     private Long bonusPoint;
 
+    @ManyToMany
+    @JoinTable(name = "player_match", joinColumns = @JoinColumn(name = "match_id"), inverseJoinColumns = @JoinColumn(name = "player_id"))
+    private List<Player> players;
+
     public Match() {
 
     }
 
     public Match(Team localTeam, Integer localTeamGoals, Team visitingTeam, Integer visitingTeamGoals, LocalDate date,
-            LocalTime time, boolean isPlayed, Long bonusPoint) {
+            LocalTime time, boolean isPlayed, Long bonusPoint, List<Player> players) {
         this.localTeam = localTeam;
         this.localTeamGoals = localTeamGoals;
         this.visitingTeam = visitingTeam;
@@ -60,6 +68,7 @@ public class Match {
         this.time = time;
         this.isPlayed = isPlayed;
         this.bonusPoint = bonusPoint;
+        this.players = players;
     }
 
     public long getId() {
@@ -128,5 +137,13 @@ public class Match {
 
     public void setBonusPoint(Long bonusPoint) {
         this.bonusPoint = bonusPoint;
+    }
+
+    public List<Player> getPlayers() {
+        return this.players;
+    }
+
+    public void setPlayers(List<Player> players) {
+        this.players = players;
     }
 }

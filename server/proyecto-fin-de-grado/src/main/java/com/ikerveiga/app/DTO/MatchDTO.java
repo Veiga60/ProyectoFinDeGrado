@@ -2,7 +2,9 @@ package com.ikerveiga.app.DTO;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
+import com.ikerveiga.app.entity.Player;
 import com.ikerveiga.app.entity.Team;
 
 public class MatchDTO {
@@ -16,10 +18,11 @@ public class MatchDTO {
     private LocalTime time;
     private boolean isPlayed;
     private Long bonusPoint;
+    private List<Player> players;
 
     public MatchDTO(Team localTeam, Integer localTeamGoals, Team visitingTeam, Integer visitingTeamGoals,
             LocalDate date,
-            LocalTime time, boolean isPlayed, Long bonusPoint) {
+            LocalTime time, boolean isPlayed, Long bonusPoint, List<Player> players) {
         this.localTeam = localTeam;
         this.localTeamGoals = localTeamGoals;
         this.visitingTeam = visitingTeam;
@@ -28,10 +31,11 @@ public class MatchDTO {
         this.time = time;
         this.isPlayed = isPlayed;
         this.bonusPoint = bonusPoint;
+        this.players = players;
     }
 
     public MatchDTO(long id, Team localTeam, Integer localTeamGoals, Team visitingTeam, Integer visitingTeamGoals,
-            LocalDate date, LocalTime time, boolean isPlayed, Long bonusPoint) {
+            LocalDate date, LocalTime time, boolean isPlayed, Long bonusPoint, List<Player> players) {
         this.id = id;
         this.localTeam = localTeam;
         this.localTeamGoals = localTeamGoals;
@@ -41,6 +45,7 @@ public class MatchDTO {
         this.time = time;
         this.isPlayed = isPlayed;
         this.bonusPoint = bonusPoint;
+        this.players = players;
     }
 
     public long getId() {
@@ -109,5 +114,13 @@ public class MatchDTO {
 
     public void setBonusPoint(Long bonusPoint) {
         this.bonusPoint = bonusPoint;
+    }
+
+    public List<Player> getPlayers() {
+        return this.players;
+    }
+
+    public void setPlayers(List<Player> players) {
+        this.players = players;
     }
 }
