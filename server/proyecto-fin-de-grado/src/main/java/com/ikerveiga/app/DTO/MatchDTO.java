@@ -9,26 +9,38 @@ public class MatchDTO {
 
     private long id;
     private Team localTeam;
+    private Integer localTeamGoals;
     private Team visitingTeam;
+    private Integer visitingTeamGoals;
     private LocalDate date;
     private LocalTime time;
     private boolean isPlayed;
+    private Long bonusPoint;
 
-    public MatchDTO(Team localTeam, Team visitingTeam, LocalDate date, LocalTime time, boolean isPlayed) {
+    public MatchDTO(Team localTeam, Integer localTeamGoals, Team visitingTeam, Integer visitingTeamGoals,
+            LocalDate date,
+            LocalTime time, boolean isPlayed, Long bonusPoint) {
         this.localTeam = localTeam;
+        this.localTeamGoals = localTeamGoals;
         this.visitingTeam = visitingTeam;
+        this.visitingTeamGoals = visitingTeamGoals;
         this.date = date;
         this.time = time;
         this.isPlayed = isPlayed;
+        this.bonusPoint = bonusPoint;
     }
 
-    public MatchDTO(long id, Team localTeam, Team visitingTeam, LocalDate date, LocalTime time, boolean isPlayed) {
+    public MatchDTO(long id, Team localTeam, Integer localTeamGoals, Team visitingTeam, Integer visitingTeamGoals,
+            LocalDate date, LocalTime time, boolean isPlayed, Long bonusPoint) {
         this.id = id;
         this.localTeam = localTeam;
+        this.localTeamGoals = localTeamGoals;
         this.visitingTeam = visitingTeam;
+        this.visitingTeamGoals = visitingTeamGoals;
         this.date = date;
         this.time = time;
         this.isPlayed = isPlayed;
+        this.bonusPoint = bonusPoint;
     }
 
     public long getId() {
@@ -41,6 +53,22 @@ public class MatchDTO {
 
     public void setLocalTeam(Team localTeam) {
         this.localTeam = localTeam;
+    }
+
+    public Integer getLocalTeamGoals() {
+        return this.localTeamGoals;
+    }
+
+    public void setLocalTeamGoals(Integer localTeamGoals) {
+        this.localTeamGoals = localTeamGoals;
+    }
+
+    public Integer getVisitingTeamGoals() {
+        return this.visitingTeamGoals;
+    }
+
+    public void setVisitingTeamGoals(Integer visitingTeamGoals) {
+        this.visitingTeamGoals = visitingTeamGoals;
     }
 
     public Team getVisitingTeam() {
@@ -73,5 +101,13 @@ public class MatchDTO {
 
     public void setIsPlayed(boolean isPlayed) {
         this.isPlayed = isPlayed;
+    }
+
+    public Long getBonusPoint() {
+        return this.bonusPoint;
+    }
+
+    public void setBonusPoint(Long bonusPoint) {
+        this.bonusPoint = bonusPoint;
     }
 }

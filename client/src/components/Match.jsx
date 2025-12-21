@@ -1,6 +1,6 @@
 import '../style/Match.css'
 
-export default function Match({ localTeam, visitingTeam }) {
+export default function Match({ localTeam, localTeamGoals, visitingTeam, visitingTeamGoals, date, time }) {
     return (
         <>
             <div id="matchDiv">
@@ -11,8 +11,16 @@ export default function Match({ localTeam, visitingTeam }) {
                         </div>
                         <p className='matchText'>{localTeam.name}</p>
                     </div>
+                    <div id='localTeamGoalsDiv'>
+                        <p className='matchGoals'>{localTeamGoals}</p>
+                    </div>
                     <div id='centralDiv'>
+                        <p id='matchDate'>{date}</p>
                         <p className='matchText'> - </p>
+                        <p id='matchTime'>{time}</p>
+                    </div>
+                    <div id='visitingTeamGoalsDiv'>
+                        <p className='matchGoals'>{visitingTeamGoals}</p>
                     </div>
                     <div id="visitingTeamDiv">
                         <div className='teamImageDiv'>

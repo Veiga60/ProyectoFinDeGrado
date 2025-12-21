@@ -30,7 +30,11 @@ export default function Matches() {
                     <Match
                         key={match.id}
                         localTeam={match.localTeam}
+                        localTeamGoals={match.localTeamGoals}
                         visitingTeam={match.visitingTeam}
+                        visitingTeamGoals={match.visitingTeamGoals}
+                        date={match.date}
+                        time={match.time}
                     />
                 )}
             </div>

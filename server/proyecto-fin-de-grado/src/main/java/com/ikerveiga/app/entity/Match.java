@@ -25,8 +25,14 @@ public class Match {
     @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Team localTeam;
 
+    @Column(name = "local_team_goals", nullable = true, unique = false)
+    private Integer localTeamGoals;
+
     @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Team visitingTeam;
+
+    @Column(name = "visiting_team_goals", nullable = true, unique = false)
+    private Integer visitingTeamGoals;
 
     @Column(name = "match_date", nullable = true, unique = false)
     private LocalDate date;
@@ -37,16 +43,23 @@ public class Match {
     @Column(name = "match_played", nullable = false, unique = false)
     private boolean isPlayed;
 
+    @Column(name = "match_bonus_point", nullable = true, unique = false)
+    private Long bonusPoint;
+
     public Match() {
 
     }
 
-    public Match(Team localTeam, Team visitingTeam, LocalDate date, LocalTime time, boolean isPlayed) {
+    public Match(Team localTeam, Integer localTeamGoals, Team visitingTeam, Integer visitingTeamGoals, LocalDate date,
+            LocalTime time, boolean isPlayed, Long bonusPoint) {
         this.localTeam = localTeam;
+        this.localTeamGoals = localTeamGoals;
         this.visitingTeam = visitingTeam;
+        this.visitingTeamGoals = visitingTeamGoals;
         this.date = date;
         this.time = time;
         this.isPlayed = isPlayed;
+        this.bonusPoint = bonusPoint;
     }
 
     public long getId() {
@@ -61,12 +74,28 @@ public class Match {
         this.localTeam = localTeam;
     }
 
+    public Integer getLocalTeamGoals() {
+        return this.localTeamGoals;
+    }
+
+    public void setLocalTeamGoals(Integer localTeamGoals) {
+        this.localTeamGoals = localTeamGoals;
+    }
+
     public Team getVisitingTeam() {
         return this.visitingTeam;
     }
 
     public void setVisitingTeam(Team visitingTeam) {
         this.visitingTeam = visitingTeam;
+    }
+
+    public Integer getVisitingTeamGoals() {
+        return this.visitingTeamGoals;
+    }
+
+    public void setVisitingTeamGoals(Integer visitingTeamGoals) {
+        this.visitingTeamGoals = visitingTeamGoals;
     }
 
     public LocalDate getDate() {
@@ -91,5 +120,13 @@ public class Match {
 
     public void setIsPlayed(boolean isPlayed) {
         this.isPlayed = isPlayed;
+    }
+
+    public Long getBonusPoint() {
+        return this.bonusPoint;
+    }
+
+    public void setBonusPoint(Long bonusPoint) {
+        this.bonusPoint = bonusPoint;
     }
 }
