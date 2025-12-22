@@ -1,0 +1,28 @@
+#playerCardDiv {
+    width: 200px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+#playerCardDiv:hover {
+    translate: 0px -10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#playerPhotoDiv {
+    width: 200px;
+}
+
+#playerPhoto {
+    width: 100%;
+    height: 180px;
+    border: 2px solid rgb(7, 78, 200);
+    border-radius: 20px;
+}
+
+#playerName {
+    margin: 0;
+}
