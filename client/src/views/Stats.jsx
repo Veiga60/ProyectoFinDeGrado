@@ -20,6 +20,16 @@ export default function Stats() {
         }
     }
 
+    const getPlayer = async (player) => {
+        try {
+            console.log('Id: ' + player.id);
+            const response = await axios.get(`${SERVER_URL}/players/${player.id}`);
+            console.log(response.data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     useEffect(() => {
         getPlayers();
     }, []);
@@ -38,6 +48,7 @@ export default function Stats() {
                             <PlayerCard
                                 key={player.id}
                                 player={player}
+                                onClick={() => getPlayer(player)}
                             />
                         )}
                     </TabPanel>
