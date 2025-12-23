@@ -6,6 +6,7 @@ import Login from './views/Login.jsx'
 import Signup from './views/Signup.jsx'
 import Matches from './views/Matches.jsx'
 import Stats from './views/Stats.jsx'
+import PlayerStats from './views/PlayerStats.jsx'
 import './style/App.css'
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/matches" element={<Matches />} />
         <Route path="/stats" element={<Stats />} />
+        <Route path="/stats/players/:id" element={<PlayerStats />} />
       </Routes>
     </BrowserRouter>
   )

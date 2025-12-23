@@ -4,10 +4,13 @@ import '../style/Stats.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react';
 import PlayerCard from '../components/PlayerCard';
+import { useNavigate } from 'react-router-dom';
 
 export default function Stats() {
 
     const SERVER_URL = 'http://localhost:8081';
+    const navigate = useNavigate();
+
     const [players, setPlayers] = useState([]);
 
     const getPlayers = async () => {
@@ -17,16 +20,6 @@ export default function Stats() {
             setPlayers(response.data);
         } catch (error) {
             console.log('Error al cargar los jugadores: ', error);
-        }
-    }
-
-    const getPlayer = async (player) => {
-        try {
-            console.log('Id: ' + player.id);
-            const response = await axios.get(`${SERVER_URL}/players/${player.id}`);
-            console.log(response.data);
-        } catch (error) {
-            console.log(error);
         }
     }
 
@@ -48,7 +41,7 @@ export default function Stats() {
                             <PlayerCard
                                 key={player.id}
                                 player={player}
-                                onClick={() => getPlayer(player)}
+                                onClick={() => navigate(`/stats/players/${player.id}`)}
                             />
                         )}
                     </TabPanel>
