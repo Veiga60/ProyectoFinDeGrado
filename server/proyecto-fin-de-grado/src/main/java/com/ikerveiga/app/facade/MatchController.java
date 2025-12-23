@@ -30,10 +30,7 @@ public class MatchController {
         try {
             matches = matchService.getMatches();
             for (Match match : matches) {
-                MatchDTO matchDTO = new MatchDTO(match.getId(), match.getLocalTeam(), match.getLocalTeamGoals(),
-                        match.getVisitingTeam(), match.getVisitingTeamGoals(),
-                        match.getDate(), match.getTime(),
-                        match.getIsPlayed(), match.getBonusPoint(), match.getPlayers());
+                MatchDTO matchDTO = match.toDTO();
                 matchesDTO.add(matchDTO);
             }
 

@@ -25,4 +25,14 @@ public class PlayerService {
 
         return players;
     }
+
+    public Player getPlayer(long id) {
+        Player player = playerDAO.findById(id);
+
+        if (player == null) {
+            throw new RuntimeException("No se ha encontrado al jugador");
+        }
+
+        return player;
+    }
 }

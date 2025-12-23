@@ -2,8 +2,6 @@ package com.ikerveiga.app.DTO;
 
 import java.util.List;
 
-import com.ikerveiga.app.entity.Match;
-
 public class PlayerDTO {
 
     private long id;
@@ -11,9 +9,21 @@ public class PlayerDTO {
     private String lastName1;
     private String lastName2;
     private String photo;
-    private List<Match> matches;
+    private List<MatchDTO> matches;
+    PlayerStatsDTO stats;
 
-    public PlayerDTO(String name, String lastName1, String lastName2, String photo, List<Match> matches) {
+    public PlayerDTO(String name, String lastName1, String lastName2, String photo, List<MatchDTO> matches,
+            PlayerStatsDTO stats) {
+        this.name = name;
+        this.lastName1 = lastName1;
+        this.lastName2 = lastName2;
+        this.photo = photo;
+        this.matches = matches;
+        this.stats = stats;
+    }
+
+    public PlayerDTO(long id, String name, String lastName1, String lastName2, String photo, List<MatchDTO> matches) {
+        this.id = id;
         this.name = name;
         this.lastName1 = lastName1;
         this.lastName2 = lastName2;
@@ -21,13 +31,15 @@ public class PlayerDTO {
         this.matches = matches;
     }
 
-    public PlayerDTO(long id, String name, String lastName1, String lastName2, String photo, List<Match> matches) {
+    public PlayerDTO(long id, String name, String lastName1, String lastName2, String photo, List<MatchDTO> matches,
+            PlayerStatsDTO stats) {
         this.id = id;
         this.name = name;
         this.lastName1 = lastName1;
         this.lastName2 = lastName2;
         this.photo = photo;
         this.matches = matches;
+        this.stats = stats;
     }
 
     public long getId() {
@@ -66,11 +78,19 @@ public class PlayerDTO {
         this.photo = photo;
     }
 
-    public List<Match> getMatches() {
+    public List<MatchDTO> getMatches() {
         return this.matches;
     }
 
-    public void setMatches(List<Match> matches) {
+    public void setMatches(List<MatchDTO> matches) {
         this.matches = matches;
+    }
+
+    public PlayerStatsDTO getStats() {
+        return this.stats;
+    }
+
+    public void setStatsDTO(PlayerStatsDTO stats) {
+        this.stats = stats;
     }
 }

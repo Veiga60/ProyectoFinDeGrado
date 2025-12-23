@@ -1,6 +1,10 @@
 package com.ikerveiga.app.entity;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import com.ikerveiga.app.DTO.MatchDTO;
+import com.ikerveiga.app.DTO.PlayerDTO;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -45,12 +49,14 @@ public class Player {
 
     }
 
-    public Player(String name, String lastName1, String lastName2, String photo, List<Match> matches) {
+    public Player(String name, String lastName1, String lastName2, String photo, List<Match> matches,
+            PlayerStats stats) {
         this.name = name;
         this.lastName1 = lastName1;
         this.lastName2 = lastName2;
         this.photo = photo;
         this.matches = matches;
+        this.stats = stats;
     }
 
     public long getId() {
@@ -95,5 +101,36 @@ public class Player {
 
     public void setMatches(List<Match> matches) {
         this.matches = matches;
+    }
+
+    public PlayerStats getStats() {
+        return this.getStats();
+    }
+
+    public void setStats(PlayerStats stats) {
+        this.stats = stats;
+    }
+
+    public PlayerDTO toDTO() {
+        List<MatchDTO> matchesDTO = new ArrayList<>();
+        for (Match match : this.matches) {
+            matchesDTO.add(match.toDTO());
+        }
+
+        PlayerDTO playerDTO = new PlayerDTO(this.id, this.name, this.lastName1, this.lastName2, this.photo, matchesDTO,
+                this.stats.toDTO());
+
+        return playerDTO;
+    }
+
+    public PlayerDTO toDTOWithoutStats() {
+        List<MatchDTO> matchesDTO = new ArrayList<>();
+        for (Match match : this.matches) {
+            matchesDTO.add(match.toDTO());
+        }
+
+        PlayerDTO playerDTO = new PlayerDTO(this.id, this.name, this.lastName1, this.lastName2, this.photo, matchesDTO);
+
+        return playerDTO;
     }
 }

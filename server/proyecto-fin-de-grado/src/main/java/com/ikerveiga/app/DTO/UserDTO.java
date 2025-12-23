@@ -1,19 +1,25 @@
 package com.ikerveiga.app.DTO;
 
 public class UserDTO {
-    
+
+    private long id;
     private String name;
     private String email;
     private String password;
     private boolean isCoach;
 
-    public UserDTO(String name, String email, String password, boolean isCoach) {
+    public UserDTO(long id, String name, String email, String password, boolean isCoach) {
+        this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
         this.isCoach = isCoach;
     }
-        
+
+    public long getId() {
+        return this.id;
+    }
+
     public String getName() {
         return name;
     }
@@ -21,7 +27,7 @@ public class UserDTO {
     public void setName(String name) {
         this.name = name;
     }
-    
+
     public String getEmail() {
         return email;
     }

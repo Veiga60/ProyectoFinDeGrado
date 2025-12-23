@@ -1,73 +1,27 @@
-package com.ikerveiga.app.entity;
+package com.ikerveiga.app.DTO;
 
-import com.ikerveiga.app.DTO.PlayerStatsDTO;
+public class PlayerStatsDTO {
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name = "Players_Stats")
-public class PlayerStats {
-
-    @Id
-    @Column(name = "player_stats_id", nullable = false, unique = true)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "player_id", referencedColumnName = "player_id")
-    private Player player;
-
-    @Column(name = "games_played", nullable = false, unique = false)
+    private PlayerDTO player;
     private int gamesPlayed;
-
-    @Column(name = "points", nullable = false, unique = false)
     private int points;
-
-    @Column(name = "goals", nullable = false, unique = false)
     private int goals;
-
-    @Column(name = "assists", nullable = false, unique = false)
     private int assists;
-
-    @Column(name = "plus_minus", nullable = false, unique = false)
     private int plusMinus;
-
-    @Column(name = "shots", nullable = false, unique = false)
     private int shots;
-
-    @Column(name = "good_passes", nullable = false, unique = false)
     private int goodPasses;
-
-    @Column(name = "bad_passes", nullable = false, unique = false)
     private int badPasses;
-
-    @Column(name = "recovered_pucks", nullable = false, unique = false)
     private int recoveredPucks;
-
-    @Column(name = "penalty_mins", nullable = false, unique = false)
     private int penaltyMins;
-
-    @Column(name = "penalty_shot_goals", nullable = false, unique = false)
     private int penaltyShotGoals;
-
-    @Column(name = "penalty_shot_misses", nullable = false, unique = false)
     private int penaltyShotMisses;
 
-    public PlayerStats() {
-
-    }
-
-    public PlayerStats(Player player, int gamesPlayed, int points, int goals, int assists, int plusMinus, int shots,
+    public PlayerStatsDTO(long id, PlayerDTO player, int gamesPlayed, int points, int goals, int assists, int plusMinus,
+            int shots,
             int goodPasses,
             int badPasses, int recoveredPucks, int penaltyMins, int penaltyShotGoals, int penaltyShotMisses) {
+        this.id = id;
         this.player = player;
         this.gamesPlayed = gamesPlayed;
         this.points = points;
@@ -83,11 +37,15 @@ public class PlayerStats {
         this.penaltyShotMisses = penaltyShotMisses;
     }
 
-    public Player getPlayer() {
+    public long getId() {
+        return this.id;
+    }
+
+    public PlayerDTO getPlayer() {
         return this.player;
     }
 
-    public void setPlayer(Player player) {
+    public void setPlayer(PlayerDTO player) {
         this.player = player;
     }
 
@@ -185,14 +143,5 @@ public class PlayerStats {
 
     public void setPenaltyShotMisses(int penaltyShotMisses) {
         this.penaltyShotMisses = penaltyShotMisses;
-    }
-
-    public PlayerStatsDTO toDTO() {
-        PlayerStatsDTO playerStatsDTO = new PlayerStatsDTO(this.id, this.player.toDTOWithoutStats(), this.gamesPlayed,
-                this.points,
-                this.goals, this.assists, this.plusMinus, this.shots, this.goodPasses, this.badPasses,
-                this.recoveredPucks, this.penaltyMins, this.penaltyShotGoals, this.penaltyShotMisses);
-
-        return playerStatsDTO;
     }
 }

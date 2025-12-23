@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.ikerveiga.app.DTO.PlayerDTO;
 import com.ikerveiga.app.entity.Player;
@@ -31,9 +32,7 @@ public class PlayerController {
         try {
             players = playerService.getPlayers();
             for (Player player : players) {
-                PlayerDTO playerDTO = new PlayerDTO(player.getId(), player.getName(), player.getLastName1(),
-                        player.getLastName2(),
-                        player.getPhoto(), player.getMatches());
+                PlayerDTO playerDTO = player.toDTO();
                 playersDTO.add(playerDTO);
             }
 
@@ -43,6 +42,21 @@ public class PlayerController {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             } else {
                 e.printStackTrace();
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
+        }
+    }
+
+    @GetMapping("/players/{id}")
+    public ResponseEntity<PlayerDTO> getPlayer(@PathVariable("id") long id) {
+        try {
+            Player player = playerService.getPlayer(id);
+            PlayerDTO playerDTO = player.toDTO();
+            return ResponseEntity.ok(playerDTO);
+        } catch (RuntimeException e) {
+            if (e.getMessage().equals("No se ha encontrado al jugador")) {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            } else {
                 return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             }
         }

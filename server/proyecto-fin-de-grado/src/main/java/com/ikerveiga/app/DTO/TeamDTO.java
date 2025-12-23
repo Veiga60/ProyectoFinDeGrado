@@ -2,12 +2,18 @@ package com.ikerveiga.app.DTO;
 
 public class TeamDTO {
 
+    private long id;
     private String name;
     private String logo;
 
-    public TeamDTO(String name, String logo) {
+    public TeamDTO(long id, String name, String logo) {
+        this.id = id;
         this.name = name;
         this.logo = logo;
+    }
+
+    public long getId() {
+        return this.id;
     }
 
     public String getName() {

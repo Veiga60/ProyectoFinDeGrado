@@ -4,25 +4,22 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
-import com.ikerveiga.app.entity.Player;
-import com.ikerveiga.app.entity.Team;
-
 public class MatchDTO {
 
     private long id;
-    private Team localTeam;
+    private TeamDTO localTeam;
     private Integer localTeamGoals;
-    private Team visitingTeam;
+    private TeamDTO visitingTeam;
     private Integer visitingTeamGoals;
     private LocalDate date;
     private LocalTime time;
     private boolean isPlayed;
     private Long bonusPoint;
-    private List<Player> players;
+    private List<PlayerDTO> players;
 
-    public MatchDTO(Team localTeam, Integer localTeamGoals, Team visitingTeam, Integer visitingTeamGoals,
+    public MatchDTO(TeamDTO localTeam, Integer localTeamGoals, TeamDTO visitingTeam, Integer visitingTeamGoals,
             LocalDate date,
-            LocalTime time, boolean isPlayed, Long bonusPoint, List<Player> players) {
+            LocalTime time, boolean isPlayed, Long bonusPoint, List<PlayerDTO> players) {
         this.localTeam = localTeam;
         this.localTeamGoals = localTeamGoals;
         this.visitingTeam = visitingTeam;
@@ -34,8 +31,8 @@ public class MatchDTO {
         this.players = players;
     }
 
-    public MatchDTO(long id, Team localTeam, Integer localTeamGoals, Team visitingTeam, Integer visitingTeamGoals,
-            LocalDate date, LocalTime time, boolean isPlayed, Long bonusPoint, List<Player> players) {
+    public MatchDTO(long id, TeamDTO localTeam, Integer localTeamGoals, TeamDTO visitingTeam, Integer visitingTeamGoals,
+            LocalDate date, LocalTime time, boolean isPlayed, Long bonusPoint, List<PlayerDTO> players) {
         this.id = id;
         this.localTeam = localTeam;
         this.localTeamGoals = localTeamGoals;
@@ -52,11 +49,11 @@ public class MatchDTO {
         return this.id;
     }
 
-    public Team getLocalTeam() {
+    public TeamDTO getLocalTeam() {
         return this.localTeam;
     }
 
-    public void setLocalTeam(Team localTeam) {
+    public void setLocalTeam(TeamDTO localTeam) {
         this.localTeam = localTeam;
     }
 
@@ -76,11 +73,11 @@ public class MatchDTO {
         this.visitingTeamGoals = visitingTeamGoals;
     }
 
-    public Team getVisitingTeam() {
+    public TeamDTO getVisitingTeam() {
         return this.visitingTeam;
     }
 
-    public void setVisitingTeam(Team visitingTeam) {
+    public void setVisitingTeam(TeamDTO visitingTeam) {
         this.visitingTeam = visitingTeam;
     }
 
@@ -116,11 +113,11 @@ public class MatchDTO {
         this.bonusPoint = bonusPoint;
     }
 
-    public List<Player> getPlayers() {
+    public List<PlayerDTO> getPlayers() {
         return this.players;
     }
 
-    public void setPlayers(List<Player> players) {
+    public void setPlayers(List<PlayerDTO> players) {
         this.players = players;
     }
 }

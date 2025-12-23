@@ -2,7 +2,11 @@ package com.ikerveiga.app.entity;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
+
+import com.ikerveiga.app.DTO.MatchDTO;
+import com.ikerveiga.app.DTO.PlayerDTO;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -145,5 +149,18 @@ public class Match {
 
     public void setPlayers(List<Player> players) {
         this.players = players;
+    }
+
+    public MatchDTO toDTO() {
+        List<PlayerDTO> playersDTO = new ArrayList<>();
+        for (Player player : this.players) {
+            playersDTO.add(player.toDTO());
+        }
+
+        MatchDTO matchDTO = new MatchDTO(this.id, this.localTeam.toDTO(), this.localTeamGoals,
+                this.visitingTeam.toDTO(),
+                this.visitingTeamGoals, this.date, this.time, this.isPlayed, this.bonusPoint, playersDTO);
+
+        return matchDTO;
     }
 }
