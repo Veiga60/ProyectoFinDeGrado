@@ -1,0 +1,29 @@
+#contentDiv {
+    border: 2px solid black;
+    width: 100%;
+}
+
+#playerInfoDiv {
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+}
+
+#playerDetailsDiv {
+    display: flex;
+    flex-direction: row;
+}
+
+#playerPhotoDiv {
+    display: inline-block;
+}
+
+#playerName {
+    font-family: Inria Sans;
+    color: black;
+    font-weight: bold;
+}
+
+table {
+    color: black;
+}

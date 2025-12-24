@@ -37,6 +37,25 @@ public class PlayerStatsDTO {
         this.penaltyShotMisses = penaltyShotMisses;
     }
 
+    public PlayerStatsDTO(long id, int gamesPlayed, int points, int goals, int assists, int plusMinus,
+            int shots,
+            int goodPasses,
+            int badPasses, int recoveredPucks, int penaltyMins, int penaltyShotGoals, int penaltyShotMisses) {
+        this.id = id;
+        this.gamesPlayed = gamesPlayed;
+        this.points = points;
+        this.goals = goals;
+        this.assists = assists;
+        this.plusMinus = plusMinus;
+        this.shots = shots;
+        this.goodPasses = goodPasses;
+        this.badPasses = badPasses;
+        this.recoveredPucks = recoveredPucks;
+        this.penaltyMins = penaltyMins;
+        this.penaltyShotGoals = penaltyShotGoals;
+        this.penaltyShotMisses = penaltyShotMisses;
+    }
+
     public long getId() {
         return this.id;
     }

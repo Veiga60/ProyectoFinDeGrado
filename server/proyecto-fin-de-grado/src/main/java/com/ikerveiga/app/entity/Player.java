@@ -118,7 +118,7 @@ public class Player {
         }
 
         PlayerDTO playerDTO = new PlayerDTO(this.id, this.name, this.lastName1, this.lastName2, this.photo, matchesDTO,
-                this.stats.toDTO());
+                this.stats.toDTOWithoutPlayer());
 
         return playerDTO;
     }
