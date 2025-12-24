@@ -3,6 +3,7 @@ package com.ikerveiga.app.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.ikerveiga.app.PlayerType;
 import com.ikerveiga.app.DTO.MatchDTO;
 import com.ikerveiga.app.DTO.PlayerDTO;
 
@@ -38,25 +39,45 @@ public class Player {
     @Column(name = "player_photo", nullable = true, unique = false)
     private String photo;
 
+    @Column(name = "player_type", nullable = false, unique = false)
+    private PlayerType playerType;
+
     @ManyToMany
     @JoinTable(name = "player_match", joinColumns = @JoinColumn(name = "player_id"), inverseJoinColumns = @JoinColumn(name = "match_id"))
     private List<Match> matches;
 
     @OneToOne(mappedBy = "player")
-    private PlayerStats stats;
+    private PlayerStats playerStats;
+
+    @OneToOne(mappedBy = "goalie")
+    private GoalieStats goalieStats;
 
     public Player() {
 
     }
 
-    public Player(String name, String lastName1, String lastName2, String photo, List<Match> matches,
-            PlayerStats stats) {
+    public Player(String name, String lastName1, String lastName2, String photo, PlayerType playerType,
+            List<Match> matches,
+            PlayerStats playerStats) {
         this.name = name;
         this.lastName1 = lastName1;
         this.lastName2 = lastName2;
         this.photo = photo;
+        this.playerType = playerType;
         this.matches = matches;
-        this.stats = stats;
+        this.playerStats = playerStats;
+    }
+
+    public Player(String name, String lastName1, String lastName2, String photo, PlayerType playerType,
+            List<Match> matches,
+            GoalieStats goalieStats) {
+        this.name = name;
+        this.lastName1 = lastName1;
+        this.lastName2 = lastName2;
+        this.photo = photo;
+        this.playerType = playerType;
+        this.matches = matches;
+        this.goalieStats = goalieStats;
     }
 
     public long getId() {
@@ -95,6 +116,10 @@ public class Player {
         this.photo = photo;
     }
 
+    public PlayerType getPlayerType() {
+        return this.playerType;
+    }
+
     public List<Match> getMatches() {
         return this.matches;
     }
@@ -104,11 +129,11 @@ public class Player {
     }
 
     public PlayerStats getStats() {
-        return this.getStats();
+        return this.playerStats;
     }
 
-    public void setStats(PlayerStats stats) {
-        this.stats = stats;
+    public void setPlayerStats(PlayerStats playerStats) {
+        this.playerStats = playerStats;
     }
 
     public PlayerDTO toDTO() {
@@ -117,8 +142,16 @@ public class Player {
             matchesDTO.add(match.toDTO());
         }
 
-        PlayerDTO playerDTO = new PlayerDTO(this.id, this.name, this.lastName1, this.lastName2, this.photo, matchesDTO,
-                this.stats.toDTOWithoutPlayer());
+        PlayerDTO playerDTO;
+        if (this.playerType.equals(PlayerType.RINK_PLAYER)) {
+            playerDTO = new PlayerDTO(this.id, this.name, this.lastName1, this.lastName2, this.photo, this.playerType,
+                    matchesDTO,
+                    this.playerStats.toDTOWithoutPlayer());
+        } else {
+            playerDTO = new PlayerDTO(this.id, this.name, this.lastName1, this.lastName2, this.photo, this.playerType,
+                    matchesDTO,
+                    this.goalieStats.toDTOWithoutGoalie());
+        }
 
         return playerDTO;
     }
@@ -129,7 +162,8 @@ public class Player {
             matchesDTO.add(match.toDTO());
         }
 
-        PlayerDTO playerDTO = new PlayerDTO(this.id, this.name, this.lastName1, this.lastName2, this.photo, matchesDTO);
+        PlayerDTO playerDTO = new PlayerDTO(this.id, this.name, this.lastName1, this.lastName2, this.photo,
+                this.playerType, matchesDTO);
 
         return playerDTO;
     }
