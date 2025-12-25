@@ -1,5 +1,6 @@
 package com.ikerveiga.app.DTO;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import com.ikerveiga.app.PlayerType;
@@ -10,67 +11,84 @@ public class PlayerDTO {
     private String name;
     private String lastName1;
     private String lastName2;
+    private LocalDate birthDate;
+    private int number;
     private String photo;
     private PlayerType playerType;
     private List<MatchDTO> matches;
     private PlayerStatsDTO playerStats;
     private GoalieStatsDTO goalieStats;
 
-    public PlayerDTO(String name, String lastName1, String lastName2, String photo, PlayerType playerType,
+    public PlayerDTO(String name, String lastName1, String lastName2, LocalDate birthDate, int number, String photo,
+            PlayerType playerType,
             List<MatchDTO> matches,
             PlayerStatsDTO playerStats) {
         this.name = name;
         this.lastName1 = lastName1;
         this.lastName2 = lastName2;
         this.photo = photo;
+        this.birthDate = birthDate;
+        this.number = number;
         this.playerType = playerType;
         this.matches = matches;
         this.playerStats = playerStats;
     }
 
-    public PlayerDTO(String name, String lastName1, String lastName2, String photo, PlayerType playerType,
+    public PlayerDTO(String name, String lastName1, String lastName2, LocalDate birthDate, int number, String photo,
+            PlayerType playerType,
             List<MatchDTO> matches,
             GoalieStatsDTO goalieStats) {
         this.name = name;
         this.lastName1 = lastName1;
         this.lastName2 = lastName2;
+        this.birthDate = birthDate;
+        this.number = number;
         this.photo = photo;
         this.playerType = playerType;
         this.matches = matches;
         this.goalieStats = goalieStats;
     }
 
-    public PlayerDTO(long id, String name, String lastName1, String lastName2, String photo, PlayerType playerType,
+    public PlayerDTO(long id, String name, String lastName1, String lastName2, LocalDate birthDate, int number,
+            String photo, PlayerType playerType,
             List<MatchDTO> matches,
             PlayerStatsDTO playerStats) {
         this.id = id;
         this.name = name;
         this.lastName1 = lastName1;
         this.lastName2 = lastName2;
+        this.birthDate = birthDate;
+        this.number = number;
         this.photo = photo;
         this.playerType = playerType;
         this.matches = matches;
         this.playerStats = playerStats;
     }
 
-    public PlayerDTO(long id, String name, String lastName1, String lastName2, String photo, PlayerType playerType,
+    public PlayerDTO(long id, String name, String lastName1, String lastName2, LocalDate birthDate, int number,
+            String photo, PlayerType playerType,
             List<MatchDTO> matches,
             GoalieStatsDTO goalieStats) {
         this.id = id;
         this.name = name;
         this.lastName1 = lastName1;
         this.lastName2 = lastName2;
+        this.birthDate = birthDate;
+        this.number = number;
         this.photo = photo;
         this.playerType = playerType;
         this.matches = matches;
         this.goalieStats = goalieStats;
     }
 
-    public PlayerDTO(long id, String name, String lastName1, String lastName2, String photo, PlayerType playerType,
+    public PlayerDTO(long id, String name, String lastName1, String lastName2, LocalDate birthDate, int number,
+            String photo, PlayerType playerType,
             List<MatchDTO> matches) {
         this.name = name;
         this.lastName1 = lastName1;
         this.lastName2 = lastName2;
+        this.birthDate = birthDate;
+        this.number = number;
         this.photo = photo;
         this.playerType = playerType;
         this.matches = matches;
@@ -102,6 +120,22 @@ public class PlayerDTO {
 
     public void setLastName2(String lastName2) {
         this.lastName2 = lastName2;
+    }
+
+    public LocalDate getBirthDate() {
+        return this.birthDate;
+    }
+
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public int getNumber() {
+        return this.number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
     }
 
     public String getPhoto() {

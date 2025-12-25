@@ -24,5 +24,8 @@
 }
 
 #playerName {
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: medium;
     margin: 0;
 }

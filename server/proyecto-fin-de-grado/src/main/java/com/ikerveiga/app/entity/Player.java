@@ -1,5 +1,6 @@
 package com.ikerveiga.app.entity;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,6 +37,12 @@ public class Player {
     @Column(name = "player_lastName2", nullable = false, unique = false)
     private String lastName2;
 
+    @Column(name = "player_birth_date", nullable = false, unique = false)
+    private LocalDate birthDate;
+
+    @Column(name = "player_number", nullable = false, unique = false)
+    private int number;
+
     @Column(name = "player_photo", nullable = true, unique = false)
     private String photo;
 
@@ -56,24 +63,30 @@ public class Player {
 
     }
 
-    public Player(String name, String lastName1, String lastName2, String photo, PlayerType playerType,
+    public Player(String name, String lastName1, String lastName2, LocalDate birthDate, int number, String photo,
+            PlayerType playerType,
             List<Match> matches,
             PlayerStats playerStats) {
         this.name = name;
         this.lastName1 = lastName1;
         this.lastName2 = lastName2;
+        this.birthDate = birthDate;
+        this.number = number;
         this.photo = photo;
         this.playerType = playerType;
         this.matches = matches;
         this.playerStats = playerStats;
     }
 
-    public Player(String name, String lastName1, String lastName2, String photo, PlayerType playerType,
+    public Player(String name, String lastName1, String lastName2, LocalDate birthDate, int number, String photo,
+            PlayerType playerType,
             List<Match> matches,
             GoalieStats goalieStats) {
         this.name = name;
         this.lastName1 = lastName1;
         this.lastName2 = lastName2;
+        this.birthDate = birthDate;
+        this.number = number;
         this.photo = photo;
         this.playerType = playerType;
         this.matches = matches;
@@ -144,11 +157,13 @@ public class Player {
 
         PlayerDTO playerDTO;
         if (this.playerType.equals(PlayerType.RINK_PLAYER)) {
-            playerDTO = new PlayerDTO(this.id, this.name, this.lastName1, this.lastName2, this.photo, this.playerType,
+            playerDTO = new PlayerDTO(this.id, this.name, this.lastName1, this.lastName2, this.birthDate, this.number,
+                    this.photo, this.playerType,
                     matchesDTO,
                     this.playerStats.toDTOWithoutPlayer());
         } else {
-            playerDTO = new PlayerDTO(this.id, this.name, this.lastName1, this.lastName2, this.photo, this.playerType,
+            playerDTO = new PlayerDTO(this.id, this.name, this.lastName1, this.lastName2, this.birthDate, this.number,
+                    this.photo, this.playerType,
                     matchesDTO,
                     this.goalieStats.toDTOWithoutGoalie());
         }
@@ -162,7 +177,8 @@ public class Player {
             matchesDTO.add(match.toDTO());
         }
 
-        PlayerDTO playerDTO = new PlayerDTO(this.id, this.name, this.lastName1, this.lastName2, this.photo,
+        PlayerDTO playerDTO = new PlayerDTO(this.id, this.name, this.lastName1, this.lastName2, this.birthDate,
+                this.number, this.photo,
                 this.playerType, matchesDTO);
 
         return playerDTO;
