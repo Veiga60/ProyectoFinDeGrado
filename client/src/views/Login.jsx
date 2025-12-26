@@ -30,6 +30,10 @@ function Login() {
         }
     }
 
+    const googleLogin = async () => {
+        window.location.href = 'http://localhost:8081/oauth2/authorization/google'
+    }
+
     return (
         <>
             <Header />
@@ -53,6 +57,9 @@ function Login() {
                 </div>
                 <div id='loginButtonDiv'>
                     <button onClick={login}>INICIAR SESIÓN</button>
+                </div>
+                <div id='googleLoginButtonDiv'>
+                    <button onClick={googleLogin}>Inicia sesión con Google</button>
                 </div>
                 <div id='notHaveAccountDiv'>
                     <Link to={"/signup"}><p id='notHaveAccount'>¿No tienes una cuenta? Crea una.</p></Link>

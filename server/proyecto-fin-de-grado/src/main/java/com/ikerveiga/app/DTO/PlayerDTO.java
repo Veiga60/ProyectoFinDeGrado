@@ -3,7 +3,7 @@ package com.ikerveiga.app.DTO;
 import java.time.LocalDate;
 import java.util.List;
 
-import com.ikerveiga.app.PlayerType;
+import com.ikerveiga.app.enums.PlayerType;
 
 public class PlayerDTO {
 

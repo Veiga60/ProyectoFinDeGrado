@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ikerveiga.app.PlayerType;
+import com.ikerveiga.app.enums.PlayerType;
 import com.ikerveiga.app.DTO.MatchDTO;
 import com.ikerveiga.app.DTO.PlayerDTO;
 

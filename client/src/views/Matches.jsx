@@ -10,7 +10,7 @@ export default function Matches() {
 
     const getMatches = async () => {
         try {
-            const response = await axios.get(`${SERVER_URL}/matches`)
+            const response = await axios.get(`${SERVER_URL}/matches`, { withCredentials: true })
             console.log(response.data);
             setMatches(response.data);
         } catch (error) {

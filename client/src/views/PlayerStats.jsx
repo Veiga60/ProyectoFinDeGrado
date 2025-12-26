@@ -13,7 +13,7 @@ export default function PlayerStats() {
 
     const getPlayer = async () => {
         try {
-            const response = await axios.get(`${SERVER_URL}/players/${id}`);
+            const response = await axios.get(`${SERVER_URL}/players/${id}`, { withCredentials: true });
             setPlayer(response.data);
             console.log(response.data);
         } catch (error) {

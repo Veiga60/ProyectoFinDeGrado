@@ -15,7 +15,7 @@ export default function Stats() {
 
     const getPlayers = async () => {
         try {
-            const response = await axios.get(`${SERVER_URL}/players`);
+            const response = await axios.get(`${SERVER_URL}/players`, { withCredentials: true });
             setPlayers(response.data);
         } catch (error) {
             console.log('Error al cargar los jugadores: ', error);
