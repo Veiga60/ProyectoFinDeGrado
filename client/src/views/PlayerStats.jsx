@@ -6,6 +6,12 @@ import '../style/PlayerStats.css'
 
 export default function PlayerStats() {
 
+    const axiosConfig = {
+        withCredentials: true,
+        headers: {
+            Authorization: "Bearer " + localStorage.getItem('token')
+        }
+    }
     const SERVER_URL = 'http://localhost:8081';
     const { id } = useParams();
 
@@ -13,7 +19,7 @@ export default function PlayerStats() {
 
     const getPlayer = async () => {
         try {
-            const response = await axios.get(`${SERVER_URL}/players/${id}`, { withCredentials: true });
+            const response = await axios.get(`${SERVER_URL}/players/${id}`, axiosConfig);
             setPlayer(response.data);
             console.log(response.data);
         } catch (error) {

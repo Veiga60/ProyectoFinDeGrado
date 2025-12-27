@@ -8,22 +8,23 @@ function Login() {
 
     const navigate = useNavigate()
 
-    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
     const SERVER_URL = "http://localhost:8081"
 
     const login = async () => {
         try {
-            const token = await axios.post(`${SERVER_URL}/login`,
+            const response = await axios.post(`${SERVER_URL}/login`,
                 {
-                    email: email,
+                    userName: username,
                     password: password
                 },
                 { headers: { 'Content-Type': 'application/json' } }
             )
+            console.log(response.data);
+            localStorage.setItem('token', response.data)
             navigate("/matches")
-            return token;
         } catch (error) {
             console.error("Failed logging in");
             console.error(error)
@@ -43,10 +44,10 @@ function Login() {
                 </div>
                 <div id='inputsDiv'>
                     <input
-                        id='emailInput'
+                        id='usernameInput'
                         type="text"
-                        placeholder='Email'
-                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder='Nombre de usuario'
+                        onChange={(e) => setUsername(e.target.value)}
                     />
                     <input
                         id='passwordInput'

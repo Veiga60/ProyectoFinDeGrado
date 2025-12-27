@@ -4,43 +4,53 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.ikerveiga.app.entity.User;
 import com.ikerveiga.app.DAO.UserRepository;
+import com.ikerveiga.app.JWT.JwtUtil;
 
 @Service
 public class UserService {
 
     UserRepository userDAO;
+    JwtUtil jwtUtil;
+    AuthenticationManager authManager;
+    PasswordEncoder passwordEncoder;
 
-    public Map<Long, User> activeUsers = new HashMap<Long, User>();
+    public Map<String, User> activeUsers = new HashMap<String, User>();
 
     @Autowired
-    public UserService(UserRepository userDAO) {
+    public UserService(UserRepository userDAO, JwtUtil jwtUtil, AuthenticationManager authManager,
+            PasswordEncoder passwordEncoder) {
         this.userDAO = userDAO;
+        this.jwtUtil = jwtUtil;
+        this.authManager = authManager;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public void signup(String name, String email, String password, boolean isCoach) {
         User existingUser = userDAO.findByEmail(email);
-        if(existingUser != null) {
+        if (existingUser != null) {
             throw new RuntimeException("User already exists");
         }
 
-        User user = new User(name, email, password, isCoach);
+        User user = new User(name, email, passwordEncoder.encode(password), isCoach);
         userDAO.save(user);
     }
 
-    public long login(String email, String password) {
-        User user = userDAO.findByEmail(email);
-        if(user == null) {
+    public String login(String userName, String password) {
+        User user = userDAO.findByUserName(userName);
+        if (user == null) {
             throw new RuntimeException("User with that email does not exist");
         }
 
-        if(!user.getPassword().equals(password)) {
+        if (!user.getPassword().equals(password)) {
             throw new RuntimeException("Incorrect password");
         } else {
-            long token = System.currentTimeMillis();
+            String token = jwtUtil.generateJwtToken(user.getUserName());
             activeUsers.put(token, user);
             return token;
         }

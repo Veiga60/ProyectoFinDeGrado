@@ -2,7 +2,6 @@ package com.ikerveiga.app.entity;
 
 import jakarta.persistence.*;
 
-
 @Entity
 @Table(name = "Users")
 public class User {
@@ -12,7 +11,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "user_Name", nullable = false, unique = false)
+    @Column(name = "user_Name", nullable = false, unique = true)
     private String userName;
 
     @Column(name = "user_email", nullable = false, unique = true)
@@ -25,7 +24,7 @@ public class User {
     private boolean isCoach;
 
     public User() {
-        
+
     }
 
     public User(String userName, String email, String password, boolean isCoach) {

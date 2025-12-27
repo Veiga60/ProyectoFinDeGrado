@@ -8,6 +8,12 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Stats() {
 
+    const axiosConfig = {
+        withCredentials: true,
+        headers: {
+            Authorization: "Bearer " + localStorage.getItem('token')
+        }
+    }
     const SERVER_URL = 'http://localhost:8081';
     const navigate = useNavigate();
 
@@ -15,7 +21,7 @@ export default function Stats() {
 
     const getPlayers = async () => {
         try {
-            const response = await axios.get(`${SERVER_URL}/players`, { withCredentials: true });
+            const response = await axios.get(`${SERVER_URL}/players`, axiosConfig);
             setPlayers(response.data);
         } catch (error) {
             console.log('Error al cargar los jugadores: ', error);
