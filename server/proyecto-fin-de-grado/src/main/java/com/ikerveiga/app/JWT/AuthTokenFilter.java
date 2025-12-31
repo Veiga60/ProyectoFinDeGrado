@@ -33,8 +33,6 @@ public class AuthTokenFilter extends OncePerRequestFilter {
             throws ServletException, IOException {
         try {
             String jwt = getJwtfromCookie(request);
-            System.out.println("Token" + jwt);
-            System.out.println("Token validated: " + jwtUtil.validateJwtToken(jwt));
             if (jwt != null && jwtUtil.validateJwtToken(jwt)) {
                 final String username = jwtUtil.getUserFromToken(jwt);
                 final UserDetails userDetails = userDetailsService.loadUserByUsername(username);

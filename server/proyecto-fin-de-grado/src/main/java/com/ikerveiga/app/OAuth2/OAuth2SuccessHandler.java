@@ -24,7 +24,9 @@ public class OAuth2SuccessHandler implements AuthenticationSuccessHandler {
 
         OAuth2User oAuth2User = (OAuth2User) authentication.getPrincipal();
 
-        oAuth2Service.handleLoginSuccess(oAuth2User.getName(), response);
+        oAuth2Service.handleLoginSuccess((String) oAuth2User.getAttributes().get("name"),
+                (String) oAuth2User.getAttributes().get("email"), response);
+
     }
 
 }

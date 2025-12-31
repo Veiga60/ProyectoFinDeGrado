@@ -47,13 +47,18 @@ public class UserService {
         userDAO.save(user);
     }
 
+    public void oauth2Signup(String username, String email) {
+        User user = new User(username, email, null, false);
+        userDAO.save(user);
+    }
+
     public String login(String userName, String password, HttpServletResponse response) {
         User user = userDAO.findByUserName(userName);
         if (user == null) {
             throw new RuntimeException("User with that username does not exist");
         }
 
-        if (!user.getPassword().equals(password)) {
+        if (!passwordEncoder.matches(password, user.getPassword())) {
             throw new RuntimeException("Incorrect password");
         } else {
             String token = jwtUtil.generateJwtToken(user.getUserName());

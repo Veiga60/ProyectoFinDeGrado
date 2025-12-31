@@ -55,7 +55,7 @@ public class SecurityConfig {
                         .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED)))
                 .cors(Customizer.withDefaults())
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests.requestMatchers("/login").permitAll())
-                .authorizeHttpRequests(authorizeRequests -> authorizeRequests.requestMatchers("/signup").permitAll())
+                .authorizeHttpRequests(authorizeRequests -> authorizeRequests.requestMatchers("/users").permitAll())
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests.requestMatchers("/health").permitAll())
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests.anyRequest().authenticated())
                 .oauth2Login(

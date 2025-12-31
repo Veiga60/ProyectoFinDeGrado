@@ -28,9 +28,17 @@ public class CustomUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("Ususario con nombre " + username + " no encontrado.");
         }
 
+        String password = null;
+
+        if (user.getPassword() != null) {
+            password = user.getPassword();
+        } else {
+            password = "";
+        }
+
         return new org.springframework.security.core.userdetails.User(
                 user.getUserName(),
-                user.getPassword(),
+                password,
                 Collections.emptyList());
     }
 
