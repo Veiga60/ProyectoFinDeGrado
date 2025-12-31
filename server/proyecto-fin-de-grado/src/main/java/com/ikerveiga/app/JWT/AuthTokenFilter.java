@@ -9,11 +9,13 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
+import org.springframework.web.util.WebUtils;
 
 import com.ikerveiga.app.service.CustomUserDetailsService;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -30,9 +32,11 @@ public class AuthTokenFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
         try {
-            String jwtToken = parseJwt(request);
-            if (jwtToken != null && jwtUtil.validateJwtToken(jwtToken)) {
-                final String username = jwtUtil.getUserFromToken(jwtToken);
+            String jwt = getJwtfromCookie(request);
+            System.out.println("Token" + jwt);
+            System.out.println("Token validated: " + jwtUtil.validateJwtToken(jwt));
+            if (jwt != null && jwtUtil.validateJwtToken(jwt)) {
+                final String username = jwtUtil.getUserFromToken(jwt);
                 final UserDetails userDetails = userDetailsService.loadUserByUsername(username);
 
                 UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
@@ -46,14 +50,14 @@ public class AuthTokenFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 
-    public String parseJwt(HttpServletRequest request) {
-        String authHeader = request.getHeader("Authorization");
+    public String getJwtfromCookie(HttpServletRequest request) {
+        Cookie cookie = WebUtils.getCookie(request, "jwt");
 
-        if (authHeader != null && authHeader.startsWith("Bearer")) {
-            return authHeader.substring(7);
+        if (cookie == null) {
+            return null;
         }
 
-        return null;
+        return cookie.getValue();
     }
 
 }

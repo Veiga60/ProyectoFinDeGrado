@@ -3,7 +3,6 @@ package com.ikerveiga.app.facade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,8 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ikerveiga.app.DTO.UserDTO;
 import com.ikerveiga.app.service.UserService;
 
+import jakarta.servlet.http.HttpServletResponse;
+
 @RestController
-@CrossOrigin("http://localhost:5173")
 public class UserController {
 
     UserService userService;
@@ -54,9 +54,9 @@ public class UserController {
      */
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody UserDTO userDTO) {
+    public ResponseEntity<String> login(@RequestBody UserDTO userDTO, HttpServletResponse response) {
         try {
-            String token = userService.login(userDTO.getUserName(), userDTO.getPassword());
+            String token = userService.login(userDTO.getUserName(), userDTO.getPassword(), response);
             return ResponseEntity.ok(token);
         } catch (RuntimeException e) {
             if (e.getMessage().equals("User with that email does not exist")) {

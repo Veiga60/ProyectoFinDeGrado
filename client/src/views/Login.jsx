@@ -20,10 +20,11 @@ function Login() {
                     userName: username,
                     password: password
                 },
-                { headers: { 'Content-Type': 'application/json' } }
+                {
+                    headers: { 'Content-Type': 'application/json' },
+                    withCredentials: true
+                }
             )
-            console.log(response.data);
-            localStorage.setItem('token', response.data)
             navigate("/matches")
         } catch (error) {
             console.error("Failed logging in");

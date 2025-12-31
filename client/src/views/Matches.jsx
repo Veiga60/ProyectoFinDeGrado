@@ -5,18 +5,12 @@ import axios from 'axios'
 
 export default function Matches() {
 
-    const axiosConfig = {
-        withCredentials: true,
-        headers: {
-            Authorization: "Bearer " + localStorage.getItem('token')
-        }
-    }
     const SERVER_URL = 'http://localhost:8081'
     const [matches, setMatches] = useState([]);
 
     const getMatches = async () => {
         try {
-            const response = await axios.get(`${SERVER_URL}/matches`, axiosConfig);
+            const response = await axios.get(`${SERVER_URL}/matches`, { withCredentials: true });
             console.log(response.data);
             setMatches(response.data);
         } catch (error) {

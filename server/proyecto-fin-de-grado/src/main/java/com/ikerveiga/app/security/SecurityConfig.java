@@ -1,4 +1,4 @@
-package com.ikerveiga.app;
+package com.ikerveiga.app.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -11,15 +11,14 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.ikerveiga.app.JWT.AuthEntryPointJwt;
 import com.ikerveiga.app.JWT.AuthTokenFilter;
+import com.ikerveiga.app.OAuth2.OAuth2SuccessHandler;
 import com.ikerveiga.app.service.CustomUserDetailsService;
 
 @Configuration
@@ -31,7 +30,7 @@ public class SecurityConfig {
     CustomUserDetailsService userDetailsService;
 
     @Autowired
-    private AuthEntryPointJwt unauthorizedHandler;
+    OAuth2SuccessHandler oAuth2SuccessHandler;
 
     @Bean
     public AuthTokenFilter authenticationJwtTokenFilter() {
@@ -59,9 +58,11 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests.requestMatchers("/signup").permitAll())
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests.requestMatchers("/health").permitAll())
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests.anyRequest().authenticated())
-                .oauth2Login(oauth2 -> oauth2.defaultSuccessUrl("http://localhost:5173/matches", true));
+                .oauth2Login(
+                        oauth2 -> oauth2.defaultSuccessUrl("http://localhost:5173/matches", true)
+                                .successHandler(oAuth2SuccessHandler))
+                .addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
         http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
-        http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
 }
