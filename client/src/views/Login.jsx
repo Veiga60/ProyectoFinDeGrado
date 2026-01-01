@@ -25,6 +25,7 @@ function Login() {
                     withCredentials: true
                 }
             )
+            localStorage.setItem('jwt', response.data);
             navigate("/matches")
         } catch (error) {
             console.error("Failed logging in");

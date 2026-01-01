@@ -59,8 +59,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests.requestMatchers("/health").permitAll())
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests.anyRequest().authenticated())
                 .oauth2Login(
-                        oauth2 -> oauth2.defaultSuccessUrl("http://localhost:5173/matches", true)
-                                .successHandler(oAuth2SuccessHandler))
+                        oauth2 -> oauth2.successHandler(oAuth2SuccessHandler))
                 .addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
         http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
         return http.build();

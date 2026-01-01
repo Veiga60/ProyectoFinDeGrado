@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ikerveiga.app.DTO.PlayerDTO;
+import com.ikerveiga.app.dto.PlayerDTO;
 import com.ikerveiga.app.entity.Player;
 import com.ikerveiga.app.service.PlayerService;
 

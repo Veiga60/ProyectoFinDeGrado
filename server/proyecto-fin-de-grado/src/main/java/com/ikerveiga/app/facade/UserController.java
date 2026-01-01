@@ -3,11 +3,13 @@ package com.ikerveiga.app.facade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ikerveiga.app.DTO.UserDTO;
+import com.ikerveiga.app.dto.UserDTO;
 import com.ikerveiga.app.service.UserService;
 
 import jakarta.servlet.http.HttpServletResponse;
@@ -20,6 +22,12 @@ public class UserController {
     @Autowired
     public UserController(UserService userService) {
         this.userService = userService;
+    }
+
+    @GetMapping("/me")
+    public ResponseEntity<Object> getAuthenticatedUser() {
+        Object authenticatedUser = userService.getAuthenticatedUser();
+        return ResponseEntity.ok(authenticatedUser);
     }
 
     /**
@@ -65,6 +73,20 @@ public class UserController {
                 return new ResponseEntity<>(HttpStatus.FORBIDDEN);
             } else {
                 e.printStackTrace();
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
+        }
+    }
+
+    @PostMapping("/me/role")
+    public ResponseEntity<Void> setIsCoachTrue(@RequestParam boolean isCoach, @RequestParam String email) {
+        try {
+            userService.setIsCoach(isCoach, email);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (RuntimeException e) {
+            if (e.getMessage().equals("Usuario no registrado")) {
+                return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+            } else {
                 return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             }
         }

@@ -5,6 +5,8 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -12,9 +14,10 @@ import com.ikerveiga.app.entity.User;
 
 import jakarta.servlet.http.HttpServletResponse;
 
-import com.ikerveiga.app.DAO.UserRepository;
 import com.ikerveiga.app.JWT.JwtUtil;
 import com.ikerveiga.app.cookies.CookiesService;
+import com.ikerveiga.app.dao.UserRepository;
+import com.ikerveiga.app.CustomUserDetails;
 
 @Service
 public class UserService {
@@ -35,6 +38,20 @@ public class UserService {
         this.authManager = authManager;
         this.passwordEncoder = passwordEncoder;
         this.cookiesService = cookiesService;
+    }
+
+    public Map<String, Object> getAuthenticatedUser() {
+        Map<String, Object> userInfo = new HashMap<>();
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+        String email = ((CustomUserDetails) authentication.getPrincipal()).getEmail();
+        Boolean isCoach = ((CustomUserDetails) authentication.getPrincipal()).getIsCoach();
+
+        userInfo.put("username", username);
+        userInfo.put("email", email);
+        userInfo.put("isCoach", isCoach);
+
+        return userInfo;
     }
 
     public void signup(String name, String email, String password, boolean isCoach) {
@@ -66,5 +83,15 @@ public class UserService {
             activeUsers.put(token, user);
             return token;
         }
+    }
+
+    public void setIsCoach(boolean isCoach, String email) {
+        User user = userDAO.findByEmail(email);
+
+        if (user == null) {
+            throw new RuntimeException("Usuario no registrado");
+        }
+
+        userDAO.setIsCoach(isCoach, email);
     }
 }

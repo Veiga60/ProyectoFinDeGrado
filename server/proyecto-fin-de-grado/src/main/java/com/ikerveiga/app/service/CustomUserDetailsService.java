@@ -6,7 +6,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.ikerveiga.app.DAO.UserRepository;
+import com.ikerveiga.app.CustomUserDetails;
+import com.ikerveiga.app.dao.UserRepository;
 import com.ikerveiga.app.entity.User;
 
 import io.jsonwebtoken.lang.Collections;
@@ -25,7 +26,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userDAO.findByUserName(username);
         if (user == null) {
-            throw new UsernameNotFoundException("Ususario con nombre " + username + " no encontrado.");
+            throw new UsernameNotFoundException("Usuario con nombre " + username + " no encontrado.");
         }
 
         String password = null;
@@ -36,9 +37,11 @@ public class CustomUserDetailsService implements UserDetailsService {
             password = "";
         }
 
-        return new org.springframework.security.core.userdetails.User(
+        return new CustomUserDetails(
                 user.getUserName(),
+                user.getEmail(),
                 password,
+                user.getIsCoach(),
                 Collections.emptyList());
     }
 

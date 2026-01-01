@@ -5,8 +5,8 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ikerveiga.app.DTO.MatchDTO;
-import com.ikerveiga.app.DTO.PlayerDTO;
+import com.ikerveiga.app.dto.MatchDTO;
+import com.ikerveiga.app.dto.PlayerDTO;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;

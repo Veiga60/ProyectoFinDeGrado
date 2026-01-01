@@ -4,12 +4,14 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.ikerveiga.app.dto.MatchDTO;
+import com.ikerveiga.app.dto.PlayerDTO;
 import com.ikerveiga.app.enums.PlayerType;
-import com.ikerveiga.app.DTO.MatchDTO;
-import com.ikerveiga.app.DTO.PlayerDTO;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -46,6 +48,7 @@ public class Player {
     @Column(name = "player_photo", nullable = true, unique = false)
     private String photo;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "player_type", nullable = false, unique = false)
     private PlayerType playerType;
 
