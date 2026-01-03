@@ -27,7 +27,7 @@ public class OAuth2Service {
     }
 
     public String handleLoginSuccess(String username, String email, HttpServletResponse response) {
-        User existingUser = userDAO.findByUserName(username);
+        User existingUser = userDAO.findByEmail(email);
 
         String url = (existingUser == null) ? ("http://localhost:5173/select_role") : ("http://localhost:5173/matches");
 
@@ -35,7 +35,7 @@ public class OAuth2Service {
             User user = new User(username, email, null, false);
             userDAO.save(user);
         }
-        String jwt = jwtUtil.generateJwtToken(username);
+        String jwt = jwtUtil.generateJwtToken(email);
         cookiesService.addHttpOnlyCookie("jwt", jwt, 7 * 24 * 60 * 60, response);
         try {
             response.sendRedirect(url);

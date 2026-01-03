@@ -1,5 +1,6 @@
 package com.ikerveiga.app.JWT;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Date;
 
 import javax.crypto.SecretKey;
@@ -8,26 +9,27 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.security.Keys;
 import jakarta.annotation.PostConstruct;
 
 @Component
 public class JwtUtil {
 
-    @Value("jwt.secret")
+    @Value("${jwt.secret}")
     private String jwtSecret;
 
-    private int jwtExpirationMs = 360000;
+    private int jwtExpirationMs = 30 * 60 * 1000;
 
     private SecretKey key;
 
     @PostConstruct
     public void initKey() {
-        this.key = Jwts.SIG.HS256.key().build();
+        this.key = Keys.hmacShaKeyFor(jwtSecret.getBytes(StandardCharsets.UTF_8));
     }
 
-    public String generateJwtToken(String userName) {
+    public String generateJwtToken(String email) {
         return Jwts.builder()
-                .subject(userName)
+                .subject(email)
                 .issuedAt(new Date())
                 .expiration(new Date(new Date().getTime() + jwtExpirationMs))
                 .signWith(key)

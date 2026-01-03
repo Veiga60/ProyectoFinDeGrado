@@ -64,12 +64,12 @@ public class UserController {
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody UserDTO userDTO, HttpServletResponse response) {
         try {
-            String token = userService.login(userDTO.getUserName(), userDTO.getPassword(), response);
+            String token = userService.login(userDTO.getEmail(), userDTO.getPassword(), response);
             return ResponseEntity.ok(token);
         } catch (RuntimeException e) {
-            if (e.getMessage().equals("User with that email does not exist")) {
+            if (e.getMessage().equals("No existe un usuario con ese email")) {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-            } else if (e.getMessage().equals("Incorrect password")) {
+            } else if (e.getMessage().equals("Contraseña incorrecta")) {
                 return new ResponseEntity<>(HttpStatus.FORBIDDEN);
             } else {
                 e.printStackTrace();

@@ -8,7 +8,7 @@ function Login() {
 
     const navigate = useNavigate()
 
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const SERVER_URL = "http://localhost:8081"
@@ -17,7 +17,7 @@ function Login() {
         try {
             const response = await axios.post(`${SERVER_URL}/login`,
                 {
-                    userName: username,
+                    email: email,
                     password: password
                 },
                 {
@@ -46,10 +46,10 @@ function Login() {
                 </div>
                 <div id='inputsDiv'>
                     <input
-                        id='usernameInput'
-                        type="text"
-                        placeholder='Nombre de usuario'
-                        onChange={(e) => setUsername(e.target.value)}
+                        id='emailInput'
+                        type="email"
+                        placeholder='Email'
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                     <input
                         id='passwordInput'

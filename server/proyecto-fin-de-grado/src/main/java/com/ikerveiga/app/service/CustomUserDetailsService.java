@@ -45,4 +45,26 @@ public class CustomUserDetailsService implements UserDetailsService {
                 Collections.emptyList());
     }
 
+    public UserDetails loadUserByEmail(String email) throws UsernameNotFoundException {
+        User user = userDAO.findByEmail(email);
+        if (user == null) {
+            throw new UsernameNotFoundException("Usuario con nombre " + email + " no encontrado.");
+        }
+
+        String password = null;
+
+        if (user.getPassword() != null) {
+            password = user.getPassword();
+        } else {
+            password = "";
+        }
+
+        return new CustomUserDetails(
+                user.getUserName(),
+                user.getEmail(),
+                password,
+                user.getIsCoach(),
+                Collections.emptyList());
+    }
+
 }

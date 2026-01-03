@@ -28,8 +28,6 @@ public class UserService {
     PasswordEncoder passwordEncoder;
     CookiesService cookiesService;
 
-    public Map<String, User> activeUsers = new HashMap<String, User>();
-
     @Autowired
     public UserService(UserRepository userDAO, JwtUtil jwtUtil, AuthenticationManager authManager,
             PasswordEncoder passwordEncoder, CookiesService cookiesService) {
@@ -69,19 +67,18 @@ public class UserService {
         userDAO.save(user);
     }
 
-    public String login(String userName, String password, HttpServletResponse response) {
-        User user = userDAO.findByUserName(userName);
+    public String login(String email, String password, HttpServletResponse response) {
+        User user = userDAO.findByEmail(email);
         if (user == null) {
-            throw new RuntimeException("User with that username does not exist");
+            throw new RuntimeException("No existe un usuario con ese email");
         }
 
         if (!passwordEncoder.matches(password, user.getPassword())) {
-            throw new RuntimeException("Incorrect password");
+            throw new RuntimeException("Contraseña incorrecta");
         } else {
-            String token = jwtUtil.generateJwtToken(user.getUserName());
-            cookiesService.addHttpOnlyCookie("jwt", token, 7 * 24 * 60 * 60, response);
-            activeUsers.put(token, user);
-            return token;
+            String jwt = jwtUtil.generateJwtToken(user.getEmail());
+            cookiesService.addHttpOnlyCookie("jwt", jwt, 7 * 24 * 60 * 60, response);
+            return jwt;
         }
     }
 

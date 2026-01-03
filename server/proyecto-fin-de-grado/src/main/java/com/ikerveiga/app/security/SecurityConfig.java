@@ -32,10 +32,8 @@ public class SecurityConfig {
     @Autowired
     OAuth2SuccessHandler oAuth2SuccessHandler;
 
-    @Bean
-    public AuthTokenFilter authenticationJwtTokenFilter() {
-        return new AuthTokenFilter();
-    }
+    @Autowired
+    AuthTokenFilter authenticationJwtTokenFilter;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -54,13 +52,12 @@ public class SecurityConfig {
                 .exceptionHandling(exception -> exception
                         .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED)))
                 .cors(Customizer.withDefaults())
-                .authorizeHttpRequests(authorizeRequests -> authorizeRequests.requestMatchers("/login").permitAll())
-                .authorizeHttpRequests(authorizeRequests -> authorizeRequests.requestMatchers("/users").permitAll())
-                .authorizeHttpRequests(authorizeRequests -> authorizeRequests.requestMatchers("/health").permitAll())
+                .authorizeHttpRequests(authorizeRequests -> authorizeRequests
+                        .requestMatchers("/login", "/users", "/health").permitAll())
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests.anyRequest().authenticated())
                 .oauth2Login(
                         oauth2 -> oauth2.successHandler(oAuth2SuccessHandler))
-                .addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(authenticationJwtTokenFilter, UsernamePasswordAuthenticationFilter.class);
         http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
         return http.build();
     }
