@@ -34,6 +34,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 0;
+    margin: 0;
 }
 
 #centralDiv {
@@ -49,6 +51,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 0;
+    margin: 0;
 }
 
 .teamImageDiv {
@@ -68,6 +72,8 @@ img {
     font-family: Inria Sans;
     font-weight: bold;
     font-size: xx-large;
+    margin: 0;
+    padding: 0;
 }
 
 #matchDate {
@@ -82,4 +88,18 @@ img {
     color: black;
     font-family: Inria Sans;
     margin: 0 auto;
+}
+
+#visitingTeamGoalsDiv {
+    padding: 0;
+    margin: 0;
+    border-radius: 10px;
+    width: 30px;
+}
+
+#localTeamGoalsDiv {
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+    width: 30px;
 }

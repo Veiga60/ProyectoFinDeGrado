@@ -35,6 +35,7 @@ export default function Matches() {
                         visitingTeamGoals={match.visitingTeamGoals}
                         date={match.date}
                         time={match.time}
+                        bonusPoint={match.bonusPoint}
                     />
                 )}
             </div>
