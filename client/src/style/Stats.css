@@ -39,22 +39,15 @@
     outline: none;
 }
 
-/* .react-tabs__tab:focus:after {
-    content: '';
-    position: absolute;
-    height: 5px;
-    left: -4px;
-    right: -4px;
-    bottom: -5px;
-    background: #fff;
-} */
-
 .react-tabs__tab-panel {
     display: none;
 }
 
 .react-tabs__tab-panel--selected {
-    display: block;
+    width: 1500px;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
     border: 1px solid rgb(7, 78, 200);
     margin-top: 0;
     background-color: white;
@@ -65,11 +58,14 @@
     font-family: Inria Sans;
 }
 
-.tabText {
-    color: black;
-}
-
 #tabsDiv {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
+}
+
+#playersTab {
+    border: 2px solid red;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
 }

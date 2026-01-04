@@ -47,7 +47,7 @@ export default function Stats() {
                         <Tab>Jugadores</Tab>
                         <Tab>Equipo</Tab>
                     </TabList>
-                    <TabPanel className='tabText'>
+                    <TabPanel id='playersTab'>
                         {players.map(player =>
                             <PlayerCard
                                 key={player.id}
@@ -56,7 +56,7 @@ export default function Stats() {
                             />
                         )}
                     </TabPanel>
-                    <TabPanel className='tabText'>
+                    <TabPanel id='teamTab'>
                         {teamStats.points}
                     </TabPanel>
                 </Tabs>
