@@ -72,7 +72,7 @@ button:hover {
 }
 
 #notHaveAccountDiv {
-    margin-top: 3.5em;
+    margin-top: 2em;
 }
 
 #notHaveAccount {
@@ -86,4 +86,28 @@ button:hover {
 #notHaveAccount:hover {
     color: rgb(0, 162, 255);
     cursor: pointer;
+}
+
+#googleLoginButtonDiv {
+    margin-top: 1.1em;
+    display: flex;
+    justify-content: center;
+}
+
+#googleButton {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background-color: white;
+    border: 1px solid rgb(7, 78, 200);
+    color: rgb(7, 78, 200);
+}
+
+#googleLogo {
+    width: 18%;
+    left: 0;
+}
+
+#loginGoogleText {
+    font-size: large;
 }

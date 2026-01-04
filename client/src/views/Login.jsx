@@ -62,7 +62,7 @@ function Login() {
                     <button onClick={login}>INICIAR SESIÓN</button>
                 </div>
                 <div id='googleLoginButtonDiv'>
-                    <button onClick={googleLogin}>Inicia sesión con Google</button>
+                    <button id='googleButton' onClick={googleLogin}><img id='googleLogo' src={'/google.png'} alt="Google" /><p id='loginGoogleText'>Continuar con Google</p></button>
                 </div>
                 <div id='notHaveAccountDiv'>
                     <Link to={"/signup"}><p id='notHaveAccount'>¿No tienes una cuenta? Crea una.</p></Link>
