@@ -15,9 +15,9 @@ export default function Match({ localTeam, localTeamGoals, visitingTeam, visitin
                         <p className='matchGoals'>{localTeamGoals}</p>
                     </div>
                     <div id='centralDiv'>
-                        <p id='matchDate'>{date}</p>
+                        <p id='matchDate'>{date.split('-').reverse().join('/')}</p>
                         <p className='matchText'> - </p>
-                        <p id='matchTime'>{time}</p>
+                        <p id='matchTime'>{time.substring(0, 5)}</p>
                     </div>
                     <div id='visitingTeamGoalsDiv'>
                         <p className='matchGoals'>{visitingTeamGoals}</p>
