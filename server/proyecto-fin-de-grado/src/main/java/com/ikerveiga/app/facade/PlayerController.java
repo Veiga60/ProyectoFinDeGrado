@@ -32,7 +32,7 @@ public class PlayerController {
         try {
             players = playerService.getPlayers();
             for (Player player : players) {
-                PlayerDTO playerDTO = player.toDTO();
+                PlayerDTO playerDTO = player.toDTOWithoutStats();
                 playersDTO.add(playerDTO);
             }
 

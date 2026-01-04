@@ -36,7 +36,7 @@ public class OAuth2Service {
             userDAO.save(user);
         }
         String jwt = jwtUtil.generateJwtToken(email);
-        cookiesService.addHttpOnlyCookie("jwt", jwt, 7 * 24 * 60 * 60, response);
+        cookiesService.addHttpOnlyCookie("jwt", jwt, 30 * 60, response);
         try {
             response.sendRedirect(url);
         } catch (IOException e) {

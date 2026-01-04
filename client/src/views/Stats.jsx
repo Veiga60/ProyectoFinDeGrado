@@ -8,28 +8,34 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Stats() {
 
-    const axiosConfig = {
-        withCredentials: true,
-        headers: {
-            Authorization: "Bearer " + localStorage.getItem('token')
-        }
-    }
     const SERVER_URL = 'http://localhost:8081';
     const navigate = useNavigate();
 
     const [players, setPlayers] = useState([]);
+    const [teamStats, setTeamStats] = useState({});
 
     const getPlayers = async () => {
         try {
-            const response = await axios.get(`${SERVER_URL}/players`, axiosConfig);
+            const response = await axios.get(`${SERVER_URL}/players`, { withCredentials: true });
             setPlayers(response.data);
         } catch (error) {
             console.log('Error al cargar los jugadores: ', error);
         }
     }
 
+    const getTeamStats = async () => {
+        try {
+            const response = await axios.get(`${SERVER_URL}/team/stats`, { withCredentials: true });
+            setTeamStats(response.data);
+            console.log(response.data);
+        } catch (error) {
+            console.log('Error al cargar las estadísticas del equipo: ', error);
+        }
+    }
+
     useEffect(() => {
         getPlayers();
+        getTeamStats();
     }, []);
 
     return (
@@ -51,7 +57,7 @@ export default function Stats() {
                         )}
                     </TabPanel>
                     <TabPanel className='tabText'>
-                        EQUIPO
+                        {teamStats.points}
                     </TabPanel>
                 </Tabs>
             </div>

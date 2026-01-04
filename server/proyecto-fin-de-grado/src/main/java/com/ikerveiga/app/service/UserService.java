@@ -77,7 +77,7 @@ public class UserService {
             throw new RuntimeException("Contraseña incorrecta");
         } else {
             String jwt = jwtUtil.generateJwtToken(user.getEmail());
-            cookiesService.addHttpOnlyCookie("jwt", jwt, 7 * 24 * 60 * 60, response);
+            cookiesService.addHttpOnlyCookie("jwt", jwt, 30 * 60, response);
             return jwt;
         }
     }
