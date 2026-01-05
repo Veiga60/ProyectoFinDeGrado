@@ -84,6 +84,7 @@ public class PlayerDTO {
     public PlayerDTO(long id, String name, String lastName1, String lastName2, LocalDate birthDate, int number,
             String photo, PlayerType playerType,
             List<MatchDTO> matches) {
+        this.id = id;
         this.name = name;
         this.lastName1 = lastName1;
         this.lastName2 = lastName2;
