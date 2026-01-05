@@ -70,3 +70,12 @@ table {
     padding-top: 0;
     padding-bottom: 0;
 }
+
+.bodyCell {
+    font-family: Inria Sans;
+    font-weight: bold;
+}
+
+#tableBody {
+    background-color: white;
+}
