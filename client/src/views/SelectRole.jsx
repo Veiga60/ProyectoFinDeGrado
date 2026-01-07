@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../style/SelectRole.css'
 import axios from 'axios'
+import player from '../assets/images/player.png'
+import coach from '../assets/images/coach.png'
 
 export default function SelectRole() {
 
@@ -39,10 +41,10 @@ export default function SelectRole() {
         <>
             <div id="optionsDiv">
                 <div className="option" onClick={() => setCoachRole(true)}>
-                    <p className="selectText">ENTRENADOR</p>
+                    <img id='hockeyCoachPhoto' src={coach} alt="Coach" /><p className="selectText">ENTRENADOR</p>
                 </div>
                 <div className="option" onClick={() => navigate("/matches")}>
-                    <p className="selectText">JUGADOR</p>
+                    <img id='hockeyPlayerPhoto' src={player} alt="Player" /><p id='playerText' className="selectText">JUGADOR</p>
                 </div>
             </div>
         </>

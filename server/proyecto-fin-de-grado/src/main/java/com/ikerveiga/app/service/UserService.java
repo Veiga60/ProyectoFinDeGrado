@@ -82,6 +82,10 @@ public class UserService {
         }
     }
 
+    public void exit(HttpServletResponse response) {
+        cookiesService.deleteCookie("jwt", response);
+    }
+
     public void setIsCoach(boolean isCoach, String email) {
         User user = userDAO.findByEmail(email);
 

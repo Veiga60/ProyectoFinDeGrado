@@ -3,6 +3,7 @@ import Header from '../components/Header.jsx'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
+import googleLogo from '../assets/images/google.png'
 
 function Login() {
 
@@ -62,7 +63,7 @@ function Login() {
                     <button onClick={login}>INICIAR SESIÓN</button>
                 </div>
                 <div id='googleLoginButtonDiv'>
-                    <button id='googleButton' onClick={googleLogin}><img id='googleLogo' src={'/google.png'} alt="Google" /><p id='loginGoogleText'>Continuar con Google</p></button>
+                    <button id='googleButton' onClick={googleLogin}><img id='googleLogo' src={googleLogo} alt="Google" /><p id='loginGoogleText'>Continuar con Google</p></button>
                 </div>
                 <div id='notHaveAccountDiv'>
                     <Link to={"/signup"}><p id='notHaveAccount'>¿No tienes una cuenta? Crea una.</p></Link>

@@ -78,6 +78,17 @@ public class UserController {
         }
     }
 
+    @PostMapping("/exit")
+    public ResponseEntity<Void> exit(HttpServletResponse response) {
+        try {
+            userService.exit(response);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
+
     @PostMapping("/me/role")
     public ResponseEntity<Void> setIsCoachTrue(@RequestParam boolean isCoach, @RequestParam String email) {
         try {

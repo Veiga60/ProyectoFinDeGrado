@@ -56,7 +56,7 @@ export default function PlayerStats() {
                                                     <td className='headCell'><p>Tiros</p></td>
                                                     <td className='headCell'><p>Pucks recuperados</p></td>
                                                     <td className='headCell'><p>Pases completados</p></td>
-                                                    <td className='headCell'><p>Pases fallados</p></td>
+                                                    <td className='headCell'><p>Pases errados</p></td>
                                                     <td className='headCell'><p>Minutos sanción</p></td>
                                                     <td className='headCell'><p>Penaltis metidos</p></td>
                                                     <td className='headCell'><p>Penaltis fallados</p></td>
