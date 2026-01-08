@@ -9,6 +9,10 @@
     flex-direction: row;
 }
 
+#headerDiv:hover {
+    cursor: default;
+}
+
 #titleDiv {
     height: 80px;
     width: 400px;
