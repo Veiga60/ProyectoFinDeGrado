@@ -58,76 +58,76 @@ export default function Stats() {
                         )}
                     </TabPanel>
                     <TabPanel id='teamTab'>
-                        <div>
-                            <p>Puntos</p>
-                            <p>{(3 * teamStats.gamesWon) + teamStats.gamesTied + teamStats.bonusPoints}</p>
+                        <div className='statDiv'>
+                            <p className='statText'>Puntos</p>
+                            <p className='statValue'>{(3 * teamStats.gamesWon) + teamStats.gamesTied + teamStats.bonusPoints}</p>
                         </div>
-                        <div>
-                            <p>Partidos jugados</p>
-                            <p>{teamStats.gamesWon + teamStats.gamesLost + teamStats.gamesTied}</p>
+                        <div className='statDiv'>
+                            <p className='statText'>Partidos jugados</p>
+                            <p className='statValue'>{teamStats.gamesWon + teamStats.gamesLost + teamStats.gamesTied}</p>
                         </div>
-                        <div>
-                            <p>Partidos ganados</p>
-                            <p>{teamStats.gamesWon}</p>
+                        <div className='statDiv'>
+                            <p className='statText'>Partidos ganados</p>
+                            <p className='statValue'>{teamStats.gamesWon}</p>
                         </div>
-                        <div>
-                            <p>Partidos perdidos</p>
-                            <p>{teamStats.gamesLost}</p>
+                        <div className='statDiv'>
+                            <p className='statText'>Partidos perdidos</p>
+                            <p className='statValue'>{teamStats.gamesLost}</p>
                         </div>
-                        <div>
-                            <p>Partidos empatados</p>
-                            <p>{teamStats.gamesTied}</p>
+                        <div className='statDiv'>
+                            <p className='statText'>Partidos empatados</p>
+                            <p className='statValue'>{teamStats.gamesTied}</p>
                         </div>
-                        <div>
-                            <p>Bonus</p>
-                            <p>{teamStats.bonusPoints}</p>
+                        <div className='statDiv'>
+                            <p className='statText'>Bonus</p>
+                            <p className='statValue'>{teamStats.bonusPoints}</p>
                         </div>
-                        <div>
-                            <p>Goles a favor</p>
-                            <p>{teamStats.goalsFor}</p>
+                        <div className='statDiv'>
+                            <p className='statText'>Goles a favor</p>
+                            <p className='statValue'>{teamStats.goalsFor}</p>
                         </div>
-                        <div>
-                            <p>Goles en contra</p>
-                            <p>{teamStats.goalsAgainst}</p>
+                        <div className='statDiv'>
+                            <p className='statText'>Goles en contra</p>
+                            <p className='statValue'>{teamStats.goalsAgainst}</p>
                         </div>
-                        <div>
-                            <p>Goal average</p>
-                            <p>{teamStats.goalsFor - teamStats.goalsAgainst}</p>
+                        <div className='statDiv'>
+                            <p className='statText'>Goal average</p>
+                            <p className='statValue'>{teamStats.goalsFor - teamStats.goalsAgainst}</p>
                         </div>
-                        <div>
-                            <p>Power Play %</p>
-                            <p>{teamStats.powerPlayPercentage?.toFixed(2)}</p>
+                        <div className='statDiv'>
+                            <p className='statText'>Power Play %</p>
+                            <p className='statValue'>{teamStats.powerPlayPercentage?.toFixed(2)}</p>
                         </div>
-                        <div>
-                            <p>Penalty Kill %</p>
-                            <p>{teamStats.penaltyKillPercentage?.toFixed(2)}</p>
+                        <div className='statDiv'>
+                            <p className='statText'>Penalty Kill %</p>
+                            <p className='statValue'>{teamStats.penaltyKillPercentage?.toFixed(2)}</p>
                         </div>
-                        <div>
-                            <p>1vs0 +-</p>
-                            <p>{teamStats.oneVsZero}</p>
+                        <div className='statDiv'>
+                            <p className='statText'>1vs0 +-</p>
+                            <p className='statValue'>{teamStats.oneVsZero}</p>
                         </div>
-                        <div>
-                            <p>1vs1 +-</p>
-                            <p>{teamStats.oneVsOne}</p>
+                        <div className='statDiv'>
+                            <p className='statText'>1vs1 +-</p>
+                            <p className='statValue'>{teamStats.oneVsOne}</p>
                         </div>
-                        <div>
-                            <p>2vs1 +-</p>
-                            <p>{teamStats.twoVsOne}</p>
+                        <div className='statDiv'>
+                            <p className='statText'>2vs1 +-</p>
+                            <p className='statValue'>{teamStats.twoVsOne}</p>
                         </div>
-                        <div>
-                            <p>2vs2 +-</p>
-                            <p>{teamStats.twoVsTwo}</p>
+                        <div className='statDiv'>
+                            <p className='statText'>2vs2 +-</p>
+                            <p className='statValue'>{teamStats.twoVsTwo}</p>
                         </div>
-                        <div>
-                            <p>3vs1 +-</p>
-                            <p>{teamStats.threeVsOne}</p>
+                        <div className='statDiv'>
+                            <p className='statText'>3vs1 +-</p>
+                            <p className='statValue'>{teamStats.threeVsOne}</p>
                         </div>
-                        <div>
-                            <p>3vs2 +-</p>
-                            <p>{teamStats.threeVsTwo}</p>
+                        <div className='statDiv'>
+                            <p className='statText'>3vs2 +-</p>
+                            <p className='statValue'>{teamStats.threeVsTwo}</p>
                         </div>
-                        <div>
-                            <img src={logoMetropolitano} alt="Escudo Metropolitano HC" />
+                        <div id='logoImageDiv'>
+                            <img id='logoImage' src={logoMetropolitano} alt="Escudo Metropolitano HC" />
                         </div>
                     </TabPanel>
                 </Tabs>

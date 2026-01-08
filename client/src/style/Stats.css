@@ -44,13 +44,14 @@
 }
 
 .react-tabs__tab-panel--selected {
-    width: 1500px;
+    width: 1400px;
     display: grid;
     gap: 30px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
     border: 1px solid rgb(7, 78, 200);
     margin-top: 0;
     background-color: white;
+    justify-content: center;
 }
 
 #statsTabs {
@@ -68,4 +69,37 @@
     border: 2px solid red;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+}
+
+.statDiv {
+    height: fit-content;
+}
+
+.statText {
+    background-color: rgb(7, 78, 200);
+    font-family: Inria Sans;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.statValue {
+    margin-top: 0;
+    color: black;
+    font-weight: bold;
+    font-size: larger;
+}
+
+#logoImageDiv {
+    margin-left: auto;
+    width: 80%;
+    margin-right: auto;
+    padding: 0;
+}
+
+#logoImage {
+    margin: 0;
+    padding: 0;
 }
