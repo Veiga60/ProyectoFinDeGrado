@@ -6,7 +6,7 @@
 }
 
 #logoutImage {
-    width: 100%;
+    width: 80%;
     filter: brightness(100);
 }
 
@@ -35,6 +35,7 @@
     font-family: Inria Sans;
     font-weight: bold;
     font-size: large;
+    color: white;
 }
 
 .navbarSectionDiv {

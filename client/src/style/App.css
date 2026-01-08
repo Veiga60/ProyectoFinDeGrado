@@ -8,3 +8,7 @@
 body {
   background-color: rgb(235, 246, 255);
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}
