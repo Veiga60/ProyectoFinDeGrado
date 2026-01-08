@@ -8,9 +8,11 @@ export default defineConfig({
     port: 5173,
     strictPort: true,
     host: true,
-    origin: "http://localhost:5173",
     watch: {
       usePolling: true,
+    },
+    hmr: {
+      host: 'localhost',
     },
   },
 })
