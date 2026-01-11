@@ -7,7 +7,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.ikerveiga.app.CustomUserDetails;
+import com.ikerveiga.app.dao.OAuth2UserRepository;
 import com.ikerveiga.app.dao.UserRepository;
+import com.ikerveiga.app.entity.OAuth2User;
 import com.ikerveiga.app.entity.User;
 
 import io.jsonwebtoken.lang.Collections;
@@ -16,10 +18,12 @@ import io.jsonwebtoken.lang.Collections;
 public class CustomUserDetailsService implements UserDetailsService {
 
     UserRepository userDAO;
+    OAuth2UserRepository oAuth2UserDAO;
 
     @Autowired
-    public CustomUserDetailsService(UserRepository userDAO) {
+    public CustomUserDetailsService(UserRepository userDAO, OAuth2UserRepository oAuth2UserDAO) {
         this.userDAO = userDAO;
+        this.oAuth2UserDAO = oAuth2UserDAO;
     }
 
     @Override
@@ -47,24 +51,32 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     public UserDetails loadUserByEmail(String email) throws UsernameNotFoundException {
         User user = userDAO.findByEmail(email);
+
+        OAuth2User oAuth2user = null;
         if (user == null) {
+            oAuth2user = oAuth2UserDAO.findByEmail(email);
+        }
+
+        if (user == null && oAuth2user == null) {
             throw new UsernameNotFoundException("Usuario con nombre " + email + " no encontrado.");
         }
 
-        String password = null;
-
-        if (user.getPassword() != null) {
-            password = user.getPassword();
+        if (user != null) {
+            return new CustomUserDetails(
+                    user.getUserName(),
+                    user.getEmail(),
+                    user.getPassword(),
+                    user.getIsCoach(),
+                    Collections.emptyList());
         } else {
-            password = "";
+            return new CustomUserDetails(
+                    oAuth2user.getUsername(),
+                    oAuth2user.getEmail(),
+                    "",
+                    oAuth2user.getIsCoach(),
+                    Collections.emptyList());
         }
 
-        return new CustomUserDetails(
-                user.getUserName(),
-                user.getEmail(),
-                password,
-                user.getIsCoach(),
-                Collections.emptyList());
     }
 
 }
