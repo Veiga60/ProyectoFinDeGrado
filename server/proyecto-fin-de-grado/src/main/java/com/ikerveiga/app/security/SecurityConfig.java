@@ -26,39 +26,42 @@ import com.ikerveiga.app.service.CustomUserDetailsService;
 @EnableMethodSecurity
 public class SecurityConfig {
 
-    @Autowired
-    CustomUserDetailsService userDetailsService;
+        @Autowired
+        CustomUserDetailsService userDetailsService;
 
-    @Autowired
-    OAuth2SuccessHandler oAuth2SuccessHandler;
+        @Autowired
+        OAuth2SuccessHandler oAuth2SuccessHandler;
 
-    @Autowired
-    AuthTokenFilter authenticationJwtTokenFilter;
+        @Autowired
+        AuthTokenFilter authenticationJwtTokenFilter;
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+        @Bean
+        public PasswordEncoder passwordEncoder() {
+                return new BCryptPasswordEncoder();
+        }
 
-    @Bean
-    AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration)
-            throws Exception {
-        return authenticationConfiguration.getAuthenticationManager();
-    }
+        @Bean
+        AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration)
+                        throws Exception {
+                return authenticationConfiguration.getAuthenticationManager();
+        }
 
-    @Bean
-    SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf(csrf -> csrf.disable())
-                .exceptionHandling(exception -> exception
-                        .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED)))
-                .cors(Customizer.withDefaults())
-                .authorizeHttpRequests(authorizeRequests -> authorizeRequests
-                        .requestMatchers("/login", "/users", "/health").permitAll())
-                .authorizeHttpRequests(authorizeRequests -> authorizeRequests.anyRequest().authenticated())
-                .oauth2Login(
-                        oauth2 -> oauth2.successHandler(oAuth2SuccessHandler))
-                .addFilterBefore(authenticationJwtTokenFilter, UsernamePasswordAuthenticationFilter.class);
-        http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
-        return http.build();
-    }
+        @Bean
+        SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+                http.csrf(csrf -> csrf.disable())
+                                .exceptionHandling(exception -> exception
+                                                .authenticationEntryPoint(
+                                                                new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED)))
+                                .cors(Customizer.withDefaults())
+                                .authorizeHttpRequests(authorizeRequests -> authorizeRequests
+                                                .requestMatchers("/login", "/users", "/health").permitAll())
+                                .authorizeHttpRequests(
+                                                authorizeRequests -> authorizeRequests.anyRequest().authenticated())
+                                .oauth2Login(
+                                                oauth2 -> oauth2.successHandler(oAuth2SuccessHandler))
+                                .addFilterBefore(authenticationJwtTokenFilter,
+                                                UsernamePasswordAuthenticationFilter.class);
+                http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED));
+                return http.build();
+        }
 }

@@ -28,9 +28,6 @@ public class PlayerStats {
     @Column(name = "games_played", nullable = false, unique = false)
     private int gamesPlayed;
 
-    @Column(name = "points", nullable = false, unique = false)
-    private int points;
-
     @Column(name = "goals", nullable = false, unique = false)
     private int goals;
 
@@ -65,12 +62,11 @@ public class PlayerStats {
 
     }
 
-    public PlayerStats(Player player, int gamesPlayed, int points, int goals, int assists, int plusMinus, int shots,
+    public PlayerStats(Player player, int gamesPlayed, int goals, int assists, int plusMinus, int shots,
             int goodPasses,
             int badPasses, int recoveredPucks, int penaltyMins, int penaltyShotGoals, int penaltyShotMisses) {
         this.player = player;
         this.gamesPlayed = gamesPlayed;
-        this.points = points;
         this.goals = goals;
         this.assists = assists;
         this.plusMinus = plusMinus;
@@ -83,11 +79,10 @@ public class PlayerStats {
         this.penaltyShotMisses = penaltyShotMisses;
     }
 
-    public PlayerStats(int gamesPlayed, int points, int goals, int assists, int plusMinus, int shots,
+    public PlayerStats(int gamesPlayed, int goals, int assists, int plusMinus, int shots,
             int goodPasses,
             int badPasses, int recoveredPucks, int penaltyMins, int penaltyShotGoals, int penaltyShotMisses) {
         this.gamesPlayed = gamesPlayed;
-        this.points = points;
         this.goals = goals;
         this.assists = assists;
         this.plusMinus = plusMinus;
@@ -114,14 +109,6 @@ public class PlayerStats {
 
     public void setGamesPlayed(int gamesPlayed) {
         this.gamesPlayed = gamesPlayed;
-    }
-
-    public int getPoints() {
-        return this.points;
-    }
-
-    public void setPoints(int points) {
-        this.points = points;
     }
 
     public int getGoals() {
@@ -206,7 +193,6 @@ public class PlayerStats {
 
     public PlayerStatsDTO toDTO() {
         PlayerStatsDTO playerStatsDTO = new PlayerStatsDTO(this.id, this.player.toDTOWithoutStats(), this.gamesPlayed,
-                this.points,
                 this.goals, this.assists, this.plusMinus, this.shots, this.goodPasses, this.badPasses,
                 this.recoveredPucks, this.penaltyMins, this.penaltyShotGoals, this.penaltyShotMisses);
 
@@ -215,7 +201,6 @@ public class PlayerStats {
 
     public PlayerStatsDTO toDTOWithoutPlayer() {
         PlayerStatsDTO playerStatsDTO = new PlayerStatsDTO(this.id, this.gamesPlayed,
-                this.points,
                 this.goals, this.assists, this.plusMinus, this.shots, this.goodPasses, this.badPasses,
                 this.recoveredPucks, this.penaltyMins, this.penaltyShotGoals, this.penaltyShotMisses);
 

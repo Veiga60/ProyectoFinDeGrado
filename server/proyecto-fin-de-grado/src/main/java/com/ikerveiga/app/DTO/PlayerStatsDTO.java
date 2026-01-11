@@ -5,7 +5,6 @@ public class PlayerStatsDTO {
     private long id;
     private PlayerDTO player;
     private int gamesPlayed;
-    private int points;
     private int goals;
     private int assists;
     private int plusMinus;
@@ -17,14 +16,13 @@ public class PlayerStatsDTO {
     private int penaltyShotGoals;
     private int penaltyShotMisses;
 
-    public PlayerStatsDTO(long id, PlayerDTO player, int gamesPlayed, int points, int goals, int assists, int plusMinus,
+    public PlayerStatsDTO(long id, PlayerDTO player, int gamesPlayed, int goals, int assists, int plusMinus,
             int shots,
             int goodPasses,
             int badPasses, int recoveredPucks, int penaltyMins, int penaltyShotGoals, int penaltyShotMisses) {
         this.id = id;
         this.player = player;
         this.gamesPlayed = gamesPlayed;
-        this.points = points;
         this.goals = goals;
         this.assists = assists;
         this.plusMinus = plusMinus;
@@ -37,13 +35,12 @@ public class PlayerStatsDTO {
         this.penaltyShotMisses = penaltyShotMisses;
     }
 
-    public PlayerStatsDTO(long id, int gamesPlayed, int points, int goals, int assists, int plusMinus,
+    public PlayerStatsDTO(long id, int gamesPlayed, int goals, int assists, int plusMinus,
             int shots,
             int goodPasses,
             int badPasses, int recoveredPucks, int penaltyMins, int penaltyShotGoals, int penaltyShotMisses) {
         this.id = id;
         this.gamesPlayed = gamesPlayed;
-        this.points = points;
         this.goals = goals;
         this.assists = assists;
         this.plusMinus = plusMinus;
@@ -74,14 +71,6 @@ public class PlayerStatsDTO {
 
     public void setGamesPlayed(int gamesPlayed) {
         this.gamesPlayed = gamesPlayed;
-    }
-
-    public int getPoints() {
-        return this.points;
-    }
-
-    public void setPoints(int points) {
-        this.points = points;
     }
 
     public int getGoals() {

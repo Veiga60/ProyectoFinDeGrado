@@ -1,5 +1,7 @@
 package com.ikerveiga.app.entity;
 
+import com.ikerveiga.app.dto.UserDTO;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -23,15 +25,20 @@ public class User {
     @Column(name = "user_isCoach", nullable = false, unique = false)
     private boolean isCoach;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "player_id", referencedColumnName = "player_id")
+    private Player player;
+
     public User() {
 
     }
 
-    public User(String userName, String email, String password, boolean isCoach) {
+    public User(String userName, String email, String password, boolean isCoach, Player player) {
         this.userName = userName;
         this.email = email;
         this.password = password;
         this.isCoach = isCoach;
+        this.player = player;
     }
 
     public void setUserName(String userName) {
@@ -64,5 +71,12 @@ public class User {
 
     public boolean getIsCoach() {
         return this.isCoach;
+    }
+
+    public UserDTO toDTO() {
+        UserDTO userDTO = new UserDTO(this.id, this.userName, this.email, this.password, this.isCoach,
+                this.player.toDTOWithoutStats());
+
+        return userDTO;
     }
 }

@@ -46,6 +46,8 @@ public class UserController {
         } catch (RuntimeException e) {
             if (e.getMessage().equals("User already exists")) {
                 return new ResponseEntity<>(HttpStatus.CONFLICT);
+            } else if (e.getMessage().equals("User not authorized")) {
+                return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
             } else {
                 e.printStackTrace();
                 return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -64,12 +66,12 @@ public class UserController {
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody UserDTO userDTO, HttpServletResponse response) {
         try {
-            String token = userService.login(userDTO.getEmail(), userDTO.getPassword(), response);
+            String token = userService.login(userDTO.getUserName(), userDTO.getPassword(), response);
             return ResponseEntity.ok(token);
         } catch (RuntimeException e) {
-            if (e.getMessage().equals("No existe un usuario con ese email")) {
+            if (e.getMessage().equals("User does not exist")) {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-            } else if (e.getMessage().equals("Contraseña incorrecta")) {
+            } else if (e.getMessage().equals("Incorrect password")) {
                 return new ResponseEntity<>(HttpStatus.FORBIDDEN);
             } else {
                 e.printStackTrace();

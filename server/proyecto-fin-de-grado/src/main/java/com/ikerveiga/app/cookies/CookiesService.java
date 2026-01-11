@@ -19,6 +19,7 @@ public class CookiesService {
         cookie.setHttpOnly(true);
         cookie.setPath("/");
         cookie.setMaxAge(maxAge);
+        cookie.setDomain("localhost");
 
         response.addCookie(cookie);
     }

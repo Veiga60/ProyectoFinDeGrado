@@ -1,53 +1,49 @@
 package com.ikerveiga.app.dto;
 
-public class UserDTO {
+public class OAuth2UserDTO {
 
     private long id;
-    private String userName;
+    private String username;
     private String email;
-    private String password;
     private boolean isCoach;
     private PlayerDTO playerDTO;
 
-    public UserDTO(long id, String userName, String email, String password, boolean isCoach, PlayerDTO playerDTO) {
+    public OAuth2UserDTO(long id, String username, String email, boolean isCoach, PlayerDTO playerDTO) {
         this.id = id;
-        this.userName = userName;
+        this.username = username;
         this.email = email;
-        this.password = password;
         this.isCoach = isCoach;
         this.playerDTO = playerDTO;
+    }
+
+    public OAuth2UserDTO(String username, String email, boolean isCoach) {
+        this.username = username;
+        this.email = email;
+        this.isCoach = isCoach;
     }
 
     public long getId() {
         return this.id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return this.username;
     }
 
-    public void setName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public boolean getIsCoach() {
-        return isCoach;
+        return this.isCoach;
     }
 
     public void setIsCoach(boolean isCoach) {

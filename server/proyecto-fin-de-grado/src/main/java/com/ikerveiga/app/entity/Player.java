@@ -62,6 +62,9 @@ public class Player {
     @OneToOne(mappedBy = "goalie")
     private GoalieStats goalieStats;
 
+    @OneToOne(mappedBy = "player")
+    private User user;
+
     public Player() {
 
     }

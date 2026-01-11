@@ -23,10 +23,14 @@ public class OAuth2SuccessHandler implements AuthenticationSuccessHandler {
             Authentication authentication) throws IOException, ServletException {
 
         OAuth2User oAuth2User = (OAuth2User) authentication.getPrincipal();
-
-        oAuth2Service.handleLoginSuccess((String) oAuth2User.getAttributes().get("name"),
-                (String) oAuth2User.getAttributes().get("email"), response);
-
+        try {
+            oAuth2Service.handleLoginSuccess((String) oAuth2User.getAttributes().get("name"),
+                    (String) oAuth2User.getAttributes().get("email"), response);
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+            if (e.getMessage().equals("Usuario no autorizado")) {
+                return;
+            }
+        }
     }
-
 }

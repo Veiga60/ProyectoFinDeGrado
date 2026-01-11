@@ -10,12 +10,14 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.ikerveiga.app.entity.AuthorizedEmail;
 import com.ikerveiga.app.entity.User;
 
 import jakarta.servlet.http.HttpServletResponse;
 
 import com.ikerveiga.app.JWT.JwtUtil;
 import com.ikerveiga.app.cookies.CookiesService;
+import com.ikerveiga.app.dao.AuthorizedEmailRepository;
 import com.ikerveiga.app.dao.UserRepository;
 import com.ikerveiga.app.CustomUserDetails;
 
@@ -27,15 +29,18 @@ public class UserService {
     AuthenticationManager authManager;
     PasswordEncoder passwordEncoder;
     CookiesService cookiesService;
+    AuthorizedEmailRepository authorizedEmailDAO;
 
     @Autowired
     public UserService(UserRepository userDAO, JwtUtil jwtUtil, AuthenticationManager authManager,
-            PasswordEncoder passwordEncoder, CookiesService cookiesService) {
+            PasswordEncoder passwordEncoder, CookiesService cookiesService,
+            AuthorizedEmailRepository authorizedEmailDAO) {
         this.userDAO = userDAO;
         this.jwtUtil = jwtUtil;
         this.authManager = authManager;
         this.passwordEncoder = passwordEncoder;
         this.cookiesService = cookiesService;
+        this.authorizedEmailDAO = authorizedEmailDAO;
     }
 
     public Map<String, Object> getAuthenticatedUser() {
@@ -56,25 +61,27 @@ public class UserService {
         User existingUser = userDAO.findByEmail(email);
         if (existingUser != null) {
             throw new RuntimeException("User already exists");
+        } else {
+            AuthorizedEmail authorizedEmail = authorizedEmailDAO.findByEmail(email);
+            if (authorizedEmail != null) {
+                User user = new User(name, email, passwordEncoder.encode(password), isCoach,
+                        authorizedEmail.getPlayer());
+                userDAO.save(user);
+            } else {
+                throw new RuntimeException("User not authorized");
+            }
         }
 
-        User user = new User(name, email, passwordEncoder.encode(password), isCoach);
-        userDAO.save(user);
     }
 
-    public void oauth2Signup(String username, String email) {
-        User user = new User(username, email, null, false);
-        userDAO.save(user);
-    }
-
-    public String login(String email, String password, HttpServletResponse response) {
-        User user = userDAO.findByEmail(email);
+    public String login(String username, String password, HttpServletResponse response) {
+        User user = userDAO.findByUserName(username);
         if (user == null) {
-            throw new RuntimeException("No existe un usuario con ese email");
+            throw new RuntimeException("User does not exist");
         }
 
         if (!passwordEncoder.matches(password, user.getPassword())) {
-            throw new RuntimeException("Contraseña incorrecta");
+            throw new RuntimeException("Incorrect password");
         } else {
             String jwt = jwtUtil.generateJwtToken(user.getEmail());
             cookiesService.addHttpOnlyCookie("jwt", jwt, 30 * 60, response);
