@@ -28,9 +28,7 @@ public class OAuth2SuccessHandler implements AuthenticationSuccessHandler {
                     (String) oAuth2User.getAttributes().get("email"), response);
         } catch (RuntimeException e) {
             e.printStackTrace();
-            if (e.getMessage().equals("Usuario no autorizado")) {
-                return;
-            }
+            response.sendRedirect("http://localhost:5173/error/unauthorized");
         }
     }
 }

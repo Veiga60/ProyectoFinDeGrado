@@ -8,6 +8,7 @@ import Matches from './views/Matches.jsx'
 import Stats from './views/Stats.jsx'
 import PlayerStats from './views/PlayerStats.jsx'
 import SelectRole from './views/SelectRole.jsx'
+import Unauthorized from './views/Unauthorized.jsx'
 import './style/App.css'
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/stats" element={<Stats />} />
         <Route path="/stats/players/:id" element={<PlayerStats />} />
         <Route path="/select_role" element={<SelectRole />} />
+        <Route path="/error/unauthorized" element={<Unauthorized />} />
       </Routes>
     </BrowserRouter>
   )

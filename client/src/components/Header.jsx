@@ -13,7 +13,7 @@ function Header() {
                 <img id='logo' src={logo} alt="logoApp" />
                 <h1 id='title'>METROPOLITANO HC</h1>
             </div>
-            {(location.pathname != '/' && location.pathname != '/signup') &&
+            {(location.pathname != '/' && location.pathname != '/signup' && location.pathname != '/error/unauthorized') &&
                 <div id='navbar'>
                     <NavBar />
                 </div>

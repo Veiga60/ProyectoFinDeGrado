@@ -5,7 +5,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import googleLogo from '../assets/images/google.png'
 
-function Login() {
+export default function Login() {
 
     const navigate = useNavigate()
 
@@ -72,5 +72,3 @@ function Login() {
         </>
     )
 }
-
-export default Login
