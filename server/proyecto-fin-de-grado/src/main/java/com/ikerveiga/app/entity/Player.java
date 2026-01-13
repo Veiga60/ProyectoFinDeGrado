@@ -190,4 +190,11 @@ public class Player {
 
         return playerDTO;
     }
+
+    public PlayerDTO toDTOWithoutStatsAndMatches() {
+        PlayerDTO playerDTO = new PlayerDTO(this.id, this.name, this.lastName1, this.lastName2, this.birthDate,
+                this.number, this.photo, this.playerType);
+
+        return playerDTO;
+    }
 }
