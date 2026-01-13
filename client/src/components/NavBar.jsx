@@ -20,6 +20,9 @@ export default function NavBar() {
 
     return (
         <div id="navbarDiv">
+            <div id="matchesDiv" className="navbarSectionDiv" onClick={() => navigate('/home')}>
+                <p id="matchesText" className="navbarText">INICIO</p>
+            </div>
             <div id="matchesDiv" className="navbarSectionDiv" onClick={() => navigate('/matches')}>
                 <p id="matchesText" className="navbarText">PARTIDOS</p>
             </div>

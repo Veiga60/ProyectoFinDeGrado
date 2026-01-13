@@ -73,6 +73,10 @@ public class User {
         return this.isCoach;
     }
 
+    public Player getPlayer() {
+        return this.player;
+    }
+
     public UserDTO toDTO() {
         UserDTO userDTO = new UserDTO(this.id, this.userName, this.email, this.password, this.isCoach,
                 this.player.toDTOWithoutStats());

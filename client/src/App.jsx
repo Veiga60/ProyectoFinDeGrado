@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Login from './views/Login.jsx'
 import Signup from './views/Signup.jsx'
+import Home from './views/Home.jsx'
 import Matches from './views/Matches.jsx'
 import Stats from './views/Stats.jsx'
 import PlayerStats from './views/PlayerStats.jsx'
@@ -18,6 +19,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/matches" element={<Matches />} />
         <Route path="/stats" element={<Stats />} />
         <Route path="/stats/players/:id" element={<PlayerStats />} />

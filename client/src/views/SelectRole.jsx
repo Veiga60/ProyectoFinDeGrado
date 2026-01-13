@@ -29,7 +29,7 @@ export default function SelectRole() {
                 withCredentials: true
             }
         );
-        navigate("/matches")
+        navigate("/home")
 
     }
 

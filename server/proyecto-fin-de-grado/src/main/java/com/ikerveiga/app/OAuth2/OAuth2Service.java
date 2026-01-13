@@ -34,7 +34,7 @@ public class OAuth2Service {
     public String handleLoginSuccess(String username, String email, HttpServletResponse response) {
         OAuth2User existingUser = userDAO.findByEmail(email);
 
-        String url = (existingUser == null) ? ("http://localhost:5173/select_role") : ("http://localhost:5173/matches");
+        String url = (existingUser == null) ? ("http://localhost:5173/select_role") : ("http://localhost:5173/home");
 
         if (existingUser == null) {
             AuthorizedEmail authorizedEmail = authorizedEmailDAO.findByEmail(email);

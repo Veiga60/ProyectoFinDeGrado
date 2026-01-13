@@ -19,6 +19,7 @@ import com.ikerveiga.app.JWT.JwtUtil;
 import com.ikerveiga.app.cookies.CookiesService;
 import com.ikerveiga.app.dao.AuthorizedEmailRepository;
 import com.ikerveiga.app.dao.UserRepository;
+import com.ikerveiga.app.dto.PlayerDTO;
 import com.ikerveiga.app.CustomUserDetails;
 
 @Service
@@ -49,10 +50,12 @@ public class UserService {
         String username = authentication.getName();
         String email = ((CustomUserDetails) authentication.getPrincipal()).getEmail();
         Boolean isCoach = ((CustomUserDetails) authentication.getPrincipal()).getIsCoach();
+        PlayerDTO player = ((CustomUserDetails) authentication.getPrincipal()).getPlayer();
 
         userInfo.put("username", username);
         userInfo.put("email", email);
         userInfo.put("isCoach", isCoach);
+        userInfo.put("player", player);
 
         return userInfo;
     }

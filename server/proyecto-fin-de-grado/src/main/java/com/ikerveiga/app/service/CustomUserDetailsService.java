@@ -46,6 +46,7 @@ public class CustomUserDetailsService implements UserDetailsService {
                 user.getEmail(),
                 password,
                 user.getIsCoach(),
+                user.getPlayer().toDTO(),
                 Collections.emptyList());
     }
 
@@ -67,6 +68,7 @@ public class CustomUserDetailsService implements UserDetailsService {
                     user.getEmail(),
                     user.getPassword(),
                     user.getIsCoach(),
+                    user.getPlayer().toDTO(),
                     Collections.emptyList());
         } else {
             return new CustomUserDetails(
@@ -74,6 +76,7 @@ public class CustomUserDetailsService implements UserDetailsService {
                     oAuth2user.getEmail(),
                     "",
                     oAuth2user.getIsCoach(),
+                    oAuth2user.getPlayer().toDTO(),
                     Collections.emptyList());
         }
 

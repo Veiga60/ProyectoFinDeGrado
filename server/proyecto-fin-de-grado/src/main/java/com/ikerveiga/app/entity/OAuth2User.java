@@ -73,6 +73,10 @@ public class OAuth2User {
         this.isCoach = isCoach;
     }
 
+    public Player getPlayer() {
+        return this.player;
+    }
+
     public OAuth2UserDTO toDTO() {
         OAuth2UserDTO oAuth2UserDTO = new OAuth2UserDTO(this.id, this.username, this.email, this.isCoach,
                 this.player.toDTOWithoutStats());

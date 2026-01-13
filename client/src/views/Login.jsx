@@ -27,7 +27,7 @@ export default function Login() {
                 }
             )
             localStorage.setItem('jwt', response.data);
-            navigate("/matches")
+            navigate("/home")
         } catch (error) {
             console.error("Failed logging in");
             console.error(error)
