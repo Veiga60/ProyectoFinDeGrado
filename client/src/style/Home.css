@@ -1,0 +1,19 @@
+#homePageContentDiv {
+    border: 2px solid black;
+    width: 100%;
+}
+
+#welcomeDiv {
+    border: 2px solid red;
+}
+
+#welcomeTextDiv {
+    border: 2px solid green;
+}
+
+#welcomeText {
+    color: black;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: xx-large;
+}
