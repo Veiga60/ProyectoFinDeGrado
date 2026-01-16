@@ -1,17 +1,19 @@
 import '../style/Signup.css'
 import Header from '../components/Header.jsx'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useState } from 'react'
 
 function Signup() {
+
+    const SERVER_URL = 'http://localhost:8081';
+    const navigate = useNavigate();
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isCoach, setIsCoach] = useState(false);
 
-    const SERVER_URL = 'http://localhost:8081'
 
     const signup = async () => {
 
@@ -35,7 +37,8 @@ function Signup() {
             setName('');
             setIsCoach(false);
 
-            return response;
+            navigate('/');
+
         } catch (error) {
             console.error('Failed creating new user');
             console.error(error);
@@ -79,7 +82,7 @@ function Signup() {
                     </div>
                 </div>
                 <div id='signupButtonDiv'>
-                    <Link to={"/"}><button onClick={signup}>CREAR CUENTA</button></Link>
+                    <button onClick={signup}>CREAR CUENTA</button>
                 </div>
                 <div id='alreadyHaveAccountDiv'>
                     <Link to={"/"}><p id='alreadyHaveAccount'>¿Ya tienes una cuenta? Inicia sesión.</p></Link>

@@ -12,7 +12,8 @@ export default function NavBar() {
         try {
             const response = await axios.post(`${SERVER_URL}/exit`, {}, { withCredentials: true });
             localStorage.removeItem('jwt');
-            navigate('/')
+            localStorage.removeItem('isCoach');
+            navigate('/');
         } catch (error) {
             console.log('Error al cerrar sesión: ', error);
         }
