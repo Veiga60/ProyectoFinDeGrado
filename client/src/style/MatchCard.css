@@ -1,14 +1,28 @@
 #cardDiv {
     width: 200px;
+    height: 180px;
     display: flex;
     flex-direction: column;
     border: 2px solid rgb(7, 78, 200);
     border-radius: 10px;
     background-color: white;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+#selectButtonDiv {
+    display: none;
+    width: 100%;
+}
+
+#selectButton {
+    width: 100%;
 }
 
 #cardDiv:hover {
-    cursor: pointer;
+    filter: brightness(40%);
+    transition: 0.2s;
 }
 
 #teamDiv {

@@ -28,7 +28,10 @@ export default function Calls() {
             <div id='callsMainDiv'>
                 <div id='nextMatchesDiv'>
                     {matches.map((match) =>
-                        <MatchCard match={match} />
+                        <MatchCard
+                            key={match.id}
+                            match={match}
+                        />
                     )}
                 </div>
             </div>

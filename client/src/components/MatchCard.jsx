@@ -6,6 +6,9 @@ export default function MatchCard({ match }) {
 
     return (
         <div id="cardDiv">
+            <div id='selectButtonDiv'>
+                <button id='selectButton'>SELECCIONAR</button>
+            </div>
             <div id="dateTimeDiv">
                 <p id='dateTimeText'>{match?.date.split("-").reverse().join("/")} - {match?.time.substring(0, 5)}</p>
             </div>
