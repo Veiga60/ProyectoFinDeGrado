@@ -30,6 +30,9 @@ export default function NavBar() {
             <div id="statsDiv" className="navbarSectionDiv" onClick={() => navigate('/stats')}>
                 <p id="statsText" className="navbarText">ESTADÍSTICAS</p>
             </div>
+            <div id="statsDiv" className="navbarSectionDiv" onClick={() => navigate('/calls')}>
+                <p id="statsText" className="navbarText">CONVOCATORIAS</p>
+            </div>
             <div id='logoutButtonDiv' onClick={() => logout()}>
                 <img id='logoutImage' src={logoutDoor} alt="Logout" />
             </div>

@@ -45,4 +45,24 @@ public class MatchController {
         }
     }
 
+    @GetMapping("/matches/next")
+    public ResponseEntity<List<MatchDTO>> getNextMatches() {
+        try {
+            List<Match> nextMatches = matchService.getNextMatches();
+            List<MatchDTO> matchesDTO = new ArrayList<>();
+            for (Match match : nextMatches) {
+                MatchDTO matchDTO = match.toDTO();
+                matchesDTO.add(matchDTO);
+            }
+
+            return ResponseEntity.ok(matchesDTO);
+        } catch (RuntimeException e) {
+            if (e.getMessage().equals("Next matches not found")) {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            } else {
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
+        }
+    }
+
 }

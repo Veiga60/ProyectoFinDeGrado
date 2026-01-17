@@ -27,4 +27,14 @@ public class MatchService {
 
         return matches;
     }
+
+    public List<Match> getNextMatches() {
+        List<Match> nextMatches = matchDAO.findNextMatches();
+
+        if (nextMatches.isEmpty()) {
+            throw new RuntimeException("Next matches not found");
+        }
+
+        return nextMatches;
+    }
 }

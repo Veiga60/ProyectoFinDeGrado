@@ -29,13 +29,7 @@ export default function Matches() {
                 {matches.map((match) =>
                     <Match
                         key={match.id}
-                        localTeam={match.localTeam}
-                        localTeamGoals={match.localTeamGoals}
-                        visitingTeam={match.visitingTeam}
-                        visitingTeamGoals={match.visitingTeamGoals}
-                        date={match.date}
-                        time={match.time}
-                        bonusPoint={match.bonusPoint}
+                        match={match}
                     />
                 )}
             </div>
