@@ -28,6 +28,16 @@ public class MatchService {
         return matches;
     }
 
+    public Match getMatch(long id) {
+        Match match = matchDAO.findById(id);
+
+        if (match == null) {
+            throw new RuntimeException("Match not found");
+        }
+
+        return match;
+    }
+
     public List<Match> getNextMatches() {
         List<Match> nextMatches = matchDAO.findNextMatches();
 

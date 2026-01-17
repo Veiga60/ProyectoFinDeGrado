@@ -41,13 +41,17 @@ input {
     max-width: 220px;
     height: 40px;
     font-family: Inria Sans;
-    font-size: medium;
     margin-right: 10px;
 }
 
 #usernameInput {
+    font-size: large;
     margin-top: 1vw;
     margin-bottom: 1vw;
+}
+
+#passwordInput {
+    font-size: large;
 }
 
 #loginButtonDiv {

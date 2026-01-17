@@ -2,11 +2,14 @@ import Header from '../components/Header.jsx'
 import MatchCard from '../components/MatchCard.jsx'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../style/Calls.css'
 
 export default function Calls() {
 
     const SERVER_URL = 'http://localhost:8081';
+    const navigate = useNavigate();
+
     const [matches, setMatches] = useState([]);
 
     const getNextMatches = async () => {
@@ -31,6 +34,7 @@ export default function Calls() {
                         <MatchCard
                             key={match.id}
                             match={match}
+                            onClick={() => navigate(`/calls/match/${match.id}`)}
                         />
                     )}
                 </div>

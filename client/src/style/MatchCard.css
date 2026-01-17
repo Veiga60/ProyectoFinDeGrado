@@ -21,6 +21,7 @@
 }
 
 #cardDiv:hover {
+    cursor: pointer;
     filter: brightness(40%);
     transition: 0.2s;
 }

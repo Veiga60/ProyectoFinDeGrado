@@ -7,13 +7,13 @@ import '../style/PlayerStats.css'
 export default function PlayerStats() {
 
     const SERVER_URL = 'http://localhost:8081';
-    const { id } = useParams();
+    const { playerId } = useParams();
 
     const [player, setPlayer] = useState(null);
 
     const getPlayer = async () => {
         try {
-            const response = await axios.get(`${SERVER_URL}/players/${id}`, { withCredentials: true });
+            const response = await axios.get(`${SERVER_URL}/players/${playerId}`, { withCredentials: true });
             setPlayer(response.data);
             console.log(response.data);
         } catch (error) {

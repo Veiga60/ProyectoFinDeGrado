@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ikerveiga.app.dto.MatchDTO;
@@ -40,6 +41,20 @@ public class MatchController {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             } else {
                 e.printStackTrace();
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
+        }
+    }
+
+    @GetMapping("matches/{id}")
+    public ResponseEntity<MatchDTO> getMatch(@PathVariable("id") long id) {
+        try {
+            MatchDTO matchDTO = matchService.getMatch(id).toDTO();
+            return ResponseEntity.ok(matchDTO);
+        } catch (RuntimeException e) {
+            if (e.getMessage().equals("Match not found")) {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            } else {
                 return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             }
         }
