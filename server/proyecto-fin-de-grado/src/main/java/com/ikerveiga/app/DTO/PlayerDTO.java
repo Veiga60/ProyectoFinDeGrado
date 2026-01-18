@@ -15,13 +15,13 @@ public class PlayerDTO {
     private int number;
     private String photo;
     private PlayerType playerType;
-    private List<MatchDTO> matches;
+    private List<CallDTO> calls;
     private PlayerStatsDTO playerStats;
     private GoalieStatsDTO goalieStats;
 
     public PlayerDTO(String name, String lastName1, String lastName2, LocalDate birthDate, int number, String photo,
             PlayerType playerType,
-            List<MatchDTO> matches,
+            List<CallDTO> calls,
             PlayerStatsDTO playerStats) {
         this.name = name;
         this.lastName1 = lastName1;
@@ -30,13 +30,13 @@ public class PlayerDTO {
         this.birthDate = birthDate;
         this.number = number;
         this.playerType = playerType;
-        this.matches = matches;
+        this.calls = calls;
         this.playerStats = playerStats;
     }
 
     public PlayerDTO(String name, String lastName1, String lastName2, LocalDate birthDate, int number, String photo,
             PlayerType playerType,
-            List<MatchDTO> matches,
+            List<CallDTO> calls,
             GoalieStatsDTO goalieStats) {
         this.name = name;
         this.lastName1 = lastName1;
@@ -45,13 +45,13 @@ public class PlayerDTO {
         this.number = number;
         this.photo = photo;
         this.playerType = playerType;
-        this.matches = matches;
+        this.calls = calls;
         this.goalieStats = goalieStats;
     }
 
     public PlayerDTO(long id, String name, String lastName1, String lastName2, LocalDate birthDate, int number,
             String photo, PlayerType playerType,
-            List<MatchDTO> matches,
+            List<CallDTO> calls,
             PlayerStatsDTO playerStats) {
         this.id = id;
         this.name = name;
@@ -61,13 +61,13 @@ public class PlayerDTO {
         this.number = number;
         this.photo = photo;
         this.playerType = playerType;
-        this.matches = matches;
+        this.calls = calls;
         this.playerStats = playerStats;
     }
 
     public PlayerDTO(long id, String name, String lastName1, String lastName2, LocalDate birthDate, int number,
             String photo, PlayerType playerType,
-            List<MatchDTO> matches,
+            List<CallDTO> calls,
             GoalieStatsDTO goalieStats) {
         this.id = id;
         this.name = name;
@@ -77,13 +77,13 @@ public class PlayerDTO {
         this.number = number;
         this.photo = photo;
         this.playerType = playerType;
-        this.matches = matches;
+        this.calls = calls;
         this.goalieStats = goalieStats;
     }
 
     public PlayerDTO(long id, String name, String lastName1, String lastName2, LocalDate birthDate, int number,
             String photo, PlayerType playerType,
-            List<MatchDTO> matches) {
+            List<CallDTO> calls) {
         this.id = id;
         this.name = name;
         this.lastName1 = lastName1;
@@ -92,7 +92,7 @@ public class PlayerDTO {
         this.number = number;
         this.photo = photo;
         this.playerType = playerType;
-        this.matches = matches;
+        this.calls = calls;
     }
 
     public PlayerDTO(long id, String name, String lastName1, String lastName2, LocalDate birthDate, int number,
@@ -163,12 +163,12 @@ public class PlayerDTO {
         return this.playerType;
     }
 
-    public List<MatchDTO> getMatches() {
-        return this.matches;
+    public List<CallDTO> getCalls() {
+        return this.calls;
     }
 
-    public void setMatches(List<MatchDTO> matches) {
-        this.matches = matches;
+    public void setCalls(List<CallDTO> calls) {
+        this.calls = calls;
     }
 
     public PlayerStatsDTO getPlayerStats() {

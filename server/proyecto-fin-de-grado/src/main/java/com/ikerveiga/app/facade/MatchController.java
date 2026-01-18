@@ -31,7 +31,7 @@ public class MatchController {
         try {
             matches = matchService.getMatches();
             for (Match match : matches) {
-                MatchDTO matchDTO = match.toDTO();
+                MatchDTO matchDTO = match.toDTOwithoutCalls();
                 matchesDTO.add(matchDTO);
             }
 
@@ -49,7 +49,7 @@ public class MatchController {
     @GetMapping("matches/{id}")
     public ResponseEntity<MatchDTO> getMatch(@PathVariable("id") long id) {
         try {
-            MatchDTO matchDTO = matchService.getMatch(id).toDTO();
+            MatchDTO matchDTO = matchService.getMatch(id).toDTOwithoutCalls();
             return ResponseEntity.ok(matchDTO);
         } catch (RuntimeException e) {
             if (e.getMessage().equals("Match not found")) {
@@ -66,7 +66,7 @@ public class MatchController {
             List<Match> nextMatches = matchService.getNextMatches();
             List<MatchDTO> matchesDTO = new ArrayList<>();
             for (Match match : nextMatches) {
-                MatchDTO matchDTO = match.toDTO();
+                MatchDTO matchDTO = match.toDTOwithoutCalls();
                 matchesDTO.add(matchDTO);
             }
 

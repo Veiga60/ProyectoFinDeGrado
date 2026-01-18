@@ -2,7 +2,6 @@ package com.ikerveiga.app.dto;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.List;
 
 public class MatchDTO {
 
@@ -15,11 +14,11 @@ public class MatchDTO {
     private LocalTime time;
     private boolean isPlayed;
     private Long bonusPoint;
-    private List<PlayerDTO> players;
+    private CallDTO call;
 
     public MatchDTO(TeamDTO localTeam, Integer localTeamGoals, TeamDTO visitingTeam, Integer visitingTeamGoals,
             LocalDate date,
-            LocalTime time, boolean isPlayed, Long bonusPoint, List<PlayerDTO> players) {
+            LocalTime time, boolean isPlayed, Long bonusPoint, CallDTO call) {
         this.localTeam = localTeam;
         this.localTeamGoals = localTeamGoals;
         this.visitingTeam = visitingTeam;
@@ -28,11 +27,11 @@ public class MatchDTO {
         this.time = time;
         this.isPlayed = isPlayed;
         this.bonusPoint = bonusPoint;
-        this.players = players;
+        this.call = call;
     }
 
     public MatchDTO(long id, TeamDTO localTeam, Integer localTeamGoals, TeamDTO visitingTeam, Integer visitingTeamGoals,
-            LocalDate date, LocalTime time, boolean isPlayed, Long bonusPoint, List<PlayerDTO> players) {
+            LocalDate date, LocalTime time, boolean isPlayed, Long bonusPoint, CallDTO call) {
         this.id = id;
         this.localTeam = localTeam;
         this.localTeamGoals = localTeamGoals;
@@ -42,7 +41,20 @@ public class MatchDTO {
         this.time = time;
         this.isPlayed = isPlayed;
         this.bonusPoint = bonusPoint;
-        this.players = players;
+        this.call = call;
+    }
+
+    public MatchDTO(long id, TeamDTO localTeam, Integer localTeamGoals, TeamDTO visitingTeam, Integer visitingTeamGoals,
+            LocalDate date, LocalTime time, boolean isPlayed, Long bonusPoint) {
+        this.id = id;
+        this.localTeam = localTeam;
+        this.localTeamGoals = localTeamGoals;
+        this.visitingTeam = visitingTeam;
+        this.visitingTeamGoals = visitingTeamGoals;
+        this.date = date;
+        this.time = time;
+        this.isPlayed = isPlayed;
+        this.bonusPoint = bonusPoint;
     }
 
     public long getId() {
@@ -113,11 +125,11 @@ public class MatchDTO {
         this.bonusPoint = bonusPoint;
     }
 
-    public List<PlayerDTO> getPlayers() {
-        return this.players;
+    public CallDTO getCall() {
+        return this.call;
     }
 
-    public void setPlayers(List<PlayerDTO> players) {
-        this.players = players;
+    public void setCall(CallDTO call) {
+        this.call = call;
     }
 }

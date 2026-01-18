@@ -2,11 +2,8 @@ package com.ikerveiga.app.entity;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.ikerveiga.app.dto.MatchDTO;
-import com.ikerveiga.app.dto.PlayerDTO;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -15,10 +12,8 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -54,16 +49,15 @@ public class Match {
     @Column(name = "match_bonus_point", nullable = true, unique = false)
     private Long bonusPoint;
 
-    @ManyToMany
-    @JoinTable(name = "player_match", joinColumns = @JoinColumn(name = "match_id"), inverseJoinColumns = @JoinColumn(name = "player_id"))
-    private List<Player> players;
+    @OneToOne(mappedBy = "match")
+    private Call call;
 
     public Match() {
 
     }
 
     public Match(Team localTeam, Integer localTeamGoals, Team visitingTeam, Integer visitingTeamGoals, LocalDate date,
-            LocalTime time, boolean isPlayed, Long bonusPoint, List<Player> players) {
+            LocalTime time, boolean isPlayed, Long bonusPoint, Call call) {
         this.localTeam = localTeam;
         this.localTeamGoals = localTeamGoals;
         this.visitingTeam = visitingTeam;
@@ -72,7 +66,19 @@ public class Match {
         this.time = time;
         this.isPlayed = isPlayed;
         this.bonusPoint = bonusPoint;
-        this.players = players;
+        this.call = call;
+    }
+
+    public Match(Team localTeam, Integer localTeamGoals, Team visitingTeam, Integer visitingTeamGoals, LocalDate date,
+            LocalTime time, boolean isPlayed, Long bonusPoint) {
+        this.localTeam = localTeam;
+        this.localTeamGoals = localTeamGoals;
+        this.visitingTeam = visitingTeam;
+        this.visitingTeamGoals = visitingTeamGoals;
+        this.date = date;
+        this.time = time;
+        this.isPlayed = isPlayed;
+        this.bonusPoint = bonusPoint;
     }
 
     public long getId() {
@@ -143,23 +149,26 @@ public class Match {
         this.bonusPoint = bonusPoint;
     }
 
-    public List<Player> getPlayers() {
-        return this.players;
+    public Call getCall() {
+        return this.call;
     }
 
-    public void setPlayers(List<Player> players) {
-        this.players = players;
+    public void setCall(Call call) {
+        this.call = call;
     }
 
     public MatchDTO toDTO() {
-        List<PlayerDTO> playersDTO = new ArrayList<>();
-        for (Player player : this.players) {
-            playersDTO.add(player.toDTO());
-        }
-
         MatchDTO matchDTO = new MatchDTO(this.id, this.localTeam.toDTO(), this.localTeamGoals,
                 this.visitingTeam.toDTO(),
-                this.visitingTeamGoals, this.date, this.time, this.isPlayed, this.bonusPoint, playersDTO);
+                this.visitingTeamGoals, this.date, this.time, this.isPlayed, this.bonusPoint, this.call.toDTO());
+
+        return matchDTO;
+    }
+
+    public MatchDTO toDTOwithoutCalls() {
+        MatchDTO matchDTO = new MatchDTO(this.id, this.localTeam.toDTO(), this.localTeamGoals,
+                this.visitingTeam.toDTO(), this.visitingTeamGoals, this.date, this.time, this.isPlayed,
+                this.bonusPoint);
 
         return matchDTO;
     }

@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ikerveiga.app.dto.MatchDTO;
+import com.ikerveiga.app.dto.CallDTO;
 import com.ikerveiga.app.dto.PlayerDTO;
 import com.ikerveiga.app.enums.PlayerType;
 
@@ -54,8 +54,8 @@ public class Player {
     private PlayerType playerType;
 
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "player_match", joinColumns = @JoinColumn(name = "player_id"), inverseJoinColumns = @JoinColumn(name = "match_id"))
-    private List<Match> matches;
+    @JoinTable(name = "player_call", joinColumns = @JoinColumn(name = "player_id"), inverseJoinColumns = @JoinColumn(name = "call_id"))
+    private List<Call> calls;
 
     @OneToOne(mappedBy = "player")
     private PlayerStats playerStats;
@@ -72,7 +72,7 @@ public class Player {
 
     public Player(String name, String lastName1, String lastName2, LocalDate birthDate, int number, String photo,
             PlayerType playerType,
-            List<Match> matches,
+            List<Call> calls,
             PlayerStats playerStats) {
         this.name = name;
         this.lastName1 = lastName1;
@@ -81,13 +81,13 @@ public class Player {
         this.number = number;
         this.photo = photo;
         this.playerType = playerType;
-        this.matches = matches;
+        this.calls = calls;
         this.playerStats = playerStats;
     }
 
     public Player(String name, String lastName1, String lastName2, LocalDate birthDate, int number, String photo,
             PlayerType playerType,
-            List<Match> matches,
+            List<Call> calls,
             GoalieStats goalieStats) {
         this.name = name;
         this.lastName1 = lastName1;
@@ -96,7 +96,7 @@ public class Player {
         this.number = number;
         this.photo = photo;
         this.playerType = playerType;
-        this.matches = matches;
+        this.calls = calls;
         this.goalieStats = goalieStats;
     }
 
@@ -140,12 +140,12 @@ public class Player {
         return this.playerType;
     }
 
-    public List<Match> getMatches() {
-        return this.matches;
+    public List<Call> getCalls() {
+        return this.calls;
     }
 
-    public void setMatches(List<Match> matches) {
-        this.matches = matches;
+    public void setCalls(List<Call> calls) {
+        this.calls = calls;
     }
 
     public PlayerStats getStats() {
@@ -157,21 +157,21 @@ public class Player {
     }
 
     public PlayerDTO toDTO() {
-        List<MatchDTO> matchesDTO = new ArrayList<>();
-        for (Match match : this.matches) {
-            matchesDTO.add(match.toDTO());
+        List<CallDTO> callsDTO = new ArrayList<>();
+        for (Call call : this.calls) {
+            callsDTO.add(call.toDTO());
         }
 
         PlayerDTO playerDTO;
         if (this.playerType.equals(PlayerType.RINK_PLAYER)) {
             playerDTO = new PlayerDTO(this.id, this.name, this.lastName1, this.lastName2, this.birthDate, this.number,
                     this.photo, this.playerType,
-                    matchesDTO,
+                    callsDTO,
                     this.playerStats.toDTOWithoutPlayer());
         } else {
             playerDTO = new PlayerDTO(this.id, this.name, this.lastName1, this.lastName2, this.birthDate, this.number,
                     this.photo, this.playerType,
-                    matchesDTO,
+                    callsDTO,
                     this.goalieStats.toDTOWithoutGoalie());
         }
 
@@ -179,19 +179,19 @@ public class Player {
     }
 
     public PlayerDTO toDTOWithoutStats() {
-        List<MatchDTO> matchesDTO = new ArrayList<>();
-        for (Match match : this.matches) {
-            matchesDTO.add(match.toDTO());
+        List<CallDTO> callsDTO = new ArrayList<>();
+        for (Call call : this.calls) {
+            callsDTO.add(call.toDTO());
         }
 
         PlayerDTO playerDTO = new PlayerDTO(this.id, this.name, this.lastName1, this.lastName2, this.birthDate,
                 this.number, this.photo,
-                this.playerType, matchesDTO);
+                this.playerType, callsDTO);
 
         return playerDTO;
     }
 
-    public PlayerDTO toDTOWithoutStatsAndMatches() {
+    public PlayerDTO toDTOWithoutStatsAndCalls() {
         PlayerDTO playerDTO = new PlayerDTO(this.id, this.name, this.lastName1, this.lastName2, this.birthDate,
                 this.number, this.photo, this.playerType);
 
