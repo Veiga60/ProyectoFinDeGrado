@@ -76,7 +76,7 @@ function Signup() {
                         <input
                             id='isTrainerInput'
                             type="checkbox"
-                            onChange={(e) => setIsCoach(e.target.value)}
+                            onChange={(e) => setIsCoach(e.target.checked)}
                         />
                         <label htmlFor='isTrainerInput' id='checkBoxLabel'>Soy entrenador</label>
                     </div>
@@ -85,7 +85,7 @@ function Signup() {
                     <button onClick={signup}>CREAR CUENTA</button>
                 </div>
                 <div id='alreadyHaveAccountDiv'>
-                    <Link to={"/"}><p id='alreadyHaveAccount'>¿Ya tienes una cuenta? Inicia sesión.</p></Link>
+                    <p id='alreadyHaveAccount' onClick={() => navigate("/")}>¿Ya tienes una cuenta? Inicia sesión.</p>
                 </div>
             </div>
         </>

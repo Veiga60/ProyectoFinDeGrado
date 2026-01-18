@@ -33,7 +33,7 @@ export default function Home() {
                             <p id='greetingText'>¡Bienvenido, {authenticatedUser.username}!</p>
                         </div>
                         <div id='playerImageDiv'>
-                            <img id='playerImage' src={`/players/${authenticatedUser.player.photo}`} alt="" />
+                            <img id='playerImage' src={`/players/${authenticatedUser.player?.photo}`} alt="" />
                         </div>
                     </div>
                 </div>

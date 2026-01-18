@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.ikerveiga.app.CustomUserDetails;
 import com.ikerveiga.app.dao.OAuth2UserRepository;
 import com.ikerveiga.app.dao.UserRepository;
+import com.ikerveiga.app.dto.PlayerDTO;
 import com.ikerveiga.app.entity.OAuth2User;
 import com.ikerveiga.app.entity.User;
 
@@ -62,21 +63,35 @@ public class CustomUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("Usuario con nombre " + email + " no encontrado.");
         }
 
+        PlayerDTO playerDTO;
+
         if (user != null) {
+            if (user.getPlayer() != null) {
+                playerDTO = user.getPlayer().toDTOWithoutStatsAndCalls();
+            } else {
+                playerDTO = null;
+            }
+
             return new CustomUserDetails(
                     user.getUserName(),
                     user.getEmail(),
                     user.getPassword(),
                     user.getIsCoach(),
-                    user.getPlayer().toDTOWithoutStatsAndCalls(),
+                    playerDTO,
                     Collections.emptyList());
         } else {
+            if (oAuth2user.getPlayer() != null) {
+                playerDTO = oAuth2user.getPlayer().toDTOWithoutStatsAndCalls();
+            } else {
+                playerDTO = null;
+            }
+
             return new CustomUserDetails(
                     oAuth2user.getUsername(),
                     oAuth2user.getEmail(),
                     "",
                     oAuth2user.getIsCoach(),
-                    oAuth2user.getPlayer().toDTOWithoutStatsAndCalls(),
+                    playerDTO,
                     Collections.emptyList());
         }
 

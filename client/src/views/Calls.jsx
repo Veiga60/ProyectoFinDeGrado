@@ -21,6 +21,16 @@ export default function Calls() {
         }
     }
 
+    const onClick = (matchId) => {
+        const isCoach = localStorage.getItem('isCoach');
+
+        if (isCoach == true) {
+            navigate(`/calls/match/${matchId}`);
+        } else {
+            return;
+        }
+    }
+
     useEffect(() => {
         getNextMatches();
     }, []);
@@ -34,7 +44,7 @@ export default function Calls() {
                         <MatchCard
                             key={match.id}
                             match={match}
-                            onClick={() => navigate(`/calls/match/${match.id}`)}
+                            onClick={() => onClick(match.id)}
                         />
                     )}
                 </div>

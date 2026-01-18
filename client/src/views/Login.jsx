@@ -1,6 +1,6 @@
 import '../style/Login.css'
 import Header from '../components/Header.jsx'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
 import googleLogo from '../assets/images/google.png'
@@ -66,9 +66,9 @@ export default function Login() {
                     <button id='googleButton' onClick={googleLogin}><img id='googleLogo' src={googleLogo} alt="Google" /><p id='loginGoogleText'>Continuar con Google</p></button>
                 </div>
                 <div id='notHaveAccountDiv'>
-                    <Link to={"/signup"}><p id='notHaveAccount'>¿No tienes una cuenta? Crea una.</p></Link>
+                    <p id='notHaveAccount' onClick={() => navigate("/signup")}>¿No tienes una cuenta? Crea una.</p>
                 </div>
-            </div>
+            </div >
         </>
     )
 }

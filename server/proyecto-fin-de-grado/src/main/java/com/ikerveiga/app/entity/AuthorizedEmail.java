@@ -22,7 +22,7 @@ public class AuthorizedEmail {
     private String email;
 
     @OneToOne
-    @JoinColumn(name = "player_id", nullable = false, unique = false)
+    @JoinColumn(name = "player_id", nullable = true, unique = false)
     private Player player;
 
     public AuthorizedEmail() {
