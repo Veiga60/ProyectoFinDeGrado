@@ -51,6 +51,7 @@ export default function Stats() {
                     <TabPanel id='playersTab'>
                         {players.map(player =>
                             <PlayerCard
+                                id='playerCard'
                                 key={player.id}
                                 player={player}
                                 onClick={() => navigate(`/stats/players/${player.id}`)}
