@@ -89,10 +89,10 @@ public class Call {
     public CallDTO toDTO() {
         List<PlayerDTO> playersDTO = new ArrayList<>();
         for (Player player : this.players) {
-            playersDTO.add(player.toDTO());
+            playersDTO.add(player.toDTOWithoutStatsAndCalls());
         }
 
-        CallDTO callDTO = new CallDTO(this.id, playersDTO, this.match.toDTO(), this.status);
+        CallDTO callDTO = new CallDTO(this.id, playersDTO, this.match.toDTOwithoutCalls(), this.status);
 
         return callDTO;
     }

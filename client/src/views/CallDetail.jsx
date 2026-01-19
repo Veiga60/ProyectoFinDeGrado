@@ -32,6 +32,14 @@ export default function CallDetail() {
         }
     }
 
+    const callPlayer = async (playerId) => {
+        try {
+            const response = await axios.post(`${SERVER_URL}/calls/matches/${match.id}/players/${playerId}`, {}, { withCredentials: true });
+        } catch (error) {
+            console.log('Error calling player: ', error);
+        }
+    }
+
     useEffect(() => {
         getMatch();
         getPlayers();
@@ -51,6 +59,7 @@ export default function CallDetail() {
                         <PlayerCard
                             key={player.id}
                             player={player}
+                            onClick={() => callPlayer(player.id)}
                         />
                     )}
                 </div>
