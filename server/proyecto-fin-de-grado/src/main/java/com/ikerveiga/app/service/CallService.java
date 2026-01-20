@@ -1,7 +1,9 @@
 package com.ikerveiga.app.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,13 +36,19 @@ public class CallService {
 
         if (existingCall == null) {
             List<Player> calledPlayers = new ArrayList<>();
-            calledPlayers.add(playerDAO.findById(playerId));
+            Map<Player, CallStatus> callPlayerStatus = new HashMap<>();
+            Player calledPlayer = playerDAO.findById(playerId);
 
-            Call call = new Call(calledPlayers, match, CallStatus.PENDING);
+            calledPlayers.add(calledPlayer);
+            callPlayerStatus.put(calledPlayer, CallStatus.PENDING);
+
+            Call call = new Call(calledPlayers, match, callPlayerStatus);
 
             callDAO.save(call);
         } else {
-            existingCall.getPlayers().add(playerDAO.findById(playerId));
+            Player calledPlayer = playerDAO.findById(playerId);
+            existingCall.getPlayers().add(calledPlayer);
+            existingCall.getCallPlayerStatus().put(calledPlayer, CallStatus.PENDING);
 
             callDAO.save(existingCall);
         }

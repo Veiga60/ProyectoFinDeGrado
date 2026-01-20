@@ -6,6 +6,10 @@ public class TeamDTO {
     private String name;
     private String logo;
 
+    public TeamDTO() {
+
+    }
+
     public TeamDTO(long id, String name, String logo) {
         this.id = id;
         this.name = name;

@@ -16,6 +16,10 @@ public class MatchDTO {
     private Long bonusPoint;
     private CallDTO call;
 
+    public MatchDTO() {
+
+    }
+
     public MatchDTO(TeamDTO localTeam, Integer localTeamGoals, TeamDTO visitingTeam, Integer visitingTeamGoals,
             LocalDate date,
             LocalTime time, boolean isPlayed, Long bonusPoint, CallDTO call) {

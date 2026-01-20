@@ -20,6 +20,10 @@ public class TeamStatsDTO {
     private int threeVsOne;
     private int threeVsTwo;
 
+    public TeamStatsDTO() {
+
+    }
+
     public TeamStatsDTO(long id, int points, int gamesPlayed, int gamesWon, int gamesLost, int gamesTied,
             int bonusPoints,
             int goalsFor, int goalsAgainst, float powerPlayPercentage, float penaltyKillPercentage, int oneVsZero,

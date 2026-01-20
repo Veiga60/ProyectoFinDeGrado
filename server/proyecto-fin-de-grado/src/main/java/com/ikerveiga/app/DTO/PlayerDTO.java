@@ -19,6 +19,10 @@ public class PlayerDTO {
     private PlayerStatsDTO playerStats;
     private GoalieStatsDTO goalieStats;
 
+    public PlayerDTO() {
+
+    }
+
     public PlayerDTO(String name, String lastName1, String lastName2, LocalDate birthDate, int number, String photo,
             PlayerType playerType,
             List<CallDTO> calls,

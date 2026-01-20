@@ -11,6 +11,10 @@ public class GoalieStatsDTO {
     private int penaltyShotGoals;
     private int penaltyShotSaves;
 
+    public GoalieStatsDTO() {
+
+    }
+
     public GoalieStatsDTO(long id, PlayerDTO goalie, int gamesPlayed, int shotsReceived, int goalsReceived,
             int penaltyMins, int penaltyShotGoals, int penaltyShotSaves) {
         this.id = id;

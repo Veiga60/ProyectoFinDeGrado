@@ -9,6 +9,10 @@ public class UserDTO {
     private boolean isCoach;
     private PlayerDTO playerDTO;
 
+    public UserDTO() {
+
+    }
+
     public UserDTO(long id, String userName, String email, String password, boolean isCoach, PlayerDTO playerDTO) {
         this.id = id;
         this.userName = userName;
@@ -26,7 +30,7 @@ public class UserDTO {
         return userName;
     }
 
-    public void setName(String userName) {
+    public void setUserName(String userName) {
         this.userName = userName;
     }
 

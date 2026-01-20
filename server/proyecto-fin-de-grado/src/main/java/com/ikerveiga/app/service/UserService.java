@@ -60,14 +60,14 @@ public class UserService {
         return userInfo;
     }
 
-    public void signup(String name, String email, String password, boolean isCoach) {
+    public void signup(String userName, String email, String password, boolean isCoach) {
         User existingUser = userDAO.findByEmail(email);
         if (existingUser != null) {
             throw new RuntimeException("User already exists");
         } else {
             AuthorizedEmail authorizedEmail = authorizedEmailDAO.findByEmail(email);
             if (authorizedEmail != null) {
-                User user = new User(name, email, passwordEncoder.encode(password), isCoach,
+                User user = new User(userName, email, passwordEncoder.encode(password), isCoach,
                         authorizedEmail.getPlayer());
                 userDAO.save(user);
             } else {

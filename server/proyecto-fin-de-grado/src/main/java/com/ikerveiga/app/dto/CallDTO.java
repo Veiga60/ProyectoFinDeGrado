@@ -1,6 +1,7 @@
 package com.ikerveiga.app.dto;
 
 import java.util.List;
+import java.util.Map;
 
 import com.ikerveiga.app.enums.CallStatus;
 
@@ -9,19 +10,23 @@ public class CallDTO {
     private long id;
     private List<PlayerDTO> players;
     private MatchDTO match;
-    private CallStatus status;
+    private Map<Long, CallStatus> callPlayerStatus;
 
-    public CallDTO(List<PlayerDTO> players, MatchDTO match, CallStatus status) {
-        this.players = players;
-        this.match = match;
-        this.status = status;
+    public CallDTO() {
+
     }
 
-    public CallDTO(long id, List<PlayerDTO> players, MatchDTO match, CallStatus status) {
+    public CallDTO(List<PlayerDTO> players, MatchDTO match, Map<Long, CallStatus> callPlayerStatus) {
+        this.players = players;
+        this.match = match;
+        this.callPlayerStatus = callPlayerStatus;
+    }
+
+    public CallDTO(long id, List<PlayerDTO> players, MatchDTO match, Map<Long, CallStatus> callPlayerStatus) {
         this.id = id;
         this.players = players;
         this.match = match;
-        this.status = status;
+        this.callPlayerStatus = callPlayerStatus;
     }
 
     public long getId() {
@@ -44,12 +49,11 @@ public class CallDTO {
         this.match = match;
     }
 
-    public CallStatus getStatus() {
-        return this.status;
+    public Map<Long, CallStatus> getCallPlayerStatus() {
+        return this.callPlayerStatus;
     }
 
-    public void setStatus(CallStatus status) {
-        this.status = status;
+    public void setCallPlayerStatus(Map<Long, CallStatus> callPlayerStatus) {
+        this.callPlayerStatus = callPlayerStatus;
     }
-
 }

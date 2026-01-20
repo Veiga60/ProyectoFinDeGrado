@@ -16,6 +16,10 @@ public class PlayerStatsDTO {
     private int penaltyShotGoals;
     private int penaltyShotMisses;
 
+    public PlayerStatsDTO() {
+
+    }
+
     public PlayerStatsDTO(long id, PlayerDTO player, int gamesPlayed, int goals, int assists, int plusMinus,
             int shots,
             int goodPasses,

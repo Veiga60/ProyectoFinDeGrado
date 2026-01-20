@@ -1,22 +1,26 @@
 package com.ikerveiga.app.entity;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.ikerveiga.app.dto.CallDTO;
 import com.ikerveiga.app.dto.PlayerDTO;
 import com.ikerveiga.app.enums.CallStatus;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.MapKeyJoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -37,25 +41,27 @@ public class Call {
     @JoinColumn(name = "match_id", referencedColumnName = "match_id")
     private Match match;
 
-    @Enumerated
-    @Column(name = "call_status", nullable = false, unique = false)
-    private CallStatus status;
+    @ElementCollection
+    @MapKeyJoinColumn(name = "player_id")
+    @Column(name = "call_player_status", nullable = false, unique = false)
+    @CollectionTable(name = "calls_players_status", joinColumns = @JoinColumn(name = "call_id"))
+    private Map<Player, CallStatus> callPlayerStatus;
 
     public Call() {
 
     }
 
-    public Call(List<Player> players, Match match, CallStatus status) {
+    public Call(List<Player> players, Match match, Map<Player, CallStatus> callPlayerStatus) {
         this.players = players;
         this.match = match;
-        this.status = status;
+        this.callPlayerStatus = callPlayerStatus;
     }
 
-    public Call(long id, List<Player> players, Match match, CallStatus status) {
+    public Call(long id, List<Player> players, Match match, Map<Player, CallStatus> callPlayerStatus) {
         this.id = id;
         this.players = players;
         this.match = match;
-        this.status = status;
+        this.callPlayerStatus = callPlayerStatus;
     }
 
     public long getId() {
@@ -78,12 +84,12 @@ public class Call {
         this.match = match;
     }
 
-    public CallStatus getStatus() {
-        return this.status;
+    public Map<Player, CallStatus> getCallPlayerStatus() {
+        return this.callPlayerStatus;
     }
 
-    public void setStatus(CallStatus status) {
-        this.status = status;
+    public void setCallPlayerStatus(Map<Player, CallStatus> callPlayerStatus) {
+        this.callPlayerStatus = callPlayerStatus;
     }
 
     public CallDTO toDTO() {
@@ -92,7 +98,13 @@ public class Call {
             playersDTO.add(player.toDTOWithoutStatsAndCalls());
         }
 
-        CallDTO callDTO = new CallDTO(this.id, playersDTO, this.match.toDTOwithoutCalls(), this.status);
+        Map<Long, CallStatus> callPlayerStatus = new HashMap<>();
+
+        for (Player player : this.callPlayerStatus.keySet()) {
+            callPlayerStatus.put(player.getId(), this.callPlayerStatus.get(player));
+        }
+
+        CallDTO callDTO = new CallDTO(this.id, playersDTO, this.match.toDTOwithoutCalls(), callPlayerStatus);
 
         return callDTO;
     }

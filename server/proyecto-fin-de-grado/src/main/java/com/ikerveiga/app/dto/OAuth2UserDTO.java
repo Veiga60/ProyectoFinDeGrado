@@ -8,6 +8,10 @@ public class OAuth2UserDTO {
     private boolean isCoach;
     private PlayerDTO playerDTO;
 
+    public OAuth2UserDTO() {
+
+    }
+
     public OAuth2UserDTO(long id, String username, String email, boolean isCoach, PlayerDTO playerDTO) {
         this.id = id;
         this.username = username;
