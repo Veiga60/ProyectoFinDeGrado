@@ -14,6 +14,7 @@ export default function Home() {
             console.log(response.data);
             setAuthenticatedUser(response.data);
             localStorage.setItem('isCoach', response.data.isCoach);
+            localStorage.setItem('playerId', response.data.player?.id);
         } catch (error) {
             console.log('Error al obtener la información del usuario: ', error);
         }

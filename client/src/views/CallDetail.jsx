@@ -13,11 +13,16 @@ export default function CallDetail() {
 
     const [match, setMatch] = useState();
     const [players, setPlayers] = useState([]);
+    const [call, setCall] = useState();
 
     const getMatch = async () => {
         try {
             const response = await axios.get(`${SERVER_URL}/matches/${matchId}`, { withCredentials: true });
+            console.log(response.data);
             setMatch(response.data);
+            if (Response.data.call != null) {
+                setCall(response.data.call);
+            }
         } catch (error) {
             console.log('Error fetching selected match: ', error);
         }
@@ -34,11 +39,12 @@ export default function CallDetail() {
 
     const callPlayer = async (playerId) => {
         try {
-            const response = await axios.post(`${SERVER_URL}/calls/matches/${match.id}/players/${playerId}`, {}, { withCredentials: true });
+            const response = await axios.post(`${SERVER_URL}/calls/match/${match.id}/players/${playerId}`, {}, { withCredentials: true });
         } catch (error) {
             console.log('Error calling player: ', error);
         }
     }
+
 
     useEffect(() => {
         getMatch();

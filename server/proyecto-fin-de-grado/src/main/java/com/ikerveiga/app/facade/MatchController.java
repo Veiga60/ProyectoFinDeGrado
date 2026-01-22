@@ -49,7 +49,7 @@ public class MatchController {
     @GetMapping("matches/{id}")
     public ResponseEntity<MatchDTO> getMatch(@PathVariable("id") long id) {
         try {
-            MatchDTO matchDTO = matchService.getMatch(id).toDTOwithoutCalls();
+            MatchDTO matchDTO = matchService.getMatch(id).toDTO();
             return ResponseEntity.ok(matchDTO);
         } catch (RuntimeException e) {
             if (e.getMessage().equals("Match not found")) {

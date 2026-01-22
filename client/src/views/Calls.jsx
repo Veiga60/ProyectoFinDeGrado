@@ -12,6 +12,7 @@ export default function Calls() {
 
     const [matches, setMatches] = useState([]);
 
+
     const getNextMatches = async () => {
         try {
             const response = await axios.get(`${SERVER_URL}/matches/next`, { withCredentials: true });
@@ -31,7 +32,19 @@ export default function Calls() {
         }
     }
 
+    const getCallsOfPlayer = async (playerId) => {
+        try {
+            const response = await axios.get(`${SERVER_URL}/calls/player/${playerId}`, { withCredentials: true });
+            console.log(response.data);
+        } catch (error) {
+            console.log('Error fetching your calls: ', error);
+        }
+    }
+
     useEffect(() => {
+        if (localStorage.getItem('isCoach') == 'false') {
+            getCallsOfPlayer(Number(localStorage.getItem('playerId')));
+        }
         getNextMatches();
     }, []);
 

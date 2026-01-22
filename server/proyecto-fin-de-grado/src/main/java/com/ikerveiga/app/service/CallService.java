@@ -30,6 +30,16 @@ public class CallService {
         this.matchDAO = matchDAO;
     }
 
+    public Call getCall(long matchId) {
+        Call call = callDAO.findByMatchId(matchId);
+
+        if (call == null) {
+            throw new RuntimeException("Call for that match not found");
+        }
+
+        return call;
+    }
+
     public void callPlayer(long matchId, long playerId) {
         Call existingCall = callDAO.findByMatchId(matchId);
         Match match = matchDAO.findById(matchId);
@@ -44,7 +54,10 @@ public class CallService {
 
             Call call = new Call(calledPlayers, match, callPlayerStatus);
 
+            match.setCall(call);
+
             callDAO.save(call);
+            matchDAO.save(match);
         } else {
             Player calledPlayer = playerDAO.findById(playerId);
             existingCall.getPlayers().add(calledPlayer);
@@ -52,5 +65,18 @@ public class CallService {
 
             callDAO.save(existingCall);
         }
+    }
+
+    public List<Call> getCallsOfPlayer(long playerId) {
+        Player player = playerDAO.findById(playerId);
+
+        if (player == null) {
+            throw new RuntimeException("Player not found");
+        }
+
+        List<Call> calls = player.getCalls();
+
+        return calls;
+
     }
 }
