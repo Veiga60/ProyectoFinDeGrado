@@ -22,16 +22,6 @@ export default function Calls() {
         }
     }
 
-    const onClick = (matchId) => {
-        const isCoach = localStorage.getItem('isCoach');
-        console.log(isCoach);
-        if (isCoach == 'true') {
-            navigate(`/calls/match/${matchId}`);
-        } else {
-            return;
-        }
-    }
-
     const getCallsOfPlayer = async (playerId) => {
         try {
             const response = await axios.get(`${SERVER_URL}/calls/player/${playerId}`, { withCredentials: true });
@@ -57,7 +47,7 @@ export default function Calls() {
                         <MatchCard
                             key={match.id}
                             match={match}
-                            onClick={() => onClick(match.id)}
+                            onClick={() => navigate(`/calls/match/${match.id}`)}
                         />
                     )}
                 </div>

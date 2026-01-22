@@ -39,10 +39,13 @@ export default function CallDetail() {
     }
 
     const callPlayer = async (playerId) => {
-        try {
-            const response = await axios.post(`${SERVER_URL}/calls/match/${match.id}/players/${playerId}`, {}, { withCredentials: true });
-        } catch (error) {
-            console.log('Error calling player: ', error);
+        if (localStorage.getItem('isCoach') == 'true') {
+            try {
+                const response = await axios.post(`${SERVER_URL}/calls/match/${match.id}/players/${playerId}`, {}, { withCredentials: true });
+                window.location.reload(true);
+            } catch (error) {
+                console.log('Error calling player: ', error);
+            }
         }
     }
 
@@ -60,6 +63,16 @@ export default function CallDetail() {
                     <Match
                         match={match}
                     />
+                    {
+                        ((call != undefined && localStorage.getItem('isCoach') == 'false' && Number(localStorage.getItem('playerId')) in call?.callPlayerStatus)
+                            &&
+                            (
+                                <div id='callButtonsDiv'>
+                                    <button>&#x2714;</button>
+                                    <button>&#x2716;</button>
+                                </div>
+                            ))
+                    }
                 </div>
                 <div id='playersToCallDiv'>
                     {players.map((player) =>

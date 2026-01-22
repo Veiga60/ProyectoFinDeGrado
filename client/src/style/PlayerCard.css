@@ -27,8 +27,13 @@
 }
 
 .playerPendingDiv::before {
-    content: "";
-    display: block;
+    content: "?";
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: 6em;
+    align-items: center;
+    justify-content: center;
+    display: flex;
     position: absolute;
     top: 0;
     left: 0;
@@ -45,7 +50,7 @@
 }
 
 .playerConfirmedDiv::before {
-    content: "";
+    content: "\2714";
     display: block;
     position: absolute;
     top: 0;
@@ -65,8 +70,13 @@
 }
 
 .playerOutDiv::before {
-    content: "";
-    display: block;
+    content: "\2716";
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: 6em;
+    align-items: center;
+    justify-content: center;
+    display: flex;
     position: absolute;
     top: 0;
     left: 0;
