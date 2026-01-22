@@ -20,7 +20,8 @@ export default function CallDetail() {
             const response = await axios.get(`${SERVER_URL}/matches/${matchId}`, { withCredentials: true });
             console.log(response.data);
             setMatch(response.data);
-            if (Response.data.call != null) {
+            console.log(response.data.call);
+            if (response.data.call != null) {
                 setCall(response.data.call);
             }
         } catch (error) {
@@ -66,6 +67,7 @@ export default function CallDetail() {
                             key={player.id}
                             player={player}
                             onClick={() => callPlayer(player.id)}
+                            status={call?.callPlayerStatus[player.id]}
                         />
                     )}
                 </div>

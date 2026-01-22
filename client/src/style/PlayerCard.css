@@ -14,11 +14,73 @@
 }
 
 #playerPhotoDiv {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    height: 86%;
     width: 200px;
 }
 
+.playerPendingDiv {
+    position: relative;
+    width: 200px;
+}
+
+.playerPendingDiv::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(7, 78, 200, 0.55);
+    z-index: 1;
+    border-radius: 20px;
+}
+
+.playerConfirmedDiv {
+    position: relative;
+    width: 200px;
+}
+
+.playerConfirmedDiv::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 200, 7, 0.55);
+    z-index: 1;
+    border-radius: 20px;
+    height: 184px;
+    width: 204px
+}
+
+.playerOutDiv {
+    position: relative;
+    width: 200px;
+}
+
+.playerOutDiv::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(200, 10, 7, 0.55);
+    z-index: 1;
+    border-radius: 20px;
+    height: 184px;
+    width: 204px
+}
+
 #playerPhoto {
-    width: 100%;
+    width: 99%;
     height: 180px;
     border: 2px solid rgb(7, 78, 200);
     border-radius: 20px;
