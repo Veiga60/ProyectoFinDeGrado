@@ -55,6 +55,7 @@ export default function Stats() {
                                 key={player.id}
                                 player={player}
                                 onClick={() => navigate(`/stats/players/${player.id}`)}
+                                enableHover={'true'}
                             />
                         )}
                     </TabPanel>

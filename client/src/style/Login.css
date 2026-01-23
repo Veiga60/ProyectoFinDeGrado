@@ -67,6 +67,7 @@ button {
     height: 40px;
     font-family: Inria Sans;
     font-size: larger;
+    transition: 0.5s;
 }
 
 button:hover {

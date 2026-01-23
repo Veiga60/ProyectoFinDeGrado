@@ -9,6 +9,7 @@ import com.ikerveiga.app.entity.Match;
 
 public interface MatchRepository extends JpaRepository<Match, Long> {
 
+    @Query("SELECT a FROM Match a ORDER BY date, time ASC")
     Match findById(long id);
 
     List<Match> findAll();
