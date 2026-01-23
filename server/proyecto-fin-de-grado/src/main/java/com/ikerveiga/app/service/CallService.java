@@ -60,6 +60,11 @@ public class CallService {
             matchDAO.save(match);
         } else {
             Player calledPlayer = playerDAO.findById(playerId);
+
+            if (existingCall.getPlayers().contains(calledPlayer)) {
+                throw new RuntimeException("Player is already called");
+            }
+
             existingCall.getPlayers().add(calledPlayer);
             existingCall.getCallPlayerStatus().put(calledPlayer, CallStatus.PENDING);
 

@@ -96,6 +96,7 @@ export default function CallDetail() {
                             player={player}
                             onClick={() => callPlayer(player.id)}
                             status={call?.callPlayerStatus[player.id]}
+                            enableHover={localStorage.getItem('isCoach')}
                         />
                     )}
                 </div>

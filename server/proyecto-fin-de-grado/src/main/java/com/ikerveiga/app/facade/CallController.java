@@ -48,9 +48,12 @@ public class CallController {
             callsService.callPlayer(matchId, playerId);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (RuntimeException e) {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            if (e.getMessage().equals("Player is already called")) {
+                return new ResponseEntity<>(HttpStatus.CONFLICT);
+            } else {
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
         }
-
     }
 
     @GetMapping("/calls/player/{playerId}")
