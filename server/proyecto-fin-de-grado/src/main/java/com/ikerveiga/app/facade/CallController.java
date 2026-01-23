@@ -9,6 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ikerveiga.app.dto.CallDTO;
@@ -63,6 +65,22 @@ public class CallController {
             return ResponseEntity.ok(callsDTO);
         } catch (RuntimeException e) {
             if (e.getMessage().equals("Player not found")) {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            } else {
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
+        }
+    }
+
+    @PutMapping("/calls/{callId}/players/{playerId}")
+    public ResponseEntity<Void> setAttendance(@PathVariable("callId") long callId,
+            @PathVariable("playerId") long playerId,
+            @RequestParam("attendance") boolean attendance) {
+        try {
+            callsService.setAttendance(callId, playerId, attendance);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (RuntimeException e) {
+            if (e.getMessage().equals("Call not found") || e.getMessage().equals("Player not found")) {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             } else {
                 return new ResponseEntity<>(HttpStatus.BAD_REQUEST);

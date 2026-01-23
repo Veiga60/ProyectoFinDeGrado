@@ -79,4 +79,25 @@ public class CallService {
         return calls;
 
     }
+
+    public void setAttendance(long callId, long playerId, boolean attendance) {
+        Call call = callDAO.findById(callId);
+        Player player = playerDAO.findById(playerId);
+
+        if (call == null) {
+            throw new RuntimeException("Call not found");
+        }
+
+        if (player == null) {
+            throw new RuntimeException("Player not found");
+        }
+
+        if (attendance == true) {
+            call.getCallPlayerStatus().put(player, CallStatus.CONFIRMED);
+        } else {
+            call.getCallPlayerStatus().put(player, CallStatus.OUT);
+        }
+
+        callDAO.save(call);
+    }
 }

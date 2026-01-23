@@ -49,6 +49,21 @@ export default function CallDetail() {
         }
     }
 
+    const setAttendance = async (callId, attendance) => {
+        try {
+            const response = await axios.put(`${SERVER_URL}/calls/${callId}/players/${localStorage.getItem('playerId')}`,
+                {},
+                {
+                    params: { attendance: attendance },
+                    withCredentials: true
+                }
+            );
+            window.location.reload(true);
+        } catch (error) {
+            console.log('Error confirming attendance/not attendance: ', error);
+        }
+    }
+
 
     useEffect(() => {
         getMatch();
@@ -64,12 +79,12 @@ export default function CallDetail() {
                         match={match}
                     />
                     {
-                        ((call != undefined && localStorage.getItem('isCoach') == 'false' && Number(localStorage.getItem('playerId')) in call?.callPlayerStatus)
+                        ((call != undefined && localStorage.getItem('isCoach') == 'false' && call?.callPlayerStatus[Number(localStorage.getItem('playerId'))] == 'PENDING')
                             &&
                             (
-                                <div id='callButtonsDiv'>
-                                    <button>&#x2714;</button>
-                                    <button>&#x2716;</button>
+                                <div id='attendanceButtonsDiv'>
+                                    <button id='confirmAttendanceButton' onClick={() => setAttendance(call?.id, true)}>&#x2714;</button>
+                                    <button id='confirmNotAttendanceButton' onClick={() => setAttendance(call?.id, false)}>&#x2716;</button>
                                 </div>
                             ))
                     }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Header from '../components/Header.jsx'
 import Match from '../components/Match.jsx'
+import '../style/Matches.css'
 import axios from 'axios'
 
 export default function Matches() {
@@ -25,7 +26,7 @@ export default function Matches() {
     return (
         <>
             <Header />
-            <div>
+            <div id='matchesDiv'>
                 {matches.map((match) =>
                     <Match
                         key={match.id}

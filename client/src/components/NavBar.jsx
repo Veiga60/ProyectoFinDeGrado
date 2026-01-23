@@ -22,17 +22,17 @@ export default function NavBar() {
 
     return (
         <div id="navbarDiv">
-            <div id="matchesDiv" className="navbarSectionDiv" onClick={() => navigate('/home')}>
-                <p id="matchesText" className="navbarText">INICIO</p>
+            <div id="homeNavDiv" className="navbarSectionDiv" onClick={() => navigate('/home')}>
+                <p id="homeNavText" className="navbarText">INICIO</p>
             </div>
-            <div id="matchesDiv" className="navbarSectionDiv" onClick={() => navigate('/matches')}>
-                <p id="matchesText" className="navbarText">PARTIDOS</p>
+            <div id="matchesNavDiv" className="navbarSectionDiv" onClick={() => navigate('/matches')}>
+                <p id="matchesNavText" className="navbarText">PARTIDOS</p>
             </div>
-            <div id="statsDiv" className="navbarSectionDiv" onClick={() => navigate('/stats')}>
-                <p id="statsText" className="navbarText">ESTADÍSTICAS</p>
+            <div id="statsNavDiv" className="navbarSectionDiv" onClick={() => navigate('/stats')}>
+                <p id="statsNavText" className="navbarText">ESTADÍSTICAS</p>
             </div>
-            <div id="statsDiv" className="navbarSectionDiv" onClick={() => navigate('/calls')}>
-                <p id="statsText" className="navbarText">CONVOCATORIAS</p>
+            <div id="callsNavDiv" className="navbarSectionDiv" onClick={() => navigate('/calls')}>
+                <p id="callsNavText" className="navbarText">CONVOCATORIAS</p>
             </div>
             <div id='logoutButtonDiv' onClick={() => logout()}>
                 <img id='logoutImage' src={logoutDoor} alt="Logout" />
