@@ -39,13 +39,51 @@ export default function StartMatch() {
                 visitingTeamGoals={visitingTeamGoals}
             />
             <div id='matchMainDiv'>
-                {players.map(player =>
-                    (match.call.callPlayerStatus[player.id] == 'CONFIRMED') && (
-                        <PlayerCard
-                            player={player}
-                        />
-                    )
-                )}
+                <div id='calledPlayersDiv'>
+                    <table id='calledPlayersTable'>
+                        <caption className='tableTitle'>JUGADORES</caption>
+                        <tbody id='calledPlayersTableBody'>
+                            {players.map(player =>
+                                ((match.call.callPlayerStatus[player.id] == 'CONFIRMED') && player.playerType == 'RINK_PLAYER') && (
+                                    <tr className='calledPlayerRow'>
+                                        <td className='calledPlayerNumber'>
+                                            {player.number}
+                                        </td>
+                                        <td className='calledPlayerName'>
+                                            {player.name} {player.lastName1} {player.lastName2}
+                                        </td>
+                                    </tr>
+                                )
+                            )}
+
+                        </tbody>
+                    </table>
+
+                    <table id='calledGoaliesTable'>
+                        <caption className='tableTitle'>PORTEROS</caption>
+                        <tbody id='calledGoaliesTableBody'>
+                            {players.map(player =>
+                                ((match.call.callPlayerStatus[player.id] == 'CONFIRMED') && player.playerType == 'GOALIE') && (
+                                    <tr className='calledGoalieRow'>
+                                        <td className='calledGoalieNumber'>
+                                            {player.number}
+                                        </td>
+                                        <td className='calledGoalieName'>
+                                            {player.name} {player.lastName1} {player.lastName2}
+                                        </td>
+                                    </tr>
+                                )
+                            )}
+
+                        </tbody>
+                    </table>
+                </div>
+                <div id='matchEventsContainer'>
+                    <p id='matchEventsText'>ACTA DEL PARTIDO</p>
+                    <div id='matchEventsDiv'>
+
+                    </div>
+                </div>
             </div>
         </>
     )
