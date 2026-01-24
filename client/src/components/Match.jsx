@@ -6,7 +6,7 @@ export default function Match({ match }) {
             <div id="matchDiv">
                 <div id='infoContainer'>
                     <div id='localTeamDiv'>
-                        <div className='teamImageDiv'>
+                        <div className='teamLogoDiv'>
                             <img src={`/logos/${match?.localTeam.logo}`} alt={match?.localTeam.name} />
                         </div>
                         <p className='matchText'>{match?.localTeam.name}</p>
@@ -23,7 +23,7 @@ export default function Match({ match }) {
                         <p className='matchGoals'>{match?.visitingTeamGoals}</p>
                     </div>
                     <div id="visitingTeamDiv">
-                        <div className='teamImageDiv'>
+                        <div className='teamLogoDiv'>
                             <img src={`/logos/${match?.visitingTeam.logo}`} alt={match?.visitingTeam.name} />
                         </div>
                         <p className='matchText'>{match?.visitingTeam.name}</p>

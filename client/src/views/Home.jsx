@@ -2,11 +2,14 @@ import Header from '../components/Header.jsx'
 import Match from '../components/Match.jsx'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../style/Home.css'
 
 export default function Home() {
 
     const SERVER_URL = 'http://localhost:8081';
+    const navigate = useNavigate();
+
     const [authenticatedUser, setAuthenticatedUser] = useState(null);
     const [nextMatch, setNextMatch] = useState();
 
@@ -28,7 +31,7 @@ export default function Home() {
             setNextMatch(response.data[0])
 
         } catch (error) {
-            console.log('Error fetchinf next match: ', error);
+            console.log('Error fetching next match: ', error);
         }
     }
 
@@ -58,7 +61,7 @@ export default function Home() {
                             {(localStorage.getItem('isCoach') == 'true') &&
                                 (
                                     <div id='startMatchDiv'>
-                                        <button id='startMatchButton'>EMPEZAR PARTIDO</button>
+                                        <button id='startMatchButton' onClick={() => navigate('/matches/next/start_match')}>EMPEZAR PARTIDO</button>
                                     </div>
                                 )}
                         </div>

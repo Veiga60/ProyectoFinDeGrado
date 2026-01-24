@@ -73,7 +73,12 @@ public class MatchController {
             List<Match> nextMatches = matchService.getNextMatches();
             List<MatchDTO> matchesDTO = new ArrayList<>();
             for (Match match : nextMatches) {
-                MatchDTO matchDTO = match.toDTOwithoutCalls();
+                MatchDTO matchDTO;
+                if (match.getCall() == null) {
+                    matchDTO = match.toDTOwithoutCalls();
+                } else {
+                    matchDTO = match.toDTO();
+                }
                 matchesDTO.add(matchDTO);
             }
 
