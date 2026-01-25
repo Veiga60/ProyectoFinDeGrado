@@ -45,12 +45,20 @@
     width: 30px;
 }
 
+.calledPlayerNumber:hover {
+    cursor: pointer;
+}
+
 .calledPlayerName {
     background-color: white;
     color: black;
     font-family: Inria Sans;
     font-weight: bold;
     font-size: larger;
+}
+
+.calledPlayerName:hover {
+    cursor: pointer;
 }
 
 .calledGoalieNumber {
@@ -62,12 +70,20 @@
     width: 30px;
 }
 
+.calledGoalieNumber:hover {
+    cursor: pointer;
+}
+
 .calledGoalieName {
     background-color: white;
     color: black;
     font-family: Inria Sans;
     font-weight: bold;
     font-size: larger;
+}
+
+.calledGoalieName:hover {
+    cursor: pointer;
 }
 
 #matchEventsContainer {

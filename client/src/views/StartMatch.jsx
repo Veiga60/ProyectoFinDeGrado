@@ -45,11 +45,11 @@ export default function StartMatch() {
                         <tbody id='calledPlayersTableBody'>
                             {players.map(player =>
                                 ((match.call.callPlayerStatus[player.id] == 'CONFIRMED') && player.playerType == 'RINK_PLAYER') && (
-                                    <tr className='calledPlayerRow'>
-                                        <td className='calledPlayerNumber'>
+                                    <tr key={player.id} className='calledPlayerRow'>
+                                        <td className='calledPlayerNumber' onClick={() => navigate(`/matches/next/start_match/players/${player.id}`)}>
                                             {player.number}
                                         </td>
-                                        <td className='calledPlayerName'>
+                                        <td className='calledPlayerName' onClick={() => navigate(`/matches/next/start_match/players/${player.id}`)}>
                                             {player.name} {player.lastName1} {player.lastName2}
                                         </td>
                                     </tr>
@@ -64,11 +64,11 @@ export default function StartMatch() {
                         <tbody id='calledGoaliesTableBody'>
                             {players.map(player =>
                                 ((match.call.callPlayerStatus[player.id] == 'CONFIRMED') && player.playerType == 'GOALIE') && (
-                                    <tr className='calledGoalieRow'>
-                                        <td className='calledGoalieNumber'>
+                                    <tr key={player.id} className='calledGoalieRow'>
+                                        <td className='calledGoalieNumber' onClick={() => navigate(`/matches/next/start_match/players/${player.id}`)}>
                                             {player.number}
                                         </td>
-                                        <td className='calledGoalieName'>
+                                        <td className='calledGoalieName' onClick={() => navigate(`/matches/next/start_match/players/${player.id}`)}>
                                             {player.name} {player.lastName1} {player.lastName2}
                                         </td>
                                     </tr>
