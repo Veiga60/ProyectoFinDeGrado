@@ -16,11 +16,15 @@ export default function StartMatchPlayer() {
     const [goodPasses, setGoodPasses] = useState(0);
     const [badPasses, setBadPasses] = useState(0);
     const [recoveredPucks, setRecoveredPucks] = useState(0);
-    const [penaltyMins, setPenaltyMins] = useState(0);
-    const [penaltyShotGoals, setPenaltyShotGoals] = useState(0);
-    const [penaltyShotMisses, setPenaltyShotMisses] = useState(0);
+    const [playerPenaltyMins, setPlayerPenaltyMins] = useState(0);
+    const [playerPenaltyShotGoals, setPlayerPenaltyShotGoals] = useState(0);
+    const [playerPenaltyShotMisses, setPlayerPenaltyShotMisses] = useState(0);
 
     const [shotsReceived, setShotsReceived] = useState(0);
+    const [goalsReceived, setGoalsReceived] = useState(0);
+    const [goaliePenaltyMins, setGoaliePenaltyMins] = useState(0);
+    const [goaliePenaltyShotGoals, setGoaliePenaltyShotGoals] = useState(0);
+    const [penaltyShotSaves, setPenaltyShotSaves] = useState(0);
 
     const getPlayer = async () => {
         try {
@@ -68,6 +72,12 @@ export default function StartMatchPlayer() {
                                     </div>
                                 </div>
                                 <div className='statDiv'>
+                                    <p className='statTitle'>PUNTOS</p>
+                                    <div className='matchStatDiv'>
+                                        <p className='matchStat'>{goals + assists}</p>
+                                    </div>
+                                </div>
+                                <div className='statDiv'>
                                     <p className='statTitle'>+/-</p>
                                     <div className='matchStatDiv'>
                                         <button className='minusButton' onClick={() => setPlusMinus(plusMinus - 1)}>-</button>
@@ -110,36 +120,78 @@ export default function StartMatchPlayer() {
                                 <div className='statDiv'>
                                     <p className='statTitle'>MINUTOS SANCIÓN</p>
                                     <div className='matchStatDiv'>
-                                        <button className='minusButton' onClick={() => (penaltyMins > 0) && setPenaltyMins(penaltyMins - 1)}>-</button>
-                                        <p className='matchStat'>{penaltyMins}</p>
-                                        <button className='plusButton' onClick={() => setPenaltyMins(penaltyMins + 1)}>+</button>
+                                        <button className='minusButton' onClick={() => (playerPenaltyMins > 0) && setPlayerPenaltyMins(playerPenaltyMins - 1)}>-</button>
+                                        <p className='matchStat'>{playerPenaltyMins}</p>
+                                        <button className='plusButton' onClick={() => setPlayerPenaltyMins(playerPenaltyMins + 1)}>+</button>
                                     </div>
                                 </div>
                                 <div className='statDiv'>
                                     <p className='statTitle'>PENALTIS METIDOS</p>
                                     <div className='matchStatDiv'>
-                                        <button className='minusButton' onClick={() => (penaltyShotGoals > 0) && setPenaltyShotGoals(penaltyShotGoals - 1)}>-</button>
-                                        <p className='matchStat'>{penaltyShotGoals}</p>
-                                        <button className='plusButton' onClick={() => setPenaltyShotGoals(penaltyShotGoals + 1)}>+</button>
+                                        <button className='minusButton' onClick={() => (playerPenaltyShotGoals > 0) && setPlayerPenaltyShotGoals(playerPenaltyShotGoals - 1)}>-</button>
+                                        <p className='matchStat'>{playerPenaltyShotGoals}</p>
+                                        <button className='plusButton' onClick={() => setPlayerPenaltyShotGoals(playerPenaltyShotGoals + 1)}>+</button>
                                     </div>
                                 </div>
                                 <div className='statDiv'>
                                     <p className='statTitle'>PENALTIS FALLADOS</p>
                                     <div className='matchStatDiv'>
-                                        <button className='minusButton' onClick={() => (penaltyShotMisses > 0) && setPenaltyShotMisses(penaltyShotMisses - 1)}>-</button>
-                                        <p className='matchStat'>{penaltyShotMisses}</p>
-                                        <button className='plusButton' onClick={() => setPenaltyShotMisses(penaltyShotMisses + 1)}>+</button>
+                                        <button className='minusButton' onClick={() => (playerPenaltyShotMisses > 0) && setPlayerPenaltyShotMisses(playerPenaltyShotMisses - 1)}>-</button>
+                                        <p className='matchStat'>{playerPenaltyShotMisses}</p>
+                                        <button className='plusButton' onClick={() => setPlayerPenaltyShotMisses(playerPenaltyShotMisses + 1)}>+</button>
                                     </div>
                                 </div>
                             </>
                         ) :
                         (
-                            <div className='statDiv'>
-                                <p className='statTitle'>TIROS RECIBIDOS</p>
-                                <div className='matchStatDiv'>
-                                    <p className='matchStat'>{shotsReceived}</p>
+                            <>
+                                <div className='statDiv'>
+                                    <p className='statTitle'>% PARADAS</p>
+                                    <div className='matchStatDiv'>
+                                        <p className='matchStat'>{(shotsReceived > 0) && ((shotsReceived - goalsReceived) / (shotsReceived)).toFixed(3)}</p>
+                                    </div>
                                 </div>
-                            </div>
+                                <div className='statDiv'>
+                                    <p className='statTitle'>TIROS RECIBIDOS</p>
+                                    <div className='matchStatDiv'>
+                                        <button className='minusButton' onClick={() => (shotsReceived > 0) && setShotsReceived(shotsReceived - 1)}>-</button>
+                                        <p className='matchStat'>{shotsReceived}</p>
+                                        <button className='plusButton' onClick={() => setShotsReceived(shotsReceived + 1)}>+</button>
+                                    </div>
+                                </div>
+                                <div className='statDiv'>
+                                    <p className='statTitle'>GOLES RECIBIDOS</p>
+                                    <div className='matchStatDiv'>
+                                        <button className='minusButton' onClick={() => (goalsReceived > 0) && [setGoalsReceived(goalsReceived - 1), setShotsReceived(shotsReceived - 1)]}>-</button>
+                                        <p className='matchStat'>{goalsReceived}</p>
+                                        <button className='plusButton' onClick={() => [setGoalsReceived(goalsReceived + 1), setShotsReceived(shotsReceived + 1)]}>+</button>
+                                    </div>
+                                </div>
+                                <div className='statDiv'>
+                                    <p className='statTitle'>MINUTOS SANCIÓN</p>
+                                    <div className='matchStatDiv'>
+                                        <button className='minusButton' onClick={() => (goaliePenaltyMins > 0) && setGoaliePenaltyMins(goaliePenaltyMins - 1)}>-</button>
+                                        <p className='matchStat'>{goaliePenaltyMins}</p>
+                                        <button className='plusButton' onClick={() => setGoaliePenaltyMins(goaliePenaltyMins + 1)}>+</button>
+                                    </div>
+                                </div>
+                                <div className='statDiv'>
+                                    <p className='statTitle'>PENALTIS ENCAJADOS</p>
+                                    <div className='matchStatDiv'>
+                                        <button className='minusButton' onClick={() => (goaliePenaltyShotGoals > 0) && setGoaliePenaltyShotGoals(goaliePenaltyShotGoals - 1)}>-</button>
+                                        <p className='matchStat'>{goaliePenaltyShotGoals}</p>
+                                        <button className='plusButton' onClick={() => setGoaliePenaltyShotGoals(goaliePenaltyShotGoals + 1)}>+</button>
+                                    </div>
+                                </div>
+                                <div className='statDiv'>
+                                    <p className='statTitle'>PENALTIS PARADOS</p>
+                                    <div className='matchStatDiv'>
+                                        <button className='minusButton' onClick={() => (penaltyShotSaves > 0) && setPenaltyShotSaves(penaltyShotSaves - 1)}>-</button>
+                                        <p className='matchStat'>{penaltyShotSaves}</p>
+                                        <button className='plusButton' onClick={() => setPenaltyShotSaves(penaltyShotSaves + 1)}>+</button>
+                                    </div>
+                                </div>
+                            </>
                         )}
 
                 </div>
