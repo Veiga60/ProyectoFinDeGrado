@@ -20,6 +20,8 @@
 #matchPlayerStatsDiv {
     border: 2px solid black;
     width: 60%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
 }
 
 #matchPlayerImageDiv {
