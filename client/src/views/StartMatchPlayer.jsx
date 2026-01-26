@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react';
+import { useStatePersistent } from '../useStatePersistent.jsx'
 import axios from 'axios'
 import '../style/StartMatchPlayer.css'
 
@@ -9,22 +10,22 @@ export default function StartMatchPlayer() {
     const { playerId } = useParams();
 
     const [player, setPlayer] = useState();
-    const [goals, setGoals] = useState(0);
-    const [assists, setAssists] = useState(0);
-    const [plusMinus, setPlusMinus] = useState(0);
-    const [shots, setShots] = useState(0);
-    const [goodPasses, setGoodPasses] = useState(0);
-    const [badPasses, setBadPasses] = useState(0);
-    const [recoveredPucks, setRecoveredPucks] = useState(0);
-    const [playerPenaltyMins, setPlayerPenaltyMins] = useState(0);
-    const [playerPenaltyShotGoals, setPlayerPenaltyShotGoals] = useState(0);
-    const [playerPenaltyShotMisses, setPlayerPenaltyShotMisses] = useState(0);
+    const [goals, setGoals] = useStatePersistent('goals', 0);
+    const [assists, setAssists] = useStatePersistent('assists', 0);
+    const [plusMinus, setPlusMinus] = useStatePersistent('plusMinus', 0);
+    const [shots, setShots] = useStatePersistent('shots', 0);
+    const [goodPasses, setGoodPasses] = useStatePersistent('goodPasses', 0);
+    const [badPasses, setBadPasses] = useStatePersistent('badPasses', 0);
+    const [recoveredPucks, setRecoveredPucks] = useStatePersistent('recoveredPucks', 0);
+    const [playerPenaltyMins, setPlayerPenaltyMins] = useStatePersistent('playerPenaltyMins', 0);
+    const [playerPenaltyShotGoals, setPlayerPenaltyShotGoals] = useStatePersistent('playerPenaltyShotGoals', 0);
+    const [penaltyShotMisses, setPenaltyShotMisses] = useStatePersistent('penaltyShotMisses', 0);
 
-    const [shotsReceived, setShotsReceived] = useState(0);
-    const [goalsReceived, setGoalsReceived] = useState(0);
-    const [goaliePenaltyMins, setGoaliePenaltyMins] = useState(0);
-    const [goaliePenaltyShotGoals, setGoaliePenaltyShotGoals] = useState(0);
-    const [penaltyShotSaves, setPenaltyShotSaves] = useState(0);
+    const [shotsReceived, setShotsReceived] = useStatePersistent('shotsReceived', 0);
+    const [goalsReceived, setGoalsReceived] = useStatePersistent('goalsReceived', 0);
+    const [goaliePenaltyMins, setGoaliePenaltyMins] = useStatePersistent('goaliePenaltyMins', 0);
+    const [goaliePenaltyShotGoals, setGoaliePenaltyShotGoals] = useStatePersistent('goaliePenaltyShotGoals', 0);
+    const [penaltyShotSaves, setPenaltyShotSaves] = useStatePersistent('penaltyShotSaves', 0);
 
     const getPlayer = async () => {
         try {
@@ -136,9 +137,9 @@ export default function StartMatchPlayer() {
                                 <div className='statDiv'>
                                     <p className='statTitle'>PENALTIS FALLADOS</p>
                                     <div className='matchStatDiv'>
-                                        <button className='minusButton' onClick={() => (playerPenaltyShotMisses > 0) && setPlayerPenaltyShotMisses(playerPenaltyShotMisses - 1)}>-</button>
-                                        <p className='matchStat'>{playerPenaltyShotMisses}</p>
-                                        <button className='plusButton' onClick={() => setPlayerPenaltyShotMisses(playerPenaltyShotMisses + 1)}>+</button>
+                                        <button className='minusButton' onClick={() => (penaltyShotMisses > 0) && setPenaltyShotMisses(penaltyShotMisses - 1)}>-</button>
+                                        <p className='matchStat'>{penaltyShotMisses}</p>
+                                        <button className='plusButton' onClick={() => setPenaltyShotMisses(penaltyShotMisses + 1)}>+</button>
                                     </div>
                                 </div>
                             </>
