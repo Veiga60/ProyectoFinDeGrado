@@ -10,6 +10,10 @@ export default function StartMatchPlayer() {
 
     const [player, setPlayer] = useState();
     const [goals, setGoals] = useState(0);
+    const [assists, setAssists] = useState(0);
+    const [plusMinus, setPlusMinus] = useState(0);
+
+    const [shotsReceived, setShotsReceived] = useState(0);
 
     const getPlayer = async () => {
         try {
@@ -37,12 +41,43 @@ export default function StartMatchPlayer() {
                     </div>
                 </div>
                 <div id='matchPlayerStatsDiv'>
-                    <div id='goalsDiv' className='statDiv'>
-                        <p id='goalsTitle' className='statTitle'>GOLES</p>
-                        <div id='matchGoalsDiv' className='matchStatDiv'>
-                            <p id='matchGoals' className='matchStat'>{goals}</p>
-                        </div>
-                    </div>
+                    {(player?.playerType == 'RINK_PLAYER') ?
+                        (
+                            <>
+                                <div id='goalsDiv' className='statDiv'>
+                                    <p id='goalsTitle' className='statTitle'>GOLES</p>
+                                    <div id='matchGoalsDiv' className='matchStatDiv'>
+                                        <button className='minusButton' onClick={() => (goals > 0) && setGoals(goals - 1)}>-</button>
+                                        <p id='matchGoals' className='matchStat'>{goals}</p>
+                                        <button className='plusButton' onClick={() => setGoals(goals + 1)}>+</button>
+                                    </div>
+                                </div>
+                                <div id='assistsDiv' className='statDiv'>
+                                    <p id='assistsTitle' className='statTitle'>ASISTENCIAS</p>
+                                    <div id='matchAssistsDiv' className='matchStatDiv'>
+                                        <button className='minusButton' onClick={() => (assists > 0) && setAssists(assists - 1)}>-</button>
+                                        <p id='matchAssists' className='matchStat'>{assists}</p>
+                                        <button className='plusButton' onClick={() => setAssists(assists + 1)}>+</button>
+                                    </div>
+                                </div>
+                                <div id='plusMinusDiv' className='statDiv'>
+                                    <p id='plusMinusTitle' className='statTitle'>+/-</p>
+                                    <div id='matchPlusMinusDiv' className='matchStatDiv'>
+                                        <button className='minusButton' onClick={() => setPlusMinus(plusMinus - 1)}>-</button>
+                                        <p id='matchPlusMinus' className='matchStat'>{plusMinus}</p>
+                                        <button className='plusButton' onClick={() => setPlusMinus(plusMinus + 1)}>+</button>
+                                    </div>
+                                </div>
+                            </>
+                        ) :
+                        (
+                            <div id='goalsDiv' className='statDiv'>
+                                <p id='goalsTitle' className='statTitle'>TIROS RECIBIDOS</p>
+                                <div id='matchGoalsDiv' className='matchStatDiv'>
+                                    <p id='matchGoals' className='matchStat'>{shotsReceived}</p>
+                                </div>
+                            </div>
+                        )}
 
                 </div>
             </div>

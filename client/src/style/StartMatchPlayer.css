@@ -63,5 +63,33 @@
     font-family: Inria Sans;
     font-size: x-large;
     font-weight: bold;
+}
+
+.matchStatDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.minusButton {
+    font-family: Inria Sans;
+    font-size: x-large;
+    font-weight: bold;
+    width: 10%;
+    min-height: fit-content;
+    min-width: fit-content;
     margin-top: 0;
+    margin-right: 5%;
+}
+
+.plusButton {
+    font-family: Inria Sans;
+    font-size: x-large;
+    font-weight: bold;
+    width: 10%;
+    min-height: fit-content;
+    min-width: fit-content;
+    margin-top: 0;
+    margin-left: 5%;
 }
