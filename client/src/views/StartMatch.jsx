@@ -33,55 +33,60 @@ export default function StartMatch() {
 
     return (
         <>
-            <ScoreBoard
-                match={match}
-                localTeamGoals={localTeamGoals}
-                visitingTeamGoals={visitingTeamGoals}
-            />
-            <div id='matchMainDiv'>
-                <div id='calledPlayersDiv'>
-                    <table id='calledPlayersTable'>
-                        <caption className='tableTitle'>JUGADORES</caption>
-                        <tbody id='calledPlayersTableBody'>
-                            {players.map(player =>
-                                ((match.call.callPlayerStatus[player.id] == 'CONFIRMED') && player.playerType == 'RINK_PLAYER') && (
-                                    <tr key={player.id} className='calledPlayerRow'>
-                                        <td className='calledPlayerNumber' onClick={() => navigate(`/matches/next/start_match/players/${player.id}`)}>
-                                            {player.number}
-                                        </td>
-                                        <td className='calledPlayerName' onClick={() => navigate(`/matches/next/start_match/players/${player.id}`)}>
-                                            {player.name} {player.lastName1} {player.lastName2}
-                                        </td>
-                                    </tr>
-                                )
-                            )}
-
-                        </tbody>
-                    </table>
-
-                    <table id='calledGoaliesTable'>
-                        <caption className='tableTitle'>PORTEROS</caption>
-                        <tbody id='calledGoaliesTableBody'>
-                            {players.map(player =>
-                                ((match.call.callPlayerStatus[player.id] == 'CONFIRMED') && player.playerType == 'GOALIE') && (
-                                    <tr key={player.id} className='calledGoalieRow'>
-                                        <td className='calledGoalieNumber' onClick={() => navigate(`/matches/next/start_match/players/${player.id}`)}>
-                                            {player.number}
-                                        </td>
-                                        <td className='calledGoalieName' onClick={() => navigate(`/matches/next/start_match/players/${player.id}`)}>
-                                            {player.name} {player.lastName1} {player.lastName2}
-                                        </td>
-                                    </tr>
-                                )
-                            )}
-
-                        </tbody>
-                    </table>
+            <div id='startMatchMainDiv'>
+                <ScoreBoard
+                    match={match}
+                    localTeamGoals={localTeamGoals}
+                    visitingTeamGoals={visitingTeamGoals}
+                />
+                <div id='finishMatchButtonDiv'>
+                    <button id='finishMatchButton' onClick={() => navigate('/home')}>FINALIZAR PARTIDO</button>
                 </div>
-                <div id='matchEventsContainer'>
-                    <p id='matchEventsText'>ACTA DEL PARTIDO</p>
-                    <div id='matchEventsDiv'>
+                <div id='matchInfoMainDiv'>
+                    <div id='calledPlayersDiv'>
+                        <table id='calledPlayersTable'>
+                            <caption className='tableTitle'>JUGADORES</caption>
+                            <tbody id='calledPlayersTableBody'>
+                                {players.map(player =>
+                                    ((match.call.callPlayerStatus[player.id] == 'CONFIRMED') && player.playerType == 'RINK_PLAYER') && (
+                                        <tr key={player.id} className='calledPlayerRow'>
+                                            <td className='calledPlayerNumber' onClick={() => navigate(`/matches/next/start_match/players/${player.id}`)}>
+                                                {player.number}
+                                            </td>
+                                            <td className='calledPlayerName' onClick={() => navigate(`/matches/next/start_match/players/${player.id}`)}>
+                                                {player.name} {player.lastName1} {player.lastName2}
+                                            </td>
+                                        </tr>
+                                    )
+                                )}
 
+                            </tbody>
+                        </table>
+
+                        <table id='calledGoaliesTable'>
+                            <caption className='tableTitle'>PORTEROS</caption>
+                            <tbody id='calledGoaliesTableBody'>
+                                {players.map(player =>
+                                    ((match.call.callPlayerStatus[player.id] == 'CONFIRMED') && player.playerType == 'GOALIE') && (
+                                        <tr key={player.id} className='calledGoalieRow'>
+                                            <td className='calledGoalieNumber' onClick={() => navigate(`/matches/next/start_match/players/${player.id}`)}>
+                                                {player.number}
+                                            </td>
+                                            <td className='calledGoalieName' onClick={() => navigate(`/matches/next/start_match/players/${player.id}`)}>
+                                                {player.name} {player.lastName1} {player.lastName2}
+                                            </td>
+                                        </tr>
+                                    )
+                                )}
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id='matchEventsContainer'>
+                        <p id='matchEventsText'>ACTA DEL PARTIDO</p>
+                        <div id='matchEventsDiv'>
+
+                        </div>
                     </div>
                 </div>
             </div>
