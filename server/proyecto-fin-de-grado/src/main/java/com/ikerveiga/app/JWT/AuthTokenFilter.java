@@ -45,8 +45,6 @@ public class AuthTokenFilter extends OncePerRequestFilter {
                 final String role = (String) claims.get("role");
                 Set<GrantedAuthority> authorities = new HashSet<>();
 
-                System.out.println("Claims: " + role);
-
                 GrantedAuthority authority = new SimpleGrantedAuthority(role);
                 authorities.add(authority);
 

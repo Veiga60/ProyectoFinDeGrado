@@ -58,6 +58,7 @@ public class CallController {
         }
     }
 
+    @Secured("ROLE_PLAYER")
     @GetMapping("/calls/player/{playerId}")
     public ResponseEntity<List<CallDTO>> getCallsOfPlayer(@PathVariable("playerId") long playerId) {
         try {
