@@ -45,7 +45,13 @@ public class OAuth2Service {
                 throw new RuntimeException("Usuario no autorizado");
             }
         }
-        String jwt = jwtUtil.generateJwtToken(email);
+
+        String jwt;
+        if (existingUser.getIsCoach()) {
+            jwt = jwtUtil.generateJwtToken(email, "ROLE_COACH");
+        } else {
+            jwt = jwtUtil.generateJwtToken(email, "ROLE_PLAYER");
+        }
         cookiesService.addHttpOnlyCookie("jwt", jwt, 30 * 60, response);
         try {
             response.sendRedirect(url);

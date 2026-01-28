@@ -39,13 +39,11 @@ export default function CallDetail() {
     }
 
     const callPlayer = async (playerId) => {
-        if (localStorage.getItem('isCoach') == 'true') {
-            try {
-                const response = await axios.post(`${SERVER_URL}/calls/match/${match.id}/players/${playerId}`, {}, { withCredentials: true });
-                window.location.reload(true);
-            } catch (error) {
-                console.log('Error calling player: ', error);
-            }
+        try {
+            const response = await axios.post(`${SERVER_URL}/calls/match/${match.id}/players/${playerId}`, {}, { withCredentials: true });
+            window.location.reload(true);
+        } catch (error) {
+            console.log('Error calling player: ', error);
         }
     }
 

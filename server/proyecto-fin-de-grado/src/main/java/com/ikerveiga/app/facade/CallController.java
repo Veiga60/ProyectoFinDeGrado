@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -41,6 +42,7 @@ public class CallController {
         }
     }
 
+    @Secured("ROLE_COACH")
     @PostMapping("/calls/match/{matchId}/players/{playerId}")
     public ResponseEntity<Void> callPlayer(@PathVariable("matchId") long matchId,
             @PathVariable("playerId") long playerId) {
@@ -75,6 +77,7 @@ public class CallController {
         }
     }
 
+    @Secured("ROLE_PLAYER")
     @PutMapping("/calls/{callId}/players/{playerId}")
     public ResponseEntity<Void> setAttendance(@PathVariable("callId") long callId,
             @PathVariable("playerId") long playerId,

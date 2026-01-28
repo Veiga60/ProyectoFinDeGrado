@@ -86,7 +86,12 @@ public class UserService {
         if (!passwordEncoder.matches(password, user.getPassword())) {
             throw new RuntimeException("Incorrect password");
         } else {
-            String jwt = jwtUtil.generateJwtToken(user.getEmail());
+            String jwt;
+            if (user.getIsCoach()) {
+                jwt = jwtUtil.generateJwtToken(user.getEmail(), "ROLE_COACH");
+            } else {
+                jwt = jwtUtil.generateJwtToken(user.getEmail(), "ROLE_PLAYER");
+            }
             cookiesService.addHttpOnlyCookie("jwt", jwt, 30 * 60, response);
             return jwt;
         }
