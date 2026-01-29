@@ -40,7 +40,7 @@ export default function CallDetail() {
 
     const callPlayer = async (playerId) => {
         try {
-            const response = await axios.post(`${SERVER_URL}/calls/match/${match.id}/players/${playerId}`, {}, { withCredentials: true });
+            const response = await axios.put(`${SERVER_URL}/calls/match/${match.id}/players/${playerId}`, {}, { withCredentials: true });
             window.location.reload(true);
         } catch (error) {
             console.log('Error calling player: ', error);

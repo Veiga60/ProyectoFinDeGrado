@@ -6,7 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -21,7 +21,7 @@ public class AuthorizedEmail {
     @Column(name = "email", nullable = false, unique = true)
     private String email;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "player_id", nullable = true, unique = false)
     private Player player;
 

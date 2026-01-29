@@ -7,7 +7,10 @@ export default function StartMatchPlayer() {
 
     const SERVER_URL = 'http://localhost:8081';
     const { playerId } = useParams();
+    const { matchId } = useParams();
     const navigate = useNavigate();
+
+    const [playerMatchStats, setPlayerMatchStats] = useState();
 
     const [player, setPlayer] = useState();
     const [goals, setGoals] = useState(0);
@@ -17,6 +20,7 @@ export default function StartMatchPlayer() {
     const [goodPasses, setGoodPasses] = useState(0);
     const [badPasses, setBadPasses] = useState(0);
     const [recoveredPucks, setRecoveredPucks] = useState(0);
+    const [lostPucks, setLostPucks] = useState(0);
     const [playerPenaltyMins, setPlayerPenaltyMins] = useState(0);
     const [playerPenaltyShotGoals, setPlayerPenaltyShotGoals] = useState(0);
     const [penaltyShotMisses, setPenaltyShotMisses] = useState(0);
@@ -27,7 +31,7 @@ export default function StartMatchPlayer() {
     const [goaliePenaltyShotGoals, setGoaliePenaltyShotGoals] = useState(0);
     const [penaltyShotSaves, setPenaltyShotSaves] = useState(0);
 
-    var playerMatchStats = {
+    var playerMatchStatsBody = {
         goals: goals,
         assists: assists,
         plusMinus: plusMinus,
@@ -35,30 +39,73 @@ export default function StartMatchPlayer() {
         goodPasses: goodPasses,
         badPasses: badPasses,
         recoveredPucks: recoveredPucks,
-        playerPenaltyMins: playerPenaltyMins,
-        playerPenaltyShotGoals: playerPenaltyShotGoals,
+        lostPucks: lostPucks,
+        penaltyMins: playerPenaltyMins,
+        penaltyShotGoals: playerPenaltyShotGoals,
         penaltyShotMisses: penaltyShotMisses
     }
 
-
+    var goalieMatchStatsBody = {
+        shotsReceived: shotsReceived,
+        goalsReceived: goalsReceived,
+        penaltyMins: goaliePenaltyMins,
+        penaltyShotGoals: goaliePenaltyShotGoals,
+        penaltyShotSaves: goaliePenaltyShotGoals
+    }
 
     const getPlayer = async () => {
         try {
             const response = await axios.get(`${SERVER_URL}/players/${playerId}`, { withCredentials: true });
             setPlayer(response.data);
-            console.log(response.data);
         } catch (error) {
             console.log('Error fetching the player: ', error);
         }
     }
 
+    const saveMatchStats = async (player) => {
+        try {
+            if (player?.playerType == 'RINK_PLAYER') {
+                console.log(playerMatchStatsBody);
+                const response = await axios.put(`${SERVER_URL}/matchStats/matches/${matchId}/players/${player.id}`, playerMatchStatsBody, {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }, withCredentials: true
+                });
+                navigate(`/matches/${matchId}/start_match`);
+            } else {
+                return;
+            }
+        } catch (error) {
+            console.log(`Error saving the stats of player: `, error);
+        }
+    }
+
+    const getPlayerMatchStats = async (playerId, matchId) => {
+        try {
+            const response = await axios.get(`${SERVER_URL}/matchStats/matches/${matchId}/players/${playerId}`, { withCredentials: true });
+            setPlayerMatchStats(response.data);
+            setGoals(response.data.goals);
+            setAssists(response.data.assists);
+            setPlusMinus(response.data.plusMinus);
+            setShots(response.data.shots);
+            setGoodPasses(response.data.goodPasses);
+            setBadPasses(response.data.badPasses);
+            setRecoveredPucks(response.data.recoveredPucks);
+            setLostPucks(response.data.lostPucks);
+            setPlayerPenaltyMins(response.data.penaltyMins);
+            setPlayerPenaltyShotGoals(response.data.penaltyShotGoals);
+            setPenaltyShotMisses(response.data.penaltyShotMisses);
+            console.log(response.data);
+        } catch (error) {
+            console.log('Error fetching the stats of the player: ', error);
+        }
+    }
+
     useEffect(() => {
         getPlayer();
-        if (JSON.parse(localStorage.getItem(`${playerId}`)) != null) {
-            playerMatchStats = JSON.parse(localStorage.getItem(`${playerId}`));
-            console.log(playerMatchStats);
-            setGoals(playerMatchStats.goals);
-        }
+        getPlayerMatchStats(playerId, matchId);
+
+
     }, []);
 
     return (
@@ -139,6 +186,14 @@ export default function StartMatchPlayer() {
                                     </div>
                                 </div>
                                 <div className='statDiv'>
+                                    <p className='statTitle'>PUCKS PERDIDOS</p>
+                                    <div className='matchStatDiv'>
+                                        <button className='minusButton' onClick={() => (lostPucks > 0) && setLostPucks(lostPucks - 1)}>-</button>
+                                        <p className='matchStat'>{lostPucks}</p>
+                                        <button className='plusButton' onClick={() => setLostPucks(lostPucks + 1)}>+</button>
+                                    </div>
+                                </div>
+                                <div className='statDiv'>
                                     <p className='statTitle'>MINUTOS SANCIÓN</p>
                                     <div className='matchStatDiv'>
                                         <button className='minusButton' onClick={() => (playerPenaltyMins > 0) && setPlayerPenaltyMins(playerPenaltyMins - 1)}>-</button>
@@ -214,7 +269,7 @@ export default function StartMatchPlayer() {
                                 </div>
                             </>
                         )}
-                    <button onClick={() => [localStorage.setItem(`${playerId}`, JSON.stringify(playerMatchStats)), navigate('/matches/next/start_match')]}>GUARDAR</button>
+                    <button onClick={() => saveMatchStats(player)}>GUARDAR</button>
                 </div>
             </div>
         </>

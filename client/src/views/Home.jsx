@@ -61,7 +61,7 @@ export default function Home() {
                             {(localStorage.getItem('isCoach') == 'true') &&
                                 (
                                     <div id='startMatchDiv'>
-                                        <button id='startMatchButton' onClick={() => navigate('/matches/next/start_match')}>EMPEZAR PARTIDO</button>
+                                        <button id='startMatchButton' onClick={() => navigate(`/matches/${nextMatch.id}/start_match`)}>EMPEZAR PARTIDO</button>
                                     </div>
                                 )}
                         </div>

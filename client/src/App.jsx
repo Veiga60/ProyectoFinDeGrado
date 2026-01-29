@@ -30,8 +30,8 @@ export default function App() {
         <Route path="/select_role" element={<SelectRole />} />
         <Route path="/calls" element={<Calls />} />
         <Route path="/calls/match/:matchId" element={<CallDetail />} />
-        <Route path="/matches/next/start_match" element={<StartMatch />} />
-        <Route path="/matches/next/start_match/players/:playerId" element={<StartMatchPlayer />} />
+        <Route path="/matches/:matchId/start_match" element={<StartMatch />} />
+        <Route path="/matches/:matchId/start_match/players/:playerId" element={<StartMatchPlayer />} />
         <Route path="/error/unauthorized" element={<Unauthorized />} />
       </Routes>
     </BrowserRouter>

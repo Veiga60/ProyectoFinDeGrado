@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import ScoreBoard from '../components/ScoreBoard.jsx'
 import PlayerCard from '../components/PlayerCard.jsx'
 import axios from 'axios'
@@ -10,6 +10,7 @@ export default function StartMatch() {
 
     const SERVER_URL = 'http://localhost:8081';
     const navigate = useNavigate();
+    const { matchId } = useParams();
 
     const [match, setMatch] = useState();
     const [localTeamGoals, setLocalTeamGoals] = useState(0);
@@ -50,10 +51,10 @@ export default function StartMatch() {
                                 {players.map(player =>
                                     ((match.call.callPlayerStatus[player.id] == 'CONFIRMED') && player.playerType == 'RINK_PLAYER') && (
                                         <tr key={player.id} className='calledPlayerRow'>
-                                            <td className='calledPlayerNumber' onClick={() => navigate(`/matches/next/start_match/players/${player.id}`)}>
+                                            <td className='calledPlayerNumber' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`)}>
                                                 {player.number}
                                             </td>
-                                            <td className='calledPlayerName' onClick={() => navigate(`/matches/next/start_match/players/${player.id}`)}>
+                                            <td className='calledPlayerName' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`)}>
                                                 {player.name} {player.lastName1} {player.lastName2}
                                             </td>
                                         </tr>
