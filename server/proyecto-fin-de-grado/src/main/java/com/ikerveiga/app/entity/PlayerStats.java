@@ -49,6 +49,9 @@ public class PlayerStats {
     @Column(name = "recovered_pucks", nullable = false, unique = false)
     private int recoveredPucks;
 
+    @Column(name = "lost_pucks", nullable = false, unique = false)
+    private int lostPucks;
+
     @Column(name = "penalty_mins", nullable = false, unique = false)
     private int penaltyMins;
 
@@ -64,7 +67,8 @@ public class PlayerStats {
 
     public PlayerStats(Player player, int gamesPlayed, int goals, int assists, int plusMinus, int shots,
             int goodPasses,
-            int badPasses, int recoveredPucks, int penaltyMins, int penaltyShotGoals, int penaltyShotMisses) {
+            int badPasses, int recoveredPucks, int lostPucks, int penaltyMins, int penaltyShotGoals,
+            int penaltyShotMisses) {
         this.player = player;
         this.gamesPlayed = gamesPlayed;
         this.goals = goals;
@@ -74,6 +78,7 @@ public class PlayerStats {
         this.goodPasses = goodPasses;
         this.badPasses = badPasses;
         this.recoveredPucks = recoveredPucks;
+        this.lostPucks = lostPucks;
         this.penaltyMins = penaltyMins;
         this.penaltyShotGoals = penaltyShotGoals;
         this.penaltyShotMisses = penaltyShotMisses;
@@ -81,7 +86,8 @@ public class PlayerStats {
 
     public PlayerStats(int gamesPlayed, int goals, int assists, int plusMinus, int shots,
             int goodPasses,
-            int badPasses, int recoveredPucks, int penaltyMins, int penaltyShotGoals, int penaltyShotMisses) {
+            int badPasses, int recoveredPucks, int lostPucks, int penaltyMins, int penaltyShotGoals,
+            int penaltyShotMisses) {
         this.gamesPlayed = gamesPlayed;
         this.goals = goals;
         this.assists = assists;
@@ -90,6 +96,7 @@ public class PlayerStats {
         this.goodPasses = goodPasses;
         this.badPasses = badPasses;
         this.recoveredPucks = recoveredPucks;
+        this.lostPucks = lostPucks;
         this.penaltyMins = penaltyMins;
         this.penaltyShotGoals = penaltyShotGoals;
         this.penaltyShotMisses = penaltyShotMisses;
@@ -167,6 +174,14 @@ public class PlayerStats {
         this.recoveredPucks = recoveredPucks;
     }
 
+    public int getLostPucks() {
+        return this.lostPucks;
+    }
+
+    public void setLostPucks(int lostPucks) {
+        this.lostPucks = lostPucks;
+    }
+
     public int getPenaltyMins() {
         return this.penaltyMins;
     }
@@ -194,7 +209,7 @@ public class PlayerStats {
     public PlayerStatsDTO toDTO() {
         PlayerStatsDTO playerStatsDTO = new PlayerStatsDTO(this.id, this.player.toDTOWithoutStats(), this.gamesPlayed,
                 this.goals, this.assists, this.plusMinus, this.shots, this.goodPasses, this.badPasses,
-                this.recoveredPucks, this.penaltyMins, this.penaltyShotGoals, this.penaltyShotMisses);
+                this.recoveredPucks, this.lostPucks, this.penaltyMins, this.penaltyShotGoals, this.penaltyShotMisses);
 
         return playerStatsDTO;
     }
@@ -202,7 +217,7 @@ public class PlayerStats {
     public PlayerStatsDTO toDTOWithoutPlayer() {
         PlayerStatsDTO playerStatsDTO = new PlayerStatsDTO(this.id, this.gamesPlayed,
                 this.goals, this.assists, this.plusMinus, this.shots, this.goodPasses, this.badPasses,
-                this.recoveredPucks, this.penaltyMins, this.penaltyShotGoals, this.penaltyShotMisses);
+                this.recoveredPucks, this.lostPucks, this.penaltyMins, this.penaltyShotGoals, this.penaltyShotMisses);
 
         return playerStatsDTO;
     }

@@ -12,6 +12,7 @@ public class PlayerStatsDTO {
     private int goodPasses;
     private int badPasses;
     private int recoveredPucks;
+    private int lostPucks;
     private int penaltyMins;
     private int penaltyShotGoals;
     private int penaltyShotMisses;
@@ -23,7 +24,8 @@ public class PlayerStatsDTO {
     public PlayerStatsDTO(long id, PlayerDTO player, int gamesPlayed, int goals, int assists, int plusMinus,
             int shots,
             int goodPasses,
-            int badPasses, int recoveredPucks, int penaltyMins, int penaltyShotGoals, int penaltyShotMisses) {
+            int badPasses, int recoveredPucks, int lostPucks, int penaltyMins, int penaltyShotGoals,
+            int penaltyShotMisses) {
         this.id = id;
         this.player = player;
         this.gamesPlayed = gamesPlayed;
@@ -34,6 +36,7 @@ public class PlayerStatsDTO {
         this.goodPasses = goodPasses;
         this.badPasses = badPasses;
         this.recoveredPucks = recoveredPucks;
+        this.lostPucks = lostPucks;
         this.penaltyMins = penaltyMins;
         this.penaltyShotGoals = penaltyShotGoals;
         this.penaltyShotMisses = penaltyShotMisses;
@@ -42,7 +45,8 @@ public class PlayerStatsDTO {
     public PlayerStatsDTO(long id, int gamesPlayed, int goals, int assists, int plusMinus,
             int shots,
             int goodPasses,
-            int badPasses, int recoveredPucks, int penaltyMins, int penaltyShotGoals, int penaltyShotMisses) {
+            int badPasses, int recoveredPucks, int lostPucks, int penaltyMins, int penaltyShotGoals,
+            int penaltyShotMisses) {
         this.id = id;
         this.gamesPlayed = gamesPlayed;
         this.goals = goals;
@@ -52,6 +56,7 @@ public class PlayerStatsDTO {
         this.goodPasses = goodPasses;
         this.badPasses = badPasses;
         this.recoveredPucks = recoveredPucks;
+        this.lostPucks = lostPucks;
         this.penaltyMins = penaltyMins;
         this.penaltyShotGoals = penaltyShotGoals;
         this.penaltyShotMisses = penaltyShotMisses;
@@ -131,6 +136,14 @@ public class PlayerStatsDTO {
 
     public void setRecoveredPucks(int recoveredPucks) {
         this.recoveredPucks = recoveredPucks;
+    }
+
+    public int getLostPucks() {
+        return this.lostPucks;
+    }
+
+    public void setLostPucks(int lostPucks) {
+        this.lostPucks = lostPucks;
     }
 
     public int getPenaltyMins() {

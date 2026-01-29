@@ -55,6 +55,7 @@ export default function PlayerStats() {
                                                     <td className='headCell'><p>+/-</p></td>
                                                     <td className='headCell'><p>Tiros</p></td>
                                                     <td className='headCell'><p>Pucks recuperados</p></td>
+                                                    <td className='headCell'><p>Pucks perdidos</p></td>
                                                     <td className='headCell'><p>Pases completados</p></td>
                                                     <td className='headCell'><p>Pases fallados</p></td>
                                                     <td className='headCell'><p>Minutos sanción</p></td>
@@ -71,6 +72,7 @@ export default function PlayerStats() {
                                                     <td className='bodyCell'><p>{player.playerStats.plusMinus}</p></td>
                                                     <td className='bodyCell'><p>{player.playerStats.shots}</p></td>
                                                     <td className='bodyCell'><p>{player.playerStats.recoveredPucks}</p></td>
+                                                    <td className='bodyCell'><p>{player.playerStats.lostPucks}</p></td>
                                                     <td className='bodyCell'><p>{player.playerStats.goodPasses}</p></td>
                                                     <td className='bodyCell'><p>{player.playerStats.badPasses}</p></td>
                                                     <td className='bodyCell'><p>{player.playerStats.penaltyMins}</p></td>
