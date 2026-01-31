@@ -1,4 +1,4 @@
-package com.ikerveiga.app.dao;
+package com.ikerveiga.app.DAO;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.*;

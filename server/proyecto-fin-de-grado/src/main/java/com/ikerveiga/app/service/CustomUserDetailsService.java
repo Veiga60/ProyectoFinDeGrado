@@ -7,9 +7,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.ikerveiga.app.CustomUserDetails;
-import com.ikerveiga.app.dao.OAuth2UserRepository;
-import com.ikerveiga.app.dao.UserRepository;
-import com.ikerveiga.app.dto.PlayerDTO;
+import com.ikerveiga.app.DAO.OAuth2UserRepository;
+import com.ikerveiga.app.DAO.UserRepository;
+import com.ikerveiga.app.DTO.PlayerDTO;
 import com.ikerveiga.app.entity.OAuth2User;
 import com.ikerveiga.app.entity.User;
 

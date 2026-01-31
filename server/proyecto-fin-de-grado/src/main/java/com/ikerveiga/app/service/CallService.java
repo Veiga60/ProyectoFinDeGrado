@@ -8,9 +8,9 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ikerveiga.app.dao.CallRepository;
-import com.ikerveiga.app.dao.MatchRepository;
-import com.ikerveiga.app.dao.PlayerRepository;
+import com.ikerveiga.app.DAO.CallRepository;
+import com.ikerveiga.app.DAO.MatchRepository;
+import com.ikerveiga.app.DAO.PlayerRepository;
 import com.ikerveiga.app.entity.Call;
 import com.ikerveiga.app.entity.Match;
 import com.ikerveiga.app.entity.Player;

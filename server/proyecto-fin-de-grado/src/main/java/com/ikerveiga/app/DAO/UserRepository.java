@@ -1,4 +1,4 @@
-package com.ikerveiga.app.dao;
+package com.ikerveiga.app.DAO;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;

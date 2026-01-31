@@ -1,4 +1,4 @@
-package com.ikerveiga.app.dto;
+package com.ikerveiga.app.DTO;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

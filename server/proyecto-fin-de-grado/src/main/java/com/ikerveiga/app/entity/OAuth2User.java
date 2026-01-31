@@ -1,6 +1,6 @@
 package com.ikerveiga.app.entity;
 
-import com.ikerveiga.app.dto.OAuth2UserDTO;
+import com.ikerveiga.app.DTO.OAuth2UserDTO;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;

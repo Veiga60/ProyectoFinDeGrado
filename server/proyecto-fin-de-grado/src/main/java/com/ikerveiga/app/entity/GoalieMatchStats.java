@@ -1,6 +1,6 @@
 package com.ikerveiga.app.entity;
 
-import com.ikerveiga.app.DTO.GoalieStatsDTO;
+import com.ikerveiga.app.DTO.GoalieMatchStatsDTO;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -9,24 +9,25 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "goalies_stats")
-public class GoalieStats {
+@Table(name = "goalie_match_stats")
+public class GoalieMatchStats {
 
     @Id
-    @Column(name = "goalie_stats_id", nullable = false, unique = true)
+    @Column(name = "match_stats_id", nullable = false, unique = true)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "player_id", referencedColumnName = "player_id")
     private Player goalie;
 
-    @Column(name = "games_played", nullable = false, unique = false)
-    private int gamesPlayed;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "match_id", referencedColumnName = "match_id")
+    private Match match;
 
     @Column(name = "shots_received", nullable = false, unique = false)
     private int shotsReceived;
@@ -43,14 +44,26 @@ public class GoalieStats {
     @Column(name = "penalty_shot_saves", nullable = false, unique = false)
     private int penaltyShotSaves;
 
-    public GoalieStats() {
+    public GoalieMatchStats() {
 
     }
 
-    public GoalieStats(Player goalie, int gamesPlayed, int shotsReceived, int goalsReceived, int penaltyMins,
+    public GoalieMatchStats(long id, Player goalie, Match match, int shotsReceived, int goalsReceived, int penaltyMins,
+            int penaltyShotGoals, int penaltyShotSaves) {
+        this.id = id;
+        this.goalie = goalie;
+        this.match = match;
+        this.shotsReceived = shotsReceived;
+        this.goalsReceived = goalsReceived;
+        this.penaltyMins = penaltyMins;
+        this.penaltyShotGoals = penaltyShotGoals;
+        this.penaltyShotSaves = penaltyShotSaves;
+    }
+
+    public GoalieMatchStats(Player goalie, Match match, int shotsReceived, int goalsReceived, int penaltyMins,
             int penaltyShotGoals, int penaltyShotSaves) {
         this.goalie = goalie;
-        this.gamesPlayed = gamesPlayed;
+        this.match = match;
         this.shotsReceived = shotsReceived;
         this.goalsReceived = goalsReceived;
         this.penaltyMins = penaltyMins;
@@ -58,14 +71,8 @@ public class GoalieStats {
         this.penaltyShotSaves = penaltyShotSaves;
     }
 
-    public GoalieStats(int gamesPlayed, int shotsReceived, int goalsReceived, int penaltyMins,
-            int penaltyShotGoals, int penaltyShotSaves) {
-        this.gamesPlayed = gamesPlayed;
-        this.shotsReceived = shotsReceived;
-        this.goalsReceived = goalsReceived;
-        this.penaltyMins = penaltyMins;
-        this.penaltyShotGoals = penaltyShotGoals;
-        this.penaltyShotSaves = penaltyShotSaves;
+    public long getId() {
+        return this.id;
     }
 
     public Player getGoalie() {
@@ -76,12 +83,12 @@ public class GoalieStats {
         this.goalie = goalie;
     }
 
-    public int getGamesPlayed() {
-        return this.gamesPlayed;
+    public Match getMatch() {
+        return this.match;
     }
 
-    public void setGamesPlayed(int gamesPlayed) {
-        this.gamesPlayed = gamesPlayed;
+    public void setMatch(Match match) {
+        this.match = match;
     }
 
     public int getShotsReceived() {
@@ -124,17 +131,11 @@ public class GoalieStats {
         this.penaltyShotSaves = penaltyShotSaves;
     }
 
-    public GoalieStatsDTO toDTO() {
-        GoalieStatsDTO goalieStatsDTO = new GoalieStatsDTO(this.id, this.goalie.toDTOWithoutStats(), this.gamesPlayed,
-                this.shotsReceived, this.goalsReceived, this.penaltyMins, this.penaltyShotGoals, this.penaltyShotSaves);
+    public GoalieMatchStatsDTO toDTO() {
+        GoalieMatchStatsDTO goalieMatchStatsDTO = new GoalieMatchStatsDTO(this.id, this.goalie.toDTO(),
+                this.match.toDTO(), this.shotsReceived, this.goalsReceived, this.penaltyMins, this.penaltyShotGoals,
+                this.penaltyShotSaves);
 
-        return goalieStatsDTO;
-    }
-
-    public GoalieStatsDTO toDTOWithoutGoalie() {
-        GoalieStatsDTO goalieStatsDTO = new GoalieStatsDTO(this.id, this.gamesPlayed,
-                this.shotsReceived, this.goalsReceived, this.penaltyMins, this.penaltyShotGoals, this.penaltyShotSaves);
-
-        return goalieStatsDTO;
+        return goalieMatchStatsDTO;
     }
 }

@@ -1,25 +1,26 @@
 package com.ikerveiga.app.DTO;
 
-public class GoalieStatsDTO {
+public class GoalieMatchStatsDTO {
 
     private long id;
     private PlayerDTO goalie;
-    private int gamesPlayed;
+    private MatchDTO match;
     private int shotsReceived;
     private int goalsReceived;
     private int penaltyMins;
     private int penaltyShotGoals;
     private int penaltyShotSaves;
 
-    public GoalieStatsDTO() {
+    public GoalieMatchStatsDTO() {
 
     }
 
-    public GoalieStatsDTO(long id, PlayerDTO goalie, int gamesPlayed, int shotsReceived, int goalsReceived,
-            int penaltyMins, int penaltyShotGoals, int penaltyShotSaves) {
+    public GoalieMatchStatsDTO(long id, PlayerDTO goalie, MatchDTO match, int shotsReceived, int goalsReceived,
+            int penaltyMins,
+            int penaltyShotGoals, int penaltyShotSaves) {
         this.id = id;
         this.goalie = goalie;
-        this.gamesPlayed = gamesPlayed;
+        this.match = match;
         this.shotsReceived = shotsReceived;
         this.goalsReceived = goalsReceived;
         this.penaltyMins = penaltyMins;
@@ -27,10 +28,9 @@ public class GoalieStatsDTO {
         this.penaltyShotSaves = penaltyShotSaves;
     }
 
-    public GoalieStatsDTO(long id, int gamesPlayed, int shotsReceived, int goalsReceived,
-            int penaltyMins, int penaltyShotGoals, int penaltyShotSaves) {
-        this.id = id;
-        this.gamesPlayed = gamesPlayed;
+    public GoalieMatchStatsDTO(int shotsReceived, int goalsReceived,
+            int penaltyMins,
+            int penaltyShotGoals, int penaltyShotSaves) {
         this.shotsReceived = shotsReceived;
         this.goalsReceived = goalsReceived;
         this.penaltyMins = penaltyMins;
@@ -50,12 +50,12 @@ public class GoalieStatsDTO {
         this.goalie = goalie;
     }
 
-    public int getGamesPlayed() {
-        return this.gamesPlayed;
+    public MatchDTO getMatch() {
+        return this.match;
     }
 
-    public void setGamesPlayed(int gamesPlayed) {
-        this.gamesPlayed = gamesPlayed;
+    public void setMatch(MatchDTO match) {
+        this.match = match;
     }
 
     public int getShotsReceived() {
@@ -97,5 +97,4 @@ public class GoalieStatsDTO {
     public void setPenaltyShotSaves(int penaltyShotSaves) {
         this.penaltyShotSaves = penaltyShotSaves;
     }
-
 }

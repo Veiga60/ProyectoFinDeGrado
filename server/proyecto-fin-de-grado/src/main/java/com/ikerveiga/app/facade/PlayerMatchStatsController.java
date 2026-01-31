@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ikerveiga.app.dto.PlayerMatchStatsDTO;
+import com.ikerveiga.app.DTO.PlayerMatchStatsDTO;
 import com.ikerveiga.app.service.PlayerMatchStatsService;
 
 @RestController
@@ -55,11 +55,7 @@ public class PlayerMatchStatsController {
 
             return ResponseEntity.ok(playerMatchStats);
         } catch (RuntimeException e) {
-            if (e.getMessage().equals("There is not match stats for that player")) {
-                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-            } else {
-                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-            }
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
 }

@@ -5,8 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.ikerveiga.app.dto.CallDTO;
-import com.ikerveiga.app.dto.PlayerDTO;
+import com.ikerveiga.app.DTO.CallDTO;
+import com.ikerveiga.app.DTO.PlayerDTO;
 import com.ikerveiga.app.enums.CallStatus;
 
 import jakarta.persistence.CascadeType;

@@ -11,6 +11,8 @@ export default function StartMatchPlayer() {
     const navigate = useNavigate();
 
     const [playerMatchStats, setPlayerMatchStats] = useState();
+    const [goalieMatchStats, setGoalieMatchStats] = useState();
+
 
     const [player, setPlayer] = useState();
     const [goals, setGoals] = useState(0);
@@ -56,6 +58,11 @@ export default function StartMatchPlayer() {
     const getPlayer = async () => {
         try {
             const response = await axios.get(`${SERVER_URL}/players/${playerId}`, { withCredentials: true });
+            if (response.data.playerType == 'RINK_PLAYER') {
+                getPlayerMatchStats(response.data, matchId);
+            } else if (response.data.playerType == 'GOALIE') {
+                getGoalieMatchStats(response.data, matchId);
+            }
             setPlayer(response.data);
         } catch (error) {
             console.log('Error fetching the player: ', error);
@@ -65,7 +72,6 @@ export default function StartMatchPlayer() {
     const saveMatchStats = async (player) => {
         try {
             if (player?.playerType == 'RINK_PLAYER') {
-                console.log(playerMatchStatsBody);
                 const response = await axios.put(`${SERVER_URL}/matchStats/matches/${matchId}/players/${player.id}`, playerMatchStatsBody, {
                     headers: {
                         'Content-Type': 'application/json'
@@ -73,39 +79,62 @@ export default function StartMatchPlayer() {
                 });
                 navigate(`/matches/${matchId}/start_match`);
             } else {
-                return;
+                const response = await axios.put(`${SERVER_URL}/matchStats/matches/${matchId}/goalies/${player.id}`, goalieMatchStatsBody, {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }, withCredentials: true
+                });
+                navigate(`/matches/${matchId}/start_match`);
             }
         } catch (error) {
             console.log(`Error saving the stats of player: `, error);
         }
     }
 
-    const getPlayerMatchStats = async (playerId, matchId) => {
-        try {
-            const response = await axios.get(`${SERVER_URL}/matchStats/matches/${matchId}/players/${playerId}`, { withCredentials: true });
-            setPlayerMatchStats(response.data);
-            setGoals(response.data.goals);
-            setAssists(response.data.assists);
-            setPlusMinus(response.data.plusMinus);
-            setShots(response.data.shots);
-            setGoodPasses(response.data.goodPasses);
-            setBadPasses(response.data.badPasses);
-            setRecoveredPucks(response.data.recoveredPucks);
-            setLostPucks(response.data.lostPucks);
-            setPlayerPenaltyMins(response.data.penaltyMins);
-            setPlayerPenaltyShotGoals(response.data.penaltyShotGoals);
-            setPenaltyShotMisses(response.data.penaltyShotMisses);
-            console.log(response.data);
-        } catch (error) {
-            console.log('Error fetching the stats of the player: ', error);
+    const getPlayerMatchStats = async (player, matchId) => {
+        if (player?.playerType == 'RINK_PLAYER') {
+            try {
+                const response = await axios.get(`${SERVER_URL}/matchStats/matches/${matchId}/players/${player?.id}`, { withCredentials: true });
+                setPlayerMatchStats(response?.data);
+                setGoals(response?.data?.goals);
+                setAssists(response?.data?.assists);
+                setPlusMinus(response?.data?.plusMinus);
+                setShots(response?.data?.shots);
+                setGoodPasses(response?.data?.goodPasses);
+                setBadPasses(response?.data?.badPasses);
+                setRecoveredPucks(response?.data?.recoveredPucks);
+                setLostPucks(response?.data?.lostPucks);
+                setPlayerPenaltyMins(response?.data?.penaltyMins);
+                setPlayerPenaltyShotGoals(response?.data?.penaltyShotGoals);
+                setPenaltyShotMisses(response?.data?.penaltyShotMisses);
+            } catch (error) {
+                console.log('Error fetching the stats of the player: ', error);
+            }
+        } else {
+            return;
+        }
+    }
+
+    const getGoalieMatchStats = async (player, matchId) => {
+        if (player?.playerType == 'GOALIE') {
+            try {
+                const response = await axios.get(`${SERVER_URL}/matchStats/matches/${matchId}/goalies/${player?.id}`, { withCredentials: true });
+                setGoalieMatchStats(response.data);
+                setShotsReceived(response.data.shotsReceived);
+                setGoalsReceived(response.data.goalsReceived);
+                setGoaliePenaltyMins(response.data.penaltyMins);
+                setGoaliePenaltyShotGoals(response.data.penaltyShotGoals);
+                setPenaltyShotSaves(response.data.penaltyShotSaves);
+            } catch (error) {
+                console.log('Error fetching the stats of the player: ', error);
+            }
+        } else {
+            return;
         }
     }
 
     useEffect(() => {
         getPlayer();
-        getPlayerMatchStats(playerId, matchId);
-
-
     }, []);
 
     return (
@@ -128,7 +157,7 @@ export default function StartMatchPlayer() {
                                     <div className='matchStatDiv'>
                                         <button className='minusButton' onClick={() => (goals > 0) && setGoals(goals - 1)}>-</button>
                                         <p className='matchStat'>{goals}</p>
-                                        <button className='plusButton' onClick={() => setGoals(goals + 1)}>+</button>
+                                        <button className='plusButton' onClick={() => [setGoals(goals + 1), setShots(shots + 1)]}>+</button>
                                     </div>
                                 </div>
                                 <div className='statDiv'>

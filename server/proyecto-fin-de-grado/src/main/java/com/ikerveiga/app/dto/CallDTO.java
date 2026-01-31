@@ -1,4 +1,4 @@
-package com.ikerveiga.app.dto;
+package com.ikerveiga.app.DTO;
 
 import java.util.List;
 import java.util.Map;

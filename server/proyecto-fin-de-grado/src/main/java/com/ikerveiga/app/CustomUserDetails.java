@@ -5,7 +5,7 @@ import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
-import com.ikerveiga.app.dto.PlayerDTO;
+import com.ikerveiga.app.DTO.PlayerDTO;
 
 public class CustomUserDetails extends User {
 

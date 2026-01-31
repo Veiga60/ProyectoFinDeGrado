@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ikerveiga.app.dto.UserDTO;
+import com.ikerveiga.app.DTO.UserDTO;
 import com.ikerveiga.app.service.UserService;
 
 import jakarta.servlet.http.HttpServletResponse;

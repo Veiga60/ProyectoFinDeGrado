@@ -1,6 +1,6 @@
 package com.ikerveiga.app.entity;
 
-import com.ikerveiga.app.dto.PlayerStatsDTO;
+import com.ikerveiga.app.DTO.PlayerStatsDTO;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;

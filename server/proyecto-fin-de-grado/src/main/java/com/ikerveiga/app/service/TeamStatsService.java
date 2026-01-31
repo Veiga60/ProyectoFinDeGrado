@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ikerveiga.app.dao.TeamStatsRepository;
+import com.ikerveiga.app.DAO.TeamStatsRepository;
 import com.ikerveiga.app.entity.TeamStats;
 
 @Service

@@ -3,9 +3,9 @@ package com.ikerveiga.app.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ikerveiga.app.dao.MatchRepository;
-import com.ikerveiga.app.dao.PlayerMatchStatsRepository;
-import com.ikerveiga.app.dao.PlayerRepository;
+import com.ikerveiga.app.DAO.MatchRepository;
+import com.ikerveiga.app.DAO.PlayerMatchStatsRepository;
+import com.ikerveiga.app.DAO.PlayerRepository;
 import com.ikerveiga.app.entity.Match;
 import com.ikerveiga.app.entity.Player;
 import com.ikerveiga.app.entity.PlayerMatchStats;
@@ -67,9 +67,11 @@ public class PlayerMatchStatsService {
 
     public PlayerMatchStats getPlayerMatchStats(long playerId, long matchId) {
         PlayerMatchStats playerMatchStats = playerMatchStatsDAO.findByMatchIdAndPlayerId(matchId, playerId);
+        Player player = playerDAO.findById(playerId);
+        Match match = matchDAO.findById(matchId);
 
         if (playerMatchStats == null) {
-            throw new RuntimeException("There is not match stats for that player");
+            return new PlayerMatchStats(player, match, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         }
 
         return playerMatchStats;

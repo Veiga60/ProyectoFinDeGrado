@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.ikerveiga.app.dao.PlayerRepository;
+import com.ikerveiga.app.DAO.PlayerRepository;
 import com.ikerveiga.app.entity.Player;
 
 @Service
