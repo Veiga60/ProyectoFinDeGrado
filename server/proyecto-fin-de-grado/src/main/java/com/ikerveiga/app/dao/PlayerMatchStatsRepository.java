@@ -1,4 +1,4 @@
-package com.ikerveiga.app.DAO;
+package com.ikerveiga.app.dao;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public interface PlayerMatchStatsRepository extends JpaRepository<PlayerMatchSta
 
     List<PlayerMatchStats> findAll();
 
-    PlayerMatchStats findByMatchId(long id);
+    List<PlayerMatchStats> findByMatchId(long id);
 
     @Query("SELECT a FROM PlayerMatchStats a WHERE a.match.id = :matchId AND a.player.id = :playerId")
     PlayerMatchStats findByMatchIdAndPlayerId(@Param("matchId") long matchId, @Param("playerId") long playerId);

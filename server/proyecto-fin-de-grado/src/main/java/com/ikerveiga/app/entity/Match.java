@@ -3,7 +3,7 @@ package com.ikerveiga.app.entity;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-import com.ikerveiga.app.DTO.MatchDTO;
+import com.ikerveiga.app.dto.MatchDTO;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;

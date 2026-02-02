@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.ikerveiga.app.JWT.JwtUtil;
 import com.ikerveiga.app.cookies.CookiesService;
-import com.ikerveiga.app.DAO.AuthorizedEmailRepository;
-import com.ikerveiga.app.DAO.OAuth2UserRepository;
+import com.ikerveiga.app.dao.AuthorizedEmailRepository;
+import com.ikerveiga.app.dao.OAuth2UserRepository;
 import com.ikerveiga.app.entity.AuthorizedEmail;
 import com.ikerveiga.app.entity.OAuth2User;
 

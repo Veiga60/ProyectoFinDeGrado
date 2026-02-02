@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ikerveiga.app.DTO.MatchDTO;
+import com.ikerveiga.app.dto.MatchDTO;
 import com.ikerveiga.app.entity.Match;
 import com.ikerveiga.app.service.MatchService;
 

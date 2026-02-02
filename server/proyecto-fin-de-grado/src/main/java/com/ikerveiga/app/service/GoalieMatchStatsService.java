@@ -3,9 +3,9 @@ package com.ikerveiga.app.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ikerveiga.app.DAO.MatchRepository;
-import com.ikerveiga.app.DAO.GoalieMatchStatsRepository;
-import com.ikerveiga.app.DAO.PlayerRepository;
+import com.ikerveiga.app.dao.MatchRepository;
+import com.ikerveiga.app.dao.GoalieMatchStatsRepository;
+import com.ikerveiga.app.dao.PlayerRepository;
 import com.ikerveiga.app.entity.GoalieMatchStats;
 import com.ikerveiga.app.entity.Match;
 import com.ikerveiga.app.entity.Player;

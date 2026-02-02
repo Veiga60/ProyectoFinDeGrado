@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ikerveiga.app.DTO.GoalieMatchStatsDTO;
+import com.ikerveiga.app.dto.GoalieMatchStatsDTO;
 import com.ikerveiga.app.service.GoalieMatchStatsService;
 
 @RestController

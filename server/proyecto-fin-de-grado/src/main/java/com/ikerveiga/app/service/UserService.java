@@ -17,9 +17,9 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import com.ikerveiga.app.JWT.JwtUtil;
 import com.ikerveiga.app.cookies.CookiesService;
-import com.ikerveiga.app.DAO.AuthorizedEmailRepository;
-import com.ikerveiga.app.DAO.UserRepository;
-import com.ikerveiga.app.DTO.PlayerDTO;
+import com.ikerveiga.app.dao.AuthorizedEmailRepository;
+import com.ikerveiga.app.dao.UserRepository;
+import com.ikerveiga.app.dto.PlayerDTO;
 import com.ikerveiga.app.CustomUserDetails;
 
 @Service

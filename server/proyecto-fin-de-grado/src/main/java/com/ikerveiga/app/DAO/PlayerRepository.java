@@ -1,4 +1,4 @@
-package com.ikerveiga.app.DAO;
+package com.ikerveiga.app.dao;
 
 import java.util.List;
 

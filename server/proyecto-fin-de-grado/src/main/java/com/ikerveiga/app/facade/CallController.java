@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ikerveiga.app.DTO.CallDTO;
+import com.ikerveiga.app.dto.CallDTO;
 import com.ikerveiga.app.entity.Call;
 import com.ikerveiga.app.service.CallService;
 

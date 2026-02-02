@@ -28,6 +28,15 @@ export default function StartMatch() {
         }
     }
 
+    const finishMatch = async () => {
+        try {
+            const playerMatchStats = await axios.get(`${SERVER_URL}/playersMatchStats/matches/${matchId}`, { withCredentials: true });
+            console.log(playerMatchStats.data);
+        } catch (error) {
+            console.log('Could not finish match: ', error);
+        }
+    }
+
     useEffect(() => {
         getNextMatch();
     }, []);
@@ -41,7 +50,7 @@ export default function StartMatch() {
                     visitingTeamGoals={visitingTeamGoals}
                 />
                 <div id='finishMatchButtonDiv'>
-                    <button id='finishMatchButton' onClick={() => navigate('/home')}>FINALIZAR PARTIDO</button>
+                    <button id='finishMatchButton' onClick={() => finishMatch()}>FINALIZAR PARTIDO</button>
                 </div>
                 <div id='matchInfoMainDiv'>
                     <div id='calledPlayersDiv'>

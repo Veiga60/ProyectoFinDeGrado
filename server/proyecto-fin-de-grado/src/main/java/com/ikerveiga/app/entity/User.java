@@ -1,6 +1,6 @@
 package com.ikerveiga.app.entity;
 
-import com.ikerveiga.app.DTO.UserDTO;
+import com.ikerveiga.app.dto.UserDTO;
 
 import jakarta.persistence.*;
 

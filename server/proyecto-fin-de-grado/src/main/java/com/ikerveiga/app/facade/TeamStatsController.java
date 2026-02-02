@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ikerveiga.app.DTO.TeamStatsDTO;
+import com.ikerveiga.app.dto.TeamStatsDTO;
 import com.ikerveiga.app.service.TeamStatsService;
 
 @RestController

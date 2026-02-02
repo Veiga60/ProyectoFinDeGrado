@@ -1,5 +1,8 @@
 package com.ikerveiga.app.facade;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,7 +13,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ikerveiga.app.DTO.PlayerMatchStatsDTO;
+import com.ikerveiga.app.dto.PlayerMatchStatsDTO;
+import com.ikerveiga.app.entity.PlayerMatchStats;
 import com.ikerveiga.app.service.PlayerMatchStatsService;
 
 @RestController
@@ -56,6 +60,26 @@ public class PlayerMatchStatsController {
             return ResponseEntity.ok(playerMatchStats);
         } catch (RuntimeException e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @GetMapping("/playersMatchStats/matches/{matchId}")
+    public ResponseEntity<List<PlayerMatchStatsDTO>> getPlayersMatchStats(@PathVariable("matchId") long matchId) {
+        try {
+            List<PlayerMatchStatsDTO> playersMatchStatsDTO = new ArrayList<>();
+            List<PlayerMatchStats> playersMatchStats = playerMatchStatsService.getPlayersMatchStats(matchId);
+
+            for (PlayerMatchStats playerMatchStats : playersMatchStats) {
+                playersMatchStatsDTO.add(playerMatchStats.toDTO());
+            }
+
+            return ResponseEntity.ok(playersMatchStatsDTO);
+        } catch (RuntimeException e) {
+            if (e.getMessage().equals("There are no stats for the match")) {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            } else {
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
         }
     }
 }
