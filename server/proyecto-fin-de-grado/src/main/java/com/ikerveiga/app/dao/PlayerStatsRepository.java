@@ -13,4 +13,6 @@ public interface PlayerStatsRepository extends JpaRepository<PlayerStats, Long> 
     PlayerStats findById(long id);
 
     List<PlayerStats> findAll();
+
+    PlayerStats findByPlayerId(long id);
 }

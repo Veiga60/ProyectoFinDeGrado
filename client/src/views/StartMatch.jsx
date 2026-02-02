@@ -32,6 +32,8 @@ export default function StartMatch() {
         try {
             const playerMatchStats = await axios.get(`${SERVER_URL}/playersMatchStats/matches/${matchId}`, { withCredentials: true });
             console.log(playerMatchStats.data);
+            const response = await axios.put(`${SERVER_URL}/playersStats/all/update`, playerMatchStats.data, { withCredentials: true });
+            console.log(response.data);
         } catch (error) {
             console.log('Could not finish match: ', error);
         }
