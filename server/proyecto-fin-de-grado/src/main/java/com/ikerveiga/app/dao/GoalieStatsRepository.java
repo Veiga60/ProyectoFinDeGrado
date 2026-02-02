@@ -13,4 +13,6 @@ public interface GoalieStatsRepository extends JpaRepository<GoalieStats, Long> 
     GoalieStats findById(long id);
 
     List<GoalieStats> findAll();
+
+    GoalieStats findByGoalieId(long id);
 }

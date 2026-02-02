@@ -31,9 +31,10 @@ export default function StartMatch() {
     const finishMatch = async () => {
         try {
             const playerMatchStats = await axios.get(`${SERVER_URL}/playersMatchStats/matches/${matchId}`, { withCredentials: true });
-            console.log(playerMatchStats.data);
-            const response = await axios.put(`${SERVER_URL}/playersStats/all/update`, playerMatchStats.data, { withCredentials: true });
-            console.log(response.data);
+            const goalieMatchStats = await axios.get(`${SERVER_URL}/goaliesMatchStats/matches/${matchId}`, { withCredentials: true });
+            await axios.put(`${SERVER_URL}/playersStats/all/update`, playerMatchStats.data, { withCredentials: true });
+            await axios.put(`${SERVER_URL}/goaliesStats/all/update`, goalieMatchStats.data, { withCredentials: true });
+            navigate('/home');
         } catch (error) {
             console.log('Could not finish match: ', error);
         }

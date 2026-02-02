@@ -16,7 +16,7 @@ public interface GoalieMatchStatsRepository extends JpaRepository<GoalieMatchSta
 
     List<GoalieMatchStats> findAll();
 
-    GoalieMatchStats findByMatchId(long id);
+    List<GoalieMatchStats> findByMatchId(long id);
 
     @Query("SELECT a FROM GoalieMatchStats a WHERE a.match.id = :matchId AND a.goalie.id = :playerId")
     GoalieMatchStats findByMatchIdAndPlayerId(@Param("matchId") long matchId, @Param("playerId") long playerId);

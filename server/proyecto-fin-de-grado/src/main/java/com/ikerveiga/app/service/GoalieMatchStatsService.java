@@ -1,5 +1,7 @@
 package com.ikerveiga.app.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -67,5 +69,15 @@ public class GoalieMatchStatsService {
         }
 
         return goalieMatchStats;
+    }
+
+    public List<GoalieMatchStats> getGoaliesMatchStats(long matchId) {
+        List<GoalieMatchStats> goaliesMatchStats = goalieMatchStatsDAO.findByMatchId(matchId);
+
+        if (goaliesMatchStats == null) {
+            throw new RuntimeException("There are no stats for the match");
+        }
+
+        return goaliesMatchStats;
     }
 }
