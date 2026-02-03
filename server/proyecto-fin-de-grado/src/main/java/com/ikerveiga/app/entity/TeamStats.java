@@ -187,7 +187,7 @@ public class TeamStats {
         return this.powerPlayPercentage;
     }
 
-    public void setPowerPlayPercentage(int powerPlayPercentage) {
+    public void setPowerPlayPercentage(float powerPlayPercentage) {
         this.powerPlayPercentage = powerPlayPercentage;
     }
 
