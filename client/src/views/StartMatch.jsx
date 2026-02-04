@@ -94,6 +94,7 @@ export default function StartMatch() {
 
                             </tbody>
                         </table>
+                        <button onClick={() => navigate(`/matches/${matchId}/start_match/team`)}>ESTADISTICAS EQUIPO</button>
                     </div>
                     <div id='matchEventsContainer'>
                         <p id='matchEventsText'>ACTA DEL PARTIDO</p>
