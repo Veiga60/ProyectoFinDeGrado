@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
+import axios from 'axios'
 import '../style/StartMatchTeam.css'
 
 export default function StartMatchTeam() {
@@ -33,8 +34,40 @@ export default function StartMatchTeam() {
         threeVsTwo: threeVsTwo
     }
 
-    useEffect(() => {
+    const saveMatchStats = async (matchId) => {
+        try {
+            const response = await axios.put(`${SERVER_URL}/matchStats/matches/${matchId}/team`, teamMatchStatsBody, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }, withCredentials: true
+            });
+            navigate(`/matches/${matchId}/start_match`);
+        } catch (error) {
+            console.log(`Error saving the stats of player: `, error);
+        }
+    }
 
+    const getTeamMatchStats = async (matchId) => {
+        try {
+            const response = await axios.get(`${SERVER_URL}/matchStats/matches/${matchId}/team`, { withCredentials: true });
+            setTeamMatchStats(response?.data);
+            setPowerPlayGoals(response?.data?.powerPlayGoals);
+            setPowerPlayNoGoals(response?.data?.powerPlayNoGoals);
+            setPenaltyKillGoals(response?.data?.penaltyKillGoals);
+            setPenaltyKillNoGoals(response?.data?.penaltyKillNoGoals);
+            setOneVsZero(response?.data?.oneVsZero);
+            setOneVsOne(response?.data?.oneVsOne);
+            setTwoVsOne(response?.data?.twoVsOne);
+            setTwoVsTwo(response?.data?.twoVsTwo);
+            setThreeVsOne(response?.data?.threeVsOne);
+            setThreeVsTwo(response?.data?.threeVsTwo);
+        } catch (error) {
+            console.log('Error fetching the stats of the team: ', error);
+        }
+    }
+
+    useEffect(() => {
+        getTeamMatchStats(matchId);
     }, []);
 
     return (
@@ -126,7 +159,7 @@ export default function StartMatchTeam() {
                             <button className='plusButton' onClick={() => setThreeVsTwo(threeVsTwo + 1)}>+</button>
                         </div>
                     </div>
-                    <button onClick={() => saveMatchStats(player)}>GUARDAR</button>
+                    <button onClick={() => saveMatchStats(matchId)}>GUARDAR</button>
                 </div>
             </div>
         </>

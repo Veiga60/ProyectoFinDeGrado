@@ -34,6 +34,21 @@ public class TeamMatchStatsDTO {
         this.threeVsTwo = threeVsTwo;
     }
 
+    public TeamMatchStatsDTO(MatchDTO match, int powerPlayGoals, int powerPlayNoGoals, int penaltyKillGoals,
+            int penaltyKillNoGoals, int oneVsZero, int oneVsOne, int twoVsOne, int twoVsTwo, int threeVsOne,
+            int threeVsTwo) {
+        this.match = match;
+        this.powerPlayGoals = powerPlayGoals;
+        this.powerPlayNoGoals = powerPlayNoGoals;
+        this.penaltyKillGoals = penaltyKillNoGoals;
+        this.oneVsZero = oneVsZero;
+        this.oneVsOne = oneVsOne;
+        this.twoVsOne = twoVsOne;
+        this.twoVsTwo = twoVsTwo;
+        this.threeVsOne = threeVsOne;
+        this.threeVsTwo = threeVsTwo;
+    }
+
     public long getId() {
         return this.id;
     }

@@ -78,6 +78,7 @@ public class TeamMatchStats {
     public TeamMatchStats(Match match, int powerPlayGoals, int powerPlayNoGoals, int penaltyKillGoals,
             int penaltyKillNoGoals, int oneVsZero, int oneVsOne, int twoVsOne, int twoVsTwo, int threeVsOne,
             int threeVsTwo) {
+        this.match = match;
         this.powerPlayGoals = powerPlayGoals;
         this.powerPlayNoGoals = powerPlayNoGoals;
         this.penaltyKillGoals = penaltyKillNoGoals;

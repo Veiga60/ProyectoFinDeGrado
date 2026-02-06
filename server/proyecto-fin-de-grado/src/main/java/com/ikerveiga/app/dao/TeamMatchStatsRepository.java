@@ -13,4 +13,6 @@ public interface TeamMatchStatsRepository extends JpaRepository<TeamMatchStats, 
     TeamMatchStats findById(long id);
 
     List<TeamMatchStats> findAll();
+
+    TeamMatchStats findByMatchId(long id);
 }
