@@ -16,8 +16,8 @@ export default function StartMatch() {
     const [matchEvents, setMatchEvents] = useState([]);
 
     const [match, setMatch] = useState();
-    const [localTeamGoals, setLocalTeamGoals] = useState(0);
-    const [visitingTeamGoals, setVisitingTeamGoals] = useState(0);
+    const localTeamGoals = matchEvents?.filter((matchEvent) => (matchEvent.goal.team === match?.localTeam.name)).length;
+    const visitingTeamGoals = matchEvents?.filter((matchEvent) => (matchEvent.goal.team === match?.visitingTeam.name)).length;
     const [players, setPlayers] = useState([]);
 
     const getNextMatch = async () => {
@@ -106,7 +106,6 @@ export default function StartMatch() {
                         <p id='matchEventsText'>ACTA DEL PARTIDO</p>
                         <div id='matchEventsDiv'>
                             {matchEvents?.map((matchEvent) => {
-                                console.log(matchEvent);
                                 if (matchEvent.goal.scorer == undefined) {
                                     return <p id='matchEventsGoal'>GOL DE {matchEvent.goal.team}</p>
                                 }
