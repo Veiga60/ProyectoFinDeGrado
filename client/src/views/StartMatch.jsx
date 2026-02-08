@@ -45,9 +45,7 @@ export default function StartMatch() {
 
     useEffect(() => {
         getNextMatch();
-        // if (location.state.matchEvents != null) {
-        //     // setMatchEvents(location.state.matchEvents);
-        // }
+        setMatchEvents(location.state?.matchEvents);
     }, []);
 
     return (
@@ -102,12 +100,17 @@ export default function StartMatch() {
                         </table>
                         <button onClick={() => navigate(`/matches/${matchId}/start_match/team`)}>ESTADISTICAS EQUIPO</button>
                         <button onClick={() => navigate(`/matches/${matchId}/incidences`, { state: { match: match, matchEvents: matchEvents } })}>INCIDENCIAS</button>
-                        <button onClick={() => console.log(location)}>CONSOLA</button>
+                        <button onClick={() => [console.log(location), console.log(matchEvents)]}>CONSOLA</button>
                     </div>
                     <div id='matchEventsContainer'>
                         <p id='matchEventsText'>ACTA DEL PARTIDO</p>
                         <div id='matchEventsDiv'>
-
+                            {matchEvents?.map((matchEvent) => {
+                                console.log(matchEvent);
+                                if (matchEvent.goal.scorer == undefined) {
+                                    return <p id='matchEventsGoal'>GOL DE {matchEvent.goal.team}</p>
+                                }
+                            })}
                         </div>
                     </div>
                 </div>

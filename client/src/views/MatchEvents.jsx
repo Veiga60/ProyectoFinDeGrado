@@ -16,7 +16,12 @@ export default function MatchEvents() {
         if (team.name == 'Metropolitano HC') {
 
         } else {
-            const newMatchEvents = [...matchEvents, { goal: time }];
+            let newMatchEvents;
+            if (matchEvents == undefined) {
+                newMatchEvents = [{ goal: { team: team.name, time: time } }];
+            } else {
+                newMatchEvents = [...matchEvents, { goal: { team: team.name, time: time } }];
+            }
             setMatchEvents(newMatchEvents);
         }
     }
@@ -28,6 +33,7 @@ export default function MatchEvents() {
     useEffect(() => {
         setMatch(location.state.match);
         setMatchEvents(location.state.matchEvents)
+        console.log(location);
     }, []);
 
     return (
