@@ -14,6 +14,7 @@ import CallDetail from './views/CallDetail.jsx'
 import StartMatch from './views/StartMatch.jsx'
 import StartMatchPlayer from './views/StartMatchPlayer.jsx'
 import StartMatchTeam from './views/StartMatchTeam.jsx'
+import MatchEvents from './views/MatchEvents.jsx'
 import Unauthorized from './views/Unauthorized.jsx'
 import './style/App.css'
 
@@ -34,6 +35,7 @@ export default function App() {
         <Route path="/matches/:matchId/start_match" element={<StartMatch />} />
         <Route path="/matches/:matchId/start_match/players/:playerId" element={<StartMatchPlayer />} />
         <Route path="/matches/:matchId/start_match/team" element={<StartMatchTeam />} />
+        <Route path="/matches/:matchId/incidences" element={<MatchEvents />} />
         <Route path="/error/unauthorized" element={<Unauthorized />} />
       </Routes>
     </BrowserRouter>

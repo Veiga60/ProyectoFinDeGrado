@@ -195,7 +195,7 @@ public class TeamStats {
         return this.penaltyKillPercentage;
     }
 
-    public void setPenaltyKillPercentage(int penaltyKillPercentage) {
+    public void setPenaltyKillPercentage(float penaltyKillPercentage) {
         this.penaltyKillPercentage = penaltyKillPercentage;
     }
 

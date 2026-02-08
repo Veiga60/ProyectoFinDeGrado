@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams, useLocation } from 'react-router-dom'
 import ScoreBoard from '../components/ScoreBoard.jsx'
 import PlayerCard from '../components/PlayerCard.jsx'
 import axios from 'axios'
@@ -11,6 +11,9 @@ export default function StartMatch() {
     const SERVER_URL = 'http://localhost:8081';
     const navigate = useNavigate();
     const { matchId } = useParams();
+    const location = useLocation();
+
+    const [matchEvents, setMatchEvents] = useState([]);
 
     const [match, setMatch] = useState();
     const [localTeamGoals, setLocalTeamGoals] = useState(0);
@@ -42,6 +45,9 @@ export default function StartMatch() {
 
     useEffect(() => {
         getNextMatch();
+        // if (location.state.matchEvents != null) {
+        //     // setMatchEvents(location.state.matchEvents);
+        // }
     }, []);
 
     return (
@@ -95,6 +101,8 @@ export default function StartMatch() {
                             </tbody>
                         </table>
                         <button onClick={() => navigate(`/matches/${matchId}/start_match/team`)}>ESTADISTICAS EQUIPO</button>
+                        <button onClick={() => navigate(`/matches/${matchId}/incidences`, { state: { match: match, matchEvents: matchEvents } })}>INCIDENCIAS</button>
+                        <button onClick={() => console.log(location)}>CONSOLA</button>
                     </div>
                     <div id='matchEventsContainer'>
                         <p id='matchEventsText'>ACTA DEL PARTIDO</p>

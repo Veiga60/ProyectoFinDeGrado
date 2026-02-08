@@ -13,7 +13,6 @@ export default function StartMatchPlayer() {
     const [playerMatchStats, setPlayerMatchStats] = useState();
     const [goalieMatchStats, setGoalieMatchStats] = useState();
 
-
     const [player, setPlayer] = useState();
     const [goals, setGoals] = useState(0);
     const [assists, setAssists] = useState(0);
