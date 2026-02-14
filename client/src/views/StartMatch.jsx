@@ -16,8 +16,8 @@ export default function StartMatch() {
     const [matchEvents, setMatchEvents] = useState([]);
 
     const [match, setMatch] = useState();
-    const localTeamGoals = matchEvents?.filter((matchEvent) => (matchEvent.goal.team === match?.localTeam.name)).length;
-    const visitingTeamGoals = matchEvents?.filter((matchEvent) => (matchEvent.goal.team === match?.visitingTeam.name)).length;
+    const localTeamGoals = matchEvents?.filter((matchEvent) => (matchEvent.goal.team === match?.localTeam.name)).length || 0;
+    const visitingTeamGoals = matchEvents?.filter((matchEvent) => (matchEvent.goal.team === match?.visitingTeam.name)).length || 0;
     const [players, setPlayers] = useState([]);
 
     const getNextMatch = async () => {
@@ -106,8 +106,12 @@ export default function StartMatch() {
                         <p id='matchEventsText'>ACTA DEL PARTIDO</p>
                         <div id='matchEventsDiv'>
                             {matchEvents?.map((matchEvent) => {
-                                if (matchEvent.goal.scorer == undefined) {
-                                    return <p id='matchEventsGoal'>GOL DE {matchEvent.goal.team}</p>
+                                if (matchEvent.hasOwnProperty('goal')) {
+                                    if (matchEvent.goal.scorer == undefined) {
+                                        return <p id='matchEventsGoal' className='matchEvent'>GOL DE {matchEvent.goal.team}</p>
+                                    }
+                                } else if (matchEvent.hasOwnProperty('penalty')) {
+                                    return <p id='matchEventsPenalty' className='matchEvent'>FALTA DE {matchEvent.penalty.team}. {matchEvent.penalty.penaltyTime} por {matchEvent.penalty.penaltyType}</p>
                                 }
                             })}
                         </div>
