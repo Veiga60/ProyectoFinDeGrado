@@ -1,29 +1,29 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import '../style/PenaltiesModal.css'
 
-export default function PenaltiesModal({ teamPenalty, onClose }) {
+export default function PenaltiesModal({ teamPenalty, onClose, matchEvents, setMatchEvents }) {
 
     const location = useLocation();
-    const [matchEvents, setMatchEvents] = useState([]);
+    const navigate = useNavigate();
     const [match, setMatch] = useState();
 
     const [penaltyTime, setPenaltyTime] = useState(0);
     const [penaltyType, setPenaltyType] = useState('');
 
-    const setPenalty = (team) => {
+    const setPenalty = () => {
         let newMatchEvents;
         if (matchEvents == undefined) {
-            newMatchEvents = [{ penalty: { team: team.name, penaltyType: penaltyType, penaltyTime: penaltyTime } }];
+            newMatchEvents = [{ penalty: { team: teamPenalty.name, penaltyType: penaltyType, penaltyTime: penaltyTime } }];
         } else {
-            newMatchEvents = [...matchEvents, { penalty: { team: team.name, penaltyType: penaltyType, penaltyTime: penaltyTime } }];
+            newMatchEvents = [...matchEvents, { penalty: { team: teamPenalty.name, penaltyType: penaltyType, penaltyTime: penaltyTime } }];
         }
         setMatchEvents(newMatchEvents);
     }
 
     useEffect(() => {
-        setMatchEvents(location.state.matchEvents)
-        console.log(location);
+        setMatch(location.state.match);
+        console.log(location.state);
     }, []);
 
     return (
@@ -38,7 +38,7 @@ export default function PenaltiesModal({ teamPenalty, onClose }) {
                             <p id='crossCheckingText' className='penaltyText'>CARGA CON STICK</p>
                         </div>
                     </div>
-                    <button onClick={() => [console.log('Hola', matchEvents), console.log(penaltyType), setPenalty(teamPenalty), onClose()]}>CERRAR</button>
+                    <button onClick={() => [setPenalty(), onClose()]}>GUARDAR</button>
                 </div>
             </div>
         </>

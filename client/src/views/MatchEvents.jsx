@@ -67,6 +67,8 @@ export default function MatchEvents() {
                         <PenaltiesModal
                             teamPenalty={teamPenalty}
                             onClose={() => toggleModal()}
+                            matchEvents={matchEvents}
+                            setMatchEvents={setMatchEvents}
                         />
                     )
                 }

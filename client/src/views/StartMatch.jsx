@@ -16,8 +16,8 @@ export default function StartMatch() {
     const [matchEvents, setMatchEvents] = useState([]);
 
     const [match, setMatch] = useState();
-    const localTeamGoals = matchEvents?.filter((matchEvent) => (matchEvent.goal.team === match?.localTeam.name)).length || 0;
-    const visitingTeamGoals = matchEvents?.filter((matchEvent) => (matchEvent.goal.team === match?.visitingTeam.name)).length || 0;
+    const localTeamGoals = matchEvents?.filter((matchEvent) => (matchEvent.goal) ? ((matchEvent.goal.team === match?.localTeam.name)) : (0)).length || 0;
+    const visitingTeamGoals = matchEvents?.filter((matchEvent) => (matchEvent.goal) ? ((matchEvent.goal.team === match?.visitingTeam.name)) : (0)).length || 0;
     const [players, setPlayers] = useState([]);
 
     const getNextMatch = async () => {
@@ -46,6 +46,7 @@ export default function StartMatch() {
     useEffect(() => {
         getNextMatch();
         setMatchEvents(location.state?.matchEvents);
+        console.log(location.state);
     }, []);
 
     return (
