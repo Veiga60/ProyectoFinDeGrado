@@ -110,6 +110,8 @@ export default function StartMatch() {
                                 if (matchEvent.hasOwnProperty('goal')) {
                                     if (matchEvent.goal.scorer == undefined) {
                                         return <p id='matchEventsGoal' className='matchEvent'>GOL DE {matchEvent.goal.team}</p>
+                                    } else {
+                                        return <p className='matchEvent'>GOL DE {matchEvent.goal.team}. GOL: {matchEvent.goal.scorer.name} {matchEvent.goal.scorer.lastName1} {matchEvent.goal.scorer.lastName2}. {(matchEvent.goal.assister) && `ASISTENCIA: ${matchEvent.goal.assister?.name} ${matchEvent.goal.assister?.lastName1} ${matchEvent.goal.assister?.lastName2}`}</p>
                                     }
                                 } else if (matchEvent.hasOwnProperty('penalty')) {
                                     return <p id='matchEventsPenalty' className='matchEvent'>FALTA DE {matchEvent.penalty.team}. {matchEvent.penalty.penaltyTime} por {matchEvent.penalty.penaltyType}</p>

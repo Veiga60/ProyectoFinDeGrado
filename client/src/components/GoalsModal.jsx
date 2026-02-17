@@ -8,6 +8,8 @@ export default function GoalsModal({ onClose, matchEvents, setMatchEvents }) {
     const SERVER_URL = 'http://localhost:8081';
     const { matchId } = useParams();
     const [players, setPlayers] = useState([]);
+    const [scorer, setScorer] = useState();
+    const [assister, setAssister] = useState();
 
     const getCalledPlayers = async () => {
         try {
@@ -16,6 +18,16 @@ export default function GoalsModal({ onClose, matchEvents, setMatchEvents }) {
         } catch (error) {
             console.log('Error al recuperar los jugadores: ', error);
         }
+    }
+
+    const setGoal = (scorer, assister) => {
+        let newMatchEvents;
+        if (matchEvents == undefined) {
+            newMatchEvents = [{ goal: { team: 'METROPOLITANO HC', scorer: scorer, assister: assister } }];
+        } else {
+            newMatchEvents = [...matchEvents, { goal: { team: 'METROPOLITANO HC', scorer: scorer, assister: assister } }]
+        }
+        setMatchEvents(newMatchEvents);
     }
 
     useEffect(() => {
@@ -30,19 +42,19 @@ export default function GoalsModal({ onClose, matchEvents, setMatchEvents }) {
                         <div id='goal'>
                             {
                                 players.map((player) => {
-                                    return <div key={player.id} className='goalNumber'>{player.number}</div>
+                                    return <div key={player.id} className='goalNumber' onClick={() => setScorer(player)}>{player.number}</div>
                                 })
                             }
                         </div>
                         <div id='assist'>
                             {
                                 players.map((player) => {
-                                    return <div key={player.id} className='assistNumber'>{player.number}</div>
+                                    return <div key={player.id} className='assistNumber' onClick={() => setAssister(player)}>{player.number}</div>
                                 })
                             }
                         </div>
                     </div>
-                    <button onClick={() => [setGoal(), onClose()]}>GUARDAR</button>
+                    <button onClick={() => [setGoal(scorer, assister), onClose()]}>GUARDAR</button>
                     <button onClick={() => onClose()}>CERRAR</button>
                 </div>
             </div>
