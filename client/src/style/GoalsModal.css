@@ -1,0 +1,25 @@
+#goalsModalMainDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#goalsMainDiv {
+    width: 30%;
+    height: 30%;
+    background-color: white;
+    border: 2px solid rgb(7, 78, 200);
+    border-radius: 15px;
+}
+
+#goals {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}

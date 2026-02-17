@@ -39,6 +39,7 @@ export default function PenaltiesModal({ teamPenalty, onClose, matchEvents, setM
                         </div>
                     </div>
                     <button onClick={() => [setPenalty(), onClose()]}>GUARDAR</button>
+                    <button onClick={() => onClose()}>CERRAR</button>
                 </div>
             </div>
         </>

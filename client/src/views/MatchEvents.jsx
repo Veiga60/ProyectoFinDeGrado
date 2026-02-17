@@ -2,13 +2,15 @@ import { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import '../style/MatchEvents.css'
 import PenaltiesModal from '../components/PenaltiesModal';
+import GoalsModal from '../components/GoalsModal';
 
 export default function MatchEvents() {
 
     const SERVER_URL = 'http://localhost:8081'
     const location = useLocation();
     const navigate = useNavigate();
-    const [modal, setModal] = useState(false);
+    const [penaltiesModal, setPenaltiesModal] = useState(false);
+    const [goalsModal, setGoalsModal] = useState(false);
 
     const [matchEvents, setMatchEvents] = useState([]);
     const [time, setTime] = useState('20:00');
@@ -16,13 +18,17 @@ export default function MatchEvents() {
 
     const [teamPenalty, setTeamPenalty] = useState();
 
-    const toggleModal = () => {
-        setModal(!modal);
+    const togglePenaltiesModal = () => {
+        setPenaltiesModal(!penaltiesModal);
+    }
+
+    const toggleGoalsModal = () => {
+        setGoalsModal(!goalsModal);
     }
 
     const setGoal = (team) => {
         if (team.name == 'Metropolitano HC') {
-            return;
+            toggleGoalsModal();
         } else {
             let newMatchEvents;
             if (matchEvents == undefined) {
@@ -52,23 +58,30 @@ export default function MatchEvents() {
                         <img id='indicencesLocalTeamImage' src={`/logos/${match?.localTeam.logo}`} alt={match?.localTeam.name} />
                     </div>
                     <button onClick={() => setGoal(match?.localTeam)}>GOL</button>
-                    <button onClick={() => [setTeamPenalty(match?.localTeam), toggleModal()]}>PENALIZACIÓN</button>
+                    <button onClick={() => [setTeamPenalty(match?.localTeam), toggleGoalsModal()]}>PENALIZACIÓN</button>
                 </div>
                 <div id="incidencesVisitingTeamDiv">
                     <div id='indicencesLocalTeamImageDiv'>
                         <img id='indicencesLocalTeamImage' src={`/logos/${match?.visitingTeam.logo}`} alt={match?.visitingTeam.name} />
                     </div>
                     <button onClick={() => setGoal(match?.visitingTeam)}>GOL</button>
-                    <button onClick={() => [setTeamPenalty(match?.visitingTeam), toggleModal()]}>PENALIZACIÓN</button>
+                    <button onClick={() => [setTeamPenalty(match?.visitingTeam), togglePenaltiesModal()]}>PENALIZACIÓN</button>
                 </div>
                 <button onClick={() => finishEditingMatchEvents()}>GUARDAR</button>
                 {
-                    (modal &&
+                    (penaltiesModal &&
                         <PenaltiesModal
                             teamPenalty={teamPenalty}
-                            onClose={() => toggleModal()}
+                            onClose={() => togglePenaltiesModal()}
                             matchEvents={matchEvents}
                             setMatchEvents={setMatchEvents}
+                        />
+                    )
+                }
+                {
+                    (goalsModal &&
+                        <GoalsModal
+                            onClose={() => toggleGoalsModal()}
                         />
                     )
                 }
