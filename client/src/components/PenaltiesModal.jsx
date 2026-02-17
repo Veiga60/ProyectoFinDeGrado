@@ -1,12 +1,8 @@
-import { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useState } from 'react';
+import { useLocation } from 'react-router-dom'
 import '../style/PenaltiesModal.css'
 
 export default function PenaltiesModal({ teamPenalty, onClose, matchEvents, setMatchEvents }) {
-
-    const location = useLocation();
-    const navigate = useNavigate();
-    const [match, setMatch] = useState();
 
     const [penaltyTime, setPenaltyTime] = useState(0);
     const [penaltyType, setPenaltyType] = useState('');
@@ -20,11 +16,6 @@ export default function PenaltiesModal({ teamPenalty, onClose, matchEvents, setM
         }
         setMatchEvents(newMatchEvents);
     }
-
-    useEffect(() => {
-        setMatch(location.state.match);
-        console.log(location.state);
-    }, []);
 
     return (
         <>

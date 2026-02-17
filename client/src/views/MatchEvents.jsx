@@ -58,7 +58,7 @@ export default function MatchEvents() {
                         <img id='indicencesLocalTeamImage' src={`/logos/${match?.localTeam.logo}`} alt={match?.localTeam.name} />
                     </div>
                     <button onClick={() => setGoal(match?.localTeam)}>GOL</button>
-                    <button onClick={() => [setTeamPenalty(match?.localTeam), toggleGoalsModal()]}>PENALIZACIÓN</button>
+                    <button onClick={() => [setTeamPenalty(match?.localTeam), togglePenaltiesModal()]}>PENALIZACIÓN</button>
                 </div>
                 <div id="incidencesVisitingTeamDiv">
                     <div id='indicencesLocalTeamImageDiv'>
@@ -82,6 +82,8 @@ export default function MatchEvents() {
                     (goalsModal &&
                         <GoalsModal
                             onClose={() => toggleGoalsModal()}
+                            matchEvents={matchEvents}
+                            setMatchEvents={setMatchEvents}
                         />
                     )
                 }
