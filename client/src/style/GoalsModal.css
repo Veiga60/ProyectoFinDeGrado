@@ -16,10 +16,43 @@
     border-radius: 15px;
 }
 
-#goals {
+#goalsAndAssists {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+}
+
+#goal {
+    width: 50%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(30px, 30px));
+    border: 2px solid black;
+}
+
+#assist {
+    width: 50%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(30px, 30px));
+    border: 2px solid red;
+}
+
+.goalNumber {
+    color: black;
+    border: 2px solid rgb(7, 78, 200);
+}
+
+.goalNumber:hover {
+    cursor: pointer;
+}
+
+.assistNumber {
+    color: black;
+    border: 2px solid rgb(7, 78, 200);
+}
+
+.assistNumber:hover {
+    cursor: pointer;
 }
