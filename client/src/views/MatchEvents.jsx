@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import '../style/MatchEvents.css'
 import PenaltiesModal from '../components/PenaltiesModal';
 import GoalsModal from '../components/GoalsModal';
@@ -41,7 +41,7 @@ export default function MatchEvents() {
     }
 
     const finishEditingMatchEvents = async () => {
-        navigate(`/matches/${match.matchId}/start_match`, { state: { matchEvents: matchEvents } });
+        navigate(`/matches/${match.id}/start_match`, { state: { matchEvents: matchEvents } });
     }
 
     useEffect(() => {
