@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import axios from 'axios'
 import '../style/StartMatchPlayer.css'
@@ -8,14 +8,15 @@ export default function StartMatchPlayer() {
     const SERVER_URL = 'http://localhost:8081';
     const { playerId } = useParams();
     const { matchId } = useParams();
+    const location = useLocation();
     const navigate = useNavigate();
 
     const [playerMatchStats, setPlayerMatchStats] = useState();
     const [goalieMatchStats, setGoalieMatchStats] = useState();
 
+    const [matchEvents, setMatchEvents] = useState();
+
     const [player, setPlayer] = useState();
-    const [goals, setGoals] = useState(0);
-    const [assists, setAssists] = useState(0);
     const [plusMinus, setPlusMinus] = useState(0);
     const [shots, setShots] = useState(0);
     const [goodPasses, setGoodPasses] = useState(0);
@@ -31,6 +32,9 @@ export default function StartMatchPlayer() {
     const [goaliePenaltyMins, setGoaliePenaltyMins] = useState(0);
     const [goaliePenaltyShotGoals, setGoaliePenaltyShotGoals] = useState(0);
     const [penaltyShotSaves, setPenaltyShotSaves] = useState(0);
+
+    const goals = matchEvents?.filter((matchEvent) => (matchEvent.goal) ? ((matchEvent.goal.scorer?.id) == player?.id) : (0)).length || 0;
+    const assists = matchEvents?.filter((matchEvent) => (matchEvent.goal) ? ((matchEvent.goal.assister?.id) == player?.id) : (0)).length || 0;
 
     var playerMatchStatsBody = {
         goals: goals,
@@ -76,14 +80,14 @@ export default function StartMatchPlayer() {
                         'Content-Type': 'application/json'
                     }, withCredentials: true
                 });
-                navigate(`/matches/${matchId}/start_match`);
+                navigate(`/matches/${matchId}/start_match`, { state: { matchEvents: matchEvents } });
             } else {
                 const response = await axios.put(`${SERVER_URL}/matchStats/matches/${matchId}/goalies/${player.id}`, goalieMatchStatsBody, {
                     headers: {
                         'Content-Type': 'application/json'
                     }, withCredentials: true
                 });
-                navigate(`/matches/${matchId}/start_match`);
+                navigate(`/matches/${matchId}/start_match`, { state: { matchEvents: matchEvents } });
             }
         } catch (error) {
             console.log(`Error saving the stats of player: `, error);
@@ -95,8 +99,6 @@ export default function StartMatchPlayer() {
             try {
                 const response = await axios.get(`${SERVER_URL}/matchStats/matches/${matchId}/players/${player?.id}`, { withCredentials: true });
                 setPlayerMatchStats(response?.data);
-                setGoals(response?.data?.goals);
-                setAssists(response?.data?.assists);
                 setPlusMinus(response?.data?.plusMinus);
                 setShots(response?.data?.shots);
                 setGoodPasses(response?.data?.goodPasses);
@@ -134,6 +136,7 @@ export default function StartMatchPlayer() {
 
     useEffect(() => {
         getPlayer();
+        setMatchEvents(location.state?.matchEvents);
     }, []);
 
     return (
@@ -154,17 +157,13 @@ export default function StartMatchPlayer() {
                                 <div className='statDiv'>
                                     <p className='statTitle'>GOLES</p>
                                     <div className='matchStatDiv'>
-                                        <button className='minusButton' onClick={() => (goals > 0) && setGoals(goals - 1)}>-</button>
                                         <p className='matchStat'>{goals}</p>
-                                        <button className='plusButton' onClick={() => [setGoals(goals + 1), setShots(shots + 1)]}>+</button>
                                     </div>
                                 </div>
                                 <div className='statDiv'>
                                     <p className='statTitle'>ASISTENCIAS</p>
                                     <div className='matchStatDiv'>
-                                        <button className='minusButton' onClick={() => (assists > 0) && setAssists(assists - 1)}>-</button>
                                         <p className='matchStat'>{assists}</p>
-                                        <button className='plusButton' onClick={() => setAssists(assists + 1)}>+</button>
                                     </div>
                                 </div>
                                 <div className='statDiv'>

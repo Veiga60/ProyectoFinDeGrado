@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams, useLocation } from 'react-router-dom'
 import ScoreBoard from '../components/ScoreBoard.jsx'
-import PlayerCard from '../components/PlayerCard.jsx'
 import axios from 'axios'
 import '../style/StartMatch.css'
 
@@ -16,8 +15,8 @@ export default function StartMatch() {
     const [matchEvents, setMatchEvents] = useState([]);
 
     const [match, setMatch] = useState();
-    const localTeamGoals = matchEvents?.filter((matchEvent) => (matchEvent.goal) ? ((matchEvent.goal.team === match?.localTeam.name)) : (0)).length || 0;
-    const visitingTeamGoals = matchEvents?.filter((matchEvent) => (matchEvent.goal) ? ((matchEvent.goal.team === match?.visitingTeam.name)) : (0)).length || 0;
+    const localTeamGoals = matchEvents?.filter((matchEvent) => (matchEvent.goal) ? ((String(matchEvent.goal.team).toUpperCase() === String(match?.localTeam.name).toUpperCase())) : (0)).length || 0;
+    const visitingTeamGoals = matchEvents?.filter((matchEvent) => (matchEvent.goal) ? ((String(matchEvent.goal.team).toUpperCase() === String(match?.visitingTeam.name).toUpperCase())) : (0)).length || 0;
     const [players, setPlayers] = useState([]);
 
     const getNextMatch = async () => {
@@ -68,10 +67,10 @@ export default function StartMatch() {
                                 {players.map(player =>
                                     ((match.call.callPlayerStatus[player.id] == 'CONFIRMED') && player.playerType == 'RINK_PLAYER') && (
                                         <tr key={player.id} className='calledPlayerRow'>
-                                            <td className='calledPlayerNumber' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`)}>
+                                            <td className='calledPlayerNumber' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchEvents: matchEvents } })}>
                                                 {player.number}
                                             </td>
-                                            <td className='calledPlayerName' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`)}>
+                                            <td className='calledPlayerName' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchEvents: matchEvents } })}>
                                                 {player.name} {player.lastName1} {player.lastName2}
                                             </td>
                                         </tr>
@@ -87,10 +86,10 @@ export default function StartMatch() {
                                 {players.map(player =>
                                     ((match.call.callPlayerStatus[player.id] == 'CONFIRMED') && player.playerType == 'GOALIE') && (
                                         <tr key={player.id} className='calledGoalieRow'>
-                                            <td className='calledGoalieNumber' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`)}>
+                                            <td className='calledGoalieNumber' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchEvents: matchEvents } })}>
                                                 {player.number}
                                             </td>
-                                            <td className='calledGoalieName' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`)}>
+                                            <td className='calledGoalieName' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchEvents: matchEvents } })}>
                                                 {player.name} {player.lastName1} {player.lastName2}
                                             </td>
                                         </tr>
