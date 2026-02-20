@@ -25,6 +25,16 @@
 
 #goal {
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+#goalPlayerNumbers {
+    width: 100%;
+    height: fit-content;
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(30px, 30px));
@@ -33,10 +43,20 @@
 
 #assist {
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+#assistPlayerNumbers {
+    width: 100%;
+    height: fit-content;
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(30px, 30px));
-    border: 2px solid red;
+    border: 2px solid black;
 }
 
 .goalNumber {

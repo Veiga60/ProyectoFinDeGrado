@@ -40,18 +40,24 @@ export default function GoalsModal({ onClose, matchEvents, setMatchEvents }) {
                 <div id='goalsMainDiv'>
                     <div id='goalsAndAssists'>
                         <div id='goal'>
-                            {
-                                players.map((player) => {
-                                    return <div key={player.id} className='goalNumber' onClick={() => setScorer(player)}>{player.number}</div>
-                                })
-                            }
+                            <p>GOL</p>
+                            <div id='goalPlayerNumbers'>
+                                {
+                                    players.map((player) => {
+                                        return <div key={player.id} className='goalNumber' onClick={() => setScorer(player)}>{player.number}</div>
+                                    })
+                                }
+                            </div>
                         </div>
                         <div id='assist'>
-                            {
-                                players.map((player) => {
-                                    return <div key={player.id} className='assistNumber' onClick={() => setAssister(player)}>{player.number}</div>
-                                })
-                            }
+                            <p>ASISTENCIA</p>
+                            <div id='assistPlayerNumbers'>
+                                {
+                                    players.map((player) => {
+                                        return <div key={player.id} className='assistNumber' onClick={() => setAssister(player)}>{player.number}</div>
+                                    })
+                                }
+                            </div>
                         </div>
                     </div>
                     <button onClick={() => [setGoal(scorer, assister), onClose()]}>GUARDAR</button>
