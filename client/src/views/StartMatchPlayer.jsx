@@ -23,7 +23,6 @@ export default function StartMatchPlayer() {
     const [badPasses, setBadPasses] = useState(0);
     const [recoveredPucks, setRecoveredPucks] = useState(0);
     const [lostPucks, setLostPucks] = useState(0);
-    const [playerPenaltyMins, setPlayerPenaltyMins] = useState(0);
     const [playerPenaltyShotGoals, setPlayerPenaltyShotGoals] = useState(0);
     const [penaltyShotMisses, setPenaltyShotMisses] = useState(0);
 
@@ -35,6 +34,9 @@ export default function StartMatchPlayer() {
 
     const goals = matchEvents?.filter((matchEvent) => (matchEvent.goal) ? ((matchEvent.goal.scorer?.id) == player?.id) : (0)).length || 0;
     const assists = matchEvents?.filter((matchEvent) => (matchEvent.goal) ? ((matchEvent.goal.assister?.id) == player?.id) : (0)).length || 0;
+
+    const playerPenalties = matchEvents?.filter((matchEvent) => (matchEvent.penalty.player?.id == playerId));
+    var playerPenaltyMins = playerPenalties?.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
     var playerMatchStatsBody = {
         goals: goals,
@@ -105,7 +107,6 @@ export default function StartMatchPlayer() {
                 setBadPasses(response?.data?.badPasses);
                 setRecoveredPucks(response?.data?.recoveredPucks);
                 setLostPucks(response?.data?.lostPucks);
-                setPlayerPenaltyMins(response?.data?.penaltyMins);
                 setPlayerPenaltyShotGoals(response?.data?.penaltyShotGoals);
                 setPenaltyShotMisses(response?.data?.penaltyShotMisses);
             } catch (error) {
@@ -135,6 +136,7 @@ export default function StartMatchPlayer() {
     }
 
     useEffect(() => {
+        playerPenaltyMins = 0;
         getPlayer();
         setMatchEvents(location.state?.matchEvents);
     }, []);
@@ -175,7 +177,7 @@ export default function StartMatchPlayer() {
                                 <div className='statDiv'>
                                     <p className='statTitle'>+/-</p>
                                     <div className='matchStatDiv'>
-                                        <button className='minusButton' onClick={() => setPlusMinus(plusMinus - 1)}>-</button>
+                                        <button className='minusButton' onClick={() => [setPlusMinus(plusMinus - 1), console.log(matchEvents), console.log('Hola', playerPenalties)]}>-</button>
                                         <p className='matchStat'>{plusMinus}</p>
                                         <button className='plusButton' onClick={() => setPlusMinus(plusMinus + 1)}>+</button>
                                     </div>
@@ -223,9 +225,7 @@ export default function StartMatchPlayer() {
                                 <div className='statDiv'>
                                     <p className='statTitle'>MINUTOS SANCIÓN</p>
                                     <div className='matchStatDiv'>
-                                        <button className='minusButton' onClick={() => (playerPenaltyMins > 0) && setPlayerPenaltyMins(playerPenaltyMins - 1)}>-</button>
                                         <p className='matchStat'>{playerPenaltyMins}</p>
-                                        <button className='plusButton' onClick={() => setPlayerPenaltyMins(playerPenaltyMins + 1)}>+</button>
                                     </div>
                                 </div>
                                 <div className='statDiv'>
