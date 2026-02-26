@@ -52,6 +52,7 @@ export default function PenaltiesModal({ teamPenalty, onClose, matchEvents, setM
                                     <p id='crossCheckingText' className='penaltyText'>CARGA CON STICK</p>
                                 </div>
                             </div>
+                            <input type='number' placeholder='Minutos' onChange={(e) => setPenaltyTime(e.target.value)} />
                             <button onClick={() => (penaltyTime == 2 || penaltyTime == 5 || penaltyTime == 10) && ([setPenalty(), onClose()])}>GUARDAR</button>
                             <button onClick={() => onClose()}>CERRAR</button>
                         </div>
