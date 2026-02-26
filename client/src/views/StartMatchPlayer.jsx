@@ -36,7 +36,7 @@ export default function StartMatchPlayer() {
     const assists = matchEvents?.filter((matchEvent) => (matchEvent.goal) ? ((matchEvent.goal.assister?.id) == player?.id) : (0)).length || 0;
 
     const playerPenalties = matchEvents?.filter((matchEvent) => (matchEvent.penalty.player?.id == playerId));
-    var playerPenaltyMins = playerPenalties?.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+    var playerPenaltyMins = playerPenalties?.reduce((accumulator, playerPenalty) => accumulator + Number(playerPenalty.penalty.penaltyTime), 0);
 
     var playerMatchStatsBody = {
         goals: goals,
@@ -177,7 +177,7 @@ export default function StartMatchPlayer() {
                                 <div className='statDiv'>
                                     <p className='statTitle'>+/-</p>
                                     <div className='matchStatDiv'>
-                                        <button className='minusButton' onClick={() => [setPlusMinus(plusMinus - 1), console.log(matchEvents), console.log('Hola', playerPenalties)]}>-</button>
+                                        <button className='minusButton' onClick={() => [setPlusMinus(plusMinus - 1), console.log('Hola', playerPenalties)]}>-</button>
                                         <p className='matchStat'>{plusMinus}</p>
                                         <button className='plusButton' onClick={() => setPlusMinus(plusMinus + 1)}>+</button>
                                     </div>
