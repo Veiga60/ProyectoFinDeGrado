@@ -15,8 +15,8 @@ export default function StartMatch() {
     const [matchEvents, setMatchEvents] = useState([]);
 
     const [match, setMatch] = useState();
-    const localTeamGoals = matchEvents?.filter((matchEvent) => (matchEvent.goal) ? ((String(matchEvent.goal.team).toUpperCase() === String(match?.localTeam.name).toUpperCase())) : (0)).length || 0;
-    const visitingTeamGoals = matchEvents?.filter((matchEvent) => (matchEvent.goal) ? ((String(matchEvent.goal.team).toUpperCase() === String(match?.visitingTeam.name).toUpperCase())) : (0)).length || 0;
+    const localTeamGoals = matchEvents?.filter((matchEvent) => (matchEvent.goal) ? ((String(matchEvent.goal.team.id) === String(match?.localTeam.id))) : (0)).length || 0;
+    const visitingTeamGoals = matchEvents?.filter((matchEvent) => (matchEvent.goal) ? ((String(matchEvent.goal.team.id) === String(match?.visitingTeam.id))) : (0)).length || 0;
     const [players, setPlayers] = useState([]);
 
     const getNextMatch = async () => {
