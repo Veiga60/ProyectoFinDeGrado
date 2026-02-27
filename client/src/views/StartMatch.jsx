@@ -113,7 +113,7 @@ export default function StartMatch() {
                                         return <p className='matchEvent'>[{matchEvent.goal.matchTime}] GOL DE {matchEvent.goal.team}. GOL: {matchEvent.goal.scorer.name} {matchEvent.goal.scorer.lastName1} {matchEvent.goal.scorer.lastName2}. {(matchEvent.goal.assister) && `ASISTENCIA: ${matchEvent.goal.assister?.name} ${matchEvent.goal.assister?.lastName1} ${matchEvent.goal.assister?.lastName2}`}</p>
                                     }
                                 } else if (matchEvent.hasOwnProperty('penalty')) {
-                                    return <p id='matchEventsPenalty' className='matchEvent'>FALTA DE {matchEvent.penalty.team}. {matchEvent.penalty.player?.name} {matchEvent.penalty.player?.lastName1} {matchEvent.penalty.player?.lastName2} {matchEvent.penalty.penaltyTime}' por {matchEvent.penalty.penaltyType}</p>
+                                    return <p id='matchEventsPenalty' className='matchEvent'>[{matchEvent.penalty.matchTime}] FALTA DE {matchEvent.penalty.team}. {matchEvent.penalty.player?.name} {matchEvent.penalty.player?.lastName1} {matchEvent.penalty.player?.lastName2} {matchEvent.penalty.penaltyTime}' por {matchEvent.penalty.penaltyType}</p>
                                 }
                             })}
                         </div>

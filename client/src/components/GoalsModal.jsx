@@ -62,8 +62,8 @@ export default function GoalsModal({ onClose, matchEvents, setMatchEvents }) {
                             </div>
                         </div>
                     </div>
-                    <input type="number" placeholder='Minuto' id="matchMinute" onChange={(e) => { setMatchMinute(e.target.value.padStart(2, '0')) }} />
-                    <input type="number" placeholder='Segundo' id="matchSecond" onChange={(e) => { setMatchSecond(e.target.value.padStart(2, '0')) }} />
+                    <input type="number" placeholder='Minuto partido' id="matchMinute" onChange={(e) => { setMatchMinute(e.target.value.padStart(2, '0')) }} />
+                    <input type="number" placeholder='Segundo partido' id="matchSecond" onChange={(e) => { setMatchSecond(e.target.value.padStart(2, '0')) }} />
                     <button onClick={() => (matchMinute <= 20 && matchSecond <= 59 && matchMinute >= 0 && matchSecond >= 0) && [setGoal(scorer, assister), onClose()]}>GUARDAR</button>
                     <button onClick={() => onClose()}>CERRAR</button>
                 </div>
