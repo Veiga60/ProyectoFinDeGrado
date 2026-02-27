@@ -55,8 +55,8 @@ export default function PenaltiesModal({ teamPenalty, onClose, matchEvents, setM
                                 </div>
                             </div>
                             <input type='number' placeholder='Minutos' onChange={(e) => setPenaltyTime(e.target.value)} />
-                            <input type="number" placeholder='Minuto' id="matchMinute" onChange={(e) => { setMatchMinute(e.target.value) }} />
-                            <input type="number" placeholder='Segundo' id="matchSecond" onChange={(e) => { setMatchSecond(e.target.value) }} />
+                            <input type="number" placeholder='Minuto' id="matchMinute" onChange={(e) => { setMatchMinute(e.target.value.padStart(2, '0')) }} />
+                            <input type="number" placeholder='Segundo' id="matchSecond" onChange={(e) => { setMatchSecond(e.target.value.padStart(2, '0')) }} />
                             <button onClick={() => (penaltyTime == 2 || penaltyTime == 5 || penaltyTime == 10) && (matchMinute <= 20 && matchSecond <= 59 && matchMinute >= 0 && matchSecond >= 0) && ([setPenalty(), onClose()])}>GUARDAR</button>
                             <button onClick={() => onClose()}>CERRAR</button>
                         </div>
