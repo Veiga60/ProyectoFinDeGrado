@@ -17,6 +17,7 @@ export default function MatchEvents() {
     const [match, setMatch] = useState();
 
     const [teamPenalty, setTeamPenalty] = useState();
+    const [teamGoal, setTeamGoal] = useState();
 
     const togglePenaltiesModal = () => {
         setPenaltiesModal(!penaltiesModal);
@@ -57,14 +58,14 @@ export default function MatchEvents() {
                     <div id='indicencesLocalTeamImageDiv'>
                         <img id='indicencesLocalTeamImage' src={`/logos/${match?.localTeam.logo}`} alt={match?.localTeam.name} />
                     </div>
-                    <button onClick={() => setGoal(match?.localTeam)}>GOL</button>
+                    <button onClick={() => [setTeamGoal(match?.localTeam), toggleGoalsModal()]}>GOL</button>
                     <button onClick={() => [setTeamPenalty(match?.localTeam), togglePenaltiesModal()]}>PENALIZACIÓN</button>
                 </div>
                 <div id="incidencesVisitingTeamDiv">
                     <div id='indicencesLocalTeamImageDiv'>
                         <img id='indicencesLocalTeamImage' src={`/logos/${match?.visitingTeam.logo}`} alt={match?.visitingTeam.name} />
                     </div>
-                    <button onClick={() => setGoal(match?.visitingTeam)}>GOL</button>
+                    <button onClick={() => [setTeamGoal(match?.visitingTeam), toggleGoalsModal()]}>GOL</button>
                     <button onClick={() => [setTeamPenalty(match?.visitingTeam), togglePenaltiesModal()]}>PENALIZACIÓN</button>
                 </div>
                 <button onClick={() => finishEditingMatchEvents()}>GUARDAR</button>
@@ -81,6 +82,7 @@ export default function MatchEvents() {
                 {
                     (goalsModal &&
                         <GoalsModal
+                            teamGoal={teamGoal}
                             onClose={() => toggleGoalsModal()}
                             matchEvents={matchEvents}
                             setMatchEvents={setMatchEvents}

@@ -108,9 +108,9 @@ export default function StartMatch() {
                             {matchEvents?.map((matchEvent) => {
                                 if (matchEvent.hasOwnProperty('goal')) {
                                     if (matchEvent.goal.scorer == undefined) {
-                                        return <p id='matchEventsGoal' className='matchEvent'>GOL DE {matchEvent.goal.team}</p>
+                                        return <p id='matchEventsGoal' className='matchEvent'>[{matchEvent.goal.matchTime}] GOL DE {matchEvent.goal.team.name}</p>
                                     } else {
-                                        return <p className='matchEvent'>[{matchEvent.goal.matchTime}] GOL DE {matchEvent.goal.team}. GOL: {matchEvent.goal.scorer.name} {matchEvent.goal.scorer.lastName1} {matchEvent.goal.scorer.lastName2}. {(matchEvent.goal.assister) && `ASISTENCIA: ${matchEvent.goal.assister?.name} ${matchEvent.goal.assister?.lastName1} ${matchEvent.goal.assister?.lastName2}`}</p>
+                                        return <p className='matchEvent'>[{matchEvent.goal.matchTime}] GOL DE {matchEvent.goal.team.name}. GOL: {matchEvent.goal.scorer.name} {matchEvent.goal.scorer.lastName1} {matchEvent.goal.scorer.lastName2}. {(matchEvent.goal.assister) && `ASISTENCIA: ${matchEvent.goal.assister?.name} ${matchEvent.goal.assister?.lastName1} ${matchEvent.goal.assister?.lastName2}`}</p>
                                     }
                                 } else if (matchEvent.hasOwnProperty('penalty')) {
                                     return <p id='matchEventsPenalty' className='matchEvent'>[{matchEvent.penalty.matchTime}] FALTA DE {matchEvent.penalty.team}. {matchEvent.penalty.player?.name} {matchEvent.penalty.player?.lastName1} {matchEvent.penalty.player?.lastName2} {matchEvent.penalty.penaltyTime}' por {matchEvent.penalty.penaltyType}</p>

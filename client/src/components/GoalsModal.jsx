@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import '../style/GoalsModal.css'
 
-export default function GoalsModal({ onClose, matchEvents, setMatchEvents }) {
+export default function GoalsModal({ teamGoal, onClose, matchEvents, setMatchEvents }) {
 
     const SERVER_URL = 'http://localhost:8081';
     const { matchId } = useParams();
@@ -25,9 +25,9 @@ export default function GoalsModal({ onClose, matchEvents, setMatchEvents }) {
     const setGoal = (scorer, assister) => {
         let newMatchEvents;
         if (matchEvents == undefined) {
-            newMatchEvents = [{ goal: { team: 'METROPOLITANO HC', scorer: scorer, assister: assister, matchTime: `${matchMinute}:${matchSecond}` } }];
+            newMatchEvents = [{ goal: { team: teamGoal, scorer: scorer, assister: assister, matchTime: `${matchMinute}:${matchSecond}` } }];
         } else {
-            newMatchEvents = [...matchEvents, { goal: { team: 'METROPOLITANO HC', scorer: scorer, assister: assister, matchTime: `${matchMinute}:${matchSecond}` } }]
+            newMatchEvents = [...matchEvents, { goal: { team: teamGoal, scorer: scorer, assister: assister, matchTime: `${matchMinute}:${matchSecond}` } }]
         }
         setMatchEvents(newMatchEvents);
     }
@@ -38,36 +38,50 @@ export default function GoalsModal({ onClose, matchEvents, setMatchEvents }) {
 
     return (
         <>
-            <div id='goalsModalMainDiv'>
-                <div id='goalsMainDiv'>
-                    <div id='goalsAndAssists'>
-                        <div id='goal'>
-                            <p>GOL</p>
-                            <div id='goalPlayerNumbers'>
-                                {
-                                    players.map((player) => {
-                                        return <div key={player.id} className='goalNumber' onClick={() => setScorer(player)}>{player.number}</div>
-                                    })
-                                }
-                            </div>
+            {(teamGoal.name != 'Metropolitano HC') ?
+                (<div id='goalsModalMainDiv'>
+                    <div id='goalsMainDiv'>
+                        <div id='goalsAndAssists'>
+                            <div id='goal'></div>
                         </div>
-                        <div id='assist'>
-                            <p>ASISTENCIA</p>
-                            <div id='assistPlayerNumbers'>
-                                {
-                                    players.map((player) => {
-                                        return <div key={player.id} className='assistNumber' onClick={() => setAssister(player)}>{player.number}</div>
-                                    })
-                                }
-                            </div>
-                        </div>
+                        <input type="number" placeholder='Minuto partido' id="matchMinute" onChange={(e) => { setMatchMinute(e.target.value.padStart(2, '0')) }} />
+                        <input type="number" placeholder='Segundo partido' id="matchSecond" onChange={(e) => { setMatchSecond(e.target.value.padStart(2, '0')) }} />
+                        <button onClick={() => (matchMinute <= 20 && matchSecond <= 59 && matchMinute >= 0 && matchSecond >= 0) && [setGoal(scorer, assister), onClose()]}>GUARDAR</button>
+                        <button onClick={() => onClose()}>CERRAR</button>
                     </div>
-                    <input type="number" placeholder='Minuto partido' id="matchMinute" onChange={(e) => { setMatchMinute(e.target.value.padStart(2, '0')) }} />
-                    <input type="number" placeholder='Segundo partido' id="matchSecond" onChange={(e) => { setMatchSecond(e.target.value.padStart(2, '0')) }} />
-                    <button onClick={() => (matchMinute <= 20 && matchSecond <= 59 && matchMinute >= 0 && matchSecond >= 0) && [setGoal(scorer, assister), onClose()]}>GUARDAR</button>
-                    <button onClick={() => onClose()}>CERRAR</button>
-                </div>
-            </div>
+                </div>)
+                :
+                (<div id='goalsModalMainDiv'>
+                    <div id='goalsMainDiv'>
+                        <div id='goalsAndAssists'>
+                            <div id='goal'>
+                                <p>GOL</p>
+                                <div id='goalPlayerNumbers'>
+                                    {
+                                        players.map((player) => {
+                                            return <div key={player.id} className='goalNumber' onClick={() => setScorer(player)}>{player.number}</div>
+                                        })
+                                    }
+                                </div>
+                            </div>
+                            <div id='assist'>
+                                <p>ASISTENCIA</p>
+                                <div id='assistPlayerNumbers'>
+                                    {
+                                        players.map((player) => {
+                                            return <div key={player.id} className='assistNumber' onClick={() => setAssister(player)}>{player.number}</div>
+                                        })
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <input type="number" placeholder='Minuto partido' id="matchMinute" onChange={(e) => { setMatchMinute(e.target.value.padStart(2, '0')) }} />
+                        <input type="number" placeholder='Segundo partido' id="matchSecond" onChange={(e) => { setMatchSecond(e.target.value.padStart(2, '0')) }} />
+                        <button onClick={() => (matchMinute <= 20 && matchSecond <= 59 && matchMinute >= 0 && matchSecond >= 0) && [setGoal(scorer, assister), onClose()]}>GUARDAR</button>
+                        <button onClick={() => onClose()}>CERRAR</button>
+                    </div>
+                </div>)}
+
         </>
     )
 }
