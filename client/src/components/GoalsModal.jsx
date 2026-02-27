@@ -10,6 +10,8 @@ export default function GoalsModal({ onClose, matchEvents, setMatchEvents }) {
     const [players, setPlayers] = useState([]);
     const [scorer, setScorer] = useState();
     const [assister, setAssister] = useState();
+    const [matchMinute, setMatchMinute] = useState('');
+    const [matchSecond, setMatchSecond] = useState('');
 
     const getCalledPlayers = async () => {
         try {
@@ -23,9 +25,9 @@ export default function GoalsModal({ onClose, matchEvents, setMatchEvents }) {
     const setGoal = (scorer, assister) => {
         let newMatchEvents;
         if (matchEvents == undefined) {
-            newMatchEvents = [{ goal: { team: 'METROPOLITANO HC', scorer: scorer, assister: assister } }];
+            newMatchEvents = [{ goal: { team: 'METROPOLITANO HC', scorer: scorer, assister: assister, matchTime: `${matchMinute}:${matchSecond}` } }];
         } else {
-            newMatchEvents = [...matchEvents, { goal: { team: 'METROPOLITANO HC', scorer: scorer, assister: assister } }]
+            newMatchEvents = [...matchEvents, { goal: { team: 'METROPOLITANO HC', scorer: scorer, assister: assister, matchTime: `${matchMinute}:${matchSecond}` } }]
         }
         setMatchEvents(newMatchEvents);
     }
@@ -60,7 +62,9 @@ export default function GoalsModal({ onClose, matchEvents, setMatchEvents }) {
                             </div>
                         </div>
                     </div>
-                    <button onClick={() => [setGoal(scorer, assister), onClose()]}>GUARDAR</button>
+                    <input type="number" placeholder='Minuto' id="matchMinute" onChange={(e) => { setMatchMinute(e.target.value.padStart(2, '0')) }} />
+                    <input type="number" placeholder='Segundo' id="matchSecond" onChange={(e) => { setMatchSecond(e.target.value.padStart(2, '0')) }} />
+                    <button onClick={() => (matchMinute <= 20 && matchSecond <= 59 && matchMinute >= 0 && matchSecond >= 0) && [setGoal(scorer, assister), onClose()]}>GUARDAR</button>
                     <button onClick={() => onClose()}>CERRAR</button>
                 </div>
             </div>

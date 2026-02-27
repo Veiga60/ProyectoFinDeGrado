@@ -12,6 +12,8 @@ export default function PenaltiesModal({ teamPenalty, onClose, matchEvents, setM
     const [penaltyType, setPenaltyType] = useState('');
     const [players, setPlayers] = useState([]);
     const [playerPenalty, setPlayerPenalty] = useState();
+    const [matchMinute, setMatchMinute] = useState();
+    const [matchSecond, setMatchSecond] = useState();
 
     const getCalledPlayers = async () => {
         try {
@@ -53,7 +55,9 @@ export default function PenaltiesModal({ teamPenalty, onClose, matchEvents, setM
                                 </div>
                             </div>
                             <input type='number' placeholder='Minutos' onChange={(e) => setPenaltyTime(e.target.value)} />
-                            <button onClick={() => (penaltyTime == 2 || penaltyTime == 5 || penaltyTime == 10) && ([setPenalty(), onClose()])}>GUARDAR</button>
+                            <input type="number" placeholder='Minuto' id="matchMinute" onChange={(e) => { setMatchMinute(e.target.value) }} />
+                            <input type="number" placeholder='Segundo' id="matchSecond" onChange={(e) => { setMatchSecond(e.target.value) }} />
+                            <button onClick={() => (penaltyTime == 2 || penaltyTime == 5 || penaltyTime == 10) && (matchMinute <= 20 && matchSecond <= 59 && matchMinute > 0 && matchSecond > 0) && ([setPenalty(), onClose()])}>GUARDAR</button>
                             <button onClick={() => onClose()}>CERRAR</button>
                         </div>
                     </div>
