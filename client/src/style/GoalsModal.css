@@ -59,6 +59,13 @@
     border: 2px solid black;
 }
 
+#goalTitle {
+    color: black;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: x-large;
+}
+
 .goalNumber {
     color: black;
     border: 2px solid rgb(7, 78, 200);

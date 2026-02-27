@@ -1,0 +1,38 @@
+#timeoutModalMainDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#timeoutMainDiv {
+    width: 30%;
+    height: 30%;
+    background-color: white;
+    border: 2px solid rgb(7, 78, 200);
+    border-radius: 15px;
+}
+
+#timeout {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+#timeoutTitle {
+    color: black;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: x-large;
+    text-align: center;
+}

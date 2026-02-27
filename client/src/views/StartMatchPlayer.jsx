@@ -11,9 +11,6 @@ export default function StartMatchPlayer() {
     const location = useLocation();
     const navigate = useNavigate();
 
-    const [playerMatchStats, setPlayerMatchStats] = useState();
-    const [goalieMatchStats, setGoalieMatchStats] = useState();
-
     const [matchEvents, setMatchEvents] = useState();
 
     const [player, setPlayer] = useState();
@@ -35,7 +32,7 @@ export default function StartMatchPlayer() {
     const goals = matchEvents?.filter((matchEvent) => (matchEvent.goal) ? ((matchEvent.goal.scorer?.id) == player?.id) : (0)).length || 0;
     const assists = matchEvents?.filter((matchEvent) => (matchEvent.goal) ? ((matchEvent.goal.assister?.id) == player?.id) : (0)).length || 0;
 
-    const playerPenalties = matchEvents?.filter((matchEvent) => (matchEvent.penalty.player?.id == playerId));
+    const playerPenalties = matchEvents?.filter((matchEvent) => (matchEvent.penalty?.player?.id == playerId));
     var playerPenaltyMins = playerPenalties?.reduce((accumulator, playerPenalty) => accumulator + Number(playerPenalty.penalty.penaltyTime), 0);
 
     var playerMatchStatsBody = {
@@ -100,7 +97,6 @@ export default function StartMatchPlayer() {
         if (player?.playerType == 'RINK_PLAYER') {
             try {
                 const response = await axios.get(`${SERVER_URL}/matchStats/matches/${matchId}/players/${player?.id}`, { withCredentials: true });
-                setPlayerMatchStats(response?.data);
                 setPlusMinus(response?.data?.plusMinus);
                 setShots(response?.data?.shots);
                 setGoodPasses(response?.data?.goodPasses);
@@ -121,7 +117,6 @@ export default function StartMatchPlayer() {
         if (player?.playerType == 'GOALIE') {
             try {
                 const response = await axios.get(`${SERVER_URL}/matchStats/matches/${matchId}/goalies/${player?.id}`, { withCredentials: true });
-                setGoalieMatchStats(response.data);
                 setShotsReceived(response.data.shotsReceived);
                 setGoalsReceived(response.data.goalsReceived);
                 setGoaliePenaltyMins(response.data.penaltyMins);
@@ -297,6 +292,7 @@ export default function StartMatchPlayer() {
                             </>
                         )}
                     <button onClick={() => saveMatchStats(player)}>GUARDAR</button>
+                    <button onClick={() => navigate(`/matches/${matchId}/start_match`, { state: { matchEvents: matchEvents } })}>VOLVER</button>
                 </div>
             </div>
         </>

@@ -3,21 +3,20 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import '../style/MatchEvents.css'
 import PenaltiesModal from '../components/PenaltiesModal';
 import GoalsModal from '../components/GoalsModal';
+import TimeoutModal from '../components/TimeoutModal';
 
 export default function MatchEvents() {
 
-    const SERVER_URL = 'http://localhost:8081'
     const location = useLocation();
     const navigate = useNavigate();
     const [penaltiesModal, setPenaltiesModal] = useState(false);
     const [goalsModal, setGoalsModal] = useState(false);
+    const [timeoutModal, setTimeoutModal] = useState(false);
+
+    const [selectedTeam, setSelectedTeam] = useState();
 
     const [matchEvents, setMatchEvents] = useState([]);
-    const [time, setTime] = useState('20:00');
     const [match, setMatch] = useState();
-
-    const [teamPenalty, setTeamPenalty] = useState();
-    const [teamGoal, setTeamGoal] = useState();
 
     const togglePenaltiesModal = () => {
         setPenaltiesModal(!penaltiesModal);
@@ -27,18 +26,8 @@ export default function MatchEvents() {
         setGoalsModal(!goalsModal);
     }
 
-    const setGoal = (team) => {
-        if (team.name == 'Metropolitano HC') {
-            toggleGoalsModal();
-        } else {
-            let newMatchEvents;
-            if (matchEvents == undefined) {
-                newMatchEvents = [{ goal: { team: team.name, time: time } }];
-            } else {
-                newMatchEvents = [...matchEvents, { goal: { team: team.name, time: time } }];
-            }
-            setMatchEvents(newMatchEvents);
-        }
+    const toggleTimeoutModal = () => {
+        setTimeoutModal(!timeoutModal);
     }
 
     const finishEditingMatchEvents = async () => {
@@ -58,21 +47,23 @@ export default function MatchEvents() {
                     <div id='indicencesLocalTeamImageDiv'>
                         <img id='indicencesLocalTeamImage' src={`/logos/${match?.localTeam.logo}`} alt={match?.localTeam.name} />
                     </div>
-                    <button onClick={() => [setTeamGoal(match?.localTeam), toggleGoalsModal()]}>GOL</button>
-                    <button onClick={() => [setTeamPenalty(match?.localTeam), togglePenaltiesModal()]}>PENALIZACIÓN</button>
+                    <button onClick={() => [setSelectedTeam(match?.localTeam), toggleGoalsModal()]}>GOL</button>
+                    <button onClick={() => [setSelectedTeam(match?.localTeam), togglePenaltiesModal()]}>PENALIZACIÓN</button>
+                    <button onClick={() => [setSelectedTeam(match?.localTeam), toggleTimeoutModal()]}>TIEMPO MUERTO</button>
                 </div>
                 <div id="incidencesVisitingTeamDiv">
                     <div id='indicencesLocalTeamImageDiv'>
                         <img id='indicencesLocalTeamImage' src={`/logos/${match?.visitingTeam.logo}`} alt={match?.visitingTeam.name} />
                     </div>
-                    <button onClick={() => [setTeamGoal(match?.visitingTeam), toggleGoalsModal()]}>GOL</button>
-                    <button onClick={() => [setTeamPenalty(match?.visitingTeam), togglePenaltiesModal()]}>PENALIZACIÓN</button>
+                    <button onClick={() => [setSelectedTeam(match?.visitingTeam), toggleGoalsModal()]}>GOL</button>
+                    <button onClick={() => [setSelectedTeam(match?.visitingTeam), togglePenaltiesModal()]}>PENALIZACIÓN</button>
+                    <button onClick={() => [setSelectedTeam(match?.visitingTeam), toggleTimeoutModal()]}>TIEMPO MUERTO</button>
                 </div>
                 <button onClick={() => finishEditingMatchEvents()}>GUARDAR</button>
                 {
                     (penaltiesModal &&
                         <PenaltiesModal
-                            teamPenalty={teamPenalty}
+                            teamPenalty={selectedTeam}
                             onClose={() => togglePenaltiesModal()}
                             matchEvents={matchEvents}
                             setMatchEvents={setMatchEvents}
@@ -82,8 +73,18 @@ export default function MatchEvents() {
                 {
                     (goalsModal &&
                         <GoalsModal
-                            teamGoal={teamGoal}
+                            teamGoal={selectedTeam}
                             onClose={() => toggleGoalsModal()}
+                            matchEvents={matchEvents}
+                            setMatchEvents={setMatchEvents}
+                        />
+                    )
+                }
+                {
+                    (timeoutModal &&
+                        <TimeoutModal
+                            teamTimeout={selectedTeam}
+                            onClose={() => toggleTimeoutModal()}
                             matchEvents={matchEvents}
                             setMatchEvents={setMatchEvents}
                         />

@@ -42,7 +42,7 @@ export default function GoalsModal({ teamGoal, onClose, matchEvents, setMatchEve
                 (<div id='goalsModalMainDiv'>
                     <div id='goalsMainDiv'>
                         <div id='goalsAndAssists'>
-                            <div id='goal'></div>
+                            <p id='goalTitle'>GOL</p>
                         </div>
                         <input type="number" placeholder='Minuto partido' id="matchMinute" onChange={(e) => { setMatchMinute(e.target.value.padStart(2, '0')) }} />
                         <input type="number" placeholder='Segundo partido' id="matchSecond" onChange={(e) => { setMatchSecond(e.target.value.padStart(2, '0')) }} />

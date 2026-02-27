@@ -114,6 +114,8 @@ export default function StartMatch() {
                                     }
                                 } else if (matchEvent.hasOwnProperty('penalty')) {
                                     return <p id='matchEventsPenalty' className='matchEvent'>[{matchEvent.penalty.matchTime}] FALTA DE {matchEvent.penalty.team}. {matchEvent.penalty.player?.name} {matchEvent.penalty.player?.lastName1} {matchEvent.penalty.player?.lastName2} {matchEvent.penalty.penaltyTime}' por {matchEvent.penalty.penaltyType}</p>
+                                } else if (matchEvent.hasOwnProperty('timeout')) {
+                                    return <p id='matchEventsTimeout' className='matchEvent'>[{matchEvent.timeout.matchTime}] TIEMPO MUERTO DE {matchEvent.timeout.team.name}.</p>
                                 }
                             })}
                         </div>
