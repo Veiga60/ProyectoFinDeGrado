@@ -8,8 +8,6 @@ export default function StartMatchTeam() {
     const { matchId } = useParams();
     const navigate = useNavigate();
 
-    const [teamMatchStats, setTeamMatchStats] = useState();
-
     const [powerPlayGoals, setPowerPlayGoals] = useState(0);
     const [powerPlayNoGoals, setPowerPlayNoGoals] = useState(0);
     const [penaltyKillGoals, setPenaltyKillGoals] = useState(0);
@@ -22,6 +20,10 @@ export default function StartMatchTeam() {
     const [threeVsTwo, setThreeVsTwo] = useState(0);
 
     var teamMatchStatsBody = {
+        matchResult: null,
+        bonusPoint: false,
+        goalsFor: 0,
+        goalsAgainst: 0,
         powerPlayGoals: powerPlayGoals,
         powerPlayNoGoals: powerPlayNoGoals,
         penaltyKillGoals: penaltyKillGoals,
@@ -50,7 +52,6 @@ export default function StartMatchTeam() {
     const getTeamMatchStats = async (matchId) => {
         try {
             const response = await axios.get(`${SERVER_URL}/matchStats/matches/${matchId}/team`, { withCredentials: true });
-            setTeamMatchStats(response?.data);
             setPowerPlayGoals(response?.data?.powerPlayGoals);
             setPowerPlayNoGoals(response?.data?.powerPlayNoGoals);
             setPenaltyKillGoals(response?.data?.penaltyKillGoals);

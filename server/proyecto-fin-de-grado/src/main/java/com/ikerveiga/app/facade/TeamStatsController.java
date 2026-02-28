@@ -1,7 +1,5 @@
 package com.ikerveiga.app.facade;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +9,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ikerveiga.app.dto.PlayerStatsDTO;
+import com.ikerveiga.app.dto.TeamMatchStatsDTO;
 import com.ikerveiga.app.dto.TeamStatsDTO;
 import com.ikerveiga.app.service.TeamStatsService;
 
@@ -39,29 +37,24 @@ public class TeamStatsController {
         }
     }
 
-    // @Secured("ROLE_COACH")
-    // @PutMapping("/playersStats/all/update")
-    // public ResponseEntity<Void> updateTeamStats(@RequestBody TeamStatsDTO
-    // teamStats) {
-    // try {
-    // for (PlayerStatsDTO playerStats : playersStats) {
-    // playerStatsService.updatePlayersStats(playerStats.getPlayer().getId(),
-    // playerStats.getGoals(),
-    // playerStats.getAssists(), playerStats.getPlusMinus(), playerStats.getShots(),
-    // playerStats.getGoodPasses(), playerStats.getBadPasses(),
-    // playerStats.getRecoveredPucks(),
-    // playerStats.getLostPucks(), playerStats.getPenaltyMins(),
-    // playerStats.getPenaltyShotGoals(),
-    // playerStats.getPenaltyShotMisses());
-    // }
+    @Secured("ROLE_COACH")
+    @PutMapping("/teamStats/update")
+    public ResponseEntity<Void> updateTeamStats(@RequestBody TeamMatchStatsDTO teamMatchStats) {
+        try {
+            teamStatsService.updateTeamStats(teamMatchStats.getMatchResult(), teamMatchStats.getBonusPoint(),
+                    teamMatchStats.getGoalsFor(), teamMatchStats.getGoalsAgainst(), teamMatchStats.getPowerPlayGoals(),
+                    teamMatchStats.getPowerPlayNoGoals(), teamMatchStats.getPenaltyKillGoals(),
+                    teamMatchStats.getPenaltyKillNoGoals(), teamMatchStats.getOneVsZero(), teamMatchStats.getOneVsOne(),
+                    teamMatchStats.getTwoVsOne(), teamMatchStats.getTwoVsTwo(), teamMatchStats.getThreeVsOne(),
+                    teamMatchStats.getThreeVsTwo());
 
-    // return new ResponseEntity<>(HttpStatus.OK);
-    // } catch (RuntimeException e) {
-    // if (e.getMessage().equals("Player stats not found")) {
-    // return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-    // } else {
-    // return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-    // }
-    // }
-    // }
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (RuntimeException e) {
+            if (e.getMessage().equals("Player stats not found")) {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            } else {
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
+        }
+    }
 }

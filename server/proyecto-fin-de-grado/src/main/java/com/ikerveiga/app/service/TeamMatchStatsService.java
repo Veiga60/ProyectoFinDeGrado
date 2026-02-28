@@ -32,7 +32,7 @@ public class TeamMatchStatsService {
         }
 
         if (existingTeamMatchStats == null) {
-            TeamMatchStats teamMatchStats = new TeamMatchStats(match, powerPlayGoals,
+            TeamMatchStats teamMatchStats = new TeamMatchStats(null, false, 0, 0, match, powerPlayGoals,
                     powerPlayNoGoals, penaltyKillGoals, penaltyKillNoGoals,
                     oneVsZero,
                     oneVsOne, twoVsOne, twoVsTwo,
@@ -60,7 +60,7 @@ public class TeamMatchStatsService {
         Match match = matchDAO.findById(matchId);
 
         if (teamMatchStats == null) {
-            return new TeamMatchStats(match, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            return new TeamMatchStats(null, false, 0, 0, match, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         }
 
         return teamMatchStats;

@@ -30,12 +30,35 @@ export default function StartMatch() {
         }
     }
 
+    const getMatchPoints = () => {
+
+    }
+
     const finishMatch = async () => {
         try {
             const playerMatchStats = await axios.get(`${SERVER_URL}/playersMatchStats/matches/${matchId}`, { withCredentials: true });
             const goalieMatchStats = await axios.get(`${SERVER_URL}/goaliesMatchStats/matches/${matchId}`, { withCredentials: true });
+            let teamMatchStats = await axios.get(`${SERVER_URL}/matchStats/matches/${matchId}/team`, { withCredentials: true });
+            if (match?.localTeam.name === 'Metropolitano HC') {
+                teamMatchStats.data.goalsFor = localTeamGoals;
+                teamMatchStats.data.goalsAgainst = visitingTeamGoals;
+                if (localTeamGoals > visitingTeamGoals) {
+                    teamMatchStats.data.matchResult = 'WIN';
+                } else if (localTeamGoals < visitingTeamGoals) {
+                    teamMatchStats.data.matchResult = 'LOSS';
+                }
+            } else {
+                teamMatchStats.data.goalsFor = visitingTeamGoals;
+                teamMatchStats.data.goalsAgainst = localTeamGoals;
+                if (visitingTeamGoals > localTeamGoals) {
+                    teamMatchStats.data.matchResult = 'WIN';
+                } else if (visitingTeamGoals < localTeamGoals) {
+                    teamMatchStats.data.matchResult = 'LOSS';
+                }
+            }
             await axios.put(`${SERVER_URL}/playersStats/all/update`, playerMatchStats.data, { withCredentials: true });
             await axios.put(`${SERVER_URL}/goaliesStats/all/update`, goalieMatchStats.data, { withCredentials: true });
+            await axios.put(`${SERVER_URL}/teamStats/update`, teamMatchStats.data, { withCredentials: true });
             navigate('/home');
         } catch (error) {
             console.log('Could not finish match: ', error);

@@ -1,10 +1,13 @@
 package com.ikerveiga.app.entity;
 
 import com.ikerveiga.app.dto.TeamMatchStatsDTO;
+import com.ikerveiga.app.enums.MatchResult;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -24,6 +27,19 @@ public class TeamMatchStats {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "match_id", referencedColumnName = "match_id")
     private Match match;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "match_result", nullable = true, unique = false)
+    private MatchResult matchResult;
+
+    @Column(name = "bonus_point", nullable = false, unique = false)
+    private boolean bonusPoint;
+
+    @Column(name = "goals_for", nullable = false, unique = false)
+    private int goalsFor;
+
+    @Column(name = "goals_against", nullable = false, unique = false)
+    private int goalsAgainst;
 
     @Column(name = "power_play_goals", nullable = false, unique = false)
     private int powerPlayGoals;
@@ -59,25 +75,15 @@ public class TeamMatchStats {
 
     }
 
-    public TeamMatchStats(long id, Match match, int powerPlayGoals, int powerPlayNoGoals, int penaltyKillGoals,
+    public TeamMatchStats(long id, MatchResult matchResult, boolean bonusPoint, int goalsFor, int goalsAgainst,
+            Match match, int powerPlayGoals, int powerPlayNoGoals, int penaltyKillGoals,
             int penaltyKillNoGoals, int oneVsZero, int oneVsOne, int twoVsOne, int twoVsTwo, int threeVsOne,
             int threeVsTwo) {
         this.id = id;
-        this.powerPlayGoals = powerPlayGoals;
-        this.powerPlayNoGoals = powerPlayNoGoals;
-        this.penaltyKillGoals = penaltyKillNoGoals;
-        this.oneVsZero = oneVsZero;
-        this.oneVsOne = oneVsOne;
-        this.twoVsOne = twoVsOne;
-        this.twoVsTwo = twoVsTwo;
-        this.threeVsOne = threeVsOne;
-        this.threeVsTwo = threeVsTwo;
-
-    }
-
-    public TeamMatchStats(Match match, int powerPlayGoals, int powerPlayNoGoals, int penaltyKillGoals,
-            int penaltyKillNoGoals, int oneVsZero, int oneVsOne, int twoVsOne, int twoVsTwo, int threeVsOne,
-            int threeVsTwo) {
+        this.matchResult = matchResult;
+        this.bonusPoint = bonusPoint;
+        this.goalsFor = goalsFor;
+        this.goalsAgainst = goalsAgainst;
         this.match = match;
         this.powerPlayGoals = powerPlayGoals;
         this.powerPlayNoGoals = powerPlayNoGoals;
@@ -88,6 +94,28 @@ public class TeamMatchStats {
         this.twoVsTwo = twoVsTwo;
         this.threeVsOne = threeVsOne;
         this.threeVsTwo = threeVsTwo;
+
+    }
+
+    public TeamMatchStats(MatchResult matchResult, boolean bonusPoint, int goalsFor, int goalsAgainst,
+            Match match, int powerPlayGoals, int powerPlayNoGoals, int penaltyKillGoals,
+            int penaltyKillNoGoals, int oneVsZero, int oneVsOne, int twoVsOne, int twoVsTwo, int threeVsOne,
+            int threeVsTwo) {
+        this.matchResult = matchResult;
+        this.bonusPoint = bonusPoint;
+        this.goalsFor = goalsFor;
+        this.goalsAgainst = goalsAgainst;
+        this.match = match;
+        this.powerPlayGoals = powerPlayGoals;
+        this.powerPlayNoGoals = powerPlayNoGoals;
+        this.penaltyKillGoals = penaltyKillNoGoals;
+        this.oneVsZero = oneVsZero;
+        this.oneVsOne = oneVsOne;
+        this.twoVsOne = twoVsOne;
+        this.twoVsTwo = twoVsTwo;
+        this.threeVsOne = threeVsOne;
+        this.threeVsTwo = threeVsTwo;
+
     }
 
     public long getId() {
@@ -96,6 +124,38 @@ public class TeamMatchStats {
 
     public Match getMatch() {
         return this.match;
+    }
+
+    public MatchResult getMatchResult() {
+        return this.matchResult;
+    }
+
+    public void setMatchResult(MatchResult matchResult) {
+        this.matchResult = matchResult;
+    }
+
+    public boolean getBonusPoint() {
+        return this.bonusPoint;
+    }
+
+    public void setBonusPoint(boolean bonusPoint) {
+        this.bonusPoint = bonusPoint;
+    }
+
+    public int getGoalsFor() {
+        return this.goalsFor;
+    }
+
+    public void setGoalsFor(int goalsFor) {
+        this.goalsFor = goalsFor;
+    }
+
+    public int getGoalsAgainst() {
+        return this.goalsAgainst;
+    }
+
+    public void setGoalsAgainst(int goalsAgainst) {
+        this.goalsAgainst = goalsAgainst;
     }
 
     public void setMatch(Match match) {
@@ -183,7 +243,8 @@ public class TeamMatchStats {
     }
 
     public TeamMatchStatsDTO toDTO() {
-        TeamMatchStatsDTO teamMatchStatsDTO = new TeamMatchStatsDTO(this.id, this.match.toDTO(), this.powerPlayGoals,
+        TeamMatchStatsDTO teamMatchStatsDTO = new TeamMatchStatsDTO(this.id, this.matchResult, this.bonusPoint,
+                this.goalsFor, this.goalsAgainst, this.match.toDTO(), this.powerPlayGoals,
                 this.powerPlayNoGoals, this.penaltyKillGoals, this.penaltyKillNoGoals, this.oneVsZero, this.oneVsOne,
                 this.twoVsOne, this.twoVsTwo, this.threeVsOne, this.threeVsTwo);
 

@@ -1,9 +1,15 @@
 package com.ikerveiga.app.dto;
 
+import com.ikerveiga.app.enums.MatchResult;
+
 public class TeamMatchStatsDTO {
 
     private long id;
     private MatchDTO match;
+    private MatchResult matchResult;
+    private boolean bonusPoint;
+    private int goalsFor;
+    private int goalsAgainst;
     private int powerPlayGoals;
     private int powerPlayNoGoals;
     private int penaltyKillGoals;
@@ -19,10 +25,16 @@ public class TeamMatchStatsDTO {
 
     }
 
-    public TeamMatchStatsDTO(long id, MatchDTO match, int powerPlayGoals, int powerPlayNoGoals, int penaltyKillGoals,
+    public TeamMatchStatsDTO(long id, MatchResult matchResult, boolean bonusPoint, int goalsFor, int goalsAgainst,
+            MatchDTO match, int powerPlayGoals, int powerPlayNoGoals, int penaltyKillGoals,
             int penaltyKillNoGoals, int oneVsZero, int oneVsOne, int twoVsOne, int twoVsTwo, int threeVsOne,
             int threeVsTwo) {
         this.id = id;
+        this.match = match;
+        this.matchResult = matchResult;
+        this.bonusPoint = bonusPoint;
+        this.goalsFor = goalsFor;
+        this.goalsAgainst = goalsAgainst;
         this.powerPlayGoals = powerPlayGoals;
         this.powerPlayNoGoals = powerPlayNoGoals;
         this.penaltyKillGoals = penaltyKillNoGoals;
@@ -34,10 +46,15 @@ public class TeamMatchStatsDTO {
         this.threeVsTwo = threeVsTwo;
     }
 
-    public TeamMatchStatsDTO(MatchDTO match, int powerPlayGoals, int powerPlayNoGoals, int penaltyKillGoals,
+    public TeamMatchStatsDTO(MatchResult matchResult, boolean bonusPoint, int goalsFor, int goalsAgainst,
+            MatchDTO match, int powerPlayGoals, int powerPlayNoGoals, int penaltyKillGoals,
             int penaltyKillNoGoals, int oneVsZero, int oneVsOne, int twoVsOne, int twoVsTwo, int threeVsOne,
             int threeVsTwo) {
         this.match = match;
+        this.matchResult = matchResult;
+        this.bonusPoint = bonusPoint;
+        this.goalsFor = goalsFor;
+        this.goalsAgainst = goalsAgainst;
         this.powerPlayGoals = powerPlayGoals;
         this.powerPlayNoGoals = powerPlayNoGoals;
         this.penaltyKillGoals = penaltyKillNoGoals;
@@ -51,6 +68,38 @@ public class TeamMatchStatsDTO {
 
     public long getId() {
         return this.id;
+    }
+
+    public MatchResult getMatchResult() {
+        return this.matchResult;
+    }
+
+    public void setMatchResult(MatchResult matchResult) {
+        this.matchResult = matchResult;
+    }
+
+    public boolean getBonusPoint() {
+        return this.bonusPoint;
+    }
+
+    public void setBonusPoint(boolean bonusPoint) {
+        this.bonusPoint = bonusPoint;
+    }
+
+    public int getGoalsFor() {
+        return this.goalsFor;
+    }
+
+    public void setGoalsFor(int goalsFor) {
+        this.goalsFor = goalsFor;
+    }
+
+    public int getGoalsAgainst() {
+        return this.goalsAgainst;
+    }
+
+    public void setGoalsAgainst(int goalsAgainst) {
+        this.goalsAgainst = goalsAgainst;
     }
 
     public MatchDTO getMatch() {

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.ikerveiga.app.dao.TeamStatsRepository;
 import com.ikerveiga.app.entity.TeamStats;
+import com.ikerveiga.app.enums.MatchResult;
 
 @Service
 public class TeamStatsService {
@@ -28,23 +29,41 @@ public class TeamStatsService {
         return teamStats.get(0);
     }
 
-    public void updatePlayersStats(int powerPlayGoals, int powerPlayNoGoals, int penaltyKillGoals,
+    public void updateTeamStats(MatchResult matchResult, boolean bonusPoint, int goalsFor, int goalsAgainst,
+            int powerPlayGoals,
+            int powerPlayNoGoals,
+            int penaltyKillGoals,
             int penaltyKillNoGoals, int oneVsZero,
-            int oneVsOne, int twoVsOne, int twoVsTwo, int threeVsOne, int threeVsTwo,
-            int penaltyShotMisses) {
+            int oneVsOne, int twoVsOne, int twoVsTwo, int threeVsOne, int threeVsTwo) {
         TeamStats teamStats = teamStatsDAO.findById(1);
 
         if (teamStats == null) {
             throw new RuntimeException("Team stats not found");
         }
 
-        // teamStats.setPoints(teamStats.getPoints() + );
         teamStats.setGamesPlayed(teamStats.getGamesPlayed() + 1);
-        // teamStats.setGamesWon(teamStats.getGamesWon() + );
-        // teamStats.setGamesLost(teamStats.getGamesTied() + );
-        // teamStats.setBonusPoints(teamStats.getBonusPoints() + );
-        // teamStats.setGoalsFor(teamStats.getGoalsFor() + );
-        // teamStats.setGoalsAgainst(teamStats.getGoalsAgainst() + );
+        switch (matchResult) {
+            case MatchResult.WIN:
+                teamStats.setGamesWon(teamStats.getGamesWon() + 1);
+                teamStats.setPoints(teamStats.getPoints() + 3);
+                break;
+            case MatchResult.LOSS:
+                teamStats.setGamesLost(teamStats.getGamesLost() + 1);
+                break;
+            case MatchResult.TIE:
+                teamStats.setGamesTied(teamStats.getGamesTied() + 1);
+                if (bonusPoint) {
+                    teamStats.setPoints(teamStats.getPoints() + 2);
+                } else {
+                    teamStats.setPoints(teamStats.getPoints() + 1);
+                }
+                break;
+            default:
+                break;
+
+        }
+        teamStats.setGoalsFor(teamStats.getGoalsFor() + goalsFor);
+        teamStats.setGoalsAgainst(teamStats.getGoalsAgainst() + goalsAgainst);
         teamStats.setPowerPlayPercentage(
                 (teamStats.getPowerPlayPercentage() + ((powerPlayGoals / (powerPlayGoals + powerPlayNoGoals)) * 100))
                         / 2);
