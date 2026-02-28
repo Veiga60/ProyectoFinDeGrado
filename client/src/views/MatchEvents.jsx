@@ -67,6 +67,7 @@ export default function MatchEvents() {
                             onClose={() => togglePenaltiesModal()}
                             matchEvents={matchEvents}
                             setMatchEvents={setMatchEvents}
+                            match={match}
                         />
                     )
                 }
@@ -77,6 +78,7 @@ export default function MatchEvents() {
                             onClose={() => toggleGoalsModal()}
                             matchEvents={matchEvents}
                             setMatchEvents={setMatchEvents}
+                            match={match}
                         />
                     )
                 }

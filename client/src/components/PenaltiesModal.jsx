@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import '../style/PenaltiesModal.css'
 
-export default function PenaltiesModal({ teamPenalty, onClose, matchEvents, setMatchEvents }) {
+export default function PenaltiesModal({ teamPenalty, onClose, matchEvents, setMatchEvents, match }) {
 
     const SERVER_URL = 'http://localhost:8081';
     const { matchId } = useParams();
@@ -14,15 +14,6 @@ export default function PenaltiesModal({ teamPenalty, onClose, matchEvents, setM
     const [playerPenalty, setPlayerPenalty] = useState();
     const [matchMinute, setMatchMinute] = useState();
     const [matchSecond, setMatchSecond] = useState();
-
-    const getCalledPlayers = async () => {
-        try {
-            const response = await axios.get(`${SERVER_URL}/matches/${matchId}`, { withCredentials: true });
-            setPlayers(response.data.call.players);
-        } catch (error) {
-            console.log('Error al recuperar los jugadores: ', error);
-        }
-    }
 
     const setPenalty = () => {
         let newMatchEvents;
@@ -36,7 +27,7 @@ export default function PenaltiesModal({ teamPenalty, onClose, matchEvents, setM
 
     useEffect(() => {
         if (teamPenalty.name == 'Metropolitano HC') {
-            getCalledPlayers();
+            setPlayers(match?.call.players);
         }
     }, []);
 
@@ -76,7 +67,7 @@ export default function PenaltiesModal({ teamPenalty, onClose, matchEvents, setM
                                 <div id='numbers'>
                                     {
                                         players.map((player) => {
-                                            return <div key={player.id} className='goalNumber' onClick={() => setPlayerPenalty(player)}>{player.number}</div>
+                                            return (match?.call.callPlayerStatus[player?.id] == 'CONFIRMED') && (<div key={player.id} className='goalNumber' onClick={() => setPlayerPenalty(player)}>{player.number}</div>)
                                         })
                                     }
                                 </div>

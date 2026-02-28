@@ -18,8 +18,6 @@ export default function Home() {
             const response = await axios.get(`${SERVER_URL}/me`, { withCredentials: true });
             console.log(response.data);
             setAuthenticatedUser(response.data);
-            localStorage.setItem('isCoach', response.data.isCoach);
-            localStorage.setItem('playerId', response.data.player?.id);
         } catch (error) {
             console.log('Error al obtener la información del usuario: ', error);
         }
@@ -28,8 +26,8 @@ export default function Home() {
     const getNextMatch = async () => {
         try {
             const response = await axios.get(`${SERVER_URL}/matches/next`, { withCredentials: true });
-            setNextMatch(response.data[0])
-
+            setNextMatch(response.data[0]);
+            console.log(response.data[0]);
         } catch (error) {
             console.log('Error fetching next match: ', error);
         }

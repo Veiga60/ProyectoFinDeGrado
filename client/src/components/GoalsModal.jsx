@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import '../style/GoalsModal.css'
 
-export default function GoalsModal({ teamGoal, onClose, matchEvents, setMatchEvents }) {
+export default function GoalsModal({ teamGoal, onClose, matchEvents, setMatchEvents, match }) {
 
     const SERVER_URL = 'http://localhost:8081';
     const { matchId } = useParams();
@@ -12,15 +12,6 @@ export default function GoalsModal({ teamGoal, onClose, matchEvents, setMatchEve
     const [assister, setAssister] = useState();
     const [matchMinute, setMatchMinute] = useState('');
     const [matchSecond, setMatchSecond] = useState('');
-
-    const getCalledPlayers = async () => {
-        try {
-            const response = await axios.get(`${SERVER_URL}/matches/${matchId}`, { withCredentials: true });
-            setPlayers(response.data.call.players);
-        } catch (error) {
-            console.log('Error al recuperar los jugadores: ', error);
-        }
-    }
 
     const setGoal = (scorer, assister) => {
         let newMatchEvents;
@@ -33,7 +24,7 @@ export default function GoalsModal({ teamGoal, onClose, matchEvents, setMatchEve
     }
 
     useEffect(() => {
-        getCalledPlayers();
+        setPlayers(match?.call.players);
     }, []);
 
     return (
@@ -59,7 +50,7 @@ export default function GoalsModal({ teamGoal, onClose, matchEvents, setMatchEve
                                 <div id='goalPlayerNumbers'>
                                     {
                                         players.map((player) => {
-                                            return <div key={player.id} className='goalNumber' onClick={() => setScorer(player)}>{player.number}</div>
+                                            return (match?.call.callPlayerStatus[player?.id] == 'CONFIRMED') && (< div key={player.id} className='goalNumber' onClick={() => setScorer(player)}>{player.number}</div>)
                                         })
                                     }
                                 </div>
@@ -69,7 +60,7 @@ export default function GoalsModal({ teamGoal, onClose, matchEvents, setMatchEve
                                 <div id='assistPlayerNumbers'>
                                     {
                                         players.map((player) => {
-                                            return <div key={player.id} className='assistNumber' onClick={() => setAssister(player)}>{player.number}</div>
+                                            return (match?.call.callPlayerStatus[player?.id] == 'CONFIRMED') && (<div key={player.id} className='assistNumber' onClick={() => setAssister(player)}>{player.number}</div>)
                                         })
                                     }
                                 </div>
@@ -80,7 +71,8 @@ export default function GoalsModal({ teamGoal, onClose, matchEvents, setMatchEve
                         <button onClick={() => (matchMinute <= 20 && matchSecond <= 59 && matchMinute >= 0 && matchSecond >= 0) && [setGoal(scorer, assister), onClose()]}>GUARDAR</button>
                         <button onClick={() => onClose()}>CERRAR</button>
                     </div>
-                </div>)}
+                </div >)
+            }
 
         </>
     )
