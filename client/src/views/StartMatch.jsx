@@ -50,11 +50,11 @@ export default function StartMatch() {
                 } else if (localTeamGoals > visitingTeamGoals && matchPeriod == 'overtime') {
                     teamMatchStats.data.matchResult = 'TIE';
                     teamMatchStats.data.bonusPoint = true;
-                    setBonusPointTeam(match?.localTeam);
+                    await setBonusPointTeam(match?.localTeam);
                 } else if (localTeamGoals < visitingTeamGoals && matchPeriod == 'overtime') {
                     teamMatchStats.data.matchResult = 'TIE';
                     teamMatchStats.data.bonusPoint = false;
-                    setBonusPointTeam(match?.visitingTeam);
+                    await setBonusPointTeam(match?.visitingTeam);
                 }
             } else {
                 teamMatchStats.data.goalsFor = visitingTeamGoals;
@@ -66,11 +66,11 @@ export default function StartMatch() {
                 } else if (visitingTeamGoals > localTeamGoals && matchPeriod == 'overtime') {
                     teamMatchStats.data.matchResult = 'TIE';
                     teamMatchStats.data.bonusPoint = true;
-                    setBonusPointTeam(match?.visitingTeam);
+                    await setBonusPointTeam(match?.visitingTeam);
                 } else if (visitingTeamGoals < localTeamGoals && matchPeriod == 'overtime') {
                     teamMatchStats.data.matchResult = 'TIE';
                     teamMatchStats.data.bonusPoint = false;
-                    setBonusPointTeam(match?.localTeam);
+                    await setBonusPointTeam(match?.localTeam);
                 }
             }
             await axios.put(`${SERVER_URL}/playersStats/all/update`, playerMatchStats.data, { withCredentials: true });
