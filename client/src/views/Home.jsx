@@ -42,7 +42,10 @@ export default function Home() {
 
     return (
         <>
-            <Header />
+            <Header
+                authenticatedUserPlayerId={authenticatedUser?.player?.id}
+                isCoach={authenticatedUser?.isCoach}
+            />
             {(authenticatedUser != null) &&
                 <div id='homePageContentDiv'>
                     <div id='leftDiv'>

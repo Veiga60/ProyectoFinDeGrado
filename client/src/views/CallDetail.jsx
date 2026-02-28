@@ -2,7 +2,7 @@ import Header from '../components/Header.jsx'
 import Match from '../components/Match.jsx'
 import PlayerCard from '../components/PlayerCard.jsx'
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useLocation } from 'react-router-dom'
 import axios from 'axios'
 import '../style/CallDetail.css'
 
@@ -10,6 +10,7 @@ export default function CallDetail() {
 
     const SERVER_URL = 'http://localhost:8081';
     const { matchId } = useParams();
+    const location = useLocation();
 
     const [match, setMatch] = useState();
     const [players, setPlayers] = useState([]);
@@ -40,7 +41,7 @@ export default function CallDetail() {
 
     const callPlayer = async (playerId) => {
         try {
-            const response = await axios.put(`${SERVER_URL}/calls/match/${match.id}/players/${playerId}`, {}, { withCredentials: true });
+            await axios.put(`${SERVER_URL}/calls/match/${match.id}/players/${playerId}`, {}, { withCredentials: true });
             window.location.reload(true);
         } catch (error) {
             console.log('Error calling player: ', error);
@@ -49,7 +50,7 @@ export default function CallDetail() {
 
     const setAttendance = async (callId, attendance) => {
         try {
-            const response = await axios.put(`${SERVER_URL}/calls/${callId}/players/${localStorage.getItem('playerId')}`,
+            await axios.put(`${SERVER_URL}/calls/${callId}/players/${location.state.authenticatedUserPlayerId}`,
                 {},
                 {
                     params: { attendance: attendance },
@@ -66,18 +67,22 @@ export default function CallDetail() {
     useEffect(() => {
         getMatch();
         getPlayers();
+        console.log(location.state);
     }, []);
 
     return (
         <>
-            <Header />
+            <Header
+                authenticatedUserPlayerId={location.state.authenticatedUserPlayerId}
+                isCoach={location.state.isCoach}
+            />
             <div id='callDetailContentDiv'>
                 <div id='selectedMatchDiv'>
                     <Match
                         match={match}
                     />
                     {
-                        ((call != undefined && localStorage.getItem('isCoach') == 'false' && call?.callPlayerStatus[Number(localStorage.getItem('playerId'))] == 'PENDING')
+                        ((call != undefined && location.state?.isCoach == false && call?.callPlayerStatus[Number(location.state.authenticatedUserPlayerId)] == 'PENDING')
                             &&
                             (
                                 <div id='attendanceButtonsDiv'>
@@ -94,7 +99,7 @@ export default function CallDetail() {
                             player={player}
                             onClick={() => callPlayer(player.id)}
                             status={call?.callPlayerStatus[player.id]}
-                            enableHover={localStorage.getItem('isCoach')}
+                            enableHover={location.state?.isCoach}
                         />
                     )}
                 </div>

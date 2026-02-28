@@ -3,7 +3,7 @@ import logo from '../assets/images/tigre-transparente.png'
 import NavBar from '../components/NavBar.jsx'
 import { useLocation } from 'react-router-dom'
 
-function Header() {
+function Header({ authenticatedUserPlayerId, isCoach }) {
 
     const location = useLocation();
 
@@ -15,7 +15,10 @@ function Header() {
             </div>
             {(location.pathname != '/' && location.pathname != '/signup' && location.pathname != '/error/unauthorized') &&
                 <div id='navbar'>
-                    <NavBar />
+                    <NavBar
+                        authenticatedUserPlayerId={authenticatedUserPlayerId}
+                        isCoach={isCoach}
+                    />
                 </div>
             }
         </div>

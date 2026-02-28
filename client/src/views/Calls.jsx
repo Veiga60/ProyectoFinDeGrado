@@ -2,13 +2,14 @@ import Header from '../components/Header.jsx'
 import MatchCard from '../components/MatchCard.jsx'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import '../style/Calls.css'
 
 export default function Calls() {
 
     const SERVER_URL = 'http://localhost:8081';
     const navigate = useNavigate();
+    const location = useLocation();
 
     const [matches, setMatches] = useState([]);
 
@@ -32,22 +33,25 @@ export default function Calls() {
     }
 
     useEffect(() => {
-        if (localStorage.getItem('isCoach') == 'false') {
-            getCallsOfPlayer(Number(localStorage.getItem('playerId')));
+        if (location.state.isCoach == false) {
+            getCallsOfPlayer(location.state.authenticatedUserPlayerId);
         }
         getNextMatches();
     }, []);
 
     return (
         <>
-            <Header />
+            <Header
+                authenticatedUserPlayerId={location.state.authenticatedUserPlayerId}
+                isCoach={location.state.isCoach}
+            />
             <div id='callsMainDiv'>
                 <div id='nextMatchesDiv'>
                     {matches.map((match) =>
                         <MatchCard
                             key={match.id}
                             match={match}
-                            onClick={() => navigate(`/calls/match/${match.id}`)}
+                            onClick={() => navigate(`/calls/match/${match.id}`, { state: { authenticatedUserPlayerId: location.state?.authenticatedUserPlayerId, isCoach: location.state?.isCoach } })}
                         />
                     )}
                 </div>

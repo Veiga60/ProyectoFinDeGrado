@@ -3,7 +3,7 @@ import logoutDoor from '../assets/images/logout.png'
 import axios from 'axios'
 import '../style/NavBar.css'
 
-export default function NavBar() {
+export default function NavBar({ authenticatedUserPlayerId, isCoach }) {
 
     const SERVER_URL = 'http://localhost:8081';
     const navigate = useNavigate();
@@ -31,7 +31,7 @@ export default function NavBar() {
             <div id="statsNavDiv" className="navbarSectionDiv" onClick={() => navigate('/stats')}>
                 <p id="statsNavText" className="navbarText">ESTADÍSTICAS</p>
             </div>
-            <div id="callsNavDiv" className="navbarSectionDiv" onClick={() => navigate('/calls')}>
+            <div id="callsNavDiv" className="navbarSectionDiv" onClick={() => navigate('/calls', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
                 <p id="callsNavText" className="navbarText">CONVOCATORIAS</p>
             </div>
             <div id='logoutButtonDiv' onClick={() => logout()}>
