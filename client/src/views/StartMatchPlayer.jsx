@@ -292,7 +292,7 @@ export default function StartMatchPlayer() {
                             </>
                         )}
                     <button onClick={() => saveMatchStats(player)}>GUARDAR</button>
-                    <button onClick={() => navigate(`/matches/${matchId}/start_match`, { state: { matchEvents: matchEvents } })}>VOLVER</button>
+                    <button onClick={() => navigate(`/matches/${matchId}/start_match`, { state: { matchPeriod: location.state.matchPeriod, matchEvents: matchEvents } })}>VOLVER</button>
                 </div>
             </div>
         </>

@@ -97,7 +97,7 @@ export default function StartMatch() {
     useEffect(() => {
         getNextMatch();
         setMatchEvents(location.state?.matchEvents);
-        selectPeriod(matchPeriod);
+        (location.state.matchPeriod) ? (selectPeriod(location.state.matchPeriod)) : (selectPeriod(matchPeriod))
     }, []);
 
     return (
@@ -124,10 +124,10 @@ export default function StartMatch() {
                                 {players.map(player =>
                                     ((match.call.callPlayerStatus[player.id] == 'CONFIRMED') && player.playerType == 'RINK_PLAYER') && (
                                         <tr key={player.id} className='calledPlayerRow'>
-                                            <td className='calledPlayerNumber' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchEvents: matchEvents } })}>
+                                            <td className='calledPlayerNumber' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents } })}>
                                                 {player.number}
                                             </td>
-                                            <td className='calledPlayerName' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchEvents: matchEvents } })}>
+                                            <td className='calledPlayerName' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents } })}>
                                                 {player.name} {player.lastName1} {player.lastName2}
                                             </td>
                                         </tr>
@@ -143,10 +143,10 @@ export default function StartMatch() {
                                 {players.map(player =>
                                     ((match.call.callPlayerStatus[player.id] == 'CONFIRMED') && player.playerType == 'GOALIE') && (
                                         <tr key={player.id} className='calledGoalieRow'>
-                                            <td className='calledGoalieNumber' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchEvents: matchEvents } })}>
+                                            <td className='calledGoalieNumber' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents } })}>
                                                 {player.number}
                                             </td>
-                                            <td className='calledGoalieName' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchEvents: matchEvents } })}>
+                                            <td className='calledGoalieName' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents } })}>
                                                 {player.name} {player.lastName1} {player.lastName2}
                                             </td>
                                         </tr>
@@ -155,8 +155,8 @@ export default function StartMatch() {
 
                             </tbody>
                         </table>
-                        <button onClick={() => navigate(`/matches/${matchId}/start_match/team`)}>ESTADISTICAS EQUIPO</button>
-                        <button onClick={() => navigate(`/matches/${matchId}/incidences`, { state: { match: match, matchEvents: matchEvents } })}>INCIDENCIAS</button>
+                        <button onClick={() => navigate(`/matches/${matchId}/start_match/team`, { state: { matchPeriod: matchPeriod } })}>ESTADISTICAS EQUIPO</button>
+                        <button onClick={() => navigate(`/matches/${matchId}/incidences`, { state: { match: match, matchPeriod: matchPeriod, matchEvents: matchEvents } })}>INCIDENCIAS</button>
                         <button onClick={() => [console.log(location), console.log(matchEvents)]}>CONSOLA</button>
                     </div>
                     <div id='matchEventsContainer'>

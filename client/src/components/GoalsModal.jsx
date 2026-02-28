@@ -1,12 +1,8 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import axios from 'axios'
 import '../style/GoalsModal.css'
 
 export default function GoalsModal({ teamGoal, onClose, matchEvents, setMatchEvents, match }) {
 
-    const SERVER_URL = 'http://localhost:8081';
-    const { matchId } = useParams();
     const [players, setPlayers] = useState([]);
     const [scorer, setScorer] = useState();
     const [assister, setAssister] = useState();

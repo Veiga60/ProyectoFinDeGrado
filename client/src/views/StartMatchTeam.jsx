@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, useLocation } from 'react-router-dom'
 import axios from 'axios'
 import '../style/StartMatchTeam.css'
 
@@ -7,6 +7,7 @@ export default function StartMatchTeam() {
     const SERVER_URL = 'http://localhost:8081';
     const { matchId } = useParams();
     const navigate = useNavigate();
+    const location = useLocation();
 
     const [powerPlayGoals, setPowerPlayGoals] = useState(0);
     const [powerPlayNoGoals, setPowerPlayNoGoals] = useState(0);
@@ -38,12 +39,12 @@ export default function StartMatchTeam() {
 
     const saveMatchStats = async (matchId) => {
         try {
-            const response = await axios.put(`${SERVER_URL}/matchStats/matches/${matchId}/team`, teamMatchStatsBody, {
+            await axios.put(`${SERVER_URL}/matchStats/matches/${matchId}/team`, teamMatchStatsBody, {
                 headers: {
                     'Content-Type': 'application/json'
                 }, withCredentials: true
             });
-            navigate(`/matches/${matchId}/start_match`);
+            navigate(`/matches/${matchId}/start_match`, { state: { matchPeriod: location.state.matchPeriod } });
         } catch (error) {
             console.log(`Error saving the stats of player: `, error);
         }

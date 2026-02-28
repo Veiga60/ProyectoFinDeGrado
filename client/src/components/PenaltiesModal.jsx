@@ -1,12 +1,7 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom'
-import axios from 'axios'
 import '../style/PenaltiesModal.css'
 
 export default function PenaltiesModal({ teamPenalty, onClose, matchEvents, setMatchEvents, match }) {
-
-    const SERVER_URL = 'http://localhost:8081';
-    const { matchId } = useParams();
 
     const [penaltyTime, setPenaltyTime] = useState(0);
     const [penaltyType, setPenaltyType] = useState('');

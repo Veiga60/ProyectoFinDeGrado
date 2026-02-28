@@ -31,7 +31,7 @@ export default function MatchEvents() {
     }
 
     const finishEditingMatchEvents = async () => {
-        navigate(`/matches/${match.id}/start_match`, { state: { matchEvents: matchEvents } });
+        navigate(`/matches/${match.id}/start_match`, { state: { matchPeriod: location.state.matchPeriod, matchEvents: matchEvents } });
     }
 
     useEffect(() => {
