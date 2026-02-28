@@ -47,4 +47,19 @@ public class MatchService {
 
         return nextMatches;
     }
+
+    public void updateMatch(long matchId, int localTeamGoals, int visitingTeamGoals, Long bonusPoint) {
+        Match match = matchDAO.findById(matchId);
+
+        if (match == null) {
+            throw new RuntimeException("No se ha encontrado el partido a actualizar");
+        }
+
+        match.setLocalTeamGoals(localTeamGoals);
+        match.setVisitingTeamGoals(visitingTeamGoals);
+        match.setBonusPoint(bonusPoint);
+        match.setIsPlayed(true);
+
+        matchDAO.save(match);
+    }
 }

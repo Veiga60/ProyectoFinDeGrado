@@ -22,6 +22,8 @@ export default function StartMatch() {
     const [matchPeriod, setMatchPeriod] = useState('period1');
     const [previousMatchPeriod, setPreviousMatchPeriod] = useState('period1');
 
+    const [bonusPointTeam, setBonusPointTeam] = useState();
+
     const getNextMatch = async () => {
         try {
             const response = await axios.get(`${SERVER_URL}/matches/next`, { withCredentials: true });
@@ -48,9 +50,11 @@ export default function StartMatch() {
                 } else if (localTeamGoals > visitingTeamGoals && matchPeriod == 'overtime') {
                     teamMatchStats.data.matchResult = 'TIE';
                     teamMatchStats.data.bonusPoint = true;
+                    setBonusPointTeam(match?.localTeam);
                 } else if (localTeamGoals < visitingTeamGoals && matchPeriod == 'overtime') {
                     teamMatchStats.data.matchResult = 'TIE';
                     teamMatchStats.data.bonusPoint = false;
+                    setBonusPointTeam(match?.visitingTeam);
                 }
             } else {
                 teamMatchStats.data.goalsFor = visitingTeamGoals;
@@ -62,14 +66,17 @@ export default function StartMatch() {
                 } else if (visitingTeamGoals > localTeamGoals && matchPeriod == 'overtime') {
                     teamMatchStats.data.matchResult = 'TIE';
                     teamMatchStats.data.bonusPoint = true;
+                    setBonusPointTeam(match?.visitingTeam);
                 } else if (visitingTeamGoals < localTeamGoals && matchPeriod == 'overtime') {
                     teamMatchStats.data.matchResult = 'TIE';
                     teamMatchStats.data.bonusPoint = false;
+                    setBonusPointTeam(match?.localTeam);
                 }
             }
             await axios.put(`${SERVER_URL}/playersStats/all/update`, playerMatchStats.data, { withCredentials: true });
             await axios.put(`${SERVER_URL}/goaliesStats/all/update`, goalieMatchStats.data, { withCredentials: true });
             await axios.put(`${SERVER_URL}/teamStats/update`, teamMatchStats.data, { withCredentials: true });
+            await axios.put(`${SERVER_URL}/matches/${matchId}/update`, {}, { params: { localTeamGoals: Number(localTeamGoals), visitingTeamGoals: Number(visitingTeamGoals), bonusPoint: Number(bonusPointTeam?.id) || null }, withCredentials: true })
             navigate('/home');
         } catch (error) {
             console.log('Could not finish match: ', error);

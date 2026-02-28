@@ -6,8 +6,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ikerveiga.app.dto.MatchDTO;
@@ -92,4 +95,21 @@ public class MatchController {
         }
     }
 
+    @Secured("ROLE_COACH")
+    @PutMapping("/matches/{matchId}/update")
+    public ResponseEntity<Void> updateMatch(@PathVariable("matchId") long matchId,
+            @RequestParam("localTeamGoals") int localTeamGoals,
+            @RequestParam("visitingTeamGoals") int visitingTeamGoals,
+            @RequestParam(required = false, name = "bonusPoint") Long bonusPoint) {
+        try {
+            matchService.updateMatch(matchId, localTeamGoals, visitingTeamGoals, bonusPoint);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (RuntimeException e) {
+            if (e.getMessage().equals("No se ha encontrado el partido a actualizar")) {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            } else {
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
+        }
+    }
 }
