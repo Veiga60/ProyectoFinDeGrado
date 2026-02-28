@@ -19,6 +19,9 @@ export default function StartMatch() {
     const visitingTeamGoals = matchEvents?.filter((matchEvent) => (matchEvent.goal) ? ((String(matchEvent.goal.team.id) === String(match?.visitingTeam.id))) : (0)).length || 0;
     const [players, setPlayers] = useState([]);
 
+    const [matchPeriod, setMatchPeriod] = useState('period1');
+    const [previousMatchPeriod, setPreviousMatchPeriod] = useState('period1');
+
     const getNextMatch = async () => {
         try {
             const response = await axios.get(`${SERVER_URL}/matches/next`, { withCredentials: true });
@@ -30,10 +33,6 @@ export default function StartMatch() {
         }
     }
 
-    const getMatchPoints = () => {
-
-    }
-
     const finishMatch = async () => {
         try {
             const playerMatchStats = await axios.get(`${SERVER_URL}/playersMatchStats/matches/${matchId}`, { withCredentials: true });
@@ -42,18 +41,30 @@ export default function StartMatch() {
             if (match?.localTeam.name === 'Metropolitano HC') {
                 teamMatchStats.data.goalsFor = localTeamGoals;
                 teamMatchStats.data.goalsAgainst = visitingTeamGoals;
-                if (localTeamGoals > visitingTeamGoals) {
+                if (localTeamGoals > visitingTeamGoals && matchPeriod == 'period2') {
                     teamMatchStats.data.matchResult = 'WIN';
-                } else if (localTeamGoals < visitingTeamGoals) {
+                } else if (localTeamGoals < visitingTeamGoals && matchPeriod == 'period2') {
                     teamMatchStats.data.matchResult = 'LOSS';
+                } else if (localTeamGoals > visitingTeamGoals && matchPeriod == 'overtime') {
+                    teamMatchStats.data.matchResult = 'TIE';
+                    teamMatchStats.data.bonusPoint = true;
+                } else if (localTeamGoals < visitingTeamGoals && matchPeriod == 'overtime') {
+                    teamMatchStats.data.matchResult = 'TIE';
+                    teamMatchStats.data.bonusPoint = false;
                 }
             } else {
                 teamMatchStats.data.goalsFor = visitingTeamGoals;
                 teamMatchStats.data.goalsAgainst = localTeamGoals;
-                if (visitingTeamGoals > localTeamGoals) {
+                if (visitingTeamGoals > localTeamGoals && matchPeriod == 'period2') {
                     teamMatchStats.data.matchResult = 'WIN';
-                } else if (visitingTeamGoals < localTeamGoals) {
+                } else if (visitingTeamGoals < localTeamGoals && matchPeriod == 'period2') {
                     teamMatchStats.data.matchResult = 'LOSS';
+                } else if (visitingTeamGoals > localTeamGoals && matchPeriod == 'overtime') {
+                    teamMatchStats.data.matchResult = 'TIE';
+                    teamMatchStats.data.bonusPoint = true;
+                } else if (visitingTeamGoals < localTeamGoals && matchPeriod == 'overtime') {
+                    teamMatchStats.data.matchResult = 'TIE';
+                    teamMatchStats.data.bonusPoint = false;
                 }
             }
             await axios.put(`${SERVER_URL}/playersStats/all/update`, playerMatchStats.data, { withCredentials: true });
@@ -65,10 +76,21 @@ export default function StartMatch() {
         }
     }
 
+    const selectPeriod = (period) => {
+        deselectPreviousPeriod()
+        setMatchPeriod(period);
+        document.getElementById(period).className = 'matchPeriodSelected';
+        setPreviousMatchPeriod(period);
+    }
+
+    const deselectPreviousPeriod = () => {
+        document.getElementById(previousMatchPeriod).className = 'matchPeriod';
+    }
+
     useEffect(() => {
         getNextMatch();
         setMatchEvents(location.state?.matchEvents);
-        console.log(location.state);
+        selectPeriod(matchPeriod);
     }, []);
 
     return (
@@ -79,6 +101,11 @@ export default function StartMatch() {
                     localTeamGoals={localTeamGoals}
                     visitingTeamGoals={visitingTeamGoals}
                 />
+                <div id='matchPeriods'>
+                    <div id='period1' className='matchPeriod' onClick={() => { selectPeriod('period1') }}><p className='matchPeriodText' onClick={() => { selectPeriod('period1') }}>P1</p></div>
+                    <div id='period2' className='matchPeriod' onClick={() => { selectPeriod('period2') }}><p className='matchPeriodText' onClick={() => { selectPeriod('period2') }}>P2</p></div>
+                    <div id='overtime' className='matchPeriod' onClick={() => { selectPeriod('overtime') }}><p className='matchPeriodText' onClick={() => { selectPeriod('overtime') }}>OT</p></div>
+                </div>
                 <div id='finishMatchButtonDiv'>
                     <button id='finishMatchButton' onClick={() => finishMatch()}>FINALIZAR PARTIDO</button>
                 </div>

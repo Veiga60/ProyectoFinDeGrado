@@ -54,6 +54,7 @@ public class TeamStatsService {
                 teamStats.setGamesTied(teamStats.getGamesTied() + 1);
                 if (bonusPoint) {
                     teamStats.setPoints(teamStats.getPoints() + 2);
+                    teamStats.setBonusPoints(teamStats.getBonusPoints() + 1);
                 } else {
                     teamStats.setPoints(teamStats.getPoints() + 1);
                 }
@@ -64,12 +65,18 @@ public class TeamStatsService {
         }
         teamStats.setGoalsFor(teamStats.getGoalsFor() + goalsFor);
         teamStats.setGoalsAgainst(teamStats.getGoalsAgainst() + goalsAgainst);
-        teamStats.setPowerPlayPercentage(
-                (teamStats.getPowerPlayPercentage() + ((powerPlayGoals / (powerPlayGoals + powerPlayNoGoals)) * 100))
-                        / 2);
-        teamStats.setPenaltyKillPercentage(
-                (teamStats.getPowerPlayPercentage() + ((powerPlayGoals / (powerPlayGoals + powerPlayNoGoals)) * 100))
-                        / 2);
+        if ((powerPlayGoals + powerPlayNoGoals) != 0) {
+            teamStats.setPowerPlayPercentage(
+                    (teamStats.getPowerPlayPercentage()
+                            + ((powerPlayGoals / (powerPlayGoals + powerPlayNoGoals)) * 100))
+                            / 2);
+        }
+        if ((penaltyKillGoals + penaltyKillNoGoals) != 0) {
+            teamStats.setPenaltyKillPercentage(
+                    (teamStats.getPenaltyKillPercentage()
+                            + ((penaltyKillGoals / (penaltyKillGoals + penaltyKillNoGoals)) * 100))
+                            / 2);
+        }
         teamStats.setOneVsZero(teamStats.getOneVsZero() + oneVsZero);
         teamStats.setOneVsOne(teamStats.getOneVsOne() + oneVsOne);
         teamStats.setTwoVsOne(teamStats.getThreeVsOne() + twoVsOne);

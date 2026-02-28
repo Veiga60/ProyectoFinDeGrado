@@ -129,6 +129,43 @@
     border: 1px solid rgb(7, 78, 200);
 }
 
+#matchPeriods {
+    color: black;
+    font-weight: bold;
+    font-size: large;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20%;
+}
+
+.matchPeriod {
+    border: 2px solid rgb(7, 78, 200);
+    background-color: white;
+    padding: 0;
+}
+
+.matchPeriod:hover {
+    cursor: pointer;
+}
+
+.matchPeriodSelected {
+    border: 2px solid rgb(7, 78, 200);
+    background-color: rgb(7, 78, 200);
+    color: white;
+    padding: 0;
+}
+
+.matchPeriodText {
+    margin: 0;
+    padding: 0;
+}
+
+.matchPeriodText:hover {
+    cursor: pointer;
+}
+
 .matchEvent {
     color: black;
 }
