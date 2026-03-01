@@ -59,7 +59,7 @@ export default function Home() {
                             <Match
                                 match={nextMatch}
                             />
-                            {(localStorage.getItem('isCoach') == 'true') &&
+                            {(authenticatedUser.isCoach == true) &&
                                 (
                                     <div id='startMatchDiv'>
                                         <button id='startMatchButton' onClick={() => navigate(`/matches/${nextMatch.id}/start_match`)}>EMPEZAR PARTIDO</button>
