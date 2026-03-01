@@ -97,7 +97,7 @@ export default function StartMatch() {
     useEffect(() => {
         getNextMatch();
         setMatchEvents(location.state?.matchEvents);
-        (location.state.matchPeriod) ? (selectPeriod(location.state.matchPeriod)) : (selectPeriod(matchPeriod))
+        (location.state?.matchPeriod) ? (selectPeriod(location.state?.matchPeriod)) : (selectPeriod(matchPeriod))
     }, []);
 
     return (
@@ -155,7 +155,7 @@ export default function StartMatch() {
 
                             </tbody>
                         </table>
-                        <button onClick={() => navigate(`/matches/${matchId}/start_match/team`, { state: { matchPeriod: matchPeriod } })}>ESTADISTICAS EQUIPO</button>
+                        <button onClick={() => navigate(`/matches/${matchId}/start_match/team`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents } })}>ESTADISTICAS EQUIPO</button>
                         <button onClick={() => navigate(`/matches/${matchId}/incidences`, { state: { match: match, matchPeriod: matchPeriod, matchEvents: matchEvents } })}>INCIDENCIAS</button>
                         <button onClick={() => [console.log(location), console.log(matchEvents)]}>CONSOLA</button>
                     </div>

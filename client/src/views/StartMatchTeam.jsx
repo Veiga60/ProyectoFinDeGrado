@@ -44,7 +44,7 @@ export default function StartMatchTeam() {
                     'Content-Type': 'application/json'
                 }, withCredentials: true
             });
-            navigate(`/matches/${matchId}/start_match`, { state: { matchPeriod: location.state.matchPeriod } });
+            navigate(`/matches/${matchId}/start_match`, { state: { matchPeriod: location.state.matchPeriod, matchEvents: location.state.matchEvents } });
         } catch (error) {
             console.log(`Error saving the stats of player: `, error);
         }
