@@ -13,7 +13,6 @@ export default function Calls() {
 
     const [matches, setMatches] = useState([]);
 
-
     const getNextMatches = async () => {
         try {
             const response = await axios.get(`${SERVER_URL}/matches/next`, { withCredentials: true });
@@ -33,9 +32,10 @@ export default function Calls() {
     }
 
     useEffect(() => {
-        if (location.state.isCoach == false) {
-            getCallsOfPlayer(location.state.authenticatedUserPlayerId);
+        if (location.state?.isCoach == false) {
+            getCallsOfPlayer(location.state?.authenticatedUserPlayerId);
         }
+        console.log(location.state);
         getNextMatches();
     }, []);
 

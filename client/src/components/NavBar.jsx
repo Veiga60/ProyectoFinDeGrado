@@ -10,7 +10,7 @@ export default function NavBar({ authenticatedUserPlayerId, isCoach }) {
 
     const logout = async () => {
         try {
-            const response = await axios.post(`${SERVER_URL}/exit`, {}, { withCredentials: true });
+            await axios.post(`${SERVER_URL}/exit`, {}, { withCredentials: true });
             localStorage.removeItem('jwt');
             localStorage.removeItem('isCoach');
             localStorage.removeItem('playerId');
@@ -22,13 +22,13 @@ export default function NavBar({ authenticatedUserPlayerId, isCoach }) {
 
     return (
         <div id="navbarDiv">
-            <div id="homeNavDiv" className="navbarSectionDiv" onClick={() => navigate('/home')}>
+            <div id="homeNavDiv" className="navbarSectionDiv" onClick={() => navigate('/home', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
                 <p id="homeNavText" className="navbarText">INICIO</p>
             </div>
-            <div id="matchesNavDiv" className="navbarSectionDiv" onClick={() => navigate('/matches')}>
+            <div id="matchesNavDiv" className="navbarSectionDiv" onClick={() => navigate('/matches', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
                 <p id="matchesNavText" className="navbarText">PARTIDOS</p>
             </div>
-            <div id="statsNavDiv" className="navbarSectionDiv" onClick={() => navigate('/stats')}>
+            <div id="statsNavDiv" className="navbarSectionDiv" onClick={() => navigate('/stats', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
                 <p id="statsNavText" className="navbarText">ESTADÍSTICAS</p>
             </div>
             <div id="callsNavDiv" className="navbarSectionDiv" onClick={() => navigate('/calls', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>

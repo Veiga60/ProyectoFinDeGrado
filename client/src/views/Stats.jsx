@@ -4,13 +4,14 @@ import '../style/Stats.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react';
 import PlayerCard from '../components/PlayerCard';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import logoMetropolitano from '../assets/images/logo-metropolitanohc-negro-transparente.png'
 
 export default function Stats() {
 
     const SERVER_URL = 'http://localhost:8081';
     const navigate = useNavigate();
+    const location = useLocation();
 
     const [players, setPlayers] = useState([]);
     const [teamStats, setTeamStats] = useState({});
@@ -41,7 +42,10 @@ export default function Stats() {
 
     return (
         <>
-            <Header />
+            <Header
+                authenticatedUserPlayerId={location.state?.authenticatedUserPlayerId}
+                isCoach={location.state?.isCoach}
+            />
             <div id='tabsDiv'>
                 <Tabs id='statsTabs' default='0'>
                     <TabList>

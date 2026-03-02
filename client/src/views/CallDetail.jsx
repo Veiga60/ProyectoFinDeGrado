@@ -73,8 +73,8 @@ export default function CallDetail() {
     return (
         <>
             <Header
-                authenticatedUserPlayerId={location.state.authenticatedUserPlayerId}
-                isCoach={location.state.isCoach}
+                authenticatedUserPlayerId={location.state?.authenticatedUserPlayerId}
+                isCoach={location.state?.isCoach}
             />
             <div id='callDetailContentDiv'>
                 <div id='selectedMatchDiv'>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import Header from '../components/Header.jsx'
 import Match from '../components/Match.jsx'
 import '../style/Matches.css'
@@ -8,6 +9,7 @@ export default function Matches() {
 
     const SERVER_URL = 'http://localhost:8081'
     const [matches, setMatches] = useState([]);
+    const location = useLocation();
 
     const getMatches = async () => {
         try {
@@ -25,7 +27,10 @@ export default function Matches() {
 
     return (
         <>
-            <Header />
+            <Header
+                authenticatedUserPlayerId={location.state?.authenticatedUserPlayerId}
+                isCoach={location.state?.isCoach}
+            />
             <div id='matchesDiv'>
                 {matches.map((match) =>
                     <Match

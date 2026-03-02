@@ -27,7 +27,6 @@ export default function Home() {
         try {
             const response = await axios.get(`${SERVER_URL}/matches/next`, { withCredentials: true });
             setNextMatch(response.data[0]);
-            console.log(response.data[0]);
         } catch (error) {
             console.log('Error fetching next match: ', error);
         }
