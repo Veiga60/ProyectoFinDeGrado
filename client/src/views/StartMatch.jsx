@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams, useLocation } from 'react-router-dom'
 import ScoreBoard from '../components/ScoreBoard.jsx'
+import UseAIModal from '../components/UseAIModal.jsx'
 import axios from 'axios'
 import '../style/StartMatch.css'
 
@@ -11,6 +12,8 @@ export default function StartMatch() {
     const navigate = useNavigate();
     const { matchId } = useParams();
     const location = useLocation();
+
+    const [useAIModal, setUseAIModal] = useState(false);
 
     const [matchEvents, setMatchEvents] = useState([]);
 
@@ -23,6 +26,10 @@ export default function StartMatch() {
     const [previousMatchPeriod, setPreviousMatchPeriod] = useState('period1');
 
     const [bonusPointTeam, setBonusPointTeam] = useState();
+
+    const toggleUsaAIModal = () => {
+        setUseAIModal(!useAIModal);
+    }
 
     const getNextMatch = async () => {
         try {
@@ -114,7 +121,7 @@ export default function StartMatch() {
                     <div id='overtime' className='matchPeriod' onClick={() => { selectPeriod('overtime') }}><p className='matchPeriodText' onClick={() => { selectPeriod('overtime') }}>OT</p></div>
                 </div>
                 <div id='finishMatchButtonDiv'>
-                    <button id='finishMatchButton' onClick={() => finishMatch()}>FINALIZAR PARTIDO</button>
+                    <button id='finishMatchButton' onClick={() => toggleUsaAIModal()}>FINALIZAR PARTIDO</button>
                 </div>
                 <div id='matchInfoMainDiv'>
                     <div id='calledPlayersDiv'>
@@ -178,6 +185,13 @@ export default function StartMatch() {
                         </div>
                     </div>
                 </div>
+                {(useAIModal) &&
+                    (
+                        <UseAIModal
+                            onClose={toggleUsaAIModal}
+                            onMatchFinished={finishMatch}
+                        />
+                    )}
             </div>
         </>
     )
