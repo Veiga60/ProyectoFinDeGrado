@@ -22,8 +22,8 @@ export default function StartMatch() {
     const visitingTeamGoals = matchEvents?.filter((matchEvent) => (matchEvent.goal) ? ((String(matchEvent.goal.team.id) === String(match?.visitingTeam.id))) : (0)).length || 0;
     const [players, setPlayers] = useState([]);
 
-    const [matchPeriod, setMatchPeriod] = useState('period1');
-    const [previousMatchPeriod, setPreviousMatchPeriod] = useState('period1');
+    const [matchPeriod, setMatchPeriod] = useState('period2');
+    const [previousMatchPeriod, setPreviousMatchPeriod] = useState('period2');
 
     const [bonusPointTeam, setBonusPointTeam] = useState();
 
