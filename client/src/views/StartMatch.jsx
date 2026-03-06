@@ -22,12 +22,18 @@ export default function StartMatch() {
     const visitingTeamGoals = matchEvents?.filter((matchEvent) => (matchEvent.goal) ? ((String(matchEvent.goal.team.id) === String(match?.visitingTeam.id))) : (0)).length || 0;
     const [players, setPlayers] = useState([]);
 
+    const [teamMatchStats, setTeamMatchStats] = useState();
+    const [playersMatchStats, setPlayersMatchStats] = useState();
+    const [goaliesMatchStats, setGoaliesMatchStats] = useState();
+
     const [matchPeriod, setMatchPeriod] = useState('period2');
     const [previousMatchPeriod, setPreviousMatchPeriod] = useState('period2');
 
     const [bonusPointTeam, setBonusPointTeam] = useState();
 
-    const toggleUsaAIModal = () => {
+    const [prompt, setPrompt] = useState('');
+
+    const toggleUseAIModal = () => {
         setUseAIModal(!useAIModal);
     }
 
@@ -42,52 +48,84 @@ export default function StartMatch() {
         }
     }
 
-    const finishMatch = async () => {
+    const prepareStatsToUpdate = async () => {
         try {
-            const playerMatchStats = await axios.get(`${SERVER_URL}/playersMatchStats/matches/${matchId}`, { withCredentials: true });
-            const goalieMatchStats = await axios.get(`${SERVER_URL}/goaliesMatchStats/matches/${matchId}`, { withCredentials: true });
-            let teamMatchStats = await axios.get(`${SERVER_URL}/matchStats/matches/${matchId}/team`, { withCredentials: true });
+            const playersMatchStatsResponse = await axios.get(`${SERVER_URL}/playersMatchStats/matches/${matchId}`, { withCredentials: true });
+            const goaliesMatchStatsResponse = await axios.get(`${SERVER_URL}/goaliesMatchStats/matches/${matchId}`, { withCredentials: true });
+            let teamMatchStatsResponse = await axios.get(`${SERVER_URL}/matchStats/matches/${matchId}/team`, { withCredentials: true });
+            setPlayersMatchStats(playersMatchStatsResponse.data);
+            setGoaliesMatchStats(goaliesMatchStatsResponse.data);
+            setTeamMatchStats(teamMatchStatsResponse.data);
             if (match?.localTeam.name === 'Metropolitano HC') {
-                teamMatchStats.data.goalsFor = localTeamGoals;
-                teamMatchStats.data.goalsAgainst = visitingTeamGoals;
+                teamMatchStatsResponse.data.goalsFor = localTeamGoals;
+                teamMatchStatsResponse.data.goalsAgainst = visitingTeamGoals;
                 if (localTeamGoals > visitingTeamGoals && matchPeriod == 'period2') {
-                    teamMatchStats.data.matchResult = 'WIN';
+                    teamMatchStatsResponse.data.matchResult = 'WIN';
                 } else if (localTeamGoals < visitingTeamGoals && matchPeriod == 'period2') {
-                    teamMatchStats.data.matchResult = 'LOSS';
+                    teamMatchStatsResponse.data.matchResult = 'LOSS';
                 } else if (localTeamGoals > visitingTeamGoals && matchPeriod == 'overtime') {
-                    teamMatchStats.data.matchResult = 'TIE';
-                    teamMatchStats.data.bonusPoint = true;
+                    teamMatchStatsResponse.data.matchResult = 'TIE';
+                    teamMatchStatsResponse.data.bonusPoint = true;
                     await setBonusPointTeam(match?.localTeam);
                 } else if (localTeamGoals < visitingTeamGoals && matchPeriod == 'overtime') {
-                    teamMatchStats.data.matchResult = 'TIE';
-                    teamMatchStats.data.bonusPoint = false;
+                    teamMatchStatsResponse.data.matchResult = 'TIE';
+                    teamMatchStatsResponse.data.bonusPoint = false;
                     await setBonusPointTeam(match?.visitingTeam);
                 }
             } else {
-                teamMatchStats.data.goalsFor = visitingTeamGoals;
-                teamMatchStats.data.goalsAgainst = localTeamGoals;
+                teamMatchStatsResponse.data.goalsFor = visitingTeamGoals;
+                teamMatchStatsResponse.data.goalsAgainst = localTeamGoals;
                 if (visitingTeamGoals > localTeamGoals && matchPeriod == 'period2') {
-                    teamMatchStats.data.matchResult = 'WIN';
+                    teamMatchStatsResponse.data.matchResult = 'WIN';
                 } else if (visitingTeamGoals < localTeamGoals && matchPeriod == 'period2') {
-                    teamMatchStats.data.matchResult = 'LOSS';
+                    teamMatchStatsResponse.data.matchResult = 'LOSS';
                 } else if (visitingTeamGoals > localTeamGoals && matchPeriod == 'overtime') {
-                    teamMatchStats.data.matchResult = 'TIE';
-                    teamMatchStats.data.bonusPoint = true;
+                    teamMatchStatsResponse.data.matchResult = 'TIE';
+                    teamMatchStatsResponse.data.bonusPoint = true;
                     await setBonusPointTeam(match?.visitingTeam);
                 } else if (visitingTeamGoals < localTeamGoals && matchPeriod == 'overtime') {
-                    teamMatchStats.data.matchResult = 'TIE';
-                    teamMatchStats.data.bonusPoint = false;
+                    teamMatchStatsResponse.data.matchResult = 'TIE';
+                    teamMatchStatsResponse.data.bonusPoint = false;
                     await setBonusPointTeam(match?.localTeam);
                 }
             }
-            await axios.put(`${SERVER_URL}/playersStats/all/update`, playerMatchStats.data, { withCredentials: true });
-            await axios.put(`${SERVER_URL}/goaliesStats/all/update`, goalieMatchStats.data, { withCredentials: true });
-            await axios.put(`${SERVER_URL}/teamStats/update`, teamMatchStats.data, { withCredentials: true });
+
+            return { teamMatchStats: teamMatchStatsResponse.data, playersMatchStats: playersMatchStatsResponse.data, goaliesMatchStats: goaliesMatchStatsResponse.data }
+        } catch (error) {
+            console.log('Error preparando las estadísticas a actualizar: ', error);
+        }
+    }
+
+    const finishMatch = async () => {
+        try {
+            await axios.put(`${SERVER_URL}/playersStats/all/update`, playersMatchStats, { withCredentials: true });
+            await axios.put(`${SERVER_URL}/goaliesStats/all/update`, goaliesMatchStats, { withCredentials: true });
+            await axios.put(`${SERVER_URL}/teamStats/update`, teamMatchStats, { withCredentials: true });
             await axios.put(`${SERVER_URL}/matches/${matchId}/update`, {}, { params: { localTeamGoals: Number(localTeamGoals), visitingTeamGoals: Number(visitingTeamGoals), bonusPoint: Number(bonusPointTeam?.id) || null }, withCredentials: true })
             navigate('/home');
         } catch (error) {
             console.log('Could not finish match: ', error);
         }
+    }
+
+    const prepareAIPrompt = (stats) => {
+        console.log('Equipo: ', teamMatchStats);
+        console.log('Jugadores: ', playersMatchStats);
+        console.log('Porteros: ', goaliesMatchStats);
+        const aiPrompt = 'Eres un entrenador de hockey línea profesional, y sabes encontrtar las áreas a mejorar analizando las estadísticas de un partido.' +
+            'Te voy a proporcionar unos datos que corresponden a estadísticas recopiladas durante un partido. ' +
+            'Viendo esas estadísticas proporcioname las áreas a mejorar que consideres, para el equipo como conjunto y para cada jugador y portero, para trabajarlas en los entrenamientos de la siguiente semana. ' +
+            'Las primeras estadísticas que te proporciono son las del equipo como conjunto, lo siguiente son dos listas con las estadísticas de cada jugador y cada portero del partido, respectivamente. ' +
+            '**REGLAS**' +
+            '- Devuelve solo el JSON, sin texto extra.' +
+            '- Centrate solo en los campos que corresponden a las estadísticas del partido y en el id de cada jugador, si lo hubiera. Para las estadísticas no debes abrir ningún objeto dentro del que te he pasado.' +
+            '- No me devuelvas las estadisticas que te he pasado. Quiero que me devuelvas las áreas que tú consideres que haya que mejorar de cara al siguiente partido basándote en los 3 tipos de estadístcas que te he pasado' +
+            '- Las áreas a mejorar con personalizadas para cada jugador o portero.' +
+            'Puedes devolver el resultado en formato JSON.' +
+            `Estadísticas del equipo ${JSON.stringify(stats.teamMatchStats)}.` +
+            `Lista de estadísticas de jugadores ${JSON.stringify(stats.playersMatchStats)}.` +
+            `Lista de estadísticas de porteros ${JSON.stringify(stats.goaliesMatchStats)}.`
+        setPrompt(aiPrompt);
     }
 
     const selectPeriod = (period) => {
@@ -121,7 +159,11 @@ export default function StartMatch() {
                     <div id='overtime' className='matchPeriod' onClick={() => { selectPeriod('overtime') }}><p className='matchPeriodText' onClick={() => { selectPeriod('overtime') }}>OT</p></div>
                 </div>
                 <div id='finishMatchButtonDiv'>
-                    <button id='finishMatchButton' onClick={() => toggleUsaAIModal()}>FINALIZAR PARTIDO</button>
+                    <button id='finishMatchButton' onClick={async () => {
+                        const statsToUpdate = await prepareStatsToUpdate();
+                        prepareAIPrompt(statsToUpdate);
+                        toggleUseAIModal();
+                    }}>FINALIZAR PARTIDO</button>
                 </div>
                 <div id='matchInfoMainDiv'>
                     <div id='calledPlayersDiv'>
@@ -188,11 +230,15 @@ export default function StartMatch() {
                 {(useAIModal) &&
                     (
                         <UseAIModal
-                            onClose={toggleUsaAIModal}
+                            onClose={toggleUseAIModal}
                             onMatchFinished={finishMatch}
+                            teamMatchStats={teamMatchStats}
+                            playersMatchStats={playersMatchStats}
+                            goaliesMatchStats={goaliesMatchStats}
+                            prompt={prompt}
                         />
                     )}
-            </div>
+            </div >
         </>
     )
 }

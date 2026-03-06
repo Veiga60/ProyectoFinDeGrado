@@ -1,13 +1,13 @@
 import axios from 'axios'
 import '../style/UseAIModal.css'
 
-export default function UseAIModal({ onClose, onMatchFinished }) {
+export default function UseAIModal({ onClose, onMatchFinished, teamMatchStats, playersMatchStats, goaliesMatchStats, prompt }) {
 
     const SERVER_URL = 'http://localhost:8081';
 
     const getRecomendations = async () => {
         try {
-            const response = await axios.get(`${SERVER_URL}/ai/recomendations`, { withCredentials: true });
+            const response = await axios.post(`${SERVER_URL}/ai/recomendations`, { prompt: prompt }, { withCredentials: true });
             console.log(response.data);
         } catch (error) {
             console.log('Error al generar las recomendaciones: ', error);

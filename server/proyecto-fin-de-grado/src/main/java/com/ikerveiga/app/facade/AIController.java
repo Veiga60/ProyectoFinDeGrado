@@ -4,7 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ikerveiga.app.service.AIService;
@@ -20,10 +21,10 @@ public class AIController {
     }
 
     @Secured("ROLE_COACH")
-    @GetMapping("/ai/recomendations")
-    public ResponseEntity<String> getRecomendations() {
+    @PostMapping("/ai/recomendations")
+    public ResponseEntity<String> getRecomendations(@RequestBody String prompt) {
         try {
-            String response = aiService.getRecomendations("Hola");
+            String response = aiService.getRecomendations(prompt);
             System.out.println(response);
             return ResponseEntity.ok(response);
         } catch (RuntimeException e) {
