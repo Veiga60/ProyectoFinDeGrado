@@ -79,14 +79,14 @@ export default function StartMatchPlayer() {
                         'Content-Type': 'application/json'
                     }, withCredentials: true
                 });
-                navigate(`/matches/${matchId}/start_match`, { state: { matchEvents: matchEvents } });
+                navigate(`/matches/${matchId}/start_match`, { state: { matchEvents: matchEvents, matchPeriod: location.state.matchPeriod, playerStatsEdited: true } });
             } else {
                 const response = await axios.put(`${SERVER_URL}/matchStats/matches/${matchId}/goalies/${player.id}`, goalieMatchStatsBody, {
                     headers: {
                         'Content-Type': 'application/json'
                     }, withCredentials: true
                 });
-                navigate(`/matches/${matchId}/start_match`, { state: { matchEvents: matchEvents } });
+                navigate(`/matches/${matchId}/start_match`, { state: { matchEvents: matchEvents, matchPeriod: location.state.matchPeriod, playerStatsEdited: true } });
             }
         } catch (error) {
             console.log(`Error saving the stats of player: `, error);
@@ -292,7 +292,7 @@ export default function StartMatchPlayer() {
                             </>
                         )}
                     <button onClick={() => saveMatchStats(player)}>GUARDAR</button>
-                    <button onClick={() => navigate(`/matches/${matchId}/start_match`, { state: { matchPeriod: location.state.matchPeriod, matchEvents: matchEvents } })}>VOLVER</button>
+                    <button onClick={() => navigate(`/matches/${matchId}/start_match`, { state: { matchPeriod: location.state.matchPeriod, matchEvents: matchEvents, playerStatsEdited: false } })}>VOLVER</button>
                 </div>
             </div>
         </>

@@ -44,7 +44,7 @@ export default function StartMatchTeam() {
                     'Content-Type': 'application/json'
                 }, withCredentials: true
             });
-            navigate(`/matches/${matchId}/start_match`, { state: { matchPeriod: location.state.matchPeriod, matchEvents: location.state.matchEvents } });
+            navigate(`/matches/${matchId}/start_match`, { state: { matchPeriod: location.state.matchPeriod, matchEvents: location.state.matchEvents, teamStatsEdited: true } });
         } catch (error) {
             console.log(`Error saving the stats of player: `, error);
         }
@@ -162,6 +162,7 @@ export default function StartMatchTeam() {
                         </div>
                     </div>
                     <button onClick={() => saveMatchStats(matchId)}>GUARDAR</button>
+                    <button onClick={() => navigate(`/matches/${matchId}/start_match`, { state: { matchPeriod: location.state.matchPeriod, matchEvents: location.state.matchEvents, teamStatsEdited: false } })}>VOLVER</button>
                 </div>
             </div>
         </>

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import '../style/UseAIModal.css'
 
-export default function UseAIModal({ onClose, onMatchFinished, teamMatchStats, playersMatchStats, goaliesMatchStats, prompt }) {
+export default function UseAIModal({ onClose, onMatchFinished, prompt }) {
 
     const SERVER_URL = 'http://localhost:8081';
 

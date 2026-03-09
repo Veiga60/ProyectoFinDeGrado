@@ -10,9 +10,9 @@ services:
     healthcheck:
       test: curl --fail http://localhost:8081/health || exit 1
       interval: 40s
-      timeout: 90s
+      timeout: 180s
       retries: 3
-      start_period: 5s
+      start_period: 100s
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://database:3306/mhcdatabase
     volumes:

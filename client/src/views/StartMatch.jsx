@@ -48,8 +48,94 @@ export default function StartMatch() {
         }
     }
 
+    const fillTeamMatchStats = async () => {
+        const teamMatchStatsBody = {
+            matchResult: null,
+            bonusPoint: false,
+            goalsFor: 0,
+            goalsAgainst: 0,
+            powerPlayGoals: 0,
+            powerPlayNoGoals: 0,
+            penaltyKillGoals: 0,
+            penaltyKillNoGoals: 0,
+            oneVsZero: 0,
+            oneVsOne: 0,
+            twoVsOne: 0,
+            twoVsTwo: 0,
+            threeVsOne: 0,
+            threeVsTwo: 0
+        }
+
+        try {
+            await axios.put(`${SERVER_URL}/matchStats/matches/${matchId}/team`, teamMatchStatsBody, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }, withCredentials: true
+            });
+        } catch (error) {
+            console.log('Error actualizando estadísticas del equipo en el partido: ', error);
+        }
+    }
+
+    const fillPlayersMatchStats = async () => {
+        for (const player of players) {
+            if (player.playerType == 'RINK_PLAYER') {
+                const playerMatchStatsBody = {
+                    goals: matchEvents.filter((matchEvent) => (matchEvent.goal?.scorer) ? (matchEvent.goal.scorer.id === player.id) : (0)).length || 0,
+                    assists: matchEvents.filter((matchEvent) => (matchEvent.goal?.assister) ? (matchEvent.goal.assister.id === player.id) : (0)).length || 0,
+                    plusMinus: 0,
+                    shots: 0,
+                    goodPasses: 0,
+                    badPasses: 0,
+                    recoveredPucks: 0,
+                    lostPucks: 0,
+                    penaltyMins: matchEvents?.filter((matchEvent) => (matchEvent.penalty?.player?.id == player.id)).reduce((accumulator, playerPenalty) => accumulator + Number(playerPenalty.penalty.penaltyTime), 0),
+                    penaltyShotGoals: 0,
+                    penaltyShotMisses: 0
+                }
+
+                try {
+                    await axios.put(`${SERVER_URL}/matchStats/matches/${matchId}/players/${player.id}`, playerMatchStatsBody, {
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }, withCredentials: true
+                    });
+                } catch (error) {
+                    console.log('Error actualizando estadísticas de jugador en el partido: ', error);
+                }
+
+            } else if (player.playerType == 'GOALIE') {
+                const goalieMatchStatsBody = {
+                    shotsReceived: 0,
+                    goalsReceived: 0,
+                    penaltyMins: matchEvents?.filter((matchEvent) => (matchEvent.penalty?.player?.id == player.id)).reduce((accumulator, playerPenalty) => accumulator + Number(playerPenalty.penalty.penaltyTime), 0),
+                    penaltyShotGoals: 0,
+                    penaltyShotSaves: 0
+                }
+
+                try {
+                    await axios.put(`${SERVER_URL}/matchStats/matches/${matchId}/goalies/${player.id}`, goalieMatchStatsBody, {
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }, withCredentials: true
+                    });
+                } catch (error) {
+                    console.log('Error actualizando estadísticas de portero en el partido: ', error);
+                }
+            }
+        }
+    }
+
     const prepareStatsToUpdate = async () => {
         try {
+            if (location.state.playerStatsEdited == false) {
+                await fillPlayersMatchStats();
+            }
+
+            if (location.state.teamStatsEdited == false) {
+                await fillTeamMatchStats();
+            }
+
             const playersMatchStatsResponse = await axios.get(`${SERVER_URL}/playersMatchStats/matches/${matchId}`, { withCredentials: true });
             const goaliesMatchStatsResponse = await axios.get(`${SERVER_URL}/goaliesMatchStats/matches/${matchId}`, { withCredentials: true });
             let teamMatchStatsResponse = await axios.get(`${SERVER_URL}/matchStats/matches/${matchId}/team`, { withCredentials: true });
@@ -89,7 +175,6 @@ export default function StartMatch() {
                     await setBonusPointTeam(match?.localTeam);
                 }
             }
-
             return { teamMatchStats: teamMatchStatsResponse.data, playersMatchStats: playersMatchStatsResponse.data, goaliesMatchStats: goaliesMatchStatsResponse.data }
         } catch (error) {
             console.log('Error preparando las estadísticas a actualizar: ', error);
