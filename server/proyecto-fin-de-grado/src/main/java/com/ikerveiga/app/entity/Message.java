@@ -3,6 +3,8 @@ package com.ikerveiga.app.entity;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import com.ikerveiga.app.dto.MessageDTO;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -89,6 +91,18 @@ public class Message {
 
     public void setDebate(Debate debate) {
         this.debate = debate;
+    }
+
+    public MessageDTO toDTO() {
+        MessageDTO messageDTO = new MessageDTO(this.id, this.date, this.time, this.user.toDTO(), this.debate.toDTO());
+
+        return messageDTO;
+    }
+
+    public MessageDTO toDTOWithoutDebate() {
+        MessageDTO messageDTO = new MessageDTO(this.id, this.date, this.time, this.user.toDTO());
+
+        return messageDTO;
     }
 
 }

@@ -1,6 +1,10 @@
 package com.ikerveiga.app.entity;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import com.ikerveiga.app.dto.DebateDTO;
+import com.ikerveiga.app.dto.MessageDTO;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -58,5 +62,16 @@ public class Debate {
 
     public void setMessages(List<Message> messages) {
         this.messages = messages;
+    }
+
+    public DebateDTO toDTO() {
+        List<MessageDTO> messagesDTO = new ArrayList<>();
+        for (Message message : this.getMessages()) {
+            messagesDTO.add(message.toDTOWithoutDebate());
+        }
+
+        DebateDTO debateDTO = new DebateDTO(this.id, this.title, messagesDTO);
+
+        return debateDTO;
     }
 }
