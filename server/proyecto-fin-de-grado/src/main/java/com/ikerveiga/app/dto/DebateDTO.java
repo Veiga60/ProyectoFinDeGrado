@@ -2,20 +2,25 @@ package com.ikerveiga.app.dto;
 
 import java.util.List;
 
+import com.ikerveiga.app.enums.DebateCategory;
+
 public class DebateDTO {
 
     private long id;
     private String title;
+    private DebateCategory category;
     List<MessageDTO> messages;
 
-    public DebateDTO(long id, String title, List<MessageDTO> messages) {
+    public DebateDTO(long id, String title, DebateCategory category, List<MessageDTO> messages) {
         this.id = id;
         this.title = title;
+        this.category = category;
         this.messages = messages;
     }
 
-    public DebateDTO(String title, List<MessageDTO> messages) {
+    public DebateDTO(String title, DebateCategory category, List<MessageDTO> messages) {
         this.title = title;
+        this.category = category;
         this.messages = messages;
     }
 
@@ -29,6 +34,14 @@ public class DebateDTO {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public DebateCategory getCategory() {
+        return this.category;
+    }
+
+    public void setCategory(DebateCategory category) {
+        this.category = category;
     }
 
     public List<MessageDTO> getMessages() {

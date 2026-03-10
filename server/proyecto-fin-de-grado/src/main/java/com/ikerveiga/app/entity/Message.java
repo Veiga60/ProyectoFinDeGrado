@@ -24,6 +24,9 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(name = "message_text", nullable = false, unique = false)
+    String text;
+
     @Column(name = "message_date", nullable = false, unique = false)
     private LocalDate date;
 
@@ -42,15 +45,17 @@ public class Message {
 
     }
 
-    public Message(long id, LocalDate date, LocalTime time, User user, Debate debate) {
+    public Message(long id, String text, LocalDate date, LocalTime time, User user, Debate debate) {
         this.id = id;
+        this.text = text;
         this.date = date;
         this.time = time;
         this.user = user;
         this.debate = debate;
     }
 
-    public Message(LocalDate date, LocalTime time, User user, Debate debate) {
+    public Message(String text, LocalDate date, LocalTime time, User user, Debate debate) {
+        this.text = text;
         this.date = date;
         this.time = time;
         this.user = user;
@@ -59,6 +64,14 @@ public class Message {
 
     public long getId() {
         return this.id;
+    }
+
+    public String getText() {
+        return this.text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
     }
 
     public LocalDate getDate() {
@@ -94,13 +107,14 @@ public class Message {
     }
 
     public MessageDTO toDTO() {
-        MessageDTO messageDTO = new MessageDTO(this.id, this.date, this.time, this.user.toDTO(), this.debate.toDTO());
+        MessageDTO messageDTO = new MessageDTO(this.id, this.text, this.date, this.time, this.user.toDTO(),
+                this.debate.toDTO());
 
         return messageDTO;
     }
 
     public MessageDTO toDTOWithoutDebate() {
-        MessageDTO messageDTO = new MessageDTO(this.id, this.date, this.time, this.user.toDTO());
+        MessageDTO messageDTO = new MessageDTO(this.id, this.text, this.date, this.time, this.user.toDTO());
 
         return messageDTO;
     }

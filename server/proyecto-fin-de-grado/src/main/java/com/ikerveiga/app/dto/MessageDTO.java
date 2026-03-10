@@ -6,27 +6,31 @@ import java.time.LocalTime;
 public class MessageDTO {
 
     private long id;
+    private String text;
     private LocalDate date;
     private LocalTime time;
     private UserDTO user;
     private DebateDTO debate;
 
-    public MessageDTO(long id, LocalDate date, LocalTime time, UserDTO user, DebateDTO debate) {
+    public MessageDTO(long id, String text, LocalDate date, LocalTime time, UserDTO user, DebateDTO debate) {
         this.id = id;
+        this.text = text;
         this.date = date;
         this.time = time;
         this.user = user;
         this.debate = debate;
     }
 
-    public MessageDTO(long id, LocalDate date, LocalTime time, UserDTO user) {
+    public MessageDTO(long id, String text, LocalDate date, LocalTime time, UserDTO user) {
         this.id = id;
+        this.text = text;
         this.date = date;
         this.time = time;
         this.user = user;
     }
 
-    public MessageDTO(LocalDate date, LocalTime time, UserDTO user, DebateDTO debate) {
+    public MessageDTO(String text, LocalDate date, LocalTime time, UserDTO user, DebateDTO debate) {
+        this.text = text;
         this.date = date;
         this.time = time;
         this.user = user;
@@ -35,6 +39,14 @@ public class MessageDTO {
 
     public long getId() {
         return this.id;
+    }
+
+    public String getText() {
+        return this.text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
     }
 
     public LocalDate getDate() {

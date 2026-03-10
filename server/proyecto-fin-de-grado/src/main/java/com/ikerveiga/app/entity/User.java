@@ -41,6 +41,10 @@ public class User {
         this.player = player;
     }
 
+    public User(String userName) {
+        this.userName = userName;
+    }
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
