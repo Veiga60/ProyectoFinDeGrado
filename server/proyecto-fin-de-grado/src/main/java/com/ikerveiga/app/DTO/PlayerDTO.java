@@ -179,7 +179,7 @@ public class PlayerDTO {
         return this.playerStats;
     }
 
-    public void setStatsDTO(PlayerStatsDTO playerStats) {
+    public void setPlayerStatsDTO(PlayerStatsDTO playerStats) {
         this.playerStats = playerStats;
     }
 

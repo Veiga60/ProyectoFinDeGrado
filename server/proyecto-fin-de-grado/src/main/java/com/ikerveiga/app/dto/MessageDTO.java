@@ -12,6 +12,10 @@ public class MessageDTO {
     private UserDTO user;
     private DebateDTO debate;
 
+    public MessageDTO() {
+
+    }
+
     public MessageDTO(long id, String text, LocalDate date, LocalTime time, UserDTO user, DebateDTO debate) {
         this.id = id;
         this.text = text;
@@ -35,6 +39,11 @@ public class MessageDTO {
         this.time = time;
         this.user = user;
         this.debate = debate;
+    }
+
+    public MessageDTO(String text, UserDTO user) {
+        this.text = text;
+        this.user = user;
     }
 
     public long getId() {

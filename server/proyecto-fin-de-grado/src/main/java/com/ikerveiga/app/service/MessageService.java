@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.ikerveiga.app.dao.DebateRepository;
 import com.ikerveiga.app.dao.MessageRepository;
+import com.ikerveiga.app.dao.UserRepository;
 import com.ikerveiga.app.entity.Debate;
 import com.ikerveiga.app.entity.Message;
 import com.ikerveiga.app.entity.User;
@@ -18,21 +19,24 @@ public class MessageService {
 
     private MessageRepository messageDAO;
     private DebateRepository debateDAO;
+    private UserRepository userDAO;
 
     @Autowired
-    public MessageService(MessageRepository messageDAO, DebateRepository debateDAO) {
+    public MessageService(MessageRepository messageDAO, DebateRepository debateDAO, UserRepository userDAO) {
         this.messageDAO = messageDAO;
         this.debateDAO = debateDAO;
+        this.userDAO = userDAO;
     }
 
-    public void createMessage(String text, LocalDate date, LocalTime time, User user, long debateId) {
+    public void createMessage(String text, String userEmail, long debateId) {
         Debate debate = debateDAO.findById(debateId);
+        User user = userDAO.findByEmail(userEmail);
 
         if (debate == null) {
             throw new RuntimeException("Debate does not exist");
         }
 
-        Message message = new Message(text, date, time, user, debate);
+        Message message = new Message(text, LocalDate.now(), LocalTime.now(), user, debate);
 
         messageDAO.save(message);
     }

@@ -1,5 +1,6 @@
 package com.ikerveiga.app.entity;
 
+import com.ikerveiga.app.dto.PlayerDTO;
 import com.ikerveiga.app.dto.UserDTO;
 
 import jakarta.persistence.*;
@@ -41,7 +42,8 @@ public class User {
         this.player = player;
     }
 
-    public User(String userName) {
+    public User(long id, String userName) {
+        this.id = id;
         this.userName = userName;
     }
 
@@ -82,8 +84,14 @@ public class User {
     }
 
     public UserDTO toDTO() {
+        PlayerDTO playerDTO = null;
+
+        if (this.player != null) {
+            playerDTO = this.player.toDTOWithoutStats();
+        }
+
         UserDTO userDTO = new UserDTO(this.id, this.userName, this.email, this.password, this.isCoach,
-                this.player.toDTOWithoutStats());
+                playerDTO);
 
         return userDTO;
     }

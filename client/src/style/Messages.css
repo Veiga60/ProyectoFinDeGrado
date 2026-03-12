@@ -1,0 +1,17 @@
+textarea {
+    background-color: white;
+    width: 100%;
+    border: 1px solid rgb(7, 78, 200);
+    color: black;
+    font-family: Inria Sans;
+}
+
+#messageDiv {
+    background-color: white;
+    border: 1px solid rgb(7, 78, 200);
+}
+
+#messageText {
+    color: black;
+    font-family: Inria Sans;
+}
