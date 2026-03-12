@@ -2,6 +2,8 @@ import Header from '../components/Header.jsx'
 import { useLocation, useParams } from 'react-router-dom'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import CreateDebateModal from '../components/CreateDebateModal.jsx'
+import '../style/ForumDebates.css'
 
 export default function ForumDebates() {
 
@@ -9,11 +11,19 @@ export default function ForumDebates() {
     const location = useLocation();
     const { category } = useParams();
 
+    const [createDebateModal, setCreateDebateModal] = useState(false);
+
     const [debates, setDebates] = useState([]);
+    const [title, setTitle] = useState();
+
+    const toggleCreateDebateModal = () => {
+        setCreateDebateModal(!createDebateModal);
+    }
 
     const getDebates = async () => {
         try {
-            const response = await axios.get(`${SERVER_URL}/debates/categories/${category}`, { withCredentials: true })
+            const response = await axios.get(`${SERVER_URL}/debates/categories/${String(category).toUpperCase()}`, { withCredentials: true })
+            console.log('Debates: ', response.data);
             setDebates(response.data);
         } catch (error) {
             console.log('Error fetching debates: ', error);
@@ -22,7 +32,18 @@ export default function ForumDebates() {
 
     const createDebate = async () => {
         try {
-            await axios.post(`${SERVER_URL}/debates`, { withCredentials: true })
+            await axios.post(`${SERVER_URL}/debates`,
+                {
+                    'title': title,
+                    'category': String(category).toUpperCase()
+                },
+                {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+
+                    withCredentials: true
+                })
         } catch (error) {
             console.log('Error creating debate: ', error)
         }
@@ -42,20 +63,30 @@ export default function ForumDebates() {
                 <div>
                     {(location.state.isCoach) &&
                         (
-                            <button>CREAR DEBATE</button>
+                            <button onClick={toggleCreateDebateModal}>CREAR DEBATE</button>
                         )
                     }
                 </div>
-                <div>
+                <div id='debatesDiv'>
                     {
                         debates.map((debate) => {
-                            <div key={debate.id}>
-                                {debate.title}
-                            </div>
+                            return (
+                                <div key={debate.id} id='debateDiv'>
+                                    <p id='debateText'>{debate.title}</p>
+                                </div>
+                            )
                         })
                     }
                 </div>
             </div>
+            {(createDebateModal) &&
+                (
+                    <CreateDebateModal
+                        createDebate={createDebate}
+                        onClose={toggleCreateDebateModal}
+                        setTitle={setTitle}
+                    />
+                )}
         </>
     )
 }

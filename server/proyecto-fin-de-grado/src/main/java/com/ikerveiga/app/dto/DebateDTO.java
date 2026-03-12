@@ -1,5 +1,6 @@
 package com.ikerveiga.app.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.ikerveiga.app.enums.DebateCategory;
@@ -10,6 +11,10 @@ public class DebateDTO {
     private String title;
     private DebateCategory category;
     List<MessageDTO> messages;
+
+    public DebateDTO() {
+
+    }
 
     public DebateDTO(long id, String title, DebateCategory category, List<MessageDTO> messages) {
         this.id = id;
@@ -22,6 +27,12 @@ public class DebateDTO {
         this.title = title;
         this.category = category;
         this.messages = messages;
+    }
+
+    public DebateDTO(String title, DebateCategory category) {
+        this.title = title;
+        this.category = category;
+        this.messages = new ArrayList<>();
     }
 
     public long getId() {

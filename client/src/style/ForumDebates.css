@@ -1,0 +1,20 @@
+#debateText {
+    color: black;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: larger;
+}
+
+#debatesDiv {
+    width: 100%;
+}
+
+#debateDiv {
+    background-color: white;
+    border: 2px solid rgb(7, 78, 200);
+    border-radius: 10px;
+}
+
+#debateDiv:hover {
+    cursor: pointer;
+}

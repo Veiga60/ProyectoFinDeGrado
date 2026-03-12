@@ -33,8 +33,8 @@ function Signup() {
             )
 
             setName('');
-            setName('');
-            setName('');
+            setEmail('');
+            setPassword('');
             setIsCoach(false);
 
             navigate('/');
