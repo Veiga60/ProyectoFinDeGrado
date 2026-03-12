@@ -30,7 +30,7 @@ public class Debate {
     private String title;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "debate_category", nullable = false, unique = true)
+    @Column(name = "debate_category", nullable = false, unique = false)
     private DebateCategory category;
 
     @OneToMany(mappedBy = "debate")

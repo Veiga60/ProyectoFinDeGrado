@@ -9,7 +9,7 @@ export default function CreateDebateModal({ createDebate, onClose, setTitle }) {
                         <p id='createDebateText'>NUEVO DEBATE</p>
                     </div>
                     <input type="text" placeholder='Título' id="debateTitle" onChange={(e) => { setTitle(e.target.value) }} />
-                    <button onClick={() => [createDebate(), onClose(), window.location.reload()]}>CREAR</button>
+                    <button onClick={async () => [await createDebate(), await onClose()]}>CREAR</button>
                     <button onClick={() => onClose()}>CERRAR</button>
                 </div>
             </div >

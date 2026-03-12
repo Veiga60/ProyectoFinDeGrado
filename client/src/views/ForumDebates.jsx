@@ -17,8 +17,12 @@ export default function ForumDebates() {
     const [debates, setDebates] = useState([]);
     const [title, setTitle] = useState();
 
-    const toggleCreateDebateModal = () => {
-        setCreateDebateModal(!createDebateModal);
+    const toggleCreateDebateModal = async () => {
+        await setCreateDebateModal(!createDebateModal);
+        if (createDebateModal == true) {
+            window.location.reload();
+        }
+
     }
 
     const getDebates = async () => {
