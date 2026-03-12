@@ -17,6 +17,7 @@ import StartMatchTeam from './views/StartMatchTeam.jsx'
 import MatchEvents from './views/MatchEvents.jsx'
 import Forum from './views/Forum.jsx'
 import ForumDebates from './views/ForumDebates.jsx'
+import Messages from './views/Messages.jsx'
 import Unauthorized from './views/Unauthorized.jsx'
 import './style/App.css'
 
@@ -40,6 +41,7 @@ export default function App() {
         <Route path="/matches/:matchId/incidences" element={<MatchEvents />} />
         <Route path="/forum" element={<Forum />} />
         <Route path="/forum/categories/:category" element={<ForumDebates />} />
+        <Route path="/forum/categories/:category/:debateId" element={<Messages />} />
         <Route path="/error/unauthorized" element={<Unauthorized />} />
       </Routes>
     </BrowserRouter>

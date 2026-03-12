@@ -1,5 +1,5 @@
 import Header from '../components/Header.jsx'
-import { useLocation, useParams } from 'react-router-dom'
+import { useLocation, useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import CreateDebateModal from '../components/CreateDebateModal.jsx'
@@ -10,6 +10,7 @@ export default function ForumDebates() {
     const SERVER_URL = 'http://localhost:8081'
     const location = useLocation();
     const { category } = useParams();
+    const navigate = useNavigate();
 
     const [createDebateModal, setCreateDebateModal] = useState(false);
 
@@ -23,7 +24,6 @@ export default function ForumDebates() {
     const getDebates = async () => {
         try {
             const response = await axios.get(`${SERVER_URL}/debates/categories/${String(category).toUpperCase()}`, { withCredentials: true })
-            console.log('Debates: ', response.data);
             setDebates(response.data);
         } catch (error) {
             console.log('Error fetching debates: ', error);
@@ -71,14 +71,16 @@ export default function ForumDebates() {
                     {
                         debates.map((debate) => {
                             return (
-                                <div key={debate.id} id='debateDiv'>
+                                <div key={debate.id} id='debateDiv' onClick={() => navigate(`/forum/categories/${category}/${debate.id}`, {
+                                    state: { authenticatedUserPlayerId: location.state.authenticatedUserPlayerId, isCoach: location.state.isCoach }
+                                })}>
                                     <p id='debateText'>{debate.title}</p>
                                 </div>
                             )
                         })
                     }
                 </div>
-            </div>
+            </div >
             {(createDebateModal) &&
                 (
                     <CreateDebateModal
@@ -86,7 +88,8 @@ export default function ForumDebates() {
                         onClose={toggleCreateDebateModal}
                         setTitle={setTitle}
                     />
-                )}
+                )
+            }
         </>
     )
 }
