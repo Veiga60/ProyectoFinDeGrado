@@ -11,6 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.ikerveiga.app.entity.AuthorizedEmail;
+import com.ikerveiga.app.entity.OAuth2User;
 import com.ikerveiga.app.entity.User;
 
 import jakarta.servlet.http.HttpServletResponse;
@@ -18,6 +19,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import com.ikerveiga.app.JWT.JwtUtil;
 import com.ikerveiga.app.cookies.CookiesService;
 import com.ikerveiga.app.dao.AuthorizedEmailRepository;
+import com.ikerveiga.app.dao.OAuth2UserRepository;
 import com.ikerveiga.app.dao.UserRepository;
 import com.ikerveiga.app.dto.PlayerDTO;
 import com.ikerveiga.app.CustomUserDetails;
@@ -26,6 +28,7 @@ import com.ikerveiga.app.CustomUserDetails;
 public class UserService {
 
     UserRepository userDAO;
+    OAuth2UserRepository oAuth2UserDAO;
     JwtUtil jwtUtil;
     AuthenticationManager authManager;
     PasswordEncoder passwordEncoder;
@@ -33,10 +36,12 @@ public class UserService {
     AuthorizedEmailRepository authorizedEmailDAO;
 
     @Autowired
-    public UserService(UserRepository userDAO, JwtUtil jwtUtil, AuthenticationManager authManager,
+    public UserService(UserRepository userDAO, OAuth2UserRepository oAuth2UserDAO, JwtUtil jwtUtil,
+            AuthenticationManager authManager,
             PasswordEncoder passwordEncoder, CookiesService cookiesService,
             AuthorizedEmailRepository authorizedEmailDAO) {
         this.userDAO = userDAO;
+        this.oAuth2UserDAO = oAuth2UserDAO;
         this.jwtUtil = jwtUtil;
         this.authManager = authManager;
         this.passwordEncoder = passwordEncoder;
@@ -105,7 +110,12 @@ public class UserService {
         User user = userDAO.findByEmail(email);
 
         if (user == null) {
-            throw new RuntimeException("Usuario no registrado");
+            OAuth2User oAuth2User = oAuth2UserDAO.findByEmail(email);
+            if (oAuth2User == null) {
+                throw new RuntimeException("Usuario no registrado");
+            }
+
+            oAuth2UserDAO.setIsCoach(isCoach, email);
         }
 
         userDAO.setIsCoach(isCoach, email);

@@ -41,6 +41,7 @@ public class OAuth2Service {
             if (authorizedEmail != null) {
                 OAuth2User user = new OAuth2User(username, email, false, authorizedEmail.getPlayer());
                 userDAO.save(user);
+                existingUser = user;
             } else {
                 throw new RuntimeException("Usuario no autorizado");
             }

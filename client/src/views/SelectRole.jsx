@@ -43,7 +43,7 @@ export default function SelectRole() {
                 <div className="option" onClick={() => setCoachRole(true)}>
                     <img id='hockeyCoachPhoto' src={coach} alt="Coach" /><p className="selectText">ENTRENADOR</p>
                 </div>
-                <div className="option" onClick={() => navigate("/matches")}>
+                <div className="option" onClick={() => navigate("/home")}>
                     <img id='hockeyPlayerPhoto' src={player} alt="Player" /><p id='playerText' className="selectText">JUGADOR</p>
                 </div>
             </div>
