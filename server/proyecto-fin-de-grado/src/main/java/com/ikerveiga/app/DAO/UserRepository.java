@@ -16,7 +16,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     User findByEmail(String email);
 
-    User findByUserName(String userName);
+    User findByUsername(String username);
 
     @Query("UPDATE User a SET a.isCoach = :isCoach WHERE a.email = :email")
     @Modifying

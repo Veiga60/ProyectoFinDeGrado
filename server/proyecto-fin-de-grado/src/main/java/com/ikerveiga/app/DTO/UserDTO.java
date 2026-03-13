@@ -2,22 +2,37 @@ package com.ikerveiga.app.dto;
 
 public class UserDTO {
 
-    private long id;
-    private String userName;
-    private String email;
+    protected long id;
+    protected String username;
+    protected String email;
     private String password;
-    private boolean isCoach;
-    private PlayerDTO playerDTO;
+    protected boolean isCoach;
+    protected PlayerDTO playerDTO;
 
     public UserDTO() {
 
     }
 
-    public UserDTO(long id, String userName, String email, String password, boolean isCoach, PlayerDTO playerDTO) {
+    public UserDTO(long id, String username, String email, String password, boolean isCoach, PlayerDTO playerDTO) {
         this.id = id;
-        this.userName = userName;
+        this.username = username;
         this.email = email;
         this.password = password;
+        this.isCoach = isCoach;
+        this.playerDTO = playerDTO;
+    }
+
+    public UserDTO(long id, String username, String email, boolean isCoach, PlayerDTO playerDTO) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.isCoach = isCoach;
+        this.playerDTO = playerDTO;
+    }
+
+    public UserDTO(String username, String email, boolean isCoach, PlayerDTO playerDTO) {
+        this.username = username;
+        this.email = email;
         this.isCoach = isCoach;
         this.playerDTO = playerDTO;
     }
@@ -26,12 +41,12 @@ public class UserDTO {
         return this.id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getEmail() {

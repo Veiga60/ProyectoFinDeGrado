@@ -41,7 +41,7 @@ public class UserController {
     @PostMapping("/users")
     public ResponseEntity<Void> signup(@RequestBody UserDTO userDTO) {
         try {
-            userService.signup(userDTO.getUserName(), userDTO.getEmail(), userDTO.getPassword(), userDTO.getIsCoach());
+            userService.signup(userDTO.getUsername(), userDTO.getEmail(), userDTO.getPassword(), userDTO.getIsCoach());
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (RuntimeException e) {
             if (e.getMessage().equals("User already exists")) {
@@ -66,7 +66,7 @@ public class UserController {
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody UserDTO userDTO, HttpServletResponse response) {
         try {
-            String token = userService.login(userDTO.getUserName(), userDTO.getPassword(), response);
+            String token = userService.login(userDTO.getUsername(), userDTO.getPassword(), response);
             return ResponseEntity.ok(token);
         } catch (RuntimeException e) {
             if (e.getMessage().equals("User does not exist")) {

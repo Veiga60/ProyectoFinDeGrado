@@ -7,52 +7,68 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Users")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class User {
 
     @Id
     @Column(name = "user_id", nullable = false, unique = true)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    protected long id;
 
     @Column(name = "user_Name", nullable = false, unique = true)
-    private String userName;
+    protected String username;
 
     @Column(name = "user_email", nullable = false, unique = true)
-    private String email;
+    protected String email;
 
     @Column(name = "user_password", nullable = true, unique = false)
     private String password;
 
     @Column(name = "user_isCoach", nullable = false, unique = false)
-    private boolean isCoach;
+    protected boolean isCoach;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "player_id", referencedColumnName = "player_id")
-    private Player player;
+    protected Player player;
 
     public User() {
 
     }
 
-    public User(String userName, String email, String password, boolean isCoach, Player player) {
-        this.userName = userName;
+    public User(String username, String email, String password, boolean isCoach, Player player) {
+        this.username = username;
         this.email = email;
         this.password = password;
         this.isCoach = isCoach;
         this.player = player;
     }
 
-    public User(long id, String userName) {
+    public User(long id, String username) {
         this.id = id;
-        this.userName = userName;
+        this.username = username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public User(long id, String username, String email, boolean isCoach, Player player) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.isCoach = isCoach;
+        this.player = player;
     }
 
-    public String getUserName() {
-        return this.userName;
+    public User(String username, String email, boolean isCoach, Player player) {
+        this.username = username;
+        this.email = email;
+        this.isCoach = isCoach;
+        this.player = player;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getUsername() {
+        return this.username;
     }
 
     public void setEmail(String email) {
@@ -90,7 +106,7 @@ public class User {
             playerDTO = this.player.toDTOWithoutStats();
         }
 
-        UserDTO userDTO = new UserDTO(this.id, this.userName, this.email, this.password, this.isCoach,
+        UserDTO userDTO = new UserDTO(this.id, this.username, this.email, this.password, this.isCoach,
                 playerDTO);
 
         return userDTO;

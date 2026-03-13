@@ -37,6 +37,8 @@ public class MessageController {
         } catch (RuntimeException e) {
             if (e.getMessage().equals("Debate does not exist")) {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            } else if (e.getMessage().equals("User not registered")) {
+                return new ResponseEntity<>(HttpStatus.FORBIDDEN);
             } else {
                 return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             }

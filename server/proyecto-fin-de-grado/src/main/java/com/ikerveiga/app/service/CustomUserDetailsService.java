@@ -43,7 +43,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         }
 
         return new CustomUserDetails(
-                user.getUserName(),
+                user.getUsername(),
                 user.getEmail(),
                 password,
                 user.getIsCoach(),
@@ -73,7 +73,7 @@ public class CustomUserDetailsService implements UserDetailsService {
             }
 
             return new CustomUserDetails(
-                    user.getUserName(),
+                    user.getUsername(),
                     user.getEmail(),
                     user.getPassword(),
                     user.getIsCoach(),
