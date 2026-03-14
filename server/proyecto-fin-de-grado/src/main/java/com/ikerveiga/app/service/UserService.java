@@ -83,7 +83,7 @@ public class UserService {
     }
 
     public String login(String username, String password, HttpServletResponse response) {
-        User user = userDAO.findByUserName(username);
+        User user = userDAO.findByUsername(username);
         if (user == null) {
             throw new RuntimeException("User does not exist");
         }

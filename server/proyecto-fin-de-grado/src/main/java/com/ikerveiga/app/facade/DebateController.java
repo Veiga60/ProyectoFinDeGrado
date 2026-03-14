@@ -55,7 +55,11 @@ public class DebateController {
 
             return ResponseEntity.ok(debatesDTO);
         } catch (RuntimeException e) {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            if (e.getMessage().equals("Category not found")) {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            } else {
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
         }
     }
 }

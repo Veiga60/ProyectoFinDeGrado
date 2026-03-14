@@ -18,7 +18,7 @@ export default function Login() {
         try {
             const response = await axios.post(`${SERVER_URL}/login`,
                 {
-                    userName: username,
+                    username: username,
                     password: password
                 },
                 {

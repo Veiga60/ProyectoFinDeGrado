@@ -1,6 +1,7 @@
 package com.ikerveiga.app.service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,11 @@ public class DebateService {
     }
 
     public List<Debate> getDebatesOfCategory(DebateCategory category) {
+
+        if (!Arrays.asList(DebateCategory.values()).contains(category)) {
+            throw new RuntimeException("Category not found");
+        }
+
         List<Debate> debates = debateDAO.findByCategory(category);
 
         return debates;

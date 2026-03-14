@@ -10,7 +10,6 @@ import com.ikerveiga.app.CustomUserDetails;
 import com.ikerveiga.app.dao.OAuth2UserRepository;
 import com.ikerveiga.app.dao.UserRepository;
 import com.ikerveiga.app.dto.PlayerDTO;
-import com.ikerveiga.app.entity.OAuth2User;
 import com.ikerveiga.app.entity.User;
 
 import io.jsonwebtoken.lang.Collections;
@@ -29,7 +28,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userDAO.findByUserName(username);
+        User user = userDAO.findByUsername(username);
         if (user == null) {
             throw new UsernameNotFoundException("Usuario con nombre " + username + " no encontrado.");
         }
@@ -54,47 +53,31 @@ public class CustomUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByEmail(String email) throws UsernameNotFoundException {
         User user = userDAO.findByEmail(email);
 
-        OAuth2User oAuth2user = null;
         if (user == null) {
-            oAuth2user = oAuth2UserDAO.findByEmail(email);
-        }
-
-        if (user == null && oAuth2user == null) {
             throw new UsernameNotFoundException("Usuario con nombre " + email + " no encontrado.");
         }
 
         PlayerDTO playerDTO;
+        String password;
 
-        if (user != null) {
-            if (user.getPlayer() != null) {
-                playerDTO = user.getPlayer().toDTOWithoutStatsAndCalls();
-            } else {
-                playerDTO = null;
-            }
-
-            return new CustomUserDetails(
-                    user.getUsername(),
-                    user.getEmail(),
-                    user.getPassword(),
-                    user.getIsCoach(),
-                    playerDTO,
-                    Collections.emptyList());
+        if (user.getPassword() != null) {
+            password = user.getPassword();
         } else {
-            if (oAuth2user.getPlayer() != null) {
-                playerDTO = oAuth2user.getPlayer().toDTOWithoutStatsAndCalls();
-            } else {
-                playerDTO = null;
-            }
-
-            return new CustomUserDetails(
-                    oAuth2user.getUsername(),
-                    oAuth2user.getEmail(),
-                    "",
-                    oAuth2user.getIsCoach(),
-                    playerDTO,
-                    Collections.emptyList());
+            password = "";
         }
 
-    }
+        if (user.getPlayer() != null) {
+            playerDTO = user.getPlayer().toDTOWithoutStatsAndCalls();
+        } else {
+            playerDTO = null;
+        }
 
+        return new CustomUserDetails(
+                user.getUsername(),
+                user.getEmail(),
+                password,
+                user.getIsCoach(),
+                playerDTO,
+                Collections.emptyList());
+    }
 }
