@@ -1,0 +1,10 @@
+#ordersMainDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playerOrdersTab {
+    width: 100%;
+    max-height: 60vh;
+}

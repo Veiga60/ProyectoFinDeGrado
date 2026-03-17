@@ -18,6 +18,7 @@
     padding: 6px 12px;
     cursor: pointer;
     background-color: rgb(7, 78, 200);
+    filter: brightness(0.6);
     color: white;
     border-radius: 5px 5px 0 0;
     border: 1px solid rgb(7, 78, 200);
@@ -26,6 +27,7 @@
 .react-tabs__tab--selected {
     background: #fff;
     border: 1px solid rgb(7, 78, 200);
+    filter: brightness(1);
     color: rgb(7, 78, 200);
     border-radius: 5px 5px 0 0;
 }

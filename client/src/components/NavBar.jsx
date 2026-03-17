@@ -37,6 +37,9 @@ export default function NavBar({ authenticatedUserPlayerId, isCoach }) {
             <div id="callsNavDiv" className="navbarSectionDiv" onClick={() => navigate('/forum', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
                 <p id="callsNavText" className="navbarText">FORO</p>
             </div>
+            <div id="callsNavDiv" className="navbarSectionDiv" onClick={() => navigate('/orders', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
+                <p id="callsNavText" className="navbarText">PEDIDOS</p>
+            </div>
             <div id='logoutButtonDiv' onClick={() => logout()}>
                 <img id='logoutImage' src={logoutDoor} alt="Logout" />
             </div>
