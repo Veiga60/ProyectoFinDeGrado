@@ -1,29 +1,28 @@
 package com.ikerveiga.app.entity;
 
 import com.ikerveiga.app.dto.WheelOrderDTO;
-import com.ikerveiga.app.enums.WheelHardness;
-import com.ikerveiga.app.enums.WheelModel;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "wheel_orders")
 public class WheelOrder extends PlayerOrder {
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "wheel_model", nullable = false, unique = false)
+    @ManyToOne
+    @JoinColumn(name = "wheel_model_id", nullable = false, unique = false)
     private WheelModel model;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "wheel_hardness", nullable = false, unique = false)
+    @ManyToOne
+    @JoinColumn(name = "wheel_hardness_id", nullable = false, unique = false)
     private WheelHardness hardness;
 
-    @Column(name = "wheel_size", nullable = false, unique = false)
-    private String size;
+    @ManyToOne
+    @JoinColumn(name = "wheel_size_id", nullable = false, unique = false)
+    private WheelSize size;
 
     @Column(name = "wheel_amount", nullable = false, unique = false)
     private int amount;
@@ -33,7 +32,7 @@ public class WheelOrder extends PlayerOrder {
     }
 
     public WheelOrder(long id, Player player, String phoneNumber, Order order, WheelModel model, WheelHardness hardness,
-            String size,
+            WheelSize size,
             int amount) {
         super(id, player, phoneNumber, order);
         this.model = model;
@@ -43,7 +42,7 @@ public class WheelOrder extends PlayerOrder {
     }
 
     public WheelOrder(Player player, String phoneNumber, Order order, WheelModel model, WheelHardness hardness,
-            String size,
+            WheelSize size,
             int amount) {
         super(player, phoneNumber, order);
         this.model = model;
@@ -68,11 +67,11 @@ public class WheelOrder extends PlayerOrder {
         this.hardness = hardness;
     }
 
-    public String getSize() {
+    public WheelSize getSize() {
         return this.size;
     }
 
-    public void setSize(String size) {
+    public void setSize(WheelSize size) {
         this.size = size;
     }
 
@@ -86,8 +85,8 @@ public class WheelOrder extends PlayerOrder {
 
     public WheelOrderDTO toDTO() {
         WheelOrderDTO wheelOrderDTO = new WheelOrderDTO(this.id, this.player.toDTOWithoutStatsAndCalls(),
-                this.phoneNumber, this.order.toDTO(), this.model, this.hardness,
-                this.size, this.amount);
+                this.phoneNumber, this.order.toDTO(), this.model.toDTO(), this.hardness.toDTO(),
+                this.size.toDTO(), this.amount);
 
         return wheelOrderDTO;
     }

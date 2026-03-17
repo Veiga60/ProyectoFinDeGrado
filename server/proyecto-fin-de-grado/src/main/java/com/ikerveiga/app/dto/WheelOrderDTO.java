@@ -1,22 +1,19 @@
 package com.ikerveiga.app.dto;
 
-import com.ikerveiga.app.enums.WheelHardness;
-import com.ikerveiga.app.enums.WheelModel;
-
 public class WheelOrderDTO extends PlayerOrderDTO {
 
-    private WheelModel model;
-    private WheelHardness hardness;
-    private String size;
+    private WheelModelDTO model;
+    private WheelHardnessDTO hardness;
+    private WheelSizeDTO size;
     private int amount;
 
     public WheelOrderDTO() {
 
     }
 
-    public WheelOrderDTO(long id, PlayerDTO player, String phoneNumber, OrderDTO order, WheelModel model,
-            WheelHardness hardness,
-            String size,
+    public WheelOrderDTO(long id, PlayerDTO player, String phoneNumber, OrderDTO order, WheelModelDTO model,
+            WheelHardnessDTO hardness,
+            WheelSizeDTO size,
             int amount) {
         super(id, player, phoneNumber, order);
         this.model = model;
@@ -25,8 +22,9 @@ public class WheelOrderDTO extends PlayerOrderDTO {
         this.amount = amount;
     }
 
-    public WheelOrderDTO(PlayerDTO player, String phoneNumber, OrderDTO order, WheelModel model, WheelHardness hardness,
-            String size,
+    public WheelOrderDTO(PlayerDTO player, String phoneNumber, OrderDTO order, WheelModelDTO model,
+            WheelHardnessDTO hardness,
+            WheelSizeDTO size,
             int amount) {
         super(player, phoneNumber, order);
         this.model = model;
@@ -35,27 +33,27 @@ public class WheelOrderDTO extends PlayerOrderDTO {
         this.amount = amount;
     }
 
-    public WheelModel getModel() {
+    public WheelModelDTO getModel() {
         return this.model;
     }
 
-    public void setModel(WheelModel model) {
+    public void setModel(WheelModelDTO model) {
         this.model = model;
     }
 
-    public WheelHardness getHardness() {
+    public WheelHardnessDTO getHardness() {
         return this.hardness;
     }
 
-    public void setHardness(WheelHardness hardness) {
+    public void setHardness(WheelHardnessDTO hardness) {
         this.hardness = hardness;
     }
 
-    public String getSize() {
+    public WheelSizeDTO getSize() {
         return this.size;
     }
 
-    public void setSize(String size) {
+    public void setSize(WheelSizeDTO size) {
         this.size = size;
     }
 
