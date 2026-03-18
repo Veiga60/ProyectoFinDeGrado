@@ -18,7 +18,7 @@ public class WheelModel {
     @Column(name = "wheel_model_id")
     private long id;
 
-    @Column(name = "wheel_model _description", nullable = false, unique = true)
+    @Column(name = "wheel_model_description", nullable = false, unique = true)
     private String description;
 
     public WheelModel() {
