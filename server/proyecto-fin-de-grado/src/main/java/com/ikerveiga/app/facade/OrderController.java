@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ikerveiga.app.dto.OrderDTO;
@@ -32,7 +33,7 @@ public class OrderController {
     }
 
     @PostMapping("/orders")
-    public ResponseEntity<Void> createOrder(OrderDTO order) {
+    public ResponseEntity<Void> createOrder(@RequestBody OrderDTO order) {
         try {
             OrderType type = new OrderType(order.getType().getId(), order.getType().getDescription());
             orderService.createOrder(order.getDeadline(), type);

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import axios from 'axios'
+import CreateOrderModal from '../components/CreateOrderModal.jsx'
 import '../style/Orders.css'
 
 export default function Orders() {
@@ -18,6 +19,12 @@ export default function Orders() {
     const [wheelModel, setWheelModel] = useState();
     const [wheelHardness, setWheelHardness] = useState();
     const [wheelSize, setWheelSize] = useState();
+
+    const [createOrderModal, setCreateOrderModal] = useState(false);
+
+    const toggleCreateOrderModal = () => {
+        setCreateOrderModal(!createOrderModal);
+    }
 
     const getWheelsOptions = async () => {
         try {
@@ -54,48 +61,62 @@ export default function Orders() {
             />
             <div id='ordersMainDiv'>
                 <div>
-                    <button></button>
+                    {
+                        (location.state.isCoach) && (
+                            <button onClick={toggleCreateOrderModal}>NUEVO PEDIDO</button>
+                        )
+                    }
                 </div>
                 <div>
-                    <Tabs id='ordersTab' default='0'>
-                        <TabList>
-                            {
-                                orderTypes.map((orderType) => {
-                                    return <Tab key={orderType.id}>{orderType.description}</Tab>
-                                })
-                            }
-                        </TabList>
-                        <TabPanel className='playerOrdersTab' id='wheelOrdersTab'>
-                            <input type="text" placeholder='Nº tfno.' />
-                            <select name='wheelModels' id='wheelModels' onChange={(e) => { setWheelModel(e.target.value) }}>
+                    {orderTypes.length > 0 && (
+                        <Tabs id='ordersTab' defaultIndex={0}>
+                            <TabList>
                                 {
-                                    wheelModels.map((wheelModel) => {
-                                        return <option key={wheelModel.id}>{wheelModel.description}</option>
+                                    orderTypes.map((orderType) => {
+                                        return <Tab key={orderType.id}>{orderType.description}</Tab>
                                     })
                                 }
-                            </select>
-                            <select name='wheelHardnesses' id='wheelHardnesses' onChange={(e) => { setWheelHardness(e.target.value) }}>
-                                {
-                                    wheelHardnesses.map((wheelHardness) => {
-                                        return <option key={wheelHardness.id}>{wheelHardness.description}</option>
-                                    })
-                                }
-                            </select>
-                            <select name='wheelSizes' id='wheelSizes' onChange={(e) => { setWheelSize(e.target.value) }}>
-                                {
-                                    wheelSizes.map((wheelSize) => {
-                                        return <option key={wheelSize.id}>{wheelSize.description}</option>
-                                    })
-                                }
-                            </select>
-                            <input type="number" placeholder='Cantidad' />
-                        </TabPanel>
-                        <TabPanel className='playerOrdersTab' id='stickOrdersTab'>
+                            </TabList>
+                            <TabPanel className='playerOrdersTab' id='wheelOrdersTab'>
+                                <input type="text" placeholder='Nº tfno.' />
+                                <select name='wheelModels' id='wheelModels' onChange={(e) => { setWheelModel(e.target.value) }}>
+                                    {
+                                        wheelModels.map((wheelModel) => {
+                                            return <option key={wheelModel.id} value={wheelModel.id}>{wheelModel.description}</option>
+                                        })
+                                    }
+                                </select>
+                                <select name='wheelHardnesses' id='wheelHardnesses' onChange={(e) => { setWheelHardness(e.target.value) }}>
+                                    {
+                                        wheelHardnesses.map((wheelHardness) => {
+                                            return <option key={wheelHardness.id}>{wheelHardness.description}</option>
+                                        })
+                                    }
+                                </select>
+                                <select name='wheelSizes' id='wheelSizes' onChange={(e) => { setWheelSize(e.target.value) }}>
+                                    {
+                                        wheelSizes.map((wheelSize) => {
+                                            return <option key={wheelSize.id}>{wheelSize.description}</option>
+                                        })
+                                    }
+                                </select>
+                                <input type="number" placeholder='Cantidad' />
+                            </TabPanel>
+                            <TabPanel className='playerOrdersTab' id='stickOrdersTab'>
 
-                        </TabPanel>
-                    </Tabs>
+                            </TabPanel>
+                        </Tabs>
+                    )}
                 </div>
             </div>
+            {
+                (createOrderModal) && (
+                    <CreateOrderModal
+                        orderTypes={orderTypes}
+                        onClose={toggleCreateOrderModal}
+                    />
+                )
+            }
         </>
     )
 }

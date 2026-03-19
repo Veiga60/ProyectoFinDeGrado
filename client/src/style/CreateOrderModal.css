@@ -1,4 +1,4 @@
-#createDebateModalMainDiv {
+#createOrderModalMainDiv {
     top: 0;
     left: 0;
     display: flex;
@@ -10,7 +10,7 @@
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-#createDebateMainDiv {
+#createOrderMainDiv {
     width: 30%;
     height: 30%;
     background-color: white;
@@ -18,14 +18,14 @@
     border-radius: 15px;
 }
 
-#createDebate {
+#createOrder {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
-#createDebateText {
+#createOrderText {
     color: black;
     font-family: Inria Sans;
     font-weight: bold;
