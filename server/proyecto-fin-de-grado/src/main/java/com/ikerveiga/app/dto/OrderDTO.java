@@ -9,20 +9,23 @@ public class OrderDTO {
 
     private long id;
     private LocalDate deadline;
+    private OrderTypeDTO type;
     private List<PlayerOrder> playerOrders;
 
     public OrderDTO() {
 
     }
 
-    public OrderDTO(long id, LocalDate deadline, List<PlayerOrder> playerOrders) {
+    public OrderDTO(long id, LocalDate deadline, OrderTypeDTO type, List<PlayerOrder> playerOrders) {
         this.id = id;
         this.deadline = deadline;
+        this.type = type;
         this.playerOrders = playerOrders;
     }
 
-    public OrderDTO(LocalDate deadline, List<PlayerOrder> playerOrders) {
+    public OrderDTO(LocalDate deadline, OrderTypeDTO type, List<PlayerOrder> playerOrders) {
         this.deadline = deadline;
+        this.type = type;
         this.playerOrders = playerOrders;
     }
 
@@ -36,6 +39,14 @@ public class OrderDTO {
 
     public void setDeadline(LocalDate deadline) {
         this.deadline = deadline;
+    }
+
+    public OrderTypeDTO getType() {
+        return this.type;
+    }
+
+    public void setType(OrderTypeDTO type) {
+        this.type = type;
     }
 
     public List<PlayerOrder> getPlayerOrders() {
