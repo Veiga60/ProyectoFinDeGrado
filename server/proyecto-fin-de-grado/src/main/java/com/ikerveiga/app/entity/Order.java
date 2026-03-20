@@ -1,9 +1,11 @@
 package com.ikerveiga.app.entity;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.ikerveiga.app.dto.OrderDTO;
+import com.ikerveiga.app.dto.PlayerOrderDTO;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -80,7 +82,13 @@ public class Order {
     }
 
     public OrderDTO toDTO() {
-        OrderDTO orderDTO = new OrderDTO();
+        List<PlayerOrderDTO> playerOrdersDTO = new ArrayList<>();
+
+        for (PlayerOrder playerOrder : this.playerOrders) {
+            playerOrdersDTO.add(playerOrder.toDTO());
+        }
+
+        OrderDTO orderDTO = new OrderDTO(this.id, this.deadline, this.type.toDTO(), playerOrdersDTO);
 
         return orderDTO;
     }

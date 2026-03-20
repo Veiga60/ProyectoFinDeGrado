@@ -13,8 +13,8 @@ import com.ikerveiga.app.entity.Order;
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Long> {
 
-    @Query("SELECT a FROM Order a WHERE deadline > CURDATE() ORDER BY deadline")
-    List<Order> findNextOrders();
+    @Query("SELECT a FROM Order a WHERE a.deadline > CURDATE() AND a.type.id = :typeId ORDER BY a.deadline")
+    List<Order> findNextOrdersOfType(@Param("typeId") long typeId);
 
     @Query("SELECT a FROM Order a WHERE a.deadline = :deadline AND a.type.id = :typeId")
     Order findByDeadlineAndType(@Param("deadline") LocalDate deadline, @Param("typeId") long typeId);

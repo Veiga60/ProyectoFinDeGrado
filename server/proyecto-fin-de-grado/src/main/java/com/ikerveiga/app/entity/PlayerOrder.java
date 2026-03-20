@@ -1,5 +1,7 @@
 package com.ikerveiga.app.entity;
 
+import com.ikerveiga.app.dto.PlayerOrderDTO;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -76,6 +78,13 @@ public class PlayerOrder {
 
     public void setOrder(Order order) {
         this.order = order;
+    }
+
+    public PlayerOrderDTO toDTO() {
+        PlayerOrderDTO playerOrderDTO = new PlayerOrderDTO(this.id, this.player.toDTOWithoutStatsAndCalls(),
+                this.phoneNumber, this.order.toDTO());
+
+        return playerOrderDTO;
     }
 
 }

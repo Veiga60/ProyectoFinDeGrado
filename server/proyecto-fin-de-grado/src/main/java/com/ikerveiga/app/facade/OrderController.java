@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ikerveiga.app.dto.OrderDTO;
@@ -23,9 +24,9 @@ public class OrderController {
     }
 
     @GetMapping("/orders/next")
-    public ResponseEntity<OrderDTO> getNextOrder() {
+    public ResponseEntity<OrderDTO> getNextOrder(@RequestParam("typeId") long typeId) {
         try {
-            OrderDTO orderDTO = orderService.getNextOrder().toDTO();
+            OrderDTO orderDTO = orderService.getNextOrder(typeId).toDTO();
             return ResponseEntity.ok(orderDTO);
         } catch (RuntimeException e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);

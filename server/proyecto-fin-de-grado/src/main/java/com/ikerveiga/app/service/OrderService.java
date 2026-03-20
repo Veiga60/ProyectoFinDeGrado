@@ -21,8 +21,8 @@ public class OrderService {
         this.orderDAO = orderDAO;
     }
 
-    public Order getNextOrder() {
-        List<Order> orders = orderDAO.findNextOrders();
+    public Order getNextOrder(long typeId) {
+        List<Order> orders = orderDAO.findNextOrdersOfType(typeId);
 
         return orders.getFirst();
     }
