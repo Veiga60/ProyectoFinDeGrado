@@ -51,7 +51,7 @@ export default function CreatOrderModal({ orderTypes, onClose }) {
                             })
                         }
                     </select>
-                    <button onClick={async () => (deadline) && ([await createOrder(), await onClose()])}>CREAR</button>
+                    <button onClick={async () => (deadline) && ([await createOrder(), await onClose(), window.location.reload()])}>CREAR</button>
                     <button onClick={() => onClose()}>CERRAR</button>
                 </div>
             </div >

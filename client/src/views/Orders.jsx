@@ -26,6 +26,9 @@ export default function Orders() {
     const [wheelHardness, setWheelHardness] = useState();
     const [wheelSize, setWheelSize] = useState();
 
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [amount, setAmount] = useState(0);
+
     const [createOrderModal, setCreateOrderModal] = useState(false);
 
 
@@ -42,6 +45,9 @@ export default function Orders() {
             await setWheelModels(wheelModels.data);
             await setWheelHardnesses(wheelHardnesses.data);
             await setWheelSizes(wheelSizes.data);
+            await setWheelModel(wheelModels.data[0].id);
+            await setWheelHardness(wheelHardnesses.data[0].id);
+            await setWheelSize(wheelSizes.data[0].id);
         } catch (error) {
             console.log('Error fetching wheel options:', error)
         }
@@ -71,6 +77,37 @@ export default function Orders() {
             await setWheelNextOrder(wheelNextOrder.data);
         } catch (error) {
             console.log('Error fetching order types: ', error)
+        }
+    }
+
+    const createWheelOrder = async () => {
+        try {
+            await axios.post(`${SERVER_URL}/orders/wheels`, {
+                player: {
+                    id: location.state.authenticatedUserPlayerId
+                },
+                phoneNumber: phoneNumber,
+                order: {
+                    id: wheelNextOrder.id
+                },
+                model: {
+                    id: wheelModel
+                },
+                hardness: {
+                    id: wheelHardness
+                },
+                size: {
+                    id: wheelSize
+                },
+                amount: amount
+            }, {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                withCredentials: true
+            });
+        } catch (error) {
+            console.log('Error creating the player order: ', error);
         }
     }
 
@@ -113,12 +150,14 @@ export default function Orders() {
                                 }
                             </TabList>
                             <TabPanel className='playerOrdersTab' id='wheelOrdersTab'>
-                                <div>
-                                    <p>{wheelNextOrder?.deadline}</p>
+                                <div className='deadlineDiv'>
+                                    <p className='deadlineText'>Fecha límite: {wheelNextOrder?.deadline}</p>
                                 </div>
                                 <div>
 
-                                    <input type="text" placeholder='Nº tfno.' />
+                                </div>
+                                <div className='inputsDiv'>
+                                    <input type="text" placeholder='Nº tfno.' onChange={(e) => setPhoneNumber(e.target.value)} />
                                     <select name='wheelModels' id='wheelModels' onChange={(e) => { setWheelModel(e.target.value) }}>
                                         {
                                             wheelModels.map((wheelModel) => {
@@ -129,18 +168,19 @@ export default function Orders() {
                                     <select name='wheelHardnesses' id='wheelHardnesses' onChange={(e) => { setWheelHardness(e.target.value) }}>
                                         {
                                             wheelHardnesses.map((wheelHardness) => {
-                                                return <option key={wheelHardness.id}>{wheelHardness.description}</option>
+                                                return <option key={wheelHardness.id} value={wheelHardness.id}>{wheelHardness.description}</option>
                                             })
                                         }
                                     </select>
                                     <select name='wheelSizes' id='wheelSizes' onChange={(e) => { setWheelSize(e.target.value) }}>
                                         {
                                             wheelSizes.map((wheelSize) => {
-                                                return <option key={wheelSize.id}>{wheelSize.description}</option>
+                                                return <option key={wheelSize.id} value={wheelSize.id}>{wheelSize.description}</option>
                                             })
                                         }
                                     </select>
-                                    <input type="number" placeholder='Cantidad' />
+                                    <input type="number" placeholder='Cantidad' onChange={(e) => setAmount(e.target.value)} />
+                                    <button className='orderButton' onClick={() => { [createWheelOrder()] }}>PEDIR</button>
                                 </div>
                             </TabPanel>
                             <TabPanel className='playerOrdersTab' id='stickOrdersTab'>

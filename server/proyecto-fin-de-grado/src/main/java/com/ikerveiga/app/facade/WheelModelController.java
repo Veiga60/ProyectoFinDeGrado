@@ -38,5 +38,4 @@ public class WheelModelController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
-
 }

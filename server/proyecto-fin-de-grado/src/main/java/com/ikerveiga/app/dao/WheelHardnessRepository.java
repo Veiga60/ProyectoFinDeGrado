@@ -8,4 +8,5 @@ import com.ikerveiga.app.entity.WheelHardness;
 @Repository
 public interface WheelHardnessRepository extends JpaRepository<WheelHardness, Long> {
 
+    WheelHardness findById(long id);
 }

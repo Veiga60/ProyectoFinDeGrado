@@ -8,4 +8,5 @@ import com.ikerveiga.app.entity.WheelSize;
 @Repository
 public interface WheelSizeRepository extends JpaRepository<WheelSize, Long> {
 
+    WheelSize findById(long id);
 }

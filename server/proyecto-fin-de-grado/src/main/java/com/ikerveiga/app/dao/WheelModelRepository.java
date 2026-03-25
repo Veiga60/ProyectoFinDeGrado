@@ -8,4 +8,5 @@ import com.ikerveiga.app.entity.WheelModel;
 @Repository
 public interface WheelModelRepository extends JpaRepository<WheelModel, Long> {
 
+    WheelModel findById(long id);
 }
