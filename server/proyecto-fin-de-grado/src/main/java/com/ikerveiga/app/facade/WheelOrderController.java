@@ -25,7 +25,7 @@ public class WheelOrderController {
         this.wheelOrderService = wheelOrderService;
     }
 
-    @GetMapping("/orders/wheels/alls")
+    @GetMapping("/orders/wheels/all")
     public ResponseEntity<List<WheelOrderDTO>> getWheelOrders() {
         try {
             List<WheelOrderDTO> wheelOrdersDTO = new ArrayList<>();

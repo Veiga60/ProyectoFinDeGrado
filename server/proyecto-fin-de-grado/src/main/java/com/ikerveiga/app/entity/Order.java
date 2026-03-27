@@ -85,7 +85,7 @@ public class Order {
         List<PlayerOrderDTO> playerOrdersDTO = new ArrayList<>();
 
         for (PlayerOrder playerOrder : this.playerOrders) {
-            playerOrdersDTO.add(playerOrder.toDTO());
+            playerOrdersDTO.add(playerOrder.toDTOWithoutOrder());
         }
 
         OrderDTO orderDTO = new OrderDTO(this.id, this.deadline, this.type.toDTO(), playerOrdersDTO);

@@ -24,6 +24,12 @@ public class PlayerOrderDTO {
         this.order = order;
     }
 
+    public PlayerOrderDTO(long id, PlayerDTO player, String phoneNumber) {
+        this.id = id;
+        this.player = player;
+        this.phoneNumber = phoneNumber;
+    }
+
     public long getId() {
         return this.id;
     }

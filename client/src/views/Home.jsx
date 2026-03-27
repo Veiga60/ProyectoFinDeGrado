@@ -16,7 +16,6 @@ export default function Home() {
     const whoAmI = async () => {
         try {
             const response = await axios.get(`${SERVER_URL}/me`, { withCredentials: true });
-            console.log(response.data);
             setAuthenticatedUser(response.data);
         } catch (error) {
             console.log('Error al obtener la información del usuario: ', error);

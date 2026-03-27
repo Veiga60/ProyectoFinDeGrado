@@ -87,4 +87,11 @@ public class PlayerOrder {
         return playerOrderDTO;
     }
 
+    public PlayerOrderDTO toDTOWithoutOrder() {
+        PlayerOrderDTO playerOrderDTO = new PlayerOrderDTO(this.id, this.player.toDTOWithoutStatsAndCalls(),
+                this.phoneNumber);
+
+        return playerOrderDTO;
+    }
+
 }

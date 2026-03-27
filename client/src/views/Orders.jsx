@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import axios from 'axios'
 import CreateOrderModal from '../components/CreateOrderModal.jsx'
+import WheelOrderLine from '../components/WheelOrderLine.jsx'
 import '../style/Orders.css'
 
 export default function Orders() {
@@ -25,6 +26,8 @@ export default function Orders() {
     const [wheelModel, setWheelModel] = useState();
     const [wheelHardness, setWheelHardness] = useState();
     const [wheelSize, setWheelSize] = useState();
+
+    const [wheelOrders, setWHeelOrders] = useState([]);
 
     const [phoneNumber, setPhoneNumber] = useState('');
     const [amount, setAmount] = useState(0);
@@ -111,9 +114,19 @@ export default function Orders() {
         }
     }
 
+    const getWheelOrders = async () => {
+        try {
+            const response = await axios.get(`${SERVER_URL}/orders/wheels/all`, { withCredentials: true });
+            setWHeelOrders(response.data);
+        } catch (error) {
+            console.log('Error fetching wheel orders: ', error);
+        }
+    }
+
     useEffect(() => {
         getWheelsOptions();
         getOrderTypes();
+        getWheelOrders();
     }, []);
 
     useEffect(() => {
@@ -153,35 +166,53 @@ export default function Orders() {
                                 <div className='deadlineDiv'>
                                     <p className='deadlineText'>Fecha límite: {wheelNextOrder?.deadline}</p>
                                 </div>
+                                <div id='wheelOrdersDiv'>
+                                    {
+                                        wheelOrders.map((wheelOrder) => {
+                                            return <WheelOrderLine
+                                                key={wheelOrder.id}
+                                                player={wheelOrder.player}
+                                                phoneNumber={wheelOrder.phoneNumber}
+                                                wheelModel={wheelOrder.model}
+                                                wheelHardness={wheelOrder.hardness}
+                                                wheelSize={wheelOrder.size}
+                                                amount={wheelOrder.amount}
+                                            />
+                                        })
+                                    }
+                                </div>
                                 <div>
-
                                 </div>
-                                <div className='inputsDiv'>
-                                    <input type="text" placeholder='Nº tfno.' onChange={(e) => setPhoneNumber(e.target.value)} />
-                                    <select name='wheelModels' id='wheelModels' onChange={(e) => { setWheelModel(e.target.value) }}>
-                                        {
-                                            wheelModels.map((wheelModel) => {
-                                                return <option key={wheelModel.id} value={wheelModel.id}>{wheelModel.description}</option>
-                                            })
-                                        }
-                                    </select>
-                                    <select name='wheelHardnesses' id='wheelHardnesses' onChange={(e) => { setWheelHardness(e.target.value) }}>
-                                        {
-                                            wheelHardnesses.map((wheelHardness) => {
-                                                return <option key={wheelHardness.id} value={wheelHardness.id}>{wheelHardness.description}</option>
-                                            })
-                                        }
-                                    </select>
-                                    <select name='wheelSizes' id='wheelSizes' onChange={(e) => { setWheelSize(e.target.value) }}>
-                                        {
-                                            wheelSizes.map((wheelSize) => {
-                                                return <option key={wheelSize.id} value={wheelSize.id}>{wheelSize.description}</option>
-                                            })
-                                        }
-                                    </select>
-                                    <input type="number" placeholder='Cantidad' onChange={(e) => setAmount(e.target.value)} />
-                                    <button className='orderButton' onClick={() => { [createWheelOrder()] }}>PEDIR</button>
-                                </div>
+                                {
+                                    (!location.state.isCoach) && (
+                                        <div className='inputsDiv'>
+                                            <input type="text" placeholder='Nº tfno.' onChange={(e) => setPhoneNumber(e.target.value)} />
+                                            <select name='wheelModels' id='wheelModels' onChange={(e) => { setWheelModel(e.target.value) }}>
+                                                {
+                                                    wheelModels.map((wheelModel) => {
+                                                        return <option key={wheelModel.id} value={wheelModel.id}>{wheelModel.description}</option>
+                                                    })
+                                                }
+                                            </select>
+                                            <select name='wheelHardnesses' id='wheelHardnesses' onChange={(e) => { setWheelHardness(e.target.value) }}>
+                                                {
+                                                    wheelHardnesses.map((wheelHardness) => {
+                                                        return <option key={wheelHardness.id} value={wheelHardness.id}>{wheelHardness.description}</option>
+                                                    })
+                                                }
+                                            </select>
+                                            <select name='wheelSizes' id='wheelSizes' onChange={(e) => { setWheelSize(e.target.value) }}>
+                                                {
+                                                    wheelSizes.map((wheelSize) => {
+                                                        return <option key={wheelSize.id} value={wheelSize.id}>{wheelSize.description}</option>
+                                                    })
+                                                }
+                                            </select>
+                                            <input type="number" placeholder='Cantidad' onChange={(e) => setAmount(e.target.value)} />
+                                            <button className='orderButton' onClick={() => { createWheelOrder(); window.location.reload() }}>PEDIR</button>
+                                        </div>
+                                    )
+                                }
                             </TabPanel>
                             <TabPanel className='playerOrdersTab' id='stickOrdersTab'>
 
