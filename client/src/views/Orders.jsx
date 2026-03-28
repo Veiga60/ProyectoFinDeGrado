@@ -5,6 +5,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import axios from 'axios'
 import CreateOrderModal from '../components/CreateOrderModal.jsx'
 import WheelOrderLine from '../components/WheelOrderLine.jsx'
+import StickOrderLine from '../components/StickOrderLine.jsx'
 import '../style/Orders.css'
 
 export default function Orders() {
@@ -15,6 +16,15 @@ export default function Orders() {
     const [wheelModels, setWheelModels] = useState([]);
     const [wheelHardnesses, setWheelHardnesses] = useState([]);
     const [wheelSizes, setWheelSizes] = useState([]);
+
+    const [stickModels, setStickModels] = useState([]);
+    const [stickLengths, setStickLengths] = useState([]);
+    const [stickWeights, setStickWeights] = useState([]);
+    const [stickBlades, setStickBlades] = useState([]);
+    const [stickFlexes, setStickFlexes] = useState([]);
+    const [stickKickpoints, setStickKickpoints] = useState([]);
+    const [stickGrips, setStickGrips] = useState([]);
+
     const [orderTypes, setOrderTypes] = useState([]);
 
     const [stickNextOrder, setStickNextOrder] = useState();
@@ -27,14 +37,26 @@ export default function Orders() {
     const [wheelHardness, setWheelHardness] = useState();
     const [wheelSize, setWheelSize] = useState();
 
-    const [wheelOrders, setWHeelOrders] = useState([]);
+    const [stickModel, setStickModel] = useState();
+    const [stickLength, setStickLength] = useState();
+    const [stickWeight, setStickWeight] = useState();
+    const [stickBlade, setStickBlade] = useState();
+    const [stickFlex, setStickFlex] = useState();
+    const [stickKickpoint, setStickKickpoint] = useState();
+    const [stickGrip, setStickGrip] = useState();
 
-    const [phoneNumber, setPhoneNumber] = useState('');
-    const [amount, setAmount] = useState(0);
+    const [wheelOrders, setWheelOrders] = useState([]);
+    const [stickOrders, setStickOrders] = useState([]);
+
+    const [wheelOrderPhoneNumber, setWheelOrderPhoneNumber] = useState('');
+    const [wheelAmount, setWheelAmount] = useState(0);
+
+    const [stickOrderPhoneNumber, setStickOrderPhoneNumber] = useState('');
+    const [stickSide, setStickSide] = useState('Right');
+    const [stickAmount, setStickAmount] = useState(0);
+    const [stickNametag, setStickNametag] = useState('');
 
     const [createOrderModal, setCreateOrderModal] = useState(false);
-
-
 
     const toggleCreateOrderModal = () => {
         setCreateOrderModal(!createOrderModal);
@@ -54,6 +76,30 @@ export default function Orders() {
         } catch (error) {
             console.log('Error fetching wheel options:', error)
         }
+    }
+
+    const getSticksOptions = async () => {
+        const stickModels = await axios.get(`${SERVER_URL}/stickModels/all`, { withCredentials: true });
+        const stickLengths = await axios.get(`${SERVER_URL}/stickLengths/all`, { withCredentials: true });
+        const stickWeights = await axios.get(`${SERVER_URL}/stickWeights/all`, { withCredentials: true });
+        const stickBlades = await axios.get(`${SERVER_URL}/stickBlades/all`, { withCredentials: true });
+        const stickFlexes = await axios.get(`${SERVER_URL}/stickFlexes/all`, { withCredentials: true });
+        const stickKickpoints = await axios.get(`${SERVER_URL}/stickKickpoints/all`, { withCredentials: true });
+        const stickGrips = await axios.get(`${SERVER_URL}/stickGrips/all`, { withCredentials: true });
+        await setStickModels(stickModels.data);
+        await setStickLengths(stickLengths.data);
+        await setStickWeights(stickWeights.data);
+        await setStickBlades(stickBlades.data);
+        await setStickFlexes(stickFlexes.data);
+        await setStickKickpoints(stickKickpoints.data);
+        await setStickGrips(stickGrips.data);
+        await setStickModel(stickModels.data[0].id);
+        await setStickLength(stickLengths.data[0].id);
+        await setStickWeight(stickWeights.data[0].id);
+        await setStickBlade(stickBlades.data[0].id);
+        await setStickFlex(stickFlexes.data[0].id);
+        await setStickKickpoint(stickKickpoints.data[0].id);
+        await setStickGrip(stickGrips.data[0].id);
     }
 
     const getOrderTypes = async () => {
@@ -89,7 +135,7 @@ export default function Orders() {
                 player: {
                     id: location.state.authenticatedUserPlayerId
                 },
-                phoneNumber: phoneNumber,
+                phoneNumber: wheelOrderPhoneNumber,
                 order: {
                     id: wheelNextOrder.id
                 },
@@ -102,7 +148,52 @@ export default function Orders() {
                 size: {
                     id: wheelSize
                 },
-                amount: amount
+                amount: wheelAmount
+            }, {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                withCredentials: true
+            });
+        } catch (error) {
+            console.log('Error creating the player order: ', error);
+        }
+    }
+
+    const createStickOrder = async () => {
+        try {
+            await axios.post(`${SERVER_URL}/orders/sticks`, {
+                player: {
+                    id: location.state.authenticatedUserPlayerId
+                },
+                phoneNumber: stickOrderPhoneNumber,
+                order: {
+                    id: stickNextOrder.id
+                },
+                model: {
+                    id: stickModel
+                },
+                length: {
+                    id: stickLength
+                },
+                weight: {
+                    id: stickWeight
+                },
+                side: stickSide,
+                blade: {
+                    id: stickBlade
+                },
+                flex: {
+                    id: stickFlex
+                },
+                kickpoint: {
+                    id: stickKickpoint
+                },
+                grip: {
+                    id: stickGrip
+                },
+                amount: stickAmount,
+                nametag: stickNametag
             }, {
                 headers: {
                     'Content-Type': 'application/json'
@@ -117,16 +208,27 @@ export default function Orders() {
     const getWheelOrders = async () => {
         try {
             const response = await axios.get(`${SERVER_URL}/orders/wheels/all`, { withCredentials: true });
-            setWHeelOrders(response.data);
+            setWheelOrders(response.data);
         } catch (error) {
             console.log('Error fetching wheel orders: ', error);
         }
     }
 
+    const getStickOrders = async () => {
+        try {
+            const response = await axios.get(`${SERVER_URL}/orders/sticks/all`, { withCredentials: true });
+            setStickOrders(response.data);
+        } catch (error) {
+            console.log('Error fetching stick orders: ', error);
+        }
+    }
+
     useEffect(() => {
         getWheelsOptions();
+        getSticksOptions();
         getOrderTypes();
         getWheelOrders();
+        getStickOrders();
     }, []);
 
     useEffect(() => {
@@ -186,7 +288,7 @@ export default function Orders() {
                                 {
                                     (!location.state.isCoach) && (
                                         <div className='inputsDiv'>
-                                            <input type="text" placeholder='Nº tfno.' onChange={(e) => setPhoneNumber(e.target.value)} />
+                                            <input type="text" placeholder='Nº tfno.' onChange={(e) => setWheelOrderPhoneNumber(e.target.value)} />
                                             <select name='wheelModels' id='wheelModels' onChange={(e) => { setWheelModel(e.target.value) }}>
                                                 {
                                                     wheelModels.map((wheelModel) => {
@@ -208,14 +310,102 @@ export default function Orders() {
                                                     })
                                                 }
                                             </select>
-                                            <input type="number" placeholder='Cantidad' onChange={(e) => setAmount(e.target.value)} />
+                                            <input type="number" placeholder='Cantidad' onChange={(e) => setWheelAmount(e.target.value)} />
                                             <button className='orderButton' onClick={() => { createWheelOrder(); window.location.reload() }}>PEDIR</button>
                                         </div>
                                     )
                                 }
                             </TabPanel>
                             <TabPanel className='playerOrdersTab' id='stickOrdersTab'>
-
+                                <div className='deadlineDiv'>
+                                    <p className='deadlineText'>Fecha límite: {stickNextOrder?.deadline}</p>
+                                </div>
+                                <div id='stickOrdersDiv'>
+                                    {
+                                        stickOrders.map((stickOrder) => {
+                                            return <StickOrderLine
+                                                key={stickOrder.id}
+                                                player={stickOrder.player}
+                                                phoneNumber={stickOrder.phoneNumber}
+                                                stickModel={stickOrder.model}
+                                                stickLength={stickOrder.length}
+                                                stickWeight={stickOrder.weight}
+                                                stickSide={stickOrder.side}
+                                                stickBlade={stickOrder.blade}
+                                                stickFlex={stickOrder.flex}
+                                                stickKickpoint={stickOrder.kickpoint}
+                                                stickGrip={stickOrder.grip}
+                                                amount={stickOrder.amount}
+                                                nametag={stickOrder.nametag}
+                                            />
+                                        })
+                                    }
+                                </div>
+                                <div>
+                                </div>
+                                {
+                                    (!location.state.isCoach) && (
+                                        <div className='inputsDiv'>
+                                            <input type="text" placeholder='Nº tfno.' onChange={(e) => setStickOrderPhoneNumber(e.target.value)} />
+                                            <select name='stickModels' id='stickModels' onChange={(e) => { setStickModel(e.target.value) }}>
+                                                {
+                                                    stickModels.map((stickModel) => {
+                                                        return <option key={stickModel.id} value={stickModel.id}>{stickModel.description}</option>
+                                                    })
+                                                }
+                                            </select>
+                                            <select name='stickLengths' id='stickLengths' onChange={(e) => { setStickLength(e.target.value) }}>
+                                                {
+                                                    stickLengths.map((stickLength) => {
+                                                        return <option key={stickLength.id} value={stickLength.id}>{stickLength.description}</option>
+                                                    })
+                                                }
+                                            </select>
+                                            <select name='stickWeights' id='stickWeights' onChange={(e) => { setStickWeight(e.target.value) }}>
+                                                {
+                                                    stickWeights.map((stickWeight) => {
+                                                        return <option key={stickWeight.id} value={stickWeight.id}>{stickWeight.description}</option>
+                                                    })
+                                                }
+                                            </select>
+                                            <select name='stickSides' id='stickSides' onChange={(e) => { setStickSide(e.target.value) }}>
+                                                <option value="Right">Right</option>
+                                                <option value="Left">Left</option>
+                                            </select>
+                                            <select name='stickBlades' id='stickBlades' onChange={(e) => { setStickBlade(e.target.value) }}>
+                                                {
+                                                    stickBlades.map((stickBlade) => {
+                                                        return <option key={stickBlade.id} value={stickBlade.id}>{stickBlade.description}</option>
+                                                    })
+                                                }
+                                            </select>
+                                            <select name='stickFlexes' id='stickFlexes' onChange={(e) => { setStickFlex(e.target.value) }}>
+                                                {
+                                                    stickFlexes.map((stickFlex) => {
+                                                        return <option key={stickFlex.id} value={stickFlex.id}>{stickFlex.description}</option>
+                                                    })
+                                                }
+                                            </select>
+                                            <select name='stickKickpoints' id='stickKickpoints' onChange={(e) => { setStickKickpoint(e.target.value) }}>
+                                                {
+                                                    stickKickpoints.map((stickKickpoint) => {
+                                                        return <option key={stickKickpoint.id} value={stickKickpoint.id}>{stickKickpoint.description}</option>
+                                                    })
+                                                }
+                                            </select>
+                                            <select name='stickGrips' id='stickGrips' onChange={(e) => { setStickGrip(e.target.value) }}>
+                                                {
+                                                    stickGrips.map((stickGrip) => {
+                                                        return <option key={stickGrip.id} value={stickGrip.id}>{stickGrip.description}</option>
+                                                    })
+                                                }
+                                            </select>
+                                            <input type="number" placeholder='Cantidad' onChange={(e) => setStickAmount(e.target.value)} />
+                                            <input type="text" placeholder='Nametag' onChange={(e) => setStickNametag(e.target.value)} />
+                                            <button className='orderButton' onClick={() => { createStickOrder(); window.location.reload() }}>PEDIR</button>
+                                        </div>
+                                    )
+                                }
                             </TabPanel>
                         </Tabs>
                     )}

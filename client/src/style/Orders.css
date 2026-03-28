@@ -15,7 +15,7 @@
 .inputsDiv {
     display: flex;
     flex-direction: row;
-    gap: 5%;
+    gap: 1%;
     align-items: center;
     justify-content: center;
 }
