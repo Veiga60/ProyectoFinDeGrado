@@ -223,31 +223,53 @@ export default function Orders() {
         }
     }
 
-    const exportWheelOrdersToExcel = async () => {
+    const exportOrdersToExcel = async (orderType) => {
         try {
+            var filename;
+            var response;
+            if (orderType === 'WHEELS') {
 
-            const wheelOrdersIds = [];
+                filename = 'pedido_ruedas.xls';
+                const wheelOrdersIds = [];
 
-            for (let i = 0; i < wheelOrders.length; i++) {
-                wheelOrdersIds.push(wheelOrders[i].id);
+                for (let i = 0; i < wheelOrders.length; i++) {
+                    wheelOrdersIds.push(wheelOrders[i].id);
+                }
+
+                response = await axios.get(`${SERVER_URL}/orders/wheels/next/excel`, {
+                    params: {
+                        wheelOrders: wheelOrdersIds.join(',')
+                    },
+                    responseType: 'blob',
+                    withCredentials: true
+                });
+
+            } else if (orderType === 'STICKS') {
+                filename = 'pedido_sticks.xls';
+                const stickOrdersIds = [];
+
+                for (let i = 0; i < stickOrders.length; i++) {
+                    stickOrdersIds.push(stickOrders[i].id);
+                }
+
+                response = await axios.get(`${SERVER_URL}/orders/sticks/next/excel`, {
+                    params: {
+                        stickOrders: stickOrdersIds.join(',')
+                    },
+                    responseType: 'blob',
+                    withCredentials: true
+                });
+
             }
-
-            const response = await axios.get(`${SERVER_URL}/orders/wheels/next/excel`, {
-                params: {
-                    wheelOrders: wheelOrdersIds.join(',')
-                },
-                responseType: 'blob',
-                withCredentials: true
-            });
-
             const blob = new Blob([response.data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;' });
             const link = document.createElement('a');
             link.href = window.URL.createObjectURL(blob);
-            link.download = 'pedido_ruedas.xls';
+            link.download = filename;
             link.click();
             window.URL.revokeObjectURL(link.href);
+
         } catch (error) {
-            console.log('Error exporting wheel order to Excel.', error);
+            console.log('Error exporting order to Excel.', error);
         }
     }
 
@@ -348,7 +370,7 @@ export default function Orders() {
                                     (location.state.isCoach) && (
                                         <div>
                                             <button onClick={toggleCreateOrderModal}>NUEVO PEDIDO</button>
-                                            <button onClick={exportWheelOrdersToExcel}>EXCEL</button>
+                                            <button onClick={() => exportOrdersToExcel('WHEELS')}>EXCEL</button>
                                         </div>
                                     )
                                 }
@@ -447,7 +469,7 @@ export default function Orders() {
                                     (location.state.isCoach) && (
                                         <div>
                                             <button onClick={toggleCreateOrderModal}>NUEVO PEDIDO</button>
-                                            <button onClick={exportStickOrdersToExcel}>EXCEL</button>
+                                            <button onClick={() => exportOrdersToExcel('STICKS')}>EXCEL</button>
                                         </div>
                                     )
                                 }

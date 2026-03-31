@@ -1,7 +1,11 @@
 package com.ikerveiga.app.service;
 
+import java.io.IOException;
 import java.util.List;
 
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +29,9 @@ import com.ikerveiga.app.entity.StickLength;
 import com.ikerveiga.app.entity.StickModel;
 import com.ikerveiga.app.entity.StickOrder;
 import com.ikerveiga.app.entity.StickWeight;
+
+import jakarta.servlet.ServletOutputStream;
+import jakarta.servlet.http.HttpServletResponse;
 
 @Service
 public class StickOrderService {
@@ -81,5 +88,55 @@ public class StickOrderService {
                 kickpoint, grip, amount, nametag);
 
         stickOrderDAO.save(stickOrder);
+    }
+
+    public void exportToExcel(List<Long> stickOrdersIDs, HttpServletResponse response) throws IOException {
+
+        List<StickOrder> stickOrders = stickOrderDAO.findAllById(stickOrdersIDs);
+
+        HSSFWorkbook workbook = new HSSFWorkbook();
+        HSSFSheet sheet = workbook.createSheet("Pedidos sticks");
+        HSSFRow row = sheet.createRow(0);
+
+        row.createCell(0).setCellValue("Nombre");
+        row.createCell(1).setCellValue("Apellidos");
+        row.createCell(2).setCellValue("Nº Tfno");
+        row.createCell(3).setCellValue("Modelo");
+        row.createCell(4).setCellValue("Longitud");
+        row.createCell(5).setCellValue("Peso");
+        row.createCell(6).setCellValue("Lado");
+        row.createCell(7).setCellValue("Pala");
+        row.createCell(8).setCellValue("Flex");
+        row.createCell(9).setCellValue("Kickpoint");
+        row.createCell(10).setCellValue("Grip");
+        row.createCell(11).setCellValue("Cantidad");
+        row.createCell(12).setCellValue("Nametag");
+
+        int dataRowIndex = 1;
+
+        for (StickOrder stickOrder : stickOrders) {
+            HSSFRow dataRow = sheet.createRow(dataRowIndex);
+            dataRow.createCell(0).setCellValue(stickOrder.getPlayer().getName());
+            dataRow.createCell(1)
+                    .setCellValue(stickOrder.getPlayer().getLastName1() + ' ' + stickOrder.getPlayer().getLastName2());
+            dataRow.createCell(2).setCellValue(stickOrder.getPhoneNumber());
+            dataRow.createCell(3).setCellValue(stickOrder.getModel().getDescription());
+            dataRow.createCell(4).setCellValue(stickOrder.getLength().getDescription());
+            dataRow.createCell(5).setCellValue(stickOrder.getWeight().getDescription());
+            dataRow.createCell(6).setCellValue(stickOrder.getSide());
+            dataRow.createCell(7).setCellValue(stickOrder.getBlade().getDescription());
+            dataRow.createCell(8).setCellValue(stickOrder.getFlex().getDescription());
+            dataRow.createCell(9).setCellValue(stickOrder.getKickpoint().getDescription());
+            dataRow.createCell(10).setCellValue(stickOrder.getGrip().getDescription());
+            dataRow.createCell(11).setCellValue(stickOrder.getAmount());
+            dataRow.createCell(12).setCellValue(stickOrder.getNametag());
+
+            dataRowIndex++;
+        }
+
+        ServletOutputStream ops = response.getOutputStream();
+        workbook.write(ops);
+        workbook.close();
+        ops.close();
     }
 }
