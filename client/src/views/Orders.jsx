@@ -223,6 +223,42 @@ export default function Orders() {
         }
     }
 
+    const exportWheelOrdersToExcel = async () => {
+        try {
+
+            const wheelOrdersIds = [];
+
+            for (let i = 0; i < wheelOrders.length; i++) {
+                wheelOrdersIds.push(wheelOrders[i].id);
+            }
+
+            const response = await axios.get(`${SERVER_URL}/orders/wheels/next/excel`, {
+                params: {
+                    wheelOrders: wheelOrdersIds.join(',')
+                },
+                responseType: 'blob',
+                withCredentials: true
+            });
+
+            const blob = new Blob([response.data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;' });
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = 'pedido_ruedas.xls';
+            link.click();
+            window.URL.revokeObjectURL(link.href);
+        } catch (error) {
+            console.log('Error exporting wheel order to Excel.', error);
+        }
+    }
+
+    const exportStickOrdersToExcel = async () => {
+        try {
+            const response = await axios.get(`${SERVER_URL}/orders/sticks/next/excel`, {});
+        } catch (error) {
+            console.log('Error exporting stick order to Excel.', error);
+        }
+    }
+
     useEffect(() => {
         getWheelsOptions();
         getSticksOptions();
@@ -247,13 +283,6 @@ export default function Orders() {
                 isCoach={location.state.isCoach}
             />
             <div id='ordersMainDiv'>
-                <div>
-                    {
-                        (location.state.isCoach) && (
-                            <button onClick={toggleCreateOrderModal}>NUEVO PEDIDO</button>
-                        )
-                    }
-                </div>
                 <div>
                     {orderTypes.length > 0 && (
                         <Tabs id='ordersTab' defaultIndex={0}>
@@ -312,6 +341,14 @@ export default function Orders() {
                                             </select>
                                             <input type="number" placeholder='Cantidad' onChange={(e) => setWheelAmount(e.target.value)} />
                                             <button className='orderButton' onClick={() => { createWheelOrder(); window.location.reload() }}>PEDIR</button>
+                                        </div>
+                                    )
+                                }
+                                {
+                                    (location.state.isCoach) && (
+                                        <div>
+                                            <button onClick={toggleCreateOrderModal}>NUEVO PEDIDO</button>
+                                            <button onClick={exportWheelOrdersToExcel}>EXCEL</button>
                                         </div>
                                     )
                                 }
@@ -403,6 +440,14 @@ export default function Orders() {
                                             <input type="number" placeholder='Cantidad' onChange={(e) => setStickAmount(e.target.value)} />
                                             <input type="text" placeholder='Nametag' onChange={(e) => setStickNametag(e.target.value)} />
                                             <button className='orderButton' onClick={() => { createStickOrder(); window.location.reload() }}>PEDIR</button>
+                                        </div>
+                                    )
+                                }
+                                {
+                                    (location.state.isCoach) && (
+                                        <div>
+                                            <button onClick={toggleCreateOrderModal}>NUEVO PEDIDO</button>
+                                            <button onClick={exportStickOrdersToExcel}>EXCEL</button>
                                         </div>
                                     )
                                 }
