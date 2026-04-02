@@ -38,3 +38,15 @@ h1 {
     margin-left: auto;
     width: 50%;
 }
+
+@media (min-width: 370px) and (max-width: 400px) {
+    h1 {
+        font-size: 1.75em;
+    }
+}
+
+@media (max-width: 369px) {
+    h1 {
+        font-size: 1.5em;
+    }
+}

@@ -53,7 +53,7 @@ export default function Signup() {
                 <div id='signupTextDiv'>
                     <p id='signupText'>BIENVENIDO</p>
                 </div>
-                <div id='sgnupInputsDiv'>
+                <div id='signupInputsDiv'>
                     <input
                         id='nameInput'
                         className='signupInput'
