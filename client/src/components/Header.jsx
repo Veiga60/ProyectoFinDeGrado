@@ -3,6 +3,7 @@ import logo from '../assets/images/tigre-transparente.png'
 import NavBar from '../components/NavBar.jsx'
 import { useLocation } from 'react-router-dom'
 
+
 function Header({ authenticatedUserPlayerId, isCoach }) {
 
     const location = useLocation();

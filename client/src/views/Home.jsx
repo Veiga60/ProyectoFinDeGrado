@@ -54,6 +54,9 @@ export default function Home() {
                             </div>
                         </div>
                         <div id='nextMatchDiv'>
+                            <div id='nextMatchTextDiv'>
+                                <p id='nextMatchText'>Próximo partido</p>
+                            </div>
                             <Match
                                 match={nextMatch}
                             />

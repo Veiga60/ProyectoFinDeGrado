@@ -4,6 +4,7 @@ import Header from '../components/Header.jsx'
 import Match from '../components/Match.jsx'
 import '../style/Matches.css'
 import axios from 'axios'
+import MatchCompressed from '../components/MatchCompressed.jsx'
 
 export default function Matches() {
 
@@ -22,6 +23,7 @@ export default function Matches() {
     }
 
     useEffect(() => {
+        console.log(window.innerWidth);
         getMatches();
     }, []);
 
@@ -33,10 +35,17 @@ export default function Matches() {
             />
             <div id='matchesDiv'>
                 {matches.map((match) =>
-                    <Match
-                        key={match.id}
-                        match={match}
-                    />
+                    (window.innerWidth >= 600) ? (
+                        <Match
+                            key={match.id}
+                            match={match}
+                        />
+                    ) : (
+                        <MatchCompressed
+                            key={match.id}
+                            match={match}
+                        />
+                    )
                 )}
             </div>
         </>
