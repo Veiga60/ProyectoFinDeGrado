@@ -1,19 +1,29 @@
-#mainDiv {
-    background-color: white;
+#loginMainDiv {
     width: 20em;
-    min-width: 200px;
-    min-height: 250px;
+    min-width: 300px;
+    min-height: 350px;
     height: 25em;
-    border-radius: 3.25em;
+    background-color: white;
+    border-radius: 12%;
     box-shadow: 1px 1px 15px 1px rgb(7, 78, 200);
-}
-
-#mainDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
     margin-top: 20%;
 }
 
+#loginInfoDiv {
+    height: fit-content;
+    border: 2px solid black;
+}
+
+
 #welcomeTextDiv {
-    padding-top: 0.5vw;
+    margin: 0;
+    position: absolute;
+    top: 2em;
 }
 
 #welcomeText {
@@ -22,48 +32,51 @@
     font-family: Inria Sans;
     font-size: 1.75em;
     font-weight: bold;
+    margin: 0;
+    padding: 0;
 }
 
-#inputsDiv {
-    margin: 0 auto;
-    margin-top: 1.25vw;
-    width: 70%;
-    min-width: 100px;
+#loginInputsDiv {
+    margin: 0;
+    position: relative;
+    top: -1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 25%;
+    width: 100%;
+    gap: 10%;
 }
 
-input {
+.loginInput {
     background-color: rgb(233, 233, 233);
     color: black;
     border: none;
     border-radius: 12px;
-    width: 100%;
-    min-width: 100px;
-    max-width: 220px;
-    height: 40px;
+    min-height: 40%;
+    width: 60%;
     font-family: Inria Sans;
     margin-right: 10px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 #usernameInput {
     font-size: large;
-    margin-top: 1vw;
-    margin-bottom: 1vw;
 }
 
 #passwordInput {
     font-size: large;
 }
 
-#loginButtonDiv {
-    margin-top: 2vw;
-}
 
-button {
+.loginButton {
     background-color: rgb(7, 78, 200);
     border: none;
     border-radius: 12px;
-    width: 12vw;
-    min-width: 100px;
+    width: 60%;
     height: 40px;
     font-family: Inria Sans;
     font-size: larger;
@@ -77,12 +90,12 @@ button:hover {
 }
 
 #notHaveAccountDiv {
-    margin-top: 2em;
+    position: absolute;
+    bottom: 1.5em;
 }
 
 #notHaveAccount {
     margin: 0 auto;
-    width: 250px;
     color: rgb(0, 76, 255);
     font-family: Inria Sans;
     text-decoration: underline;
@@ -93,15 +106,20 @@ button:hover {
     cursor: pointer;
 }
 
-#googleLoginButtonDiv {
-    margin-top: 1.1em;
-    display: flex;
+#buttonsDiv {
+    height: 25%;
+    align-items: center;
     justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20%;
+    width: 100%;
 }
 
 #googleButton {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: row;
     background-color: white;
     border: 1px solid rgb(7, 78, 200);
@@ -114,5 +132,91 @@ button:hover {
 }
 
 #loginGoogleText {
-    font-size: large;
+    font-size: medium;
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+    white-space: nowrap;
+}
+
+#errorText {
+    border: 1px solid red;
+    background-color: rgba(253, 126, 126, 0.377);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin: 0 auto;
+    width: fit-content;
+    padding-left: 5%;
+    padding-right: 5%;
+    height: 7%;
+    color: red;
+    font-family: Inria Sans;
+    font-size: medium;
+    margin-bottom: 7%;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    #loginMainDiv {
+        width: 27em;
+        height: 33em;
+    }
+
+    #welcomeText {
+        font-size: 2.5em;
+    }
+
+    .loginInput {
+        font-size: xx-large;
+    }
+
+    .loginButton {
+        font-size: x-large;
+        height: 35%;
+    }
+
+    #loginGoogleText {
+        font-size: 0.9em;
+    }
+
+    #notHaveAccountDiv {
+        width: 100%;
+    }
+
+    #notHaveAccount {
+        font-size: larger;
+    }
+}
+
+@media (max-height: 600px) {
+    #loginMainDiv {
+        width: 21em;
+        height: 27em;
+    }
+
+    #welcomeText {
+        font-size: 2em;
+    }
+
+    .loginInput {
+        font-size: xx-large;
+    }
+
+    .loginButton {
+        font-size: larger;
+        height: 40%;
+    }
+
+    #loginGoogleText {
+        font-size: 0.9em;
+    }
+
+    #notHaveAccountDiv {
+        width: 100%;
+    }
+
+    #notHaveAccount {
+        font-size: large;
+    }
 }

@@ -22,14 +22,14 @@ body {
 }
 
 @font-face {
-    font-family: Inria Sans;
-    src: url('../assets/fonts/InriaSans-Regular.ttf');
+  font-family: Inria Sans;
+  src: url('../assets/fonts/InriaSans-Regular.ttf');
 }
 
 @font-face {
-    font-family: Inria Sans;
-    src: url('../assets/fonts/InriaSans-Bold.ttf');
-    font-weight: bold;
+  font-family: Inria Sans;
+  src: url('../assets/fonts/InriaSans-Bold.ttf');
+  font-weight: bold;
 }
 
 @media (prefers-color-scheme: light) {
@@ -37,9 +37,11 @@ body {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }

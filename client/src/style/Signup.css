@@ -1,4 +1,4 @@
-#mainDiv {
+#signupMainDiv {
     background-color: white;
     width: 20em;
     min-width: 200px;
@@ -13,7 +13,7 @@
 }
 
 #signupTextDiv {
-    padding-top: 0.5vw;   
+    padding-top: 0.5vw;
 }
 
 #signupText {
@@ -24,14 +24,14 @@
     font-weight: bold;
 }
 
-#inputsDiv {
+#signupInputsDiv {
     margin: 0 auto;
     margin-top: 1.25vw;
     width: 70%;
     min-width: 100px;
 }
 
-input {
+.signupInput {
     background-color: rgb(233, 233, 233);
     color: black;
     border: none;
@@ -60,7 +60,7 @@ input {
     padding-left: 0;
 }
 
-#isTrainerDiv { 
+#isTrainerDiv {
     display: flex;
     align-items: center;
     margin-left: 15px;
@@ -78,7 +78,7 @@ input {
     min-width: 0px;
 }
 
-button {
+.signupButton {
     background-color: rgb(7, 78, 200);
     border: none;
     border-radius: 12px;

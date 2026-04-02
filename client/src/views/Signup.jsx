@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useState } from 'react'
 
-function Signup() {
+export default function Signup() {
 
     const SERVER_URL = 'http://localhost:8081';
     const navigate = useNavigate();
@@ -49,25 +49,28 @@ function Signup() {
     return (
         <>
             <Header />
-            <div id='mainDiv'>
+            <div id='signupMainDiv'>
                 <div id='signupTextDiv'>
                     <p id='signupText'>BIENVENIDO</p>
                 </div>
-                <div id='inputsDiv'>
+                <div id='sgnupInputsDiv'>
                     <input
                         id='nameInput'
+                        className='signupInput'
                         type="text"
                         placeholder='Nombre'
                         onChange={(e) => setName(e.target.value)}
                     />
                     <input
                         id='emailInput'
+                        className='signupInput'
                         type="text"
                         placeholder='Email'
                         onChange={(e) => setEmail(e.target.value)}
                     />
                     <input
                         id='passwordInput'
+                        className='signupInput'
                         type="password"
                         placeholder='Contraseña'
                         onChange={(e) => setPassword(e.target.value)}
@@ -75,6 +78,7 @@ function Signup() {
                     <div id='isTrainerDiv'>
                         <input
                             id='isTrainerInput'
+                            className='signupInput'
                             type="checkbox"
                             onChange={(e) => setIsCoach(e.target.checked)}
                         />
@@ -82,7 +86,7 @@ function Signup() {
                     </div>
                 </div>
                 <div id='signupButtonDiv'>
-                    <button onClick={signup}>CREAR CUENTA</button>
+                    <button className='signupButton' onClick={signup}>CREAR CUENTA</button>
                 </div>
                 <div id='alreadyHaveAccountDiv'>
                     <p id='alreadyHaveAccount' onClick={() => navigate("/")}>¿Ya tienes una cuenta? Inicia sesión.</p>
@@ -91,5 +95,3 @@ function Signup() {
         </>
     )
 }
-
-export default Signup

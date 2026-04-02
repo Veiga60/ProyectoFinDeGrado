@@ -7,12 +7,14 @@ import googleLogo from '../assets/images/google.png'
 
 export default function Login() {
 
+    const SERVER_URL = "http://localhost:8081"
     const navigate = useNavigate()
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    const SERVER_URL = "http://localhost:8081"
+    const [error, setError] = useState();
+
 
     const login = async () => {
         try {
@@ -29,8 +31,12 @@ export default function Login() {
             localStorage.setItem('jwt', response.data);
             navigate("/home");
         } catch (error) {
-            console.error("Failed logging in");
-            console.error(error);
+            if (error.status == 403) {
+                setError('Usuario y/o contraseña incorrectos');
+            } else {
+                setError('Error al iniciar sesión');
+            }
+            console.log('Failed logging in', error);
         }
     }
 
@@ -41,29 +47,34 @@ export default function Login() {
     return (
         <>
             <Header />
-            <div id='mainDiv'>
+            <div id='loginMainDiv'>
                 <div id='welcomeTextDiv'>
                     <p id='welcomeText'>BIENVENIDO</p>
                 </div>
-                <div id='inputsDiv'>
+                {
+                    (error !== undefined) && (
+                        <p id='errorText'>{error}</p>
+                    )
+                }
+                <div id='loginInputsDiv'>
                     <input
                         id='usernameInput'
+                        className='loginInput'
                         type="text"
                         placeholder='Nombre de usuario'
                         onChange={(e) => setUsername(e.target.value)}
                     />
                     <input
                         id='passwordInput'
+                        className='loginInput'
                         type="password"
                         placeholder='Contraseña'
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
-                <div id='loginButtonDiv'>
-                    <button onClick={login}>INICIAR SESIÓN</button>
-                </div>
-                <div id='googleLoginButtonDiv'>
-                    <button id='googleButton' onClick={googleLogin}><img id='googleLogo' src={googleLogo} alt="Google" /><p id='loginGoogleText'>Continuar con Google</p></button>
+                <div id='buttonsDiv'>
+                    <button className='loginButton' onClick={login}>INICIAR SESIÓN</button>
+                    <button id='googleButton' className='loginButton' onClick={googleLogin}><img id='googleLogo' src={googleLogo} alt="Google" /><p id='loginGoogleText'>Continuar con Google</p></button>
                 </div>
                 <div id='notHaveAccountDiv'>
                     <p id='notHaveAccount' onClick={() => navigate("/signup")}>¿No tienes una cuenta? Crea una.</p>

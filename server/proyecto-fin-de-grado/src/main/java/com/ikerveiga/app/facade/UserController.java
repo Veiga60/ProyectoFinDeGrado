@@ -69,9 +69,7 @@ public class UserController {
             String token = userService.login(userDTO.getUsername(), userDTO.getPassword(), response);
             return ResponseEntity.ok(token);
         } catch (RuntimeException e) {
-            if (e.getMessage().equals("User does not exist")) {
-                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-            } else if (e.getMessage().equals("Incorrect password")) {
+            if (e.getMessage().equals("User does not exist") || (e.getMessage().equals("Incorrect password"))) {
                 return new ResponseEntity<>(HttpStatus.FORBIDDEN);
             } else {
                 e.printStackTrace();
