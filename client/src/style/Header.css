@@ -39,7 +39,7 @@ h1 {
     width: 50%;
 }
 
-@media (min-width: 370px) and (max-width: 400px) {
+@media (min-width: 370px) and (max-width: 500px) {
     h1 {
         font-size: 1.75em;
     }

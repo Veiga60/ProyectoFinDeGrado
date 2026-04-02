@@ -1,9 +1,10 @@
 import '../style/Login.css'
 import Header from '../components/Header.jsx'
 import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 import googleLogo from '../assets/images/google.png'
+import { FaEye, FaEyeSlash } from 'react-icons/fa'
 
 export default function Login() {
 
@@ -14,7 +15,8 @@ export default function Login() {
     const [password, setPassword] = useState('');
 
     const [error, setError] = useState();
-
+    const [showPassword, setShowPassword] = useState(false);
+    const [passwordInputType, setPasswordInputType] = useState('password');
 
     const login = async () => {
         try {
@@ -44,6 +46,16 @@ export default function Login() {
         window.location.href = 'http://localhost:8081/oauth2/authorization/google'
     }
 
+    const toggleShowPassword = () => {
+        if (!showPassword) {
+            setPasswordInputType('text');
+            setShowPassword(true);
+        } else {
+            setPasswordInputType('password');
+            setShowPassword(false);
+        }
+    }
+
     return (
         <>
             <Header />
@@ -52,7 +64,7 @@ export default function Login() {
                     <p id='welcomeText'>BIENVENIDO</p>
                 </div>
                 {
-                    (error !== undefined) && (
+                    (error !== undefined && error !== '') && (
                         <p id='errorText'>{error}</p>
                     )
                 }
@@ -64,13 +76,19 @@ export default function Login() {
                         placeholder='Nombre de usuario'
                         onChange={(e) => setUsername(e.target.value)}
                     />
-                    <input
-                        id='passwordInput'
-                        className='loginInput'
-                        type="password"
-                        placeholder='Contraseña'
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
+                    <div id='passwordInputDiv'>
+                        <input
+                            id='passwordInput'
+                            className='loginInput'
+                            type={passwordInputType}
+                            placeholder='Contraseña'
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                        {
+                            (showPassword) ? (<FaEyeSlash className='eyeIcon' onClick={toggleShowPassword} />) : (<FaEye className='eyeIcon' onClick={toggleShowPassword} />)
+                        }
+
+                    </div>
                 </div>
                 <div id='buttonsDiv'>
                     <button className='loginButton' onClick={login}>INICIAR SESIÓN</button>
