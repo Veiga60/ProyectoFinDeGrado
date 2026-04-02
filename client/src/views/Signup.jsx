@@ -3,6 +3,7 @@ import Header from '../components/Header.jsx'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useState } from 'react'
+import { FaEye, FaEyeSlash } from 'react-icons/fa'
 
 export default function Signup() {
 
@@ -14,11 +15,15 @@ export default function Signup() {
     const [password, setPassword] = useState('');
     const [isCoach, setIsCoach] = useState(false);
 
+    const [error, setError] = useState();
+    const [showPassword, setShowPassword] = useState(false);
+    const [passwordInputType, setPasswordInputType] = useState('password');
+
 
     const signup = async () => {
 
         try {
-            const response = await axios.post(`${SERVER_URL}/users`,
+            await axios.post(`${SERVER_URL}/users`,
                 {
                     'userName': name,
                     'email': email,
@@ -40,8 +45,24 @@ export default function Signup() {
             navigate('/');
 
         } catch (error) {
-            console.error('Failed creating new user');
-            console.error(error);
+            if (error.status == 401) {
+                setError('Correo eléctronico no permitido');
+            } else if (error.status == 409) {
+                setError('Nombre de usuario ya en uso');
+            } else {
+                setError('Error al crear cuenta de usuario');
+            }
+            console.log('Failed creating new user', error);
+        }
+    }
+
+    const toggleShowPassword = () => {
+        if (!showPassword) {
+            setPasswordInputType('text');
+            setShowPassword(true);
+        } else {
+            setPasswordInputType('password');
+            setShowPassword(false);
         }
     }
 
@@ -53,6 +74,11 @@ export default function Signup() {
                 <div id='signupTextDiv'>
                     <p id='signupText'>BIENVENIDO</p>
                 </div>
+                {
+                    (error !== undefined && error !== '') && (
+                        <p id='signupErrorText'>{error}</p>
+                    )
+                }
                 <div id='signupInputsDiv'>
                     <input
                         id='nameInput'
@@ -68,13 +94,18 @@ export default function Signup() {
                         placeholder='Email'
                         onChange={(e) => setEmail(e.target.value)}
                     />
-                    <input
-                        id='passwordInput'
-                        className='signupInput'
-                        type="password"
-                        placeholder='Contraseña'
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
+                    <div id='signupPasswordInputDiv'>
+                        <input
+                            id='passwordInput'
+                            className='signupInput'
+                            type={passwordInputType}
+                            placeholder='Contraseña'
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                        {
+                            (showPassword) ? (<FaEyeSlash className='eyeIcon' onClick={toggleShowPassword} />) : (<FaEye className='eyeIcon' onClick={toggleShowPassword} />)
+                        }
+                    </div>
                     <div id='isTrainerDiv'>
                         <input
                             id='isTrainerInput'

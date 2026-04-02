@@ -1,7 +1,7 @@
 import '../style/Login.css'
 import Header from '../components/Header.jsx'
 import { useNavigate } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import axios from 'axios'
 import googleLogo from '../assets/images/google.png'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
@@ -65,7 +65,7 @@ export default function Login() {
                 </div>
                 {
                     (error !== undefined && error !== '') && (
-                        <p id='errorText'>{error}</p>
+                        <p id='loginErrorText'>{error}</p>
                     )
                 }
                 <div id='loginInputsDiv'>
@@ -76,7 +76,7 @@ export default function Login() {
                         placeholder='Nombre de usuario'
                         onChange={(e) => setUsername(e.target.value)}
                     />
-                    <div id='passwordInputDiv'>
+                    <div id='loginPasswordInputDiv'>
                         <input
                             id='passwordInput'
                             className='loginInput'
@@ -87,7 +87,6 @@ export default function Login() {
                         {
                             (showPassword) ? (<FaEyeSlash className='eyeIcon' onClick={toggleShowPassword} />) : (<FaEye className='eyeIcon' onClick={toggleShowPassword} />)
                         }
-
                     </div>
                 </div>
                 <div id='buttonsDiv'>
