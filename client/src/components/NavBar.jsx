@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom'
-import logoutDoor from '../assets/images/logout.png'
 import axios from 'axios'
 import '../style/NavBar.css'
 import { FiLogOut } from "react-icons/fi";

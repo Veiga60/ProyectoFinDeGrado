@@ -26,7 +26,7 @@ function Header({ authenticatedUserPlayerId, isCoach }) {
             <div id='titleDiv'>
                 <img id='logo' src={logo} alt="logoApp" />
                 {
-                    (width > 400) && (
+                    (width > 420) && (
                         <h1 id='title'>METROPOLITANO HC</h1>
                     )
                 }
@@ -48,7 +48,10 @@ function Header({ authenticatedUserPlayerId, isCoach }) {
             }
             {
                 (showHamburgerMenu && width < 1050) && (
-                    <HamburgerMenu />
+                    <HamburgerMenu
+                        authenticatedUserPlayerId={authenticatedUserPlayerId}
+                        isCoach={isCoach}
+                    />
                 )
             }
         </div>
