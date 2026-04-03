@@ -13,6 +13,15 @@
     align-items: center;
     justify-content: center;
     margin: 0;
+    transition: 0.5s ease-in-out;
+}
+
+.menuIsOpen {
+    transform: translateX(0);
+}
+
+.menuIsClosed {
+    transform: translateX(100%);
 }
 
 .hamburgerMenuIcon {

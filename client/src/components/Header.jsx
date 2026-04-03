@@ -48,10 +48,11 @@ function Header({ authenticatedUserPlayerId, isCoach }) {
                 </div>
             }
             {
-                (showHamburgerMenu && width < 1050) && (
+                (width < 1050) && (
                     <HamburgerMenu
                         authenticatedUserPlayerId={authenticatedUserPlayerId}
                         isCoach={isCoach}
+                        className={showHamburgerMenu ? 'menuIsOpen' : 'menuIsClosed'}
                     />
                 )
             }

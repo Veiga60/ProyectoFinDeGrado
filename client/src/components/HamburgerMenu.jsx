@@ -7,7 +7,7 @@ import { FaCalendarDays, FaBox } from "react-icons/fa6";
 import { FiLogOut } from "react-icons/fi";
 import '../style/HamburgerMenu.css'
 
-export default function HamburgerMenu({ authenticatedUserPlayerId, isCoach }) {
+export default function HamburgerMenu({ authenticatedUserPlayerId, isCoach, className }) {
 
     const SERVER_URL = 'http://localhost:8081';
     const navigate = useNavigate();
@@ -26,7 +26,7 @@ export default function HamburgerMenu({ authenticatedUserPlayerId, isCoach }) {
 
     return (
         <>
-            <div id='hamburgerMenuDiv'>
+            <div id='hamburgerMenuDiv' className={className}>
                 <div id='navMenuDiv'>
                     <div id='menuHomeDiv' className='menuDiv' onClick={() => navigate('/home', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
                         <BiSolidHome className='hamburgerMenuIcon' color='rgb(7, 78, 200)' size={25} />
