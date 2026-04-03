@@ -2,8 +2,9 @@ import '../style/Header.css'
 import logo from '../assets/images/tigre-transparente.png'
 import NavBar from '../components/NavBar.jsx'
 import { useLocation } from 'react-router-dom'
-import { RxHamburgerMenu } from 'react-icons/rx'
+import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx'
 import { useState, useEffect } from 'react'
+import HamburgerMenu from './HamburgerMenu.jsx'
 
 
 function Header({ authenticatedUserPlayerId, isCoach }) {
@@ -11,6 +12,7 @@ function Header({ authenticatedUserPlayerId, isCoach }) {
     const location = useLocation();
 
     const [width, setWidth] = useState(window.innerWidth);
+    const [showHamburgerMenu, setShowHamburgerMenu] = useState(false);
 
     useEffect(() => {
         const handleResize = () => setWidth(window.innerWidth);
@@ -30,7 +32,9 @@ function Header({ authenticatedUserPlayerId, isCoach }) {
                 }
                 {
                     (width <= 1050) && (
-                        <RxHamburgerMenu className='menuIcon' size={35} />
+                        (!showHamburgerMenu)
+                            ? (<RxHamburgerMenu className='menuIcon' size={35} onClick={() => setShowHamburgerMenu(true)} />)
+                            : (<RxCross1 className='menuIcon' color=' white' size={35} onClick={() => setShowHamburgerMenu(false)} />)
                     )
                 }
             </div>
@@ -41,6 +45,11 @@ function Header({ authenticatedUserPlayerId, isCoach }) {
                         isCoach={isCoach}
                     />
                 </div>
+            }
+            {
+                (showHamburgerMenu && width < 1050) && (
+                    <HamburgerMenu />
+                )
             }
         </div>
     )

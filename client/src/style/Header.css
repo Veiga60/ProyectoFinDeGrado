@@ -44,6 +44,16 @@ h1 {
     right: 20px;
 }
 
+.menuIcon:hover {
+    cursor: pointer;
+}
+
+#hamburgerMenu {
+    position: absolute;
+    top: 80px;
+    right: 0;
+}
+
 @media (max-width: 369px) {
     h1 {
         font-size: 1.5em;

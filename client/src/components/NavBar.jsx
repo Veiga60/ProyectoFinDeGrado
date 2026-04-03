@@ -35,11 +35,11 @@ export default function NavBar({ authenticatedUserPlayerId, isCoach }) {
             <div id="callsNavDiv" className="navbarSectionDiv" onClick={() => navigate('/calls', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
                 <p id="callsNavText" className="navbarText">CONVOCATORIAS</p>
             </div>
-            <div id="callsNavDiv" className="navbarSectionDiv" onClick={() => navigate('/forum', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
-                <p id="callsNavText" className="navbarText">FORO</p>
+            <div id="forumNavDiv" className="navbarSectionDiv" onClick={() => navigate('/forum', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
+                <p id="forumNavText" className="navbarText">FORO</p>
             </div>
-            <div id="callsNavDiv" className="navbarSectionDiv" onClick={() => navigate('/orders', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
-                <p id="callsNavText" className="navbarText">PEDIDOS</p>
+            <div id="ordersNavDiv" className="navbarSectionDiv" onClick={() => navigate('/orders', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
+                <p id="ordersNavText" className="navbarText">PEDIDOS</p>
             </div>
             <FiLogOut className='logoutIcon' onClick={logout} size={30} color='white' />
         </div>

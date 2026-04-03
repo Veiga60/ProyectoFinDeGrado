@@ -1,0 +1,16 @@
+#hamburgerMenuDiv {
+    width: 30%;
+    background-color: white;
+    border: 2px solid rgb(7, 78, 200);
+    position: absolute;
+    right: 0;
+    top: 80px;
+    height: 43vh;
+}
+
+.menuText {
+    color: black;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: medium;
+}
