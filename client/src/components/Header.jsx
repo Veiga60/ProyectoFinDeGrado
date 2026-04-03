@@ -26,15 +26,16 @@ function Header({ authenticatedUserPlayerId, isCoach }) {
             <div id='titleDiv'>
                 <img id='logo' src={logo} alt="logoApp" />
                 {
-                    (width > 420) && (
+                    (width > 420 || location.pathname == '/') && (
                         <h1 id='title'>METROPOLITANO HC</h1>
                     )
                 }
                 {
                     (width <= 1050) && (
-                        (!showHamburgerMenu)
-                            ? (<RxHamburgerMenu className='menuIcon' size={35} onClick={() => setShowHamburgerMenu(true)} />)
-                            : (<RxCross1 className='menuIcon' color=' white' size={35} onClick={() => setShowHamburgerMenu(false)} />)
+                        ((location.pathname != '/' && location.pathname != '/signup' && location.pathname != '/error/unauthorized'))
+                        && ((!showHamburgerMenu)
+                            ? (<RxHamburgerMenu className='menuIcon' color='white' size={35} onClick={() => setShowHamburgerMenu(true)} />)
+                            : (<RxCross1 className='menuIcon' color='white' size={35} onClick={() => setShowHamburgerMenu(false)} />))
                     )
                 }
             </div>

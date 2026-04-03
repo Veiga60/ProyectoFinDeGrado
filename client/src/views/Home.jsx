@@ -1,5 +1,6 @@
 import Header from '../components/Header.jsx'
 import Match from '../components/Match.jsx'
+import MatchCompressed from '../components/MatchCompressed.jsx'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -12,6 +13,7 @@ export default function Home() {
 
     const [authenticatedUser, setAuthenticatedUser] = useState(null);
     const [nextMatch, setNextMatch] = useState();
+    const [width, setWidth] = useState(window.innerWidth);
 
     const whoAmI = async () => {
         try {
@@ -32,8 +34,12 @@ export default function Home() {
     }
 
     useEffect(() => {
+        const handleResize = () => setWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+
         whoAmI();
         getNextMatch();
+        return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     return (
@@ -57,9 +63,12 @@ export default function Home() {
                             <div id='nextMatchTextDiv'>
                                 <p id='nextMatchText'>Próximo partido</p>
                             </div>
-                            <Match
-                                match={nextMatch}
-                            />
+                            {
+                                (width < 660)
+                                    ? (<MatchCompressed match={nextMatch} />)
+                                    : (<Match match={nextMatch} />)
+                            }
+
                             {(authenticatedUser.isCoach == true) &&
                                 (
                                     <div id='startMatchDiv'>

@@ -1,5 +1,10 @@
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { BiSolidHome, BiSolidMessageDetail } from "react-icons/bi";
+import { GiHockey } from "react-icons/gi";
+import { IoStatsChart } from "react-icons/io5";
+import { FaCalendarDays, FaBox } from "react-icons/fa6";
+import { FiLogOut } from "react-icons/fi";
 import '../style/HamburgerMenu.css'
 
 export default function HamburgerMenu({ authenticatedUserPlayerId, isCoach }) {
@@ -22,26 +27,35 @@ export default function HamburgerMenu({ authenticatedUserPlayerId, isCoach }) {
     return (
         <>
             <div id='hamburgerMenuDiv'>
-                <div id='menuHomeDiv' className='menuDiv' onClick={() => navigate('/home', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
-                    <p id='menuHomeText' className='menuText'>INICIO</p>
-                </div>
-                <div id='menuMatchesDiv' className='menuDiv' onClick={() => navigate('/matches', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
-                    <p id='menuMatchesText' className='menuText'>PARTIDOS</p>
-                </div>
-                <div id='menuStatsDiv' className='menuDiv' onClick={() => navigate('/stats', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
-                    <p id='menuStatsText' className='menuText'>ESTADÍSTICAS</p>
-                </div>
-                <div id='menuCallsDiv' className='menuDiv' onClick={() => navigate('/calls', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
-                    <p id='menuCallsText' className='menuText'>CONVOCATORIAS</p>
-                </div>
-                <div id='menuForumDiv' className='menuDiv' onClick={() => navigate('/forum', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
-                    <p id='menuForumText' className='menuText'>FORO</p>
-                </div>
-                <div id='menuOrdersDiv' className='menuDiv' onClick={() => navigate('/orders', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
-                    <p id='menuOrdersText' className='menuText'>PEDIDOS</p>
-                </div>
-                <div id='menuLogoutDiv' className='menuDiv' onClick={logout}>
-                    <p id='menuLogoutText' className='menuText'>CERRAR SESIÓN</p>
+                <div id='navMenuDiv'>
+                    <div id='menuHomeDiv' className='menuDiv' onClick={() => navigate('/home', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
+                        <BiSolidHome className='hamburgerMenuIcon' color='rgb(7, 78, 200)' size={25} />
+                        <p id='menuHomeText' className='menuText'>INICIO</p>
+                    </div>
+                    <div id='menuMatchesDiv' className='menuDiv' onClick={() => navigate('/matches', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
+                        <GiHockey className='hamburgerMenuIcon' color='rgb(7, 78, 200)' size={25} />
+                        <p id='menuMatchesText' className='menuText'>PARTIDOS</p>
+                    </div>
+                    <div id='menuStatsDiv' className='menuDiv' onClick={() => navigate('/stats', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
+                        <IoStatsChart className='hamburgerMenuIcon' color='rgb(7, 78, 200)' size={25} />
+                        <p id='menuStatsText' className='menuText'>ESTADÍSTICAS</p>
+                    </div>
+                    <div id='menuCallsDiv' className='menuDiv' onClick={() => navigate('/calls', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
+                        <FaCalendarDays className='hamburgerMenuIcon' color='rgb(7, 78, 200)' size={25} />
+                        <p id='menuCallsText' className='menuText'>CONVOCATORIAS</p>
+                    </div>
+                    <div id='menuForumDiv' className='menuDiv' onClick={() => navigate('/forum', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
+                        <BiSolidMessageDetail className='hamburgerMenuIcon' color='rgb(7, 78, 200)' size={25} />
+                        <p id='menuForumText' className='menuText'>FORO</p>
+                    </div>
+                    <div id='menuOrdersDiv' className='menuDiv' onClick={() => navigate('/orders', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
+                        <FaBox className='hamburgerMenuIcon' color='rgb(7, 78, 200)' size={25} />
+                        <p id='menuOrdersText' className='menuText'>PEDIDOS</p>
+                    </div>
+                    <div id='menuLogoutDiv' className='menuDiv' onClick={logout}>
+                        <FiLogOut className='hamburgerMenuIcon' color='rgb(7, 78, 200)' size={25} />
+                        <p id='menuLogoutText' className='menuText'>CERRAR SESIÓN</p>
+                    </div>
                 </div>
             </div>
         </>
