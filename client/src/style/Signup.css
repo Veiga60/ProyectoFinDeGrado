@@ -236,7 +236,7 @@ button:hover {
     }
 }
 
-@media (max-height: 600px) {
+@media (min-height: 540px) and (max-height: 610px) {
     #signupMainDiv {
         width: 21em;
         height: 27em;
@@ -266,5 +266,38 @@ button:hover {
     .eyeIcon {
         margin-top: 14px;
         right: 73px;
+    }
+}
+
+@media (max-height: 540px) {
+    #signupMainDiv {
+        width: 17em;
+        height: 23em;
+    }
+
+    #signupText {
+        font-size: 1.75em;
+    }
+
+    .signupInput {
+        font-size: x-large;
+    }
+
+    .signupButton {
+        font-size: larger;
+        height: 100%;
+    }
+
+    #alreadyHaveAccountDiv {
+        width: 100%;
+    }
+
+    #alreadyHaveAccount {
+        font-size: medium;
+    }
+
+    .eyeIcon {
+        margin-top: 11px;
+        right: 65px;
     }
 }

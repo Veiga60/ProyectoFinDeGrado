@@ -6,6 +6,7 @@
     border-radius: 15px;
     display: flex;
     align-items: center;
+    margin-bottom: 30px;
 }
 
 #infoContainer {
@@ -97,12 +98,20 @@ img {
     padding: 0;
     margin: 0;
     border-radius: 10px;
+    height: 40px;
     width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #localTeamGoalsDiv {
     margin: 0;
     padding: 0;
     border-radius: 10px;
+    height: 40px;
     width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

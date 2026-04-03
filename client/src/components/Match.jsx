@@ -1,9 +1,9 @@
 import '../style/Match.css'
 
-export default function Match({ match }) {
+export default function Match({ className, match }) {
     return (
         <>
-            <div id="matchDiv">
+            <div id="matchDiv" className={className}>
                 <div id='infoContainer'>
                     <div id='localTeamDiv'>
                         <div className='teamLogoDiv'>

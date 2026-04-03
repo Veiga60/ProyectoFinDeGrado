@@ -9,8 +9,10 @@ import MatchCompressed from '../components/MatchCompressed.jsx'
 export default function Matches() {
 
     const SERVER_URL = 'http://localhost:8081'
-    const [matches, setMatches] = useState([]);
     const location = useLocation();
+
+    const [matches, setMatches] = useState([]);
+    const [width, setWidth] = useState(window.innerWidth)
 
     const getMatches = async () => {
         try {
@@ -23,8 +25,12 @@ export default function Matches() {
     }
 
     useEffect(() => {
-        console.log(window.innerWidth);
+        const handleResize = () => setWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+        console.log(width);
         getMatches();
+
+        return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     return (
@@ -35,7 +41,7 @@ export default function Matches() {
             />
             <div id='matchesDiv'>
                 {matches.map((match) =>
-                    (window.innerWidth >= 600) ? (
+                    (width >= 600) ? (
                         <Match
                             key={match.id}
                             match={match}
