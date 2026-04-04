@@ -1,4 +1,5 @@
 .react-tabs {
+    width: 90%;
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -6,6 +7,7 @@
     margin: 0 0 10px;
     margin-bottom: 0;
     padding: 0;
+    text-align: left;
 }
 
 .react-tabs__tab {
@@ -30,6 +32,7 @@
     filter: brightness(1);
     color: rgb(7, 78, 200);
     border-radius: 5px 5px 0 0;
+    padding-top: 10px;
 }
 
 .react-tabs__tab--disabled {
@@ -46,10 +49,9 @@
 }
 
 .react-tabs__tab-panel--selected {
-    width: 1400px;
-    display: grid;
+    width: 100%;
+    display: block;
     gap: 30px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
     border: 1px solid rgb(7, 78, 200);
     margin-top: 0;
     background-color: white;
@@ -61,16 +63,34 @@
     font-family: Inria Sans;
 }
 
+#statsMainDiv {
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #tabsDiv {
+    width: 100%;
+    margin-top: 1%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 #playersTab {
-    border: 2px solid red;
+    width: 100%;
+    max-height: calc(100vh - 190px);
     display: grid;
+    text-align: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    gap: 0px 30px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+    scrollbar-color: rgb(7, 78, 200) transparent;
 }
 
 .statDiv {
