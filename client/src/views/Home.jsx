@@ -60,15 +60,17 @@ export default function Home() {
                             </div>
                         </div>
                         <div id='nextMatchDiv'>
-                            <div id='nextMatchTextDiv'>
-                                <p id='nextMatchText'>Próximo partido</p>
-                            </div>
-                            {
-                                (width < 660)
-                                    ? (<MatchCompressed match={nextMatch} />)
-                                    : (<Match match={nextMatch} />)
-                            }
+                            <div id='nextMatchAndTextDiv'>
+                                <div id='nextMatchTextDiv'>
+                                    <p id='nextMatchText'>Próximo partido</p>
+                                </div>
+                                {
+                                    (width < 660)
+                                        ? (<MatchCompressed match={nextMatch} />)
+                                        : (<Match match={nextMatch} />)
+                                }
 
+                            </div>
                             {(authenticatedUser.isCoach == true) &&
                                 (
                                     <div id='startMatchDiv'>

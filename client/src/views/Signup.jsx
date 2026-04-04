@@ -25,7 +25,7 @@ export default function Signup() {
         try {
             await axios.post(`${SERVER_URL}/users`,
                 {
-                    'userName': name,
+                    'username': name,
                     'email': email,
                     'password': password,
                     'isCoach': isCoach

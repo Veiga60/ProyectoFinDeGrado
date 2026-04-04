@@ -18,10 +18,9 @@
 #matchInfoMainDiv {
     left: 0;
     width: 100%;
-    border: 2px solid red;
     display: flex;
     flex-direction: row;
-    gap: 25%;
+    gap: 10%;
 }
 
 #calledPlayersDiv {
@@ -40,6 +39,27 @@
 #calledGoaliesTable {
     border: 1px solid rgb(7, 78, 200);
     width: 100%;
+}
+
+.startMatchButton {
+    background-color: rgb(7, 78, 200);
+    border: none;
+    border-radius: 12px;
+    width: 60%;
+    height: 40px;
+    font-family: Inria Sans;
+    font-size: larger;
+    transition: 0.5s;
+}
+
+#startMatchLeftDiv {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 150px;
+    width: 40%;
+
 }
 
 .tableTitle {
@@ -70,6 +90,7 @@
     font-family: Inria Sans;
     font-weight: bold;
     font-size: larger;
+    white-space: nowrap;
 }
 
 .calledPlayerName:hover {
@@ -95,6 +116,7 @@
     font-family: Inria Sans;
     font-weight: bold;
     font-size: larger;
+    white-space: nowrap;
 }
 
 .calledGoalieName:hover {

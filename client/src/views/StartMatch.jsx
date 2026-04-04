@@ -251,47 +251,50 @@ export default function StartMatch() {
                     }}>FINALIZAR PARTIDO</button>
                 </div>
                 <div id='matchInfoMainDiv'>
-                    <div id='calledPlayersDiv'>
-                        <table id='calledPlayersTable'>
-                            <caption className='tableTitle'>JUGADORES</caption>
-                            <tbody id='calledPlayersTableBody'>
-                                {players.map(player =>
-                                    ((match.call.callPlayerStatus[player.id] == 'CONFIRMED') && player.playerType == 'RINK_PLAYER') && (
-                                        <tr key={player.id} className='calledPlayerRow'>
-                                            <td className='calledPlayerNumber' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents } })}>
-                                                {player.number}
-                                            </td>
-                                            <td className='calledPlayerName' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents } })}>
-                                                {player.name} {player.lastName1} {player.lastName2}
-                                            </td>
-                                        </tr>
-                                    )
-                                )}
+                    <div id='startMatchLeftDiv'>
+                        <div id='calledPlayersDiv'>
+                            <table id='calledPlayersTable'>
+                                <caption className='tableTitle'>JUGADORES</caption>
+                                <tbody id='calledPlayersTableBody'>
+                                    {players.map(player =>
+                                        ((match.call.callPlayerStatus[player.id] == 'CONFIRMED') && player.playerType == 'RINK_PLAYER') && (
+                                            <tr key={player.id} className='calledPlayerRow'>
+                                                <td className='calledPlayerNumber' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents } })}>
+                                                    {player.number}
+                                                </td>
+                                                <td className='calledPlayerName' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents } })}>
+                                                    {player.name} {player.lastName1} {player.lastName2}
+                                                </td>
+                                            </tr>
+                                        )
+                                    )}
 
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
 
-                        <table id='calledGoaliesTable'>
-                            <caption className='tableTitle'>PORTEROS</caption>
-                            <tbody id='calledGoaliesTableBody'>
-                                {players.map(player =>
-                                    ((match.call.callPlayerStatus[player.id] == 'CONFIRMED') && player.playerType == 'GOALIE') && (
-                                        <tr key={player.id} className='calledGoalieRow'>
-                                            <td className='calledGoalieNumber' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents } })}>
-                                                {player.number}
-                                            </td>
-                                            <td className='calledGoalieName' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents } })}>
-                                                {player.name} {player.lastName1} {player.lastName2}
-                                            </td>
-                                        </tr>
-                                    )
-                                )}
+                            <table id='calledGoaliesTable'>
+                                <caption className='tableTitle'>PORTEROS</caption>
+                                <tbody id='calledGoaliesTableBody'>
+                                    {players.map(player =>
+                                        ((match.call.callPlayerStatus[player.id] == 'CONFIRMED') && player.playerType == 'GOALIE') && (
+                                            <tr key={player.id} className='calledGoalieRow'>
+                                                <td className='calledGoalieNumber' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents } })}>
+                                                    {player.number}
+                                                </td>
+                                                <td className='calledGoalieName' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents } })}>
+                                                    {player.name} {player.lastName1} {player.lastName2}
+                                                </td>
+                                            </tr>
+                                        )
+                                    )}
 
-                            </tbody>
-                        </table>
-                        <button onClick={() => navigate(`/matches/${matchId}/start_match/team`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents } })}>ESTADISTICAS EQUIPO</button>
-                        <button onClick={() => navigate(`/matches/${matchId}/incidences`, { state: { match: match, matchPeriod: matchPeriod, matchEvents: matchEvents } })}>INCIDENCIAS</button>
-                        <button onClick={() => [console.log(location), console.log(matchEvents)]}>CONSOLA</button>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id='startMatchButtonsDiv'>
+                            <button className='startMatchButton' onClick={() => navigate(`/matches/${matchId}/start_match/team`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents } })}>ESTADISTICAS EQUIPO</button>
+                            <button className='startMatchButton' onClick={() => navigate(`/matches/${matchId}/incidences`, { state: { match: match, matchPeriod: matchPeriod, matchEvents: matchEvents } })}>INCIDENCIAS</button>
+                        </div>
                     </div>
                     <div id='matchEventsContainer'>
                         <p id='matchEventsText'>ACTA DEL PARTIDO</p>
