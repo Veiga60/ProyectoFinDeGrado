@@ -67,8 +67,7 @@ export default function Stats() {
                             </div>
                         </TabPanel>
                         <TabPanel>
-                            <div id='statsTab'>
-
+                            <div id='teamTab'>
                                 <div className='statDiv'>
                                     <p className='statText'>Puntos</p>
                                     <p className='statValue'>{(3 * teamStats.gamesWon) + teamStats.gamesTied + teamStats.bonusPoints}</p>

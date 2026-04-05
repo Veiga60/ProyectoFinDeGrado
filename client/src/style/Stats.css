@@ -85,7 +85,6 @@
     width: 100%;
     max-height: calc(100vh - 190px);
     display: grid;
-    text-align: center;
     justify-content: center;
     overflow-y: auto;
     overflow-x: hidden;
@@ -95,8 +94,20 @@
     scrollbar-color: rgb(7, 78, 200) transparent;
 }
 
+#teamTab {
+    height: calc(100vh - 190px);
+    max-height: calc(100vh - 190px);
+    overflow-y: auto;
+    gap: 40px 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 190px));
+    justify-content: center;
+    scrollbar-color: rgb(7, 78, 200) transparent;
+}
+
 .statDiv {
     height: fit-content;
+    width: 100%;
 }
 
 .statText {
@@ -118,7 +129,7 @@
 
 #logoImageDiv {
     margin-left: auto;
-    width: 80%;
+    width: 100%;
     margin-right: auto;
     padding: 0;
 }
