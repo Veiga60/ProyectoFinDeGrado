@@ -3,6 +3,7 @@ import Match from '../components/Match.jsx'
 import PlayerCard from '../components/PlayerCard.jsx'
 import { useState, useEffect } from 'react'
 import { useParams, useLocation } from 'react-router-dom'
+import MatchCompressed from '../components/MatchCompressed.jsx'
 import axios from 'axios'
 import '../style/CallDetail.css'
 
@@ -15,13 +16,12 @@ export default function CallDetail() {
     const [match, setMatch] = useState();
     const [players, setPlayers] = useState([]);
     const [call, setCall] = useState();
+    const [width, setWidth] = useState(window.innerWidth)
 
     const getMatch = async () => {
         try {
             const response = await axios.get(`${SERVER_URL}/matches/${matchId}`, { withCredentials: true });
-            console.log(response.data);
             setMatch(response.data);
-            console.log(response.data.call);
             if (response.data.call != null) {
                 setCall(response.data.call);
             }
@@ -65,9 +65,12 @@ export default function CallDetail() {
 
 
     useEffect(() => {
+        const handleResize = () => setWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+
         getMatch();
         getPlayers();
-        console.log(location.state);
+        return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     return (
@@ -78,9 +81,17 @@ export default function CallDetail() {
             />
             <div id='callDetailContentDiv'>
                 <div id='selectedMatchDiv'>
-                    <Match
-                        match={match}
-                    />
+                    {
+                        (width >= 600) ? (
+                            <Match
+                                match={match}
+                            />
+                        ) : (
+                            <MatchCompressed
+                                match={match}
+                            />
+                        )
+                    }
                     {
                         ((call != undefined && location.state?.isCoach == false && call?.callPlayerStatus[Number(location.state.authenticatedUserPlayerId)] == 'PENDING')
                             &&
@@ -93,15 +104,20 @@ export default function CallDetail() {
                     }
                 </div>
                 <div id='playersToCallDiv'>
-                    {players.map((player) =>
-                        <PlayerCard
-                            key={player.id}
-                            player={player}
-                            onClick={() => callPlayer(player.id)}
-                            status={call?.callPlayerStatus[player.id]}
-                            enableHover={location.state?.isCoach}
-                        />
-                    )}
+                    <div id='playersTextDiv'>
+                        <p id='playersText'>JUGADORES</p>
+                    </div>
+                    <div id='playersDiv'>
+                        {players.map((player) =>
+                            <PlayerCard
+                                key={player.id}
+                                player={player}
+                                onClick={() => callPlayer(player.id)}
+                                status={call?.callPlayerStatus[player.id]}
+                                enableHover={location.state?.isCoach}
+                            />
+                        )}
+                    </div>
                 </div>
             </div>
         </>

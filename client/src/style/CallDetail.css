@@ -1,7 +1,9 @@
 #callDetailContentDiv {
     position: absolute;
     top: 80px;
+    max-height: calc(100vh - 80px);
     left: 0;
+    width: 100%;
 }
 
 #selectedMatchDiv {
@@ -12,11 +14,32 @@
 }
 
 #playersToCallDiv {
-    margin-left: 100px;
-    margin-top: 50px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
-    gap: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#playersTextDiv {
+    margin: 0;
+}
+
+#playersDiv {
+    background-color: white;
+    border: 1px solid rgb(7, 78, 200);
+    display: flex;
+    flex-direction: row;
+    max-width: 90%;
+    overflow-x: auto;
+    scrollbar-color: rgb(7, 78, 200) transparent;
+}
+
+#playersText {
+    color: black;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: large;
+    margin: 0;
 }
 
 #attendanceButtonsDiv {
@@ -47,4 +70,16 @@
     border: none;
     width: 100%;
     height: 50px;
+}
+
+@media (max-width: 700px) {
+    #selectedMatchDiv {
+        margin-left: 0;
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }

@@ -17,7 +17,7 @@ export default function PlayerStats() {
             setPlayer(response.data);
             console.log(response.data);
         } catch (error) {
-            console.log(error);
+            console.log('Error fetching the player: ', error);
         }
     }
 
@@ -38,11 +38,11 @@ export default function PlayerStats() {
                             <div id='playerDetailsDiv'>
                                 <p id='name'>{player.name} {player.lastName1} {player.lastName2}</p>
                                 <p id='birthDate'>{player.birthDate.split('-').reverse().join('/')}</p>
-                                <p id='number'>#{player.number}#</p>
+                                <p id='number'>{'#' + `${player.number}`.padStart(2, '0') + '#'}</p>
                             </div>
                         </div>
                         <div id='playerStatsDiv'>
-                            <table>
+                            <table id='playerStatsTable'>
                                 {(player.playerType == 'RINK_PLAYER') ?
                                     (
                                         <>

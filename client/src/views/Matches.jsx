@@ -17,7 +17,6 @@ export default function Matches() {
     const getMatches = async () => {
         try {
             const response = await axios.get(`${SERVER_URL}/matches`, { withCredentials: true });
-            console.log(response.data);
             setMatches(response.data);
         } catch (error) {
             console.log('Error al cargar los partidos: ', error);
@@ -27,7 +26,6 @@ export default function Matches() {
     useEffect(() => {
         const handleResize = () => setWidth(window.innerWidth);
         window.addEventListener('resize', handleResize);
-        console.log(width);
         getMatches();
 
         return () => window.removeEventListener('resize', handleResize);
