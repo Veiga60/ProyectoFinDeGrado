@@ -86,10 +86,12 @@
     max-height: calc(100vh - 190px);
     display: grid;
     text-align: center;
+    justify-content: center;
     overflow-y: auto;
     overflow-x: hidden;
-    gap: 0px 30px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+    gap: 0 30px;
+    padding-right: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 190px));
     scrollbar-color: rgb(7, 78, 200) transparent;
 }
 
