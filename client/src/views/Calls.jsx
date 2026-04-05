@@ -12,6 +12,7 @@ export default function Calls() {
     const location = useLocation();
 
     const [matches, setMatches] = useState([]);
+    const [callsOfPlayer, setCallsOfPlayer] = useState([]);
 
     const getNextMatches = async () => {
         try {
@@ -25,7 +26,12 @@ export default function Calls() {
     const getCallsOfPlayer = async (playerId) => {
         try {
             const response = await axios.get(`${SERVER_URL}/calls/player/${playerId}`, { withCredentials: true });
-            console.log(response.data);
+            let tempCallsOfPlayer = [];
+            for (let i = 0; i < response.data.length; i++) {
+                tempCallsOfPlayer.push({ match: response.data[i]?.match.id, callStatus: response.data[i].callPlayerStatus[location.state.authenticatedUserPlayerId] });
+            }
+            setCallsOfPlayer(tempCallsOfPlayer);
+            console.log('Calls', response.data);
         } catch (error) {
             console.log('Error fetching your calls: ', error);
         }
@@ -47,12 +53,23 @@ export default function Calls() {
             />
             <div id='callsMainDiv'>
                 <div id='nextMatchesDiv'>
-                    {matches.map((match) =>
-                        <MatchCard
+                    {matches.map((match) => {
+                        let pendingCall = false;
+                        for (let i = 0; i < callsOfPlayer.length; i++) {
+                            if (callsOfPlayer[i].match == match.id && callsOfPlayer[i].callStatus == 'PENDING') {
+                                console.log('CONVOCADO');
+                                pendingCall = true;
+                            }
+                        }
+                        return <MatchCard
                             key={match.id}
                             match={match}
                             onClick={() => navigate(`/calls/match/${match.id}`, { state: { authenticatedUserPlayerId: location.state?.authenticatedUserPlayerId, isCoach: location.state?.isCoach } })}
+                            className={(pendingCall) ? ('pendingCall') : (undefined)}
                         />
+
+
+                    }
                     )}
                 </div>
             </div>

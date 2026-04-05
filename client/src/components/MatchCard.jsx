@@ -1,11 +1,11 @@
 import '../style/MatchCard.css'
 
-export default function MatchCard({ match, onClick }) {
+export default function MatchCard({ match, onClick, className }) {
 
     const rivalTeam = (match.localTeam.name != 'Metropolitano HC') ? (match.localTeam) : (match.visitingTeam);
 
     return (
-        <div id="cardDiv" onClick={onClick}>
+        <div id="cardDiv" className={className} onClick={onClick}>
             <div id='selectButtonDiv'>
                 <button id='selectButton'>SELECCIONAR</button>
             </div>

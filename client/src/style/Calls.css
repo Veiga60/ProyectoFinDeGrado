@@ -14,3 +14,9 @@
     justify-content: center;
     gap: 50px;
 }
+
+#callWarning {
+    color: red;
+    font-family: Inria Sans;
+    font-weight: bold;
+}
