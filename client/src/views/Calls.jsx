@@ -57,7 +57,6 @@ export default function Calls() {
                         let pendingCall = false;
                         for (let i = 0; i < callsOfPlayer.length; i++) {
                             if (callsOfPlayer[i].match == match.id && callsOfPlayer[i].callStatus == 'PENDING') {
-                                console.log('CONVOCADO');
                                 pendingCall = true;
                             }
                         }

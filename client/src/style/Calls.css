@@ -3,6 +3,13 @@
     top: 80px;
     position: absolute;
     width: 100%;
+    padding-bottom: 30px;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+}
+
+#callsMainDiv::-webkit-scrollbar {
+    display: none;
 }
 
 #nextMatchesDiv {
@@ -13,10 +20,4 @@
     align-items: center;
     justify-content: center;
     gap: 50px;
-}
-
-#callWarning {
-    color: red;
-    font-family: Inria Sans;
-    font-weight: bold;
 }
