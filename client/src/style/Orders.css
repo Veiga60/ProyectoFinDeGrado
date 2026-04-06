@@ -1,7 +1,23 @@
 #ordersMainDiv {
+    position: absolute;
+    left: 0;
+    top: 80px;
+    height: calc(100vh - 80px);
+    width: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+}
+
+#ordersTabDiv {
+    width: 100%;
+    display: flex;
+    margin-top: 5%;
+    justify-content: center;
+}
+
+#ordersTab {
+    width: 90%;
 }
 
 .playerOrdersTab {
@@ -38,4 +54,133 @@
     margin-top: 0;
     margin-bottom: 0;
     padding: 0;
+}
+
+#wheelOrdersDiv {
+    white-space: nowrap;
+}
+
+#wheelOrdersTableHead {
+    color: white;
+    background-color: rgb(7, 78, 200);
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: large;
+}
+
+.wheelOrdersTableHeadText {
+    margin: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.wheelOrdersTableHeadDiv {
+    margin: 0;
+}
+
+#wheelOrdersTableBody {
+    color: black;
+    background-color: white;
+    font-family: Inria Sans;
+    font-size: large;
+}
+
+#wheelOrdersButtonsDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.wheelOrderButton {
+    background-color: rgb(7, 78, 200);
+    border: none;
+    border-radius: 12px;
+    height: 40px;
+    font-family: Inria Sans;
+    font-size: larger;
+    transition: 0.5s;
+}
+
+#excelButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.wheelOrdersTableBodyText {
+    margin: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.wheelOrdersTableBodyDiv {
+    margin: 0;
+    border: 1px solid rgb(7, 78, 200);
+}
+
+.inputsDiv {
+    height: 40px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.wheelOrderInput {
+    background-color: rgb(233, 233, 233);
+    color: black;
+    border: none;
+    border-radius: 12px;
+    height: 100%;
+    width: 16%;
+    font-family: Inria Sans;
+    margin-right: 10px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wheelOrderInput:focus {
+    outline: none;
+    border: 2px solid rgb(7, 78, 200);
+}
+
+.wheelOrderSelect {
+    height: 100%;
+    width: fit-content;
+    background-color: white;
+    color: black;
+    border: 2px solid rgb(7, 78, 200);
+    outline: none;
+    font-family: Inria Sans;
+    border-radius: 10px;
+}
+
+#wheelAmountInput {
+    width: 8%;
+}
+
+#wheelAmountInput::-webkit-inner-spin-button {
+    display: none
+}
+
+.orderButton {
+    background-color: rgb(7, 78, 200);
+    border: none;
+    border-radius: 12px;
+    width: 8%;
+    height: 40px;
+    font-family: Inria Sans;
+    font-size: larger;
+    transition: 0.5s;
+}
+
+.orderButton:hover {
+    background-color: rgb(5, 54, 138);
+    transition: 0.5s;
+    cursor: pointer;
 }

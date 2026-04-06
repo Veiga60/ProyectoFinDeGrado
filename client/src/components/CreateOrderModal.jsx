@@ -2,7 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import '../style/CreateOrderModal.css'
 
-export default function CreatOrderModal({ orderTypes, onClose }) {
+export default function CreatOrderModal({ orderTypes, onClose, setWheelOrders, setStickOrders }) {
 
     const SERVER_URL = 'http://localhost:8081';
 
@@ -11,9 +11,7 @@ export default function CreatOrderModal({ orderTypes, onClose }) {
 
     const createOrder = async () => {
         let type = orderTypes.find((element) => element.id == orderType);
-        console.log(deadline);
-        console.log(orderType);
-        console.log(type);
+
         try {
             await axios.post(`${SERVER_URL}/orders`,
                 {

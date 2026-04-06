@@ -4,8 +4,8 @@ import { useLocation } from 'react-router-dom'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import axios from 'axios'
 import CreateOrderModal from '../components/CreateOrderModal.jsx'
-import WheelOrderLine from '../components/WheelOrderLine.jsx'
 import StickOrderLine from '../components/StickOrderLine.jsx'
+import { PiMicrosoftExcelLogoFill } from "react-icons/pi";
 import '../style/Orders.css'
 
 export default function Orders() {
@@ -273,14 +273,6 @@ export default function Orders() {
         }
     }
 
-    const exportStickOrdersToExcel = async () => {
-        try {
-            const response = await axios.get(`${SERVER_URL}/orders/sticks/next/excel`, {});
-        } catch (error) {
-            console.log('Error exporting stick order to Excel.', error);
-        }
-    }
-
     useEffect(() => {
         getWheelsOptions();
         getSticksOptions();
@@ -305,7 +297,7 @@ export default function Orders() {
                 isCoach={location.state.isCoach}
             />
             <div id='ordersMainDiv'>
-                <div>
+                <div id='ordersTabDiv'>
                     {orderTypes.length > 0 && (
                         <Tabs id='ordersTab' defaultIndex={0}>
                             <TabList>
@@ -320,57 +312,70 @@ export default function Orders() {
                                     <p className='deadlineText'>Fecha límite: {wheelNextOrder?.deadline}</p>
                                 </div>
                                 <div id='wheelOrdersDiv'>
-                                    {
-                                        wheelOrders.map((wheelOrder) => {
-                                            return <WheelOrderLine
-                                                key={wheelOrder.id}
-                                                player={wheelOrder.player}
-                                                phoneNumber={wheelOrder.phoneNumber}
-                                                wheelModel={wheelOrder.model}
-                                                wheelHardness={wheelOrder.hardness}
-                                                wheelSize={wheelOrder.size}
-                                                amount={wheelOrder.amount}
-                                            />
-                                        })
-                                    }
+                                    <table id='wheelOrdersTable'>
+                                        <thead id='wheelOrdersTableHead'>
+                                            <tr>
+                                                <td className='wheelOrdersTableHeadDiv'><p className='wheelOrdersTableHeadText'>Jugador</p></td>
+                                                <td className='wheelOrdersTableHeadDiv'><p className='wheelOrdersTableHeadText'>Nº tfno</p></td>
+                                                <td className='wheelOrdersTableHeadDiv'><p className='wheelOrdersTableHeadText'>Modelo</p></td>
+                                                <td className='wheelOrdersTableHeadDiv'><p className='wheelOrdersTableHeadText'>Dureza</p></td>
+                                                <td className='wheelOrdersTableHeadDiv'><p className='wheelOrdersTableHeadText'>Tamaño</p></td>
+                                                <td className='wheelOrdersTableHeadDiv'><p className='wheelOrdersTableHeadText'>Cantidad</p></td>
+                                            </tr>
+                                        </thead>
+                                        <tbody id='wheelOrdersTableBody'>
+                                            {
+                                                wheelOrders.map((wheelOrder) => {
+                                                    return <tr key={wheelOrder.id}>
+                                                        <td className='wheelOrdersTableBodyDiv'><p className='wheelOrdersTableBodyText'>{wheelOrder.player.name} {wheelOrder.player.lastName1} {wheelOrder.player.lastName2}</p></td>
+                                                        <td className='wheelOrdersTableBodyDiv'><p className='wheelOrdersTableBodyText'>{wheelOrder.phoneNumber}</p></td>
+                                                        <td className='wheelOrdersTableBodyDiv'><p className='wheelOrdersTableBodyText'>{wheelOrder.model?.description}</p></td>
+                                                        <td className='wheelOrdersTableBodyDiv'><p className='wheelOrdersTableBodyText'>{wheelOrder.hardness?.description}</p></td>
+                                                        <td className='wheelOrdersTableBodyDiv'><p className='wheelOrdersTableBodyText'>{wheelOrder.size?.description}</p></td>
+                                                        <td className='wheelOrdersTableBodyDiv'><p className='wheelOrdersTableBodyText'>{wheelOrder.amount}</p></td>
+                                                    </tr>
+                                                })
+                                            }
+                                        </tbody>
+                                    </table>
                                 </div>
                                 <div>
                                 </div>
                                 {
                                     (!location.state.isCoach) && (
                                         <div className='inputsDiv'>
-                                            <input type="text" placeholder='Nº tfno.' onChange={(e) => setWheelOrderPhoneNumber(e.target.value)} />
-                                            <select name='wheelModels' id='wheelModels' onChange={(e) => { setWheelModel(e.target.value) }}>
+                                            <input id='wheelPhoneNumberInput' className='wheelOrderInput' type="text" placeholder='Nº tfno.' onChange={(e) => setWheelOrderPhoneNumber(e.target.value)} />
+                                            <select name='wheelModels' id='wheelModels' className='wheelOrderSelect' onChange={(e) => { setWheelModel(e.target.value) }}>
                                                 {
                                                     wheelModels.map((wheelModel) => {
                                                         return <option key={wheelModel.id} value={wheelModel.id}>{wheelModel.description}</option>
                                                     })
                                                 }
                                             </select>
-                                            <select name='wheelHardnesses' id='wheelHardnesses' onChange={(e) => { setWheelHardness(e.target.value) }}>
+                                            <select name='wheelHardnesses' id='wheelHardnesses' className='wheelOrderSelect' onChange={(e) => { setWheelHardness(e.target.value) }}>
                                                 {
                                                     wheelHardnesses.map((wheelHardness) => {
                                                         return <option key={wheelHardness.id} value={wheelHardness.id}>{wheelHardness.description}</option>
                                                     })
                                                 }
                                             </select>
-                                            <select name='wheelSizes' id='wheelSizes' onChange={(e) => { setWheelSize(e.target.value) }}>
+                                            <select name='wheelSizes' id='wheelSizes' className='wheelOrderSelect' onChange={(e) => { setWheelSize(e.target.value) }}>
                                                 {
                                                     wheelSizes.map((wheelSize) => {
                                                         return <option key={wheelSize.id} value={wheelSize.id}>{wheelSize.description}</option>
                                                     })
                                                 }
                                             </select>
-                                            <input type="number" placeholder='Cantidad' onChange={(e) => setWheelAmount(e.target.value)} />
-                                            <button className='orderButton' onClick={() => { createWheelOrder(); window.location.reload() }}>PEDIR</button>
+                                            <input id='wheelAmountInput' className='wheelOrderInput' type="number" min={0} placeholder='Cantidad' onChange={(e) => setWheelAmount(e.target.value)} />
+                                            <button id='wheelOderButton' className='orderButton' onClick={() => { createWheelOrder(); window.location.reload() }}>PEDIR</button>
                                         </div>
                                     )
                                 }
                                 {
                                     (location.state.isCoach) && (
-                                        <div>
-                                            <button onClick={toggleCreateOrderModal}>NUEVO PEDIDO</button>
-                                            <button onClick={() => exportOrdersToExcel('WHEELS')}>EXCEL</button>
+                                        <div id='wheelOrdersButtonsDiv'>
+                                            <button id='newOrderButton' className='wheelOrderButton' onClick={toggleCreateOrderModal}>NUEVO PEDIDO</button>
+                                            <button id='excelButton' className='wheelOrderButton' onClick={() => exportOrdersToExcel('WHEELS')}><PiMicrosoftExcelLogoFill /><p>EXCEL</p></button>
                                         </div>
                                     )
                                 }
@@ -483,6 +488,8 @@ export default function Orders() {
                     <CreateOrderModal
                         orderTypes={orderTypes}
                         onClose={toggleCreateOrderModal}
+                        setWheelOrders={setWheelOrders}
+                        setStickOrders={setStickOrders}
                     />
                 )
             }
