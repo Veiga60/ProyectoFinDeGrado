@@ -17,7 +17,7 @@
 }
 
 #ordersTab {
-    width: 90%;
+    width: 95%;
 }
 
 .playerOrdersTab {
@@ -68,13 +68,13 @@
     font-size: large;
 }
 
-.wheelOrdersTableHeadText {
+.ordersTableHeadText {
     margin: 0;
     padding-left: 5px;
     padding-right: 5px;
 }
 
-.wheelOrdersTableHeadDiv {
+.ordersTableHeadDiv {
     margin: 0;
 }
 
@@ -85,7 +85,7 @@
     font-size: large;
 }
 
-#wheelOrdersButtonsDiv {
+.ordersButtonsDiv {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -96,7 +96,7 @@
     margin-bottom: 10px;
 }
 
-.wheelOrderButton {
+.orderButton {
     background-color: rgb(7, 78, 200);
     border: none;
     border-radius: 12px;
@@ -113,13 +113,28 @@
     justify-content: center;
 }
 
-.wheelOrdersTableBodyText {
+#sticksExcelButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#newOrderButton {
+    width: 11%;
+}
+
+#sticksNewOrderButton {
+    width: 11%;
+}
+
+.ordersTableBodyText {
     margin: 0;
     padding-left: 5px;
     padding-right: 5px;
 }
 
-.wheelOrdersTableBodyDiv {
+.ordersTableBodyDiv {
     margin: 0;
     border: 1px solid rgb(7, 78, 200);
 }
@@ -130,7 +145,15 @@
     margin-bottom: 10px;
 }
 
-.wheelOrderInput {
+#stickInputsDiv {
+    width: 90%;
+}
+
+#stickAmountInput {
+    width: 10%;
+}
+
+.orderInput {
     background-color: rgb(233, 233, 233);
     color: black;
     border: none;
@@ -144,12 +167,12 @@
     box-sizing: border-box;
 }
 
-.wheelOrderInput:focus {
+.orderInput:focus {
     outline: none;
     border: 2px solid rgb(7, 78, 200);
 }
 
-.wheelOrderSelect {
+.orderSelect {
     height: 100%;
     width: fit-content;
     background-color: white;
@@ -166,6 +189,10 @@
 
 #wheelAmountInput::-webkit-inner-spin-button {
     display: none
+}
+
+#stickAmountInput::-webkit-inner-spin-button {
+    display: none;
 }
 
 .orderButton {

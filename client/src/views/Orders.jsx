@@ -4,7 +4,6 @@ import { useLocation } from 'react-router-dom'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import axios from 'axios'
 import CreateOrderModal from '../components/CreateOrderModal.jsx'
-import StickOrderLine from '../components/StickOrderLine.jsx'
 import { PiMicrosoftExcelLogoFill } from "react-icons/pi";
 import '../style/Orders.css'
 
@@ -315,24 +314,24 @@ export default function Orders() {
                                     <table id='wheelOrdersTable'>
                                         <thead id='wheelOrdersTableHead'>
                                             <tr>
-                                                <td className='wheelOrdersTableHeadDiv'><p className='wheelOrdersTableHeadText'>Jugador</p></td>
-                                                <td className='wheelOrdersTableHeadDiv'><p className='wheelOrdersTableHeadText'>Nº tfno</p></td>
-                                                <td className='wheelOrdersTableHeadDiv'><p className='wheelOrdersTableHeadText'>Modelo</p></td>
-                                                <td className='wheelOrdersTableHeadDiv'><p className='wheelOrdersTableHeadText'>Dureza</p></td>
-                                                <td className='wheelOrdersTableHeadDiv'><p className='wheelOrdersTableHeadText'>Tamaño</p></td>
-                                                <td className='wheelOrdersTableHeadDiv'><p className='wheelOrdersTableHeadText'>Cantidad</p></td>
+                                                <td className='ordersTableHeadDiv'><p className='ordersTableHeadText'>Jugador</p></td>
+                                                <td className='ordersTableHeadDiv'><p className='ordersTableHeadText'>Nº tfno</p></td>
+                                                <td className='ordersTableHeadDiv'><p className='ordersTableHeadText'>Modelo</p></td>
+                                                <td className='ordersTableHeadDiv'><p className='ordersTableHeadText'>Dureza</p></td>
+                                                <td className='ordersTableHeadDiv'><p className='ordersTableHeadText'>Tamaño</p></td>
+                                                <td className='ordersTableHeadDiv'><p className='ordersTableHeadText'>Cantidad</p></td>
                                             </tr>
                                         </thead>
                                         <tbody id='wheelOrdersTableBody'>
                                             {
                                                 wheelOrders.map((wheelOrder) => {
                                                     return <tr key={wheelOrder.id}>
-                                                        <td className='wheelOrdersTableBodyDiv'><p className='wheelOrdersTableBodyText'>{wheelOrder.player.name} {wheelOrder.player.lastName1} {wheelOrder.player.lastName2}</p></td>
-                                                        <td className='wheelOrdersTableBodyDiv'><p className='wheelOrdersTableBodyText'>{wheelOrder.phoneNumber}</p></td>
-                                                        <td className='wheelOrdersTableBodyDiv'><p className='wheelOrdersTableBodyText'>{wheelOrder.model?.description}</p></td>
-                                                        <td className='wheelOrdersTableBodyDiv'><p className='wheelOrdersTableBodyText'>{wheelOrder.hardness?.description}</p></td>
-                                                        <td className='wheelOrdersTableBodyDiv'><p className='wheelOrdersTableBodyText'>{wheelOrder.size?.description}</p></td>
-                                                        <td className='wheelOrdersTableBodyDiv'><p className='wheelOrdersTableBodyText'>{wheelOrder.amount}</p></td>
+                                                        <td className='ordersTableBodyDiv'><p className='ordersTableBodyText'>{wheelOrder.player.name} {wheelOrder.player.lastName1} {wheelOrder.player.lastName2}</p></td>
+                                                        <td className='ordersTableBodyDiv'><p className='ordersTableBodyText'>{wheelOrder.phoneNumber}</p></td>
+                                                        <td className='ordersTableBodyDiv'><p className='ordersTableBodyText'>{wheelOrder.model?.description}</p></td>
+                                                        <td className='ordersTableBodyDiv'><p className='ordersTableBodyText'>{wheelOrder.hardness?.description}</p></td>
+                                                        <td className='ordersTableBodyDiv'><p className='ordersTableBodyText'>{wheelOrder.size?.description}</p></td>
+                                                        <td className='ordersTableBodyDiv'><p className='ordersTableBodyText'>{wheelOrder.amount}</p></td>
                                                     </tr>
                                                 })
                                             }
@@ -344,38 +343,38 @@ export default function Orders() {
                                 {
                                     (!location.state.isCoach) && (
                                         <div className='inputsDiv'>
-                                            <input id='wheelPhoneNumberInput' className='wheelOrderInput' type="text" placeholder='Nº tfno.' onChange={(e) => setWheelOrderPhoneNumber(e.target.value)} />
-                                            <select name='wheelModels' id='wheelModels' className='wheelOrderSelect' onChange={(e) => { setWheelModel(e.target.value) }}>
+                                            <input id='wheelPhoneNumberInput' className='owheelOrderInput' type="text" placeholder='Nº tfno.' onChange={(e) => setWheelOrderPhoneNumber(e.target.value)} />
+                                            <select name='wheelModels' id='wheelModels' className='orderSelect' onChange={(e) => { setWheelModel(e.target.value) }}>
                                                 {
                                                     wheelModels.map((wheelModel) => {
                                                         return <option key={wheelModel.id} value={wheelModel.id}>{wheelModel.description}</option>
                                                     })
                                                 }
                                             </select>
-                                            <select name='wheelHardnesses' id='wheelHardnesses' className='wheelOrderSelect' onChange={(e) => { setWheelHardness(e.target.value) }}>
+                                            <select name='wheelHardnesses' id='wheelHardnesses' className='orderSelect' onChange={(e) => { setWheelHardness(e.target.value) }}>
                                                 {
                                                     wheelHardnesses.map((wheelHardness) => {
                                                         return <option key={wheelHardness.id} value={wheelHardness.id}>{wheelHardness.description}</option>
                                                     })
                                                 }
                                             </select>
-                                            <select name='wheelSizes' id='wheelSizes' className='wheelOrderSelect' onChange={(e) => { setWheelSize(e.target.value) }}>
+                                            <select name='wheelSizes' id='wheelSizes' className='orderSelect' onChange={(e) => { setWheelSize(e.target.value) }}>
                                                 {
                                                     wheelSizes.map((wheelSize) => {
                                                         return <option key={wheelSize.id} value={wheelSize.id}>{wheelSize.description}</option>
                                                     })
                                                 }
                                             </select>
-                                            <input id='wheelAmountInput' className='wheelOrderInput' type="number" min={0} placeholder='Cantidad' onChange={(e) => setWheelAmount(e.target.value)} />
+                                            <input id='wheelAmountInput' className='orderInput' type="number" min={0} placeholder='Cantidad' onChange={(e) => setWheelAmount(e.target.value)} />
                                             <button id='wheelOderButton' className='orderButton' onClick={() => { createWheelOrder(); window.location.reload() }}>PEDIR</button>
                                         </div>
                                     )
                                 }
                                 {
                                     (location.state.isCoach) && (
-                                        <div id='wheelOrdersButtonsDiv'>
-                                            <button id='newOrderButton' className='wheelOrderButton' onClick={toggleCreateOrderModal}>NUEVO PEDIDO</button>
-                                            <button id='excelButton' className='wheelOrderButton' onClick={() => exportOrdersToExcel('WHEELS')}><PiMicrosoftExcelLogoFill /><p>EXCEL</p></button>
+                                        <div className='ordersButtonsDiv'>
+                                            <button id='newOrderButton' className='orderButton' onClick={toggleCreateOrderModal}>NUEVO PEDIDO</button>
+                                            <button id='excelButton' className='orderButton' onClick={() => exportOrdersToExcel('WHEELS')}><PiMicrosoftExcelLogoFill /><p>EXCEL</p></button>
                                         </div>
                                     )
                                 }
@@ -385,96 +384,115 @@ export default function Orders() {
                                     <p className='deadlineText'>Fecha límite: {stickNextOrder?.deadline}</p>
                                 </div>
                                 <div id='stickOrdersDiv'>
-                                    {
-                                        stickOrders.map((stickOrder) => {
-                                            return <StickOrderLine
-                                                key={stickOrder.id}
-                                                player={stickOrder.player}
-                                                phoneNumber={stickOrder.phoneNumber}
-                                                stickModel={stickOrder.model}
-                                                stickLength={stickOrder.length}
-                                                stickWeight={stickOrder.weight}
-                                                stickSide={stickOrder.side}
-                                                stickBlade={stickOrder.blade}
-                                                stickFlex={stickOrder.flex}
-                                                stickKickpoint={stickOrder.kickpoint}
-                                                stickGrip={stickOrder.grip}
-                                                amount={stickOrder.amount}
-                                                nametag={stickOrder.nametag}
-                                            />
-                                        })
-                                    }
+                                    <table id='wheelOrdersTable'>
+                                        <thead id='wheelOrdersTableHead'>
+                                            <tr>
+                                                <td className='ordersTableHeadDiv'><p className='ordersTableHeadText'>Jugador</p></td>
+                                                <td className='ordersTableHeadDiv'><p className='ordersTableHeadText'>Nº tfno</p></td>
+                                                <td className='ordersTableHeadDiv'><p className='ordersTableHeadText'>Modelo</p></td>
+                                                <td className='ordersTableHeadDiv'><p className='ordersTableHeadText'>Largura</p></td>
+                                                <td className='ordersTableHeadDiv'><p className='ordersTableHeadText'>Peso</p></td>
+                                                <td className='ordersTableHeadDiv'><p className='ordersTableHeadText'>Lado</p></td>
+                                                <td className='ordersTableHeadDiv'><p className='ordersTableHeadText'>Pala</p></td>
+                                                <td className='ordersTableHeadDiv'><p className='ordersTableHeadText'>Flex</p></td>
+                                                <td className='ordersTableHeadDiv'><p className='ordersTableHeadText'>Kickpoint</p></td>
+                                                <td className='ordersTableHeadDiv'><p className='ordersTableHeadText'>Grip</p></td>
+                                                <td className='ordersTableHeadDiv'><p className='ordersTableHeadText'>Cantidad</p></td>
+                                                <td className='ordersTableHeadDiv'><p className='ordersTableHeadText'>Nametag</p></td>
+                                            </tr>
+                                        </thead>
+                                        <tbody id='wheelOrdersTableBody'>
+                                            {
+                                                stickOrders.map((stickOrder) => {
+                                                    return <tr key={stickOrder.id}>
+                                                        <td className='ordersTableBodyDiv'><p className='ordersTableBodyText'>{stickOrder.player.name} {stickOrder.player.lastName1} {stickOrder.player.lastName2}</p></td>
+                                                        <td className='ordersTableBodyDiv'><p className='ordersTableBodyText'>{stickOrder.phoneNumber}</p></td>
+                                                        <td className='ordersTableBodyDiv'><p className='ordersTableBodyText'>{stickOrder.model?.description}</p></td>
+                                                        <td className='ordersTableBodyDiv'><p className='ordersTableBodyText'>{stickOrder.length?.description}</p></td>
+                                                        <td className='ordersTableBodyDiv'><p className='ordersTableBodyText'>{stickOrder.weight?.description}</p></td>
+                                                        <td className='ordersTableBodyDiv'><p className='ordersTableBodyText'>{stickOrder.side}</p></td>
+                                                        <td className='ordersTableBodyDiv'><p className='ordersTableBodyText'>{stickOrder.blade?.description}</p></td>
+                                                        <td className='ordersTableBodyDiv'><p className='ordersTableBodyText'>{stickOrder.flex?.description}</p></td>
+                                                        <td className='ordersTableBodyDiv'><p className='ordersTableBodyText'>{stickOrder.kickpoint?.description}</p></td>
+                                                        <td className='ordersTableBodyDiv'><p className='ordersTableBodyText'>{stickOrder.grip?.description}</p></td>
+                                                        <td className='ordersTableBodyDiv'><p className='ordersTableBodyText'>{stickOrder.amount}</p></td>
+                                                        <td className='ordersTableBodyDiv'><p className='ordersTableBodyText'>{stickOrder.nametag}</p></td>
+                                                    </tr>
+                                                })
+                                            }
+                                        </tbody>
+                                    </table>
                                 </div>
                                 <div>
                                 </div>
                                 {
                                     (!location.state.isCoach) && (
-                                        <div className='inputsDiv'>
-                                            <input type="text" placeholder='Nº tfno.' onChange={(e) => setStickOrderPhoneNumber(e.target.value)} />
-                                            <select name='stickModels' id='stickModels' onChange={(e) => { setStickModel(e.target.value) }}>
+                                        <div id='stickInputsDiv' className='inputsDiv'>
+                                            <input className='orderInput' type="text" placeholder='Nº tfno.' onChange={(e) => setStickOrderPhoneNumber(e.target.value)} />
+                                            <select name='stickModels' id='stickModels' className='orderSelect' onChange={(e) => { setStickModel(e.target.value) }}>
                                                 {
                                                     stickModels.map((stickModel) => {
                                                         return <option key={stickModel.id} value={stickModel.id}>{stickModel.description}</option>
                                                     })
                                                 }
                                             </select>
-                                            <select name='stickLengths' id='stickLengths' onChange={(e) => { setStickLength(e.target.value) }}>
+                                            <select name='stickLengths' id='stickLengths' className='orderSelect' onChange={(e) => { setStickLength(e.target.value) }}>
                                                 {
                                                     stickLengths.map((stickLength) => {
                                                         return <option key={stickLength.id} value={stickLength.id}>{stickLength.description}</option>
                                                     })
                                                 }
                                             </select>
-                                            <select name='stickWeights' id='stickWeights' onChange={(e) => { setStickWeight(e.target.value) }}>
+                                            <select name='stickWeights' id='stickWeights' className='orderSelect' onChange={(e) => { setStickWeight(e.target.value) }}>
                                                 {
                                                     stickWeights.map((stickWeight) => {
                                                         return <option key={stickWeight.id} value={stickWeight.id}>{stickWeight.description}</option>
                                                     })
                                                 }
                                             </select>
-                                            <select name='stickSides' id='stickSides' onChange={(e) => { setStickSide(e.target.value) }}>
+                                            <select name='stickSides' id='stickSides' className='orderSelect' onChange={(e) => { setStickSide(e.target.value) }}>
                                                 <option value="Right">Right</option>
                                                 <option value="Left">Left</option>
                                             </select>
-                                            <select name='stickBlades' id='stickBlades' onChange={(e) => { setStickBlade(e.target.value) }}>
+                                            <select name='stickBlades' id='stickBlades' className='orderSelect' onChange={(e) => { setStickBlade(e.target.value) }}>
                                                 {
                                                     stickBlades.map((stickBlade) => {
                                                         return <option key={stickBlade.id} value={stickBlade.id}>{stickBlade.description}</option>
                                                     })
                                                 }
                                             </select>
-                                            <select name='stickFlexes' id='stickFlexes' onChange={(e) => { setStickFlex(e.target.value) }}>
+                                            <select name='stickFlexes' id='stickFlexes' className='orderSelect' onChange={(e) => { setStickFlex(e.target.value) }}>
                                                 {
                                                     stickFlexes.map((stickFlex) => {
                                                         return <option key={stickFlex.id} value={stickFlex.id}>{stickFlex.description}</option>
                                                     })
                                                 }
                                             </select>
-                                            <select name='stickKickpoints' id='stickKickpoints' onChange={(e) => { setStickKickpoint(e.target.value) }}>
+                                            <select name='stickKickpoints' id='stickKickpoints' className='orderSelect' onChange={(e) => { setStickKickpoint(e.target.value) }}>
                                                 {
                                                     stickKickpoints.map((stickKickpoint) => {
                                                         return <option key={stickKickpoint.id} value={stickKickpoint.id}>{stickKickpoint.description}</option>
                                                     })
                                                 }
                                             </select>
-                                            <select name='stickGrips' id='stickGrips' onChange={(e) => { setStickGrip(e.target.value) }}>
+                                            <select name='stickGrips' id='stickGrips' className='orderSelect' onChange={(e) => { setStickGrip(e.target.value) }}>
                                                 {
                                                     stickGrips.map((stickGrip) => {
                                                         return <option key={stickGrip.id} value={stickGrip.id}>{stickGrip.description}</option>
                                                     })
                                                 }
                                             </select>
-                                            <input type="number" placeholder='Cantidad' onChange={(e) => setStickAmount(e.target.value)} />
-                                            <input type="text" placeholder='Nametag' onChange={(e) => setStickNametag(e.target.value)} />
+                                            <input type="number" placeholder='Cantidad' id='stickAmountInput' className='orderInput' onChange={(e) => setStickAmount(e.target.value)} />
+                                            <input type="text" placeholder='Nametag' className='orderInput' onChange={(e) => setStickNametag(e.target.value)} />
                                             <button className='orderButton' onClick={() => { createStickOrder(); window.location.reload() }}>PEDIR</button>
                                         </div>
                                     )
                                 }
                                 {
                                     (location.state.isCoach) && (
-                                        <div>
-                                            <button onClick={toggleCreateOrderModal}>NUEVO PEDIDO</button>
-                                            <button onClick={() => exportOrdersToExcel('STICKS')}>EXCEL</button>
+                                        <div className='ordersButtonsDiv'>
+                                            <button id='sticksNewOrderButton' className='orderButton' onClick={toggleCreateOrderModal}>NUEVO PEDIDO</button>
+                                            <button id='sticksExcelButton' className='orderButton' onClick={() => exportOrdersToExcel('STICKS')}><PiMicrosoftExcelLogoFill /><p>EXCEL</p></button>
                                         </div>
                                     )
                                 }
