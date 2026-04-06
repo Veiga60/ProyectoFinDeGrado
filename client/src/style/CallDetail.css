@@ -9,8 +9,13 @@
 #selectedMatchDiv {
     margin-top: 50px;
     margin-left: 50px;
+    margin-bottom: 0;
+    padding: 0;
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: flex-start;
+    height: auto;
 }
 
 #playersToCallDiv {
@@ -18,6 +23,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 5%;
 }
 
 #playersTextDiv {
@@ -57,7 +63,7 @@
     border-radius: 1000px;
     background-color: rgba(26, 200, 7, 0.55);
     border: none;
-    width: 100%;
+    width: 50px;
     height: 50px;
 }
 
@@ -68,17 +74,17 @@
     border-radius: 1000px;
     background-color: rgba(200, 10, 7, 0.55);
     border: none;
-    width: 100%;
+    width: 50px;
     height: 50px;
 }
 
 @media (max-width: 700px) {
     #selectedMatchDiv {
         margin-left: 0;
-        position: relative;
+        padding: 0;
         width: 100%;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
     }

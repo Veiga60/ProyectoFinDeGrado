@@ -81,17 +81,19 @@ export default function CallDetail() {
             />
             <div id='callDetailContentDiv'>
                 <div id='selectedMatchDiv'>
-                    {
-                        (width >= 600) ? (
-                            <Match
-                                match={match}
-                            />
-                        ) : (
-                            <MatchCompressed
-                                match={match}
-                            />
-                        )
-                    }
+                    <div id='callDetailMatchDiv'>
+                        {
+                            (width >= 800) ? (
+                                <Match
+                                    match={match}
+                                />
+                            ) : (
+                                <MatchCompressed
+                                    match={match}
+                                />
+                            )
+                        }
+                    </div>
                     {
                         ((call != undefined && location.state?.isCoach == false && call?.callPlayerStatus[Number(location.state.authenticatedUserPlayerId)] == 'PENDING')
                             &&
