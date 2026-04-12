@@ -67,7 +67,7 @@ export default function MatchEvents() {
                 </div>
                 <div id='saveIncidencesButtonDiv'>
                     <button id='saveIncidencesButton' onClick={() => finishEditingMatchEvents()}>GUARDAR</button>
-                    <button id='returnButton'>VOLVER</button>
+                    <button id='returnButton' onClick={() => navigate(`/matches/${match?.id}/start_match`, { state: { matchPeriod: location.state.matchPeriod, matchEvents: matchEvents } })}>VOLVER</button>
                 </div>
                 {
                     (penaltiesModal &&

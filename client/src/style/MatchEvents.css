@@ -65,6 +65,12 @@
     transition: 0.5s;
 }
 
+#returnButton:hover {
+    background-color: rgb(5, 54, 138);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
 .incidencesTeamDiv {
     display: flex;
     flex-direction: column;
