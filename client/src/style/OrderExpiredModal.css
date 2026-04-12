@@ -1,0 +1,37 @@
+#orderExpiredModalMainDiv {
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1000000;
+}
+
+#orderExpiredMainDiv {
+    width: 30%;
+    height: 30%;
+    background-color: white;
+    border: 2px solid red;
+    border-radius: 15px;
+}
+
+#orderExpired {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#orderExpiredErrorText {
+    color: red;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: larger;
+}
+
+#orderExpiredText {
+    color: rgb(253, 0, 0);
+}

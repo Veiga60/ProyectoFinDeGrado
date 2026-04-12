@@ -61,7 +61,11 @@ public class StickOrderController {
 
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (RuntimeException e) {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            if (e.getMessage().equals("The order is expired")) {
+                return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+            } else {
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
         }
     }
 

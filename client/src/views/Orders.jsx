@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import axios from 'axios'
 import CreateOrderModal from '../components/CreateOrderModal.jsx'
+import OrderExpiredModal from '../components/OrderExpiredModal.jsx'
 import { PiMicrosoftExcelLogoFill } from "react-icons/pi";
 import '../style/Orders.css'
 
@@ -59,9 +60,18 @@ export default function Orders() {
     const [stickExcelDownloaded, setStickExcelDownloaded] = useState(false);
 
     const [createOrderModal, setCreateOrderModal] = useState(false);
+    const [orderExpiredModal, setOrderExpiredModal] = useState(false);
+
+    const currentDate = new Date(Date.now());
+    const wheelOrderExpired = (wheelNextOrder) ? (currentDate > new Date(wheelNextOrder?.deadline)) : (false);
+    const stickOrderExpired = (stickNextOrder) ? (currentDate > new Date(stickNextOrder?.deadline)) : (false);
 
     const toggleCreateOrderModal = () => {
         setCreateOrderModal(!createOrderModal);
+    }
+
+    const toggleOrderExpiredModal = () => {
+        setOrderExpiredModal(!orderExpiredModal);
     }
 
     const getWheelsOptions = async () => {
@@ -132,78 +142,106 @@ export default function Orders() {
     }
 
     const createWheelOrder = async () => {
-        try {
-            await axios.post(`${SERVER_URL}/orders/wheels`, {
-                player: {
-                    id: location.state.authenticatedUserPlayerId
-                },
-                phoneNumber: wheelOrderPhoneNumber,
-                order: {
-                    id: wheelNextOrder.id
-                },
-                model: {
-                    id: wheelModel
-                },
-                hardness: {
-                    id: wheelHardness
-                },
-                size: {
-                    id: wheelSize
-                },
-                amount: wheelAmount
-            }, {
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                withCredentials: true
-            });
-        } catch (error) {
-            console.log('Error creating the player order: ', error);
+        const currentDate = new Date(Date.now());
+        const orderExpired = (wheelNextOrder) ? (currentDate > new Date(wheelNextOrder?.deadline)) : (false);
+        if (orderExpired) {
+            toggleOrderExpiredModal()
+            return false;
+        } else {
+            try {
+                await axios.post(`${SERVER_URL}/orders/wheels`, {
+                    player: {
+                        id: location.state.authenticatedUserPlayerId
+                    },
+                    phoneNumber: wheelOrderPhoneNumber,
+                    order: {
+                        id: wheelNextOrder.id
+                    },
+                    model: {
+                        id: wheelModel
+                    },
+                    hardness: {
+                        id: wheelHardness
+                    },
+                    size: {
+                        id: wheelSize
+                    },
+                    amount: wheelAmount
+                }, {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    withCredentials: true
+                });
+
+                return true;
+            } catch (error) {
+                if (error.response.status == 403) {
+                    toggleOrderExpiredModal();
+                }
+                console.log('Error creating the player order: ', error);
+
+                return false;
+            }
         }
     }
 
     const createStickOrder = async () => {
-        try {
-            await axios.post(`${SERVER_URL}/orders/sticks`, {
-                player: {
-                    id: location.state.authenticatedUserPlayerId
-                },
-                phoneNumber: stickOrderPhoneNumber,
-                order: {
-                    id: stickNextOrder.id
-                },
-                model: {
-                    id: stickModel
-                },
-                length: {
-                    id: stickLength
-                },
-                weight: {
-                    id: stickWeight
-                },
-                side: stickSide,
-                blade: {
-                    id: stickBlade
-                },
-                flex: {
-                    id: stickFlex
-                },
-                kickpoint: {
-                    id: stickKickpoint
-                },
-                grip: {
-                    id: stickGrip
-                },
-                amount: stickAmount,
-                nametag: stickNametag
-            }, {
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                withCredentials: true
-            });
-        } catch (error) {
-            console.log('Error creating the player order: ', error);
+        const currentDate = new Date(Date.now());
+        const orderExpired = (stickNextOrder) ? (currentDate > new Date(stickNextOrder?.deadline)) : (false);
+        if (orderExpired) {
+            toggleOrderExpiredModal();
+            return false;
+        } else {
+            try {
+                await axios.post(`${SERVER_URL}/orders/sticks`, {
+                    player: {
+                        id: location.state.authenticatedUserPlayerId
+                    },
+                    phoneNumber: stickOrderPhoneNumber,
+                    order: {
+                        id: stickNextOrder.id
+                    },
+                    model: {
+                        id: stickModel
+                    },
+                    length: {
+                        id: stickLength
+                    },
+                    weight: {
+                        id: stickWeight
+                    },
+                    side: stickSide,
+                    blade: {
+                        id: stickBlade
+                    },
+                    flex: {
+                        id: stickFlex
+                    },
+                    kickpoint: {
+                        id: stickKickpoint
+                    },
+                    grip: {
+                        id: stickGrip
+                    },
+                    amount: stickAmount,
+                    nametag: stickNametag
+                }, {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    withCredentials: true
+                });
+
+                return true;
+            } catch (error) {
+                if (error.response.status == 403) {
+                    toggleOrderExpiredModal();
+                }
+                console.log('Error creating the player order: ', error);
+
+                return false;
+            }
         }
     }
 
@@ -377,32 +415,38 @@ export default function Orders() {
                                 {
                                     (wheelNextOrder) && (
                                         (!location.state.isCoach) && (
-                                            <div className='inputsDiv'>
-                                                <input id='wheelPhoneNumberInput' className='owheelOrderInput' type="text" placeholder='Nº tfno.' onChange={(e) => setWheelOrderPhoneNumber(e.target.value)} />
-                                                <select name='wheelModels' id='wheelModels' className='orderSelect' onChange={(e) => { setWheelModel(e.target.value) }}>
-                                                    {
-                                                        wheelModels.map((wheelModel) => {
-                                                            return <option key={wheelModel.id} value={wheelModel.id}>{wheelModel.description}</option>
-                                                        })
-                                                    }
-                                                </select>
-                                                <select name='wheelHardnesses' id='wheelHardnesses' className='orderSelect' onChange={(e) => { setWheelHardness(e.target.value) }}>
-                                                    {
-                                                        wheelHardnesses.map((wheelHardness) => {
-                                                            return <option key={wheelHardness.id} value={wheelHardness.id}>{wheelHardness.description}</option>
-                                                        })
-                                                    }
-                                                </select>
-                                                <select name='wheelSizes' id='wheelSizes' className='orderSelect' onChange={(e) => { setWheelSize(e.target.value) }}>
-                                                    {
-                                                        wheelSizes.map((wheelSize) => {
-                                                            return <option key={wheelSize.id} value={wheelSize.id}>{wheelSize.description}</option>
-                                                        })
-                                                    }
-                                                </select>
-                                                <input id='wheelAmountInput' className='orderInput' type="number" min={0} placeholder='Cantidad' onChange={(e) => setWheelAmount(e.target.value)} />
-                                                <button id='wheelOderButton' className='orderButton' onClick={() => { createWheelOrder(); window.location.reload() }}>PEDIR</button>
-                                            </div>
+                                            (!wheelOrderExpired) ? (
+                                                <div className='inputsDiv'>
+                                                    <input id='wheelPhoneNumberInput' className='owheelOrderInput' type="text" placeholder='Nº tfno.' onChange={(e) => setWheelOrderPhoneNumber(e.target.value)} />
+                                                    <select name='wheelModels' id='wheelModels' className='orderSelect' onChange={(e) => { setWheelModel(e.target.value) }}>
+                                                        {
+                                                            wheelModels.map((wheelModel) => {
+                                                                return <option key={wheelModel.id} value={wheelModel.id}>{wheelModel.description}</option>
+                                                            })
+                                                        }
+                                                    </select>
+                                                    <select name='wheelHardnesses' id='wheelHardnesses' className='orderSelect' onChange={(e) => { setWheelHardness(e.target.value) }}>
+                                                        {
+                                                            wheelHardnesses.map((wheelHardness) => {
+                                                                return <option key={wheelHardness.id} value={wheelHardness.id}>{wheelHardness.description}</option>
+                                                            })
+                                                        }
+                                                    </select>
+                                                    <select name='wheelSizes' id='wheelSizes' className='orderSelect' onChange={(e) => { setWheelSize(e.target.value) }}>
+                                                        {
+                                                            wheelSizes.map((wheelSize) => {
+                                                                return <option key={wheelSize.id} value={wheelSize.id}>{wheelSize.description}</option>
+                                                            })
+                                                        }
+                                                    </select>
+                                                    <input id='wheelAmountInput' className='orderInput' type="number" min={0} placeholder='Cantidad' onChange={(e) => setWheelAmount(e.target.value)} />
+                                                    <button id='wheelOderButton' className='orderButton' onClick={async () => { var refresh = await createWheelOrder(); if (refresh) window.location.reload(); }}>PEDIR</button>
+                                                </div>
+                                            ) : (
+                                                <div className='orderExpiredDiv'>
+                                                    <p className='orderExpiredText'>Este pedido ya ha expirado</p>
+                                                </div>
+                                            )
                                         )
                                     )
                                 }
@@ -472,66 +516,74 @@ export default function Orders() {
                                     )
                                 }
                                 {
-                                    (!location.state.isCoach) && (
-                                        <div id='stickInputsDiv' className='inputsDiv'>
-                                            <input className='orderInput' type="text" placeholder='Nº tfno.' onChange={(e) => setStickOrderPhoneNumber(e.target.value)} />
-                                            <select name='stickModels' id='stickModels' className='orderSelect' onChange={(e) => { setStickModel(e.target.value) }}>
-                                                {
-                                                    stickModels.map((stickModel) => {
-                                                        return <option key={stickModel.id} value={stickModel.id}>{stickModel.description}</option>
-                                                    })
-                                                }
-                                            </select>
-                                            <select name='stickLengths' id='stickLengths' className='orderSelect' onChange={(e) => { setStickLength(e.target.value) }}>
-                                                {
-                                                    stickLengths.map((stickLength) => {
-                                                        return <option key={stickLength.id} value={stickLength.id}>{stickLength.description}</option>
-                                                    })
-                                                }
-                                            </select>
-                                            <select name='stickWeights' id='stickWeights' className='orderSelect' onChange={(e) => { setStickWeight(e.target.value) }}>
-                                                {
-                                                    stickWeights.map((stickWeight) => {
-                                                        return <option key={stickWeight.id} value={stickWeight.id}>{stickWeight.description}</option>
-                                                    })
-                                                }
-                                            </select>
-                                            <select name='stickSides' id='stickSides' className='orderSelect' onChange={(e) => { setStickSide(e.target.value) }}>
-                                                <option value="Right">Right</option>
-                                                <option value="Left">Left</option>
-                                            </select>
-                                            <select name='stickBlades' id='stickBlades' className='orderSelect' onChange={(e) => { setStickBlade(e.target.value) }}>
-                                                {
-                                                    stickBlades.map((stickBlade) => {
-                                                        return <option key={stickBlade.id} value={stickBlade.id}>{stickBlade.description}</option>
-                                                    })
-                                                }
-                                            </select>
-                                            <select name='stickFlexes' id='stickFlexes' className='orderSelect' onChange={(e) => { setStickFlex(e.target.value) }}>
-                                                {
-                                                    stickFlexes.map((stickFlex) => {
-                                                        return <option key={stickFlex.id} value={stickFlex.id}>{stickFlex.description}</option>
-                                                    })
-                                                }
-                                            </select>
-                                            <select name='stickKickpoints' id='stickKickpoints' className='orderSelect' onChange={(e) => { setStickKickpoint(e.target.value) }}>
-                                                {
-                                                    stickKickpoints.map((stickKickpoint) => {
-                                                        return <option key={stickKickpoint.id} value={stickKickpoint.id}>{stickKickpoint.description}</option>
-                                                    })
-                                                }
-                                            </select>
-                                            <select name='stickGrips' id='stickGrips' className='orderSelect' onChange={(e) => { setStickGrip(e.target.value) }}>
-                                                {
-                                                    stickGrips.map((stickGrip) => {
-                                                        return <option key={stickGrip.id} value={stickGrip.id}>{stickGrip.description}</option>
-                                                    })
-                                                }
-                                            </select>
-                                            <input type="number" placeholder='Cantidad' id='stickAmountInput' className='orderInput' onChange={(e) => setStickAmount(e.target.value)} />
-                                            <input type="text" placeholder='Nametag' className='orderInput' onChange={(e) => setStickNametag(e.target.value)} />
-                                            <button className='orderButton' onClick={() => { createStickOrder(); window.location.reload() }}>PEDIR</button>
-                                        </div>
+                                    (stickNextOrder) && (
+                                        (!location.state.isCoach) && (
+                                            (!stickOrderExpired) ? (
+                                                <div id='stickInputsDiv' className='inputsDiv'>
+                                                    <input className='orderInput' type="text" placeholder='Nº tfno.' onChange={(e) => setStickOrderPhoneNumber(e.target.value)} />
+                                                    <select name='stickModels' id='stickModels' className='orderSelect' onChange={(e) => { setStickModel(e.target.value) }}>
+                                                        {
+                                                            stickModels.map((stickModel) => {
+                                                                return <option key={stickModel.id} value={stickModel.id}>{stickModel.description}</option>
+                                                            })
+                                                        }
+                                                    </select>
+                                                    <select name='stickLengths' id='stickLengths' className='orderSelect' onChange={(e) => { setStickLength(e.target.value) }}>
+                                                        {
+                                                            stickLengths.map((stickLength) => {
+                                                                return <option key={stickLength.id} value={stickLength.id}>{stickLength.description}</option>
+                                                            })
+                                                        }
+                                                    </select>
+                                                    <select name='stickWeights' id='stickWeights' className='orderSelect' onChange={(e) => { setStickWeight(e.target.value) }}>
+                                                        {
+                                                            stickWeights.map((stickWeight) => {
+                                                                return <option key={stickWeight.id} value={stickWeight.id}>{stickWeight.description}</option>
+                                                            })
+                                                        }
+                                                    </select>
+                                                    <select name='stickSides' id='stickSides' className='orderSelect' onChange={(e) => { setStickSide(e.target.value) }}>
+                                                        <option value="Right">Right</option>
+                                                        <option value="Left">Left</option>
+                                                    </select>
+                                                    <select name='stickBlades' id='stickBlades' className='orderSelect' onChange={(e) => { setStickBlade(e.target.value) }}>
+                                                        {
+                                                            stickBlades.map((stickBlade) => {
+                                                                return <option key={stickBlade.id} value={stickBlade.id}>{stickBlade.description}</option>
+                                                            })
+                                                        }
+                                                    </select>
+                                                    <select name='stickFlexes' id='stickFlexes' className='orderSelect' onChange={(e) => { setStickFlex(e.target.value) }}>
+                                                        {
+                                                            stickFlexes.map((stickFlex) => {
+                                                                return <option key={stickFlex.id} value={stickFlex.id}>{stickFlex.description}</option>
+                                                            })
+                                                        }
+                                                    </select>
+                                                    <select name='stickKickpoints' id='stickKickpoints' className='orderSelect' onChange={(e) => { setStickKickpoint(e.target.value) }}>
+                                                        {
+                                                            stickKickpoints.map((stickKickpoint) => {
+                                                                return <option key={stickKickpoint.id} value={stickKickpoint.id}>{stickKickpoint.description}</option>
+                                                            })
+                                                        }
+                                                    </select>
+                                                    <select name='stickGrips' id='stickGrips' className='orderSelect' onChange={(e) => { setStickGrip(e.target.value) }}>
+                                                        {
+                                                            stickGrips.map((stickGrip) => {
+                                                                return <option key={stickGrip.id} value={stickGrip.id}>{stickGrip.description}</option>
+                                                            })
+                                                        }
+                                                    </select>
+                                                    <input type="number" placeholder='Cantidad' id='stickAmountInput' className='orderInput' onChange={(e) => setStickAmount(e.target.value)} />
+                                                    <input type="text" placeholder='Nametag' className='orderInput' onChange={(e) => setStickNametag(e.target.value)} />
+                                                    <button className='orderButton' onClick={async () => { var refresh = await createStickOrder(); if (refresh) window.location.reload(); }}>PEDIR</button>
+                                                </div>
+                                            ) : (
+                                                <div className='orderExpiredDiv'>
+                                                    <p className='orderExpiredText'>Este pedido ya ha expirado</p>
+                                                </div>
+                                            )
+                                        )
                                     )
                                 }
                                 {
@@ -557,6 +609,11 @@ export default function Orders() {
                         wheelExcelDownloaded={wheelExcelDownloaded}
                         stickExcelDownloaded={stickExcelDownloaded}
                     />
+                )
+            }
+            {
+                orderExpiredModal && (
+                    <OrderExpiredModal onClose={toggleOrderExpiredModal} />
                 )
             }
         </>

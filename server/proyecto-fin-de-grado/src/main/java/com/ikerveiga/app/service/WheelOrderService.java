@@ -1,6 +1,7 @@
 package com.ikerveiga.app.service;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.apache.poi.hssf.usermodel.HSSFRow;
@@ -70,6 +71,11 @@ public class WheelOrderService {
 
         Player player = playerDAO.findById(playerId);
         Order order = orderDAO.findById(orderId);
+
+        if (LocalDateTime.now().isAfter(order.getDeadline())) {
+            throw new RuntimeException("The order is expired");
+        }
+
         WheelModel model = wheelModelDAO.findById(modelId);
         WheelHardness hardness = wheelHardnessDAO.findById(hardnessId);
         WheelSize size = wheelSizeDAO.findById(sizeId);

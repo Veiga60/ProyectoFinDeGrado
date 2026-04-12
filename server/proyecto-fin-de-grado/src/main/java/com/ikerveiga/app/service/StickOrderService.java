@@ -1,6 +1,7 @@
 package com.ikerveiga.app.service;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.apache.poi.hssf.usermodel.HSSFRow;
@@ -83,6 +84,10 @@ public class StickOrderService {
         StickFlex flex = stickFlexDAO.findById(flexId);
         StickKickpoint kickpoint = stickKickpointDAO.findById(kickpointId);
         StickGrip grip = stickGripDAO.findById(gripId);
+
+        if (LocalDateTime.now().isAfter(order.getDeadline())) {
+            throw new RuntimeException("The order is expired");
+        }
 
         StickOrder stickOrder = new StickOrder(player, phoneNumber, order, model, length, weight, side, blade, flex,
                 kickpoint, grip, amount, nametag);
