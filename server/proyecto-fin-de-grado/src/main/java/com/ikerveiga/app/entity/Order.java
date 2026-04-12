@@ -1,6 +1,6 @@
 package com.ikerveiga.app.entity;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +9,7 @@ import com.ikerveiga.app.dto.PlayerOrderDTO;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -27,41 +28,46 @@ public class Order {
     private long id;
 
     @Column(name = "order_deadline", nullable = false, unique = false)
-    private LocalDate deadline;
+    private LocalDateTime deadline;
 
     @ManyToOne
     @JoinColumn(name = "order_type_id", nullable = false, unique = false)
     private OrderType type;
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", fetch = FetchType.EAGER)
     private List<PlayerOrder> playerOrders;
+
+    @Column(name = "excel_downloaded", nullable = false, unique = false)
+    private boolean isExcelDownloaded;
 
     public Order() {
 
     }
 
-    public Order(long id, LocalDate deadline, OrderType type, List<PlayerOrder> playerOrders) {
+    public Order(long id, LocalDateTime deadline, OrderType type, List<PlayerOrder> playerOrders) {
         this.id = id;
         this.deadline = deadline;
         this.type = type;
         this.playerOrders = playerOrders;
+        this.isExcelDownloaded = false;
     }
 
-    public Order(LocalDate deadline, OrderType type, List<PlayerOrder> playerOrders) {
+    public Order(LocalDateTime deadline, OrderType type, List<PlayerOrder> playerOrders) {
         this.deadline = deadline;
         this.type = type;
         this.playerOrders = playerOrders;
+        this.isExcelDownloaded = false;
     }
 
     public long getId() {
         return this.id;
     }
 
-    public LocalDate getDeadline() {
+    public LocalDateTime getDeadline() {
         return this.deadline;
     }
 
-    public void setDeadline(LocalDate deadline) {
+    public void setDeadline(LocalDateTime deadline) {
         this.deadline = deadline;
     }
 
@@ -79,6 +85,14 @@ public class Order {
 
     public void setPlayerOrders(List<PlayerOrder> playerOrders) {
         this.playerOrders = playerOrders;
+    }
+
+    public boolean getIsExcelDownloaded() {
+        return this.isExcelDownloaded;
+    }
+
+    public void setIsExcelDownloaded(boolean isExcelDownloaded) {
+        this.isExcelDownloaded = isExcelDownloaded;
     }
 
     public OrderDTO toDTO() {

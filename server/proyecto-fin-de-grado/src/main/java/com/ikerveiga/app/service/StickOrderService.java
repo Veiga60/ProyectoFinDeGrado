@@ -90,6 +90,18 @@ public class StickOrderService {
         stickOrderDAO.save(stickOrder);
     }
 
+    public List<StickOrder> getStickOrdersFromOrder(long orderId) {
+        Order order = orderDAO.findById(orderId);
+
+        if (order == null) {
+            throw new RuntimeException("Order not found");
+        }
+
+        List<StickOrder> stickOrders = stickOrderDAO.findByOrder(order);
+
+        return stickOrders;
+    }
+
     public void exportToExcel(List<Long> stickOrdersIDs, HttpServletResponse response) throws IOException {
 
         List<StickOrder> stickOrders = stickOrderDAO.findAllById(stickOrdersIDs);

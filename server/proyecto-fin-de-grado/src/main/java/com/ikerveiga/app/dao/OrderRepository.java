@@ -1,6 +1,6 @@
 package com.ikerveiga.app.dao;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -15,10 +15,9 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
 
     Order findById(long id);
 
-    @Query("SELECT a FROM Order a WHERE a.deadline > CURDATE() AND a.type.id = :typeId ORDER BY a.deadline")
+    @Query("SELECT a FROM Order a WHERE a.isExcelDownloaded = FALSE AND a.type.id = :typeId ORDER BY a.deadline")
     List<Order> findNextOrdersOfType(@Param("typeId") long typeId);
 
     @Query("SELECT a FROM Order a WHERE a.deadline = :deadline AND a.type.id = :typeId")
-    Order findByDeadlineAndType(@Param("deadline") LocalDate deadline, @Param("typeId") long typeId);
-
+    Order findByDeadlineAndType(@Param("deadline") LocalDateTime deadline, @Param("typeId") long typeId);
 }

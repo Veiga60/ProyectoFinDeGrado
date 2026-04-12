@@ -1,5 +1,6 @@
 package com.ikerveiga.app.entity;
 
+import com.ikerveiga.app.dto.PlayerOrderDTO;
 import com.ikerveiga.app.dto.StickOrderDTO;
 
 import jakarta.persistence.Column;
@@ -168,6 +169,16 @@ public class StickOrder extends PlayerOrder {
     public StickOrderDTO toDTO() {
         StickOrderDTO stickOrderDTO = new StickOrderDTO(this.id, this.player.toDTOWithoutStatsAndCalls(),
                 this.phoneNumber, this.order.toDTO(), this.model.toDTO(), this.length.toDTO(), this.weight.toDTO(),
+                this.side, this.blade.toDTO(), this.flex.toDTO(), this.kickpoint.toDTO(), this.grip.toDTO(),
+                this.amount, this.nametag);
+
+        return stickOrderDTO;
+    }
+
+    @Override
+    public PlayerOrderDTO toDTOWithoutOrder() {
+        StickOrderDTO stickOrderDTO = new StickOrderDTO(this.id, this.player.toDTOWithoutStatsAndCalls(),
+                this.phoneNumber, null, this.model.toDTO(), this.length.toDTO(), this.weight.toDTO(),
                 this.side, this.blade.toDTO(), this.flex.toDTO(), this.kickpoint.toDTO(), this.grip.toDTO(),
                 this.amount, this.nametag);
 

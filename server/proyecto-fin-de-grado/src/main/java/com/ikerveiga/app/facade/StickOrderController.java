@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -61,6 +62,25 @@ public class StickOrderController {
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (RuntimeException e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @GetMapping("orders/sticks/{orderId}")
+    public ResponseEntity<List<StickOrderDTO>> getStickOrdersFromOrder(@PathVariable("orderId") long orderId) {
+        try {
+            List<StickOrderDTO> stickOrdersDTO = new ArrayList<>();
+            List<StickOrder> stickOrders = stickOrderService.getStickOrdersFromOrder(orderId);
+            for (StickOrder stickOrder : stickOrders) {
+                stickOrdersDTO.add((StickOrderDTO) stickOrder.toDTOWithoutOrder());
+            }
+
+            return ResponseEntity.ok(stickOrdersDTO);
+        } catch (RuntimeException e) {
+            if (e.getMessage().equals("Order not found")) {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            } else {
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
         }
     }
 

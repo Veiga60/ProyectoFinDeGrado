@@ -53,6 +53,18 @@ public class WheelOrderService {
         return wheelOrders;
     }
 
+    public List<WheelOrder> getWheelOrdersFromOrder(long orderId) {
+        Order order = orderDAO.findById(orderId);
+
+        if (order == null) {
+            throw new RuntimeException("Order not found");
+        }
+
+        List<WheelOrder> wheelOrders = wheelOrderDAO.findByOrder(order);
+
+        return wheelOrders;
+    }
+
     public void createWheelOrder(long playerId, String phoneNumber, long orderId, long modelId,
             long hardnessId, long sizeId, int amount) {
 

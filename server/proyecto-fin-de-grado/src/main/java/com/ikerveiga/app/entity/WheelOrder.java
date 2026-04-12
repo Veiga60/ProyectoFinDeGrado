@@ -1,5 +1,6 @@
 package com.ikerveiga.app.entity;
 
+import com.ikerveiga.app.dto.PlayerOrderDTO;
 import com.ikerveiga.app.dto.WheelOrderDTO;
 
 import jakarta.persistence.Column;
@@ -86,6 +87,15 @@ public class WheelOrder extends PlayerOrder {
     public WheelOrderDTO toDTO() {
         WheelOrderDTO wheelOrderDTO = new WheelOrderDTO(this.id, this.player.toDTOWithoutStatsAndCalls(),
                 this.phoneNumber, this.order.toDTO(), this.model.toDTO(), this.hardness.toDTO(),
+                this.size.toDTO(), this.amount);
+
+        return wheelOrderDTO;
+    }
+
+    @Override
+    public PlayerOrderDTO toDTOWithoutOrder() {
+        WheelOrderDTO wheelOrderDTO = new WheelOrderDTO(this.id, this.player.toDTOWithoutStatsAndCalls(),
+                this.phoneNumber, null, this.model.toDTO(), this.hardness.toDTO(),
                 this.size.toDTO(), this.amount);
 
         return wheelOrderDTO;

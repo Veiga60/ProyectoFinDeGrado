@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -41,6 +42,25 @@ public class WheelOrderController {
             return ResponseEntity.ok(wheelOrdersDTO);
         } catch (RuntimeException e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @GetMapping("orders/wheels/{orderId}")
+    public ResponseEntity<List<WheelOrderDTO>> getWheelOrdersFromOrder(@PathVariable("orderId") long orderId) {
+        try {
+            List<WheelOrderDTO> wheelOrdersDTO = new ArrayList<>();
+            List<WheelOrder> wheelOrders = wheelOrderService.getWheelOrdersFromOrder(orderId);
+            for (WheelOrder wheelOrder : wheelOrders) {
+                wheelOrdersDTO.add((WheelOrderDTO) wheelOrder.toDTOWithoutOrder());
+            }
+
+            return ResponseEntity.ok(wheelOrdersDTO);
+        } catch (RuntimeException e) {
+            if (e.getMessage().equals("Order not found")) {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            } else {
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
         }
     }
 

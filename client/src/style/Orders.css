@@ -153,6 +153,17 @@
     width: 10%;
 }
 
+.noActiveOrdersDiv {
+    margin-top: 3%;
+}
+
+.noActiveOrdersText {
+    color: black;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: larger;
+}
+
 .orderInput {
     background-color: rgb(233, 233, 233);
     color: black;

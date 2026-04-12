@@ -1,6 +1,6 @@
 package com.ikerveiga.app.dto;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -8,37 +8,40 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 public class OrderDTO {
 
     private long id;
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    private LocalDate deadline;
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm")
+    private LocalDateTime deadline;
     private OrderTypeDTO type;
     private List<PlayerOrderDTO> playerOrders;
+    private boolean isExcelDownloaded;
 
     public OrderDTO() {
 
     }
 
-    public OrderDTO(long id, LocalDate deadline, OrderTypeDTO type, List<PlayerOrderDTO> playerOrders) {
+    public OrderDTO(long id, LocalDateTime deadline, OrderTypeDTO type, List<PlayerOrderDTO> playerOrders) {
         this.id = id;
         this.deadline = deadline;
         this.type = type;
         this.playerOrders = playerOrders;
+        this.isExcelDownloaded = false;
     }
 
-    public OrderDTO(LocalDate deadline, OrderTypeDTO type, List<PlayerOrderDTO> playerOrders) {
+    public OrderDTO(LocalDateTime deadline, OrderTypeDTO type, List<PlayerOrderDTO> playerOrders) {
         this.deadline = deadline;
         this.type = type;
         this.playerOrders = playerOrders;
+        this.isExcelDownloaded = false;
     }
 
     public long getId() {
         return this.id;
     }
 
-    public LocalDate getDeadline() {
+    public LocalDateTime getDeadline() {
         return this.deadline;
     }
 
-    public void setDeadline(LocalDate deadline) {
+    public void setDeadline(LocalDateTime deadline) {
         this.deadline = deadline;
     }
 
@@ -56,5 +59,13 @@ public class OrderDTO {
 
     public void setPlayerOrders(List<PlayerOrderDTO> playerOrders) {
         this.playerOrders = playerOrders;
+    }
+
+    public boolean getIsExcelDownloaded() {
+        return this.isExcelDownloaded;
+    }
+
+    public void setIsExcelDownloaded(boolean isExcelDownloaded) {
+        this.isExcelDownloaded = isExcelDownloaded;
     }
 }

@@ -43,6 +43,7 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: user
       MYSQL_ROOT_PASSWORD: root
+      TZ: Europe/Madrid
     volumes:
       - database:/var/lib/mysql
 
