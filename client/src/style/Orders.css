@@ -228,3 +228,7 @@
     font-family: Inria Sans;
     font-weight: bold;
 }
+
+#wheelPhoneNumberInput {
+    width: 10%;
+}

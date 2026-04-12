@@ -417,7 +417,7 @@ export default function Orders() {
                                         (!location.state.isCoach) && (
                                             (!wheelOrderExpired) ? (
                                                 <div className='inputsDiv'>
-                                                    <input id='wheelPhoneNumberInput' className='wheelOrderInput' type="text" placeholder='Nº tfno.' onChange={(e) => setWheelOrderPhoneNumber(e.target.value)} />
+                                                    <input id='wheelPhoneNumberInput' className='orderInput' type="text" placeholder='Nº tfno.' onChange={(e) => setWheelOrderPhoneNumber(e.target.value)} />
                                                     <select name='wheelModels' id='wheelModels' className='orderSelect' onChange={(e) => { setWheelModel(e.target.value) }}>
                                                         {
                                                             wheelModels.map((wheelModel) => {
