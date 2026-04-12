@@ -65,26 +65,30 @@ export default function CreatOrderModal({ orderTypes, onClose, wheelNextOrder, s
                     <div id='createOrder'>
                         <p id='createOrderText'>NUEVO PEDIDO</p>
                     </div>
-                    <input type="datetime-local" placeholder='Fecha límite' id="deadline" onChange={(e) => { setDeadline(e.target.value) }} />
-                    <select name="orderType" id="orderType" onChange={(e) => setOrderType(e.target.value)}>
-                        {
-                            orderTypes.map((orderType) => {
-                                return <option key={orderType.id} value={orderType.id}>{orderType.description}</option>
-                            })
-                        }
-                    </select>
-                    <button onClick={async () => {
-                        var refresh;
-                        if (deadline) {
-                            refresh = await createOrder();
-                        }
+                    <div id='createOrderModalInputsDiv'>
+                        <input type="datetime-local" placeholder='Fecha límite' id="deadline" onChange={(e) => { setDeadline(e.target.value) }} />
+                        <select name="orderType" id="orderType" onChange={(e) => setOrderType(e.target.value)}>
+                            {
+                                orderTypes.map((orderType) => {
+                                    return <option key={orderType.id} value={orderType.id}>{orderType.description}</option>
+                                })
+                            }
+                        </select>
+                    </div>
+                    <div id='createOrderModalButtons'>
+                        <button id='createOrderButton' className='createOrderModalButton' onClick={async () => {
+                            var refresh;
+                            if (deadline) {
+                                refresh = await createOrder();
+                            }
 
-                        if (refresh) {
-                            await onClose();
-                            window.location.reload();
-                        }
-                    }}>CREAR</button>
-                    <button onClick={() => onClose()}>CERRAR</button>
+                            if (refresh) {
+                                await onClose();
+                                window.location.reload();
+                            }
+                        }}>CREAR</button>
+                        <button id='closeCreateOrderModalButton' className='createOrderModalButton' onClick={() => onClose()}>CERRAR</button>
+                    </div>
                 </div>
             </div >
             {
