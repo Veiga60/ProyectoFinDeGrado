@@ -2,7 +2,6 @@
     top: 0;
     left: 15%;
     position: absolute;
-    border: 2px solid black;
     width: 70%;
     height: 12%;
     color: black;
@@ -10,6 +9,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    background-color: white;
+    border: 2px solid rgb(7, 78, 200);
 }
 
 #localDiv {
@@ -51,7 +52,7 @@
 }
 
 #localNameDiv {
-    width: 50%;
+    width: 70%;
     margin-left: 5%;
 }
 
@@ -62,7 +63,7 @@
 }
 
 #visitingNameDiv {
-    width: 50%;
+    width: 70%;
     margin-right: 5%;
 }
 

@@ -4,7 +4,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    border: 2px solid green;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,7 +11,25 @@
 }
 
 #finishMatchButtonDiv {
-    margin-bottom: 1%;
+    margin-top: 0.5%;
+    width: 20%;
+}
+
+#finishMatchButton {
+    background-color: rgb(7, 78, 200);
+    border: none;
+    border-radius: 12px;
+    width: 60%;
+    height: 25px;
+    font-family: Inria Sans;
+    font-size: medium;
+    transition: 0.5s;
+}
+
+#finishMatchButton:hover {
+    background-color: rgb(5, 54, 138);
+    transition: 0.5s;
+    cursor: pointer;
 }
 
 #matchInfoMainDiv {
@@ -53,7 +70,6 @@
 }
 
 #startMatchLeftDiv {
-    border: 2px solid black;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -152,6 +168,7 @@
 }
 
 #matchPeriods {
+    top: 80px;
     color: black;
     font-weight: bold;
     font-size: large;
@@ -159,13 +176,20 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 20%;
+    gap: 5%;
+    z-index: 1000;
+    margin-top: 40px;
+    width: 10%;
 }
 
 .matchPeriod {
     border: 2px solid rgb(7, 78, 200);
     background-color: white;
     padding: 0;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    border-radius: 100px;
 }
 
 .matchPeriod:hover {
@@ -173,6 +197,10 @@
 }
 
 .matchPeriodSelected {
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    border-radius: 100px;
     border: 2px solid rgb(7, 78, 200);
     background-color: rgb(7, 78, 200);
     color: white;
