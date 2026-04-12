@@ -4,6 +4,9 @@ import '../style/MatchEvents.css'
 import PenaltiesModal from '../components/PenaltiesModal';
 import GoalsModal from '../components/GoalsModal';
 import TimeoutModal from '../components/TimeoutModal';
+import { AiFillAlert } from "react-icons/ai";
+import { GiWhistle } from "react-icons/gi";
+import { MdTimer } from "react-icons/md";
 
 export default function MatchEvents() {
 
@@ -37,29 +40,35 @@ export default function MatchEvents() {
     useEffect(() => {
         setMatch(location.state.match);
         setMatchEvents(location.state.matchEvents);
-        console.log('Hola', location.state.matchEvents);
     }, []);
 
     return (
         <>
             <div id="incidencesMainDiv">
-                <div id="incidencesLocalTeamDiv">
-                    <div id='indicencesLocalTeamImageDiv'>
-                        <img id='indicencesLocalTeamImage' src={`/logos/${match?.localTeam.logo}`} alt={match?.localTeam.name} />
+                <div id="incidencesLocalTeamDiv" className='incidencesTeamDiv'>
+                    <div id='indicencesLocalTeamImageDiv' className='incidencesTeamImageDiv'>
+                        <img id='indicencesLocalTeamImage' className='incidencesTeamImage' src={`/logos/${match?.localTeam.logo}`} alt={match?.localTeam.name} />
                     </div>
-                    <button onClick={() => [setSelectedTeam(match?.localTeam), toggleGoalsModal()]}>GOL</button>
-                    <button onClick={() => [setSelectedTeam(match?.localTeam), togglePenaltiesModal()]}>PENALIZACIÓN</button>
-                    <button onClick={() => [setSelectedTeam(match?.localTeam), toggleTimeoutModal()]}>TIEMPO MUERTO</button>
-                </div>
-                <div id="incidencesVisitingTeamDiv">
-                    <div id='indicencesLocalTeamImageDiv'>
-                        <img id='indicencesLocalTeamImage' src={`/logos/${match?.visitingTeam.logo}`} alt={match?.visitingTeam.name} />
+                    <div id='localTeamIncidencesButtonsDiv' className='incidencesButtonsDiv'>
+                        <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.localTeam), toggleGoalsModal()]}><AiFillAlert className='goalIcon' color='rgb(7, 78, 200)' size={30} />GOL ANOTADO</button>
+                        <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.localTeam), togglePenaltiesModal()]}><GiWhistle className='whistleIcon' color='rgb(7, 78, 200)' size={30} />PENALIZACIÓN</button>
+                        <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.localTeam), toggleTimeoutModal()]}><MdTimer className='timeoutIcon' color='rgb(7, 78, 200)' size={30} />TIEMPO MUERTO</button>
                     </div>
-                    <button onClick={() => [setSelectedTeam(match?.visitingTeam), toggleGoalsModal()]}>GOL</button>
-                    <button onClick={() => [setSelectedTeam(match?.visitingTeam), togglePenaltiesModal()]}>PENALIZACIÓN</button>
-                    <button onClick={() => [setSelectedTeam(match?.visitingTeam), toggleTimeoutModal()]}>TIEMPO MUERTO</button>
                 </div>
-                <button onClick={() => finishEditingMatchEvents()}>GUARDAR</button>
+                <div id="incidencesVisitingTeamDiv" className='incidencesTeamDiv'>
+                    <div id='indicencesVisitingTeamImageDiv' className='incidencesTeamImageDiv'>
+                        <img id='indicencesVisitingTeamImage' className='incidencesTeamImage' src={`/logos/${match?.visitingTeam.logo}`} alt={match?.visitingTeam.name} />
+                    </div>
+                    <div id='visitingTeamIncidencesButtonsDiv' className='incidencesButtonsDiv'>
+                        <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.visitingTeam), toggleGoalsModal()]}><AiFillAlert className='goalIcon' color='rgb(7, 78, 200)' size={30} />GOL ANOTADO</button>
+                        <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.visitingTeam), togglePenaltiesModal()]}><GiWhistle className='whistleIcon' color='rgb(7, 78, 200)' size={30} />PENALIZACIÓN</button>
+                        <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.visitingTeam), toggleTimeoutModal()]}><MdTimer className='timeoutIcon' color='rgb(7, 78, 200)' size={30} />TIEMPO MUERTO</button>
+                    </div>
+                </div>
+                <div id='saveIncidencesButtonDiv'>
+                    <button id='saveIncidencesButton' onClick={() => finishEditingMatchEvents()}>GUARDAR</button>
+                    <button id='returnButton'>VOLVER</button>
+                </div>
                 {
                     (penaltiesModal &&
                         <PenaltiesModal
