@@ -21,14 +21,20 @@
 }
 
 #goalsAndAssists {
-    margin-top: 5%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin-top: 2%;
 }
 
-#goalTitle {
+#goalTitle,
+#assistTitle {
+    color: black;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: x-large;
     padding: 0;
     margin: 0;
 }
@@ -42,13 +48,15 @@
     color: black;
 }
 
-#goalPlayerNumbers {
+#goalPlayerNumbers,
+#assistPlayerNumbers {
     width: 100%;
     height: fit-content;
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(30px, 30px));
-    border: 2px solid black;
+    font-family: Inria Sans;
+    font-weight: bold;
 }
 
 #assist {
@@ -60,36 +68,15 @@
     color: black;
 }
 
-#assistPlayerNumbers {
-    width: 100%;
-    height: fit-content;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(30px, 30px));
-    border: 2px solid black;
-}
-
-#goalTitle {
-    color: black;
-    font-family: Inria Sans;
-    font-weight: bold;
-    font-size: x-large;
-}
-
-.goalNumber {
-    color: black;
-    border: 2px solid rgb(7, 78, 200);
-}
-
-.goalNumber:hover {
-    cursor: pointer;
-}
-
+.goalNumber,
 .assistNumber {
     color: black;
     border: 2px solid rgb(7, 78, 200);
+    background-color: white;
+    border-radius: 1000px;
 }
 
+.goalNumber:hover,
 .assistNumber:hover {
     cursor: pointer;
 }
@@ -135,4 +122,9 @@
     font-family: Inria Sans;
     font-size: larger;
     transition: 0.5s;
+}
+
+#goalsModalSaveButton,
+#goalsModalReturnButton {
+    height: 30px;
 }

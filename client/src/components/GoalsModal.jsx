@@ -46,33 +46,33 @@ export default function GoalsModal({ teamGoal, onClose, matchEvents, setMatchEve
                     <div id='goalsMainDiv'>
                         <div id='goalsAndAssists'>
                             <div id='goal'>
-                                <p>GOL</p>
+                                <p id='goalTitle'>GOL</p>
                                 <div id='goalPlayerNumbers'>
                                     {
                                         players.map((player) => {
-                                            return (match?.call.callPlayerStatus[player?.id] == 'CONFIRMED') && (< div key={player.id} className='goalNumber' onClick={() => setScorer(player)}>{player.number}</div>)
+                                            return (match?.call.callPlayerStatus[player?.id] == 'CONFIRMED') && (< div key={player.id} className='goalNumber' onClick={() => setScorer(player)}>{`${player.number}`.padStart(2, '0')}</div>)
                                         })
                                     }
                                 </div>
                             </div>
                             <div id='assist'>
-                                <p>ASISTENCIA</p>
+                                <p id='assistTitle'>ASISTENCIA</p>
                                 <div id='assistPlayerNumbers'>
                                     {
                                         players.map((player) => {
-                                            return (match?.call.callPlayerStatus[player?.id] == 'CONFIRMED') && (<div key={player.id} className='assistNumber' onClick={() => setAssister(player)}>{player.number}</div>)
+                                            return (match?.call.callPlayerStatus[player?.id] == 'CONFIRMED') && (<div key={player.id} className='assistNumber' onClick={() => setAssister(player)}>{`${player.number}`.padStart(2, '0')}</div>)
                                         })
                                     }
                                 </div>
                             </div>
                         </div>
-                        <div>
-                            <input type="number" placeholder='Minuto partido' id="matchMinute" onChange={(e) => { setMatchMinute(e.target.value.padStart(2, '0')) }} />
-                            <input type="number" placeholder='Segundo partido' id="matchSecond" onChange={(e) => { setMatchSecond(e.target.value.padStart(2, '0')) }} />
+                        <div className='goalsModalInputsDiv'>
+                            <input className='goalsModalInput' type="number" placeholder='Minuto partido' id="matchMinute" onChange={(e) => { setMatchMinute(e.target.value.padStart(2, '0')) }} />
+                            <input className='goalsModalInput' type="number" placeholder='Segundo partido' id="matchSecond" onChange={(e) => { setMatchSecond(e.target.value.padStart(2, '0')) }} />
                         </div>
-                        <div>
-                            <button onClick={() => (matchMinute <= 20 && matchSecond <= 59 && matchMinute >= 0 && matchSecond >= 0) && [setGoal(scorer, assister), onClose()]}>GUARDAR</button>
-                            <button onClick={() => onClose()}>CERRAR</button>
+                        <div className='goalsModalButtonDiv'>
+                            <button id='goalsModalSaveButton' className='goalsModalButton' onClick={() => (matchMinute <= 20 && matchSecond <= 59 && matchMinute >= 0 && matchSecond >= 0) && [setGoal(scorer, assister), onClose()]}>GUARDAR</button>
+                            <button id='goalsModalReturnButton' className='goalsModalButton' onClick={() => onClose()}>CERRAR</button>
                         </div>
                     </div>
                 </div >)
