@@ -4,6 +4,7 @@ import ScoreBoard from '../components/ScoreBoard.jsx'
 import UseAIModal from '../components/UseAIModal.jsx'
 import axios from 'axios'
 import '../style/StartMatch.css'
+import GoalEvent from '../components/GoalEvent.jsx'
 
 
 export default function StartMatch() {
@@ -302,7 +303,13 @@ export default function StartMatch() {
                             {matchEvents?.map((matchEvent) => {
                                 if (matchEvent.hasOwnProperty('goal')) {
                                     if (matchEvent.goal.scorer == undefined) {
-                                        return <p id='matchEventsGoal' className='matchEvent'>[{matchEvent.goal.matchTime}] GOL DE {matchEvent.goal.team.name}</p>
+                                        return <GoalEvent
+                                            matchPeriod={matchPeriod}
+                                            matchTime={matchEvent.goal.matchTime}
+                                            team={matchEvent.goal.team}
+                                            scorer={matchEvent.goal.scorer}
+                                            assister={matchEvent.goal.assister}
+                                        />
                                     } else {
                                         return <p className='matchEvent'>[{matchEvent.goal.matchTime}] GOL DE {matchEvent.goal.team.name}. GOL: {matchEvent.goal.scorer.name} {matchEvent.goal.scorer.lastName1} {matchEvent.goal.scorer.lastName2}. {(matchEvent.goal.assister) && `ASISTENCIA: ${matchEvent.goal.assister?.name} ${matchEvent.goal.assister?.lastName1} ${matchEvent.goal.assister?.lastName2}`}</p>
                                     }

@@ -11,7 +11,7 @@
 }
 
 #finishMatchButtonDiv {
-    margin-top: 0.5%;
+    margin-top: 5px;
     width: 20%;
 }
 
@@ -157,6 +157,8 @@
     text-align: left;
     height: fit-content;
     width: fit-content;
+    margin: 0;
+    margin-top: 20px;
 }
 
 #matchEventsDiv {
@@ -178,7 +180,7 @@
     align-items: center;
     gap: 5%;
     z-index: 1000;
-    margin-top: 40px;
+    margin-top: 45px;
     width: 10%;
 }
 
