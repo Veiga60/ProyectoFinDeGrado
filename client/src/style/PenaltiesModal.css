@@ -105,3 +105,59 @@
     font-size: larger;
     transition: 0.5s;
 }
+
+#penaltiesAndNumbers {
+    width: 100%;
+    height: 55%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+#penaltiesMyTeam {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+}
+
+#numbers {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#numbersDiv {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(30px, 40px));
+}
+
+.penaltyNumber {
+    color: black;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: large;
+    border: 2px solid rgb(7, 78, 200);
+    border-radius: 1000px;
+}
+
+#penaltiesMyTeamDiv {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(30px, 40px));
+}
+
+.titleText {
+    color: black;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: large;
+    margin: 0;
+}
