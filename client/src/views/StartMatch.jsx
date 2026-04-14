@@ -5,6 +5,7 @@ import UseAIModal from '../components/UseAIModal.jsx'
 import axios from 'axios'
 import '../style/StartMatch.css'
 import GoalEvent from '../components/GoalEvent.jsx'
+import PenaltyEvent from '../components/PenaltyEvent.jsx'
 
 
 export default function StartMatch() {
@@ -304,7 +305,7 @@ export default function StartMatch() {
                                 if (matchEvent.hasOwnProperty('goal')) {
                                     if (matchEvent.goal.scorer == undefined) {
                                         return <GoalEvent
-                                            matchPeriod={matchPeriod}
+                                            matchPeriod={location.state.matchPeriod}
                                             matchTime={matchEvent.goal.matchTime}
                                             team={matchEvent.goal.team}
                                             scorer={matchEvent.goal.scorer}
@@ -312,7 +313,7 @@ export default function StartMatch() {
                                         />
                                     } else {
                                         return <GoalEvent
-                                            matchPeriod={matchPeriod}
+                                            matchPeriod={location.state.matchPeriod}
                                             matchTime={matchEvent.goal.matchTime}
                                             team={matchEvent.goal.team}
                                             scorer={matchEvent.goal.scorer}
@@ -320,7 +321,14 @@ export default function StartMatch() {
                                         />
                                     }
                                 } else if (matchEvent.hasOwnProperty('penalty')) {
-                                    return <p id='matchEventsPenalty' className='matchEvent'>[{matchEvent.penalty.matchTime}] FALTA DE {matchEvent.penalty.team}. {matchEvent.penalty.player?.name} {matchEvent.penalty.player?.lastName1} {matchEvent.penalty.player?.lastName2} {matchEvent.penalty.penaltyTime}' por {matchEvent.penalty.penaltyType}</p>
+                                    return <PenaltyEvent
+                                        matchPeriod={location.state.matchPeriod}
+                                        matchTime={matchEvent.penalty.matchTime}
+                                        team={matchEvent.penalty.team}
+                                        player={matchEvent.penalty.player}
+                                        penaltyTime={matchEvent.penalty.penaltyTime}
+                                        penaltyType={matchEvent.penalty.penaltyType}
+                                    />
                                 } else if (matchEvent.hasOwnProperty('timeout')) {
                                     return <p id='matchEventsTimeout' className='matchEvent'>[{matchEvent.timeout.matchTime}] TIEMPO MUERTO DE {matchEvent.timeout.team.name}.</p>
                                 }
