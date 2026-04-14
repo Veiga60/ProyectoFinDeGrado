@@ -27,8 +27,8 @@ export default function StartMatch() {
     const [playersMatchStats, setPlayersMatchStats] = useState();
     const [goaliesMatchStats, setGoaliesMatchStats] = useState();
 
-    const [matchPeriod, setMatchPeriod] = useState('period2');
-    const [previousMatchPeriod, setPreviousMatchPeriod] = useState('period2');
+    const [matchPeriod, setMatchPeriod] = useState('period1');
+    const [previousMatchPeriod, setPreviousMatchPeriod] = useState('period1');
 
     const [bonusPointTeam, setBonusPointTeam] = useState();
 
@@ -311,7 +311,13 @@ export default function StartMatch() {
                                             assister={matchEvent.goal.assister}
                                         />
                                     } else {
-                                        return <p className='matchEvent'>[{matchEvent.goal.matchTime}] GOL DE {matchEvent.goal.team.name}. GOL: {matchEvent.goal.scorer.name} {matchEvent.goal.scorer.lastName1} {matchEvent.goal.scorer.lastName2}. {(matchEvent.goal.assister) && `ASISTENCIA: ${matchEvent.goal.assister?.name} ${matchEvent.goal.assister?.lastName1} ${matchEvent.goal.assister?.lastName2}`}</p>
+                                        return <GoalEvent
+                                            matchPeriod={matchPeriod}
+                                            matchTime={matchEvent.goal.matchTime}
+                                            team={matchEvent.goal.team}
+                                            scorer={matchEvent.goal.scorer}
+                                            assister={matchEvent.goal.assister}
+                                        />
                                     }
                                 } else if (matchEvent.hasOwnProperty('penalty')) {
                                     return <p id='matchEventsPenalty' className='matchEvent'>[{matchEvent.penalty.matchTime}] FALTA DE {matchEvent.penalty.team}. {matchEvent.penalty.player?.name} {matchEvent.penalty.player?.lastName1} {matchEvent.penalty.player?.lastName2} {matchEvent.penalty.penaltyTime}' por {matchEvent.penalty.penaltyType}</p>

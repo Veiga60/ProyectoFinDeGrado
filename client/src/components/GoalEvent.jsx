@@ -30,11 +30,20 @@ export default function GoalEvent({ matchPeriod, matchTime, team, scorer, assist
                                 <div id="eventInfoDivMyTeam">
                                     <AiFillAlert color="rgb(7, 78, 200)" size={40} />
                                     <p id="goalText">GOL</p>
-                                    <div id="goalTeamImageDiv">
-                                        <img id="goalTeamImage" src={`/logos/${team.logo}`} alt="" />
+                                    <div id="goalTeamImageDivMyTeam">
+                                        <img id="goalTeamImageMyTeam" src={`/logos/${team.logo}`} alt="" />
                                     </div>
                                 </div>
-                                <div id="scorerAndAsisterDiv">
+                                <div id="scorerAndAssisterInfoDiv">
+                                    <div id='scorerNumberDiv'>
+                                        <p id='scorerNumberText'>{scorer.number}</p>
+                                    </div>
+                                    <div id="scorerAndAssisterDiv">
+                                        <p id="scorerText">{`${scorer.name} ${scorer.lastName1} ${scorer.lastName2}`}</p>
+                                        {
+                                            (assister) && (<p id="assisterText">{`${assister.name} ${assister.lastName1} ${assister.lastName2} #` + `${assister.number}`.padStart(2, '0') + `#`}</p>)
+                                        }
+                                    </div>
                                 </div>
                             </>
                         ) : (
