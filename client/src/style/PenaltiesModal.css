@@ -147,6 +147,10 @@
     border-radius: 1000px;
 }
 
+.penaltyNumber:hover {
+    cursor: pointer;
+}
+
 #penaltiesMyTeamDiv {
     width: 100%;
     display: grid;

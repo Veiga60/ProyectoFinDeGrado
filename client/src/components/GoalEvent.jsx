@@ -31,7 +31,7 @@ export default function GoalEvent({ matchPeriod, matchTime, team, scorer, assist
                                     <AiFillAlert color="rgb(7, 78, 200)" size={40} />
                                     <p id="goalText">GOL</p>
                                     <div id="goalTeamImageDivMyTeam">
-                                        <img id="goalTeamImageMyTeam" src={`/logos/${team.logo}`} alt="" />
+                                        <img id="goalTeamImageMyTeam" src={`/logos/${team.logo}`} alt={team.name} />
                                     </div>
                                 </div>
                                 <div id="scorerAndAssisterInfoDiv">
@@ -54,7 +54,7 @@ export default function GoalEvent({ matchPeriod, matchTime, team, scorer, assist
                                 </div>
                                 <div id="teamGoalDiv">
                                     <div id="goalTeamImageDiv">
-                                        <img id="goalTeamImage" src={`/logos/${team.logo}`} alt="" />
+                                        <img id="goalTeamImage" src={`/logos/${team.logo}`} alt={team.name} />
                                     </div>
                                     <div>
                                         <p id="teamNameText">{team.name}</p>
@@ -63,8 +63,6 @@ export default function GoalEvent({ matchPeriod, matchTime, team, scorer, assist
                             </>
                         )
                 }
-
-
             </div >
         </>
     )

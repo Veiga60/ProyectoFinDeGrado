@@ -289,7 +289,6 @@ export default function StartMatch() {
                                             </tr>
                                         )
                                     )}
-
                                 </tbody>
                             </table>
                         </div>
