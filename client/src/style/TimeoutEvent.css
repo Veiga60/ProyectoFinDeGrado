@@ -1,0 +1,224 @@
+#timeoutEventDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px solid rgb(7, 78, 200);
+    border-bottom: 2px solid rgb(7, 78, 200);
+    width: 100%;
+    height: 80px;
+}
+
+#periodAndTimeDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 20%;
+}
+
+#periodText {
+    color: white;
+    background-color: rgb(7, 78, 200);
+    border-radius: 1000px;
+    font-family: Inria Sans;
+    font-weight: bold;
+    margin: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#timeText {
+    margin: 0;
+    color: black;
+    font-family: Inria Sans;
+    font-weight: bold;
+}
+
+#timeoutTeamImageDiv {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#timeoutTeamImage {
+    width: 100%;
+}
+
+#timeoutText {
+    color: black;
+    font-family: Inria Sans;
+    font-size: x-large;
+    font-weight: bold;
+    width: 40%;
+    white-space: nowrap;
+}
+
+#timeoutTeamDiv {
+    width: 45%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+#teamNameText {
+    color: black;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: x-large;
+    margin-left: 5%;
+    width: 100%;
+}
+
+#timeoutEventInfoDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    width: 35%;
+    gap: 5%;
+}
+
+#timeoutTeamNameText {
+    margin: 0;
+    color: black;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+#timeoutTeamNameDiv {
+    margin-left: 5%;
+}
+
+#timeoutTypeText {
+    margin: 0;
+    padding: 0;
+    width: 90%;
+    font-weight: bold;
+    color: rgb(7, 78, 200);
+}
+
+#teamNameText {
+    color: black;
+}
+
+#timeoutInfoDiv {
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 75%;
+    height: 100%;
+}
+
+#timeoutAndPlayerInfoDiv {
+    width: 48%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#timeoutTypeAndTimeDiv {
+    width: 60%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#timeoutTimeDiv {
+    background-color: rgb(7, 78, 200);
+    width: 20%;
+    height: 50%;
+    border-radius: 5px;
+}
+
+#timeoutTimeText {
+    color: white;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: large;
+    margin: 0;
+}
+
+#timeoutAndPlayerInfoDivMyTeam {
+    display: flex;
+    flex-direction: row;
+    width: 45%;
+    height: 100%;
+}
+
+#timeoutPlayerNumberAndNameInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 80%;
+    height: 100%;
+    margin-left: 5%;
+}
+
+#timeoutPlayerNumberAndNameDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#timeoutPlayerNumberText {
+    color: black;
+    font-family: Inria Sans;
+    font-weight: bold;
+    margin: 0;
+}
+
+#timeoutPlayerText {
+    color: black;
+    font-family: Inria Sans;
+    font-weight: bold;
+    margin: 0;
+}
+
+#timeoutTypeAndTimeMyTeamDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+#timeoutTimeTextMyTeam {
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    font-family: Inria Sans;
+    font-size: large;
+}
+
+#timeoutTypeTextMyTeam {
+    text-align: start;
+    color: rgb(7, 78, 200);
+    font-weight: bold;
+    margin: 0;
+    font-family: Inria Sans;
+    width: 100%;
+    margin-left: 3%;
+}
+
+#timeoutTimeDivMyTeam {
+    background-color: rgb(7, 78, 200);
+    width: 10%;
+    border-radius: 5px;
+    height: 100%;
+}
+
+#timeoutPlayerNumberDiv {
+    background-color: rgb(7, 78, 200);
+}

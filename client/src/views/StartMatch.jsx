@@ -6,6 +6,7 @@ import axios from 'axios'
 import '../style/StartMatch.css'
 import GoalEvent from '../components/GoalEvent.jsx'
 import PenaltyEvent from '../components/PenaltyEvent.jsx'
+import TimeoutEvent from '../components/TimeoutEvent.jsx'
 
 
 export default function StartMatch() {
@@ -329,7 +330,11 @@ export default function StartMatch() {
                                         penaltyType={matchEvent.penalty.penaltyType}
                                     />
                                 } else if (matchEvent.hasOwnProperty('timeout')) {
-                                    return <p id='matchEventsTimeout' className='matchEvent'>[{matchEvent.timeout.matchTime}] TIEMPO MUERTO DE {matchEvent.timeout.team.name}.</p>
+                                    return <TimeoutEvent
+                                        matchPeriod={location.state.matchPeriod}
+                                        matchTime={matchEvent.timeout.matchTime}
+                                        team={matchEvent.timeout.team}
+                                    />
                                 }
                             })}
                         </div>
