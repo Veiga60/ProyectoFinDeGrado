@@ -1,0 +1,83 @@
+#mainContentDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    border: 2px solid red;
+}
+
+#matchStatsTeamDiv {
+    width: 25%;
+}
+
+#matchTeamStatsDiv {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 150px));
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+}
+
+.statTitle {
+    color: black;
+    font-family: Inria Sans;
+    font-size: large;
+    font-weight: bold;
+    width: 100%;
+}
+
+.matchStatTextDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 1000px;
+    border: 4px solid rgb(7, 78, 200);
+}
+
+.matchStatText {
+    color: black;
+    font-family: Inria Sans;
+    font-size: xx-large;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.statDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 60%;
+}
+
+#startMatchTeamButtonsDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    gap: 5%;
+    margin-top: 2%;
+}
+
+#matchStatsTeamRightDiv {
+    width: 75%;
+    height: 60%;
+}
+
+.startMatchTeamButton {
+    background-color: rgb(7, 78, 200);
+    border: none;
+    border-radius: 12px;
+    width: 10%;
+    height: 40px;
+    font-family: Inria Sans;
+    font-size: larger;
+    transition: 0.5s;
+}

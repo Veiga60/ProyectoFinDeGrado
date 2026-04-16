@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate, useLocation } from 'react-router-dom'
 import axios from 'axios'
+import { FaCaretUp } from "react-icons/fa";
+import { FaCaretDown } from "react-icons/fa";
 import '../style/StartMatchTeam.css'
 
 export default function StartMatchTeam() {
@@ -75,94 +77,118 @@ export default function StartMatchTeam() {
     return (
         <>
             <div id='mainContentDiv'>
-                <div id='matchTeamDiv'>
-                    <div id='matchTeamImageDiv'>
-                        <img id='matchTeamImage' src={'/logos/metropolitanohc.png'} alt={'Metropolitano HC'} />
+                <div id='matchStatsTeamDiv'>
+                    <div id='matchStatsTeamImageDiv'>
+                        <img id='matchStatsTeamImage' src={'/logos/metropolitanohc.png'} alt={'Metropolitano HC'} />
                     </div>
                 </div>
-                <div id='matchPlayerStatsDiv'>
-                    <div className='statDiv'>
-                        <p className='statTitle'>GOLES POWER PLAY</p>
-                        <div className='matchStatDiv'>
-                            <button className='minusButton' onClick={() => (powerPlayGoals > 0) && setPowerPlayGoals(powerPlayGoals - 1)}>-</button>
-                            <p className='matchStat'>{powerPlayGoals}</p>
-                            <button className='plusButton' onClick={() => setPowerPlayGoals(powerPlayGoals + 1)}>+</button>
+                <div id='matchStatsTeamRightDiv'>
+                    <div id='matchTeamStatsDiv'>
+                        <div className='statDiv'>
+                            <div className='matchStatDiv'>
+                                <FaCaretDown color='rgb(7, 78, 200)' size={40} onClick={() => (powerPlayGoals > 0) && setPowerPlayGoals(powerPlayGoals - 1)} />
+                                <div className='matchStatTextDiv'>
+                                    <p className='matchStatText'>{powerPlayGoals}</p>
+                                </div>
+                                <FaCaretUp color='rgb(7, 78, 200)' size={40} onClick={() => setPowerPlayGoals(powerPlayGoals + 1)} />
+                            </div>
+                            <p className='statTitle'>GOLES POWER PLAY</p>
+                        </div>
+                        <div className='statDiv'>
+                            <div className='matchStatDiv'>
+                                <FaCaretDown color='rgb(7, 78, 200)' size={40} onClick={() => (powerPlayNoGoals > 0) && setPowerPlayNoGoals(powerPlayNoGoals - 1)} />
+                                <div className='matchStatTextDiv'>
+                                    <p className='matchStatText'>{powerPlayNoGoals}</p>
+                                </div>
+                                <FaCaretUp color='rgb(7, 78, 200)' size={40} onClick={() => setPowerPlayNoGoals(powerPlayNoGoals + 1)} />
+                            </div>
+                            <p className='statTitle'>POWER PLAY SIN GOLES</p>
+                        </div>
+                        <div className='statDiv'>
+                            <div className='matchStatDiv'>
+                                <FaCaretDown color='rgb(7, 78, 200)' size={40} onClick={() => (penaltyKillGoals > 0) && setPenaltyKillGoals(penaltyKillGoals - 1)} />
+                                <div className='matchStatTextDiv'>
+                                    <p className='matchStatText'>{penaltyKillGoals}</p>
+                                </div>
+                                <FaCaretUp color='rgb(7, 78, 200)' size={40} onClick={() => setPenaltyKillGoals(penaltyKillGoals + 1)} />
+                            </div>
+                            <p className='statTitle'>GOLES ENCAJADOS PENALTY KILL</p>
+                        </div>
+                        <div className='statDiv'>
+                            <div className='matchStatDiv'>
+                                <FaCaretDown color='rgb(7, 78, 200)' size={40} onClick={() => (penaltyKillNoGoals > 0) && setPenaltyKillNoGoals(penaltyKillNoGoals - 1)} />
+                                <div className='matchStatTextDiv'>
+                                    <p className='matchStatText'>{penaltyKillNoGoals}</p>
+                                </div>
+                                <FaCaretUp color='rgb(7, 78, 200)' size={40} onClick={() => setPenaltyKillNoGoals(penaltyKillNoGoals + 1)} />
+                            </div>
+                            <p className='statTitle'>PENALTY KILL EXITOSOS</p>
+                        </div>
+                        <div className='statDiv'>
+                            <div className='matchStatDiv'>
+                                <FaCaretDown color='rgb(7, 78, 200)' size={40} onClick={() => setOneVsZero(oneVsZero - 1)} />
+                                <div className='matchStatTextDiv'>
+                                    <p className='matchStatText'>{oneVsZero}</p>
+                                </div>
+                                <FaCaretUp color='rgb(7, 78, 200)' size={40} onClick={() => setOneVsZero(oneVsZero + 1)} />
+                            </div>
+                            <p className='statTitle'>1VS0</p>
+                        </div>
+                        <div className='statDiv'>
+                            <div className='matchStatDiv'>
+                                <FaCaretDown color='rgb(7, 78, 200)' size={40} onClick={() => setOneVsOne(oneVsOne - 1)} />
+                                <div className='matchStatTextDiv'>
+                                    <p className='matchStatText'>{oneVsOne}</p>
+                                </div>
+                                <FaCaretUp color='rgb(7, 78, 200)' size={40} onClick={() => setOneVsOne(oneVsOne + 1)} />
+                            </div>
+                            <p className='statTitle'>1VS1</p>
+                        </div>
+                        <div className='statDiv'>
+                            <div className='matchStatDiv'>
+                                <FaCaretDown color='rgb(7, 78, 200)' size={40} onClick={() => setTwoVsOne(twoVsOne - 1)} />
+                                <div className='matchStatTextDiv'>
+                                    <p className='matchStatText'>{twoVsOne}</p>
+                                </div>
+                                <FaCaretUp color='rgb(7, 78, 200)' size={40} onClick={() => setTwoVsOne(twoVsOne + 1)} />
+                            </div>
+                            <p className='statTitle'>2VS1</p>
+                        </div>
+                        <div className='statDiv'>
+                            <div className='matchStatDiv'>
+                                <FaCaretDown color='rgb(7, 78, 200)' size={40} onClick={() => setTwoVsTwo(twoVsTwo - 1)} />
+                                <div className='matchStatTextDiv'>
+                                    <p className='matchStatText' >{twoVsTwo}</p>
+                                </div>
+                                <FaCaretUp color='rgb(7, 78, 200)' size={40} onClick={() => setTwoVsTwo(twoVsTwo + 1)} />
+                            </div>
+                            <p className='statTitle'>2VS2</p>
+                        </div>
+                        <div className='statDiv'>
+                            <div className='matchStatDiv'>
+                                <FaCaretDown color='rgb(7, 78, 200)' size={40} onClick={() => setThreeVsOne(threeVsOne - 1)} />
+                                <div className='matchStatTextDiv'>
+                                    <p className='matchStatText'>{threeVsOne}</p>
+                                </div>
+                                <FaCaretUp color='rgb(7, 78, 200)' size={30} onClick={() => setThreeVsOne(threeVsOne + 1)} />
+                            </div>
+                            <p className='statTitle'>3VS1</p>
+                        </div>
+                        <div className='statDiv'>
+                            <div className='matchStatDiv'>
+                                <FaCaretDown color='rgb(7, 78, 200)' size={40} onClick={() => setThreeVsTwo(threeVsTwo - 1)} />
+                                <div className='matchStatTextDiv'>
+                                    <p className='matchStatText'>{threeVsTwo}</p>
+                                </div>
+                                <FaCaretUp color='rgb(7, 78, 200)' size={40} onClick={() => setThreeVsTwo(threeVsTwo + 1)} />
+                            </div>
+                            <p className='statTitle'>3VS2</p>
                         </div>
                     </div>
-                    <div className='statDiv'>
-                        <p className='statTitle'>POWER PLAY SIN GOLES</p>
-                        <div className='matchStatDiv'>
-                            <button className='minusButton' onClick={() => (powerPlayNoGoals > 0) && setPowerPlayNoGoals(powerPlayNoGoals - 1)}>-</button>
-                            <p className='matchStat'>{powerPlayNoGoals}</p>
-                            <button className='plusButton' onClick={() => setPowerPlayNoGoals(powerPlayNoGoals + 1)}>+</button>
-                        </div>
+                    <div id='startMatchTeamButtonsDiv'>
+                        <button className='startMatchTeamButton' onClick={() => saveMatchStats(matchId)}>GUARDAR</button>
+                        <button className='startMatchTeamButton' onClick={() => navigate(`/matches/${matchId}/start_match`, { state: { matchPeriod: location.state.matchPeriod, matchEvents: location.state.matchEvents, teamStatsEdited: false } })}>VOLVER</button>
                     </div>
-                    <div className='statDiv'>
-                        <p className='statTitle'>GOLES ENCAJADOS PENALTY KILL</p>
-                        <div className='matchStatDiv'>
-                            <button className='minusButton' onClick={() => (penaltyKillGoals > 0) && setPenaltyKillGoals(penaltyKillGoals - 1)}>-</button>
-                            <p className='matchStat'>{penaltyKillGoals}</p>
-                            <button className='plusButton' onClick={() => setPenaltyKillGoals(penaltyKillGoals + 1)}>+</button>
-                        </div>
-                    </div>
-                    <div className='statDiv'>
-                        <p className='statTitle'>PENALTY KILL EXITOSOS</p>
-                        <div className='matchStatDiv'>
-                            <button className='minusButton' onClick={() => (penaltyKillNoGoals > 0) && setPenaltyKillNoGoals(penaltyKillNoGoals - 1)}>-</button>
-                            <p className='matchStat'>{penaltyKillNoGoals}</p>
-                            <button className='plusButton' onClick={() => setPenaltyKillNoGoals(penaltyKillNoGoals + 1)}>+</button>
-                        </div>
-                    </div>
-                    <div className='statDiv'>
-                        <p className='statTitle'>1VS0</p>
-                        <div className='matchStatDiv'>
-                            <button className='minusButton' onClick={() => setOneVsZero(oneVsZero - 1)}>-</button>
-                            <p className='matchStat'>{oneVsZero}</p>
-                            <button className='plusButton' onClick={() => setOneVsZero(oneVsZero + 1)}>+</button>
-                        </div>
-                    </div>
-                    <div className='statDiv'>
-                        <p className='statTitle'>1VS1</p>
-                        <div className='matchStatDiv'>
-                            <button className='minusButton' onClick={() => setOneVsOne(oneVsOne - 1)}>-</button>
-                            <p className='matchStat'>{oneVsOne}</p>
-                            <button className='plusButton' onClick={() => setOneVsOne(oneVsOne + 1)}>+</button>
-                        </div>
-                    </div>
-                    <div className='statDiv'>
-                        <p className='statTitle'>2VS1</p>
-                        <div className='matchStatDiv'>
-                            <button className='minusButton' onClick={() => setTwoVsOne(twoVsOne - 1)}>-</button>
-                            <p className='matchStat'>{twoVsOne}</p>
-                            <button className='plusButton' onClick={() => setTwoVsOne(twoVsOne + 1)}>+</button>
-                        </div>
-                    </div>
-                    <div className='statDiv'>
-                        <p className='statTitle'>2VS2</p>
-                        <div className='matchStatDiv'>
-                            <button className='minusButton' onClick={() => setTwoVsTwo(twoVsTwo - 1)}>-</button>
-                            <p className='matchStat'>{twoVsTwo}</p>
-                            <button className='plusButton' onClick={() => setTwoVsTwo(twoVsTwo + 1)}>+</button>
-                        </div>
-                    </div>
-                    <div className='statDiv'>
-                        <p className='statTitle'>3VS1</p>
-                        <div className='matchStatDiv'>
-                            <button className='minusButton' onClick={() => setThreeVsOne(threeVsOne - 1)}>-</button>
-                            <p className='matchStat'>{threeVsOne}</p>
-                            <button className='plusButton' onClick={() => setThreeVsOne(threeVsOne + 1)}>+</button>
-                        </div>
-                    </div>
-                    <div className='statDiv'>
-                        <p className='statTitle'>3VS2</p>
-                        <div className='matchStatDiv'>
-                            <button className='minusButton' onClick={() => setThreeVsTwo(threeVsTwo - 1)}>-</button>
-                            <p className='matchStat'>{threeVsTwo}</p>
-                            <button className='plusButton' onClick={() => setThreeVsTwo(threeVsTwo + 1)}>+</button>
-                        </div>
-                    </div>
-                    <button onClick={() => saveMatchStats(matchId)}>GUARDAR</button>
-                    <button onClick={() => navigate(`/matches/${matchId}/start_match`, { state: { matchPeriod: location.state.matchPeriod, matchEvents: location.state.matchEvents, teamStatsEdited: false } })}>VOLVER</button>
                 </div>
             </div>
         </>
