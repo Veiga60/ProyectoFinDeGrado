@@ -271,50 +271,62 @@ export default function StartMatchPlayer() {
                             (
                                 <>
                                     <div className='statDiv'>
+                                        <div className='matchStatDiv'>
+                                            <div id='savePercentageStatDiv' className='matchStatTextDiv'>
+                                                <p className='matchStatText'>{(shotsReceived > 0) && ((shotsReceived - goalsReceived) / (shotsReceived)).toFixed(3)}</p>
+                                            </div>
+                                        </div>
                                         <p className='statTitle'>% PARADAS</p>
-                                        <div className='matchStatDiv'>
-                                            <p className='matchStat'>{(shotsReceived > 0) && ((shotsReceived - goalsReceived) / (shotsReceived)).toFixed(3)}</p>
-                                        </div>
                                     </div>
                                     <div className='statDiv'>
+                                        <div className='matchStatDiv'>
+                                            <FaCaretDown color='rgb(7, 78, 200)' size={40} onClick={() => (shotsReceived > 0) && setShotsReceived(shotsReceived - 1)} />
+                                            <div className='matchStatTextDiv'>
+                                                <p className='matchStatText'>{shotsReceived}</p>
+                                            </div>
+                                            <FaCaretUp color='rgb(7, 78, 200)' size={40} onClick={() => setShotsReceived(shotsReceived + 1)} />
+                                        </div>
                                         <p className='statTitle'>TIROS RECIBIDOS</p>
-                                        <div className='matchStatDiv'>
-                                            <button className='minusButton' onClick={() => (shotsReceived > 0) && setShotsReceived(shotsReceived - 1)}>-</button>
-                                            <p className='matchStat'>{shotsReceived}</p>
-                                            <button className='plusButton' onClick={() => setShotsReceived(shotsReceived + 1)}>+</button>
-                                        </div>
                                     </div>
                                     <div className='statDiv'>
+                                        <div className='matchStatDiv'>
+                                            <FaCaretDown color='rgb(7, 78, 200)' size={40} onClick={() => (goalsReceived > 0) && [setGoalsReceived(goalsReceived - 1), setShotsReceived(shotsReceived - 1)]} />
+                                            <div className='matchStatTextDiv'>
+                                                <p className='matchStatText'>{goalsReceived}</p>
+                                            </div>
+                                            <FaCaretUp color='rgb(7, 78, 200)' size={40} onClick={() => [setGoalsReceived(goalsReceived + 1), setShotsReceived(shotsReceived + 1)]} />
+                                        </div>
                                         <p className='statTitle'>GOLES RECIBIDOS</p>
-                                        <div className='matchStatDiv'>
-                                            <button className='minusButton' onClick={() => (goalsReceived > 0) && [setGoalsReceived(goalsReceived - 1), setShotsReceived(shotsReceived - 1)]}>-</button>
-                                            <p className='matchStat'>{goalsReceived}</p>
-                                            <button className='plusButton' onClick={() => [setGoalsReceived(goalsReceived + 1), setShotsReceived(shotsReceived + 1)]}>+</button>
-                                        </div>
                                     </div>
                                     <div className='statDiv'>
+                                        <div className='matchStatDiv'>
+                                            <FaCaretDown color='rgb(7, 78, 200)' size={40} onClick={() => (goaliePenaltyMins > 0) && setGoaliePenaltyMins(goaliePenaltyMins - 1)} />
+                                            <div className='matchStatTextDiv'>
+                                                <p className='matchStatText'>{goaliePenaltyMins}</p>
+                                            </div>
+                                            <FaCaretUp color='rgb(7, 78, 200)' size={40} onClick={() => setGoaliePenaltyMins(goaliePenaltyMins + 1)} />
+                                        </div>
                                         <p className='statTitle'>MINUTOS SANCIÓN</p>
-                                        <div className='matchStatDiv'>
-                                            <button className='minusButton' onClick={() => (goaliePenaltyMins > 0) && setGoaliePenaltyMins(goaliePenaltyMins - 1)}>-</button>
-                                            <p className='matchStat'>{goaliePenaltyMins}</p>
-                                            <button className='plusButton' onClick={() => setGoaliePenaltyMins(goaliePenaltyMins + 1)}>+</button>
-                                        </div>
                                     </div>
                                     <div className='statDiv'>
+                                        <div className='matchStatDiv'>
+                                            <FaCaretDown color='rgb(7, 78, 200)' size={40} onClick={() => (goaliePenaltyShotGoals > 0) && setGoaliePenaltyShotGoals(goaliePenaltyShotGoals - 1)} />
+                                            <div className='matchStatTextDiv'>
+                                                <p className='matchStatText'>{goaliePenaltyShotGoals}</p>
+                                            </div>
+                                            <FaCaretUp color='rgb(7, 78, 200)' size={40} onClick={() => setGoaliePenaltyShotGoals(goaliePenaltyShotGoals + 1)} />
+                                        </div>
                                         <p className='statTitle'>PENALTIS ENCAJADOS</p>
-                                        <div className='matchStatDiv'>
-                                            <button className='minusButton' onClick={() => (goaliePenaltyShotGoals > 0) && setGoaliePenaltyShotGoals(goaliePenaltyShotGoals - 1)}>-</button>
-                                            <p className='matchStat'>{goaliePenaltyShotGoals}</p>
-                                            <button className='plusButton' onClick={() => setGoaliePenaltyShotGoals(goaliePenaltyShotGoals + 1)}>+</button>
-                                        </div>
                                     </div>
                                     <div className='statDiv'>
-                                        <p className='statTitle'>PENALTIS PARADOS</p>
                                         <div className='matchStatDiv'>
-                                            <button className='minusButton' onClick={() => (penaltyShotSaves > 0) && setPenaltyShotSaves(penaltyShotSaves - 1)}>-</button>
-                                            <p className='matchStat'>{penaltyShotSaves}</p>
-                                            <button className='plusButton' onClick={() => setPenaltyShotSaves(penaltyShotSaves + 1)}>+</button>
+                                            <FaCaretUp color='rgb(7, 78, 200)' size={40} onClick={() => (penaltyShotSaves > 0) && setPenaltyShotSaves(penaltyShotSaves - 1)} />
+                                            <div className='matchStatTextDiv'>
+                                                <p className='matchStatText'>{penaltyShotSaves}</p>
+                                            </div>
+                                            <FaCaretUp color='rgb(7, 78, 200)' size={40} onClick={() => setPenaltyShotSaves(penaltyShotSaves + 1)} />
                                         </div>
+                                        <p className='statTitle'>PENALTIS PARADOS</p>
                                     </div>
                                 </>
                             )}
