@@ -116,3 +116,8 @@
 #savePercentageStatDiv {
     width: 100px;
 }
+
+.arrowDownIcon:hover,
+.arrowUpIcon:hover {
+    cursor: pointer;
+}
