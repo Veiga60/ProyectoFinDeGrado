@@ -32,8 +32,8 @@ export default function GoalsModal({ teamGoal, onClose, matchEvents, setMatchEve
                             <p id='goalTitle'>GOL ANOTADO</p>
                         </div>
                         <div className='goalsModalInputsDiv'>
-                            <input className='goalsModalInput' type="number" placeholder='Minuto partido' id="matchMinute" onChange={(e) => { setMatchMinute(e.target.value.padStart(2, '0')) }} />
-                            <input className='goalsModalInput' type="number" placeholder='Segundo partido' id="matchSecond" onChange={(e) => { setMatchSecond(e.target.value.padStart(2, '0')) }} />
+                            <input className='goalsModalInput' type="number" placeholder='Minuto' id="matchMinute" onChange={(e) => { setMatchMinute(e.target.value.padStart(2, '0')) }} />
+                            <input className='goalsModalInput' type="number" placeholder='Segundo' id="matchSecond" onChange={(e) => { setMatchSecond(e.target.value.padStart(2, '0')) }} />
                         </div>
                         <div className='goalsModalButtonDiv'>
                             <button className='goalsModalButton' onClick={() => (matchMinute <= 20 && matchSecond <= 59 && matchMinute >= 0 && matchSecond >= 0) && [setGoal(scorer, assister), onClose()]}>GUARDAR</button>
@@ -67,8 +67,8 @@ export default function GoalsModal({ teamGoal, onClose, matchEvents, setMatchEve
                             </div>
                         </div>
                         <div className='goalsModalInputsDiv'>
-                            <input className='goalsModalInput' type="number" placeholder='Minuto partido' id="matchMinute" onChange={(e) => { setMatchMinute(e.target.value.padStart(2, '0')) }} />
-                            <input className='goalsModalInput' type="number" placeholder='Segundo partido' id="matchSecond" onChange={(e) => { setMatchSecond(e.target.value.padStart(2, '0')) }} />
+                            <input className='goalsModalInput' type="number" placeholder='Minuto' id="matchMinute" onChange={(e) => { setMatchMinute(e.target.value.padStart(2, '0')) }} />
+                            <input className='goalsModalInput' type="number" placeholder='Segundo' id="matchSecond" onChange={(e) => { setMatchSecond(e.target.value.padStart(2, '0')) }} />
                         </div>
                         <div className='goalsModalButtonDiv'>
                             <button id='goalsModalSaveButton' className='goalsModalButton' onClick={() => (matchMinute <= 20 && matchSecond <= 59 && matchMinute >= 0 && matchSecond >= 0) && [setGoal(scorer, assister), onClose()]}>GUARDAR</button>

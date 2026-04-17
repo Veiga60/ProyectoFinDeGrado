@@ -9,23 +9,22 @@
 }
 
 #matchPlayerDiv {
-    border: 2px solid black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40%;
+    width: 30%;
 }
 
 #matchPlayerStatsDiv {
-    border: 2px solid black;
-    width: 60%;
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 150px));
+    gap: 2%;
 }
 
 #matchPlayerImageDiv {
-    width: 40%;
+    width: 60%;
 }
 
 #matchPlayerImage {
@@ -47,17 +46,6 @@
     align-items: center;
     justify-content: center;
 }
-
-/* .statTitle {
-    color: white;
-    font-family: Inria Sans;
-    font-size: x-large;
-    font-weight: bold;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-radius: 10px;
-    margin-bottom: 0;
-} */
 
 .matchStat {
     color: black;
@@ -93,4 +81,34 @@
     min-width: fit-content;
     margin-top: 0;
     margin-left: 5%;
+}
+
+#startMatchPlayerButtonsDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    gap: 5%;
+    margin-top: 2%;
+}
+
+.startMatchPlayerButton {
+    background-color: rgb(7, 78, 200);
+    border: none;
+    border-radius: 12px;
+    width: 10%;
+    height: 40px;
+    font-family: Inria Sans;
+    font-size: larger;
+    transition: 0.5s;
+}
+
+#startMatchPlayerRightDiv {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
