@@ -18,12 +18,12 @@ export default function UseAIModal({ onClose, onMatchFinished, prompt }) {
         <>
             <div id='useAIModalMainDiv'>
                 <div id='useAIMainDiv'>
-                    <div>
+                    <div id='useAITextDiv'>
                         <p id='useAIText'>¿Quieres recibir recomendaciones de áreas a entrenar?</p>
                     </div>
-                    <div>
-                        <button onClick={() => { [onClose(), getRecomendations()] }}>SI</button>
-                        <button onClick={() => { [onClose(), onMatchFinished()] }}>NO</button>
+                    <div id='useAIModalButtonsDiv'>
+                        <button className='useAIModalButton' onClick={() => { [onClose(), getRecomendations()] }}>SI</button>
+                        <button className='useAIModalButton' onClick={() => { [onClose(), onMatchFinished()] }}>NO</button>
                     </div>
                 </div>
             </div>

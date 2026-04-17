@@ -6,18 +6,52 @@
     height: 100%;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10000000;
 }
 
 #useAIMainDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     width: 30%;
     height: 30%;
     background-color: white;
     border: 2px solid rgb(7, 78, 200);
     border-radius: 15px;
+    gap: 15%;
 }
 
 #useAIText {
     color: black;
     font-weight: bold;
     font-family: Inria Sans;
+    margin: 0;
+}
+
+#useAITextDiv {
+    width: 100%;
+    margin-top: 50px;
+    font-size: large;
+}
+
+#useAIModalButtonsDiv {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+}
+
+.useAIModalButton {
+    background-color: rgb(7, 78, 200);
+    border: none;
+    border-radius: 12px;
+    width: 20%;
+    height: 40px;
+    font-family: Inria Sans;
+    font-size: larger;
+    transition: 0.5s;
 }
