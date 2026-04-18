@@ -18,6 +18,7 @@ export default function Messages() {
         try {
             const response = await axios.get(`${SERVER_URL}/debates/${debateId}/messages`, { withCredentials: true });
             setMessages(response.data);
+            console.log(response.data);
         } catch (error) {
             console.log('Error fetching messages: ', error);
         }
@@ -26,7 +27,6 @@ export default function Messages() {
     const publishMessage = async () => {
         try {
             const user = await axios.get(`${SERVER_URL}/me`, { withCredentials: true });
-            console.log(user.data);
             await axios.post(`${SERVER_URL}/debates/${debateId}/messages`,
                 {
                     'text': text,
@@ -68,8 +68,8 @@ export default function Messages() {
                 </div>
                 <div id='publishMessageArea'>
                     <div id='textAreaDiv'>
-                        <textarea aria-colindex={10} name="messageTextArea" id="messageTextArea" onChange={(e) => setText(e.target.value)} />
-                        <IoSend className='sendIcon' color='white' size={30} onClick={() => { [publishMessage(), window.location.reload()] }} />
+                        <textarea placeholder='Escribe tu mensaje' name="messageTextArea" id="messageTextArea" onChange={(e) => setText(e.target.value)} />
+                        <IoSend className='sendIcon' color='white' size={30} onClick={async () => { await publishMessage(), window.location.reload() }} />
                     </div>
                 </div>
             </div >

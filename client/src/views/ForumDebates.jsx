@@ -80,7 +80,7 @@ export default function ForumDebates() {
                 <div id='createDebateButtonDiv'>
                     {(location.state.isCoach) &&
                         (
-                            <button className='createDebateButton' onClick={toggleCreateDebateModal}>CREAR DEBATE</button>
+                            <button className='createDebateButton' onClick={toggleCreateDebateModal}>NUEVO DEBATE</button>
                         )
                     }
                 </div>

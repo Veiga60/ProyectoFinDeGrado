@@ -7,7 +7,7 @@ public class UserDTO {
     protected String email;
     private String password;
     protected boolean isCoach;
-    protected PlayerDTO playerDTO;
+    protected PlayerDTO player;
 
     public UserDTO() {
 
@@ -19,7 +19,7 @@ public class UserDTO {
         this.email = email;
         this.password = password;
         this.isCoach = isCoach;
-        this.playerDTO = playerDTO;
+        this.player = playerDTO;
     }
 
     public UserDTO(long id, String username, String email, boolean isCoach, PlayerDTO playerDTO) {
@@ -27,14 +27,14 @@ public class UserDTO {
         this.username = username;
         this.email = email;
         this.isCoach = isCoach;
-        this.playerDTO = playerDTO;
+        this.player = playerDTO;
     }
 
     public UserDTO(String username, String email, boolean isCoach, PlayerDTO playerDTO) {
         this.username = username;
         this.email = email;
         this.isCoach = isCoach;
-        this.playerDTO = playerDTO;
+        this.player = playerDTO;
     }
 
     public long getId() {
@@ -74,11 +74,11 @@ public class UserDTO {
     }
 
     public PlayerDTO getPlayerDTO() {
-        return this.playerDTO;
+        return this.player;
     }
 
     public void setPlayerDTO(PlayerDTO playerDTO) {
-        this.playerDTO = playerDTO;
+        this.player = playerDTO;
     }
 
 }

@@ -4,7 +4,6 @@
     top: 80px;
     height: calc(100% - 80px);
     width: 100%;
-    border: 2px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,7 +18,6 @@
 }
 
 #debatesDiv {
-    border: 2px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,7 +39,6 @@
 }
 
 #createDebateButtonDiv {
-    border: 2px solid black;
     width: 40%;
 }
 
