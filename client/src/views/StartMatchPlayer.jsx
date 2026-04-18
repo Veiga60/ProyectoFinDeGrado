@@ -27,7 +27,6 @@ export default function StartMatchPlayer() {
 
     const [shotsReceived, setShotsReceived] = useState(0);
     const [goalsReceived, setGoalsReceived] = useState(0);
-    const [goaliePenaltyMins, setGoaliePenaltyMins] = useState(0);
     const [goaliePenaltyShotGoals, setGoaliePenaltyShotGoals] = useState(0);
     const [penaltyShotSaves, setPenaltyShotSaves] = useState(0);
 
@@ -36,6 +35,8 @@ export default function StartMatchPlayer() {
 
     const playerPenalties = matchEvents?.filter((matchEvent) => (matchEvent.penalty?.player?.id == playerId));
     var playerPenaltyMins = playerPenalties?.reduce((accumulator, playerPenalty) => accumulator + Number(playerPenalty.penalty.penaltyTime), 0) || 0;
+
+    var goaliePenaltyMins = playerPenalties?.reduce((accumulator, playerPenalty) => accumulator + Number(playerPenalty.penalty.penaltyTime), 0) || 0;
 
     var playerMatchStatsBody = {
         goals: goals,
@@ -300,11 +301,9 @@ export default function StartMatchPlayer() {
                                     </div>
                                     <div className='statDiv'>
                                         <div className='matchStatDiv'>
-                                            <FaCaretDown className='arrowDownIcon' color='rgb(7, 78, 200)' size={40} onClick={() => (goaliePenaltyMins > 0) && setGoaliePenaltyMins(goaliePenaltyMins - 1)} />
                                             <div className='matchStatTextDiv'>
                                                 <p className='matchStatText'>{goaliePenaltyMins}</p>
                                             </div>
-                                            <FaCaretUp className='arrowUpIcon' color='rgb(7, 78, 200)' size={40} onClick={() => setGoaliePenaltyMins(goaliePenaltyMins + 1)} />
                                         </div>
                                         <p className='statTitle'>MINUTOS SANCIÓN</p>
                                     </div>

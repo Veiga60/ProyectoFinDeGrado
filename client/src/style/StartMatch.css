@@ -62,8 +62,8 @@
     background-color: rgb(7, 78, 200);
     border: none;
     border-radius: 12px;
-    width: 60%;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     font-family: Inria Sans;
     font-size: larger;
     transition: 0.5s;
