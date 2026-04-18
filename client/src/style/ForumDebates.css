@@ -1,3 +1,16 @@
+#debatesMainDiv {
+    position: absolute;
+    left: 0;
+    top: 80px;
+    height: calc(100% - 80px);
+    width: 100%;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 #debateText {
     color: black;
     font-family: Inria Sans;
@@ -6,15 +19,39 @@
 }
 
 #debatesDiv {
-    width: 100%;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 60%;
+    gap: 5%;
 }
 
-#debateDiv {
+.debateDiv {
     background-color: white;
     border: 2px solid rgb(7, 78, 200);
     border-radius: 10px;
+    width: 100%;
 }
 
-#debateDiv:hover {
+.debateDiv:hover {
     cursor: pointer;
+}
+
+#createDebateButtonDiv {
+    border: 2px solid black;
+    width: 40%;
+}
+
+.createDebateButton {
+    background-color: rgb(7, 78, 200);
+    border: none;
+    border-radius: 12px;
+    width: 30%;
+    height: 40px;
+    font-family: Inria Sans;
+    font-size: larger;
+    transition: 0.5s;
 }

@@ -1,9 +1,64 @@
+#messagesMainDiv {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    border: 2px solid black;
+}
+
+#textAreaDiv {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    background-color: white;
+    border: 1px solid rgb(7, 78, 200);
+
+}
+
 textarea {
     background-color: white;
-    width: 100%;
-    border: 1px solid rgb(7, 78, 200);
+    border: none;
+    width: 93.5%;
     color: black;
     font-family: Inria Sans;
+    outline: none;
+    height: 100%;
+    position: relative;
+    resize: none;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.sendIcon {
+    position: absolute;
+    bottom: 5%;
+    right: 26%;
+    padding: 5px;
+    background-color: rgb(7, 78, 200);
+    border-radius: 100000px;
+    transition: 0.5s;
+}
+
+.sendIcon:hover {
+    cursor: pointer;
+    background-color: rgb(5, 54, 138);
+    transition: 0.5s;
+}
+
+#publishMessageArea {
+    margin-top: auto;
+    border: 2px solid black;
+    width: 50%;
+    height: 20%;
+    margin-bottom: 20px;
 }
 
 #messageDiv {

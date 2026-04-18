@@ -3,6 +3,7 @@ import { useLocation, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import '../style/Messages.css'
+import { IoSend } from "react-icons/io5";
 
 export default function Messages() {
 
@@ -66,8 +67,10 @@ export default function Messages() {
                     }
                 </div>
                 <div id='publishMessageArea'>
-                    <textarea name="messageTextArea" id="messageTextArea" onChange={(e) => setText(e.target.value)} />
-                    <button onClick={() => { [publishMessage(), window.location.reload()] }}>ENVIAR</button>
+                    <div id='textAreaDiv'>
+                        <textarea aria-colindex={10} name="messageTextArea" id="messageTextArea" onChange={(e) => setText(e.target.value)} />
+                        <IoSend className='sendIcon' color='white' size={30} onClick={() => { [publishMessage(), window.location.reload()] }} />
+                    </div>
                 </div>
             </div >
 

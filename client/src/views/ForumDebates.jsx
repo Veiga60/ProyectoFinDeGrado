@@ -63,25 +63,25 @@ export default function ForumDebates() {
                 authenticatedUserPlayerId={location.state.authenticatedUserPlayerId}
                 isCoach={location.state.isCoach}
             />
-            <div>
-                <div>
-                    {(location.state.isCoach) &&
-                        (
-                            <button onClick={toggleCreateDebateModal}>CREAR DEBATE</button>
-                        )
-                    }
-                </div>
+            <div id='debatesMainDiv'>
                 <div id='debatesDiv'>
                     {
                         debates.map((debate) => {
                             return (
-                                <div key={debate.id} id='debateDiv' onClick={() => navigate(`/forum/categories/${category}/${debate.id}`, {
+                                <div key={debate.id} className='debateDiv' onClick={() => navigate(`/forum/categories/${category}/${debate.id}`, {
                                     state: { authenticatedUserPlayerId: location.state.authenticatedUserPlayerId, isCoach: location.state.isCoach }
                                 })}>
                                     <p id='debateText'>{debate.title}</p>
                                 </div>
                             )
                         })
+                    }
+                </div>
+                <div id='createDebateButtonDiv'>
+                    {(location.state.isCoach) &&
+                        (
+                            <button className='createDebateButton' onClick={toggleCreateDebateModal}>CREAR DEBATE</button>
+                        )
                     }
                 </div>
             </div >
