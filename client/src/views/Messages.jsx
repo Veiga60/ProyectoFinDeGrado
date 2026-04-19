@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import '../style/Messages.css'
 import { IoSend } from "react-icons/io5";
+import Message from '../components/Message.jsx'
 
 export default function Messages() {
 
@@ -59,9 +60,10 @@ export default function Messages() {
                     {
                         messages.map((message) => {
                             return (
-                                <div key={message.id} id='messageDiv'>
-                                    <p id='messageText'>{`${message.text}`}</p>
-                                </div>
+                                <Message
+                                    key={message.id}
+                                    message={message}
+                                />
                             )
                         })
                     }

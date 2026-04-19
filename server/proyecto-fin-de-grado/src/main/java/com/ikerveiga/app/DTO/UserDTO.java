@@ -13,28 +13,28 @@ public class UserDTO {
 
     }
 
-    public UserDTO(long id, String username, String email, String password, boolean isCoach, PlayerDTO playerDTO) {
+    public UserDTO(long id, String username, String email, String password, boolean isCoach, PlayerDTO player) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
         this.isCoach = isCoach;
-        this.player = playerDTO;
+        this.player = player;
     }
 
-    public UserDTO(long id, String username, String email, boolean isCoach, PlayerDTO playerDTO) {
+    public UserDTO(long id, String username, String email, boolean isCoach, PlayerDTO player) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.isCoach = isCoach;
-        this.player = playerDTO;
+        this.player = player;
     }
 
-    public UserDTO(String username, String email, boolean isCoach, PlayerDTO playerDTO) {
+    public UserDTO(String username, String email, boolean isCoach, PlayerDTO player) {
         this.username = username;
         this.email = email;
         this.isCoach = isCoach;
-        this.player = playerDTO;
+        this.player = player;
     }
 
     public long getId() {
@@ -73,12 +73,12 @@ public class UserDTO {
         this.isCoach = isCoach;
     }
 
-    public PlayerDTO getPlayerDTO() {
+    public PlayerDTO getPlayer() {
         return this.player;
     }
 
-    public void setPlayerDTO(PlayerDTO playerDTO) {
-        this.player = playerDTO;
+    public void setPlayer(PlayerDTO player) {
+        this.player = player;
     }
 
 }

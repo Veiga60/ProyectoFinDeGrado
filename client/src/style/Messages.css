@@ -57,13 +57,3 @@ textarea::-webkit-scrollbar {
     height: 20%;
     margin-bottom: 20px;
 }
-
-#messageDiv {
-    background-color: white;
-    border: 1px solid rgb(7, 78, 200);
-}
-
-#messageText {
-    color: black;
-    font-family: Inria Sans;
-}
