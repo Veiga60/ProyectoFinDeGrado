@@ -19,10 +19,6 @@ export default function ForumDebates() {
 
     const toggleCreateDebateModal = async () => {
         await setCreateDebateModal(!createDebateModal);
-        if (createDebateModal == true) {
-            window.location.reload();
-        }
-
     }
 
     const getDebates = async () => {
