@@ -19,6 +19,23 @@
 
 }
 
+#messagesArea {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 30px;
+    width: 50%;
+    height: 75%;
+    max-height: 75%;
+    overflow-y: auto;
+}
+
+#messagesArea::-webkit-scrollbar {
+    display: none;
+}
+
 textarea {
     background-color: white;
     border: none;
