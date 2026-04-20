@@ -108,6 +108,19 @@
     font-family: Inria Sans;
 }
 
+#penaltyTypeTextSmall {
+    margin: 0;
+    color: black;
+    font-family: Inria Sans;
+    font-size: small;
+    padding: 0;
+    width: 100%;
+    font-weight: bold;
+    color: rgb(7, 78, 200);
+    text-align: left;
+    margin-left: 5px;
+}
+
 #penaltyTeamNameText {
     width: 100%;
     height: 50%;
@@ -118,11 +131,12 @@
 }
 
 #penaltyTypeText {
-    margin: 0;
     padding: 0;
-    width: 90%;
+    width: 100%;
     font-weight: bold;
     color: rgb(7, 78, 200);
+    text-align: left;
+    margin-left: 5px;
 }
 
 #teamNameText {
@@ -148,7 +162,7 @@
 }
 
 #penaltyTypeAndTimeDiv {
-    width: 60%;
+    width: 100%;
     height: 50%;
     display: flex;
     flex-direction: row;
@@ -158,9 +172,12 @@
 
 #penaltyTimeDiv {
     background-color: rgb(7, 78, 200);
-    width: 20%;
+    width: 12%;
     height: 50%;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #penaltyTimeText {
@@ -231,6 +248,18 @@
     font-family: Inria Sans;
     width: 100%;
     margin-left: 3%;
+    font-size: medium;
+}
+
+#penaltyTypeTextMyTeamSmall {
+    text-align: start;
+    color: rgb(7, 78, 200);
+    font-weight: bold;
+    margin: 0;
+    font-family: Inria Sans;
+    width: 100%;
+    margin-left: 3%;
+    font-size: small;
 }
 
 #penaltyTimeDivMyTeam {
@@ -238,6 +267,9 @@
     width: 10%;
     border-radius: 5px;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #penaltyPlayerNumberDiv {

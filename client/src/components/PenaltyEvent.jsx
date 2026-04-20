@@ -43,7 +43,7 @@ export default function PenaltyEvent({ matchPeriod, matchTime, team, player, pen
                                             <div id="penaltyTimeDivMyTeam">
                                                 <p id='penaltyTimeTextMyTeam'>{`${penaltyTime}'`}</p>
                                             </div>
-                                            <p id="penaltyTypeTextMyTeam">{penaltyType}</p>
+                                            <p id={(penaltyType == 'GOLPEAR CON LA PUNTA DEL STICK' || penaltyType == 'GOLPEAR CON EL TACO DEL STICK') ? 'penaltyTypeTextMyTeamSmall' : 'penaltyTypeTextMyTeam'}>{penaltyType}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -66,7 +66,7 @@ export default function PenaltyEvent({ matchPeriod, matchTime, team, player, pen
                                             <div id="penaltyTimeDiv">
                                                 <p id="penaltyTimeText">{`${penaltyTime}'`}</p>
                                             </div>
-                                            <p id="penaltyTypeText">{penaltyType}</p>
+                                            <p id={(penaltyType == 'GOLPEAR CON LA PUNTA DEL STICK' || penaltyType == 'GOLPEAR CON EL TACO DEL STICK') ? 'penaltyTypeTextSmall' : 'penaltyTypeText'}>{penaltyType}</p>
                                         </div>
                                     </div>
                                 </div>

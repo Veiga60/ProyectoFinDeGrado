@@ -43,7 +43,6 @@
 }
 
 .penaltyText {
-    color: black;
     font-family: Inria Sans;
     font-size: large;
     font-weight: bold;
@@ -51,6 +50,15 @@
 }
 
 .penaltyDiv {
+    color: black;
+    border: 2px solid rgb(7, 78, 200);
+    background-color: white;
+    border-radius: 1000px;
+}
+
+.selectedPenalty {
+    color: white;
+    background-color: rgb(7, 78, 200);
     border: 2px solid rgb(7, 78, 200);
     border-radius: 1000px;
 }

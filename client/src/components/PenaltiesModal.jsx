@@ -10,6 +10,20 @@ export default function PenaltiesModal({ teamPenalty, onClose, matchEvents, setM
     const [matchMinute, setMatchMinute] = useState();
     const [matchSecond, setMatchSecond] = useState();
 
+    const [previousPenalty, setPreviousPenalty] = useState(null);
+
+    const selectPenaltyType = (element) => {
+        if (previousPenalty !== null) {
+            deselectPreviousPenalty();
+        }
+        element.className = 'selectedPenalty';
+        setPreviousPenalty(element);
+    }
+
+    const deselectPreviousPenalty = () => {
+        previousPenalty.className = 'penaltyDiv';
+    }
+
     const setPenalty = () => {
         let newMatchEvents;
         if (matchEvents == undefined) {
@@ -36,64 +50,67 @@ export default function PenaltiesModal({ teamPenalty, onClose, matchEvents, setM
                                 <p id='penaltiesTitleText'>PENALIZACIÓN</p>
                             </div>
                             <div id='penalties'>
-                                <div id='trippingDiv' className='penaltyDiv' onClick={() => setPenaltyType('ZANCADILLA')}>
+                                <div id='trippingDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('ZANCADILLA'); selectPenaltyType(e.currentTarget) }}>
                                     <p id='trippingText' className='penaltyText'>ZC</p>
                                 </div>
-                                <div id='chargingDiv' className='penaltyDiv' onClick={() => setPenaltyType('CARGA')}>
+                                <div id='chargingDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('CARGA'); selectPenaltyType(e.currentTarget) }}>
                                     <p id='chargingText' className='penaltyText'>CG</p>
                                 </div>
-                                <div id='roughingDiv' className='penaltyDiv' onClick={() => setPenaltyType('VIOLENCIA INNECESARIA')}>
+                                <div id='chargingDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('INTERFERENCIA'); selectPenaltyType(e.currentTarget) }}>
+                                    <p id='chargingText' className='penaltyText'>IF</p>
+                                </div>
+                                <div id='roughingDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('VIOLENCIA INNECESARIA'); selectPenaltyType(e.currentTarget) }}>
                                     <p id='roughingText' className='penaltyText'>VI</p>
                                 </div>
-                                <div id='unsportsmanlikeDiv' className='penaltyDiv' onClick={() => setPenaltyType('CONDUCTA ANTIDEPORTIVA')}>
+                                <div id='unsportsmanlikeDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('CONDUCTA ANTIDEPORTIVA'); selectPenaltyType(e.currentTarget) }}>
                                     <p id='unsportsmanlikeText' className='penaltyText'>CA</p>
                                 </div>
-                                <div id='hookingDiv' className='penaltyDiv' onClick={() => setPenaltyType('ENGANCHAR')}>
+                                <div id='hookingDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('ENGANCHAR'); selectPenaltyType(e.currentTarget) }}>
                                     <p id='hookingText' className='penaltyText'>EG</p>
                                 </div>
-                                <div id='holdingDiv' className='penaltyDiv' onClick={() => setPenaltyType('AGARRAR')}>
+                                <div id='holdingDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('AGARRAR'); selectPenaltyType(e.currentTarget) }}>
                                     <p id='holdingText' className='penaltyText'>AG</p>
                                 </div>
-                                <div id='elbowingDiv' className='penaltyDiv' onClick={() => setPenaltyType('CODAZO')}>
+                                <div id='elbowingDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('CODAZO'); selectPenaltyType(e.currentTarget) }}>
                                     <p id='elbowingText' className='penaltyText'>CZ</p>
                                 </div>
-                                <div id='kneeingDiv' className='penaltyDiv' onClick={() => setPenaltyType('RODILLAZO')}>
+                                <div id='kneeingDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('RODILLAZO'); selectPenaltyType(e.currentTarget) }}>
                                     <p id='kneeingText' className='penaltyText'>RZ</p>
                                 </div>
-                                <div id='crossCheckingDiv' className='penaltyDiv' onClick={() => setPenaltyType('CARGA CON STICK')}>
+                                <div id='crossCheckingDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('CARGA CON EL STICK'); selectPenaltyType(e.currentTarget) }}>
                                     <p id='crossCheckingText' className='penaltyText'>CC</p>
                                 </div>
-                                <div id='slashingDiv' className='penaltyDiv' onClick={() => setPenaltyType('GOLPEAR CON EL STICK')}>
+                                <div id='slashingDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('GOLPEAR CON EL STICK'); selectPenaltyType(e.currentTarget) }}>
                                     <p id='slashingText' className='penaltyText'>SL</p>
                                 </div>
-                                <div id='highStickingDiv' className='penaltyDiv' onClick={() => setPenaltyType('STICK ALTO')}>
+                                <div id='highStickingDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('STICK ALTO'); selectPenaltyType(e.currentTarget) }}>
                                     <p id='highStickingText' className='penaltyText'>SA</p>
                                 </div>
-                                <div id='spearingDiv' className='penaltyDiv' onClick={() => setPenaltyType('GOLPEAR CON LA PUNTA DEL STICK')}>
+                                <div id='spearingDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('GOLPEAR CON LA PUNTA DEL STICK'); selectPenaltyType(e.currentTarget) }}>
                                     <p id='spearingText' className='penaltyText'>SP</p>
                                 </div>
-                                <div id='butEndingDiv' className='penaltyDiv' onClick={() => setPenaltyType('GOLPEAR CON EL TACO DEL STICK')}>
+                                <div id='butEndingDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('GOLPEAR CON EL TACO DEL STICK'); selectPenaltyType(e.currentTarget) }}>
                                     <p id='butEndingText' className='penaltyText'>BE</p>
                                 </div>
-                                <div id='misconductDiv' className='penaltyDiv' onClick={() => setPenaltyType('MALA CONDUCTA')}>
+                                <div id='misconductDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('MALA CONDUCTA'); selectPenaltyType(e.currentTarget) }}>
                                     <p id='misconductText' className='penaltyText'>MC</p>
                                 </div>
-                                <div id='gameMisconductDiv' className='penaltyDiv' onClick={() => setPenaltyType('MALA CONDUCTA EN EL JUEGO')}>
+                                <div id='gameMisconductDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('MALA CONDUCTA EN EL JUEGO'); selectPenaltyType(e.currentTarget) }}>
                                     <p id='gameMisconductText' className='penaltyText'>MCJ</p>
                                 </div>
-                                <div id='matchPenaltyDiv' className='penaltyDiv' onClick={() => setPenaltyType('PENALIZACIÓN DE PARTIDO')}>
+                                <div id='matchPenaltyDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('PENALIZACIÓN DE PARTIDO'); selectPenaltyType(e.currentTarget) }}>
                                     <p id='matchPenaltyText' className='penaltyText'>PP</p>
                                 </div>
-                                <div id='benchPenaltyDiv' className='penaltyDiv' onClick={() => setPenaltyType('PENALIZACIÓN DE BANQUILLO')}>
+                                <div id='benchPenaltyDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('PENALIZACIÓN DE BANQUILLO'); selectPenaltyType(e.currentTarget) }}>
                                     <p id='benchPenaltyText' className='penaltyText'>PB</p>
                                 </div>
-                                <div id='delayOfGameDiv' className='penaltyDiv' onClick={() => setPenaltyType('RETRASO EN EL JUEGO')}>
+                                <div id='delayOfGameDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('RETRASO EN EL JUEGO'); selectPenaltyType(e.currentTarget) }}>
                                     <p id='delayOfGameText' className='penaltyText'>RJ</p>
                                 </div>
-                                <div id='penaltyShotDiv' className='penaltyDiv' onClick={() => setPenaltyType('TIRO DE PENALTI')}>
+                                <div id='penaltyShotDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('TIRO DE PENALTI'); selectPenaltyType(e.currentTarget) }}>
                                     <p id='penaltyShotText' className='penaltyText'>TP</p>
                                 </div>
-                                <div id='improperEquipmentDiv' className='penaltyDiv' onClick={() => setPenaltyType('EQUIPACIÓN INDEVIDA')}>
+                                <div id='improperEquipmentDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('EQUIPACIÓN INDEVIDA'); selectPenaltyType(e.currentTarget) }}>
                                     <p id='improperEquipmentText' className='penaltyText'>EI</p>
                                 </div>
                             </div>
@@ -115,64 +132,67 @@ export default function PenaltiesModal({ teamPenalty, onClose, matchEvents, setM
                                 <div id='penaltiesMyTeam'>
                                     <p className='titleText'>PENALIZACIÓN</p>
                                     <div id='penaltiesMyTeamDiv'>
-                                        <div id='trippingDiv' className='penaltyDiv' onClick={() => setPenaltyType('ZANCADILLA')}>
+                                        <div id='trippingDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('ZANCADILLA'); selectPenaltyType(e.currentTarget) }}>
                                             <p id='trippingText' className='penaltyText'>ZC</p>
                                         </div>
-                                        <div id='chargingDiv' className='penaltyDiv' onClick={() => setPenaltyType('CARGA')}>
+                                        <div id='chargingDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('CARGA'); selectPenaltyType(e.currentTarget) }}>
                                             <p id='chargingText' className='penaltyText'>CG</p>
                                         </div>
-                                        <div id='roughingDiv' className='penaltyDiv' onClick={() => setPenaltyType('VIOLENCIA INNECESARIA')}>
+                                        <div id='chargingDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('INTERFERENCIA'); selectPenaltyType(e.currentTarget) }}>
+                                            <p id='chargingText' className='penaltyText'>IF</p>
+                                        </div>
+                                        <div id='roughingDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('VIOLENCIA INNECESARIA'); selectPenaltyType(e.currentTarget) }}>
                                             <p id='roughingText' className='penaltyText'>VI</p>
                                         </div>
-                                        <div id='unsportsmanlikeDiv' className='penaltyDiv' onClick={() => setPenaltyType('CONDUCTA ANTIDEPORTIVA')}>
+                                        <div id='unsportsmanlikeDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('CONDUCTA ANTIDEPORTIVA'); selectPenaltyType(e.currentTarget) }}>
                                             <p id='unsportsmanlikeText' className='penaltyText'>CA</p>
                                         </div>
-                                        <div id='hookingDiv' className='penaltyDiv' onClick={() => setPenaltyType('ENGANCHAR')}>
+                                        <div id='hookingDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('ENGANCHAR'); selectPenaltyType(e.currentTarget) }}>
                                             <p id='hookingText' className='penaltyText'>EG</p>
                                         </div>
-                                        <div id='holdingDiv' className='penaltyDiv' onClick={() => setPenaltyType('AGARRAR')}>
+                                        <div id='holdingDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('AGARRAR'); selectPenaltyType(e.currentTarget) }}>
                                             <p id='holdingText' className='penaltyText'>AG</p>
                                         </div>
-                                        <div id='elbowingDiv' className='penaltyDiv' onClick={() => setPenaltyType('CODAZO')}>
+                                        <div id='elbowingDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('CODAZO'); selectPenaltyType(e.currentTarget) }}>
                                             <p id='elbowingText' className='penaltyText'>CZ</p>
                                         </div>
-                                        <div id='kneeingDiv' className='penaltyDiv' onClick={() => setPenaltyType('RODILLAZO')}>
+                                        <div id='kneeingDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('RODILLAZO'); selectPenaltyType(e.currentTarget) }}>
                                             <p id='kneeingText' className='penaltyText'>RZ</p>
                                         </div>
-                                        <div id='crossCheckingDiv' className='penaltyDiv' onClick={() => setPenaltyType('CARGA CON STICK')}>
+                                        <div id='crossCheckingDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('CARGA CON EL STICK'); selectPenaltyType(e.currentTarget) }}>
                                             <p id='crossCheckingText' className='penaltyText'>CC</p>
                                         </div>
-                                        <div id='slashingDiv' className='penaltyDiv' onClick={() => setPenaltyType('GOLPEAR CON EL STICK')}>
+                                        <div id='slashingDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('GOLPEAR CON EL STICK'); selectPenaltyType(e.currentTarget) }}>
                                             <p id='slashingText' className='penaltyText'>SL</p>
                                         </div>
-                                        <div id='highStickingDiv' className='penaltyDiv' onClick={() => setPenaltyType('STICK ALTO')}>
+                                        <div id='highStickingDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('STICK ALTO'); selectPenaltyType(e.currentTarget) }}>
                                             <p id='highStickingText' className='penaltyText'>SA</p>
                                         </div>
-                                        <div id='spearingDiv' className='penaltyDiv' onClick={() => setPenaltyType('GOLPEAR CON LA PUNTA DEL STICK')}>
+                                        <div id='spearingDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('GOLPEAR CON LA PUNTA DEL STICK'); selectPenaltyType(e.currentTarget) }}>
                                             <p id='spearingText' className='penaltyText'>SP</p>
                                         </div>
-                                        <div id='butEndingDiv' className='penaltyDiv' onClick={() => setPenaltyType('GOLPEAR CON EL TACO DEL STICK')}>
+                                        <div id='butEndingDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('GOLPEAR CON EL TACO DEL STICK'); selectPenaltyType(e.currentTarget) }}>
                                             <p id='butEndingText' className='penaltyText'>BE</p>
                                         </div>
-                                        <div id='misconductDiv' className='penaltyDiv' onClick={() => setPenaltyType('MALA CONDUCTA')}>
+                                        <div id='misconductDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('MALA CONDUCTA'); selectPenaltyType(e.currentTarget) }}>
                                             <p id='misconductText' className='penaltyText'>MC</p>
                                         </div>
-                                        <div id='gameMisconductDiv' className='penaltyDiv' onClick={() => setPenaltyType('MALA CONDUCTA EN EL JUEGO')}>
+                                        <div id='gameMisconductDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('MALA CONDUCTA EN EL JUEGO'); selectPenaltyType(e.currentTarget) }}>
                                             <p id='gameMisconductText' className='penaltyText'>MCJ</p>
                                         </div>
-                                        <div id='matchPenaltyDiv' className='penaltyDiv' onClick={() => setPenaltyType('PENALIZACIÓN DE PARTIDO')}>
+                                        <div id='matchPenaltyDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('PENALIZACIÓN DE PARTIDO'); selectPenaltyType(e.currentTarget) }}>
                                             <p id='matchPenaltyText' className='penaltyText'>PP</p>
                                         </div>
-                                        <div id='benchPenaltyDiv' className='penaltyDiv' onClick={() => setPenaltyType('PENALIZACIÓN DE BANQUILLO')}>
+                                        <div id='benchPenaltyDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('PENALIZACIÓN DE BANQUILLO'); selectPenaltyType(e.currentTarget) }}>
                                             <p id='benchPenaltyText' className='penaltyText'>PB</p>
                                         </div>
-                                        <div id='delayOfGameDiv' className='penaltyDiv' onClick={() => setPenaltyType('RETRASO EN EL JUEGO')}>
+                                        <div id='delayOfGameDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('RETRASO EN EL JUEGO'); selectPenaltyType(e.currentTarget) }}>
                                             <p id='delayOfGameText' className='penaltyText'>RJ</p>
                                         </div>
-                                        <div id='penaltyShotDiv' className='penaltyDiv' onClick={() => setPenaltyType('TIRO DE PENALTI')}>
+                                        <div id='penaltyShotDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('TIRO DE PENALTI'); selectPenaltyType(e.currentTarget) }}>
                                             <p id='penaltyShotText' className='penaltyText'>TP</p>
                                         </div>
-                                        <div id='improperEquipmentDiv' className='penaltyDiv' onClick={() => setPenaltyType('EQUIPACIÓN INDEVIDA')}>
+                                        <div id='improperEquipmentDiv' className='penaltyDiv' onClick={(e) => { setPenaltyType('EQUIPACIÓN INDEVIDA'); selectPenaltyType(e.currentTarget) }}>
                                             <p id='improperEquipmentText' className='penaltyText'>EI</p>
                                         </div>
                                     </div>
