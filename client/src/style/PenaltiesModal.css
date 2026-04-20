@@ -153,6 +153,17 @@
     font-size: large;
     border: 2px solid rgb(7, 78, 200);
     border-radius: 1000px;
+    background-color: white;
+}
+
+.selectedPlayer {
+    color: white;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: large;
+    border: 2px solid rgb(7, 78, 200);
+    border-radius: 1000px;
+    background-color: rgb(7, 78, 200);
 }
 
 .penaltyNumber:hover {

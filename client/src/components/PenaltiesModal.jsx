@@ -12,6 +12,8 @@ export default function PenaltiesModal({ teamPenalty, onClose, matchEvents, setM
 
     const [previousPenalty, setPreviousPenalty] = useState(null);
 
+    const [previousPlayerPenalty, setPreviousPlayerPenalty] = useState(null);
+
     const selectPenaltyType = (element) => {
         if (previousPenalty !== null) {
             deselectPreviousPenalty();
@@ -22,6 +24,19 @@ export default function PenaltiesModal({ teamPenalty, onClose, matchEvents, setM
 
     const deselectPreviousPenalty = () => {
         previousPenalty.className = 'penaltyDiv';
+    }
+
+    const selectPlayerPenalty = (player) => {
+        if (previousPlayerPenalty !== null) {
+            deselectPreviousPlayerPenalty();
+        }
+        setPlayerPenalty(player);
+        document.getElementById(`player${player.number}`).className = 'selectedPlayer';
+        setPreviousPlayerPenalty(player);
+    }
+
+    const deselectPreviousPlayerPenalty = () => {
+        document.getElementById(`player${playerPenalty.number}`).className = 'penaltyNumber';
     }
 
     const setPenalty = () => {
@@ -202,7 +217,7 @@ export default function PenaltiesModal({ teamPenalty, onClose, matchEvents, setM
                                     <div id='numbersDiv'>
                                         {
                                             players.map((player) => {
-                                                return (match?.call.callPlayerStatus[player?.id] == 'CONFIRMED') && (<div key={player.id} className='penaltyNumber' onClick={() => setPlayerPenalty(player)}>{player.number}</div>)
+                                                return (match?.call.callPlayerStatus[player?.id] == 'CONFIRMED') && (<div key={player.id} id={`player${player.number}`} className='penaltyNumber' onClick={() => selectPlayerPenalty(player)}>{player.number}</div>)
                                             })
                                         }
                                     </div>
