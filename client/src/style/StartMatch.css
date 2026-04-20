@@ -58,12 +58,28 @@
     width: 100%;
 }
 
+#startMatchButtonsDiv {
+    width: 100%;
+    margin-left: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 80px;
+}
+
 .startMatchButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     background-color: rgb(7, 78, 200);
     border: none;
     border-radius: 12px;
-    width: 60px;
-    height: 60px;
+    width: 80%;
+    height: 50%;
     font-family: Inria Sans;
     font-size: larger;
     transition: 0.5s;

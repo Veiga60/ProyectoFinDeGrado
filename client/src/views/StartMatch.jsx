@@ -8,7 +8,7 @@ import GoalEvent from '../components/GoalEvent.jsx'
 import PenaltyEvent from '../components/PenaltyEvent.jsx'
 import TimeoutEvent from '../components/TimeoutEvent.jsx'
 import { RiTeamFill } from "react-icons/ri";
-
+import { PiHockeyFill } from "react-icons/pi";
 
 export default function StartMatch() {
 
@@ -296,7 +296,7 @@ export default function StartMatch() {
                         </div>
                         <div id='startMatchButtonsDiv'>
                             <button className='startMatchButton' onClick={() => navigate(`/matches/${matchId}/start_match/team`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents } })}><RiTeamFill />ESTADISTICAS EQUIPO</button>
-                            <button className='startMatchButton' onClick={() => navigate(`/matches/${matchId}/incidences`, { state: { match: match, matchPeriod: matchPeriod, matchEvents: matchEvents } })}>INCIDENCIAS</button>
+                            <button className='startMatchButton' onClick={() => navigate(`/matches/${matchId}/incidences`, { state: { match: match, matchPeriod: matchPeriod, matchEvents: matchEvents } })}><PiHockeyFill />INCIDENCIAS</button>
                         </div>
                     </div>
                     <div id='matchEventsContainer'>
