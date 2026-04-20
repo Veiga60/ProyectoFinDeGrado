@@ -9,6 +9,36 @@ export default function GoalsModal({ teamGoal, onClose, matchEvents, setMatchEve
     const [matchMinute, setMatchMinute] = useState('');
     const [matchSecond, setMatchSecond] = useState('');
 
+    const [previousScorer, setPreviousScorer] = useState(null);
+    const [currentAssister, setCurrentAssister] = useState(null);
+    const [previousAssister, setPreviousAssister] = useState(null);
+
+    const selectScorer = (scorer) => {
+        if (previousScorer !== null) {
+            deselectPreviousScorer();
+        }
+        setScorer(scorer);
+        document.getElementById(`scorer${scorer.number}`).className = 'selectedGoalNumber';
+        setPreviousScorer(scorer);
+    }
+
+    const deselectPreviousScorer = () => {
+        document.getElementById(`scorer${previousScorer.number}`).className = 'goalNumber';
+    }
+
+    const selectAssister = (assister) => {
+        if (previousAssister !== null) {
+            deselectPreviousAssister();
+        }
+        setAssister(assister);
+        document.getElementById(`assister${assister.number}`).className = 'selectedGoalNumber';
+        setPreviousAssister(assister);
+    }
+
+    const deselectPreviousAssister = () => {
+        document.getElementById(`assister${previousAssister.number}`).className = 'assistNumber';
+    }
+
     const setGoal = (scorer, assister) => {
         let newMatchEvents;
         if (matchEvents == undefined) {
@@ -50,7 +80,7 @@ export default function GoalsModal({ teamGoal, onClose, matchEvents, setMatchEve
                                 <div id='goalPlayerNumbers'>
                                     {
                                         players.map((player) => {
-                                            return (match?.call.callPlayerStatus[player?.id] == 'CONFIRMED') && (< div key={player.id} className='goalNumber' onClick={() => setScorer(player)}>{`${player.number}`.padStart(2, '0')}</div>)
+                                            return (match?.call.callPlayerStatus[player?.id] == 'CONFIRMED') && (< div key={player.id} id={`scorer${player.number}`} className='goalNumber' onClick={() => selectScorer(player)}>{`${player.number}`.padStart(2, '0')}</div>)
                                         })
                                     }
                                 </div>
@@ -60,7 +90,7 @@ export default function GoalsModal({ teamGoal, onClose, matchEvents, setMatchEve
                                 <div id='assistPlayerNumbers'>
                                     {
                                         players.map((player) => {
-                                            return (match?.call.callPlayerStatus[player?.id] == 'CONFIRMED') && (<div key={player.id} className='assistNumber' onClick={() => setAssister(player)}>{`${player.number}`.padStart(2, '0')}</div>)
+                                            return (match?.call.callPlayerStatus[player?.id] == 'CONFIRMED') && (<div key={player.id} id={`assister${player.number}`} className='assistNumber' onClick={() => selectAssister(player)}>{`${player.number}`.padStart(2, '0')}</div>)
                                         })
                                     }
                                 </div>
