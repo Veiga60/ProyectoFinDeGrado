@@ -57,11 +57,19 @@
     .createDebateButton {
         width: 50%;
     }
+
+    #debatesDiv {
+        width: 90%;
+    }
 }
 
 @media (min-width: 401px) and (max-width: 500px) {
     .createDebateButton {
         width: 40%;
+    }
+
+    #debatesDiv {
+        width: 80%;
     }
 }
 
@@ -69,11 +77,19 @@
     .createDebateButton {
         width: 30%;
     }
+
+    #debatesDiv {
+        width: 70%;
+    }
 }
 
 @media (min-width: 601px) and (max-width: 700px) {
     .createDebateButton {
         width: 25%;
+    }
+
+    #debatesDiv {
+        width: 60%;
     }
 }
 
@@ -81,16 +97,28 @@
     .createDebateButton {
         width: 20%;
     }
+
+    #debatesDiv {
+        width: 50%;
+    }
 }
 
 @media (min-width: 1001px) and (max-width: 1300px) {
     .createDebateButton {
         width: 15%;
     }
+
+    #debatesDiv {
+        width: 45%;
+    }
 }
 
 @media (min-width: 1301px) {
     .createDebateButton {
         width: 10%;
+    }
+
+    #debatesDiv {
+        width: 40%;
     }
 }
