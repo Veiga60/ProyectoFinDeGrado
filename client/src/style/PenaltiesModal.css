@@ -31,7 +31,7 @@
 }
 
 #penalties {
-    width: 80%;
+    width: 100%;
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(30px, 40px));
@@ -44,7 +44,7 @@
 
 .penaltyText {
     font-family: Inria Sans;
-    font-size: large;
+    font-size: medium;
     font-weight: bold;
     margin: 0;
 }
@@ -74,6 +74,7 @@
     justify-content: center;
     height: 40px;
     gap: 5%;
+    margin-top: 10px;
 }
 
 .penaltiesModalInput {
@@ -108,7 +109,7 @@
     border: none;
     border-radius: 12px;
     width: 30%;
-    height: 40px;
+    height: 30px;
     font-family: Inria Sans;
     font-size: larger;
     transition: 0.5s;
@@ -129,6 +130,7 @@
     align-items: center;
     height: 100%;
     width: 50%;
+    margin-top: 6px;
 }
 
 #numbers {
@@ -143,14 +145,14 @@
     width: 100%;
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(30px, 40px));
+    grid-template-columns: repeat(auto-fit, minmax(30px, 30px));
 }
 
 .penaltyNumber {
     color: black;
     font-family: Inria Sans;
     font-weight: bold;
-    font-size: large;
+    font-size: medium;
     border: 2px solid rgb(7, 78, 200);
     border-radius: 1000px;
     background-color: white;
@@ -174,7 +176,7 @@
     width: 100%;
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(30px, 40px));
+    grid-template-columns: repeat(auto-fit, minmax(30px, 39px));
 }
 
 .titleText {
