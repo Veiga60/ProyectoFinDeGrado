@@ -1,7 +1,7 @@
 import '../style/Login.css'
 import Header from '../components/Header.jsx'
 import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 import googleLogo from '../assets/images/google.png'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'

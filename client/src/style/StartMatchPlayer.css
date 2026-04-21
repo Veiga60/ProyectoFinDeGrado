@@ -121,3 +121,9 @@
 .arrowUpIcon:hover {
     cursor: pointer;
 }
+
+@media (max-width: 950px) {
+    #matchPlayerStatsDiv {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 100px));
+    }
+}
