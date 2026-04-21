@@ -72,6 +72,13 @@
     margin-right: 5%;
 }
 
+.statTitlePlayer {
+    color: black;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: larger;
+}
+
 .plusButton {
     font-family: Inria Sans;
     font-size: x-large;
@@ -81,6 +88,13 @@
     min-width: fit-content;
     margin-top: 0;
     margin-left: 5%;
+}
+
+.matchStatTextPlayer {
+    color: black;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: xx-large;
 }
 
 #startMatchPlayerButtonsDiv {
@@ -105,6 +119,17 @@
     transition: 0.5s;
 }
 
+.matchStatTextDivPlayer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 1000px;
+    border: 4px solid rgb(7, 78, 200);
+}
+
 #startMatchPlayerRightDiv {
     width: 70%;
     display: flex;
@@ -122,8 +147,123 @@
     cursor: pointer;
 }
 
-@media (max-width: 950px) {
+@media (min-width: 615px) and (max-width: 950px) {
     #matchPlayerStatsDiv {
         grid-template-columns: repeat(auto-fit, minmax(100px, 100px));
+    }
+
+    .arrowUpIconPlayer {
+        width: 25px;
+        height: 25px;
+    }
+
+    .arrowDownIconPlayer {
+        width: 25px;
+        height: 25px;
+    }
+
+    .startMatchPlayerButton {
+        width: 30%;
+    }
+
+    .statTitlePlayer {
+        font-size: medium;
+    }
+
+    #matchPlayerNameText {
+        font-size: larger;
+    }
+}
+
+@media (min-width: 415px) and (max-width: 615px) {
+    #matchPlayerStatsDiv {
+        width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(90px, 90px));
+    }
+
+    .matchStatTextDivPlayer {
+        width: 50px;
+        height: 50px;
+    }
+
+    .arrowUpIconPlayer {
+        width: 25px;
+        height: 25px;
+    }
+
+    .arrowDownIconPlayer {
+        width: 25px;
+        height: 25px;
+    }
+
+    #startMatchPlayerButtonsDiv {
+        margin-top: 25px;
+    }
+
+    .startMatchPlayerButton {
+        width: 40%;
+    }
+
+    .statTitlePlayer {
+        font-size: small;
+    }
+
+    .matchStatTextPlayer {
+        font-size: x-large;
+    }
+
+    #matchPlayerNameText {
+        font-size: medium;
+    }
+}
+
+@media (max-width: 415px) {
+    #matchPlayerStatsDiv {
+        margin-left: 20px;
+        width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(90px, 90px));
+    }
+
+    .matchStatTextDivPlayer {
+        width: 50px;
+        height: 50px;
+    }
+
+    .arrowUpIconPlayer {
+        width: 25px;
+        height: 25px;
+    }
+
+    .arrowDownIconPlayer {
+        width: 25px;
+        height: 25px;
+    }
+
+    #startMatchPlayerButtonsDiv {
+        margin-top: 25px;
+    }
+
+    .startMatchPlayerButton {
+        width: 40%;
+    }
+
+    .statTitlePlayer {
+        font-size: small;
+    }
+
+    .matchStatTextPlayer {
+        font-size: larger;
+    }
+
+    #matchPlayerDiv {
+        display: none;
+    }
+
+    #startMatchPlayerRightDiv {
+        width: 100%;
+    }
+
+    #matchPlayerNameText {
+        font-size: medium;
     }
 }
