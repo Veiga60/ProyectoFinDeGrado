@@ -1,16 +1,16 @@
 package com.ikerveiga.app.service;
 
-import org.springframework.ai.ollama.OllamaChatModel;
+import org.springframework.ai.anthropic.AnthropicChatModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class AIService {
 
-        private OllamaChatModel chatModel;
+        private AnthropicChatModel chatModel;
 
         @Autowired
-        public AIService(OllamaChatModel chatModel) {
+        public AIService(AnthropicChatModel chatModel) {
                 this.chatModel = chatModel;
         }
 

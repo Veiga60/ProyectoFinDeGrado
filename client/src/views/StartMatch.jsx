@@ -198,22 +198,63 @@ export default function StartMatch() {
     }
 
     const prepareAIPrompt = (stats) => {
-        console.log('Equipo: ', teamMatchStats);
-        console.log('Jugadores: ', playersMatchStats);
-        console.log('Porteros: ', goaliesMatchStats);
-        const aiPrompt = 'Eres un entrenador de hockey línea profesional, y sabes encontrtar las áreas a mejorar analizando las estadísticas de un partido.' +
-            'Te voy a proporcionar unos datos que corresponden a estadísticas recopiladas durante un partido. ' +
-            'Viendo esas estadísticas proporcioname las áreas a mejorar que consideres, para el equipo como conjunto y para cada jugador y portero, para trabajarlas en los entrenamientos de la siguiente semana. ' +
-            'Las primeras estadísticas que te proporciono son las del equipo como conjunto, lo siguiente son dos listas con las estadísticas de cada jugador y cada portero del partido, respectivamente. ' +
-            '**REGLAS**' +
-            '- Devuelve solo el JSON, sin texto extra.' +
-            '- Centrate solo en los campos que corresponden a las estadísticas del partido y en el id de cada jugador, si lo hubiera. Para las estadísticas no debes abrir ningún objeto dentro del que te he pasado.' +
-            '- No me devuelvas las estadisticas que te he pasado. Quiero que me devuelvas las áreas que tú consideres que haya que mejorar de cara al siguiente partido basándote en los 3 tipos de estadístcas que te he pasado' +
-            '- Las áreas a mejorar con personalizadas para cada jugador o portero.' +
-            'Puedes devolver el resultado en formato JSON.' +
+
+        const playersStatsToPrompt = [];
+        const goaliesStatsToPrompt = [];
+
+        for (const playerStats of stats.playersMatchStats) {
+            const playerStatsAnonimized = {
+                id: playerStats.id,
+                playerId: playerStats.player.id,
+                assists: playerStats.assist,
+                badPasses: playerStats.badPasses,
+                goals: playerStats.goals,
+                goodPasses: playerStats.goodPasses,
+                lostPucks: playerStats.lostPucks,
+                matchId: playerStats.match.id,
+                penaltyMins: playerStats.penaltyMins,
+                penaltyShotGoals: playerStats.penaltyShotGoals,
+                penaltyShotMisses: playerStats.penaltyShotMisses,
+                plusMinus: playerStats.plusMinus,
+                recoveredPucks: playerStats.recoveredPucks,
+                shots: playerStats.shots
+            }
+
+            playersStatsToPrompt.push(playerStatsAnonimized);
+        }
+
+        for (const goalieStats of stats.goaliesMatchStats) {
+            const goalieStatsAnonimized = {
+                goalieId: goalieStats.goalie.id,
+                goalsReceived: goalieStats.goalsReceived,
+                id: goalieStats.id,
+                matchId: goalieStats.match.id,
+                penaltyMins: goalieStats.penaltyMins,
+                penaltyShotGoals: goalieStats.penaltyShotGoals,
+                penaltyShotSaves: goalieStats.penaltyShotSaves,
+                shotsReceived: goalieStats.shotsReceived
+            }
+
+            goaliesStatsToPrompt.push(goalieStatsAnonimized);
+        }
+
+        const aiPrompt = 'Eres un entrenador de HOCKEY LINEA profesional, y sabes encontrar las áreas a mejorar analizando las estadísticas de un partido.' +
+            'Viendo estas estadísticas de un partido proporcioname las áreas a mejorar que consideres, para el equipo como conjunto y para cada jugador y portero, para trabajarlas en los entrenamientos de la siguiente semana. ' +
+            'Las primeras estadísticas que te proporciono son las del equipo, lo siguiente son dos listas con las estadísticas de cada jugador y cada portero del partido, respectivamente. Devuelve las areas a mejorar/entrenar en formato JSON. No me des un análisis general.' +
+            'TERMINOLOGIA' +
+            '-Penalty kill significa que el equipo ha hecho una falta y está en inferioridad numérica durante un tiempo' +
+            '-Power play es lo contrario. El equipo contrario ha hecho una falta y tenemos superioridad numérica durante un tiempo.' +
+            '-Penalty shot = tiro de penalti.' +
+            'A TENER EN CUENTA' +
+            '-No marcar gol en penalty kill es lo normal. Lo importante es que no te marquen. Siempre y cuando haya habido penalty killing.' +
+            '-Un power play no lo genera el equipo. Falta del equipo contrario = power play.' +
+            '-El power play merece ser mejorado si la eficacia es menor al 50%. 1 gol de 1 es perfecto. Si no ha habido power play, no nay nada que analizar' +
+            '-La eficacia de los tiros debe ser entrenada cuando sea menor al 25%. No analices los goles independientemente. Analiza los goles en base a los tiros totales realizados.' +
+            '-Las situaciones como 1vs0, 2vs1, etc son en ataque. Si acaba en gol = +1 punto. Si no = -1 punto en esa estadística.' +
+            '-En este deporte se juega con un disco y 4vs4 + 1 portero en la pista. Los power play suelen ser 4vs3.' +
             `Estadísticas del equipo ${JSON.stringify(stats.teamMatchStats)}.` +
-            `Lista de estadísticas de jugadores ${JSON.stringify(stats.playersMatchStats)}.` +
-            `Lista de estadísticas de porteros ${JSON.stringify(stats.goaliesMatchStats)}.`
+            `Lista de estadísticas de jugadores ${JSON.stringify(playersStatsToPrompt)}.` +
+            `Lista de estadísticas de porteros ${JSON.stringify(goaliesStatsToPrompt)}.`
         setPrompt(aiPrompt);
     }
 
