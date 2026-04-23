@@ -1,5 +1,7 @@
 package com.ikerveiga.app.entity;
 
+import com.ikerveiga.app.dto.TeamRecomendationDTO;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -7,6 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Lob;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -22,7 +25,8 @@ public class TeamRecomendation {
     @Column(name = "team_recomendation_area", nullable = false, unique = false)
     private String area;
 
-    @Column(name = "team_recomendation_description", nullable = false, unique = false)
+    @Lob
+    @Column(columnDefinition = "TEXT", name = "team_recomendation_description", nullable = false, unique = false)
     private String description;
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -72,5 +76,12 @@ public class TeamRecomendation {
 
     public void setMatch(Match match) {
         this.match = match;
+    }
+
+    public TeamRecomendationDTO toDTO() {
+        TeamRecomendationDTO teamRecomendationDTO = new TeamRecomendationDTO(this.id, this.area, this.description,
+                this.match.toDTOwithoutCalls());
+
+        return teamRecomendationDTO;
     }
 }
