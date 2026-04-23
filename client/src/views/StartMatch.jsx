@@ -240,7 +240,7 @@ export default function StartMatch() {
 
         const aiPrompt = 'Eres un entrenador de HOCKEY LINEA profesional, y sabes encontrar las áreas a mejorar analizando las estadísticas de un partido.' +
             'Viendo estas estadísticas de un partido proporcioname las áreas a mejorar que consideres, para el equipo como conjunto y para cada jugador y portero, para trabajarlas en los entrenamientos de la siguiente semana. ' +
-            'Las primeras estadísticas que te proporciono son las del equipo, lo siguiente son dos listas con las estadísticas de cada jugador y cada portero del partido, respectivamente. Devuelve las areas a mejorar/entrenar en formato JSON. No me des un análisis general.' +
+            'Las primeras estadísticas que te proporciono son las del equipo, lo siguiente son dos listas con las estadísticas de cada jugador y cada portero del partido, respectivamente. Devuelve las areas a mejorar/entrenar en formato JSON. No me des un análisis general. Resume el JSON de la respuesta lo máximo de posible' +
             'TERMINOLOGIA' +
             '-Penalty kill significa que el equipo ha hecho una falta y está en inferioridad numérica durante un tiempo' +
             '-Power play es lo contrario. El equipo contrario ha hecho una falta y tenemos superioridad numérica durante un tiempo.' +

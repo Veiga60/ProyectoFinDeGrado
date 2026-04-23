@@ -8,7 +8,8 @@ export default function UseAIModal({ onClose, onMatchFinished, prompt }) {
     const getRecomendations = async () => {
         try {
             const response = await axios.post(`${SERVER_URL}/ai/recomendations`, { prompt: prompt }, { withCredentials: true });
-            console.log(response.data);
+            const objectResponse = JSON.parse(String(response.data).replace('```json', '').replace('```', ''));
+            console.log(objectResponse);
         } catch (error) {
             console.log('Error al generar las recomendaciones: ', error);
         }
