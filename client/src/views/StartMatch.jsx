@@ -85,8 +85,8 @@ export default function StartMatch() {
         for (const player of players) {
             if (player.playerType == 'RINK_PLAYER') {
                 const playerMatchStatsBody = {
-                    goals: matchEvents.filter((matchEvent) => (matchEvent.goal?.scorer) ? (matchEvent.goal.scorer.id === player.id) : (0)).length || 0,
-                    assists: matchEvents.filter((matchEvent) => (matchEvent.goal?.assister) ? (matchEvent.goal.assister.id === player.id) : (0)).length || 0,
+                    goals: matchEvents.filter((matchEvent) => (matchEvent.goal?.scorer) ? (matchEvent.goal.scorer.id == player.id) : (0)).length || 0,
+                    assists: matchEvents.filter((matchEvent) => (matchEvent.goal?.assister) ? (matchEvent.goal.assister.id == player.id) : (0)).length || 0,
                     plusMinus: 0,
                     shots: 0,
                     goodPasses: 0,
@@ -223,6 +223,8 @@ export default function StartMatch() {
             playersStatsToPrompt.push(playerStatsAnonimized);
         }
 
+        console.log(playersStatsToPrompt);
+
         for (const goalieStats of stats.goaliesMatchStats) {
             const goalieStatsAnonimized = {
                 goalieId: goalieStats.goalie.id,
@@ -249,9 +251,10 @@ export default function StartMatch() {
             '-No marcar gol en penalty kill es lo normal. Lo importante es que no te marquen. Siempre y cuando haya habido penalty killing.' +
             '-Un power play no lo genera el equipo. Falta del equipo contrario = power play.' +
             '-El power play merece ser mejorado si la eficacia es menor al 50%. 1 gol de 1 es perfecto. Si no ha habido power play, no nay nada que analizar' +
-            '-La eficacia de los tiros debe ser entrenada cuando sea menor al 25%. No analices los goles independientemente. Analiza los goles en base a los tiros totales realizados.' +
+            '-La eficacia de los tiros debe ser entrenada cuando sea menor al 25%. Una eficacia superior a esa es buena estadística. No analices los goles independientemente. Analiza los goles en base a los tiros totales realizados.' +
             '-Las situaciones como 1vs0, 2vs1, etc son en ataque. Si acaba en gol = +1 punto. Si no = -1 punto en esa estadística.' +
             '-En este deporte se juega con un disco y 4vs4 + 1 portero en la pista. Los power play suelen ser 4vs3.' +
+            '-No agrupes los jugadores ni los porteros en un mismo ' +
             `Estadísticas del equipo ${JSON.stringify(stats.teamMatchStats)}.` +
             `Lista de estadísticas de jugadores ${JSON.stringify(playersStatsToPrompt)}.` +
             `Lista de estadísticas de porteros ${JSON.stringify(goaliesStatsToPrompt)}.`
@@ -273,6 +276,7 @@ export default function StartMatch() {
         getNextMatch();
         setMatchEvents(location.state?.matchEvents);
         (location.state?.matchPeriod) ? (selectPeriod(location.state?.matchPeriod)) : (selectPeriod(matchPeriod))
+        console.log('Stats: ', playersMatchStats);
     }, []);
 
     return (
