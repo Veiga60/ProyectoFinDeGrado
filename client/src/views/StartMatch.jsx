@@ -202,6 +202,11 @@ export default function StartMatch() {
         const playersStatsToPrompt = [];
         const goaliesStatsToPrompt = [];
 
+        if (!stats) {
+            console.error('Cannot get recomendations without stats');
+            return;
+        }
+
         for (const playerStats of stats.playersMatchStats) {
             const playerStatsAnonimized = {
                 id: playerStats.id,
@@ -255,6 +260,8 @@ export default function StartMatch() {
             '-Las situaciones como 1vs0, 2vs1, etc son en ataque. Si acaba en gol = +1 punto. Si no = -1 punto en esa estadística.' +
             '-En este deporte se juega con un disco y 4vs4 + 1 portero en la pista. Los power play suelen ser 4vs3.' +
             '-No agrupes los jugadores ni los porteros en un mismo ' +
+            '-Por favor que el json se divida en 3 partes (equipo, jugadores, porteros). En la parte de equipo, que la clave sea el area a entrenar y el valor la descripcion.' +
+            'En la parte de jugadores, las claves seran el id de cada jugador, y el valor un objeto con clave el area a entrenar y valor la descripcion. Los porteros igual que los jugadores.' +
             `Estadísticas del equipo ${JSON.stringify(stats.teamMatchStats)}.` +
             `Lista de estadísticas de jugadores ${JSON.stringify(playersStatsToPrompt)}.` +
             `Lista de estadísticas de porteros ${JSON.stringify(goaliesStatsToPrompt)}.`
@@ -395,6 +402,7 @@ export default function StartMatch() {
                             playersMatchStats={playersMatchStats}
                             goaliesMatchStats={goaliesMatchStats}
                             prompt={prompt}
+                            matchId={matchId}
                         />
                     )}
             </div >
