@@ -25,7 +25,7 @@ public class PlayerRecomendationService {
         this.playerDAO = playerDAO;
     }
 
-    public void createPlayerRecomendation(String area, String description, long matchId, long playerId) {
+    public void createPlayerRecomendation(String area, String description, long playerId, long matchId) {
         Match match = matchDAO.findById(matchId);
         Player player = playerDAO.findById(playerId);
 

@@ -12,7 +12,7 @@ export default function UseAIModal({ onClose, onMatchFinished, prompt, matchId }
             console.log(objectResponse);
 
             const teamRecomendations = objectResponse.equipo;
-            const playerRecomendations = objectResponse.jugadores;
+            const playerRecomendations = Object.assign(objectResponse.jugadores, objectResponse.porteros);
 
             console.log('Players: ', playerRecomendations);
             console.log('Team: ', teamRecomendations);
@@ -23,10 +23,9 @@ export default function UseAIModal({ onClose, onMatchFinished, prompt, matchId }
         }
     }
 
-    const saveRecomendations = async (teamRecomendations) => {
+    const saveRecomendations = async (teamRecomendations, playerRecomendations) => {
         try {
             for (const [teamRecomendationArea, teamRecomendationDesc] of Object.entries(teamRecomendations)) {
-
                 const teamRecomendationToSave = {
                     area: teamRecomendationArea,
                     description: teamRecomendationDesc,
@@ -37,6 +36,24 @@ export default function UseAIModal({ onClose, onMatchFinished, prompt, matchId }
 
                 await axios.post(`${SERVER_URL}/ai/recomendations/team`, teamRecomendationToSave, { withCredentials: true });
                 console.log('Team recomendations saved');
+            }
+
+            for (const [playerId, playerRecomendation] of Object.entries(playerRecomendations)) {
+                for (const [playerRecomendationArea, playerRecomendationDesc] of Object.entries(playerRecomendation)) {
+                    const playerRecomendationToSave = {
+                        area: playerRecomendationArea,
+                        description: playerRecomendationDesc,
+                        player: {
+                            id: playerId
+                        },
+                        match: {
+                            id: matchId
+                        }
+                    }
+
+                    await axios.post(`${SERVER_URL}/ai/recomendations/player`, playerRecomendationToSave, { withCredentials: true });
+                    console.log('Players recomendations saved');
+                }
             }
         } catch (error) {
             console.log('Error saving recomendations: ', error);
@@ -49,7 +66,7 @@ export default function UseAIModal({ onClose, onMatchFinished, prompt, matchId }
         const recomendations = await getRecomendations();
         if (recomendations) {
             console.log(recomendations);
-            await saveRecomendations(recomendations.teamRecomendations);
+            await saveRecomendations(recomendations.teamRecomendations, recomendations.playerRecomendations);
         }
         onClose();
     }

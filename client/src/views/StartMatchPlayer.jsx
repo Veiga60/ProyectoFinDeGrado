@@ -122,7 +122,6 @@ export default function StartMatchPlayer() {
                 const response = await axios.get(`${SERVER_URL}/matchStats/matches/${matchId}/goalies/${player?.id}`, { withCredentials: true });
                 setShotsReceived(response.data.shotsReceived);
                 setGoalsReceived(response.data.goalsReceived);
-                setGoaliePenaltyMins(response.data.penaltyMins);
                 setGoaliePenaltyShotGoals(response.data.penaltyShotGoals);
                 setPenaltyShotSaves(response.data.penaltyShotSaves);
             } catch (error) {
@@ -319,7 +318,7 @@ export default function StartMatchPlayer() {
                                     </div>
                                     <div className='statDiv'>
                                         <div className='matchStatDiv'>
-                                            <FaCaretUp className='arrowDownIconPlayer' color='rgb(7, 78, 200)' size={40} onClick={() => (penaltyShotSaves > 0) && setPenaltyShotSaves(penaltyShotSaves - 1)} />
+                                            <FaCaretDown className='arrowDownIconPlayer' color='rgb(7, 78, 200)' size={40} onClick={() => (penaltyShotSaves > 0) && setPenaltyShotSaves(penaltyShotSaves - 1)} />
                                             <div className='matchStatTextDivPlayer'>
                                                 <p className='matchStatTextPlayer'>{penaltyShotSaves}</p>
                                             </div>
