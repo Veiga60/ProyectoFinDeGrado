@@ -3,17 +3,20 @@ import Match from '../components/Match.jsx'
 import MatchCompressed from '../components/MatchCompressed.jsx'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import '../style/Home.css'
 
 export default function Home() {
 
     const SERVER_URL = 'http://localhost:8081';
     const navigate = useNavigate();
+    const location = useLocation();
 
     const [authenticatedUser, setAuthenticatedUser] = useState(null);
     const [nextMatch, setNextMatch] = useState();
     const [width, setWidth] = useState(window.innerWidth);
+
+    const [lastPlayedMatch, setLastPlayedMatch] = useState(null);
 
     const whoAmI = async () => {
         try {
@@ -33,7 +36,18 @@ export default function Home() {
         }
     }
 
+    const getLastPlayedMatch = async () => {
+        try {
+            const response = await axios.get(`${SERVER_URL}/matches/lastPlayed`, { withCredentials: true });
+            setLastPlayedMatch(response.data);
+            console.log(response.data);
+        } catch (error) {
+            console.log('Error getting last played match: ', error);
+        }
+    }
+
     useEffect(() => {
+        getLastPlayedMatch();
         const handleResize = () => setWidth(window.innerWidth);
         window.addEventListener('resize', handleResize);
 
@@ -79,6 +93,23 @@ export default function Home() {
                                 )}
                         </div>
                     </div>
+                    {
+                        (authenticatedUser.isCoach == true) && (
+                            <div id='rightDiv'>
+                                <div id='recomendationsDiv'>
+                                    <p id='recomendationsText'>RECOMENDACIONES</p>
+                                    <div id='recomendations'>
+                                        <p id='seeRecomendationsText'>Ver recomendaciones del partido:</p>
+                                        <div id='lastPlayedMatchDiv'>
+                                            <img id='lastPlayedMatchLocalTeamImage' src={`/logos/${lastPlayedMatch?.localTeam?.logo}`} alt={`${lastPlayedMatch?.localTeam?.name}`} />
+                                            <p id='lastPlayedMatchVersusText'>VS</p>
+                                            <img id='lastPlayedMatchVisitingTeamImage' src={`/logos/${lastPlayedMatch?.visitingTeam?.logo}`} alt={`${lastPlayedMatch?.visitingTeam?.name}`} />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    }
                 </div>
             }
         </>

@@ -14,9 +14,6 @@ export default function UseAIModal({ onClose, onMatchFinished, prompt, matchId }
             const teamRecomendations = objectResponse.equipo;
             const playerRecomendations = Object.assign(objectResponse.jugadores, objectResponse.porteros);
 
-            console.log('Players: ', playerRecomendations);
-            console.log('Team: ', teamRecomendations);
-
             return { teamRecomendations, playerRecomendations };
         } catch (error) {
             console.log('Error generating recomendations: ', error);
@@ -35,7 +32,6 @@ export default function UseAIModal({ onClose, onMatchFinished, prompt, matchId }
                 }
 
                 await axios.post(`${SERVER_URL}/ai/recomendations/team`, teamRecomendationToSave, { withCredentials: true });
-                console.log('Team recomendations saved');
             }
 
             for (const [playerId, playerRecomendation] of Object.entries(playerRecomendations)) {
@@ -52,7 +48,6 @@ export default function UseAIModal({ onClose, onMatchFinished, prompt, matchId }
                     }
 
                     await axios.post(`${SERVER_URL}/ai/recomendations/player`, playerRecomendationToSave, { withCredentials: true });
-                    console.log('Players recomendations saved');
                 }
             }
         } catch (error) {
@@ -65,7 +60,6 @@ export default function UseAIModal({ onClose, onMatchFinished, prompt, matchId }
         document.getElementById("useAIModalButtonsDiv").style.display = 'none';
         const recomendations = await getRecomendations();
         if (recomendations) {
-            console.log(recomendations);
             await saveRecomendations(recomendations.teamRecomendations, recomendations.playerRecomendations);
         }
         onClose();
@@ -79,8 +73,8 @@ export default function UseAIModal({ onClose, onMatchFinished, prompt, matchId }
                         <p id='useAIText'>¿Quieres recibir recomendaciones de áreas a entrenar?</p>
                     </div>
                     <div id='useAIModalButtonsDiv'>
-                        <button className='useAIModalButton' onClick={handleUseAI}>SI</button>
-                        <button className='useAIModalButton' onClick={() => { [onClose(), onMatchFinished()] }}>NO</button>
+                        <button className='useAIModalButton' onClick={async () => { await handleUseAI(); onMatchFinished() }}>SI</button>
+                        <button className='useAIModalButton' onClick={() => { onClose(); onMatchFinished() }}>NO</button>
                     </div>
                 </div>
             </div>

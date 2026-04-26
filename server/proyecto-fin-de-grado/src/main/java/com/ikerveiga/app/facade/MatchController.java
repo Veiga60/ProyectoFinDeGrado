@@ -112,4 +112,19 @@ public class MatchController {
             }
         }
     }
+
+    @GetMapping("/matches/lastPlayed")
+    public ResponseEntity<MatchDTO> getLastPlayedMatch() {
+        try {
+            MatchDTO lastPlayedMatch = matchService.getLastPlayedMatch().toDTOwithoutCalls();
+
+            return ResponseEntity.ok(lastPlayedMatch);
+        } catch (RuntimeException e) {
+            if (e.getMessage().equals("No matches played")) {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            } else {
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
+        }
+    }
 }

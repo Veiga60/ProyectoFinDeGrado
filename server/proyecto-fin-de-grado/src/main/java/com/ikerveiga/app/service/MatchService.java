@@ -62,4 +62,16 @@ public class MatchService {
 
         matchDAO.save(match);
     }
+
+    public Match getLastPlayedMatch() {
+        List<Match> playedMatches = matchDAO.findPlayedMatchesBackwards();
+
+        if (playedMatches.isEmpty()) {
+            throw new RuntimeException("No matches played");
+        }
+
+        Match lastPlayedMatch = playedMatches.get(0);
+
+        return lastPlayedMatch;
+    }
 }

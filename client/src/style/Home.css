@@ -83,7 +83,64 @@
     flex-direction: column;
 }
 
+#rightDiv {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#recomendationsDiv {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 40%;
+    margin-top: 150px;
+}
+
+#recomendationsText {
+    color: black;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: large;
+    text-align: left;
+}
+
+#recomendations {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border: 2px solid rgb(7, 78, 200);
+    border-radius: 10px;
+}
+
+#seeRecomendationsText {
+    color: black;
+    font-family: Inria Sans;
+}
 
 #startMatchButton {
     font-size: x-large;
+}
+
+#lastPlayedMatchVersusText {
+    color: black;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+#lastPlayedMatchDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#lastPlayedMatchLocalTeamImage {
+    width: 20%;
+}
+
+#lastPlayedMatchVisitingTeamImage {
+    width: 20%;
 }
