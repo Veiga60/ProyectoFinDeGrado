@@ -114,6 +114,10 @@
     border-radius: 10px;
 }
 
+#recomendations:hover {
+    cursor: pointer;
+}
+
 #seeRecomendationsText {
     color: black;
     font-family: Inria Sans;

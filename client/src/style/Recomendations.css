@@ -1,0 +1,39 @@
+#recomendationsMainDiv {
+    width: 100%;
+    height: calc(100% - 80px);
+    position: absolute;
+    left: 0;
+    top: 80px;
+}
+
+#recomendationsPlayersDiv {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 290px));
+    align-items: start;
+    justify-content: center;
+    overflow-y: auto;
+    margin: 0;
+    padding-left: 40px;
+}
+
+#recomendationsPlayersDiv::-webkit-scrollbar {
+    display: none;
+}
+
+#logoImageDiv {
+    width: 200px;
+    height: 180px;
+    border: 2px solid rgb(7, 78, 200);
+    background-color: white;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+#logoImage {
+    width: 90%;
+    height: 100%;
+}

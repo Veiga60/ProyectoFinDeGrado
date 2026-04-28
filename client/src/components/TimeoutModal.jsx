@@ -4,11 +4,6 @@ import '../style/TimeoutModal.css'
 
 export default function TimeoutModal({ teamTimeout, onClose, matchEvents, setMatchEvents }) {
 
-    const SERVER_URL = 'http://localhost:8081';
-    const { matchId } = useParams();
-    const [players, setPlayers] = useState([]);
-    const [scorer, setScorer] = useState();
-    const [assister, setAssister] = useState();
     const [matchMinute, setMatchMinute] = useState('');
     const [matchSecond, setMatchSecond] = useState('');
 

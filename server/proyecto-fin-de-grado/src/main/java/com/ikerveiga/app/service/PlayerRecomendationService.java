@@ -1,5 +1,7 @@
 package com.ikerveiga.app.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,5 +42,22 @@ public class PlayerRecomendationService {
         PlayerRecomendation playerRecomendation = new PlayerRecomendation(area, description, player, match);
 
         playerRecomendationDAO.save(playerRecomendation);
+    }
+
+    public List<PlayerRecomendation> getPlayerRecomendations(long playerId, long matchId) {
+        Player player = playerDAO.findById(playerId);
+        Match match = matchDAO.findById(matchId);
+
+        if (player == null) {
+            throw new RuntimeException("Player not found");
+        }
+
+        if (match == null) {
+            throw new RuntimeException("Match not found");
+        }
+
+        List<PlayerRecomendation> playerRecomendation = playerRecomendationDAO.findByPlayerAndMatch(player, match);
+
+        return playerRecomendation;
     }
 }

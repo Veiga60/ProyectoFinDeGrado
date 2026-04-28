@@ -116,7 +116,7 @@ public class MatchController {
     @GetMapping("/matches/lastPlayed")
     public ResponseEntity<MatchDTO> getLastPlayedMatch() {
         try {
-            MatchDTO lastPlayedMatch = matchService.getLastPlayedMatch().toDTOwithoutCalls();
+            MatchDTO lastPlayedMatch = matchService.getLastPlayedMatch().toDTO();
 
             return ResponseEntity.ok(lastPlayedMatch);
         } catch (RuntimeException e) {

@@ -21,6 +21,8 @@ import Messages from './views/Messages.jsx'
 import Unauthorized from './views/Unauthorized.jsx'
 import Orders from './views/Orders.jsx'
 import './style/App.css'
+import Recomendations from './views/Recomendations.jsx'
+import RecomendationsPlayer from './views/RecomendationsPlayer.jsx'
 
 export default function App() {
 
@@ -44,6 +46,8 @@ export default function App() {
         <Route path="/forum/categories/:category" element={<ForumDebates />} />
         <Route path="/forum/categories/:category/:debateId" element={<Messages />} />
         <Route path="/orders" element={<Orders />} />
+        <Route path="/recomendations/matches/:matchId" element={<Recomendations />} />
+        <Route path="/recomendations/matches/:matchId/players/:playerId" element={<RecomendationsPlayer />} />
         <Route path="/error/unauthorized" element={<Unauthorized />} />
       </Routes>
     </BrowserRouter>

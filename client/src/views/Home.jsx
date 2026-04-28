@@ -3,14 +3,13 @@ import Match from '../components/Match.jsx'
 import MatchCompressed from '../components/MatchCompressed.jsx'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import '../style/Home.css'
 
 export default function Home() {
 
     const SERVER_URL = 'http://localhost:8081';
     const navigate = useNavigate();
-    const location = useLocation();
 
     const [authenticatedUser, setAuthenticatedUser] = useState(null);
     const [nextMatch, setNextMatch] = useState();
@@ -98,7 +97,7 @@ export default function Home() {
                             <div id='rightDiv'>
                                 <div id='recomendationsDiv'>
                                     <p id='recomendationsText'>RECOMENDACIONES</p>
-                                    <div id='recomendations'>
+                                    <div id='recomendations' onClick={() => { navigate(`/recomendations/matches/${lastPlayedMatch.id}`, { state: { authenticatedUserPlayerId: authenticatedUser?.player?.id, isCoach: authenticatedUser?.isCoach, match: lastPlayedMatch } }) }}>
                                         <p id='seeRecomendationsText'>Ver recomendaciones del partido:</p>
                                         <div id='lastPlayedMatchDiv'>
                                             <img id='lastPlayedMatchLocalTeamImage' src={`/logos/${lastPlayedMatch?.localTeam?.logo}`} alt={`${lastPlayedMatch?.localTeam?.name}`} />
