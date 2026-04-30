@@ -23,6 +23,7 @@ import Orders from './views/Orders.jsx'
 import './style/App.css'
 import Recomendations from './views/Recomendations.jsx'
 import RecomendationsPlayer from './views/RecomendationsPlayer.jsx'
+import RecomendationsTeam from './views/RecomendationsTeam.jsx'
 
 export default function App() {
 
@@ -48,6 +49,7 @@ export default function App() {
         <Route path="/orders" element={<Orders />} />
         <Route path="/recomendations/matches/:matchId" element={<Recomendations />} />
         <Route path="/recomendations/matches/:matchId/players/:playerId" element={<RecomendationsPlayer />} />
+        <Route path="/recomendations/matches/:matchId/team" element={<RecomendationsTeam />} />
         <Route path="/error/unauthorized" element={<Unauthorized />} />
       </Routes>
     </BrowserRouter>

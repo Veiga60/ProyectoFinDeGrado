@@ -31,7 +31,7 @@ export default function Recomendations() {
                             }
                         })
                     }
-                    <div id='logoImageDiv'>
+                    <div id='logoImageDiv' onClick={() => navigate('team')}>
                         <img id='logoImage' src={logo} alt="Metropolitano HC" />
                     </div>
                 </div>
