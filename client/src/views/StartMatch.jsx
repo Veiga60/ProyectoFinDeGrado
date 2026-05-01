@@ -82,49 +82,59 @@ export default function StartMatch() {
     }
 
     const fillPlayersMatchStats = async () => {
+
+        let savedPlayersStats = [];
+        let savedGoaliesStats = [];
+
+        try {
+            const response = await axios.get(`${SERVER_URL}/playersMatchStats/matches/${matchId}`, { withCredentials: true });
+            savedPlayersStats = response.data;
+        } catch (error) {
+            console.log("Error fetching player's match stats:", error);
+        }
+        try {
+            const gRes = await axios.get(`${SERVER_URL}/goaliesMatchStats/matches/${matchId}`, { withCredentials: true });
+            savedGoaliesStats = gRes.data;
+        } catch (e) { }
         for (const player of players) {
             if (player.playerType == 'RINK_PLAYER') {
+
+                const existing = savedPlayersStats.find(s => s.player.id === player.id);
                 const playerMatchStatsBody = {
                     goals: matchEvents.filter((matchEvent) => (matchEvent.goal?.scorer) ? (matchEvent.goal.scorer.id == player.id) : (0)).length || 0,
                     assists: matchEvents.filter((matchEvent) => (matchEvent.goal?.assister) ? (matchEvent.goal.assister.id == player.id) : (0)).length || 0,
-                    plusMinus: 0,
-                    shots: 0,
-                    goodPasses: 0,
-                    badPasses: 0,
-                    recoveredPucks: 0,
-                    lostPucks: 0,
+                    plusMinus: existing ? existing.plusMinus : 0,
+                    shots: existing ? existing.shots : 0,
+                    goodPasses: existing ? existing.goodPasses : 0,
+                    badPasses: existing ? existing.badPasses : 0,
+                    recoveredPucks: existing ? existing.recoveredPucks : 0,
+                    lostPucks: existing ? existing.lostPucks : 0,
                     penaltyMins: matchEvents?.filter((matchEvent) => (matchEvent.penalty?.player?.id == player.id)).reduce((accumulator, playerPenalty) => accumulator + Number(playerPenalty.penalty.penaltyTime), 0),
-                    penaltyShotGoals: 0,
-                    penaltyShotMisses: 0
+                    penaltyShotGoals: existing ? existing.penaltyShotGoals : 0,
+                    penaltyShotMisses: existing ? existing.penaltyShotMisses : 0
                 }
-
                 try {
                     await axios.put(`${SERVER_URL}/matchStats/matches/${matchId}/players/${player.id}`, playerMatchStatsBody, {
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }, withCredentials: true
+                        headers: { 'Content-Type': 'application/json' }, withCredentials: true
                     });
                 } catch (error) {
-                    console.log('Error actualizando estadísticas de jugador en el partido: ', error);
+                    console.log("Error updating player's stats: ", error);
                 }
-
             } else if (player.playerType == 'GOALIE') {
+                const existing = savedGoaliesStats.find(s => s.goalie.id === player.id);
                 const goalieMatchStatsBody = {
-                    shotsReceived: 0,
-                    goalsReceived: 0,
+                    shotsReceived: existing ? existing.shotsReceived : 0,
+                    goalsReceived: existing ? existing.goalsReceived : 0,
                     penaltyMins: matchEvents?.filter((matchEvent) => (matchEvent.penalty?.player?.id == player.id)).reduce((accumulator, playerPenalty) => accumulator + Number(playerPenalty.penalty.penaltyTime), 0),
-                    penaltyShotGoals: 0,
-                    penaltyShotSaves: 0
+                    penaltyShotGoals: existing ? existing.penaltyShotGoals : 0,
+                    penaltyShotSaves: existing ? existing.penaltyShotSaves : 0
                 }
-
                 try {
                     await axios.put(`${SERVER_URL}/matchStats/matches/${matchId}/goalies/${player.id}`, goalieMatchStatsBody, {
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }, withCredentials: true
+                        headers: { 'Content-Type': 'application/json' }, withCredentials: true
                     });
                 } catch (error) {
-                    console.log('Error actualizando estadísticas de portero en el partido: ', error);
+                    console.log("Error updating goalie's stats: ", error);
                 }
             }
         }
@@ -132,9 +142,7 @@ export default function StartMatch() {
 
     const prepareStatsToUpdate = async () => {
         try {
-            if (location.state.playerStatsEdited == false) {
-                await fillPlayersMatchStats();
-            }
+            await fillPlayersMatchStats();
 
             if (location.state.teamStatsEdited == false) {
                 await fillTeamMatchStats();
