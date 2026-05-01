@@ -82,4 +82,17 @@ public class PlayerMatchStatsController {
             }
         }
     }
+
+    @GetMapping("/playersMatchStats/matches/lastPlayed/players/{playerId}")
+    public ResponseEntity<PlayerMatchStatsDTO> getLastPlayedMatchPlayerMatchStats(
+            @PathVariable("playerId") long playerId) {
+        try {
+            PlayerMatchStatsDTO playerMatchStatsDTO = playerMatchStatsService
+                    .getLastPlayedMatchPlayerMatchStats(playerId).toDTO();
+
+            return ResponseEntity.ok(playerMatchStatsDTO);
+        } catch (RuntimeException e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
 }

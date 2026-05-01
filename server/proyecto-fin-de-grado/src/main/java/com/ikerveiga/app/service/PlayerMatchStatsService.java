@@ -88,4 +88,20 @@ public class PlayerMatchStatsService {
 
         return playersMatchStats;
     }
+
+    public PlayerMatchStats getLastPlayedMatchPlayerMatchStats(long playerId) {
+        Match match = matchDAO.findPlayedMatchesBackwards().get(0);
+
+        if (match == null) {
+            match = new Match();
+        }
+
+        PlayerMatchStats playerMatchStats = playerMatchStatsDAO.findByMatchIdAndPlayerId(match.getId(), playerId);
+
+        if (playerMatchStats == null) {
+            return new PlayerMatchStats(null, match, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        }
+
+        return playerMatchStats;
+    }
 }

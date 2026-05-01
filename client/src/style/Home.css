@@ -148,3 +148,90 @@
 #lastPlayedMatchVisitingTeamImage {
     width: 20%;
 }
+
+#notCoachRightDiv {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#lastMatchText {
+    font-family: Inria Sans;
+    color: black;
+    font-weight: bold;
+}
+
+#lastMatchPlayerMatchStatsDiv {
+    height: 85%;
+    width: 100%;
+}
+
+#lastMatchLocalTeamImage {
+    width: 20%;
+}
+
+#lastMatchVisitingTeamImage {
+    width: 20%;
+}
+
+#lastMatchDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    width: 45%;
+}
+
+#lastMatchSeparator {
+    color: black;
+    font-family: Inria Sans;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+#lastMatchPlayerStats {
+    border: 2px solid rgb(7, 78, 200);
+    width: 95%;
+    height: 84.5%;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 150px));
+    align-items: center;
+    justify-content: center;
+}
+
+.playerStat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.playerStatDiv {
+    border: 4px solid rgb(7, 78, 200);
+    border-radius: 100000px;
+    background-color: white;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playerStatText {
+    font-family: Inria Sans;
+    color: black;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.playerStatsTitle {
+    font-family: Inria Sans;
+    color: black;
+    font-weight: bold;
+    font-size: small;
+}

@@ -16,6 +16,8 @@ export default function Home() {
     const [width, setWidth] = useState(window.innerWidth);
 
     const [lastPlayedMatch, setLastPlayedMatch] = useState(null);
+    const [lastPlayedMatchPlayerMatchStats, setLastPlayedMatchPlayerMatchStats] = useState();
+    const [lastPlayedMatchGoalieMatchStats, setLastPlayedMatchGoalieMatchStats] = useState();
 
     const whoAmI = async () => {
         try {
@@ -39,14 +41,32 @@ export default function Home() {
         try {
             const response = await axios.get(`${SERVER_URL}/matches/lastPlayed`, { withCredentials: true });
             setLastPlayedMatch(response.data);
-            console.log(response.data);
         } catch (error) {
             console.log('Error getting last played match: ', error);
         }
     }
 
+    const getLastPlayedMatchPlayerMatchStats = async (playerId) => {
+        try {
+            const response = await axios.get(`${SERVER_URL}/playersMatchStats/matches/lastPlayed/players/${playerId}`, { withCredentials: true })
+            setLastPlayedMatchPlayerMatchStats(response.data);
+            console.log(response.data);
+        } catch (error) {
+            console.log('Error fetching stats from last match: ', error);
+        }
+    }
+
+    const getLastPlayedMatchGoalieMatchStats = async (playerId) => {
+        try {
+            const response = await axios.get(`${SERVER_URL}/playersMatchStats/matches/lastPlayed/goalies/${playerId}`, { withCredentials: true })
+            setLastPlayedMatchGoalieMatchStats(response.data);
+            console.log(response.data);
+        } catch (error) {
+            console.log('Error fetching stats from last match: ', error);
+        }
+    }
+
     useEffect(() => {
-        getLastPlayedMatch();
         const handleResize = () => setWidth(window.innerWidth);
         window.addEventListener('resize', handleResize);
 
@@ -54,6 +74,20 @@ export default function Home() {
         getNextMatch();
         return () => window.removeEventListener('resize', handleResize);
     }, []);
+
+    useEffect(() => {
+        if (!authenticatedUser) return;
+        console.log(authenticatedUser);
+        if (authenticatedUser?.isCoach == true) {
+            getLastPlayedMatch();
+        } else {
+            if (authenticatedUser?.player?.playerType == "RINK_PLAYER") {
+                getLastPlayedMatchPlayerMatchStats(authenticatedUser?.player?.id);
+            } else if (authenticatedUser?.player?.playerType == "GOALIE") {
+                getLastPlayedMatchGoalieMatchStats(authenticatedUser?.player?.id);
+            }
+        }
+    }, [authenticatedUser]);
 
     return (
         <>
@@ -93,7 +127,7 @@ export default function Home() {
                         </div>
                     </div>
                     {
-                        (authenticatedUser.isCoach == true) && (
+                        (authenticatedUser.isCoach == true) ? (
                             <div id='rightDiv'>
                                 <div id='recomendationsDiv'>
                                     <p id='recomendationsText'>RECOMENDACIONES</p>
@@ -104,6 +138,148 @@ export default function Home() {
                                             <p id='lastPlayedMatchVersusText'>VS</p>
                                             <img id='lastPlayedMatchVisitingTeamImage' src={`/logos/${lastPlayedMatch?.visitingTeam?.logo}`} alt={`${lastPlayedMatch?.visitingTeam?.name}`} />
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ) : (
+                            <div id='notCoachRightDiv'>
+                                <p id='lastMatchText'>ÚLTIMO PARTIDO</p>
+                                <div id='lastMatchPlayerMatchStatsDiv'>
+                                    <div id='lastMatchDiv'>
+                                        {
+                                            (authenticatedUser.player.playerType == 'RINK_PLAYER') ? (
+                                                <>
+                                                    <img id='lastMatchLocalTeamImage' src={`/logos/${lastPlayedMatchPlayerMatchStats?.match.localTeam.logo}`} alt={lastPlayedMatchPlayerMatchStats?.match.localTeam.name} />
+                                                    <p id='lastMatchSeparator'>VS</p>
+                                                    <img id='lastMatchVisitingTeamImage' src={`/logos/${lastPlayedMatchPlayerMatchStats?.match.visitingTeam.logo}`} alt={lastPlayedMatchPlayerMatchStats?.match.visitingTeam.name} />
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <img id='lastMatchLocalTeamImage' src={`/logos/${lastPlayedMatchGoalieMatchStats?.match.localTeam.logo}`} alt={lastPlayedMatchGoalieMatchStats?.match.localTeam.name} />
+                                                    <p id='lastMatchSeparator'>VS</p>
+                                                    <img id='lastMatchVisitingTeamImage' src={`/logos/${lastPlayedMatchGoalieMatchStats?.match.visitingTeam.logo}`} alt={lastPlayedMatchGoalieMatchStats?.match.visitingTeam.name} />
+                                                </>
+                                            )
+                                        }
+                                    </div>
+                                    <div id='lastMatchPlayerStats'>
+                                        {
+                                            (authenticatedUser.player.playerType == 'RINK_PLAYER') ? (
+                                                <>
+                                                    <div className='playerStat'>
+                                                        <div className='playerStatDiv'>
+                                                            <p className='playerStatText'>{lastPlayedMatchPlayerMatchStats?.goals}</p>
+                                                        </div>
+                                                        <p className='playerStatsTitle'>GOLES</p>
+                                                    </div>
+                                                    <div className='playerStat'>
+                                                        <div className='playerStatDiv'>
+                                                            <p className='playerStatText'>{lastPlayedMatchPlayerMatchStats?.assists}</p>
+                                                        </div>
+                                                        <p className='playerStatsTitle'>ASISTENCIAS</p>
+                                                    </div>
+                                                    <div className='playerStat'>
+                                                        <div className='playerStatDiv'>
+                                                            <p className='playerStatText'>{(Number(lastPlayedMatchPlayerMatchStats?.goals) + Number(lastPlayedMatchPlayerMatchStats?.assists)) || 0}</p>
+                                                        </div>
+                                                        <p className='playerStatsTitle'>PUNTOS</p>
+                                                    </div>
+                                                    <div className='playerStat'>
+                                                        <div className='playerStatDiv'>
+                                                            <p className='playerStatText'>{lastPlayedMatchPlayerMatchStats?.plusMinus}</p>
+                                                        </div>
+                                                        <p className='playerStatsTitle'>+/-</p>
+                                                    </div>
+                                                    <div className='playerStat'>
+                                                        <div className='playerStatDiv'>
+                                                            <p className='playerStatText'>{lastPlayedMatchPlayerMatchStats?.shots}</p>
+                                                        </div>
+                                                        <p className='playerStatsTitle'>TIROS</p>
+                                                    </div>
+                                                    <div className='playerStat'>
+                                                        <div className='playerStatDiv'>
+                                                            <p className='playerStatText'>{lastPlayedMatchPlayerMatchStats?.recoveredPucks}</p>
+                                                        </div>
+                                                        <p className='playerStatsTitle'>PUCKS RECUPERADOS</p>
+                                                    </div>
+                                                    <div className='playerStat'>
+                                                        <div className='playerStatDiv'>
+                                                            <p className='playerStatText'>{lastPlayedMatchPlayerMatchStats?.lostPucks}</p>
+                                                        </div>
+                                                        <p className='playerStatsTitle'>PUCKS PERDIDOS</p>
+                                                    </div>
+                                                    <div className='playerStat'>
+                                                        <div className='playerStatDiv'>
+                                                            <p className='playerStatText'>{lastPlayedMatchPlayerMatchStats?.goodPasses}</p>
+                                                        </div>
+                                                        <p className='playerStatsTitle'>PASES DETERMINANTES</p>
+                                                    </div>
+                                                    <div className='playerStat'>
+                                                        <div className='playerStatDiv'>
+                                                            <p className='playerStatText'>{lastPlayedMatchPlayerMatchStats?.badPasses}</p>
+                                                        </div>
+                                                        <p className='playerStatsTitle'>PASES FALLADOS</p>
+                                                    </div>
+                                                    <div className='playerStat'>
+                                                        <div className='playerStatDiv'>
+                                                            <p className='playerStatText'>{lastPlayedMatchPlayerMatchStats?.penaltyMins}</p>
+                                                        </div>
+                                                        <p className='playerStatsTitle'>MINUTOS SANCIÓN</p>
+                                                    </div>
+                                                    <div className='playerStat'>
+                                                        <div className='playerStatDiv'>
+                                                            <p className='playerStatText'>{lastPlayedMatchPlayerMatchStats?.penaltyShotGoals}</p>
+                                                        </div>
+                                                        <p className='playerStatsTitle'>PENALTIS METIDOS</p>
+                                                    </div>
+                                                    <div className='playerStat'>
+                                                        <div className='playerStatDiv'>
+                                                            <p className='playerStatText'>{lastPlayedMatchPlayerMatchStats?.penaltyShotMisses}</p>
+                                                        </div>
+                                                        <p className='playerStatsTitle'>PENALTIS FALLADOS</p>
+                                                    </div>
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <div className='playerStat'>
+                                                        <div className='playerStatDiv'>
+                                                            <p className='playerStatText'>{(lastPlayedMatchGoalieMatchStats?.shotsReceived > 0) && (((Number(lastPlayedMatchGoalieMatchStats?.shotsReceived) - Number(lastPlayedMatchGoalieMatchStats?.goalsReceived)) / Number(lastPlayedMatchGoalieMatchStats?.shotsReceived))).toFixed(3)}</p>
+                                                        </div>
+                                                        <p className='playerStatsTitle'>% PARADAS</p>
+                                                    </div>
+                                                    <div className='playerStat'>
+                                                        <div className='playerStatDiv'>
+                                                            <p className='playerStatText'>{lastPlayedMatchGoalieMatchStats?.shotsReceived}</p>
+                                                        </div>
+                                                        <p className='playerStatsTitle'>TIROS RECIBIDOS</p>
+                                                    </div>
+                                                    <div className='playerStat'>
+                                                        <div className='playerStatDiv'>
+                                                            <p className='playerStatText'>{lastPlayedMatchGoalieMatchStats?.goalsReceived}</p>
+                                                        </div>
+                                                        <p className='playerStatsTitle'>GOLES RECIBIDOS</p>
+                                                    </div>
+                                                    <div className='playerStat'>
+                                                        <div className='playerStatDiv'>
+                                                            <p className='playerStatText'>{lastPlayedMatchGoalieMatchStats?.penaltyMins}</p>
+                                                        </div>
+                                                        <p className='playerStatsTitle'>MINUTOS DE SANCIÓN</p>
+                                                    </div>
+                                                    <div className='playerStat'>
+                                                        <div className='playerStatDiv'>
+                                                            <p className='playerStatText'>{lastPlayedMatchGoalieMatchStats?.penaltyShotGoals}</p>
+                                                        </div>
+                                                        <p className='playerStatsTitle'>PENALTIS ENCAJADOS</p>
+                                                    </div>
+                                                    <div className='playerStat'>
+                                                        <div className='playerStatDiv'>
+                                                            <p className='playerStatText'>{lastPlayedMatchGoalieMatchStats?.penaltyShotSaves}</p>
+                                                        </div>
+                                                        <p className='playerStatsTitle'>PENALTIS PARADOS</p>
+                                                    </div>
+                                                </>
+                                            )
+                                        }
                                     </div>
                                 </div>
                             </div>

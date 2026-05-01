@@ -79,4 +79,17 @@ public class GoalieMatchStatsController {
             }
         }
     }
+
+    @GetMapping("/playersMatchStats/matches/lastPlayed/goalies/{playerId}")
+    public ResponseEntity<GoalieMatchStatsDTO> getLastPlayedMatchGoalieMatchStats(
+            @PathVariable("playerId") long playerId) {
+        try {
+            GoalieMatchStatsDTO goalieMatchStatsDTO = goalieMatchStatsService
+                    .getLastPlayedMatchGoalieMatchStats(playerId).toDTO();
+
+            return ResponseEntity.ok(goalieMatchStatsDTO);
+        } catch (RuntimeException e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
 }

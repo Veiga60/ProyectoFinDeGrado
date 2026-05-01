@@ -18,5 +18,4 @@ public interface PlayerMatchStatsRepository extends JpaRepository<PlayerMatchSta
 
     @Query("SELECT a FROM PlayerMatchStats a WHERE a.match.id = :matchId AND a.player.id = :playerId")
     PlayerMatchStats findByMatchIdAndPlayerId(@Param("matchId") long matchId, @Param("playerId") long playerId);
-
 }
