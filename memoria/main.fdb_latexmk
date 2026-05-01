@@ -1,15 +1,15 @@
 # Fdb version 4
-["bibtex main"] 1777321946.81694 "main.aux" "main.bbl" "main" 1777322045.82865 0
+["bibtex main"] 1777662005.86941 "main.aux" "main.bbl" "main" 1777662086.6195 0
   "./referencias.bib" 1777320638 1959 35a5ed1b987b1bc2915a03286edcf213 ""
   "C:/Users/estib/AppData/Local/Programs/MiKTeX/bibtex/bst/ieeetran/IEEEtran.bst" 1440622569 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "main.aux" 1777322044 7018 abc10a34a0425728c867fc8a0ea617f9 "pdflatex"
+  "main.aux" 1777662085 6934 8c84f37c205b7997c83c1dc92ccc7413 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1777322041.36489 "d:/git/ProyectoFinDeGrado/memoria/main.tex" "main.pdf" "main" 1777322045.82955 0
-  "C:/Users/estib/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1777321218 170181 8951b8cb5539a64785ff7f3f4a941eab ""
-  "C:/Users/estib/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1777321046 13350272 e2c283e8801d2549d4a1ab85a1396299 ""
+["pdflatex"] 1777662083.27728 "d:/git/ProyectoFinDeGrado/memoria/main.tex" "main.pdf" "main" 1777662086.62009 0
+  "C:/Users/estib/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1777658463 170181 8951b8cb5539a64785ff7f3f4a941eab ""
+  "C:/Users/estib/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1777657426 13350271 d8f330e574fc76ce037b86566181d7a7 ""
   "C:/Users/estib/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/sourcesans/a_44crgg.enc" 1772377178 3189 771b29eb6b50002b7080e180cebd0122 ""
   "C:/Users/estib/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/sourcesans/a_uz6pbi.enc" 1772377179 2948 f0d59b248476e870a9c9562d25a2e12a ""
   "C:/Users/estib/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/sourcesans/SourceSans3-Bold-tlf-t1--base.tfm" 1772377223 1676 3313f0ba083dd97a3bbf850ae5587c61 ""
@@ -136,18 +136,18 @@
   "C:/Users/estib/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/estib/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/estib/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "d:/git/ProyectoFinDeGrado/memoria/main.tex" 1777322040 3098 bb87b9a45ecfcd87efed9a393ce8142b ""
-  "dummy.tex" 1777320638 7335 d702bbf90f7d2ff241154f3a8a5bf9b3 ""
+  "d:/git/ProyectoFinDeGrado/memoria/main.tex" 1777657899 3030 dfb1ff445a92b1772784f980b39fb173 ""
+  "dummy.tex" 1777662082 7727 1c79eac7a645c04de6b137ab9046d164 ""
   "imgs/logo.jpg" 1777320638 39408 5d8dfe59229f3c9657d6fea8b2d5d20e ""
-  "main.aux" 1777322044 7018 abc10a34a0425728c867fc8a0ea617f9 "pdflatex"
-  "main.bbl" 1777321947 1110 a0e50aa0f38500d477b6d2fe0b79924a "bibtex main"
-  "main.lof" 1777322044 346 bee6e0684c3c9d7581b757b2e4330d4e "pdflatex"
-  "main.lol" 1777322044 237 da18f263e6e946677b5b434eafc37d28 "pdflatex"
-  "main.lot" 1777322044 237 da18f263e6e946677b5b434eafc37d28 "pdflatex"
-  "main.tex" 1777322040 3098 bb87b9a45ecfcd87efed9a393ce8142b ""
-  "main.toc" 1777322044 1149 f18ec623404ac646eb03e994a5c84063 "pdflatex"
+  "main.aux" 1777662085 6934 8c84f37c205b7997c83c1dc92ccc7413 "pdflatex"
+  "main.bbl" 1777662006 1110 a0e50aa0f38500d477b6d2fe0b79924a "bibtex main"
+  "main.lof" 1777662085 346 9076d55516022c4d7c0a87f3c26ce68e "pdflatex"
+  "main.lol" 1777662085 237 da18f263e6e946677b5b434eafc37d28 "pdflatex"
+  "main.lot" 1777662085 237 da18f263e6e946677b5b434eafc37d28 "pdflatex"
+  "main.tex" 1777657899 3030 dfb1ff445a92b1772784f980b39fb173 ""
+  "main.toc" 1777662085 1143 8e5ff26045401389dc1e8e57cb0cb8b0 "pdflatex"
   "memoriaPFC.cls" 1777320638 7660 c652bd71b2a057917db93c670f4627b1 ""
-  "otras.aux" 1777322043 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "otras.aux" 1777662084 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "main.aux"
   "main.lof"

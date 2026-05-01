@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.4.27)  27 APR 2026 22:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.5.1)  1 MAY 2026 21:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -888,33 +888,34 @@ LaTeX Font Info:    Font shape `TS1/SourceSansThree-TLF/m/n' will be
 {C:/Users/estib/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/sourcesans/a_44crgg.enc}]
 chapter 1.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/bold/n' aliased to
-(Font)              `T1/SourceSansThree-TLF/b/n' on input line 11.
+(Font)              `T1/SourceSansThree-TLF/b/n' on input line 21.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/b/n' will be
-(Font)              scaled to size 14.0pt on input line 11.
-LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/regular/it' aliased to
-(Font)              `T1/SourceSansThree-TLF/m/it' on input line 15.
-LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/m/it' will be
-(Font)              scaled to size 10.0pt on input line 15.
-<imgs/logo.jpg, id=69, 103.34857pt x 48.5911pt>
-File: imgs/logo.jpg Graphic file (type jpg)
-<use imgs/logo.jpg>
-Package pdftex.def Info: imgs/logo.jpg  used on input line 19.
-(pdftex.def)             Requested size: 91.04742pt x 42.80922pt.
-LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/bold/n' aliased to
-(Font)              `T1/SourceSansThree-TLF/b/n' on input line 26.
-LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 26.
+(Font)              scaled to size 14.0pt on input line 21.
 [2
 
- <./imgs/logo.jpg>] [3] [4]
+]
+LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/regular/it' aliased to
+(Font)              `T1/SourceSansThree-TLF/m/it' on input line 25.
+LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/m/it' will be
+(Font)              scaled to size 10.0pt on input line 25.
+<imgs/logo.jpg, id=74, 103.34857pt x 48.5911pt>
+File: imgs/logo.jpg Graphic file (type jpg)
+<use imgs/logo.jpg>
+Package pdftex.def Info: imgs/logo.jpg  used on input line 29.
+(pdftex.def)             Requested size: 91.04742pt x 42.80922pt.
+LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/bold/n' aliased to
+(Font)              `T1/SourceSansThree-TLF/b/n' on input line 36.
+LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/b/n' will be
+(Font)              scaled to size 12.0pt on input line 36.
+ [3 <./imgs/logo.jpg>] [4] [5]
 chapter 2.
-[5
+[6
 
 ]
 chapter 3.
-) [6
+) [7
 
-] (main.bbl) [7
+] (main.bbl) [8
 
 
 
@@ -922,7 +923,7 @@ chapter 3.
 
 ]
 chapter A.
-[8
+[9
 
 ] (main.aux
 LaTeX Info: Redefining \. on input line 14.
@@ -934,17 +935,17 @@ L3 programming layer <2026-03-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 20605 strings out of 467691
- 389563 string characters out of 5414987
- 971590 words of memory out of 5000000
+ 20606 strings out of 467691
+ 389570 string characters out of 5414988
+ 970590 words of memory out of 5000000
  49333 multiletter control sequences out of 15000+600000
  734980 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  122i,20n,121p,11242b,591s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/estib/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-Bold.pfb><C:/Users/estib/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-It.pfb><C:/Users/estib/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-Regular.pfb>
-Output written on main.pdf (13 pages, 286340 bytes).
+Output written on main.pdf (14 pages, 287428 bytes).
 PDF statistics:
- 172 PDF objects out of 1000 (max. 8388607)
- 37 named destinations out of 1000 (max. 500000)
+ 176 PDF objects out of 1000 (max. 8388607)
+ 38 named destinations out of 1000 (max. 500000)
  94 words of extra memory for PDF output out of 10000 (max. 10000000)
 
