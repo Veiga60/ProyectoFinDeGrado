@@ -265,8 +265,11 @@
     }
 
     #nextMatchDiv {
+        margin-left: 7px;
         width: calc(100% - 20px);
-        margin-left: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         margin-top: 30px;
     }
 
@@ -299,5 +302,71 @@
 
     #coachImage {
         width: 150%;
+    }
+}
+
+@media (max-height: 840px) {
+
+    #greetingText {
+        font-size: x-large;
+    }
+
+    #nextMatchAndButtonDiv {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    #nextMatchDiv {
+        margin-left: 7px;
+        width: calc(100% - 20px);
+        display: flex;
+        align-items: center;
+        height: 30%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    #seeRecomendationsText {
+        display: none;
+    }
+
+    #homePageContentDiv {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    #leftDiv {
+        width: 100%;
+        height: 100%;
+    }
+
+    #rightDiv {
+        width: 100%;
+        height: 40%;
+        display: flex;
+        align-items: center;
+    }
+
+    #recomendationsDiv {
+        margin-top: 0;
+        height: 60%;
+    }
+
+    #coachImage {
+        width: 100%;
+    }
+
+    #recomendationsText,
+    #nextMatchText {
+        margin: 0;
+    }
+
+    #recomendations {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
