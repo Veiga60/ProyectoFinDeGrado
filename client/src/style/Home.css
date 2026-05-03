@@ -326,7 +326,7 @@
 
     #notCoachRightDiv {
         width: 100%;
-        margin-top: -20px;
+        margin-top: 0;
         display: flex;
         height: 33.6%;
     }
@@ -509,7 +509,7 @@
     }
 }
 
-@media (min-width: 870px) and (orientation: portrait) {
+@media (min-width: 870px) and (max-width: 1280px) and (orientation: portrait) {
     #nextMatchAndButtonDiv {
         display: flex;
         flex-direction: column;
@@ -616,13 +616,24 @@
     }
 }
 
-@media (max-height: 720px) {
+@media (min-height: 700px) and (max-height: 721px) and (orientation: portrait) {
     #coachImage {
         width: 100%;
     }
 
     #nextMatchDiv {
         margin-bottom: 0;
+    }
+
+    #notCoachRightDiv {
+        margin-top: -20px;
+    }
+}
+
+@media (min-width: 870px) and (max-width: 1280px) and (orientation: landscape) {
+
+    #lastMatchPlayerStats {
+        max-height: 65%;
     }
 }
 
