@@ -215,11 +215,13 @@
     border: 2px solid rgb(7, 78, 200);
     width: 95%;
     height: 84.5%;
+    max-height: 84.5%;
     background-color: white;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 150px));
     align-items: center;
     justify-content: center;
+    overflow-y: auto;
 }
 
 .playerStat {
@@ -405,7 +407,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 10px;
+        margin-top: 30px;
     }
 
     #seeRecomendationsText {
@@ -449,6 +451,62 @@
     #coachImage {
         width: 100%;
     }
+
+    #notCoachRightDiv {
+        width: 100%;
+        margin-top: -10px;
+        display: flex;
+        height: 33.6%;
+    }
+
+    #lastMatchText {
+        margin: 0;
+        margin-top: 10%;
+        padding-left: 19px;
+    }
+
+    .playerStat {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .playerStatDiv {
+        width: 60px;
+        height: 60px;
+    }
+
+    .playerStatText {
+        font-family: Inria Sans;
+        color: black;
+        font-weight: bold;
+        font-size: x-large;
+    }
+
+    .playerStatsTitle {
+        font-family: Inria Sans;
+        color: black;
+        font-weight: bold;
+        font-size: medium;
+        min-height: 3em;
+        display: flex;
+        align-items: flex-start;
+        text-align: center;
+    }
+
+    #lastMatchPlayerStats {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 130px));
+        max-height: 80%;
+        overflow-y: auto;
+        padding: 10px;
+        align-items: stretch;
+        margin: 0 auto;
+        column-gap: 10px;
+        width: 95%;
+        scrollbar-color: rgb(7, 78, 200) transparent;
+    }
 }
 
 @media (min-width: 870px) and (orientation: portrait) {
@@ -466,7 +524,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 100px;
+        margin-top: 60px;
     }
 
     #seeRecomendationsText {
@@ -500,6 +558,62 @@
     #nextMatchText {
         font-size: larger;
     }
+
+    #notCoachRightDiv {
+        width: 100%;
+        margin-top: -10px;
+        display: flex;
+        height: 33.6%;
+    }
+
+    #lastMatchText {
+        margin: 0;
+        margin-top: 10%;
+        padding-left: 19px;
+    }
+
+    .playerStat {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .playerStatDiv {
+        width: 60px;
+        height: 60px;
+    }
+
+    .playerStatText {
+        font-family: Inria Sans;
+        color: black;
+        font-weight: bold;
+        font-size: x-large;
+    }
+
+    .playerStatsTitle {
+        font-family: Inria Sans;
+        color: black;
+        font-weight: bold;
+        font-size: medium;
+        min-height: 3em;
+        display: flex;
+        align-items: flex-start;
+        text-align: center;
+    }
+
+    #lastMatchPlayerStats {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 130px));
+        max-height: 80%;
+        overflow-y: auto;
+        padding: 10px;
+        align-items: stretch;
+        margin: 0 auto;
+        column-gap: 10px;
+        width: 95%;
+        scrollbar-color: rgb(7, 78, 200) transparent;
+    }
 }
 
 @media (max-height: 720px) {
@@ -508,7 +622,7 @@
     }
 
     #nextMatchDiv {
-        margin-bottom: 20px;
+        margin-bottom: 0;
     }
 }
 
@@ -520,6 +634,18 @@
 
     #recomendationsDiv {
         margin-top: 50px;
+    }
+
+    #lastMatchPlayerStats {
+        max-height: 60%;
+        padding-top: 10px;
+    }
+}
+
+@media (min-width: 1280px) and (orientation: landscape) {
+
+    #notCoachRightDiv {
+        margin-left: 20px;
     }
 }
 
