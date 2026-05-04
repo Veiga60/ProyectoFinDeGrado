@@ -45,6 +45,9 @@
     font-family: Inria Sans;
     font-size: larger;
     transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #saveIncidencesButton:hover {
@@ -105,4 +108,31 @@
 
 .incidencesButton:hover {
     background-color: rgb(127, 127, 127);
+}
+
+@media (max-width: 750px) {
+    .incidencesButton {
+        font-size: medium;
+        width: 150px;
+    }
+
+    #saveIncidencesButtonDiv {
+        width: 40%;
+    }
+
+    #indicencesLocalTeamImageDiv {
+        padding-top: 100px;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #indicencesVisitingTeamImageDiv {
+        padding-top: 100px;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
