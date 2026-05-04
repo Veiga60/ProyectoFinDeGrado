@@ -111,18 +111,19 @@
 }
 
 @media (max-width: 750px) {
+
     .incidencesButton {
         font-size: medium;
         width: 150px;
     }
 
     #saveIncidencesButtonDiv {
-        width: 40%;
+        width: 30%;
     }
 
     #indicencesLocalTeamImageDiv {
         padding-top: 100px;
-        width: 80%;
+        width: 70%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -130,7 +131,128 @@
 
     #indicencesVisitingTeamImageDiv {
         padding-top: 100px;
-        width: 80%;
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 751px) and (max-width: 865px) {
+    .incidencesButton {
+        font-size: x-large;
+        width: 250px;
+    }
+
+    .goalIcon,
+    .whistleIcon,
+    .timeoutIcon {
+        width: 40px;
+        height: 40px;
+    }
+
+    #saveIncidencesButtonDiv {
+        width: 15%;
+    }
+
+    #indicencesLocalTeamImageDiv {
+        padding-top: 100px;
+        width: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #indicencesVisitingTeamImageDiv {
+        padding-top: 100px;
+        width: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 866px) and (max-width: 960px) {
+    .incidencesButton {
+        font-size: x-large;
+        width: 250px;
+    }
+
+    .goalIcon,
+    .whistleIcon,
+    .timeoutIcon {
+        width: 40px;
+        height: 40px;
+    }
+
+    #saveIncidencesButtonDiv {
+        width: 15%;
+    }
+
+    #indicencesLocalTeamImageDiv {
+        padding-top: 100px;
+        width: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #indicencesVisitingTeamImageDiv {
+        padding-top: 100px;
+        width: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 961px) {
+    .incidencesButton {
+        font-size: x-large;
+        width: 250px;
+    }
+
+    .goalIcon,
+    .whistleIcon,
+    .timeoutIcon {
+        width: 30px;
+        height: 30px;
+    }
+
+    #saveIncidencesButtonDiv {
+        width: 10%;
+    }
+
+    #indicencesLocalTeamImageDiv {
+        padding-top: 100px;
+        width: 35%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #indicencesVisitingTeamImageDiv {
+        padding-top: 100px;
+        width: 35%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 1000px) and (orientation: portrait) {
+
+    #indicencesLocalTeamImageDiv {
+        padding-top: 100px;
+        width: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #indicencesVisitingTeamImageDiv {
+        padding-top: 100px;
+        width: 60%;
         display: flex;
         align-items: center;
         justify-content: center;
