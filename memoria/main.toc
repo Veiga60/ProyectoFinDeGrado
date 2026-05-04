@@ -5,15 +5,14 @@
 \contentsline {chapter}{\numberline {3}Objetivos y alcance}{3}{chapter.7}%
 \contentsline {section}{\numberline {3.1}Objetivos}{3}{section.8}%
 \contentsline {section}{\numberline {3.2}Alcance}{3}{section.9}%
-\contentsline {subsection}{\numberline {3.2.1}Estilo del Título 3}{4}{subsection.11}%
-\contentsline {section}{\numberline {3.3}Sobre los Proyectos Fin de Grado}{4}{section.12}%
-\contentsline {subsection}{\numberline {3.3.1}Objetivos}{5}{subsection.13}%
-\contentsline {subsubsection}{\numberline {3.3.1.1}Estilo de Título 4}{6}{subsubsection.14}%
-\contentsline {paragraph}{\numberline {3.3.1.1.1}Estilo de título 5}{6}{paragraph.15}%
-\contentsline {chapter}{\numberline {4}Capítulo Segundo}{7}{chapter.16}%
-\contentsline {section}{\numberline {4.1}Sobre Resultados de Aprendizaje}{7}{section.21}%
-\contentsline {chapter}{\numberline {5}Valoración Ética del Proyecto}{8}{chapter.22}%
-\contentsline {chapter}{Bibliograf\'ia}{9}{chapter.22}%
+\contentsline {chapter}{\numberline {4}Planificación}{5}{chapter.18}%
+\contentsline {chapter}{\numberline {5}Presupuesto}{6}{chapter.19}%
+\contentsline {chapter}{\numberline {6}Desarrollo del proyecto}{7}{chapter.20}%
+\contentsline {chapter}{\numberline {7}Valoración ética del proyecto}{8}{chapter.21}%
+\contentsline {chapter}{\numberline {8}Conclusiones}{9}{chapter.22}%
+\contentsline {chapter}{\numberline {9}Definiciones, acrónimos y abreviaturas}{10}{chapter.23}%
+\contentsline {chapter}{\numberline {10}Apéndices}{11}{chapter.24}%
+\contentsline {chapter}{Bibliograf\'ia}{12}{chapter.24}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Ejemplo Apéndice 1}{10}{appendix.24}%
+\contentsline {chapter}{\numberline {A}Ejemplo Apéndice 1}{13}{appendix.26}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

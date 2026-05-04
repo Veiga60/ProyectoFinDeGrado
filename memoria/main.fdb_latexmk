@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1777834334.07257 "main.aux" "main.bbl" "main" 1777834340.72552 0
+["bibtex main"] 1777898698.5041 "main.aux" "main.bbl" "main" 1777899570.58951 0
   "./referencias.bib" 1777320638 1959 35a5ed1b987b1bc2915a03286edcf213 ""
   "C:/Users/estib/AppData/Local/Programs/MiKTeX/bibtex/bst/ieeetran/IEEEtran.bst" 1440622569 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "main.aux" 1777834338 7956 a0ca855754631444be3fbfaf88513f0f "pdflatex"
+  "main.aux" 1777899569 7648 5de9e0f9d783044d1e325e4b247bcbf9 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1777834334.60941 "d:/git/ProyectoFinDeGrado/memoria/main.tex" "main.pdf" "main" 1777834340.72755 0
+["pdflatex"] 1777899564.8868 "d:/git/ProyectoFinDeGrado/memoria/main.tex" "main.pdf" "main" 1777899570.59044 0
   "C:/Users/estib/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1777658463 170181 8951b8cb5539a64785ff7f3f4a941eab ""
   "C:/Users/estib/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1777657426 13350271 d8f330e574fc76ce037b86566181d7a7 ""
   "C:/Users/estib/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/sourcesans/a_44crgg.enc" 1772377178 3189 771b29eb6b50002b7080e180cebd0122 ""
@@ -137,17 +137,16 @@
   "C:/Users/estib/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/estib/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "d:/git/ProyectoFinDeGrado/memoria/main.tex" 1777702256 2852 89efee6b321fdb509e365f9463679c95 ""
-  "dummy.tex" 1777834325 10963 b48c0ddce618f7664528ecedebc5d215 ""
-  "imgs/logo.jpg" 1777320638 39408 5d8dfe59229f3c9657d6fea8b2d5d20e ""
-  "main.aux" 1777834338 7956 a0ca855754631444be3fbfaf88513f0f "pdflatex"
-  "main.bbl" 1777834334 1110 a0e50aa0f38500d477b6d2fe0b79924a "bibtex main"
-  "main.lof" 1777834338 387 8e1e1f4365a1df4af22be031c591349e "pdflatex"
-  "main.lol" 1777834338 277 a7f18b21419194534c6333de15a4194a "pdflatex"
-  "main.lot" 1777834338 277 a7f18b21419194534c6333de15a4194a "pdflatex"
+  "dummy.tex" 1777899563 5760 d211d0438d174e9a9baee29b6daae82b ""
+  "main.aux" 1777899569 7648 5de9e0f9d783044d1e325e4b247bcbf9 "pdflatex"
+  "main.bbl" 1777898698 901 628a2a8c68e066122d1514411e0b8455 "bibtex main"
+  "main.lof" 1777899569 377 e041620b3fdb261bd16e2fced353a534 "pdflatex"
+  "main.lol" 1777899569 377 e041620b3fdb261bd16e2fced353a534 "pdflatex"
+  "main.lot" 1777899569 377 e041620b3fdb261bd16e2fced353a534 "pdflatex"
   "main.tex" 1777702256 2852 89efee6b321fdb509e365f9463679c95 ""
-  "main.toc" 1777834338 1340 9560fd83c21e8e354110d74ca4143192 "pdflatex"
+  "main.toc" 1777899569 1195 09de332c3d64f279222085ef71126767 "pdflatex"
   "memoriaPFC.cls" 1777320638 7660 c652bd71b2a057917db93c670f4627b1 ""
-  "otras.aux" 1777834336 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "otras.aux" 1777899567 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "main.aux"
   "main.lof"
