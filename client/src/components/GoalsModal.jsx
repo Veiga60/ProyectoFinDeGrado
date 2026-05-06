@@ -10,7 +10,6 @@ export default function GoalsModal({ teamGoal, onClose, matchEvents, setMatchEve
     const [matchSecond, setMatchSecond] = useState('');
 
     const [previousScorer, setPreviousScorer] = useState(null);
-    const [currentAssister, setCurrentAssister] = useState(null);
     const [previousAssister, setPreviousAssister] = useState(null);
 
     const selectScorer = (scorer) => {
