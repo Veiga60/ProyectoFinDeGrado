@@ -200,6 +200,11 @@
     #penaltiesMyTeam {
         margin-left: 2px;
     }
+
+    #penaltiesModalInputsDiv {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
 }
 
 @media (min-width: 501px) and (max-width: 600px) {
