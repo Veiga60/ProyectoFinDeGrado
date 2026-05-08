@@ -30,7 +30,7 @@ export default function PlayerStats() {
             <Header />
             <div id='contentDiv'>
                 {(player != null) &&
-                    <>
+                    <div id='playerStatsDiv'>
                         <div id='playerInfoDiv'>
                             <div id='playerPhotoDiv'>
                                 <img id='photo' src={`/players/${player.photo}`} alt={`${player.name} ${player.lastName1} ${player.lastName2}`} />
@@ -111,7 +111,7 @@ export default function PlayerStats() {
                                 }
                             </table>
                         </div>
-                    </>
+                    </div>
                 }
             </div>
         </>
