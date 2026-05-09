@@ -61,6 +61,7 @@
     width: 90%;
     max-width: 90%;
     overflow-x: auto;
+    scrollbar-color: rgb(7, 78, 200) transparent;
 }
 
 #wheelOrdersTable {
@@ -104,7 +105,8 @@
     margin-bottom: 10px;
 }
 
-.orderButton {
+.orderButton,
+.stickOrderButton {
     background-color: rgb(7, 78, 200);
     border: none;
     border-radius: 12px;
@@ -163,10 +165,6 @@
     width: 90%;
 }
 
-#stickAmountInput {
-    width: 10%;
-}
-
 .noActiveOrdersDiv {
     margin-top: 3%;
 }
@@ -178,7 +176,8 @@
     font-size: larger;
 }
 
-.orderInput {
+.orderInput,
+.stickOrderInput {
     background-color: rgb(233, 233, 233);
     color: black;
     border: none;
@@ -197,7 +196,8 @@
     border: 2px solid rgb(7, 78, 200);
 }
 
-.orderSelect {
+.orderSelect,
+.stickOrderSelect {
     height: 40px;
     width: fit-content;
     background-color: white;
@@ -208,7 +208,8 @@
     border-radius: 10px;
 }
 
-#wheelAmountInput {
+#wheelAmountInput,
+#stickAmountInput {
     width: 70px;
 }
 
@@ -243,7 +244,20 @@
     font-weight: bold;
 }
 
-#wheelPhoneNumberInput {
+#wheelPhoneNumberInput,
+#stickPhoneNumberInput {
+    width: 100px;
+}
+
+#stickOrdersDiv {
+    white-space: nowrap;
+    width: 90%;
+    max-width: 90%;
+    overflow-x: auto;
+    scrollbar-color: rgb(7, 78, 200) transparent;
+}
+
+#nametagInput {
     width: 100px;
 }
 
@@ -254,5 +268,29 @@
 
     #wheelOrdersDiv {
         min-height: 50px;
+    }
+
+    #stickOrdersDiv {
+        min-height: 65px;
+    }
+}
+
+@media (max-height: 390px) and (orientation: landscape) {
+
+    .stickOrderInput,
+    .stickOrderSelect,
+    .stickOrderButton {
+        height: 20px;
+    }
+
+    .stickOrderButton {
+        font-size: medium;
+        display: flex;
+        align-items: center;
+    }
+
+    .deadlineText {
+        margin-top: 0;
+        margin-bottom: -20px;
     }
 }

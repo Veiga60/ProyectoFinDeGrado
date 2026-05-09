@@ -464,7 +464,7 @@ export default function Orders() {
                                     (stickNextOrder) ? (
                                         <>
                                             <div className='deadlineDiv'>
-                                                <p className='deadlineText'>Fecha límite: {stickNextOrder?.deadline}</p>
+                                                <p className='deadlineText'>{'Fecha límite: ' + `${stickNextOrder?.deadline}`.replace('T', ' a las ')}</p>
                                             </div>
                                             <div id='stickOrdersDiv'>
                                                 <table id='wheelOrdersTable'>
@@ -520,63 +520,63 @@ export default function Orders() {
                                         (!location.state.isCoach) && (
                                             (!stickOrderExpired) ? (
                                                 <div id='stickInputsDiv' className='inputsDiv'>
-                                                    <input className='orderInput' type="text" placeholder='Nº tfno.' onChange={(e) => setStickOrderPhoneNumber(e.target.value)} />
-                                                    <select name='stickModels' id='stickModels' className='orderSelect' onChange={(e) => { setStickModel(e.target.value) }}>
+                                                    <input id='stickPhoneNumberInput' className='stickOrderInput' type="text" placeholder='Nº tfno.' onChange={(e) => setStickOrderPhoneNumber(e.target.value)} />
+                                                    <select name='stickModels' id='stickModels' className='stickOrderSelect' onChange={(e) => { setStickModel(e.target.value) }}>
                                                         {
                                                             stickModels.map((stickModel) => {
                                                                 return <option key={stickModel.id} value={stickModel.id}>{stickModel.description}</option>
                                                             })
                                                         }
                                                     </select>
-                                                    <select name='stickLengths' id='stickLengths' className='orderSelect' onChange={(e) => { setStickLength(e.target.value) }}>
+                                                    <select name='stickLengths' id='stickLengths' className='stickOrderSelect' onChange={(e) => { setStickLength(e.target.value) }}>
                                                         {
                                                             stickLengths.map((stickLength) => {
                                                                 return <option key={stickLength.id} value={stickLength.id}>{stickLength.description}</option>
                                                             })
                                                         }
                                                     </select>
-                                                    <select name='stickWeights' id='stickWeights' className='orderSelect' onChange={(e) => { setStickWeight(e.target.value) }}>
+                                                    <select name='stickWeights' id='stickWeights' className='stickOrderSelect' onChange={(e) => { setStickWeight(e.target.value) }}>
                                                         {
                                                             stickWeights.map((stickWeight) => {
                                                                 return <option key={stickWeight.id} value={stickWeight.id}>{stickWeight.description}</option>
                                                             })
                                                         }
                                                     </select>
-                                                    <select name='stickSides' id='stickSides' className='orderSelect' onChange={(e) => { setStickSide(e.target.value) }}>
+                                                    <select name='stickSides' id='stickSides' className='stickOrderSelect' onChange={(e) => { setStickSide(e.target.value) }}>
                                                         <option value="Right">Right</option>
                                                         <option value="Left">Left</option>
                                                     </select>
-                                                    <select name='stickBlades' id='stickBlades' className='orderSelect' onChange={(e) => { setStickBlade(e.target.value) }}>
+                                                    <select name='stickBlades' id='stickBlades' className='stickOrderSelect' onChange={(e) => { setStickBlade(e.target.value) }}>
                                                         {
                                                             stickBlades.map((stickBlade) => {
                                                                 return <option key={stickBlade.id} value={stickBlade.id}>{stickBlade.description}</option>
                                                             })
                                                         }
                                                     </select>
-                                                    <select name='stickFlexes' id='stickFlexes' className='orderSelect' onChange={(e) => { setStickFlex(e.target.value) }}>
+                                                    <select name='stickFlexes' id='stickFlexes' className='stickOrderSelect' onChange={(e) => { setStickFlex(e.target.value) }}>
                                                         {
                                                             stickFlexes.map((stickFlex) => {
                                                                 return <option key={stickFlex.id} value={stickFlex.id}>{stickFlex.description}</option>
                                                             })
                                                         }
                                                     </select>
-                                                    <select name='stickKickpoints' id='stickKickpoints' className='orderSelect' onChange={(e) => { setStickKickpoint(e.target.value) }}>
+                                                    <select name='stickKickpoints' id='stickKickpoints' className='stickOrderSelect' onChange={(e) => { setStickKickpoint(e.target.value) }}>
                                                         {
                                                             stickKickpoints.map((stickKickpoint) => {
                                                                 return <option key={stickKickpoint.id} value={stickKickpoint.id}>{stickKickpoint.description}</option>
                                                             })
                                                         }
                                                     </select>
-                                                    <select name='stickGrips' id='stickGrips' className='orderSelect' onChange={(e) => { setStickGrip(e.target.value) }}>
+                                                    <select name='stickGrips' id='stickGrips' className='stickOrderSelect' onChange={(e) => { setStickGrip(e.target.value) }}>
                                                         {
                                                             stickGrips.map((stickGrip) => {
                                                                 return <option key={stickGrip.id} value={stickGrip.id}>{stickGrip.description}</option>
                                                             })
                                                         }
                                                     </select>
-                                                    <input type="number" placeholder='Cantidad' id='stickAmountInput' className='orderInput' onChange={(e) => setStickAmount(e.target.value)} />
-                                                    <input type="text" placeholder='Nametag' className='orderInput' onChange={(e) => setStickNametag(e.target.value)} />
-                                                    <button className='orderButton' onClick={async () => { var refresh = await createStickOrder(); if (refresh) window.location.reload(); }}>PEDIR</button>
+                                                    <input id='stickAmountInput' type="number" placeholder='Cantidad' className='stickOrderInput' onChange={(e) => setStickAmount(e.target.value)} />
+                                                    <input id='nametagInput' type="text" placeholder='Nametag' className='stickOrderInput' onChange={(e) => setStickNametag(e.target.value)} />
+                                                    <button className='stickOrderButton' onClick={async () => { var refresh = await createStickOrder(); if (refresh) window.location.reload(); }}>PEDIR</button>
                                                 </div>
                                             ) : (
                                                 <div className='orderExpiredDiv'>
