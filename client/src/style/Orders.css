@@ -131,11 +131,11 @@
 }
 
 #newOrderButton {
-    width: 11%;
+    width: 150px;
 }
 
 #sticksNewOrderButton {
-    width: 11%;
+    width: 150px;
 }
 
 .ordersTableBodyText {
@@ -222,6 +222,9 @@
 }
 
 .orderButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: rgb(7, 78, 200);
     border: none;
     border-radius: 12px;
@@ -259,6 +262,18 @@
 
 #nametagInput {
     width: 100px;
+}
+
+.excelIcon {
+    width: 17px;
+    height: 17px;
+}
+
+@media (max-width: 600px) {
+    .orderButton {
+        height: 30px;
+        font-size: medium;
+    }
 }
 
 @media (max-height: 345px) {

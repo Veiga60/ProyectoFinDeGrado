@@ -454,7 +454,7 @@ export default function Orders() {
                                     (location.state.isCoach) && (
                                         <div className='ordersButtonsDiv'>
                                             <button id='newOrderButton' className='orderButton' onClick={toggleCreateOrderModal}>NUEVO PEDIDO</button>
-                                            <button id='excelButton' className='orderButton' onClick={() => exportOrdersToExcel('WHEELS')}><PiMicrosoftExcelLogoFill /><p>EXCEL</p></button>
+                                            <button id='excelButton' className='orderButton' onClick={() => exportOrdersToExcel('WHEELS')}><PiMicrosoftExcelLogoFill className='excelIcon' /><p>EXCEL</p></button>
                                         </div>
                                     )
                                 }
@@ -590,7 +590,7 @@ export default function Orders() {
                                     (location.state.isCoach) && (
                                         <div className='ordersButtonsDiv'>
                                             <button id='sticksNewOrderButton' className='orderButton' onClick={toggleCreateOrderModal}>NUEVO PEDIDO</button>
-                                            <button id='sticksExcelButton' className='orderButton' onClick={() => exportOrdersToExcel('STICKS')}><PiMicrosoftExcelLogoFill /><p>EXCEL</p></button>
+                                            <button id='sticksExcelButton' className='orderButton' onClick={() => exportOrdersToExcel('STICKS')}><PiMicrosoftExcelLogoFill className='excelIcon' /><p>EXCEL</p></button>
                                         </div>
                                     )
                                 }

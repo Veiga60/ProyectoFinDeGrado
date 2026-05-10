@@ -222,6 +222,7 @@
     align-items: center;
     justify-content: center;
     overflow-y: auto;
+    scrollbar-color: rgb(7, 78, 200) transparent;
 }
 
 .playerStat {
