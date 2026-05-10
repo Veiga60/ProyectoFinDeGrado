@@ -10,10 +10,10 @@ export default function DownloadExcelModal({ onClose }) {
                     <div id='downloadExcel'>
                         <p id='downloadExcelErrorText'>ERROR</p>
                     </div>
-                    <div id='downloadExcelText'>
-                        <p>Descarga el fichero Excel antes de crear un nuevo pedido.</p>
+                    <div id='downloadExcelTextDiv'>
+                        <p id='downloadExcelText'>Descarga el fichero Excel antes de crear un nuevo pedido.</p>
                     </div>
-                    <button onClick={() => onClose()}>CERRAR</button>
+                    <button className='downloadExcelButton' onClick={() => onClose()}>CERRAR</button>
                 </div>
             </div >
         </>
