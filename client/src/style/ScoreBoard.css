@@ -82,3 +82,19 @@
 .teamImageDiv {
     width: 15%;
 }
+
+@media(max-width: 500px) and (orientation: portrait) {
+
+    #localNameDiv,
+    #visitingNameDiv {
+        display: none;
+    }
+
+    .teamImageDiv {
+        width: 45%;
+    }
+
+    #scoreBoardDiv {
+        height: 9%;
+    }
+}

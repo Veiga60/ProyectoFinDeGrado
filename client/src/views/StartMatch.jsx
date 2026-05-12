@@ -355,8 +355,8 @@ export default function StartMatch() {
                             </table>
                         </div>
                         <div id='startMatchButtonsDiv'>
-                            <button className='startMatchButton' onClick={() => navigate(`/matches/${matchId}/start_match/team`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents } })}><RiTeamFill size={25} />ESTADISTICAS EQUIPO</button>
-                            <button className='startMatchButton' onClick={() => navigate(`/matches/${matchId}/incidences`, { state: { match: match, matchPeriod: matchPeriod, matchEvents: matchEvents } })}><PiHockeyFill size={25} />INCIDENCIAS</button>
+                            <button className='startMatchButton' onClick={() => navigate(`/matches/${matchId}/start_match/team`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents } })}><RiTeamFill className='teamIcon' size={25} /><span>ESTADISTICAS EQUIPO</span></button>
+                            <button className='startMatchButton' onClick={() => navigate(`/matches/${matchId}/incidences`, { state: { match: match, matchPeriod: matchPeriod, matchEvents: matchEvents } })}><PiHockeyFill className='eventsIcon' size={25} /><span>INCIDENCIAS</span></button>
                         </div>
                     </div>
                     <div id='matchEventsContainer'>
