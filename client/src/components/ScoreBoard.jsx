@@ -15,7 +15,7 @@ export default function ScoreBoard({ match, localTeamGoals, visitingTeamGoals })
                     <p id='localGoalsText'>{localTeamGoals}</p>
                 </div>
             </div>
-            <div id='sepratorTextDiv'>
+            <div id='separatorTextDiv'>
                 <p id='separatorText'> - </p>
             </div>
             <div id='visitingDiv'>

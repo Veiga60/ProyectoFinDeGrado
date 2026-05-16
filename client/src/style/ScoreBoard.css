@@ -1,6 +1,5 @@
 #scoreBoardDiv {
     top: 0;
-    left: 15%;
     position: absolute;
     width: 70%;
     height: 12%;
@@ -160,5 +159,36 @@
 
     #scoreBoardDiv {
         height: 9%;
+    }
+}
+
+@media(min-width: 1001px) and (max-width: 1200px) and (orientation: portrait) {
+
+    #localNameText,
+    #visitingNameText {
+        font-size: x-large;
+    }
+
+    .teamImageDiv {
+        width: 30%;
+    }
+
+    #scoreBoardDiv {
+        height: 9%;
+        width: 80%;
+    }
+
+    #localGoalsDiv {
+        margin-left: 10%;
+    }
+
+    #localGoalsText,
+    #visitingGoalsText,
+    #separatorText {
+        font-size: x-large;
+    }
+
+    #visitingGoalsDiv {
+        margin-right: 10%;
     }
 }
