@@ -5,14 +5,14 @@
 \contentsline {chapter}{\numberline {3}Objetivos y alcance}{3}{chapter.7}%
 \contentsline {section}{\numberline {3.1}Objetivos}{3}{section.8}%
 \contentsline {section}{\numberline {3.2}Alcance}{3}{section.9}%
-\contentsline {chapter}{\numberline {4}Planificación}{5}{chapter.18}%
-\contentsline {chapter}{\numberline {5}Presupuesto}{6}{chapter.19}%
-\contentsline {chapter}{\numberline {6}Desarrollo del proyecto}{7}{chapter.20}%
-\contentsline {chapter}{\numberline {7}Valoración ética del proyecto}{8}{chapter.21}%
-\contentsline {chapter}{\numberline {8}Conclusiones}{9}{chapter.22}%
-\contentsline {chapter}{\numberline {9}Definiciones, acrónimos y abreviaturas}{10}{chapter.23}%
-\contentsline {chapter}{\numberline {10}Apéndices}{11}{chapter.24}%
-\contentsline {chapter}{Bibliograf\'ia}{12}{chapter.24}%
+\contentsline {chapter}{\numberline {4}Planificación}{5}{chapter.19}%
+\contentsline {chapter}{\numberline {5}Presupuesto}{6}{chapter.20}%
+\contentsline {chapter}{\numberline {6}Desarrollo del proyecto}{7}{chapter.21}%
+\contentsline {chapter}{\numberline {7}Valoración ética del proyecto}{8}{chapter.22}%
+\contentsline {chapter}{\numberline {8}Conclusiones}{9}{chapter.23}%
+\contentsline {chapter}{\numberline {9}Definiciones, acrónimos y abreviaturas}{10}{chapter.24}%
+\contentsline {chapter}{\numberline {10}Apéndices}{11}{chapter.25}%
+\contentsline {chapter}{Bibliograf\'ia}{12}{chapter.25}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Ejemplo Apéndice 1}{13}{appendix.26}%
+\contentsline {chapter}{\numberline {A}Ejemplo Apéndice 1}{13}{appendix.27}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

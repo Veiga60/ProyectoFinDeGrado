@@ -6,7 +6,7 @@ Esta memoria está dividida en varios capítulos, con el objetivo de facilitar s
 
 \begin{itemize}
   \item Antecedentes y justificación: En este capítulo se recogerá el motivo por el que se ha elegido desarrollar este proyecto. Además, se proporcionarán una serie de antecedentes para entender el pasado de la gestión del equipo deportivo que se ha tomado como referencia, así como su situación actual.
-  \item Objetivos y alcance: Es importante fijar el alcance y los objetivos que se desean cumplir con el proyecto. Este capítulo redacta las funcionalidades que recoge el proyecto y los objetivos que se pretenden lograr con la solución web.
+  \item Objetivos y alcance: Es importante fijar el alcance y los objetivos que se desean cumplir con el proyecto. Este capítulo redacta las funcionalidades que recoge y los objetivos que se pretenden lograr con la solución web.
   \item Planificación
   \item Presupuesto: Todo proyecto debe tener una estimación del presupuesto, con el fin de aproximar lo máximo posible el coste total que conllevará. En este capítulo se recoge con detalle ese presupuesto, teniendo en cuenta costes de material, costes de desarrollo, costes de puesta en marcha y costes de recurrentes.
   \item Desarrollo del proyecto:
@@ -21,9 +21,9 @@ Esta memoria está dividida en varios capítulos, con el objetivo de facilitar s
 
 Vivimos en un país en el que los deportes por excelencia siempre han sido el fútbol y el baloncesto, aunque también hay muchos más deportes con gran visibilidad en España. No obstante, también existen cantidad de deportes minoritarios en nuestro país. Estos deportes carecen de profesionalización debido a la escasa visibilidad que se les proporciona. Por ello, estos clubes disponen de recursos mucho más limitados que los de los clubes deportivos profesionales.
 
-El hockey línea en España es un deporte minoritario y semiprofesional, que en los últimos años ha ganado mucha visibilidad gracias a la retransmisión en directo de sus partidos en YouTube. Lamentablemente, no es suficiente para profesionalizar este deporte.
+El hockey línea en España es un deporte minoritario y semiprofesional, que en los últimos años ha ganado mucha visibilidad gracias a la retransmisión en directo de sus partidos en plataformas de \textit{streaming} como YouTube o Twitch. Lamentablemente, esto no es suficiente para profesionalizar este deporte.
 
-El club deportivo tomado como referencia gestiona los procesos de sus distintos equipos acorde a su profesionalidad. Esto implica que dichos procesos (convocatorias, avisos, pedidos de material, análisis de partidos, etc.) se lleven a cabo a través del grupo de Whatsapp del equipo, de la Intranet del club o de otra herramienta. Esto hace que sea necesario disponer de varias aplicaciones ditintas, haciendo que la gestión de los equipos sea un proceso engorroso.
+El club deportivo tomado como referencia gestiona los procesos de sus distintos equipos acorde a su profesionalidad. Esto implica que dichos procesos (convocatorias, avisos, pedidos de material, análisis de partidos, etc.) se lleven a cabo a través del grupo de Whatsapp del equipo, de la intranet del club o de otra herramienta. Esto hace que sea necesario disponer de varias aplicaciones distintas, haciendo que la gestión de los equipos sea un proceso engorroso y tedioso.
 
 Este proyecto surge de la idea de proporcionar una solución web que centralice esos procesos del club deportivo semiprofesional.
 
@@ -31,30 +31,37 @@ Este proyecto surge de la idea de proporcionar una solución web que centralice 
 
 \section{Objetivos}
 
-El objetivo principal de este proyecto es diseñar y desarrollar una solución web que organizace y facilite los procesos de gestión de un equipo deportivo, a la vez que proporciona herramientas para mejorar su rendimiento. Cabe resaltar que este proyecto ha sido diseñado para uno de los equipos de un club en específico. Para lograr el objetivo principal del proyecto, se han establecido varios objetivos basándose en el principal. Estos objetivos servirán para comprobar si el reusltado final del proyecto es un éxito o un fracaso. Dichos objetivos son los siguientes:
+El objetivo principal de este proyecto es diseñar y desarrollar una solución web que organizace y facilite los procesos de gestión de un equipo deportivo, a la vez que proporciona herramientas para mejorar su rendimiento. Cabe destacar que este proyecto ha sido diseñado para uno de los equipos de un club en específico. Para lograr el objetivo principal del proyecto, se han establecido varios objetivos basándose en el principal. Estos objetivos servirán para comprobar si el resultado final del proyecto es un éxito o un fracaso. Dichos objetivos son los siguientes:
 
 \begin{itemize}
   \item Objetivo 1: Diseñar y desarrollar una aplicación web que centralice los procesos de gestión más importantes y repetitivos del equipo deportivo.
-  \item Objetivo 2: Implementar un sistema de seguimiento de incidencias y estadísticas de los partidos en directo.
-  \item Objetivo 3: Desarrollar un módulo inteligente que ofrecezca recomendaciones sobre aspectos del partido a mejorar.
-  \item Objetivo 4: Implementar distintos tipos de roles para el acceso a la aplicación web.
-  \item Objetivo 5: Diseñar una interfaz original y personalizada para el club deportivo de referencia.
-  \item Objetivo 6: Desarrollar una aplicación web adaptable a cualquier tipo de pantalla y dispositivo.
+  \item Objetivo 2: Implementar un sistema de login que permita el acceso únicamente a integrantes del club.
+  \item Objetivo 3: Implementar un sistema de seguimiento de incidencias y estadísticas de los partidos en directo.
+  \item Objetivo 4: Desarrollar un módulo inteligente que ofrezca recomendaciones sobre aspectos del partido a mejorar.
+  \item Objetivo 5: Implementar distintos tipos de roles para el acceso a la aplicación web.
+  \item Objetivo 6: Diseñar una interfaz original y personalizada para el club deportivo de referencia.
+  \item Objetivo 7: Desarrollar una aplicación web adaptable a cualquier tipo de pantalla y dispositivo.
 \end{itemize}
 
 \section{Alcance}
 
-Dado el carácter académico de este trabajo, el proyecto ha sido desarrollado con recursos y tiempo limitados. Esto implica que su alcance ha tenido que determinarse con claridad desde el principio. Además, se planea la ampliación del proyecto una vez realizada su defensa, por lo que delimitar sus funcionalidades para la presentación en la universidad ha sido una parte importante.
+Dado el carácter académico de este trabajo, el proyecto ha sido desarrollado con recursos y tiempo limitados. Esto implica que su alcance ha tenido que determinarse con claridad desde el principio. Además, se planea la ampliación del proyecto una vez realizada su defensa, por lo que delimitar sus funcionalidades para la presentación en la universidad ha sido una parte importante. Los objetivos anteriormente mencionados forman parte del alcance. Además se enumeran a continuación aspectos que también entran en el mismo:
 
 \begin{enumerate}
   \item Desarrollo de la base de datos.
-  \item Desarrollar el sistema de login.
-  \item Desarrollar el sistema de visualización de próximos partidos.
-  \item Desarrollo del sistema de visualización de estadísticas.
-  \item Desarrollar el sistema de convocatorias para los próximos partidos.
   \item Desarrollo de la API REST.
-  \item Implementación del modelo de Inteligencia Artificial generativa.
-  \item Desarrollar el sistema de seguimiento de partidos en directo.
+  \item Implementación de un modelo de inteligencia artificial generativa comercial.
+  \item Uso de Docker para el despliegue de la solución.
+\end{enumerate}
+
+Para la realización de este proyecto, también ha sido fundamental tener claro qué no forma parte del alcance de éste:
+
+\begin{enumerate}
+  \item Desarrollo de un sistema de seguimiento de jugadores y disco en tiempo real.
+  \item Implementación de digerentes equipos del club.
+  \item Desarrollo y entrenamiento de un modelo de inteligencia artificial propio.
+  \item Almacenamiento de datos por temporadas.
+  \item Persistencia de incidencias de partidos.
 \end{enumerate}
 
 \chapter{Planificación}
