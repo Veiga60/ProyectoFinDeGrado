@@ -324,7 +324,7 @@ export default function StartMatch() {
                                         ((match.call.callPlayerStatus[player.id] == 'CONFIRMED') && player.playerType == 'RINK_PLAYER') && (
                                             <tr key={player.id} className='calledPlayerRow'>
                                                 <td className='calledPlayerNumber' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents } })}>
-                                                    {player.number}
+                                                    {`${player.number}`.padStart(2, '0')}
                                                 </td>
                                                 <td className='calledPlayerName' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents } })}>
                                                     {player.name} {player.lastName1} {player.lastName2}
@@ -343,7 +343,7 @@ export default function StartMatch() {
                                         ((match.call.callPlayerStatus[player.id] == 'CONFIRMED') && player.playerType == 'GOALIE') && (
                                             <tr key={player.id} className='calledGoalieRow'>
                                                 <td className='calledGoalieNumber' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents } })}>
-                                                    {player.number}
+                                                    {`${player.number}`.padStart(2, '0')}
                                                 </td>
                                                 <td className='calledGoalieName' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents } })}>
                                                     {player.name} {player.lastName1} {player.lastName2}

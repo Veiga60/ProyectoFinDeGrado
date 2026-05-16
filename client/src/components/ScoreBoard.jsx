@@ -6,7 +6,7 @@ export default function ScoreBoard({ match, localTeamGoals, visitingTeamGoals })
         <div id='scoreBoardDiv'>
             <div id='localDiv'>
                 <div id='localImageDiv' className='teamImageDiv'>
-                    <img src={localTeam.logo ? `/logos/${match?.localTeam.logo}` : basicLogo} alt={match?.localTeam.name} />
+                    <img src={match?.localTeam.logo ? `/logos/${match?.localTeam.logo}` : basicLogo} alt={match?.localTeam.name} />
                 </div>
                 <div id='localNameDiv'>
                     <p id='localNameText'>{match?.localTeam.name}</p>
@@ -26,7 +26,7 @@ export default function ScoreBoard({ match, localTeamGoals, visitingTeamGoals })
                     <p id='visitingNameText'>{match?.visitingTeam.name}</p>
                 </div>
                 <div id='visitingImageDiv' className='teamImageDiv'>
-                    <img src={visitingTeam.logo ? `/logos/${match?.visitingTeam.logo}` : basicLogo} alt={match?.visitingTeam.name} />
+                    <img src={match?.visitingTeam.logo ? `/logos/${match?.visitingTeam.logo}` : basicLogo} alt={match?.visitingTeam.name} />
                 </div>
             </div>
         </div>
