@@ -3,6 +3,7 @@ import Header from '../components/Header.jsx'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import '../style/PlayerStats.css'
+import basicUser from '../assets/images/basicUSer.png'
 
 export default function PlayerStats() {
 
@@ -33,7 +34,7 @@ export default function PlayerStats() {
                     <div id='playerStatsDiv'>
                         <div id='playerInfoDiv'>
                             <div id='playerPhotoDiv'>
-                                <img id='photo' src={`/players/${player.photo}`} alt={`${player.name} ${player.lastName1} ${player.lastName2}`} />
+                                <img id='photo' src={player.photo ? `/players/${player.photo}` : basicUser} alt={`${player.name} ${player.lastName1} ${player.lastName2}`} />
                             </div>
                             <div id='playerDetailsDiv'>
                                 <p id='name'>{player.name} {player.lastName1} {player.lastName2}</p>

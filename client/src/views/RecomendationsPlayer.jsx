@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Header from '../components/Header.jsx'
 import '../style/RecomendationsPlayer.css'
+import basicUser from '../assets/images/basicUser.png'
 
 export default function RecomendationsPlayer() {
 
@@ -35,7 +36,7 @@ export default function RecomendationsPlayer() {
             <div id="playerRecomendationsMainDiv">
                 <div id='playerRecomendationsLeftDiv'>
                     <div id="playerRecomendationsPlayerImageDiv">
-                        <img id="playerRecomendationsPlayerImage" src={`/players/${playerRecomendations[0]?.player?.photo}`} alt={`${playerRecomendations[0]?.player?.name} ${playerRecomendations[0]?.player?.lastName1} ${playerRecomendations[0]?.player?.lastName2}`} />
+                        <img id="playerRecomendationsPlayerImage" src={playerRecomendations[0]?.player?.photo ? `/players/${playerRecomendations[0]?.player?.photo}` : basicUser} alt={`${playerRecomendations[0]?.player?.name} ${playerRecomendations[0]?.player?.lastName1} ${playerRecomendations[0]?.player?.lastName2}`} />
                     </div>
                 </div>
                 <div id='playerRecomendationsRightDiv'>

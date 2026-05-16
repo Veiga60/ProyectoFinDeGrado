@@ -1,5 +1,6 @@
 import '../style/Message.css'
 import coachPhoto from '../assets/images/coachPhoto.png'
+import basicUser from '../assets/images/basicUser.png'
 
 export default function Message({ message }) {
     return (
@@ -15,7 +16,7 @@ export default function Message({ message }) {
                                 </>
                             ) : (
                                 <>
-                                    <img id='messageUserPlayerPhoto' src={`/players/${message.user.player?.photo}`} alt={`${message.user.player?.name} ${message.user.player?.lastName1} ${message.user.player?.lastName2}`} />
+                                    <img id='messageUserPlayerPhoto' src={message.user.player?.photo ? `/players/${message.user.player?.photo}` : basicUser} alt={`${message.user.player?.name} ${message.user.player?.lastName1} ${message.user.player?.lastName2}`} />
                                     <p id='messageUserPlayerText'>{message.user.player?.name} {message.user.player?.lastName1}</p>
                                 </>
                             )

@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import coachHomePhoto from '../assets/images/coachHomePhoto.png'
 import '../style/Home.css'
 import basicLogo from '../assets/images/basicLogo.png'
+import basicUser from '../assets/images/basicUser.png'
 
 export default function Home() {
 
@@ -106,7 +107,7 @@ export default function Home() {
                             </div>
                             <div id='playerImageDiv'>
                                 {
-                                    (authenticatedUser.isCoach == false) ? (<img id='playerImage' src={`/players/${authenticatedUser.player?.photo}`} alt={`${authenticatedUser.player?.name} ${authenticatedUser.player?.lastName1} ${authenticatedUser.player?.lastName2}`} />) : (<img id='coachImage' src={coachHomePhoto} alt="coachHomePhoto" />)
+                                    (authenticatedUser.isCoach == false) ? (<img id='playerImage' src={authenticatedUser.player?.photo ? `/players/${authenticatedUser.player?.photo}` : basicUser} alt={`${authenticatedUser.player?.name} ${authenticatedUser.player?.lastName1} ${authenticatedUser.player?.lastName2}`} />) : (<img id='coachImage' src={coachHomePhoto} alt="coachHomePhoto" />)
                                 }
                             </div>
                         </div>
