@@ -1,5 +1,6 @@
 import { MdTimer } from "react-icons/md";
 import '../style/TimeoutEvent.css'
+import basicLogo from '../assets/images/basicLogo.png'
 
 export default function TimeoutEvent({ matchPeriod, matchTime, team }) {
     var period;
@@ -29,7 +30,7 @@ export default function TimeoutEvent({ matchPeriod, matchTime, team }) {
                 </div>
                 <div id="timeoutTeamDiv">
                     <div id="timeoutTeamImageDiv">
-                        <img id="timeoutTeamImage" src={`/logos/${team.logo}`} alt={team.name} />
+                        <img id="timeoutTeamImage" src={team.logo ? `/logos/${team.logo}` : basicLogo} alt={team.name} />
                     </div>
                     <div id="timeoutTeamNameDiv">
                         <p id="timeoutTeamNameText">{team?.name}</p>

@@ -1,4 +1,5 @@
 import '../style/Match.css'
+import basicLogo from '../assets/images/basicLogo.png'
 
 export default function Match({ className, match }) {
     return (
@@ -7,7 +8,7 @@ export default function Match({ className, match }) {
                 <div id='infoContainer'>
                     <div id='localTeamDiv'>
                         <div className='teamLogoDiv'>
-                            <img src={`/logos/${match?.localTeam.logo}`} alt={match?.localTeam.name} />
+                            <img src={match?.localTeam.logo ? `/logos/${match?.localTeam.logo}` : basicLogo} alt={match?.localTeam.name} />
                         </div>
                         <p className='matchText'>{match?.localTeam.name}</p>
                     </div>
@@ -24,7 +25,7 @@ export default function Match({ className, match }) {
                     </div>
                     <div id="visitingTeamDiv">
                         <div className='teamLogoDiv'>
-                            <img src={`/logos/${match?.visitingTeam.logo}`} alt={match?.visitingTeam.name} />
+                            <img src={match?.visitingTeam.logo ? `/logos/${match?.visitingTeam.logo}` : basicLogo} alt={match?.visitingTeam.name} />
                         </div>
                         <p className='matchText'>{match?.visitingTeam.name}</p>
                     </div>

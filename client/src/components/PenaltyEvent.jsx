@@ -1,5 +1,6 @@
 import { GiWhistle } from "react-icons/gi";
 import '../style/PenaltyEvent.css'
+import basicLogo from '../assets/images/basicLogo.png'
 
 export default function PenaltyEvent({ matchPeriod, matchTime, team, player, penaltyTime, penaltyType }) {
     var period;
@@ -33,7 +34,7 @@ export default function PenaltyEvent({ matchPeriod, matchTime, team, player, pen
                                 </div>
                                 <div id="penaltyAndPlayerInfoDivMyTeam">
                                     <div id="penaltyTeamImageDivMyTeam">
-                                        <img id="penaltyTeamImageMyTeam" src={`/logos/${team.logo}`} alt={team.logo} />
+                                        <img id="penaltyTeamImageMyTeam" src={team.logo ? `/logos/${team.logo}` : basicLogo} alt={team.logo} />
                                     </div>
                                     <div id="penaltyPlayerNumberAndNameInfo">
                                         <div id='penaltyPlayerNumberAndNameDiv'>
@@ -56,7 +57,7 @@ export default function PenaltyEvent({ matchPeriod, matchTime, team, player, pen
                                 </div>
                                 <div id="teamPenaltyDiv">
                                     <div id="penaltyTeamImageDiv">
-                                        <img id="penaltyTeamImage" src={`/logos/${team.logo}`} alt={team.name} />
+                                        <img id="penaltyTeamImage" src={team.logo ? `/logos/${team.logo}` : basicLogo} alt={team.name} />
                                     </div>
                                     <div id="penaltyInfoDiv">
                                         <div id="penaltyTeamNameDiv">

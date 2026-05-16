@@ -1,4 +1,5 @@
-import { AiFillAlert } from "react-icons/ai";
+import { AiFillAlert } from "react-icons/ai"
+import basicLogo from '../assets/images/basicLogo.png'
 import '../style/GoalEvent.css'
 
 export default function GoalEvent({ matchPeriod, matchTime, team, scorer, assister }) {
@@ -31,7 +32,7 @@ export default function GoalEvent({ matchPeriod, matchTime, team, scorer, assist
                                     <AiFillAlert color="rgb(7, 78, 200)" size={40} />
                                     <p id="goalText">GOL</p>
                                     <div id="goalTeamImageDivMyTeam">
-                                        <img id="goalTeamImageMyTeam" src={`/logos/${team.logo}`} alt={team.name} />
+                                        <img id="goalTeamImageMyTeam" src={team.logo ? `/logos/${team.logo}` : basicLogo} alt={team.name} />
                                     </div>
                                 </div>
                                 <div id="scorerAndAssisterInfoDiv">
@@ -54,7 +55,7 @@ export default function GoalEvent({ matchPeriod, matchTime, team, scorer, assist
                                 </div>
                                 <div id="teamGoalDiv">
                                     <div id="goalTeamImageDiv">
-                                        <img id="goalTeamImage" src={`/logos/${team.logo}`} alt={team.name} />
+                                        <img id="goalTeamImage" src={team.logo ? `/logos/${team.logo}` : basicLogo} alt={team.name} />
                                     </div>
                                     <div>
                                         <p id="teamNameText">{team.name}</p>

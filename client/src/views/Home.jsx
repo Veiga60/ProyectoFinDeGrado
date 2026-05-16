@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import coachHomePhoto from '../assets/images/coachHomePhoto.png'
 import '../style/Home.css'
+import basicLogo from '../assets/images/basicLogo.png'
 
 export default function Home() {
 
@@ -138,9 +139,9 @@ export default function Home() {
                                     <div id='recomendations' onClick={() => { navigate(`/recomendations/matches/${lastPlayedMatch.id}`, { state: { authenticatedUserPlayerId: authenticatedUser?.player?.id, isCoach: authenticatedUser?.isCoach, match: lastPlayedMatch } }) }}>
                                         <p id='seeRecomendationsText'>Ver recomendaciones del partido:</p>
                                         <div id='lastPlayedMatchDiv'>
-                                            <img id='lastPlayedMatchLocalTeamImage' src={`/logos/${lastPlayedMatch?.localTeam?.logo}`} alt={`${lastPlayedMatch?.localTeam?.name}`} />
+                                            <img id='lastPlayedMatchLocalTeamImage' src={lastPlayedMatch?.localTeam?.logo ? `/logos/${lastPlayedMatch?.localTeam?.logo}` : basicLogo} alt={`${lastPlayedMatch?.localTeam?.name}`} />
                                             <p id='lastPlayedMatchVersusText'>VS</p>
-                                            <img id='lastPlayedMatchVisitingTeamImage' src={`/logos/${lastPlayedMatch?.visitingTeam?.logo}`} alt={`${lastPlayedMatch?.visitingTeam?.name}`} />
+                                            <img id='lastPlayedMatchVisitingTeamImage' src={lastPlayedMatch?.visitingTeam?.logo ? `/logos/${lastPlayedMatch?.visitingTeam?.logo}` : basicLogo} alt={`${lastPlayedMatch?.visitingTeam?.name}`} />
                                         </div>
                                     </div>
                                 </div>
@@ -153,15 +154,15 @@ export default function Home() {
                                         {
                                             (authenticatedUser.player.playerType == 'RINK_PLAYER') ? (
                                                 <>
-                                                    <img id='lastMatchLocalTeamImage' src={`/logos/${lastPlayedMatchPlayerMatchStats?.match.localTeam.logo}`} alt={lastPlayedMatchPlayerMatchStats?.match.localTeam.name} />
+                                                    <img id='lastMatchLocalTeamImage' src={lastPlayedMatchPlayerMatchStats?.match.localTeam.logo ? `/logos/${lastPlayedMatchPlayerMatchStats?.match.localTeam.logo}` : basicLogo} alt={lastPlayedMatchPlayerMatchStats?.match.localTeam.name} />
                                                     <p id='lastMatchSeparator'>VS</p>
-                                                    <img id='lastMatchVisitingTeamImage' src={`/logos/${lastPlayedMatchPlayerMatchStats?.match.visitingTeam.logo}`} alt={lastPlayedMatchPlayerMatchStats?.match.visitingTeam.name} />
+                                                    <img id='lastMatchVisitingTeamImage' src={lastPlayedMatchPlayerMatchStats?.match.visitingTeam.logo ? `/logos/${lastPlayedMatchPlayerMatchStats?.match.visitingTeam.logo}` : basicLogo} alt={lastPlayedMatchPlayerMatchStats?.match.visitingTeam.name} />
                                                 </>
                                             ) : (
                                                 <>
-                                                    <img id='lastMatchLocalTeamImage' src={`/logos/${lastPlayedMatchGoalieMatchStats?.match.localTeam.logo}`} alt={lastPlayedMatchGoalieMatchStats?.match.localTeam.name} />
+                                                    <img id='lastMatchLocalTeamImage' src={lastPlayedMatchGoalieMatchStats?.match.localTeam.logo ? `/logos/${lastPlayedMatchGoalieMatchStats?.match.localTeam.logo}` : basicLogo} alt={lastPlayedMatchGoalieMatchStats?.match.localTeam.name} />
                                                     <p id='lastMatchSeparator'>VS</p>
-                                                    <img id='lastMatchVisitingTeamImage' src={`/logos/${lastPlayedMatchGoalieMatchStats?.match.visitingTeam.logo}`} alt={lastPlayedMatchGoalieMatchStats?.match.visitingTeam.name} />
+                                                    <img id='lastMatchVisitingTeamImage' src={lastPlayedMatchGoalieMatchStats?.match.visitingTeam.logo ? `/logos/${lastPlayedMatchGoalieMatchStats?.match.visitingTeam.logo}` : basicLogo} alt={lastPlayedMatchGoalieMatchStats?.match.visitingTeam.name} />
                                                 </>
                                             )
                                         }

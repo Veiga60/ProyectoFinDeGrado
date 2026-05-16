@@ -7,6 +7,7 @@ import TimeoutModal from '../components/TimeoutModal';
 import { AiFillAlert } from "react-icons/ai";
 import { GiWhistle } from "react-icons/gi";
 import { MdTimer } from "react-icons/md";
+import basicLogo from '../assets/images/basicLogo.png'
 
 export default function MatchEvents() {
 
@@ -47,7 +48,7 @@ export default function MatchEvents() {
             <div id="incidencesMainDiv">
                 <div id="incidencesLocalTeamDiv" className='incidencesTeamDiv'>
                     <div id='indicencesLocalTeamImageDiv' className='incidencesTeamImageDiv'>
-                        <img id='indicencesLocalTeamImage' className='incidencesTeamImage' src={`/logos/${match?.localTeam.logo}`} alt={match?.localTeam.name} />
+                        <img id='indicencesLocalTeamImage' className='incidencesTeamImage' src={match?.localTeam.logo ? `/logos/${match?.localTeam.logo}` : basicLogo} alt={match?.localTeam.name} />
                     </div>
                     <div id='localTeamIncidencesButtonsDiv' className='incidencesButtonsDiv'>
                         <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.localTeam), toggleGoalsModal()]}><AiFillAlert className='goalIcon' color='rgb(7, 78, 200)' size={30} />GOL ANOTADO</button>
@@ -57,7 +58,7 @@ export default function MatchEvents() {
                 </div>
                 <div id="incidencesVisitingTeamDiv" className='incidencesTeamDiv'>
                     <div id='indicencesVisitingTeamImageDiv' className='incidencesTeamImageDiv'>
-                        <img id='indicencesVisitingTeamImage' className='incidencesTeamImage' src={`/logos/${match?.visitingTeam.logo}`} alt={match?.visitingTeam.name} />
+                        <img id='indicencesVisitingTeamImage' className='incidencesTeamImage' src={match?.visitingTeam.logo ? `/logos/${match?.visitingTeam.logo}` : basicLogo} alt={match?.visitingTeam.name} />
                     </div>
                     <div id='visitingTeamIncidencesButtonsDiv' className='incidencesButtonsDiv'>
                         <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.visitingTeam), toggleGoalsModal()]}><AiFillAlert className='goalIcon' color='rgb(7, 78, 200)' size={30} />GOL ANOTADO</button>

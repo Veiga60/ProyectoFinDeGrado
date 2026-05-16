@@ -1,4 +1,5 @@
 import '../style/MatchCard.css'
+import basicLogo from '../assets/images/basicLogo.png'
 
 export default function MatchCard({ match, onClick, className }) {
 
@@ -15,7 +16,7 @@ export default function MatchCard({ match, onClick, className }) {
             <div id="teamDiv">
                 <p id='vsText'>VS</p>
                 <div id='rivalTeamImageDiv'>
-                    <img id='rivalTeamImage' src={`/logos/${rivalTeam.logo}`} alt={rivalTeam.name} />
+                    <img id='rivalTeamImage' src={rivalTeam.logo ? `/logos/${rivalTeam.logo}` : basicLogo} alt={rivalTeam.name} />
                 </div>
             </div>
         </div>

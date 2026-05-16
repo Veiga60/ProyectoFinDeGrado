@@ -1,4 +1,5 @@
 import '../style/MatchCompressed.css'
+import basicLogo from '../assets/images/basicLogo.png'
 
 export default function MatchCompressed({ match }) {
     return (
@@ -7,7 +8,7 @@ export default function MatchCompressed({ match }) {
                 <div id='infoContainer'>
                     <div id='localTeamDiv'>
                         <div className='compressedTeamLogoDiv'>
-                            <img src={`/logos/${match?.localTeam.logo}`} alt={match?.localTeam.name} />
+                            <img src={localTeam.logo ? `/logos/${match?.localTeam.logo}` : basicLogo} alt={match?.localTeam.name} />
                         </div>
                     </div>
                     <div id='localTeamGoalsDiv' style={{ border: (match?.bonusPoint == match?.localTeam.id) && '2px solid rgb(7, 78, 200)' }}>
@@ -23,7 +24,7 @@ export default function MatchCompressed({ match }) {
                     </div>
                     <div id="visitingTeamDiv">
                         <div className='compressedTeamLogoDiv'>
-                            <img src={`/logos/${match?.visitingTeam.logo}`} alt={match?.visitingTeam.name} />
+                            <img src={visitingTeam.logo ? `/logos/${match?.visitingTeam.logo}` : basicLogo} alt={match?.visitingTeam.name} />
                         </div>
                     </div>
                 </div>
