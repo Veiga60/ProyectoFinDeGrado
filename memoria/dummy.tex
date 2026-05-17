@@ -1,3 +1,4 @@
+
 \chapter{Introducción}
 
 El presente documento trata el trabajo realizado para el desarrollo del Proyecto Fin de Grado. Trabajo en el que he aplicado todas las competencias adquiridas durante los cuatro años que conforman el grado universitario. En esta memoria se recoge con detalle el proceso hasta llegar al resultado final del proyecto, pasando por la idea, el diseño y el desarrollo de la solución web.
@@ -49,6 +50,7 @@ Dado el carácter académico de este trabajo, el proyecto ha sido desarrollado c
 
 \begin{enumerate}
   \item Desarrollo de la base de datos.
+  \item Implementación de un sistema de login social.
   \item Desarrollo de la API REST.
   \item Implementación de un modelo de inteligencia artificial generativa comercial.
   \item Uso de Docker para el despliegue de la solución.
@@ -58,13 +60,101 @@ Para la realización de este proyecto, también ha sido fundamental tener claro 
 
 \begin{enumerate}
   \item Desarrollo de un sistema de seguimiento de jugadores y disco en tiempo real.
-  \item Implementación de digerentes equipos del club.
+  \item Implementación de diferentes equipos del club.
   \item Desarrollo y entrenamiento de un modelo de inteligencia artificial propio.
   \item Almacenamiento de datos por temporadas.
   \item Persistencia de incidencias de partidos.
 \end{enumerate}
 
-\chapter{Planificación}
+\chapter{Plan de trabajo}
+
+Este capítulo documenta la planificación seguida para la realización de este proyecto, agregando un cronograma en forma de diagrama de Gantt para representar visualmente las horas de trabajo. También proporciona y detalla los perfiles de trabajadores que serían necesarios para el correcto desarrollo de la solución software.
+
+\section{Planificación temporal}
+
+Este apartado describe las fases y tareas que han sido realizadas para completar el proyecto. El proyecto se divide en 5 partes, cada una de ellas con tareas y/o fases a completar. Esta planificación ha sido seguida teniendo en cuenta el modelo en cascada: no se avanzará a la siguiente fase del proyecto hasta haber completado y finalizado todas las tareas relativas a la fase actual. Una vez terminadas todas las tareas de la fase, se pasa a la siguiente, repitiendo este mismo proceso. Esta metodología se aplica igual a cada fase dentro de las partes en las que se divide el proyecto.
+
+Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se redacta cada una de las fases de la planificación con sus respectivas tareas a completar:
+
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont]
+
+  \item[Fase 1.] Definición del proyecto:
+        \begin{description}[
+            labelindent=0pt,
+            leftmargin=!,
+            labelwidth=1.5cm,
+            labelsep=1em,
+            font=\normalfont
+          ]
+
+          \item[Tarea 1.] Análisis del club deportivo: Analizar el club deportivo e investigar cómo realizan y gestionan los procesos de sus equipos.
+          \item[Tarea 2.] Estudio de la situación del club y propuesta de solución: Estudiar e interpretar el análisis realizado y diseñar una solución software.
+          \item[Tarea 3.] Presentación del proyecto a la tutora: Presentar la idea a la tutora del proyecto de fin de grado para determinar su viabilidad y recibir consejos y sugerencias.
+        \end{description}
+  \item[Fase 2.] Planificación del proyecto:
+        \begin{description}[
+            labelindent=0pt,
+            leftmargin=!,
+            labelwidth=1.5cm,
+            labelsep=1em,
+            font=\normalfont
+          ]
+
+          \item[Tarea 1.] Estimación de tiempos: Estimar el tiempo que llevará desarrollar cada una de las funcionalidades de la solución.
+          \item[Tarea 2.] Priorización de funcionalidades: Analizar las funcionalidades de las que dispondrá la solución y priorizarlas teniendo en cuenta su dificultad, estimación de tiempo e importancia en el proyecto.
+          \item[Tarea 3.] División del desarrollo del proyecto: Agrupar las funcionalidades priorizadas en fases para dividir el desarrollo del proyecto.
+        \end{description}
+  \item[Fase 3.] Realización del proyecto:
+        \begin{description}[
+            labelindent=0pt,
+            leftmargin=!,
+            labelwidth=1.5cm,
+            labelsep=1em,
+            font=\normalfont
+          ]
+
+          \item[Fase 0.] Creación del proyecto:
+                \begin{description}[
+                    labelindent=0pt,
+                    leftmargin=!,
+                    labelwidth=1.5cm,
+                    labelsep=1em,
+                    font=\normalfont
+                  ]
+
+                  \item[Tarea 1.] Crear el proyecto de Maven y gestionar las dependencias de Springboot
+                  \item[Tarea 2.] Crear la base de datos con MySQL y configurar Springboot para que haga uso de ella
+                  \item[Tarea 3.] Crear del proyecto de React
+                  \item[Tarea 4.] Verificar el correcto funcionamiento de las partes por separado
+                  \item[Tarea 5.] Crear Dockerfiles necesarios y gestionar los servicios con Docker Compose
+                  \item[Tarea 6.] Verificar el correcto funcionamiento del proyecto con Docker
+                \end{description}
+
+          \item[Fase 1.] Gestión de usuarios, próximos partidos y visualización de estadísticas:
+                \begin{description}[
+                    labelindent=0pt,
+                    leftmargin=!,
+                    labelwidth=1.5cm,
+                    labelsep=1em,
+                    font=\normalfont
+                  ]
+
+                  \item[Tarea 1.] Crear pantalla con formulario de registro de usuario
+                  \item[Tarea 2.] Crear pantalla con formulario de inicio de sesión
+                  \item[Tarea 3.] Implementar funcionalidad de registro de usuarios
+                  \item[Tarea 4.] Implementar funcionalidad de inicio de sesión simple
+                  \item[Tarea 6.] Implementar inicio de sesión con Google
+                  \item[Tarea 5.] Gestionar seguridad con Spring Security
+                \end{description}
+          \item[Fase 2.] Convocatorias, seguimiento de estadísticas e incidencias de partido y módulo inteligente de recomendaciones:
+          \item[Fase 3.] Pedidos de material y foro de mensajes:
+        \end{description}
+\end{description}
 
 \chapter{Presupuesto}
 
