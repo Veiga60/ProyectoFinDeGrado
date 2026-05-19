@@ -8,7 +8,7 @@ export default function MatchCompressed({ match }) {
                 <div id='infoContainer'>
                     <div id='localTeamDiv'>
                         <div className='compressedTeamLogoDiv'>
-                            <img src={localTeam.logo ? `/logos/${match?.localTeam.logo}` : basicLogo} alt={match?.localTeam.name} />
+                            <img src={match?.localTeam.logo ? `/logos/${match?.localTeam.logo}` : basicLogo} alt={match?.localTeam.name} />
                         </div>
                     </div>
                     <div id='localTeamGoalsDiv' style={{ border: (match?.bonusPoint == match?.localTeam.id) && '2px solid rgb(7, 78, 200)' }}>
@@ -24,7 +24,7 @@ export default function MatchCompressed({ match }) {
                     </div>
                     <div id="visitingTeamDiv">
                         <div className='compressedTeamLogoDiv'>
-                            <img src={visitingTeam.logo ? `/logos/${match?.visitingTeam.logo}` : basicLogo} alt={match?.visitingTeam.name} />
+                            <img src={match?.visitingTeam.logo ? `/logos/${match?.visitingTeam.logo}` : basicLogo} alt={match?.visitingTeam.name} />
                         </div>
                     </div>
                 </div>

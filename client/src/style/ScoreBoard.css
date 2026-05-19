@@ -192,3 +192,37 @@
         margin-right: 10%;
     }
 }
+
+@media(min-width: 1201px) and (orientation: portrait) {
+
+    .teamImageDiv {
+        width: 120px;
+    }
+
+    #scoreBoardDiv {
+        height: 120px;
+        width: 80%;
+    }
+
+    #localGoalsDiv {
+        margin-left: 10%;
+    }
+
+    #localGoalsText,
+    #visitingGoalsText,
+    #separatorText {
+        font-size: xx-large;
+    }
+
+    #visitingGoalsDiv {
+        margin-right: 10%;
+    }
+}
+
+@media(min-width: 1352px) and (orientation: portrait) {
+
+    #localNameText,
+    #visitingNameText {
+        font-size: xx-large;
+    }
+}
