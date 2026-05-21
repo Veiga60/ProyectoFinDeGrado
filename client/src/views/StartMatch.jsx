@@ -92,6 +92,7 @@ export default function StartMatch() {
         } catch (error) {
             console.log("Error fetching player's match stats:", error);
         }
+
         try {
             const gRes = await axios.get(`${SERVER_URL}/goaliesMatchStats/matches/${matchId}`, { withCredentials: true });
             savedGoaliesStats = gRes.data;
