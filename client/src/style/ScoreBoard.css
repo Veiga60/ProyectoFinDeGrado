@@ -343,7 +343,7 @@
     #localGoalsText,
     #visitingGoalsText,
     #separatorText {
-        font-size: large;
+        font-size: x-large;
     }
 
     #visitingGoalsDiv {

@@ -805,8 +805,8 @@
     }
 
     .startMatchButton {
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
     }
 
     .teamIcon,
@@ -916,8 +916,8 @@
     }
 
     .startMatchButton {
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
     }
 
     .teamIcon,
@@ -1023,13 +1023,219 @@
     }
 
     .startMatchButton {
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
     }
 
     .teamIcon,
     .eventsIcon {
         width: 40px;
         height: 40px;
+    }
+}
+
+@media(min-width: 901px) and (max-width: 1000px) and (orientation: landscape) {
+
+    #finishMatchButtonDiv {
+        width: 80%;
+        margin-top: 0px;
+    }
+
+    #finishMatchButton {
+        width: 170px;
+    }
+
+    #matchPeriods {
+        position: relative;
+        top: -5px;
+        width: 15%;
+        margin: 0;
+    }
+
+    .matchPeriod {
+        width: 25px;
+        height: 25px;
+        font-size: medium;
+    }
+
+    .matchPeriodSelected {
+        width: 25px;
+        height: 25px;
+        font-size: medium;
+    }
+
+    #matchInfoMainDiv {
+        flex-direction: row;
+        height: 60%;
+    }
+
+    #startMatchLeftDiv {
+        margin-top: 20px;
+        flex-direction: column;
+        width: 50%;
+        height: 100%;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .calledPlayerName,
+    .calledGoalieName {
+        display: none;
+    }
+
+    #calledPlayersTableBody,
+    #calledGoaliesTableBody {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .tableTitle {
+        font-size: large;
+    }
+
+    #calledPlayersTable,
+    #calledGoaliesTable {
+        width: fit-content;
+        background-color: transparent;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #calledPlayersDiv {
+        width: fit-content;
+    }
+
+    #matchEventsContainer {
+        width: 800px;
+        height: 110%;
+        margin-right: 10px;
+    }
+
+    #matchEventsText {
+        font-size: medium;
+    }
+
+    #startMatchButtonsDiv {
+        flex-direction: column;
+        width: 40%;
+        margin-top: 10%;
+    }
+
+    .startMatchButton {
+        width: 250px;
+        height: 30px;
+    }
+
+    .teamIcon,
+    .eventsIcon {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media(min-width: 1001px) and (max-height: 500px) {
+
+    #finishMatchButtonDiv {
+        width: 80%;
+        margin-top: 0px;
+    }
+
+    #finishMatchButton {
+        width: 170px;
+    }
+
+    #matchPeriods {
+        position: relative;
+        top: -5px;
+        width: 15%;
+        margin: 0;
+    }
+
+    .matchPeriod {
+        width: 25px;
+        height: 25px;
+        font-size: medium;
+    }
+
+    .matchPeriodSelected {
+        width: 25px;
+        height: 25px;
+        font-size: medium;
+    }
+
+    #matchInfoMainDiv {
+        flex-direction: row;
+        height: 60%;
+    }
+
+    #startMatchLeftDiv {
+        margin-top: 20px;
+        flex-direction: column;
+        width: 50%;
+        height: 100%;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .calledPlayerName,
+    .calledGoalieName {
+        display: none;
+    }
+
+    #calledPlayersTableBody,
+    #calledGoaliesTableBody {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .tableTitle {
+        font-size: large;
+    }
+
+    #calledPlayersTable,
+    #calledGoaliesTable {
+        width: fit-content;
+        background-color: transparent;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #calledPlayersDiv {
+        width: fit-content;
+    }
+
+    #matchEventsContainer {
+        width: 800px;
+        height: 110%;
+        margin-right: 10px;
+    }
+
+    #matchEventsText {
+        font-size: medium;
+    }
+
+    #startMatchButtonsDiv {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10%;
+    }
+
+    .startMatchButton {
+        width: 250px;
+        height: 30px;
+    }
+
+    .teamIcon,
+    .eventsIcon {
+        width: 25px;
+        height: 25px;
     }
 }
