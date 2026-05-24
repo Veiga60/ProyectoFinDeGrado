@@ -154,3 +154,55 @@
     font-weight: bold;
     color: rgb(7, 78, 200);
 }
+
+@media(max-width: 500px) and (orientation: portrait) {
+    #periodAndTimeDiv {
+        width: 15%;
+    }
+
+    #timeDiv {
+        font-size: smaller;
+        white-space: nowrap;
+    }
+
+    .goalEventIcon {
+        width: 30px;
+        height: 30px;
+    }
+
+    #goalText {
+        font-size: x-large;
+    }
+
+    #goalTeamImageDivMyTeam {
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #eventInfoDivMyTeam {
+        width: 25%;
+    }
+
+    #scorerNumberText {
+        font-size: x-large;
+    }
+
+    #scorerNumberDiv {
+        height: 45px;
+    }
+
+    #scorerAndAssisterInfoDiv {
+        width: 59%;
+    }
+
+    #scorerText {
+        font-size: medium;
+    }
+
+    #assisterText {
+        white-space: nowrap;
+        font-size: small;
+    }
+}

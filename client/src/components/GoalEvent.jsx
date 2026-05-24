@@ -29,7 +29,7 @@ export default function GoalEvent({ matchPeriod, matchTime, team, scorer, assist
                         ? (
                             <>
                                 <div id="eventInfoDivMyTeam">
-                                    <AiFillAlert color="rgb(7, 78, 200)" size={40} />
+                                    <AiFillAlert className="goalEventIcon" color="rgb(7, 78, 200)" size={40} />
                                     <p id="goalText">GOL</p>
                                     <div id="goalTeamImageDivMyTeam">
                                         <img id="goalTeamImageMyTeam" src={team.logo ? `/logos/${team.logo}` : basicLogo} alt={team.name} />
