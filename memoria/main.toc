@@ -12,11 +12,27 @@
 \contentsline {section}{\numberline {5.2}Material}{10}{section.24}%
 \contentsline {section}{\numberline {5.3}Software, licencias y otros servicios}{10}{section.26}%
 \contentsline {chapter}{\numberline {6}Desarrollo del proyecto}{12}{chapter.28}%
-\contentsline {chapter}{\numberline {7}Valoración ética del proyecto}{13}{chapter.29}%
-\contentsline {chapter}{\numberline {8}Conclusiones}{14}{chapter.30}%
-\contentsline {chapter}{\numberline {9}Definiciones, acrónimos y abreviaturas}{15}{chapter.31}%
-\contentsline {chapter}{\numberline {10}Apéndices}{16}{chapter.32}%
-\contentsline {chapter}{Bibliograf\'ia}{17}{chapter.32}%
+\contentsline {section}{\numberline {6.1}Especificación de requisitos}{12}{section.29}%
+\contentsline {section}{\numberline {6.2}Especificación del diseño}{12}{section.30}%
+\contentsline {section}{\numberline {6.3}Tecnologías y herramientas utilizadas}{12}{section.31}%
+\contentsline {subsection}{\numberline {6.3.1}Maven}{12}{subsection.32}%
+\contentsline {subsection}{\numberline {6.3.2}Spring Boot}{12}{subsection.33}%
+\contentsline {subsection}{\numberline {6.3.3}React}{12}{subsection.34}%
+\contentsline {subsection}{\numberline {6.3.4}MySQL}{12}{subsection.35}%
+\contentsline {subsection}{\numberline {6.3.5}Docker}{13}{subsection.36}%
+\contentsline {subsection}{\numberline {6.3.6}GitHub Desktop}{13}{subsection.37}%
+\contentsline {subsection}{\numberline {6.3.7}Antigravity IDE}{13}{subsection.38}%
+\contentsline {subsection}{\numberline {6.3.8}Figma}{13}{subsection.39}%
+\contentsline {subsection}{\numberline {6.3.9}Draw.io}{13}{subsection.40}%
+\contentsline {section}{\numberline {6.4}Consideraciones sobre la implementación}{14}{section.41}%
+\contentsline {section}{\numberline {6.5}Plan de prueba}{14}{section.42}%
+\contentsline {section}{\numberline {6.6}Manual de usuario}{14}{section.43}%
+\contentsline {section}{\numberline {6.7}Incidencias del proyecto}{14}{section.44}%
+\contentsline {chapter}{\numberline {7}Valoración ética del proyecto}{15}{chapter.45}%
+\contentsline {chapter}{\numberline {8}Conclusiones}{16}{chapter.46}%
+\contentsline {chapter}{\numberline {9}Definiciones, acrónimos y abreviaturas}{17}{chapter.47}%
+\contentsline {chapter}{\numberline {10}Apéndices}{18}{chapter.48}%
+\contentsline {chapter}{Bibliograf\'ia}{19}{chapter.48}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Ejemplo Apéndice 1}{18}{appendix.34}%
+\contentsline {chapter}{\numberline {A}Ejemplo Apéndice 1}{20}{appendix.50}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

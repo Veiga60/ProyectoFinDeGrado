@@ -285,11 +285,11 @@ INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\sourcesans\Sou
 INPUT .\main.toc
 INPUT .\main.toc
 INPUT main.toc
+INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\sourcesans\SourceSans3-Bold-tlf-t1.vf
+INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\sourcesans\SourceSans3-Bold-tlf-t1--base.tfm
+INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\sourcesans\SourceSans3-Bold-tlf-t1.vf
+INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\sourcesans\SourceSans3-Bold-tlf-t1--base.tfm
 OUTPUT main.toc
-INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\sourcesans\SourceSans3-Bold-tlf-t1.vf
-INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\sourcesans\SourceSans3-Bold-tlf-t1--base.tfm
-INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\sourcesans\SourceSans3-Bold-tlf-t1.vf
-INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\sourcesans\SourceSans3-Bold-tlf-t1--base.tfm
 INPUT .\main.lof
 INPUT .\main.lof
 INPUT main.lof
@@ -327,6 +327,9 @@ INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\sourcesans\Sou
 INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\sourcesans\SourceSans3-Bold-tlf-t1.tfm
 INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\sourcesans\SourceSans3-Regular-tlf-t1.vf
 INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\sourcesans\SourceSans3-Regular-tlf-t1--base.tfm
+INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\sourcesans\SourceSans3-Bold-tlf-t1.vf
+INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\sourcesans\SourceSans3-Bold-tlf-t1--base.tfm
+INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\sourcesans\SourceSans3-Bold-tlf-t1.tfm
 INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\sourcesans\SourceSans3-Bold-tlf-t1.vf
 INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\sourcesans\SourceSans3-Bold-tlf-t1--base.tfm
 INPUT .\main.bbl
