@@ -217,7 +217,7 @@ export default function PenaltiesModal({ teamPenalty, onClose, matchEvents, setM
                                     <div id='numbersDiv'>
                                         {
                                             players.map((player) => {
-                                                return (match?.call.callPlayerStatus[player?.id] == 'CONFIRMED') && (<div key={player.id} id={`player${player.number}`} className='penaltyNumber' onClick={() => selectPlayerPenalty(player)}>{player.number}</div>)
+                                                return (match?.call.callPlayerStatus[player?.id] == 'CONFIRMED') && (<div key={player.id} id={`player${player.number}`} className='penaltyNumber' onClick={() => selectPlayerPenalty(player)}>{`${player.number}`.padStart(2, '0')}</div>)
                                             })
                                         }
                                     </div>

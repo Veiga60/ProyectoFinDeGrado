@@ -9,7 +9,7 @@
     height: 80px;
 }
 
-#goalEventPeriodAndTimeDiv {
+#goalEventPeriodAndgoalEventTimeDiv {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -161,16 +161,20 @@
 
 @media(max-width: 400px) and (orientation: portrait) {
     #goalEventPeriodAndTimeDiv {
-        width: 15%;
+        width: 18%;
     }
 
-    #timeDiv {
-        font-size: x-small;
+    #goalEventTimeDiv {
+        font-size: xx-small;
         white-space: nowrap;
+        width: 65px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    #periodDiv {
-        font-size: small;
+    #goalEventPeriodDiv {
+        font-size: large;
     }
 
     .goalEventIcon {
@@ -241,17 +245,17 @@
 }
 
 @media(max-width: 600px) and (orientation: landscape) {
-    #goalEventPeriodAndTimeDiv {
+    #goalEventPeriodAndgoalEventTimeDiv {
         width: 15%;
         margin-left: 5px;
     }
 
-    #timeDiv {
+    #goalEventTimeDiv {
         font-size: x-small;
         white-space: nowrap;
     }
 
-    #periodDiv {
+    #goalEventPeriodDiv {
         font-size: smaller;
     }
 
@@ -327,17 +331,17 @@
 }
 
 @media (min-width: 601px) and (max-width: 700px) and (orientation: landscape) {
-    #goalEventPeriodAndTimeDiv {
+    #goalEventPeriodAndgoalEventTimeDiv {
         width: 15%;
         margin-left: 5px;
     }
 
-    #timeDiv {
+    #goalEventTimeDiv {
         font-size: x-small;
         white-space: nowrap;
     }
 
-    #periodDiv {
+    #goalEventPeriodDiv {
         font-size: smaller;
     }
 
@@ -414,11 +418,11 @@
 
 @media(min-width: 401px) and (max-width: 500px) and (orientation: portrait) {
 
-    #goalEventPeriodAndTimeDiv {
+    #goalEventPeriodAndgoalEventTimeDiv {
         width: 15%;
     }
 
-    #timeDiv {
+    #goalEventTimeDiv {
         font-size: smaller;
         white-space: nowrap;
     }
@@ -483,11 +487,11 @@
 }
 
 @media(min-width: 501px) and (max-width: 800px) and (orientation: portrait) {
-    #goalEventPeriodAndTimeDiv {
+    #goalEventPeriodAndgoalEventTimeDiv {
         width: 15%;
     }
 
-    #timeDiv {
+    #goalEventTimeDiv {
         font-size: smaller;
         white-space: nowrap;
     }
@@ -553,17 +557,17 @@
 }
 
 @media (min-width: 701px) and (max-width: 900px) and (orientation: landscape) {
-    #goalEventPeriodAndTimeDiv {
+    #goalEventPeriodAndgoalEventTimeDiv {
         width: 15%;
         margin-left: 5px;
     }
 
-    #timeDiv {
+    #goalEventTimeDiv {
         font-size: small;
         white-space: nowrap;
     }
 
-    #periodDiv {
+    #goalEventPeriodDiv {
         font-size: smaller;
     }
 
@@ -633,11 +637,11 @@
 }
 
 @media(min-width: 801px) and (max-width: 1000px) and (orientation: portrait), (min-width: 901px) and (max-width: 1000px) and (orientation: landscape) {
-    #goalEventPeriodAndTimeDiv {
+    #goalEventPeriodAndgoalEventTimeDiv {
         width: 18%;
     }
 
-    #timeDiv {
+    #goalEventTimeDiv {
         font-size: small;
         white-space: nowrap;
     }
@@ -703,11 +707,11 @@
 }
 
 @media (min-width: 1000px) and (orientation: landscape) {
-    #goalEventPeriodAndTimeDiv {
+    #goalEventPeriodAndgoalEventTimeDiv {
         width: 18%;
     }
 
-    #timeDiv {
+    #goalEventTimeDiv {
         font-size: small;
         white-space: nowrap;
     }
@@ -773,16 +777,16 @@
 }
 
 @media (max-width: 550px) and (orientation: landscape) {
-    #goalEventPeriodAndTimeDiv {
+    #goalEventPeriodAndgoalEventTimeDiv {
         width: 15%;
     }
 
-    #timeDiv {
+    #goalEventTimeDiv {
         font-size: xx-small;
         white-space: nowrap;
     }
 
-    #periodDiv {
+    #goalEventPeriodDiv {
         font-size: small;
     }
 

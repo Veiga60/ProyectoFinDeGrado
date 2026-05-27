@@ -17,10 +17,10 @@ export default function GoalEvent({ matchPeriod, matchTime, team, scorer, assist
         <>
             <div id="goalEventDiv">
                 <div id="goalEventPeriodAndTimeDiv">
-                    <div id="periodDiv">
+                    <div id="goalEventPeriodDiv">
                         <p id="timeText">{matchTime}</p>
                     </div>
-                    <div id="timeDiv">
+                    <div id="goalEventTimeDiv">
                         <p id="periodText">{period}</p>
                     </div>
                 </div>

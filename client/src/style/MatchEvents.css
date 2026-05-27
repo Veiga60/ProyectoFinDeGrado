@@ -199,7 +199,7 @@
 
     #indicencesVisitingTeamImageDiv {
         padding-top: 100px;
-        width: 60%;
+        width: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -316,7 +316,7 @@
     #indicencesLocalTeamImageDiv {
         margin: 0;
         padding-top: 20%;
-        width: 60%;
+        width: 40%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -325,7 +325,7 @@
     #indicencesVisitingTeamImageDiv {
         margin: 0;
         padding-top: 20%;
-        width: 60%;
+        width: 40%;
         display: flex;
         align-items: center;
         justify-content: center;
