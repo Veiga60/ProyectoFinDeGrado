@@ -1345,3 +1345,10 @@
         height: 25px;
     }
 }
+
+@media(max-height: 390px) and (orientation: landscape) {
+    #startMatchButtonsDiv {
+        margin-top: -10px;
+        margin-left: 150px;
+    }
+}

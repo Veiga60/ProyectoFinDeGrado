@@ -28,7 +28,7 @@ export default function GoalEvent({ matchPeriod, matchTime, team, scorer, assist
                     (team.name == 'Metropolitano HC')
                         ? (
                             <>
-                                <div id="eventInfoDivMyTeam">
+                                <div id="goalEventInfoDivMyTeam">
                                     <AiFillAlert className="goalEventIcon" color="rgb(7, 78, 200)" size={40} />
                                     <p id="goalText">GOL</p>
                                     <div id="goalTeamImageDivMyTeam">
@@ -40,16 +40,16 @@ export default function GoalEvent({ matchPeriod, matchTime, team, scorer, assist
                                         <p id='scorerNumberText'>{scorer.number}</p>
                                     </div>
                                     <div id="scorerAndAssisterDiv">
-                                        <p id="scorerText">{`${scorer.name} ${scorer.lastName1} ${scorer.lastName2}`}</p>
+                                        <p id="scorerText">{`${scorer.name} ${scorer.lastName1}`}</p>
                                         {
-                                            (assister) && (<p id="assisterText">{`${assister.name} ${assister.lastName1} ${assister.lastName2} #` + `${assister.number}`.padStart(2, '0') + `#`}</p>)
+                                            (assister) && (<p id="assisterText">{`${assister.name} ${assister.lastName1} #` + `${assister.number}`.padStart(2, '0') + `#`}</p>)
                                         }
                                     </div>
                                 </div>
                             </>
                         ) : (
                             <>
-                                <div id="eventInfoDiv">
+                                <div id="goalEventInfoDiv">
                                     <AiFillAlert className="goalEventIcon" color="rgb(7, 78, 200)" size={40} />
                                     <p id="goalText">GOL</p>
                                 </div>
