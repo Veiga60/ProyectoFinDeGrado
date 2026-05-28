@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.5.1)  26 MAY 2026 21:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.5.1)  27 MAY 2026 20:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -895,15 +895,15 @@ Package tocbasic Info: character protrusion at toc deactivated on input line 46.
  (main.toc
 LaTeX Info: Redefining \. on input line 2.
 LaTeX Info: Redefining \% on input line 2.
-)
-\tf@toc=\write6
-\openout6 = `main.toc'.
-
  [2
 
 
 
-]
+])
+\tf@toc=\write6
+\openout6 = `main.toc'.
+
+ [3]
 Package tocbasic Info: character protrusion at lof deactivated on input line 47.
  (main.lof
 LaTeX Info: Redefining \. on input line 2.
@@ -912,7 +912,7 @@ LaTeX Info: Redefining \% on input line 2.
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
- [3
+ [4
 
 ]
 Package tocbasic Info: character protrusion at lot deactivated on input line 48.
@@ -923,7 +923,7 @@ LaTeX Info: Redefining \% on input line 2.
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
- [4
+ [5
 
 ]
 Package tocbasic Info: character protrusion at lol deactivated on input line 49.
@@ -934,7 +934,7 @@ LaTeX Info: Redefining \% on input line 2.
 \tf@lol=\write9
 \openout9 = `main.lol'.
 
- [5
+ [6
 
 ] (dummy.tex
 chapter 1.
@@ -1000,30 +1000,34 @@ LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
 
 ] [11]
 chapter 6.
+LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/bold/n' aliased to
+(Font)              `T1/SourceSansThree-TLF/b/n' on input line 287.
+LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/b/n' will be
+(Font)              scaled to size 12.0pt on input line 287.
 [12
 
-]
+] [13] [14]
 chapter 7.
-[13
-
-]
-chapter 8.
-[14
-
-]
-chapter 9.
 [15
 
 ]
+chapter 8.
+[16
+
+]
+chapter 9.
+[17
+
+]
 chapter 10.
-) [16
+) [18
 
 ] (main.bbl
 
 LaTeX Warning: Empty `thebibliography' environment or \BreakBibliography
                before end of `thebibliography' environment on input line 24.
 
-) [17
+) [19
 
 
 
@@ -1031,7 +1035,7 @@ LaTeX Warning: Empty `thebibliography' environment or \BreakBibliography
 
 ]
 chapter A.
-[18
+[20
 
 ] (main.aux
 LaTeX Info: Redefining \. on input line 14.
@@ -1043,17 +1047,17 @@ L3 programming layer <2026-03-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 23048 strings out of 467691
- 434967 string characters out of 5415472
+ 23117 strings out of 467691
+ 436389 string characters out of 5415472
  1042482 words of memory out of 5000000
- 51540 multiletter control sequences out of 15000+600000
- 777861 words of font info for 188 fonts, out of 8000000 for 9000
+ 51572 multiletter control sequences out of 15000+600000
+ 789155 words of font info for 200 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 122i,20n,121p,11242b,849s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 122i,20n,121p,11242b,920s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-Bold.pfb><C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-It.pfb><C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-Regular.pfb>
-Output written on main.pdf (23 pages, 263813 bytes).
+Output written on main.pdf (26 pages, 282969 bytes).
 PDF statistics:
- 264 PDF objects out of 1000 (max. 8388607)
- 58 named destinations out of 1000 (max. 500000)
- 61585 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 377 PDF objects out of 1000 (max. 8388607)
+ 77 named destinations out of 1000 (max. 500000)
+ 65809 words of extra memory for PDF output out of 74296 (max. 10000000)
 
