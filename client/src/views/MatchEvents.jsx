@@ -52,7 +52,7 @@ export default function MatchEvents() {
                     </div>
                     <div id='localTeamIncidencesButtonsDiv' className='incidencesButtonsDiv'>
                         <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.localTeam), toggleGoalsModal()]}><AiFillAlert className='goalIcon' color='rgb(7, 78, 200)' size={30} />GOL ANOTADO</button>
-                        <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.localTeam), togglePenaltiesModal()]}><GiWhistle className='whistleIcon' color='rgb(7, 78, 200)' size={30} />PENALIZACIÓN</button>
+                        <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.localTeam), togglePenaltiesModal()]}><GiWhistle className='whistleIcon' color='rgb(7, 78, 200)' size={30} />FALTA COMETIDA</button>
                         <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.localTeam), toggleTimeoutModal()]}><MdTimer className='timeoutIcon' color='rgb(7, 78, 200)' size={30} />TIEMPO MUERTO</button>
                     </div>
                 </div>
@@ -62,7 +62,7 @@ export default function MatchEvents() {
                     </div>
                     <div id='visitingTeamIncidencesButtonsDiv' className='incidencesButtonsDiv'>
                         <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.visitingTeam), toggleGoalsModal()]}><AiFillAlert className='goalIcon' color='rgb(7, 78, 200)' size={30} />GOL ANOTADO</button>
-                        <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.visitingTeam), togglePenaltiesModal()]}><GiWhistle className='whistleIcon' color='rgb(7, 78, 200)' size={30} />PENALIZACIÓN</button>
+                        <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.visitingTeam), togglePenaltiesModal()]}><GiWhistle className='whistleIcon' color='rgb(7, 78, 200)' size={30} />FALTA COMETIDA</button>
                         <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.visitingTeam), toggleTimeoutModal()]}><MdTimer className='timeoutIcon' color='rgb(7, 78, 200)' size={30} />TIEMPO MUERTO</button>
                     </div>
                 </div>

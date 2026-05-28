@@ -9,7 +9,7 @@
     height: 80px;
 }
 
-#periodAndTimeDiv {
+#penaltyEventPeriodAndTimeDiv {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,7 +18,7 @@
     width: 20%;
 }
 
-#periodText {
+#penaltyEventPeriodText {
     color: white;
     background-color: rgb(7, 78, 200);
     border-radius: 1000px;
@@ -29,56 +29,11 @@
     padding-right: 5px;
 }
 
-#timeText {
+#penaltyEventTimeText {
     margin: 0;
     color: black;
     font-family: Inria Sans;
     font-weight: bold;
-}
-
-#penaltyTeamImageDiv {
-    width: 20%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#penaltyTeamImageDivMyTeam {
-    width: 18%;
-    display: flex;
-    align-items: center;
-}
-
-#penaltyTeamImage {
-    width: 100%;
-}
-
-#penaltyTeamImageMyTeam {
-    width: 100%;
-}
-
-#penaltyText {
-    color: black;
-    font-family: Inria Sans;
-    font-size: x-large;
-    font-weight: bold;
-}
-
-#teamPenaltyDiv {
-    width: 40%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-#teamNameText {
-    color: black;
-    font-family: Inria Sans;
-    font-weight: bold;
-    font-size: x-large;
-    margin-left: 5%;
-    width: 100%;
 }
 
 #penaltyEventInfoDivMyTeam {
@@ -87,7 +42,7 @@
     align-items: center;
     justify-content: flex-start;
     height: 100%;
-    width: 32%;
+    width: 25%;
     gap: 5%;
 }
 
@@ -97,102 +52,39 @@
     align-items: center;
     justify-content: flex-start;
     height: 100%;
-    width: 32%;
+    width: 20%;
     gap: 5%;
 }
 
-#penaltyTeamNameText,
-#penaltyTypeText {
-    margin: 0;
+.penaltyEventIcon {
+    flex-shrink: 0;
+}
+
+#penaltyText {
     color: black;
     font-family: Inria Sans;
-}
-
-#penaltyTypeTextSmall {
-    margin: 0;
-    color: black;
-    font-family: Inria Sans;
-    font-size: small;
-    padding: 0;
-    width: 100%;
+    font-size: xx-large;
     font-weight: bold;
-    color: rgb(7, 78, 200);
-    text-align: left;
-    margin-left: 5px;
-}
-
-#penaltyTeamNameText {
-    width: 100%;
-    height: 50%;
-    font-size: large;
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
-}
-
-#penaltyTypeText {
-    padding: 0;
-    width: 100%;
-    font-weight: bold;
-    color: rgb(7, 78, 200);
-    text-align: left;
-    margin-left: 5px;
-}
-
-#teamNameText {
-    color: black;
-}
-
-#penaltyInfoDiv {
-    margin-left: 5%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 75%;
-    height: 100%;
-}
-
-#penaltyAndPlayerInfoDiv {
-    width: 48%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-#penaltyTypeAndTimeDiv {
-    width: 100%;
-    height: 50%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-#penaltyTimeDiv {
-    background-color: rgb(7, 78, 200);
-    width: 12%;
-    height: 50%;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#penaltyTimeText {
-    color: white;
-    font-family: Inria Sans;
-    font-weight: bold;
-    font-size: large;
-    margin: 0;
 }
 
 #penaltyAndPlayerInfoDivMyTeam {
     display: flex;
     flex-direction: row;
-    width: 45%;
+    align-items: center;
+    width: 55%;
     height: 100%;
+}
+
+#penaltyTeamImageDivMyTeam {
+    width: 18%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+#penaltyTeamImageMyTeam {
+    width: 100%;
 }
 
 #penaltyPlayerNumberAndNameInfo {
@@ -202,26 +94,21 @@
     justify-content: center;
     width: 80%;
     height: 100%;
-    margin-left: 5%;
+    margin-left: 3%;
 }
 
 #penaltyPlayerNumberAndNameDiv {
     display: flex;
     flex-direction: row;
     align-items: center;
-}
-
-#penaltyPlayerNumberText {
-    color: black;
-    font-family: Inria Sans;
-    font-weight: bold;
-    margin: 0;
+    width: 100%;
 }
 
 #penaltyPlayerText {
     color: black;
     font-family: Inria Sans;
     font-weight: bold;
+    font-size: large;
     margin: 0;
 }
 
@@ -230,194 +117,634 @@
     flex-direction: row;
     align-items: center;
     width: 100%;
-}
-
-#penaltyTimeTextMyTeam {
-    color: white;
-    font-weight: bold;
-    margin: 0;
-    font-family: Inria Sans;
-    font-size: large;
-}
-
-#penaltyTypeTextMyTeam {
-    text-align: start;
-    color: rgb(7, 78, 200);
-    font-weight: bold;
-    margin: 0;
-    font-family: Inria Sans;
-    width: 100%;
-    margin-left: 3%;
-    font-size: medium;
-}
-
-#penaltyTypeTextMyTeamSmall {
-    text-align: start;
-    color: rgb(7, 78, 200);
-    font-weight: bold;
-    margin: 0;
-    font-family: Inria Sans;
-    width: 100%;
-    margin-left: 3%;
-    font-size: small;
+    gap: 6px;
+    margin-top: 3px;
 }
 
 #penaltyTimeDivMyTeam {
     background-color: rgb(7, 78, 200);
-    width: 10%;
-    border-radius: 5px;
-    height: 100%;
+    border-radius: 8px;
+    padding: 3px 9px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
-#penaltyPlayerNumberDiv {
-    background-color: rgb(7, 78, 200);
+#penaltyTimeTextMyTeam {
+    color: white;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: x-large;
+    margin: 0;
 }
+
+#penaltyTypeTextMyTeam {
+    color: rgb(7, 78, 200);
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: medium;
+    margin: 0;
+}
+
+#penaltyTypeTextMyTeamSmall {
+    color: rgb(7, 78, 200);
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: small;
+    margin: 0;
+}
+
+#teamPenaltyDiv {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#penaltyTeamImageDiv {
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+#penaltyTeamImage {
+    width: 100%;
+}
+
+#penaltyInfoDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 80%;
+    height: 100%;
+    margin-left: 3%;
+}
+
+#penaltyTeamNameDiv {
+    width: 100%;
+}
+
+#penaltyTeamNameText {
+    color: black;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: large;
+    margin: 0;
+    padding: 0;
+}
+
+#penaltyTypeAndTimeDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    gap: 6px;
+    margin-top: 3px;
+}
+
+#penaltyTimeDiv {
+    background-color: rgb(7, 78, 200);
+    border-radius: 8px;
+    padding: 3px 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+#penaltyTimeText {
+    color: white;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: x-large;
+    margin: 0;
+}
+
+#penaltyTypeText {
+    color: rgb(7, 78, 200);
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: medium;
+    margin: 0;
+}
+
+#penaltyTypeTextSmall {
+    color: rgb(7, 78, 200);
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: small;
+    margin: 0;
+}
+
 
 @media(max-width: 400px) and (orientation: portrait) {
-    #periodAndTimeDiv { width: 15%; }
-    #timeText { font-size: x-small; white-space: nowrap; }
-    #periodText { font-size: small; }
-    .penaltyEventIcon { width: 30px; height: 30px; }
-    #penaltyText { font-size: x-large; }
-    
-    #penaltyEventInfoDivMyTeam, #penaltyEventInfoDiv { width: 23%; }
-    #penaltyAndPlayerInfoDivMyTeam, #teamPenaltyDiv { width: 59%; }
-    
-    #penaltyTimeTextMyTeam, #penaltyTimeText, #penaltyPlayerNumberText { font-size: x-large; }
-    #penaltyPlayerText { font-size: medium; }
-    #penaltyTypeTextMyTeam, #penaltyTypeTextMyTeamSmall, #penaltyTypeText, #penaltyTypeTextSmall { white-space: nowrap; font-size: small; }
-    #penaltyTeamNameText { font-size: large; }
-    
-    .penaltyEventIcon { display: none; }
+    #penaltyEventPeriodAndTimeDiv {
+        width: 19%;
+    }
+
+    #penaltyEventTimeText {
+        font-size: x-small;
+        white-space: nowrap;
+    }
+
+    #penaltyEventPeriodText {
+        font-size: small;
+    }
+
+    .penaltyEventIcon {
+        display: none;
+    }
+
+    #penaltyText {
+        font-size: x-large;
+        padding: 0;
+        margin: 0;
+    }
+
+    #penaltyEventInfoDivMyTeam,
+    #penaltyEventInfoDiv {
+        width: 23%;
+    }
+
+    #penaltyAndPlayerInfoDivMyTeam,
+    #teamPenaltyDiv {
+        width: 59%;
+    }
+
+    #penaltyTeamImageDivMyTeam {
+        margin-right: 20px;
+        width: 50%;
+    }
+
+    #penaltyTeamImageDiv {
+        margin-left: -10px;
+        margin-right: 2px;
+        width: 20%;
+    }
+
+    #penaltyTimeTextMyTeam,
+    #penaltyTimeText {
+        font-size: large;
+    }
+
+    #penaltyPlayerText {
+        font-size: medium;
+    }
+
+    #penaltyTeamNameText {
+        font-size: medium;
+    }
+
+    #penaltyTypeTextMyTeam,
+    #penaltyTypeTextMyTeamSmall,
+    #penaltyTypeText,
+    #penaltyTypeTextSmall {
+        white-space: nowrap;
+        font-size: small;
+    }
+
+    #penaltyTeamNameText {
+        font-size: smaller;
+        white-space: nowrap;
+    }
+
+    #penaltyTimeDiv,
+    #penaltyTimeDivMyTeam {
+        width: 20px;
+    }
+
+    #penaltyTimeDivMyTeam {
+        margin-left: 30px;
+    }
 }
 
 @media(max-width: 600px) and (orientation: landscape) {
-    #periodAndTimeDiv { width: 15%; margin-left: 5px; }
-    #timeText { font-size: x-small; white-space: nowrap; }
-    #periodText { font-size: smaller; }
-    .penaltyEventIcon { width: 30px; height: 30px; }
-    #penaltyText { margin-left: 5px; font-size: larger; }
-    
-    #penaltyEventInfoDivMyTeam, #penaltyEventInfoDiv { width: 25%; }
-    #penaltyAndPlayerInfoDivMyTeam, #teamPenaltyDiv { width: 59%; }
-    
-    #penaltyTimeTextMyTeam, #penaltyTimeText, #penaltyPlayerNumberText { font-size: larger; }
-    #penaltyPlayerText { font-size: small; }
-    #penaltyTypeTextMyTeam, #penaltyTypeTextMyTeamSmall, #penaltyTypeText, #penaltyTypeTextSmall { white-space: nowrap; font-size: x-small; }
-    #penaltyTeamNameText { font-size: medium; white-space: nowrap; }
-    
-    .penaltyEventIcon { display: none; }
+    #penaltyEventPeriodAndTimeDiv {
+        width: 15%;
+        margin-left: 5px;
+    }
+
+    #penaltyEventPeriodText {
+        font-size: smaller;
+    }
+
+    .penaltyEventIcon {
+        display: none;
+    }
+
+    #penaltyText {
+        margin-left: 5px;
+        font-size: larger;
+    }
+
+    #penaltyEventInfoDivMyTeam,
+    #penaltyEventInfoDiv {
+        width: 25%;
+    }
+
+    #penaltyAndPlayerInfoDivMyTeam,
+    #teamPenaltyDiv {
+        width: 59%;
+    }
+
+    #penaltyTimeTextMyTeam,
+    #penaltyTimeText {
+        font-size: medium;
+    }
+
+    #penaltyPlayerText {
+        font-size: small;
+    }
+
+    #penaltyTeamNameText {
+        font-size: small;
+        white-space: nowrap;
+    }
+
+    #penaltyTypeTextMyTeam,
+    #penaltyTypeTextMyTeamSmall,
+    #penaltyTypeText,
+    #penaltyTypeTextSmall {
+        white-space: nowrap;
+        font-size: x-small;
+    }
 }
 
 @media (min-width: 601px) and (max-width: 700px) and (orientation: landscape) {
-    #periodAndTimeDiv { width: 15%; margin-left: 5px; }
-    #timeText { font-size: x-small; white-space: nowrap; }
-    #periodText { font-size: smaller; }
-    .penaltyEventIcon { width: 30px; height: 30px; }
-    #penaltyText { margin-left: 5px; font-size: larger; }
-    
-    #penaltyEventInfoDivMyTeam, #penaltyEventInfoDiv { width: 25%; }
-    #penaltyAndPlayerInfoDivMyTeam, #teamPenaltyDiv { width: 59%; }
-    
-    #penaltyTimeTextMyTeam, #penaltyTimeText, #penaltyPlayerNumberText { font-size: larger; }
-    #penaltyPlayerText { font-size: small; }
-    #penaltyTypeTextMyTeam, #penaltyTypeTextMyTeamSmall, #penaltyTypeText, #penaltyTypeTextSmall { white-space: nowrap; font-size: x-small; }
-    #penaltyTeamNameText { font-size: medium; white-space: nowrap; }
-    
-    .penaltyEventIcon { display: none; }
+    #penaltyEventPeriodAndTimeDiv {
+        width: 15%;
+        margin-left: 5px;
+    }
+
+    #penaltyEventTimeText {
+        font-size: x-small;
+        white-space: nowrap;
+    }
+
+    #penaltyEventPeriodText {
+        font-size: smaller;
+    }
+
+    .penaltyEventIcon {
+        display: none;
+    }
+
+    #penaltyText {
+        margin-left: 5px;
+        font-size: larger;
+    }
+
+    #penaltyEventInfoDivMyTeam,
+    #penaltyEventInfoDiv {
+        width: 25%;
+    }
+
+    #penaltyAndPlayerInfoDivMyTeam,
+    #teamPenaltyDiv {
+        width: 59%;
+    }
+
+    #penaltyTimeTextMyTeam,
+    #penaltyTimeText {
+        font-size: medium;
+    }
+
+    #penaltyPlayerText {
+        font-size: small;
+    }
+
+    #penaltyTeamNameText {
+        font-size: small;
+        white-space: nowrap;
+    }
+
+    #penaltyTypeTextMyTeam,
+    #penaltyTypeTextMyTeamSmall,
+    #penaltyTypeText,
+    #penaltyTypeTextSmall {
+        white-space: nowrap;
+        font-size: x-small;
+    }
 }
 
 @media(min-width: 401px) and (max-width: 500px) and (orientation: portrait) {
-    #periodAndTimeDiv { width: 15%; }
-    #timeText { font-size: smaller; white-space: nowrap; }
-    .penaltyEventIcon { width: 30px; height: 30px; }
-    #penaltyText { font-size: x-large; }
-    
-    #penaltyEventInfoDivMyTeam, #penaltyEventInfoDiv { width: 25%; }
-    #penaltyAndPlayerInfoDivMyTeam, #teamPenaltyDiv { width: 59%; }
-    
-    #penaltyTimeTextMyTeam, #penaltyTimeText, #penaltyPlayerNumberText { font-size: x-large; }
-    #penaltyPlayerText { font-size: medium; }
-    #penaltyTypeTextMyTeam, #penaltyTypeTextMyTeamSmall, #penaltyTypeText, #penaltyTypeTextSmall { white-space: nowrap; font-size: small; }
-    #penaltyTeamNameText { font-size: x-large; }
+    #penaltyEventPeriodAndTimeDiv {
+        width: 15%;
+    }
+
+    #penaltyEventTimeText {
+        font-size: smaller;
+        white-space: nowrap;
+    }
+
+    .penaltyEventIcon {
+        width: 30px;
+        height: 30px;
+    }
+
+    #penaltyText {
+        font-size: x-large;
+    }
+
+    #penaltyEventInfoDivMyTeam,
+    #penaltyEventInfoDiv {
+        width: 25%;
+    }
+
+    #penaltyAndPlayerInfoDivMyTeam,
+    #teamPenaltyDiv {
+        width: 59%;
+    }
+
+    #penaltyTimeTextMyTeam,
+    #penaltyTimeText {
+        font-size: large;
+    }
+
+    #penaltyPlayerText {
+        font-size: medium;
+    }
+
+    #penaltyTeamNameText {
+        font-size: medium;
+    }
+
+    #penaltyTypeTextMyTeam,
+    #penaltyTypeTextMyTeamSmall,
+    #penaltyTypeText,
+    #penaltyTypeTextSmall {
+        white-space: nowrap;
+        font-size: small;
+    }
 }
 
 @media(min-width: 501px) and (max-width: 800px) and (orientation: portrait) {
-    #periodAndTimeDiv { width: 15%; }
-    #timeText { font-size: smaller; white-space: nowrap; }
-    .penaltyEventIcon { width: 40px; height: 40px; }
-    #penaltyText { font-size: xx-large; }
-    
-    #penaltyEventInfoDivMyTeam, #penaltyEventInfoDiv { width: 25%; }
-    #penaltyAndPlayerInfoDivMyTeam, #teamPenaltyDiv { width: 59%; }
-    
-    #penaltyTimeTextMyTeam, #penaltyTimeText, #penaltyPlayerNumberText { font-size: x-large; }
-    #penaltyPlayerText { font-size: large; }
-    #penaltyTypeTextMyTeam, #penaltyTypeTextMyTeamSmall, #penaltyTypeText, #penaltyTypeTextSmall { white-space: nowrap; font-size: medium; }
-    #penaltyTeamNameText { font-size: x-large; }
+    #penaltyEventPeriodAndTimeDiv {
+        width: 15%;
+    }
+
+    #penaltyEventTimeText {
+        font-size: smaller;
+        white-space: nowrap;
+    }
+
+    .penaltyEventIcon {
+        width: 40px;
+        height: 40px;
+    }
+
+    #penaltyText {
+        font-size: xx-large;
+    }
+
+    #penaltyEventInfoDivMyTeam,
+    #penaltyEventInfoDiv {
+        width: 25%;
+    }
+
+    #penaltyAndPlayerInfoDivMyTeam,
+    #teamPenaltyDiv {
+        width: 59%;
+    }
+
+    #penaltyTimeTextMyTeam,
+    #penaltyTimeText {
+        font-size: x-large;
+    }
+
+    #penaltyPlayerText {
+        font-size: large;
+    }
+
+    #penaltyTeamNameText {
+        font-size: large;
+    }
+
+    #penaltyTypeTextMyTeam,
+    #penaltyTypeTextMyTeamSmall,
+    #penaltyTypeText,
+    #penaltyTypeTextSmall {
+        white-space: nowrap;
+        font-size: medium;
+    }
 }
 
 @media (min-width: 701px) and (max-width: 900px) and (orientation: landscape) {
-    #periodAndTimeDiv { width: 15%; margin-left: 5px; }
-    #timeText { font-size: small; white-space: nowrap; }
-    #periodText { font-size: smaller; }
-    .penaltyEventIcon { width: 30px; height: 30px; }
-    #penaltyText { font-size: x-large; }
-    
-    #penaltyEventInfoDivMyTeam, #penaltyEventInfoDiv { width: 30%; }
-    #penaltyAndPlayerInfoDivMyTeam, #teamPenaltyDiv { width: 54%; }
-    
-    #penaltyTimeTextMyTeam, #penaltyTimeText, #penaltyPlayerNumberText { font-size: larger; }
-    #penaltyPlayerText { font-size: medium; }
-    #penaltyTypeTextMyTeam, #penaltyTypeTextMyTeamSmall, #penaltyTypeText, #penaltyTypeTextSmall { white-space: nowrap; font-size: small; }
-    #penaltyTeamNameText { font-size: larger; white-space: nowrap; }
+    #penaltyEventPeriodAndTimeDiv {
+        width: 15%;
+        margin-left: 5px;
+    }
+
+    #penaltyEventTimeText {
+        font-size: small;
+        white-space: nowrap;
+    }
+
+    #penaltyEventPeriodText {
+        font-size: smaller;
+    }
+
+    .penaltyEventIcon {
+        width: 30px;
+        height: 30px;
+    }
+
+    #penaltyText {
+        font-size: x-large;
+    }
+
+    #penaltyEventInfoDivMyTeam,
+    #penaltyEventInfoDiv {
+        width: 30%;
+    }
+
+    #penaltyAndPlayerInfoDivMyTeam,
+    #teamPenaltyDiv {
+        width: 54%;
+    }
+
+    #penaltyTimeTextMyTeam,
+    #penaltyTimeText {
+        font-size: large;
+    }
+
+    #penaltyPlayerText {
+        font-size: medium;
+    }
+
+    #penaltyTeamNameText {
+        font-size: medium;
+        white-space: nowrap;
+    }
+
+    #penaltyTypeTextMyTeam,
+    #penaltyTypeTextMyTeamSmall,
+    #penaltyTypeText,
+    #penaltyTypeTextSmall {
+        white-space: nowrap;
+        font-size: small;
+    }
 }
 
 @media(min-width: 801px) and (max-width: 1000px) and (orientation: portrait), (min-width: 901px) and (max-width: 1000px) and (orientation: landscape) {
-    #periodAndTimeDiv { width: 18%; }
-    #timeText { font-size: small; white-space: nowrap; }
-    .penaltyEventIcon { width: 40px; height: 40px; }
-    #penaltyText { font-size: x-large; }
-    
-    #penaltyEventInfoDivMyTeam, #penaltyEventInfoDiv { width: 28%; }
-    #penaltyAndPlayerInfoDivMyTeam, #teamPenaltyDiv { width: 54%; }
-    
-    #penaltyTimeTextMyTeam, #penaltyTimeText, #penaltyPlayerNumberText { font-size: xx-large; }
-    #penaltyPlayerText { font-size: large; }
-    #penaltyTypeTextMyTeam, #penaltyTypeTextMyTeamSmall, #penaltyTypeText, #penaltyTypeTextSmall { white-space: nowrap; font-size: small; }
-    #penaltyTeamNameText { font-size: x-large; }
+    #penaltyEventPeriodAndTimeDiv {
+        width: 18%;
+    }
+
+    #penaltyEventTimeText {
+        font-size: small;
+        white-space: nowrap;
+    }
+
+    .penaltyEventIcon {
+        width: 40px;
+        height: 40px;
+    }
+
+    #penaltyText {
+        font-size: x-large;
+    }
+
+    #penaltyEventInfoDivMyTeam,
+    #penaltyEventInfoDiv {
+        width: 28%;
+    }
+
+    #penaltyAndPlayerInfoDivMyTeam,
+    #teamPenaltyDiv {
+        width: 54%;
+    }
+
+    #penaltyTimeTextMyTeam,
+    #penaltyTimeText {
+        font-size: x-large;
+    }
+
+    #penaltyPlayerText {
+        font-size: large;
+    }
+
+    #penaltyTeamNameText {
+        font-size: large;
+    }
+
+    #penaltyTypeTextMyTeam,
+    #penaltyTypeTextMyTeamSmall,
+    #penaltyTypeText,
+    #penaltyTypeTextSmall {
+        white-space: nowrap;
+        font-size: small;
+    }
 }
 
 @media (min-width: 1000px) and (orientation: landscape) {
-    #periodAndTimeDiv { width: 18%; }
-    #timeText { font-size: small; white-space: nowrap; }
-    .penaltyEventIcon { width: 40px; height: 40px; }
-    #penaltyText { font-size: xx-large; }
-    
-    #penaltyEventInfoDivMyTeam, #penaltyEventInfoDiv { width: 28%; }
-    #penaltyAndPlayerInfoDivMyTeam, #teamPenaltyDiv { width: 54%; }
-    
-    #penaltyTimeTextMyTeam, #penaltyTimeText, #penaltyPlayerNumberText { font-size: xx-large; }
-    #penaltyPlayerText { font-size: large; }
-    #penaltyTypeTextMyTeam, #penaltyTypeTextMyTeamSmall, #penaltyTypeText, #penaltyTypeTextSmall { white-space: nowrap; font-size: medium; }
-    #penaltyTeamNameText { font-size: x-large; }
+    #penaltyEventPeriodAndTimeDiv {
+        width: 18%;
+    }
+
+    #penaltyEventTimeText {
+        font-size: small;
+        white-space: nowrap;
+    }
+
+    .penaltyEventIcon {
+        width: 40px;
+        height: 40px;
+    }
+
+    #penaltyText {
+        font-size: xx-large;
+    }
+
+    #penaltyEventInfoDivMyTeam,
+    #penaltyEventInfoDiv {
+        width: 28%;
+    }
+
+    #penaltyAndPlayerInfoDivMyTeam,
+    #teamPenaltyDiv {
+        width: 54%;
+    }
+
+    #penaltyTimeTextMyTeam,
+    #penaltyTimeText {
+        font-size: x-large;
+    }
+
+    #penaltyPlayerText {
+        font-size: large;
+    }
+
+    #penaltyTeamNameText {
+        font-size: large;
+    }
+
+    #penaltyTypeTextMyTeam,
+    #penaltyTypeTextMyTeamSmall,
+    #penaltyTypeText,
+    #penaltyTypeTextSmall {
+        white-space: nowrap;
+        font-size: medium;
+    }
 }
 
 @media (max-width: 550px) and (orientation: landscape) {
-    #periodAndTimeDiv { width: 15%; }
-    #timeText { font-size: xx-small; white-space: nowrap; }
-    #periodDiv { font-size: small; }
-    .penaltyEventIcon { width: 40px; height: 40px; }
-    #penaltyText { font-size: large; }
-    
-    #penaltyEventInfoDivMyTeam, #penaltyEventInfoDiv { width: 28%; }
-    #penaltyAndPlayerInfoDivMyTeam, #teamPenaltyDiv { width: 54%; margin-left: -5px; }
-    
-    #penaltyTimeTextMyTeam, #penaltyTimeText, #penaltyPlayerNumberText { font-size: large; }
-    #penaltyPlayerText { font-size: small; }
-    #penaltyTypeTextMyTeam, #penaltyTypeTextMyTeamSmall, #penaltyTypeText, #penaltyTypeTextSmall { white-space: nowrap; font-size: xx-small; }
-    #penaltyTeamNameText { font-size: small; }
+    #penaltyEventPeriodAndTimeDiv {
+        width: 15%;
+    }
+
+    #penaltyEventTimeText {
+        font-size: xx-small;
+        white-space: nowrap;
+    }
+
+    #penaltyEventPeriodDiv {
+        font-size: small;
+    }
+
+    .penaltyEventIcon {
+        width: 40px;
+        height: 40px;
+    }
+
+    #penaltyText {
+        font-size: large;
+    }
+
+    #penaltyEventInfoDivMyTeam,
+    #penaltyEventInfoDiv {
+        width: 28%;
+    }
+
+    #penaltyAndPlayerInfoDivMyTeam,
+    #teamPenaltyDiv {
+        width: 54%;
+        margin-left: -5px;
+    }
+
+    #penaltyTimeTextMyTeam,
+    #penaltyTimeText {
+        font-size: medium;
+    }
+
+    #penaltyPlayerText {
+        font-size: small;
+    }
+
+    #penaltyTeamNameText {
+        font-size: small;
+    }
+
+    #penaltyTypeTextMyTeam,
+    #penaltyTypeTextMyTeamSmall,
+    #penaltyTypeText,
+    #penaltyTypeTextSmall {
+        white-space: nowrap;
+        font-size: xx-small;
+    }
 }
