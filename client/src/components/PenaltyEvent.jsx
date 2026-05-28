@@ -52,11 +52,11 @@ export default function PenaltyEvent({ matchPeriod, matchTime, team, player, pen
                                 <div id="penaltyEventInfoDiv">
                                     <GiWhistle className="penaltyEventIcon" color="rgb(7, 78, 200)" size={40} />
                                     <p id="penaltyText">FALTA</p>
-                                </div>
-                                <div id="teamPenaltyDiv">
                                     <div id="penaltyTeamImageDiv">
                                         <img id="penaltyTeamImage" src={team.logo ? `/logos/${team.logo}` : basicLogo} alt={team.name} />
                                     </div>
+                                </div>
+                                <div id="teamPenaltyDiv">
                                     <div id="penaltyTimeDiv">
                                         <p id="penaltyTimeText">{`${penaltyTime}'`}</p>
                                     </div>
