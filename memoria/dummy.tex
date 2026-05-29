@@ -3,14 +3,14 @@
 
 El presente documento trata el trabajo realizado para el desarrollo del Proyecto Fin de Grado. Trabajo en el que he aplicado todas las competencias adquiridas durante los cuatro años que conforman el grado universitario. En esta memoria se recoge con detalle el proceso hasta llegar al resultado final del proyecto, pasando por la idea, el diseño y el desarrollo de la solución web.
 
-Esta memoria está dividida en varios capítulos, con el objetivo de facilitar su lectura y compresión. Dichos capítulos corresponden a los definidos en la especificación de pryectos fin de grado de ingeniería informática proporcionada por la Universidad de Deusto.
+Esta memoria está dividida en varios capítulos, con el objetivo de facilitar su lectura y compresión. Dichos capítulos corresponden a los definidos en la especificación de proyectos fin de grado de ingeniería informática proporcionada por la Universidad de Deusto.
 
 \begin{itemize}
-  \item Antecedentes y justificación: En este capítulo se recogerá el motivo por el que se ha elegido desarrollar este proyecto. Además, se proporcionarán una serie de antecedentes para entender el pasado de la gestión del equipo deportivo que se ha tomado como referencia, así como su situación actual.
+  \item Antecedentes y justificación: En este capítulo se recoge el motivo por el que se ha elegido desarrollar este proyecto. Además, se proporcionarán una serie de antecedentes para entender el pasado de la gestión del equipo deportivo que se ha tomado como referencia, así como su situación actual.
   \item Objetivos y alcance: Es importante fijar el alcance y los objetivos que se desean cumplir con el proyecto. Este capítulo redacta las funcionalidades que recoge y los objetivos que se pretenden lograr con la solución web.
-  \item Planificación
+  \item Plan de trabajo: Este capítulo detalla la planificación seguida para la realización de este proyecto. Cómo se ha dividido el proyecto en fases, y cada una de ellas en tareas para el desarrollo eficiente del proyecto. Además, proporciona dicha planificación de forma visual.
   \item Presupuesto: Todo proyecto debe tener una estimación del presupuesto, con el fin de aproximar lo máximo posible el coste total que conllevará. En este capítulo se recoge con detalle ese presupuesto, teniendo en cuenta costes de material, costes de desarrollo, costes de puesta en marcha y costes de recurrentes.
-  \item Desarrollo del proyecto:
+  \item Desarrollo del proyecto: Este capítulo recoge la fase de desarrollo del proyecto. En primer lugar, detalla los requisitos del proyecto, tanto funcionales como no funcionales. Después, recoge la especificación de su diseño
   \item Valoración ética del proyecto
   \item Conclusiones
   \item Bibliografía
@@ -267,7 +267,7 @@ Este tipo de costes engloban gastos en herramientas, licencias y otros servicios
     \hline
     \textbf{Producto} & \textbf{Descripción}                                                                      & \textbf{Coste} \\
     \hline
-    Tokens Anthropic  & Tokens de Anthropic para tener acceso a sus modelos de inteligencia artificial generativa &                \\
+    Tokens Anthropic  & Tokens de Anthropic para tener acceso a sus modelos de inteligencia artificial generativa & 5,31 €         \\
     \hline
     \textbf{Total}    &                                                                                           & 0,00 €         \\
     \hline
@@ -329,6 +329,24 @@ Estos son los requisitos no funcionales que se han definido para el proyecto:
 
 \section{Especificación del diseño}
 
+Para llevar a cabo el proyecto, ha sido necesario especificar el diseño del mismo antes de empezar con su desarrollo. Dicho diseño ha sido especificado en base a los requisitos funcionales y no funcionales y los objetivos del proyecto. El propósito de este apartado es definir el diseño de la arquitectura de la solución, el diseño relacional de la base de datos y el diseño de la interfaz de la aplicación web.
+
+\begin{enumerate}
+  \item \textbf{Backend:} Está desarrollado en Java 21, haciendo uso del framework SpringBoot. La parte backend se encarga de comunicarse con la base de datos mediante una API REST, desarrollada con las herramientas que proporciona SpringBoot para ello. Almacena datos y los recupera cuando es necesario, y los envía a la parte frontend para que se ella la que se encargue de mostrar la información al usuario.
+  \item \textbf{Frontend:} El frontend es quien se encarga de recibir los datos que llegan de la parte backend para mostrarlos al usuario en pantalla. Está desarrollado en con React.
+  \item \textbf{Base de datos relacional:} El backend se comunica con ella para almacenar y recuperar los datos que sean necesarios cuando sea necesario. Funciona como almacenamiento persistente del proyecto, y se ha hecho uso de MySQL para su gestión.
+  \item \textbf{Anthropic:} Es una organización que dispone de modelos de inteligencia artificial generativa. La parte frontend llama a la API REST del proyecto para que sea el backend quien se comunique con uno de los modelos de IA de Anthropic. El backend recibirá la respuesta del modelo y la enviará al frontend para mostrarla al usuario.
+  \item \textbf{Docker:} Es una herramienta de contenerización que permite empaquetar una aplicación y sus dependencias en un contenedor. Se utilizará para empaquetar la aplicación en un contenedor y poder ejecutarla en cualquier entorno.
+\end{enumerate}
+
+\subsection{Diseño de la arquitectura de la solución}
+
+La solución está basada en una arquitectura cliente-servidor, compuesta por una parte backend que ejecuta toda la lógica de negocio y una parte frontend que muestra al usuario la información. La parte backend hace uso de una base de datos relacional para almacenar toda la información del proyecto. Además, el backend se comunicará con Anthropic para utilizar uno de sus modelos de IA. El proyecto estará embebido dentro de un contenedor de Docker.
+
+\subsection{Diseño relacional de la base de datos}
+
+\subsection{Diseño de la interfaz de la aplicación web}
+
 \section{Tecnologías y herramientas utilizadas}
 
 \subsection{Maven}
@@ -369,7 +387,14 @@ Draw.io es una herramienta online diseñada para crear diagramas. Se ha utilizad
 
 \subsection{Inkscape}
 
-Inkscape es una herramienta de diseño vectorial de código abierto. En este proyecto, se ha utilizado para crear la imagen de logo de qeuipo por defecto y la imagen de jugador por defecto.
+Inkscape es una herramienta de diseño vectorial de código abierto. En este proyecto, se ha utilizado para crear la imagen de logo de equipo por defecto y la imagen de jugador por defecto.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=1\textwidth]{imgs/inkscape.jpeg}
+  \caption{Pantalla principal de Inkscape}
+  \label{fig:inkscape}
+\end{figure}
 
 \section{Consideraciones sobre la implementación}
 
