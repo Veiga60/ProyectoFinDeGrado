@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.5.1)  27 MAY 2026 20:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.5.1)  29 MAY 2026 11:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1001,33 +1001,33 @@ LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
 ] [11]
 chapter 6.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/bold/n' aliased to
-(Font)              `T1/SourceSansThree-TLF/b/n' on input line 287.
+(Font)              `T1/SourceSansThree-TLF/b/n' on input line 283.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 287.
+(Font)              scaled to size 12.0pt on input line 283.
 [12
 
-] [13] [14]
+] [13] [14] [15]
 chapter 7.
-[15
-
-]
-chapter 8.
 [16
 
 ]
-chapter 9.
+chapter 8.
 [17
 
 ]
+chapter 9.
+[18
+
+]
 chapter 10.
-) [18
+) [19
 
 ] (main.bbl
 
 LaTeX Warning: Empty `thebibliography' environment or \BreakBibliography
                before end of `thebibliography' environment on input line 24.
 
-) [19
+) [20
 
 
 
@@ -1035,7 +1035,7 @@ LaTeX Warning: Empty `thebibliography' environment or \BreakBibliography
 
 ]
 chapter A.
-[20
+[21
 
 ] (main.aux
 LaTeX Info: Redefining \. on input line 14.
@@ -1047,17 +1047,17 @@ L3 programming layer <2026-03-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 23117 strings out of 467691
- 436389 string characters out of 5415472
+ 23130 strings out of 467691
+ 436639 string characters out of 5415472
  1042482 words of memory out of 5000000
- 51572 multiletter control sequences out of 15000+600000
- 789155 words of font info for 200 fonts, out of 8000000 for 9000
+ 51575 multiletter control sequences out of 15000+600000
+ 789793 words of font info for 204 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  122i,20n,121p,11242b,920s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-Bold.pfb><C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-It.pfb><C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-Regular.pfb>
-Output written on main.pdf (26 pages, 282969 bytes).
+Output written on main.pdf (27 pages, 289036 bytes).
 PDF statistics:
- 377 PDF objects out of 1000 (max. 8388607)
- 77 named destinations out of 1000 (max. 500000)
- 65809 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 400 PDF objects out of 1000 (max. 8388607)
+ 81 named destinations out of 1000 (max. 500000)
+ 65833 words of extra memory for PDF output out of 74296 (max. 10000000)
 

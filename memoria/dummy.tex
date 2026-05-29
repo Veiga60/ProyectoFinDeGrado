@@ -280,6 +280,53 @@ Este tipo de costes engloban gastos en herramientas, licencias y otros servicios
 
 \section{Especificación de requisitos}
 
+\subsection{Requisitos funcionales}
+
+Los requisitos funcionales del proyecto son el conjunto de funcionalidades que debe tener el proyecto. Es decir, recogen qué debe ser capaz de hacer la solución web final. Dichos requerimientos provienen de las necesidades y deseos de los stakeholders del proyecto, especialmente de los usuarios finales, además de los objetivos definidos al inicio del proyecto.
+
+A continuación, se definen los requisitos funcionales del proyecto:
+
+\begin{description}
+  [labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[RF-01] La solución debe permitir al usuario registrarse con su correo electrónico vinculado al club.
+  \item[RF-02] La aplicación debe permitir a un usuario iniciar sesión con su nombre de usuario y contraseña o mediante Google.
+  \item[RF-03] Los usuarios deben poder visualizar los partidos de la temporada con su fecha, hora, equipo rival y resultado.
+  \item[RF-04] El sistema debe permitir a los usuarios visualizar las estadísticas de la temporada tanto de los jugadores como del equipo.
+  \item[RF-05] Los entrenadores deben poder convocar jugadores a un partido.
+  \item[RF-06] Cada jugador debe poder confirmar su asistencia o no asistencia a los partidos a los que es convocado.
+  \item[RF-07] El sistema debe proporcionar a los entrenadores un sistema de seguimiento de partidos en directo.
+  \item[RF-08] La solución debe actualizar las estadísticas de jugadores y del equipo automáticamente una vez terminado el partido en juego.
+  \item[RF-09] La aplicación debe proporcionar recomendaciones sobre áreas a entrenar relativas al último partido a los entrenadores.
+  \item[RF-10] Los entrenadores deben poder crear pedidos de material y descargar su información en un fichero Excel.
+  \item[RF-11] Los jugadores deben poder solicitar material en los pedidos creados por los entrenadores.
+  \item[RF-12] La solución debe proporcionar un foro para el intercambio de mensajes de usuarios sobre un tema específico.
+\end{description}
+
+\subsection{Requisitos no funcionales}
+
+Los requisitos no funcionales del proyecto son el conjunto de características y cualidades que debe tener el proyecto. A diferencia de los funcionales, no recogen qué hace la solución, sino cómo lo hace. Los requisitos no funcionales de este proyecto se han definido para garantizar la facilidad de uso, la facilidad de aprendizaje y una mínima seguridad, dado su carácter académico.
+
+Estos son los requisitos no funcionales que se han definido para el proyecto:
+
+\begin{description}
+  [labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[RnF-01] La interfaz de la solución debe estar personalizada para el club deportivo.
+  \item[RnF-02] La interfaz de usuario debe ser intuitiva, con una navegación sencilla e inputs claramente definidos. El objetivo es que cualquier usuario, aún sin una formación sobre la aplicación, pueda usarla con facilidad.
+  \item[RnF-03] La solución debe permitir acceso únicamente a miembros del club.
+  \item[RnF-04] La interfaz debe ser adaptable a distintios tamaños de pantallas.
+  \item[]
+\end{description}
+
 \section{Especificación del diseño}
 
 \section{Tecnologías y herramientas utilizadas}
@@ -319,6 +366,10 @@ Figma es una herramienta de diseño colaborativo para interfaces web. Se ha hech
 \subsection{Draw.io}
 
 Draw.io es una herramienta online diseñada para crear diagramas. Se ha utilizado en el proyecto para definir la arquitectura del mismo.
+
+\subsection{Inkscape}
+
+Inkscape es una herramienta de diseño vectorial de código abierto. En este proyecto, se ha utilizado para crear la imagen de logo de qeuipo por defecto y la imagen de jugador por defecto.
 
 \section{Consideraciones sobre la implementación}
 
