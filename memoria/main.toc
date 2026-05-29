@@ -28,17 +28,17 @@
 \contentsline {subsection}{\numberline {6.3.6}GitHub Desktop}{17}{subsection.47}%
 \contentsline {subsection}{\numberline {6.3.7}Antigravity IDE}{17}{subsection.48}%
 \contentsline {subsection}{\numberline {6.3.8}Figma}{17}{subsection.49}%
-\contentsline {subsection}{\numberline {6.3.9}Draw.io}{17}{subsection.50}%
-\contentsline {subsection}{\numberline {6.3.10}Inkscape}{17}{subsection.51}%
-\contentsline {section}{\numberline {6.4}Consideraciones sobre la implementación}{18}{section.53}%
-\contentsline {section}{\numberline {6.5}Plan de prueba}{18}{section.54}%
-\contentsline {section}{\numberline {6.6}Manual de usuario}{18}{section.55}%
-\contentsline {section}{\numberline {6.7}Incidencias del proyecto}{18}{section.56}%
-\contentsline {chapter}{\numberline {7}Valoración ética del proyecto}{19}{chapter.57}%
-\contentsline {chapter}{\numberline {8}Conclusiones}{20}{chapter.58}%
-\contentsline {chapter}{\numberline {9}Definiciones, acrónimos y abreviaturas}{21}{chapter.59}%
-\contentsline {chapter}{\numberline {10}Apéndices}{22}{chapter.60}%
-\contentsline {chapter}{Bibliograf\'ia}{23}{chapter.60}%
+\contentsline {subsection}{\numberline {6.3.9}D\textbf {}raw.io}{18}{subsection.51}%
+\contentsline {subsection}{\numberline {6.3.10}Inkscape}{18}{subsection.52}%
+\contentsline {section}{\numberline {6.4}Consideraciones sobre la implementación}{18}{section.54}%
+\contentsline {section}{\numberline {6.5}Plan de prueba}{18}{section.55}%
+\contentsline {section}{\numberline {6.6}Manual de usuario}{18}{section.56}%
+\contentsline {section}{\numberline {6.7}Incidencias del proyecto}{18}{section.57}%
+\contentsline {chapter}{\numberline {7}Valoración ética del proyecto}{19}{chapter.58}%
+\contentsline {chapter}{\numberline {8}Conclusiones}{20}{chapter.59}%
+\contentsline {chapter}{\numberline {9}Definiciones, acrónimos y abreviaturas}{21}{chapter.60}%
+\contentsline {chapter}{\numberline {10}Apéndices}{22}{chapter.61}%
+\contentsline {chapter}{Bibliograf\'ia}{23}{chapter.61}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Ejemplo Apéndice 1}{24}{appendix.62}%
+\contentsline {chapter}{\numberline {A}Ejemplo Apéndice 1}{24}{appendix.63}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
