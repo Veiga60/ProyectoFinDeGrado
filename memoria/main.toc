@@ -27,10 +27,10 @@
 \contentsline {subsection}{\numberline {6.4.4}MySQL}{17}{subsection.46}%
 \contentsline {subsection}{\numberline {6.4.5}Docker}{17}{subsection.47}%
 \contentsline {subsection}{\numberline {6.4.6}GitHub Desktop}{17}{subsection.48}%
-\contentsline {subsection}{\numberline {6.4.7}Antigravity IDE}{17}{subsection.49}%
+\contentsline {subsection}{\numberline {6.4.7}Antigravity IDE}{18}{subsection.49}%
 \contentsline {subsection}{\numberline {6.4.8}Figma}{18}{subsection.50}%
 \contentsline {subsection}{\numberline {6.4.9}Draw.io}{18}{subsection.52}%
-\contentsline {subsection}{\numberline {6.4.10}Inkscape}{18}{subsection.53}%
+\contentsline {subsection}{\numberline {6.4.10}Inkscape}{19}{subsection.53}%
 \contentsline {section}{\numberline {6.5}Consideraciones sobre la implementación}{19}{section.55}%
 \contentsline {section}{\numberline {6.6}Plan de prueba}{19}{section.56}%
 \contentsline {section}{\numberline {6.7}Manual de usuario}{19}{section.57}%
