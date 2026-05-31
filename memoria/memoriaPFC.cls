@@ -31,12 +31,12 @@
 \RequirePackage{listings}        % Código fuente
 \RequirePackage{pdfpages}        % Incluir PDFs
 \RequirePackage[colorlinks=true,
-                linkcolor=black,
-                citecolor=blue,
-                urlcolor=blue,
-                unicode,
-                hypertexnames=false,
-                bookmarks=true]{hyperref}
+  linkcolor=black,
+  citecolor=blue,
+  urlcolor=blue,
+  unicode,
+  hypertexnames=false,
+  bookmarks=true]{hyperref}
 \RequirePackage{bookmark}        % Mejoras para PDF
 \RequirePackage{xcolor}          % Más colores
 
@@ -96,11 +96,11 @@
   \setlength{\parskip}{12pt}  % Espacio entre párrafos
   \setlength{\parindent}{0pt} % Sin sangría
   \hypersetup{
-      linktoc=all,
-      pdftitle={\@title},
-      pdfauthor={\@autores},
-      pdfsubject={Proyecto Fin de Grado},
-      pdfkeywords={\@descriptores}
+    linktoc=all,
+    pdftitle={\@title},
+    pdfauthor={\@autores},
+    pdfsubject={Proyecto Fin de Grado},
+    pdfkeywords={\@descriptores}
   }
 }
 \makeatother
@@ -138,6 +138,12 @@
 \renewcommand{\frontmatter}{%
   \pagestyle{scrheadings}
   \pagenumbering{roman}
+  \RedeclareSectionCommand[
+    beforeskip=0pt,
+    afterskip=0.5ex,
+    font=\sffamily\bfseries\fontsize{16}{18}\selectfont,
+    innerskip=0pt
+  ]{chapter}
 }
 
 \renewcommand{\mainmatter}{%
@@ -205,7 +211,6 @@
   \cleardoublepage
   \pagenumbering{roman}  % Numeración en romanos
   \pagestyle{headings}   % Cabecera activa
-  \vspace*{3cm}
   {\bfseries\Large Resumen\par}
   \vspace{0.5cm}
   #1 % Texto del resumen
