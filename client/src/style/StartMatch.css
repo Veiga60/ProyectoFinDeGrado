@@ -1255,7 +1255,7 @@
 
     #finishMatchButtonDiv {
         width: 100%;
-        margin-top: -150px;
+        margin-top: -40px;
     }
 
     #finishMatchButton {
@@ -1264,7 +1264,7 @@
 
     #matchPeriods {
         position: relative;
-        top: -180px;
+        top: -65px;
         width: 15%;
         margin: 0;
 
@@ -1333,7 +1333,7 @@
         width: 800px;
         height: 110%;
         margin-right: 10px;
-        margin-top: 200px;
+        margin-top: 10px;
     }
 
     #matchEventsText {
