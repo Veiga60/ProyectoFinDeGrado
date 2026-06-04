@@ -205,6 +205,17 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
                   \item[Tarea 52.] Implementar funcionalidad para pedir material
                   \item[Tarea 53.] Descargar fichero excel con la información del pedido
                 \end{description}
+          \item[Fase 4.] Estilo y responsividad
+                \begin{description}[
+                    labelindent=0pt,
+                    leftmargin=!,
+                    labelwidth=1.5cm,
+                    labelsep=1em,
+                    font=\normalfont
+                  ]
+                  \item[Tarea 54.] Dar estilo a las pantallas de la aplicación web
+                  \item[Tarea 55.] Aplicar responsividad a las pantallas de la solución
+                \end{description}
         \end{description}
 \end{description}
 
@@ -240,10 +251,14 @@ Los costes de mano de obra se corresponden con el tiempo dedicado al desarrollo 
 
 Los costes de material incluyen los gastos sobre el material físico necesario para la realización del proyecto. En este caso, el único material requerido ha sido un ordenador de sobremesa y un ordenador portátil para trabajar en el proyecto fuera de casa.
 
+\definecolor{headerblue}{RGB}{180, 210, 255}
+
 \begin{table}[ht]
   \centering
-  \begin{tabular}{|l|p{8cm}|r|}
+  \renewcommand{\arraystretch}{1.8}
+  \begin{tabular}{|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{5cm}|>{\centering\arraybackslash}p{5cm}|}
     \hline
+    \rowcolor{headerblue}
     \textbf{Producto}  & \textbf{Descripción}                                        & \textbf{Coste}     \\
     \hline
     PC                 & Ordenador de sobremesa para trabajar en el proyecto en casa & 1.828,65 €         \\
@@ -263,13 +278,15 @@ Este tipo de costes engloban gastos en herramientas, licencias y otros servicios
 
 \begin{table}[ht]
   \centering
-  \begin{tabular}{|l|p{8cm}|r|}
+  \renewcommand{\arraystretch}{1.8}
+  \begin{tabular}{|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{5cm}|>{\centering\arraybackslash}p{5cm}|}
     \hline
-    \textbf{Producto} & \textbf{Descripción}                                                                      & \textbf{Coste} \\
+    \rowcolor{headerblue}
+    \textbf{Producto} & \textbf{Descripción}                                                                      & \textbf{Coste}  \\
     \hline
-    Tokens Anthropic  & Tokens de Anthropic para tener acceso a sus modelos de inteligencia artificial generativa & 5,31 €         \\
+    Tokens Anthropic  & Tokens de Anthropic para tener acceso a sus modelos de inteligencia artificial generativa & 5,31 €          \\
     \hline
-    \textbf{Total}    &                                                                                           & 0,00 €         \\
+    \textbf{Total}    &                                                                                           & \textbf{5,31 €} \\
     \hline
   \end{tabular}
   \caption{Costes de software, licencias y otros servicios}
@@ -277,6 +294,35 @@ Este tipo de costes engloban gastos en herramientas, licencias y otros servicios
 \end{table}
 
 \chapter{Desarrollo del proyecto}
+
+\section{Stakeholders}
+
+En el contexto de este proyecto, los stakeholders son aquellas personas o entidades a las que, de alguna forma, les afecta el desarrollo y la puesta en marcha de esta solución web. Es fundamental reconocerlos y conocer sus intereses y necesidades para lograr que el resultado del proyecto cumpla con sus expectativas.
+
+A continuación, se muestra una tabla con los stakeholders identificados, su rol y el interés o necesidad del proyecto:
+
+\begin{table}[ht]
+  \centering
+  \renewcommand{\arraystretch}{1.8}
+  \begin{tabular}{|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{5cm}|>{\centering\arraybackslash}p{5cm}|}
+    \hline
+    \rowcolor{headerblue}
+    \textbf{Stakeholder}         & \textbf{Rol}                                               & \textbf{Interés o necesidad}                                                                   \\
+    \hline
+    Entrenador del equipo        & Usuario final de la solución                               & Procesos de gestión sencillos, amenos centralizados y mejora individual y colectiva del equipo \\
+    \hline
+    Jugador del equipo           & Usuario final de la solución                               & Mejora del rendimiento deportivo propio y centralización y amenidad de procesos de gestión     \\
+    \hline
+    Club deportivo de referencia & Cliente del proyecto                                       & Mejora del rendimiento deportivo del equipo                                                    \\
+    \hline
+    Autor del proyecto           & Encargado del diseño y desarrollo del proyecto             & Desarrollar una solución funcional y útil para el cliente                                      \\
+    \hline
+    Anthropic                    & Proveedor de modelos de inteligencia artificial generativa & Obtener datos del uso de sus modelos por parte de la aplicación                                \\
+    \hline
+  \end{tabular}
+  \caption{Stakeholders del proyecto}
+  \label{tab:stakeholders}
+\end{table}
 
 \section{Especificación de requisitos}
 
@@ -345,6 +391,8 @@ La solución está basada en una arquitectura cliente-servidor, compuesta por un
 
 \subsection{Diseño relacional de la base de datos}
 
+A la hora de diseñar la solución es fundamental tener claro qué información será necesaria almacenar. Para ello, se ha realizado un diseño relacional de la base de datos teniendo en cuenta los requisitos del proyecto y sus objetivos.
+
 \subsection{Diseño de la interfaz de la aplicación web}
 
 \section{Tecnologías y herramientas utilizadas}
@@ -375,20 +423,20 @@ GitHub Desktop es una interfaz gráfica para GitHub que permite gestionar los re
 
 \subsection{Antigravity IDE}
 
-Antigravity IDE es un entorno de desarrollo integrado con herramientas de inteligencia artificial para apoyar el desarrollo del proyecto cuando el usuario lo desee. Ha sido el software con el que se ha desarrollado el proyecto.
+Antigravity IDE es un entorno de desarrollo muy similar a Visual Studio Code. Lo que lo diferencia de él es que está integrado con herramientas de inteligencia artificial para apoyar el desarrollo del proyecto cuando el usuario lo desee. Ha sido el software con el que se ha desarrollado el proyecto.
 
 \subsection{Figma}
 
-Figma es una herramienta de diseño colaborativo para interfaces web. Se ha hecho uso de ella para diseñar la parte de interfaces de usuario.
+Figma es una herramienta de diseño colaborativo para interfaces web. Se ha hecho uso de ella para diseñar la parte de interfaces de usuario, personalizada para el club deportivo de referencia.
 
-\begin{figure}
+\begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.75\textwidth]{imgs/figma.jpeg}
+  \includegraphics[width=1.0\textwidth]{imgs/figma.jpeg}
   \caption{Editor de Figma}
   \label{fig:figma}
 \end{figure}
 
-\subsection{D\textbf{}raw.io}
+\subsection{Draw.io}
 
 Draw.io es una herramienta online diseñada para crear diagramas. Se ha utilizado en el proyecto para definir la arquitectura del mismo.
 
@@ -396,9 +444,9 @@ Draw.io es una herramienta online diseñada para crear diagramas. Se ha utilizad
 
 Inkscape es una herramienta de diseño vectorial de código abierto. En este proyecto, se ha utilizado para crear la imagen de logo de equipo por defecto y la imagen de jugador por defecto.
 
-\begin{figure}
+\begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.75\textwidth]{imgs/inkscape.jpeg}
+  \includegraphics[width=1.0\textwidth]{imgs/inkscape.jpeg}
   \caption{Pantalla principal de Inkscape}
   \label{fig:inkscape}
 \end{figure}
