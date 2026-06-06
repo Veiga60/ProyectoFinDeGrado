@@ -126,6 +126,7 @@ Para la realización de este proyecto, también ha sido fundamental tener claro 
   \item Desarrollo y entrenamiento de un modelo de inteligencia artificial propio.
   \item Almacenamiento de datos por temporadas.
   \item Persistencia de incidencias de partidos.
+  \item Seguimiento de estadísticas por cada liga.
 \end{enumerate}
 
 \chapter{Plan de trabajo}
@@ -304,8 +305,6 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
         \end{description}
 \end{description}
 
-
-
 \chapter{Metodología}
 
 \chapter{Presupuesto}
@@ -464,7 +463,6 @@ Estos son los requisitos no funcionales que se han definido para el proyecto:
   \item[RnF-02] La interfaz de usuario debe ser intuitiva, con una navegación sencilla e inputs claramente definidos. El objetivo es que cualquier usuario, aún sin una formación sobre la aplicación, pueda usarla con facilidad.
   \item[RnF-03] La solución debe permitir acceso únicamente a miembros del club.
   \item[RnF-04] La interfaz debe ser adaptable a distintios tamaños de pantallas.
-  \item[]
 \end{description}
 
 \section{Especificación del diseño}
@@ -483,9 +481,23 @@ Para llevar a cabo el proyecto, ha sido necesario especificar el diseño del mis
 
 La solución está basada en una arquitectura cliente-servidor, compuesta por una parte backend que ejecuta toda la lógica de negocio y una parte frontend que muestra al usuario la información. La parte backend hace uso de una base de datos relacional para almacenar toda la información del proyecto. Además, el backend se comunicará con Anthropic para utilizar uno de sus modelos de IA. El proyecto estará embebido dentro de un contenedor de Docker.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{imgs/arquitectura.png}
+  \caption{Arquitectura de la solución}
+  \label{fig:architecture}
+\end{figure}
+
 \subsection{Diseño relacional de la base de datos}
 
-A la hora de diseñar la solución es fundamental tener claro qué información será necesaria almacenar. Para ello, se ha realizado un diseño relacional de la base de datos teniendo en cuenta los requisitos del proyecto y sus objetivos.
+A la hora de diseñar la solución es fundamental tener claro qué información será necesaria almacenar y qué no. Para ello, se ha realizado un diseño relacional de la base de datos teniendo en cuenta los requisitos del proyecto y sus objetivos. El diseño inicial era el que aparece a continuación:
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{imgs/first_database.png}
+  \caption{Primer diseño relacional de la base de datos}
+  \label{fig:primer-database}
+\end{figure}
 
 \subsection{Diseño de la interfaz de la aplicación web}
 

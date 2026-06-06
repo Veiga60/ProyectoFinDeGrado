@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.5.1)  6 JUN 2026 17:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.5.1)  6 JUN 2026 19:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1021,7 +1021,7 @@ LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/regular/it' aliased to
 (Font)              `T1/SourceSansThree-TLF/m/it' on input line 26.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/m/it' will be
 (Font)              scaled to size 10.0pt on input line 26.
-<imgs/sporteasy.png, id=201, 845.40843pt x 578.91281pt>
+<imgs/sporteasy.png, id=207, 845.40843pt x 578.91281pt>
 File: imgs/sporteasy.png Graphic file (type png)
 <use imgs/sporteasy.png>
 Package pdftex.def Info: imgs/sporteasy.png  used on input line 44.
@@ -1029,13 +1029,13 @@ Package pdftex.def Info: imgs/sporteasy.png  used on input line 44.
 [3
 
 ] [4 <./imgs/sporteasy.png>]
-<imgs/sportmember.png, id=212, 982.42032pt x 719.68875pt>
+<imgs/sportmember.png, id=218, 982.42032pt x 719.68875pt>
 File: imgs/sportmember.png Graphic file (type png)
 <use imgs/sportmember.png>
 Package pdftex.def Info: imgs/sportmember.png  used on input line 66.
 (pdftex.def)             Requested size: 455.24411pt x 333.49875pt.
  [5 <./imgs/sportmember.png>]
-<imgs/clupik.png, id=219, 156.585pt x 108.405pt>
+<imgs/clupik.png, id=225, 156.585pt x 108.405pt>
 File: imgs/clupik.png Graphic file (type png)
 <use imgs/clupik.png>
 Package pdftex.def Info: imgs/clupik.png  used on input line 86.
@@ -1059,79 +1059,91 @@ chapter 5.
 ]
 chapter 6.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 327.
+(Font)              in TS1 encoding on input line 326.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/regular/n' aliased to
-(Font)              `T1/SourceSansThree-TLF/m/n' on input line 327.
+(Font)              `T1/SourceSansThree-TLF/m/n' on input line 326.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/m/n' will be
-(Font)              scaled to size 6.99997pt on input line 327.
+(Font)              scaled to size 6.99997pt on input line 326.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 329.
+(Font)              in TS1 encoding on input line 328.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 331.
+(Font)              in TS1 encoding on input line 330.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 333.
+(Font)              in TS1 encoding on input line 332.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 335.
+(Font)              in TS1 encoding on input line 334.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 337.
+(Font)              in TS1 encoding on input line 336.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/bold/n' aliased to
-(Font)              `T1/SourceSansThree-TLF/b/n' on input line 337.
+(Font)              `T1/SourceSansThree-TLF/b/n' on input line 336.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/b/n' will be
-(Font)              scaled to size 6.99997pt on input line 337.
+(Font)              scaled to size 6.99997pt on input line 336.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 358.
+(Font)              in TS1 encoding on input line 357.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 360.
+(Font)              in TS1 encoding on input line 359.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 362.
+(Font)              in TS1 encoding on input line 361.
 [15
 
 ]
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 381.
+(Font)              in TS1 encoding on input line 380.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 383.
+(Font)              in TS1 encoding on input line 382.
  [16]
 chapter 7.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/bold/n' aliased to
-(Font)              `T1/SourceSansThree-TLF/b/n' on input line 423.
+(Font)              `T1/SourceSansThree-TLF/b/n' on input line 422.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 423.
+(Font)              scaled to size 12.0pt on input line 422.
 [17
 
-] [18] [19] [20] [21]
-<imgs/figma.jpeg, id=304, 1606.0pt x 903.375pt>
+] [18] [19]
+<imgs/arquitectura.png, id=301, 853.5087pt x 369.2997pt>
+File: imgs/arquitectura.png Graphic file (type png)
+<use imgs/arquitectura.png>
+Package pdftex.def Info: imgs/arquitectura.png  used on input line 486.
+(pdftex.def)             Requested size: 455.24411pt x 196.97324pt.
+ [20 <./imgs/arquitectura.png>]
+<imgs/first_database.png, id=309, 1543.7675pt x 1098.1025pt>
+File: imgs/first_database.png Graphic file (type png)
+<use imgs/first_database.png>
+Package pdftex.def Info: imgs/first_database.png  used on input line 497.
+(pdftex.def)             Requested size: 455.24411pt x 323.82013pt.
+ [21 <./imgs/first_database.png>] [22]
+<imgs/figma.jpeg, id=319, 1606.0pt x 903.375pt>
 File: imgs/figma.jpeg Graphic file (type jpg)
 <use imgs/figma.jpeg>
-Package pdftex.def Info: imgs/figma.jpeg  used on input line 528.
+Package pdftex.def Info: imgs/figma.jpeg  used on input line 540.
 (pdftex.def)             Requested size: 455.24411pt x 256.07233pt.
-<imgs/inkscape.jpeg, id=305, 1606.0pt x 903.375pt>
+<imgs/inkscape.jpeg, id=320, 1606.0pt x 903.375pt>
 File: imgs/inkscape.jpeg Graphic file (type jpg)
 <use imgs/inkscape.jpeg>
-Package pdftex.def Info: imgs/inkscape.jpeg  used on input line 543.
+Package pdftex.def Info: imgs/inkscape.jpeg  used on input line 555.
 (pdftex.def)             Requested size: 455.24411pt x 256.07233pt.
- [22 <./imgs/figma.jpeg>] [23 <./imgs/inkscape.jpeg>]
+ [23 <./imgs/figma.jpeg>] [24 <./imgs/inkscape.jpeg>]
 chapter 8.
-[24
-
-]
-chapter 9.
 [25
 
 ]
-chapter 10.
+chapter 9.
 [26
 
 ]
+chapter 10.
+[27
+
+]
 chapter 11.
-) [27
+) [28
 
 ] (main.bbl
 
 LaTeX Warning: Empty `thebibliography' environment or \BreakBibliography
                before end of `thebibliography' environment on input line 24.
 
-) [28
+) [29
 
 
 
@@ -1139,7 +1151,7 @@ LaTeX Warning: Empty `thebibliography' environment or \BreakBibliography
 
 ]
 chapter A.
-[29
+[30
 
 ] (main.aux
 LaTeX Info: Redefining \. on input line 14.
@@ -1151,17 +1163,17 @@ L3 programming layer <2026-03-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 23449 strings out of 467691
- 442014 string characters out of 5415472
+ 23469 strings out of 467691
+ 442489 string characters out of 5415472
  1057034 words of memory out of 5000000
- 51847 multiletter control sequences out of 15000+600000
+ 51863 multiletter control sequences out of 15000+600000
  781885 words of font info for 214 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  122i,20n,121p,11242b,918s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-Bold.pfb><C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-It.pfb><C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-Regular.pfb>
-Output written on main.pdf (35 pages, 1179069 bytes).
+Output written on main.pdf (36 pages, 1466754 bytes).
 PDF statistics:
- 508 PDF objects out of 1000 (max. 8388607)
- 107 named destinations out of 1000 (max. 500000)
- 61817 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 525 PDF objects out of 1000 (max. 8388607)
+ 111 named destinations out of 1000 (max. 500000)
+ 61827 words of extra memory for PDF output out of 61914 (max. 10000000)
 
