@@ -2,45 +2,45 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.4}%
 \contentsline {chapter}{\numberline {2}Antecedentes y justificación}{3}{chapter.5}%
-\contentsline {chapter}{\numberline {3}Objetivos y alcance}{6}{chapter.8}%
-\contentsline {section}{\numberline {3.1}Objetivos}{6}{section.9}%
-\contentsline {section}{\numberline {3.2}Alcance}{6}{section.10}%
-\contentsline {chapter}{\numberline {4}Plan de trabajo}{8}{chapter.21}%
-\contentsline {section}{\numberline {4.1}Planificación temporal}{8}{section.22}%
-\contentsline {chapter}{\numberline {5}Metodología}{13}{chapter.23}%
-\contentsline {chapter}{\numberline {6}Presupuesto}{14}{chapter.24}%
-\contentsline {section}{\numberline {6.1}Mano de obra}{14}{section.25}%
-\contentsline {section}{\numberline {6.2}Material}{14}{section.26}%
-\contentsline {section}{\numberline {6.3}Software, licencias y otros servicios}{14}{section.28}%
-\contentsline {chapter}{\numberline {7}Desarrollo del proyecto}{16}{chapter.30}%
-\contentsline {section}{\numberline {7.1}Stakeholders}{16}{section.31}%
-\contentsline {section}{\numberline {7.2}Especificación de requisitos}{16}{section.33}%
-\contentsline {subsection}{\numberline {7.2.1}Requisitos funcionales}{16}{subsection.34}%
-\contentsline {subsection}{\numberline {7.2.2}Requisitos no funcionales}{18}{subsection.35}%
-\contentsline {section}{\numberline {7.3}Especificación del diseño}{18}{section.36}%
-\contentsline {subsection}{\numberline {7.3.1}Diseño de la arquitectura de la solución}{19}{subsection.42}%
-\contentsline {subsection}{\numberline {7.3.2}Diseño relacional de la base de datos}{19}{subsection.43}%
-\contentsline {subsection}{\numberline {7.3.3}Diseño de la interfaz de la aplicación web}{19}{subsection.44}%
-\contentsline {section}{\numberline {7.4}Tecnologías y herramientas utilizadas}{19}{section.45}%
-\contentsline {subsection}{\numberline {7.4.1}Maven}{19}{subsection.46}%
-\contentsline {subsection}{\numberline {7.4.2}Spring Boot}{20}{subsection.47}%
-\contentsline {subsection}{\numberline {7.4.3}React}{20}{subsection.48}%
-\contentsline {subsection}{\numberline {7.4.4}MySQL}{20}{subsection.49}%
-\contentsline {subsection}{\numberline {7.4.5}Docker}{20}{subsection.50}%
-\contentsline {subsection}{\numberline {7.4.6}GitHub Desktop}{20}{subsection.51}%
-\contentsline {subsection}{\numberline {7.4.7}Antigravity IDE}{21}{subsection.52}%
-\contentsline {subsection}{\numberline {7.4.8}Figma}{21}{subsection.53}%
-\contentsline {subsection}{\numberline {7.4.9}Draw.io}{21}{subsection.55}%
-\contentsline {subsection}{\numberline {7.4.10}Inkscape}{22}{subsection.56}%
-\contentsline {section}{\numberline {7.5}Consideraciones sobre la implementación}{22}{section.58}%
-\contentsline {section}{\numberline {7.6}Plan de prueba}{22}{section.59}%
-\contentsline {section}{\numberline {7.7}Manual de usuario}{22}{section.60}%
-\contentsline {section}{\numberline {7.8}Incidencias del proyecto}{22}{section.61}%
-\contentsline {chapter}{\numberline {8}Valoración ética del proyecto}{23}{chapter.62}%
-\contentsline {chapter}{\numberline {9}Conclusiones}{24}{chapter.63}%
-\contentsline {chapter}{\numberline {10}Definiciones, acrónimos y abreviaturas}{25}{chapter.64}%
-\contentsline {chapter}{\numberline {11}Apéndices}{26}{chapter.65}%
-\contentsline {chapter}{Bibliograf\'ia}{27}{chapter.65}%
+\contentsline {chapter}{\numberline {3}Objetivos y alcance}{7}{chapter.11}%
+\contentsline {section}{\numberline {3.1}Objetivos}{7}{section.12}%
+\contentsline {section}{\numberline {3.2}Alcance}{7}{section.13}%
+\contentsline {chapter}{\numberline {4}Plan de trabajo}{9}{chapter.24}%
+\contentsline {section}{\numberline {4.1}Planificación temporal}{9}{section.25}%
+\contentsline {chapter}{\numberline {5}Metodología}{14}{chapter.26}%
+\contentsline {chapter}{\numberline {6}Presupuesto}{15}{chapter.27}%
+\contentsline {section}{\numberline {6.1}Mano de obra}{15}{section.28}%
+\contentsline {section}{\numberline {6.2}Material}{15}{section.29}%
+\contentsline {section}{\numberline {6.3}Software, licencias y otros servicios}{15}{section.31}%
+\contentsline {chapter}{\numberline {7}Desarrollo del proyecto}{17}{chapter.33}%
+\contentsline {section}{\numberline {7.1}Stakeholders}{17}{section.34}%
+\contentsline {section}{\numberline {7.2}Especificación de requisitos}{17}{section.36}%
+\contentsline {subsection}{\numberline {7.2.1}Requisitos funcionales}{17}{subsection.37}%
+\contentsline {subsection}{\numberline {7.2.2}Requisitos no funcionales}{19}{subsection.38}%
+\contentsline {section}{\numberline {7.3}Especificación del diseño}{19}{section.39}%
+\contentsline {subsection}{\numberline {7.3.1}Diseño de la arquitectura de la solución}{20}{subsection.45}%
+\contentsline {subsection}{\numberline {7.3.2}Diseño relacional de la base de datos}{20}{subsection.46}%
+\contentsline {subsection}{\numberline {7.3.3}Diseño de la interfaz de la aplicación web}{20}{subsection.47}%
+\contentsline {section}{\numberline {7.4}Tecnologías y herramientas utilizadas}{20}{section.48}%
+\contentsline {subsection}{\numberline {7.4.1}Maven}{20}{subsection.49}%
+\contentsline {subsection}{\numberline {7.4.2}Spring Boot}{21}{subsection.50}%
+\contentsline {subsection}{\numberline {7.4.3}React}{21}{subsection.51}%
+\contentsline {subsection}{\numberline {7.4.4}MySQL}{21}{subsection.52}%
+\contentsline {subsection}{\numberline {7.4.5}Docker}{21}{subsection.53}%
+\contentsline {subsection}{\numberline {7.4.6}GitHub Desktop}{21}{subsection.54}%
+\contentsline {subsection}{\numberline {7.4.7}Antigravity IDE}{22}{subsection.55}%
+\contentsline {subsection}{\numberline {7.4.8}Figma}{22}{subsection.56}%
+\contentsline {subsection}{\numberline {7.4.9}Draw.io}{22}{subsection.58}%
+\contentsline {subsection}{\numberline {7.4.10}Inkscape}{23}{subsection.59}%
+\contentsline {section}{\numberline {7.5}Consideraciones sobre la implementación}{23}{section.61}%
+\contentsline {section}{\numberline {7.6}Plan de prueba}{23}{section.62}%
+\contentsline {section}{\numberline {7.7}Manual de usuario}{23}{section.63}%
+\contentsline {section}{\numberline {7.8}Incidencias del proyecto}{23}{section.64}%
+\contentsline {chapter}{\numberline {8}Valoración ética del proyecto}{24}{chapter.65}%
+\contentsline {chapter}{\numberline {9}Conclusiones}{25}{chapter.66}%
+\contentsline {chapter}{\numberline {10}Definiciones, acrónimos y abreviaturas}{26}{chapter.67}%
+\contentsline {chapter}{\numberline {11}Apéndices}{27}{chapter.68}%
+\contentsline {chapter}{Bibliograf\'ia}{28}{chapter.68}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Ejemplo Apéndice 1}{28}{appendix.67}%
+\contentsline {chapter}{\numberline {A}Ejemplo Apéndice 1}{29}{appendix.70}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
