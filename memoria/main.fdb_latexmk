@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1780772747.31291 "main.aux" "main.bbl" "main" 1780772751.8913 0
-  "./referencias.bib" 1780772746 1067 7c100c2f0a6b76bf425afe83de06c24e ""
+["bibtex main"] 1780773864.76531 "main.aux" "main.bbl" "main" 1780773869.36562 0
+  "./referencias.bib" 1780773863 1844 55132efa8b03eee5677e05ec3b7ace1c ""
   "C:/Users/Iker/AppData/Local/Programs/MiKTeX/bibtex/bst/ieeetran/IEEEtran.bst" 1440622569 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "main.aux" 1780772751 21936 8cab689bd34dbd4fede7671a9e2e35a9 "pdflatex"
+  "main.aux" 1780773868 22082 e38b665d6a51b140ec0b00f3a3052f53 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1780772747.57574 "d:/git/ProyectoFinDeGrado/memoria/main.tex" "main.pdf" "main" 1780772751.892 0
+["pdflatex"] 1780773865.02663 "d:/git/ProyectoFinDeGrado/memoria/main.tex" "main.pdf" "main" 1780773869.36648 0
   "C:/Users/Iker/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1780238049 171779 920ec64410a00de0bf7428757f0f0eee ""
   "C:/Users/Iker/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1777663992 13349787 a02da4c48706a1560486e56434a9bfb3 ""
   "C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/sourcesans/a_44crgg.enc" 1772377178 3189 771b29eb6b50002b7080e180cebd0122 ""
@@ -155,14 +155,14 @@
   "imgs/inkscape.jpeg" 1780057388 120856 cd4d00148f9fe815f9d035aa4fc7cd8f ""
   "imgs/sporteasy.png" 1780740348 247422 1986956eecd40a812e3c039a6d34a10c ""
   "imgs/sportmember.png" 1780743114 215620 5939ef8d0e8493912ee6f34de8bd8a5b ""
-  "main.aux" 1780772751 21936 8cab689bd34dbd4fede7671a9e2e35a9 "pdflatex"
-  "main.bbl" 1780772747 1696 7dd83fc89cf154751871a9fa1c9e169a "bibtex main"
-  "main.lof" 1780772751 1143 83e68b29828848a0493c815c3b035683 "pdflatex"
-  "main.lot" 1780772751 797 504b5cf8f6946ad44e605ed288ae34dc "pdflatex"
+  "main.aux" 1780773868 22082 e38b665d6a51b140ec0b00f3a3052f53 "pdflatex"
+  "main.bbl" 1780773864 2291 4a340c7f2469938647ac8a84e00280c2 "bibtex main"
+  "main.lof" 1780773868 1143 83e68b29828848a0493c815c3b035683 "pdflatex"
+  "main.lot" 1780773868 797 504b5cf8f6946ad44e605ed288ae34dc "pdflatex"
   "main.tex" 1780772662 4054 651c2a8d88bebb26af279b6c31c23af4 ""
-  "main.toc" 1780772751 3477 3ead6b5de858cda57102f35a162df156 "pdflatex"
+  "main.toc" 1780773868 3477 3ead6b5de858cda57102f35a162df156 "pdflatex"
   "memoriaPFC.cls" 1780217398 7448 b6ddf6d49fdf7aa43734754486429840 ""
-  "otras.aux" 1780772748 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "otras.aux" 1780773866 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "portada.pdf" 1780239303 109370 8eecd0a8ba6d1845ae3b6fc83dfedd96 ""
   (generated)
   "main.aux"
