@@ -26,41 +26,74 @@
   2026).
 
 \bibitem{sportmember}
-``{Sportmember},'' \url{https://www.sportmember.es/}, (accedido: 6 de junio de
+``{Sportmember},'' \url{https://www.sportmember.es/}, (accedido 6 de junio de
   2026).
 
 \bibitem{clupik}
-``{Clupik},'' \url{https://clupik.com/}, (accedido: 6 de junio de 2026).
+``{Clupik},'' \url{https://clupik.com/}, (accedido 6 de junio de 2026).
 
 \bibitem{div-arriba-izquierda}
 ``{Quora},''
   \url{https://www.quora.com/How-do-you-position-div-in-the-top-right-corner},
-  (accedido: 24 de octubre de 2025).
+  (accedido 1 de noviembre de 2025).
 
 \bibitem{fuente-personalizada-blog}
 ``{elementor},''
   \url{https://elementor.com/blog/es/como-utilizar-font-face-en-css/},
-  (accedido: 24 de octubre de 2025).
+  (accedido 1 de noviembre de 2025).
 
 \bibitem{fuente-personalizada-google-fonts}
-``{Google Fonts},'' \url{https://fonts.google.com/}, (accedido: 24 de octubre
+``{Google Fonts},'' \url{https://fonts.google.com/}, (accedido 1 de noviembre
   de 2025).
 
 \bibitem{subrayar-text-css}
 ``{elementor},''
-  \url{https://elementor.com/blog/how-to-underline-text-in-css/}, (accedido: 25
-  de octubre de 2025).
+  \url{https://elementor.com/blog/how-to-underline-text-in-css/}, (accedido 1
+  de noviembre de 2025).
 
 \bibitem{variables-estado-react}
-``{React},'' \url{https://legacy.reactjs.org/docs/hooks-state.html}, (accedido:
-  26 de octubre de 2025).
+``{React},'' \url{https://legacy.reactjs.org/docs/hooks-state.html}, (accedido
+  2 de noviembre de 2025).
 
 \bibitem{propiedades-a-componente}
 ``{React},'' \url{https://es.react.dev/learn/passing-props-to-a-component},
-  (accedido: 26 de octubre de 2025).
+  (accedido 2 de noviembre de 2025).
 
 \bibitem{sentencia-if-else-ternaria}
-``{Javascript.Info},'' \url{https://es.javascript.info/ifelse}, (accedido: 26
-  de octubre de 2025).
+``{Javascript.Info},'' \url{https://es.javascript.info/ifelse}, (accedido 3 de
+  noviembre de 2025).
+
+\bibitem{comando-crear-proyeto-maven}
+``{Maven},''
+  \url{https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html},
+  (accedido 10 de noviembre de 2025, a falta de preguntar como referenciar
+  apuntes de alud).
+
+\bibitem{dependencias-maven-springboot}
+``{Proyecto Spootify},'' \url{https://spring.io/guides/gs/rest-service},
+  (accedido 10 de noviembre de 2025, a falta de preguntar como referenciar
+  proyectos propios).
+
+\bibitem{recordatorio-springboot-java}
+``{Proyecto Spootify},'' \url{https://spring.io/guides/gs/rest-service},
+  (accedido 10 de noviembre de 2025, a falta de preguntar como referenciar
+  proyectos propios).
+
+\bibitem{springboot-starter}
+``{Spring Boot},'' \url{https://spring.io/guides/gs/rest-service}, (accedido 10
+  de noviembre de 2025).
+
+\bibitem{dependencias-maven-docker}
+``{Proyecto Spootify},'' \url{Dockerfile parte servidor}, (accedido 11 de
+  noviembre de 2025, a falta de preguntar como referenciar proyectos propios).
+
+\bibitem{dockerfile-react}
+``{Docker},'' \url{https://www.docker.com/blog/how-to-dockerize-react-app/},
+  (accedido 11 de noviembre de 2025, a falta de preguntar como referenciar
+  proyectos propios).
+
+\bibitem{curvas-bezier-inkscape}
+``{Youtube},'' \url{https://www.youtube.com/watch?v=IpqiTxtP2Sc}, (accedido 16
+  de mayo de 2026).
 
 \end{thebibliography}

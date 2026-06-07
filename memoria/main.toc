@@ -7,39 +7,41 @@
 \contentsline {section}{\numberline {3.2}Alcance}{7}{section.13}%
 \contentsline {chapter}{\numberline {4}Plan de trabajo}{9}{chapter.25}%
 \contentsline {section}{\numberline {4.1}Planificación temporal}{9}{section.26}%
-\contentsline {chapter}{\numberline {5}Metodología}{14}{chapter.27}%
-\contentsline {chapter}{\numberline {6}Presupuesto}{15}{chapter.28}%
-\contentsline {section}{\numberline {6.1}Mano de obra}{15}{section.29}%
-\contentsline {section}{\numberline {6.2}Material}{15}{section.31}%
-\contentsline {section}{\numberline {6.3}Software, licencias y otros servicios}{16}{section.33}%
-\contentsline {chapter}{\numberline {7}Desarrollo del proyecto}{17}{chapter.35}%
-\contentsline {section}{\numberline {7.1}Stakeholders}{17}{section.36}%
-\contentsline {section}{\numberline {7.2}Especificación de requisitos}{17}{section.38}%
-\contentsline {subsection}{\numberline {7.2.1}Requisitos funcionales}{17}{subsection.39}%
-\contentsline {subsection}{\numberline {7.2.2}Requisitos no funcionales}{19}{subsection.40}%
-\contentsline {section}{\numberline {7.3}Especificación del diseño}{19}{section.41}%
-\contentsline {subsection}{\numberline {7.3.1}Diseño de la arquitectura de la solución}{20}{subsection.47}%
-\contentsline {subsection}{\numberline {7.3.2}Diseño relacional de la base de datos}{21}{subsection.49}%
-\contentsline {subsection}{\numberline {7.3.3}Diseño de la interfaz de la aplicación web}{21}{subsection.51}%
-\contentsline {section}{\numberline {7.4}Tecnologías y herramientas utilizadas}{21}{section.52}%
-\contentsline {subsection}{\numberline {7.4.1}Maven}{21}{subsection.53}%
-\contentsline {subsection}{\numberline {7.4.2}Spring Boot}{22}{subsection.54}%
-\contentsline {subsection}{\numberline {7.4.3}React}{22}{subsection.55}%
-\contentsline {subsection}{\numberline {7.4.4}MySQL}{22}{subsection.56}%
-\contentsline {subsection}{\numberline {7.4.5}Docker}{22}{subsection.57}%
-\contentsline {subsection}{\numberline {7.4.6}GitHub Desktop}{22}{subsection.58}%
-\contentsline {subsection}{\numberline {7.4.7}Antigravity IDE}{23}{subsection.59}%
-\contentsline {subsection}{\numberline {7.4.8}Figma}{23}{subsection.60}%
-\contentsline {subsection}{\numberline {7.4.9}Draw.io}{23}{subsection.62}%
-\contentsline {subsection}{\numberline {7.4.10}Inkscape}{24}{subsection.63}%
-\contentsline {section}{\numberline {7.5}Consideraciones sobre la implementación}{24}{section.65}%
-\contentsline {section}{\numberline {7.6}Plan de prueba}{24}{section.66}%
-\contentsline {section}{\numberline {7.7}Incidencias del proyecto}{24}{section.67}%
-\contentsline {chapter}{\numberline {8}Manual de usuario}{25}{chapter.68}%
-\contentsline {chapter}{\numberline {9}Valoración ética del proyecto}{26}{chapter.69}%
-\contentsline {chapter}{\numberline {10}Conclusiones}{27}{chapter.70}%
-\contentsline {chapter}{\numberline {11}Definiciones, acrónimos y abreviaturas}{28}{chapter.71}%
-\contentsline {chapter}{Bibliograf\'ia}{29}{chapter.71}%
+\contentsline {chapter}{\numberline {5}Metodología}{16}{chapter.27}%
+\contentsline {section}{\numberline {5.1}Metodologías iterativas e incrementales}{16}{section.28}%
+\contentsline {chapter}{\numberline {6}Presupuesto}{17}{chapter.29}%
+\contentsline {section}{\numberline {6.1}Mano de obra}{17}{section.30}%
+\contentsline {section}{\numberline {6.2}Material}{17}{section.32}%
+\contentsline {section}{\numberline {6.3}Software, licencias y otros servicios}{18}{section.34}%
+\contentsline {chapter}{\numberline {7}Desarrollo del proyecto}{19}{chapter.36}%
+\contentsline {section}{\numberline {7.1}Stakeholders}{19}{section.37}%
+\contentsline {section}{\numberline {7.2}Especificación de requisitos}{19}{section.39}%
+\contentsline {subsection}{\numberline {7.2.1}Requisitos funcionales}{19}{subsection.40}%
+\contentsline {subsection}{\numberline {7.2.2}Requisitos no funcionales}{21}{subsection.41}%
+\contentsline {section}{\numberline {7.3}Especificación del diseño}{21}{section.42}%
+\contentsline {subsection}{\numberline {7.3.1}Diseño de la arquitectura de la solución}{22}{subsection.48}%
+\contentsline {subsection}{\numberline {7.3.2}Diseño relacional de la base de datos}{23}{subsection.50}%
+\contentsline {subsection}{\numberline {7.3.3}Diseño de la interfaz de la aplicación web}{23}{subsection.52}%
+\contentsline {section}{\numberline {7.4}Tecnologías y herramientas utilizadas}{23}{section.53}%
+\contentsline {subsection}{\numberline {7.4.1}Maven}{23}{subsection.54}%
+\contentsline {subsection}{\numberline {7.4.2}Spring Boot}{24}{subsection.55}%
+\contentsline {subsection}{\numberline {7.4.3}React}{24}{subsection.56}%
+\contentsline {subsection}{\numberline {7.4.4}MySQL}{24}{subsection.57}%
+\contentsline {subsection}{\numberline {7.4.5}Docker}{24}{subsection.58}%
+\contentsline {subsection}{\numberline {7.4.6}GitHub Desktop}{24}{subsection.59}%
+\contentsline {subsection}{\numberline {7.4.7}Antigravity IDE}{25}{subsection.60}%
+\contentsline {subsection}{\numberline {7.4.8}Figma}{25}{subsection.61}%
+\contentsline {subsection}{\numberline {7.4.9}Draw.io}{25}{subsection.63}%
+\contentsline {subsection}{\numberline {7.4.10}Inkscape}{26}{subsection.64}%
+\contentsline {section}{\numberline {7.5}Consideraciones sobre la implementación}{26}{section.66}%
+\contentsline {section}{\numberline {7.6}Plan de prueba}{26}{section.67}%
+\contentsline {section}{\numberline {7.7}Incidencias del proyecto}{26}{section.68}%
+\contentsline {chapter}{\numberline {8}Manual de usuario}{27}{chapter.69}%
+\contentsline {chapter}{\numberline {9}Valoración ética del proyecto}{28}{chapter.70}%
+\contentsline {chapter}{\numberline {10}Conclusiones}{29}{chapter.71}%
+\contentsline {chapter}{\numberline {11}Trabajo futuro}{30}{chapter.72}%
+\contentsline {chapter}{\numberline {12}Definiciones, acrónimos y abreviaturas}{31}{chapter.73}%
+\contentsline {chapter}{Bibliograf\'ia}{32}{chapter.73}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Ejemplo Apéndice 1}{30}{appendix.73}%
+\contentsline {chapter}{\numberline {A}Uso de inteligencia artificial}{34}{appendix.75}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

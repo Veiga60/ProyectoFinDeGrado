@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1780773864.76531 "main.aux" "main.bbl" "main" 1780773869.36562 0
-  "./referencias.bib" 1780773863 1844 55132efa8b03eee5677e05ec3b7ace1c ""
+["bibtex main"] 1780851256.06176 "main.aux" "main.bbl" "main" 1780851616.7395 0
+  "./referencias.bib" 1780842439 3493 6fe6c52006764a164491745ad4cd7ce5 ""
   "C:/Users/Iker/AppData/Local/Programs/MiKTeX/bibtex/bst/ieeetran/IEEEtran.bst" 1440622569 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "main.aux" 1780773868 22082 e38b665d6a51b140ec0b00f3a3052f53 "pdflatex"
+  "main.aux" 1780851615 23568 ccdd4489a898b4b79ac2bc5c8250f469 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1780773865.02663 "d:/git/ProyectoFinDeGrado/memoria/main.tex" "main.pdf" "main" 1780773869.36648 0
-  "C:/Users/Iker/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1780238049 171779 920ec64410a00de0bf7428757f0f0eee ""
+["pdflatex"] 1780851612.1217 "d:/git/ProyectoFinDeGrado/memoria/main.tex" "main.pdf" "main" 1780851616.74017 0
+  "C:/Users/Iker/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1780841344 171779 920ec64410a00de0bf7428757f0f0eee ""
   "C:/Users/Iker/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1777663992 13349787 a02da4c48706a1560486e56434a9bfb3 ""
   "C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/sourcesans/a_44crgg.enc" 1772377178 3189 771b29eb6b50002b7080e180cebd0122 ""
   "C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/sourcesans/a_uz6pbi.enc" 1772377179 2948 f0d59b248476e870a9c9562d25a2e12a ""
@@ -146,8 +146,9 @@
   "C:/Users/Iker/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Iker/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/Iker/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "d:/git/ProyectoFinDeGrado/memoria/main.tex" 1780772662 4054 651c2a8d88bebb26af279b6c31c23af4 ""
-  "dummy.tex" 1780771031 39082 34392f709db80af816eda95553683c06 ""
+  "C:/Users/Iker/AppData/Local/Programs/MiKTeX/tex/latex/xurl/xurl.sty" 1641733940 4675 e4b8c405820368c2dfb03526e16d725a ""
+  "d:/git/ProyectoFinDeGrado/memoria/main.tex" 1780843216 4156 f43a0ec9f1084548881c7440c0de3d25 ""
+  "dummy.tex" 1780851611 46604 b4f499e36476ed7b4d844a21fe6d6d46 ""
   "imgs/arquitectura.png" 1780768055 395580 d6ed7864a7c89b85f9427f3a4ffcf3de ""
   "imgs/clupik.png" 1780755786 117708 6b144de1e1aaa37c533cce3c49522c3d ""
   "imgs/figma.jpeg" 1780057708 108551 4174189197f05bfbc11297f44d5ec510 ""
@@ -155,14 +156,14 @@
   "imgs/inkscape.jpeg" 1780057388 120856 cd4d00148f9fe815f9d035aa4fc7cd8f ""
   "imgs/sporteasy.png" 1780740348 247422 1986956eecd40a812e3c039a6d34a10c ""
   "imgs/sportmember.png" 1780743114 215620 5939ef8d0e8493912ee6f34de8bd8a5b ""
-  "main.aux" 1780773868 22082 e38b665d6a51b140ec0b00f3a3052f53 "pdflatex"
-  "main.bbl" 1780773864 2291 4a340c7f2469938647ac8a84e00280c2 "bibtex main"
-  "main.lof" 1780773868 1143 83e68b29828848a0493c815c3b035683 "pdflatex"
-  "main.lot" 1780773868 797 504b5cf8f6946ad44e605ed288ae34dc "pdflatex"
-  "main.tex" 1780772662 4054 651c2a8d88bebb26af279b6c31c23af4 ""
-  "main.toc" 1780773868 3477 3ead6b5de858cda57102f35a162df156 "pdflatex"
+  "main.aux" 1780851615 23568 ccdd4489a898b4b79ac2bc5c8250f469 "pdflatex"
+  "main.bbl" 1780851256 3634 ff0d59c694c98172c6bc4b2d1c8c044f "bibtex main"
+  "main.lof" 1780851615 1163 0e1b857d503c4b43c7563d0d540d4a8d "pdflatex"
+  "main.lot" 1780851615 817 b5f6b31c8214559313f8c0577d61ab19 "pdflatex"
+  "main.tex" 1780843216 4156 f43a0ec9f1084548881c7440c0de3d25 ""
+  "main.toc" 1780851615 3661 bdc954e6a9a7cdb0407d5edb2f23bedc "pdflatex"
   "memoriaPFC.cls" 1780217398 7448 b6ddf6d49fdf7aa43734754486429840 ""
-  "otras.aux" 1780773866 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "otras.aux" 1780851613 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "portada.pdf" 1780239303 109370 8eecd0a8ba6d1845ae3b6fc83dfedd96 ""
   (generated)
   "main.aux"
