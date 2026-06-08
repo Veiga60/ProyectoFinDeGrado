@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.5.1)  7 JUN 2026 21:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.5.1)  8 JUN 2026 19:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -688,18 +688,25 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisrulewidth=\dimen194
 ) (C:\Users\Iker\AppData\Local\Programs\MiKTeX\tex/latex/xurl\xurl.sty
 Package: xurl 2022/01/09 v 0.10 modify URL breaks
+) (C:\Users\Iker\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count332
+\float@exts=\toks38
+\float@box=\box66
+\@float@everytoks=\toks39
+\@floatcapt=\box67
 )
-LaTeX Font Info:    Trying to load font information for T1+SourceSansThree-TLF on input line 33.
+LaTeX Font Info:    Trying to load font information for T1+SourceSansThree-TLF on input line 34.
  (C:\Users\Iker\AppData\Local\Programs\MiKTeX\tex/latex/sourcesans\t1sourcesansthree-tlf.fd
 File: T1SourceSansThree-TLF.fd 2026/03/01 (autoinst) Font definitions for T1/SourceSansThree-TLF.
 )
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/regular/n' aliased to
-(Font)              `T1/SourceSansThree-TLF/m/n' on input line 33.
+(Font)              `T1/SourceSansThree-TLF/m/n' on input line 34.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 33.
+(Font)              scaled to size 10.0pt on input line 34.
  (C:\Users\Iker\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2026-02-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count332
+\l__color_backend_stack_int=\count333
 ) (main.aux
 LaTeX Info: Redefining \. on input line 14.
 LaTeX Info: Redefining \% on input line 14.
@@ -708,40 +715,40 @@ Package babel Info: 'spanish' activates 'spanish' shorthands.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 33.
-LaTeX Font Info:    Trying to load font information for LY1+ptm on input line 33.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 34.
+LaTeX Font Info:    Trying to load font information for LY1+ptm on input line 34.
  (C:\Users\Iker\AppData\Local\Programs\MiKTeX\tex/latex/ly1\ly1ptm.fd
 File: ly1ptm.fd 2001/02/01 font definitions for LY1/ptm using Berry names.
 )
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-Package scrbase Info: activating english \partname on input line 33.
-Package scrbase Info: activating english \chaptername on input line 33.
-Package scrbase Info: activating english \appendixname on input line 33.
-Package scrbase Info: activating english \figurename on input line 33.
-Package scrbase Info: activating english \tablename on input line 33.
-Package scrbase Info: activating english \contentsname on input line 33.
-Package scrbase Info: activating english \listfigurename on input line 33.
-Package scrbase Info: activating english \listtablename on input line 33.
-Package scrbase Info: activating english \bibname on input line 33.
-Package scrbase Info: activating english \indexname on input line 33.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+Package scrbase Info: activating english \partname on input line 34.
+Package scrbase Info: activating english \chaptername on input line 34.
+Package scrbase Info: activating english \appendixname on input line 34.
+Package scrbase Info: activating english \figurename on input line 34.
+Package scrbase Info: activating english \tablename on input line 34.
+Package scrbase Info: activating english \contentsname on input line 34.
+Package scrbase Info: activating english \listfigurename on input line 34.
+Package scrbase Info: activating english \listtablename on input line 34.
+Package scrbase Info: activating english \bibname on input line 34.
+Package scrbase Info: activating english \indexname on input line 34.
 
 
 Package scrlayer-scrpage Warning: Very small head height detected!
@@ -755,25 +762,25 @@ Package scrlayer-scrpage Warning: Very small head height detected!
 
 (C:\Users\Iker\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count333
+\scratchcounter=\count334
 \scratchdimen=\dimen195
-\scratchbox=\box66
-\nofMPsegments=\count334
-\nofMParguments=\count335
-\everyMPshowfont=\toks38
-\MPscratchCnt=\count336
+\scratchbox=\box68
+\nofMPsegments=\count335
+\nofMParguments=\count336
+\everyMPshowfont=\toks40
+\MPscratchCnt=\count337
 \MPscratchDim=\dimen196
-\MPnumerator=\count337
-\makeMPintoPDFobject=\count338
-\everyMPtoPDFconversion=\toks39
+\MPnumerator=\count338
+\makeMPintoPDFobject=\count339
+\everyMPtoPDFconversion=\toks41
 ) (C:\Users\Iker\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (C:\Users\Iker\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-\c@lstlisting=\count339
-Package tocbasic Info: setting babel extension for `lol' on input line 33.
+\c@lstlisting=\count340
+Package tocbasic Info: setting babel extension for `lol' on input line 34.
 \scr@dte@lstlisting@maxnumwidth=\skip75
  (C:\Users\Iker\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
@@ -784,7 +791,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-Package hyperref Info: Link coloring ON on input line 33.
+Package hyperref Info: Link coloring ON on input line 34.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -820,13 +827,13 @@ Package hyperref Info: Link coloring ON on input line 33.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 33.
-Package microtype Info: Applying patch `item' on input line 33.
-Package microtype Info: Applying patch `toc' on input line 33.
-Package microtype Info: Applying patch `eqnum' on input line 33.
-Package microtype Info: Applying patch `footnote' on input line 33.
-Package microtype Info: Applying patch `verbatim' on input line 33.
-LaTeX Info: Redefining \microtypesetup on input line 33.
+LaTeX Info: Redefining \microtypecontext on input line 34.
+Package microtype Info: Applying patch `item' on input line 34.
+Package microtype Info: Applying patch `toc' on input line 34.
+Package microtype Info: Applying patch `eqnum' on input line 34.
+Package microtype Info: Applying patch `footnote' on input line 34.
+Package microtype Info: Applying patch `verbatim' on input line 34.
+LaTeX Info: Redefining \microtypesetup on input line 34.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -841,15 +848,15 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `SourceSansThree-TLF' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Info: Redefining \. on input line 36.
-LaTeX Info: Redefining \% on input line 36.
+LaTeX Info: Redefining \. on input line 37.
+LaTeX Info: Redefining \% on input line 37.
 
 
 pdfTeX warning: pdflatex (file ./portada.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <./portada.pdf, id=3, 597.55246pt x 845.07724pt>
 File: ./portada.pdf Graphic file (type pdf)
 <use ./portada.pdf>
-Package pdftex.def Info: ./portada.pdf  used on input line 44.
+Package pdftex.def Info: ./portada.pdf  used on input line 45.
 (pdftex.def)             Requested size: 597.551pt x 845.07518pt.
 
 
@@ -860,67 +867,67 @@ pdfTeX warning: pdflatex (file ./portada.pdf): PDF inclusion: found PDF version 
 <./portada.pdf, id=5, page=1, 597.55246pt x 845.07724pt>
 File: ./portada.pdf Graphic file (type pdf)
 <use ./portada.pdf, page 1>
-Package pdftex.def Info: ./portada.pdf , page1 used on input line 44.
+Package pdftex.def Info: ./portada.pdf , page1 used on input line 45.
 (pdftex.def)             Requested size: 597.551pt x 845.07518pt.
 File: ./portada.pdf Graphic file (type pdf)
 <use ./portada.pdf, page 1>
-Package pdftex.def Info: ./portada.pdf , page1 used on input line 44.
+Package pdftex.def Info: ./portada.pdf , page1 used on input line 45.
 (pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
 File: ./portada.pdf Graphic file (type pdf)
 <use ./portada.pdf, page 1>
-Package pdftex.def Info: ./portada.pdf , page1 used on input line 44.
+Package pdftex.def Info: ./portada.pdf , page1 used on input line 45.
 (pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
 File: ./portada.pdf Graphic file (type pdf)
 <use ./portada.pdf, page 1>
-Package pdftex.def Info: ./portada.pdf , page1 used on input line 44.
+Package pdftex.def Info: ./portada.pdf , page1 used on input line 45.
 (pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
 File: ./portada.pdf Graphic file (type pdf)
 <use ./portada.pdf, page 1>
-Package pdftex.def Info: ./portada.pdf , page1 used on input line 44.
+Package pdftex.def Info: ./portada.pdf , page1 used on input line 45.
 (pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
 [1
 
 
  <./portada.pdf>]
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/bold/n' aliased to
-(Font)              `T1/SourceSansThree-TLF/b/n' on input line 53.
+(Font)              `T1/SourceSansThree-TLF/b/n' on input line 54.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/b/n' will be
-(Font)              scaled to size 10.0pt on input line 53.
+(Font)              scaled to size 10.0pt on input line 54.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/bold/n' aliased to
-(Font)              `T1/SourceSansThree-TLF/b/n' on input line 53.
+(Font)              `T1/SourceSansThree-TLF/b/n' on input line 54.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/b/n' will be
-(Font)              scaled to size 14.4pt on input line 53.
+(Font)              scaled to size 14.4pt on input line 54.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/regular/sl' in size <10> not available
-(Font)              Font shape `T1/SourceSansThree-TLF/regular/it' tried instead on input line 53.
+(Font)              Font shape `T1/SourceSansThree-TLF/regular/it' tried instead on input line 54.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/regular/it' aliased to
-(Font)              `T1/SourceSansThree-TLF/m/it' on input line 53.
+(Font)              `T1/SourceSansThree-TLF/m/it' on input line 54.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/m/it' will be
-(Font)              scaled to size 10.0pt on input line 53.
+(Font)              scaled to size 10.0pt on input line 54.
  (C:\Users\Iker\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 53.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 54.
  (C:\Users\Iker\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (C:\Users\Iker\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 53.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 54.
  (C:\Users\Iker\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (C:\Users\Iker\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/regular/sl' in size <8> not available
-(Font)              Font shape `T1/SourceSansThree-TLF/regular/it' tried instead on input line 53.
+(Font)              Font shape `T1/SourceSansThree-TLF/regular/it' tried instead on input line 54.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/regular/it' aliased to
-(Font)              `T1/SourceSansThree-TLF/m/it' on input line 53.
+(Font)              `T1/SourceSansThree-TLF/m/it' on input line 54.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/m/it' will be
-(Font)              scaled to size 8.0pt on input line 53.
+(Font)              scaled to size 8.0pt on input line 54.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/regular/it' aliased to
-(Font)              `T1/SourceSansThree-TLF/m/it' on input line 53.
+(Font)              `T1/SourceSansThree-TLF/m/it' on input line 54.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/m/it' will be
-(Font)              scaled to size 8.0pt on input line 53.
+(Font)              scaled to size 8.0pt on input line 54.
 
 
 Package scrlayer-scrpage Warning: \headheight to low.
@@ -930,21 +937,21 @@ Package scrlayer-scrpage Warning: \headheight to low.
 (scrlayer-scrpage)                processing, but you should do this yourself,
 (scrlayer-scrpage)                e.g., setting geometry's option
 (scrlayer-scrpage)                `head=18.0pt'.
-(scrlayer-scrpage)                I'll also decrease \topmargin on input line 53.
+(scrlayer-scrpage)                I'll also decrease \topmargin on input line 54.
 
 
 Overfull \vbox (12.30954pt too high) has occurred while \output is active []
 
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/regular/sl' in size <11> not available
-(Font)              Font shape `T1/SourceSansThree-TLF/regular/it' tried instead on input line 53.
+(Font)              Font shape `T1/SourceSansThree-TLF/regular/it' tried instead on input line 54.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/regular/it' aliased to
-(Font)              `T1/SourceSansThree-TLF/m/it' on input line 53.
+(Font)              `T1/SourceSansThree-TLF/m/it' on input line 54.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/m/it' will be
-(Font)              scaled to size 11.0pt on input line 53.
+(Font)              scaled to size 11.0pt on input line 54.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/regular/n' aliased to
-(Font)              `T1/SourceSansThree-TLF/m/n' on input line 53.
+(Font)              `T1/SourceSansThree-TLF/m/n' on input line 54.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/m/n' will be
-(Font)              scaled to size 11.0pt on input line 53.
+(Font)              scaled to size 11.0pt on input line 54.
 
 
 Package scrlayer-scrpage Warning: \footheight to low.
@@ -955,17 +962,17 @@ Package scrlayer-scrpage Warning: \footheight to low.
 (scrlayer-scrpage)                e.g., using
 (scrlayer-scrpage)                  \setlength{\footheight}{18.92955pt}
 (scrlayer-scrpage)                in your preamble.
-(scrlayer-scrpage)                I'll also increase \footskip on input line 53.
+(scrlayer-scrpage)                I'll also increase \footskip on input line 54.
 
 [1{C:/Users/Iker/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/sourcesans/a_uz6pbi.enc}
 
 
 ]
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/bold/n' aliased to
-(Font)              `T1/SourceSansThree-TLF/b/n' on input line 56.
+(Font)              `T1/SourceSansThree-TLF/b/n' on input line 57.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/b/n' will be
-(Font)              scaled to size 16.0pt on input line 56.
-Package tocbasic Info: character protrusion at toc deactivated on input line 56.
+(Font)              scaled to size 16.0pt on input line 57.
+Package tocbasic Info: character protrusion at toc deactivated on input line 57.
  (main.toc
 LaTeX Info: Redefining \. on input line 2.
 LaTeX Info: Redefining \% on input line 2.
@@ -978,7 +985,7 @@ LaTeX Info: Redefining \% on input line 2.
 \openout6 = `main.toc'.
 
  [3]
-Package tocbasic Info: character protrusion at lof deactivated on input line 57.
+Package tocbasic Info: character protrusion at lof deactivated on input line 58.
  (main.lof
 LaTeX Info: Redefining \. on input line 2.
 LaTeX Info: Redefining \% on input line 2.
@@ -989,7 +996,7 @@ LaTeX Info: Redefining \% on input line 2.
  [4
 
 ]
-Package tocbasic Info: character protrusion at lot deactivated on input line 58.
+Package tocbasic Info: character protrusion at lot deactivated on input line 59.
  (main.lot
 LaTeX Info: Redefining \. on input line 2.
 LaTeX Info: Redefining \% on input line 2.
@@ -1023,7 +1030,7 @@ LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/regular/it' aliased to
 (Font)              `T1/SourceSansThree-TLF/m/it' on input line 27.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/m/it' will be
 (Font)              scaled to size 10.0pt on input line 27.
-<imgs/sporteasy.png, id=214, 845.40843pt x 578.91281pt>
+<imgs/sporteasy.png, id=226, 845.40843pt x 578.91281pt>
 File: imgs/sporteasy.png Graphic file (type png)
 <use imgs/sporteasy.png>
 Package pdftex.def Info: imgs/sporteasy.png  used on input line 45.
@@ -1031,41 +1038,43 @@ Package pdftex.def Info: imgs/sporteasy.png  used on input line 45.
 [3
 
 ] [4 <./imgs/sporteasy.png>]
-<imgs/sportmember.png, id=228, 982.42032pt x 719.68875pt>
+<imgs/sportmember.png, id=241, 982.42032pt x 719.68875pt>
 File: imgs/sportmember.png Graphic file (type png)
 <use imgs/sportmember.png>
 Package pdftex.def Info: imgs/sportmember.png  used on input line 66.
 (pdftex.def)             Requested size: 455.24411pt x 333.49875pt.
  [5 <./imgs/sportmember.png>]
-<imgs/clupik.png, id=238, 156.585pt x 108.405pt>
+<imgs/clupik.png, id=251, 156.585pt x 108.405pt>
 File: imgs/clupik.png Graphic file (type png)
 <use imgs/clupik.png>
 Package pdftex.def Info: imgs/clupik.png  used on input line 86.
 (pdftex.def)             Requested size: 455.24411pt x 315.21333pt.
- [6 <./imgs/clupik.png>]
+ [6 <./imgs/clupik.png>] [7]
 chapter 3.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/bold/n' aliased to
 (Font)              `T1/SourceSansThree-TLF/b/n' on input line 95.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/b/n' will be
 (Font)              scaled to size 14.0pt on input line 95.
-[7
+[8
 
-] [8]
+] [9]
 chapter 4.
-[9
+[10
 
-] [10] [11] [12] [13] [14] [15]
+] [11] [12] [13] [14] [15] [16]
 chapter 5.
-[16
+[17
 
 ]
 chapter 6.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 431.
+(Font)              in TS1 encoding on input line 429.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/regular/n' aliased to
-(Font)              `T1/SourceSansThree-TLF/m/n' on input line 431.
+(Font)              `T1/SourceSansThree-TLF/m/n' on input line 429.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/m/n' will be
-(Font)              scaled to size 6.99997pt on input line 431.
+(Font)              scaled to size 6.99997pt on input line 429.
+LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
+(Font)              in TS1 encoding on input line 431.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
 (Font)              in TS1 encoding on input line 433.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
@@ -1074,86 +1083,120 @@ LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
 (Font)              in TS1 encoding on input line 437.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
 (Font)              in TS1 encoding on input line 439.
-LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 441.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/bold/n' aliased to
-(Font)              `T1/SourceSansThree-TLF/b/n' on input line 441.
+(Font)              `T1/SourceSansThree-TLF/b/n' on input line 439.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/b/n' will be
-(Font)              scaled to size 6.99997pt on input line 441.
+(Font)              scaled to size 6.99997pt on input line 439.
+LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
+(Font)              in TS1 encoding on input line 460.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
 (Font)              in TS1 encoding on input line 462.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
 (Font)              in TS1 encoding on input line 464.
-LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 466.
-[17
+[18
 
 ]
+LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
+(Font)              in TS1 encoding on input line 483.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
 (Font)              in TS1 encoding on input line 485.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
 (Font)              in TS1 encoding on input line 487.
- [18]
+LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
+(Font)              in TS1 encoding on input line 489.
+LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
+(Font)              in TS1 encoding on input line 491.
+LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
+(Font)              in TS1 encoding on input line 493.
+LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
+(Font)              in TS1 encoding on input line 495.
+LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
+(Font)              in TS1 encoding on input line 497.
+LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
+(Font)              in TS1 encoding on input line 499.
+ [19] [20]
 chapter 7.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/bold/n' aliased to
-(Font)              `T1/SourceSansThree-TLF/b/n' on input line 527.
+(Font)              `T1/SourceSansThree-TLF/b/n' on input line 539.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 527.
-[19
+(Font)              scaled to size 12.0pt on input line 539.
+[21
 
-] [20] [21]
-<imgs/arquitectura.png, id=321, 853.5087pt x 369.2997pt>
+] [22] [23]
+<imgs/arquitectura.png, id=348, 853.5087pt x 369.2997pt>
 File: imgs/arquitectura.png Graphic file (type png)
 <use imgs/arquitectura.png>
-Package pdftex.def Info: imgs/arquitectura.png  used on input line 591.
+Package pdftex.def Info: imgs/arquitectura.png  used on input line 603.
 (pdftex.def)             Requested size: 455.24411pt x 196.97324pt.
- [22 <./imgs/arquitectura.png>]
-<imgs/first_database.png, id=329, 1543.7675pt x 1098.1025pt>
+ [24 <./imgs/arquitectura.png>]
+<imgs/first_database.png, id=357, 1543.7675pt x 1098.1025pt>
 File: imgs/first_database.png Graphic file (type png)
 <use imgs/first_database.png>
-Package pdftex.def Info: imgs/first_database.png  used on input line 602.
+Package pdftex.def Info: imgs/first_database.png  used on input line 614.
 (pdftex.def)             Requested size: 455.24411pt x 323.82013pt.
- [23 <./imgs/first_database.png>] [24]
-<imgs/figma.jpeg, id=339, 1606.0pt x 903.375pt>
+ [25 <./imgs/first_database.png>]
+<imgs/pantallaRegistro.png, id=365, 1028.34187pt x 578.16pt>
+File: imgs/pantallaRegistro.png Graphic file (type png)
+<use imgs/pantallaRegistro.png>
+Package pdftex.def Info: imgs/pantallaRegistro.png  used on input line 634.
+(pdftex.def)             Requested size: 341.43307pt x 191.9667pt.
+<imgs/pantallaPartidos.png, id=366, 815.29594pt x 457.71pt>
+File: imgs/pantallaPartidos.png Graphic file (type png)
+<use imgs/pantallaPartidos.png>
+Package pdftex.def Info: imgs/pantallaPartidos.png  used on input line 641.
+(pdftex.def)             Requested size: 341.43307pt x 191.67816pt.
+<imgs/pantallaConvocatoriasJugador.png, id=367, 813.79031pt x 456.20438pt>
+File: imgs/pantallaConvocatoriasJugador.png Graphic file (type png)
+<use imgs/pantallaConvocatoriasJugador.png>
+Package pdftex.def Info: imgs/pantallaConvocatoriasJugador.png  used on input line 648.
+(pdftex.def)             Requested size: 341.43307pt x 191.40265pt.
+ [26 <./imgs/pantallaRegistro.png>]
+<imgs/pantallaLoginResponsive.png, id=374, 208.52907pt x 456.95718pt>
+File: imgs/pantallaLoginResponsive.png Graphic file (type png)
+<use imgs/pantallaLoginResponsive.png>
+Package pdftex.def Info: imgs/pantallaLoginResponsive.png  used on input line 657.
+(pdftex.def)             Requested size: 113.81102pt x 249.40279pt.
+ [27 <./imgs/pantallaPartidos.png> <./imgs/pantallaConvocatoriasJugador.png>] [28 <./imgs/pantallaLoginResponsive.png>]
+<imgs/figma.jpeg, id=389, 1606.0pt x 903.375pt>
 File: imgs/figma.jpeg Graphic file (type jpg)
 <use imgs/figma.jpeg>
-Package pdftex.def Info: imgs/figma.jpeg  used on input line 651.
+Package pdftex.def Info: imgs/figma.jpeg  used on input line 698.
 (pdftex.def)             Requested size: 455.24411pt x 256.07233pt.
- [25 <./imgs/figma.jpeg>]
-<imgs/inkscape.jpeg, id=345, 1606.0pt x 903.375pt>
+ [29]
+<imgs/inkscape.jpeg, id=394, 1606.0pt x 903.375pt>
 File: imgs/inkscape.jpeg Graphic file (type jpg)
 <use imgs/inkscape.jpeg>
-Package pdftex.def Info: imgs/inkscape.jpeg  used on input line 666.
+Package pdftex.def Info: imgs/inkscape.jpeg  used on input line 713.
 (pdftex.def)             Requested size: 455.24411pt x 256.07233pt.
- [26 <./imgs/inkscape.jpeg>]
+ [30 <./imgs/figma.jpeg>] [31 <./imgs/inkscape.jpeg>]
 chapter 8.
-[27
+[32
 
 ]
 chapter 9.
-[28
+[33
 
 ]
 chapter 10.
-[29
+[34
 
 ]
 chapter 11.
-[30
+[35
 
 ]
 chapter 12.
-) [31
+) [36
 
-] (main.bbl [32
-
-
+] (main.bbl [37
 
 
 
-]) [33]
+
+
+] [38] [39] [40] [41] [42]) [43]
 chapter A.
-[34
+[44
 
 ] (main.aux
 LaTeX Info: Redefining \. on input line 14.
@@ -1165,17 +1208,17 @@ L3 programming layer <2026-03-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 23539 strings out of 467691
- 444101 string characters out of 5415472
- 1062314 words of memory out of 5000000
- 51903 multiletter control sequences out of 15000+600000
- 782204 words of font info for 216 fonts, out of 8000000 for 9000
+ 23799 strings out of 467691
+ 449392 string characters out of 5415472
+ 1094670 words of memory out of 5000000
+ 52060 multiletter control sequences out of 15000+600000
+ 782523 words of font info for 218 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 122i,21n,121p,11242b,943s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 122i,21n,121p,11242b,938s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-Bold.pfb><C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-It.pfb><C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-Regular.pfb>
-Output written on main.pdf (40 pages, 1485738 bytes).
+Output written on main.pdf (50 pages, 1683408 bytes).
 PDF statistics:
- 597 PDF objects out of 1000 (max. 8388607)
- 134 named destinations out of 1000 (max. 500000)
- 61843 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 866 PDF objects out of 1000 (max. 8388607)
+ 230 named destinations out of 1000 (max. 500000)
+ 61863 words of extra memory for PDF output out of 61914 (max. 10000000)
 

@@ -12,8 +12,8 @@ Esta memoria está dividida en varios capítulos, con el objetivo de facilitar s
   \item Plan de trabajo: Este capítulo detalla la planificación seguida para la realización de este proyecto. Cómo se ha dividido el proyecto en fases, y cada una de ellas en tareas para el desarrollo eficiente del proyecto. Además, proporciona dicha planificación de forma visual.
   \item Metodología: Una vez planificado el proyecto, es necesario definir la metodología a seguir para relaizarlo eficientemente. En este capítulo se recoge la metodología seguida para el desarrollo del proyecto.
   \item Presupuesto: Todo proyecto debe tener una estimación del presupuesto, con el fin de aproximar lo máximo posible el coste total que conllevará. En este capítulo se recoge con detalle ese presupuesto, teniendo en cuenta costes de material, costes de desarrollo, costes de puesta en marcha y costes de recurrentes.
-  \item Desarrollo del proyecto: Este capítulo recoge la fase de desarrollo del proyecto. En primer lugar, detalla los requisitos del proyecto, tanto funcionales como no funcionales. Después, recoge la especificación de su diseño
-  \item Valoración ética del proyecto
+  \item Desarrollo del proyecto: Este capítulo recoge la fase de desarrollo del proyecto. En primer lugar, identifica los stakeholders. Después, detalla los requisitos del proyecto, tanto funcionales como no funcionales. Sigue recogiendo la especificación de su diseño y nombrando las tecnologías y herramientas utilizadas para su desarrollo. Por último, redacta consideraciones e incidencias del proyecto, además del plan de prueba seguido.
+  \item Valoración ética del proyecto: En este capítulo se realiza una reflexión sobre los aspectos éticos del proyecto, teniendo en cuenta las posibles implicaciones que pueda tener para los usuarios y la sociedad.
   \item Conclusiones
   \item Bibliografía
   \item Definiciones, acrónimos y abreviaturas
@@ -159,8 +159,7 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
 
           \item[Tarea 1.] Análisis del club deportivo: Analizar el club deportivo e investigar cómo realizan y gestionan los procesos de sus equipos.
           \item[Tarea 2.] Estudio de la situación del club y propuesta de solución: Estudiar e interpretar el análisis realizado y diseñar una solución software para uno de sus equipos.
-          \item[Tarea 3.] Investigar y realizar pruebas: Investigar sobre las herramientas a utilizar y realizar pruebas con tecnologías no usadas antes para determinar la viabilidad de su uso en el proyecto.
-          \item[Tarea 4.] Presentación del proyecto a la tutora: Presentar la idea a la tutora del proyecto de fin de grado.
+          \item[Tarea 3.] Presentación del proyecto a la tutora: Presentar la idea a la tutora del proyecto de fin de grado.
         \end{description}
   \item[Fase 2.] Planificación del proyecto:
         \begin{description}[
@@ -171,9 +170,8 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
             font=\normalfont
           ]
 
-          \item[Tarea 5.] Estimación de tiempos: Estimar el tiempo que llevará desarrollar cada una de las funcionalidades de la solución.
-          \item[Tarea 6.] Priorización de funcionalidades: Analizar las funcionalidades de las que dispondrá la solución y priorizarlas teniendo en cuenta su dificultad, estimación de tiempo e importancia en el proyecto.
-          \item[Tarea 7.] División del desarrollo del proyecto: Agrupar las funcionalidades priorizadas en fases para dividir el desarrollo del proyecto.
+          \item[Tarea 4.] Estimación de tiempos: Estimar el tiempo que llevará desarrollar cada una de las funcionalidades de la solución.
+          \item[Tarea 5.] División del desarrollo del proyecto: Priorizar las funcionalidades a desarrollar y agruparlas en fases para dividir el desarrollo del proyecto.
         \end{description}
   \item[Fase 3.] Realización del proyecto:
         \begin{description}[
@@ -193,10 +191,10 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
                     font=\normalfont
                   ]
 
-                  \item[Tarea 8.] Crear el proyecto de Maven y gestionar las dependencias de Springboot para la parte backend
-                  \item[Tarea 9.] Crear la base de datos con MySQL y configurar Springboot para que haga uso de ella
-                  \item[Tarea 10.] Crear el proyecto de React para el desarrollo del frontend
-                  \item[Tarea 11.] Crear Dockerfiles necesarios y gestionar los servicios con Docker Compose
+                  \item[Tarea 6.] Crear el proyecto de Maven y gestionar las dependencias de Springboot para la parte backend
+                  \item[Tarea 7.] Crear la base de datos con MySQL y configurar Springboot para que haga uso de ella
+                  \item[Tarea 8.] Crear el proyecto de React para el desarrollo del frontend
+                  \item[Tarea 9.] Crear Dockerfiles necesarios y gestionar los servicios con Docker Compose
                 \end{description}
 
           \item[Fase 1.] Gestión de usuarios, próximos partidos y visualización de estadísticas:
@@ -215,15 +213,15 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
                             labelsep=1em,
                             font=\normalfont
                           ]
-                          \item[Tarea 12.] Desarrollar pantalla con formulario de registro de usuario
-                          \item[Tarea 13.] Crear pantalla con formulario de inicio de sesión
-                          \item[Tarea 14.] Programar parte backend para el registro de usuarios
-                          \item[Tarea 15.] Desarrollar funcionalidad de inicio de sesión simple
-                          \item[Tarea 16.] Implementar inicio de sesión con Google
-                          \item[Tarea 17.] Gestionar seguridad con Spring Security
-                          \item[Tarea 18.] Programar pantalla de inicio
-                          \item[Tarea 19.] Verificar funcionamiento correcto
-                          \item[Tarea 20.] Corregir posibles errores
+                          \item[Tarea 10.] Desarrollar pantalla con formulario de registro de usuario
+                          \item[Tarea 11.] Crear pantalla con formulario de inicio de sesión
+                          \item[Tarea 12.] Programar parte backend para el registro de usuarios
+                          \item[Tarea 13.] Desarrollar backend para permitir inicio de sesión simple
+                          \item[Tarea 14.] Implementar inicio de sesión con Google
+                          \item[Tarea 15.] Gestionar seguridad con Spring Security
+                          \item[Tarea 16.] Programar pantalla de inicio
+                          \item[Tarea 17.] Verificar funcionamiento correcto
+                          \item[Tarea 18.] Corregir posibles errores
                         \end{description}
                   \item[Funcionalidad: ] Visualización de partidos de la temporada
                         \begin{description}[
@@ -233,11 +231,11 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
                             labelsep=1em,
                             font=\normalfont
                           ]
-                          \item[Tarea 21.] Crear pantalla para próximos partidos
-                          \item[Tarea 22.] Desarrollar backend para recuperar los próximos partidos de la base de datos
-                          \item[Tarea 23.] Crear componente de React de próximo partido
-                          \item[Tarea 24.] Comprobar correcto funcionamiento
-                          \item[Tarea 25.] Corregir errores que puedan surgir
+                          \item[Tarea 19.] Crear pantalla para próximos partidos
+                          \item[Tarea 20.] Desarrollar backend para recuperar los próximos partidos de la base de datos
+                          \item[Tarea 21.] Crear componente de React de próximo partido
+                          \item[Tarea 22.] Comprobar correcto funcionamiento
+                          \item[Tarea 23.] Corregir errores que puedan surgir
                         \end{description}
                   \item[Funcionalidad: ] Visualización de estadísticas
                         \begin{description}[
@@ -247,13 +245,13 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
                             labelsep=1em,
                             font=\normalfont
                           ]
-                          \item[Tarea 26.] Programar primera pantalla para las estadísticas
-                          \item[Tarea 27.] Implementar en el backend funcionalidad para recuperar jugadores y estadísticas de equipo
-                          \item[Tarea 28.] Crear componente de React de tarjetas de jugadores
-                          \item[Tarea 29.] Desarrollar pantalla de estadísticas para un jugador específico y poder acceder a ella al hacer clic en una tarjeta de jugador
-                          \item[Tarea 30.] Programar backend para obtener las estadísticas de un jugador específico
-                          \item[Tarea 31.] Verificar correcto funcionamiento
-                          \item[Tarea 32.] Corregir posibles errores
+                          \item[Tarea 24.] Programar primera pantalla para las estadísticas
+                          \item[Tarea 25.] Implementar en el backend funcionalidad para recuperar jugadores y estadísticas de equipo
+                          \item[Tarea 26.] Crear componente de React de tarjetas de jugadores
+                          \item[Tarea 27.] Desarrollar pantalla de estadísticas para un jugador específico y poder acceder a ella al hacer clic en una tarjeta de jugador
+                          \item[Tarea 28.] Programar backend para obtener las estadísticas de un jugador específico
+                          \item[Tarea 29.] Verificar correcto funcionamiento
+                          \item[Tarea 30.] Corregir posibles errores
                         \end{description}
                 \end{description}
           \item[Fase 2.] Convocatorias, seguimiento de estadísticas e incidencias de partido y módulo inteligente de recomendaciones:
@@ -272,15 +270,15 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
                             labelsep=1em,
                             font=\normalfont
                           ]
-                          \item[Tarea 33.] Desarrollar primera pantalla para las convocatorias
-                          \item[Tarea 34.] Recuperar próximos partidos y crear componente de React para ellos en la pantalla de convocatorias
-                          \item[Tarea 35.] Crear pantalla para convocatoria de un partido específico y acceder a ella al hacer clic en un próximo partido
-                          \item[Tarea 36.] Mostrar todos los jugadores candidatos a ser convocados
-                          \item[Tarea 37.] Desarrollar backend para almacenar convocatorias
-                          \item[Tarea 38.] Convocar jugador al hacer clic sobre él
-                          \item[Tarea 39.] Implementar confirmación de asistencia/no asistencia de jugador
-                          \item[Tarea 40.] Comprobar correcto funcionamiento
-                          \item[Tarea 41.] Corregir errores que puedan surgir
+                          \item[Tarea 31.] Desarrollar primera pantalla para las convocatorias
+                          \item[Tarea 32.] Recuperar próximos partidos y crear componente de React para ellos en la pantalla de convocatorias
+                          \item[Tarea 33.] Crear pantalla para convocatoria de un partido específico y acceder a ella al hacer clic en un próximo partido
+                          \item[Tarea 34.] Mostrar todos los jugadores candidatos a ser convocados
+                          \item[Tarea 35.] Desarrollar backend para almacenar convocatorias
+                          \item[Tarea 36.] Convocar jugador al hacer clic sobre él
+                          \item[Tarea 37.] Implementar confirmación de asistencia/no asistencia de jugador
+                          \item[Tarea 38.] Comprobar correcto funcionamiento
+                          \item[Tarea 39.] Corregir errores que puedan surgir
                         \end{description}
                   \item[Funcionalidad: ] Seguimiento de estadísticas e incidencias de partido
                         \begin{description}[
@@ -290,17 +288,17 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
                             labelsep=1em,
                             font=\normalfont
                           ]
-                          \item[Tarea 42.] Programar pantalla de seguimiento de partido
-                          \item[Tarea 43.] Desarrollar componente de React de marcador
-                          \item[Tarea 44.] Recuperar y mostrar en pantalla jugadores con asistencia confirmada al partido
-                          \item[Tarea 45.] Crear pantalla para estadísticas de partido de jugador y portero
-                          \item[Tarea 46.] Implementar funcionalidad para almacenar dichas estadísticas al ser modificadas en la pantalla
-                          \item[Tarea 47.] Programar pantalla para estadísticas de equipo
-                          \item[Tarea 48.] Almacenar estadísticas del equipo en el partido de igual manera que los jugadores
-                          \item[Tarea 49.] Crear pantalla para marcar incidencias del partido
-                          \item[Tarea 50.] Mostrar incidencias marcadas en la pantalla de seguimiento de partido
-                          \item[Tarea 51.] Verificar correcto funcionamiento
-                          \item[Tarea 52.] Corregir errores que puedan surgir
+                          \item[Tarea 40.] Programar pantalla de seguimiento de partido
+                          \item[Tarea 41.] Desarrollar componente de React de marcador
+                          \item[Tarea 42.] Recuperar y mostrar en pantalla jugadores con asistencia confirmada al partido
+                          \item[Tarea 43.] Crear pantalla para estadísticas de partido de jugador y portero
+                          \item[Tarea 44.] Implementar funcionalidad para almacenar dichas estadísticas al ser modificadas en la pantalla
+                          \item[Tarea 45.] Programar pantalla para estadísticas de equipo
+                          \item[Tarea 46.] Almacenar estadísticas del equipo en el partido de igual manera que los jugadores
+                          \item[Tarea 47.] Crear pantalla para marcar incidencias del partido
+                          \item[Tarea 48.] Mostrar incidencias marcadas en la pantalla de seguimiento de partido
+                          \item[Tarea 49.] Verificar correcto funcionamiento
+                          \item[Tarea 50.] Corregir errores que puedan surgir
                         \end{description}
                   \item[Funcionalidad: ] Módulo inteligente de recomendaciones
                         \begin{description}[
@@ -310,12 +308,12 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
                             labelsep=1em,
                             font=\normalfont
                           ]
-                          \item[Tarea 53.] Gestionar dependencia de Spring AI Anthropic y comprobar su correcto funcionamiento
-                          \item[Tarea 54.] Desarrollar backend para enviar prompts al modelo de IA de Anthropic
-                          \item[Tarea 55.] Enviar estadísticas del partido al modelo de IA de Anthropic y recibir recomendaciones
-                          \item[Tarea 56.] Recuperar recomendaciones proporcionadas por el modelo de IA y mostrarlas por pantalla
-                          \item[Tarea 57.] Verificar correcto funcionamiento
-                          \item[Tarea 58.] Corregir posibles errores
+                          \item[Tarea 51.] Gestionar dependencia de Spring AI Anthropic y comprobar su correcto funcionamiento
+                          \item[Tarea 52.] Desarrollar backend para enviar prompts al modelo de IA de Anthropic
+                          \item[Tarea 53.] Enviar estadísticas del partido al modelo de IA de Anthropic y recibir recomendaciones
+                          \item[Tarea 54.] Recuperar recomendaciones proporcionadas por el modelo de IA y mostrarlas por pantalla
+                          \item[Tarea 55.] Verificar correcto funcionamiento
+                          \item[Tarea 56.] Corregir posibles errores
                         \end{description}
                 \end{description}
           \item[Fase 3.] Foro de mensajes y pedidos de material:
@@ -334,12 +332,12 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
                             labelsep=1em,
                             font=\normalfont
                           ]
-                          \item[Tarea 59.] Desarrollar pantalla para debates
-                          \item[Tarea 60.] Programar backend para crear y recuperar debates
-                          \item[Tarea 61.] Crear pantalla para foro de mensajes y acceder a ella haciendo clic en un debate
-                          \item[Tarea 62.] Implementar funcionalidad de publicación de mensajes en el foro del debate
-                          \item[Tarea 63.] Verificar correcto funcionamiento
-                          \item[Tarea 64.] Corregir errores que puedan surgir
+                          \item[Tarea 57.] Desarrollar pantalla para debates
+                          \item[Tarea 58.] Programar backend para crear y recuperar debates
+                          \item[Tarea 59.] Crear pantalla para foro de mensajes y acceder a ella haciendo clic en un debate
+                          \item[Tarea 60.] Implementar funcionalidad de publicación de mensajes en el foro del debate
+                          \item[Tarea 61.] Verificar correcto funcionamiento
+                          \item[Tarea 62.] Corregir errores que puedan surgir
                         \end{description}
                   \item[Funcionalidad: ] Gestión de pedidos de material
                         \begin{description}[
@@ -349,10 +347,10 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
                             labelsep=1em,
                             font=\normalfont
                           ]
-                          \item[Tarea 51.] Desarrollar pantalla para gestión de pedidos de material
-                          \item[Tarea 52.] Programar backend para crear y recuperar pedidos de material
-                          \item[Tarea 53.] Implementar funcionalidad para pedir material
-                          \item[Tarea 54.] Descargar fichero excel con la información del pedido
+                          \item[Tarea 63.] Desarrollar pantalla para gestión de pedidos de material
+                          \item[Tarea 64.] Programar backend para crear y recuperar pedidos de material
+                          \item[Tarea 65.] Implementar funcionalidad para pedir material
+                          \item[Tarea 66.] Descargar fichero excel con la información del pedido
                         \end{description}
                 \end{description}
           \item[Fase 4.] Estilo y responsividad
@@ -363,8 +361,8 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
                     labelsep=1em,
                     font=\normalfont
                   ]
-                  \item[Tarea 55.] Terminar de dar estilo a las pantallas de la aplicación web
-                  \item[Tarea 56.] Aplicar responsividad a las pantallas de la solución
+                  \item[Tarea 67.] Terminar de dar estilo a las pantallas de la aplicación web
+                  \item[Tarea 68.] Aplicar responsividad a las pantallas de la solución
                 \end{description}
         \end{description}
   \item[Fase 4.] Control del proyecto
@@ -375,8 +373,8 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
             labelsep=1em,
             font=\normalfont
           ]
-          \item[Tarea 57.] Comparar resultados del proyecto con objetivos iniciales
-          \item[Tarea 58.] Realizar pruebas del resultado final
+          \item[Tarea 69.] Comparar resultados del proyecto con objetivos iniciales
+          \item[Tarea 70.] Realizar pruebas del resultado final
         \end{description}
   \item[Fase 5.] Finalización del proyecto
         \begin{description}[
@@ -386,9 +384,9 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
             labelsep=1em,
             font=\normalfont
           ]
-          \item[Tarea 59.] Terminar de redactar la memoria del proyecto
-          \item[Tarea 60.] Terminar la aplicación web
-          \item[Tarea 61.] Preparar la defensa del proyecto
+          \item[Tarea 71.] Terminar de redactar la memoria del proyecto
+          \item[Tarea 72.] Terminar la aplicación web
+          \item[Tarea 73.] Preparar la defensa del proyecto
         \end{description}
 \end{description}
 
@@ -481,6 +479,20 @@ Este tipo de costes engloban gastos en herramientas, licencias y otros servicios
     \hline
     \rowcolor{headerblue}
     \textbf{Producto} & \textbf{Descripción}                                                                      & \textbf{Coste}  \\
+    \hline
+    Antigravity IDE   & Entorno de desarrollo utilizado en el proyecto                                            & 0 €             \\
+    \hline
+    MySQL Workbench   & Interfaz gráfica para bases de datos MySQL                                                & 0 €             \\
+    \hline
+    Docker Desktop    & Interfaz gráfica para Docker                                                              & 0 €             \\
+    \hline
+    GitHub Desktop    & Interfaz gráfica para hacer uso de git                                                    & 0 €             \\
+    \hline
+    Draw.io           & Herramienta para elaborar los diagramas                                                   & 0 €             \\
+    \hline
+    Figma             & Herramienta para el diseño de pantallas                                                   & 0 €             \\
+    \hline
+    Inkscape          & Herramienta para dibujar imágenes vectoriales                                             & 0 €             \\
     \hline
     Tokens Anthropic  & Tokens de Anthropic para tener acceso a sus modelos de inteligencia artificial generativa & 5,31 €          \\
     \hline
@@ -604,13 +616,48 @@ A la hora de diseñar la solución es fundamental tener claro qué información 
   \label{fig:primer-database}
 \end{figure}
 
+Este diseño no refleja la estructura final de la base de datos. A medida que el desarrollo del proyecto avanzaba y se implementaban las funcionalidades, era necesario adaptarlo para que se ajustara a las necesidades del proyecto. Por lo que, este diseño evolucionó para dar lugar a la estructura final de la base de datos:
+
+
 \subsection{Diseño de la interfaz de la solución web}
 
 Cuando se desarrolla una aplicación web, es importante tener en cuenta cómo será su interfaz, ya que es lo primero que ven los usuarios. Una buena interfaz debe ser atractiva e intuitiva, es decir, que cualquier usuario sin formación sobre la solcuión pueda navegar y hacer uso de ella sin problemas.
 
 Para este proyecto se ha optado por un diseño personalizado para el club deportivo tomado como referencia. Se han elaborado las distintas pantallas que componen la solución utilizando una gama de colores acorde a la identidad visual del club. Además, se han insertado en la cabecera de la solución el logo y el nombre del club para reforzar la sensación de estar utilizando una aplicación personalizada.
 
-A continuación se muestran algunos ejemplos del sieño de las pantallas de la solución web.
+Cabe destacar que los diseños de las pantallas no han sido necesariamente los definitivos, son meros prototipos que muestran una idea de cómo se verá la solución. Aunque se ha mantenido la línea de diseño de las pantallas en la medida de lo posible.
+
+A continuación se muestran algunos ejemplos del diseño de las pantallas de la solución web.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{imgs/pantallaRegistro.png}
+  \caption{Prototipo de pantalla de registro}
+  \label{fig:pantalla-registro}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{imgs/pantallaPartidos.png}
+  \caption{Prototipo de pantalla de partidos}
+  \label{fig:pantalla-partidos}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{imgs/pantallaConvocatoriasJugador.png}
+  \caption{Prototipo de pantalla de convocatorias de jugador}
+  \label{fig:pantalla-convocatorias-jugador}
+\end{figure}
+
+Al tratarse de una solución web, es posible que los usuarios accedan a ella desde cualquier tipo de dispositivo que disponga de acceso a un navegador. Esto hace que la solución deba ser responsiva, es decir, que sea adaptable a cualquier tamaño de pantalla. A continuación, un ejemplo de ello:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.25\textwidth]{imgs/pantallaLoginResponsive.png}
+  \caption{Prototipo de pantalla de login responsiva}
+  \label{fig:pantalla-login-responsiva}
+\end{figure}
 
 \section{Tecnologías y herramientas utilizadas}
 
