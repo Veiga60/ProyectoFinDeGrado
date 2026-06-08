@@ -182,30 +182,24 @@
   \url{https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/tbody},
   (accedido 24 de diciembre de 2025).
 
-\bibitem{vite-docker-error}
-``{Error de Vite con Docker},''
-  \url{https://github.com/vitejs/vite/issues/4116}, (accedido 23 de diciembre
-  de 2025).
-
 \bibitem{date-format}
-``{Fecha YYYY-MM-DD a DD/MM/YYYY},''
+``{Stack Overflow},''
   \url{https://es.stackoverflow.com/questions/511685/convertit-fecha-yyyy-mm-dd-a-dd-mm-yyyy},
-  (accedido 23 de diciembre de 2025).
+  (accedido 4 de enero de 2026).
 
 \bibitem{substring-hour-format}
-``{Substring para formatear hora},''
-  \url{https://es.stackoverflow.com/questions/234083/c%C3%B3mo-puedo-eliminar-la-%C3%BAltima-letra-de-una-cadena-de-texto-con-javascrpt-al-hac},
-  (accedido 23 de diciembre de 2025).
+``{Stack Overflow},'' \url{https://es.stackoverflow.com/questions/234083/},
+  (accedido 4 de enero de 2026).
 
-\bibitem{conditional-style}
-``{Estilo condicional en React},''
+\bibitem{conditional-style-react}
+``{Preguntas típicas de React.js},''
   \url{https://www.reactjs.wiki/como-puedo-aplicar-estilos-de-forma-condicional-a-un-componente-en-react},
-  (accedido 23 de diciembre de 2025).
+  (accedido 4 de enero de 2026).
 
 \bibitem{round-decimals-js}
-``{Redondear decimales en JavaScript},''
+``{Stack Overflow},''
   \url{https://es.stackoverflow.com/questions/48958/redondear-a-dos-decimales-cuando-sea-necesario},
-  (accedido 23 de diciembre de 2025).
+  (accedido 5 de enero de 2025).
 
 \bibitem{css-image-color}
 ``{Cambiar color de imagen con CSS},''
