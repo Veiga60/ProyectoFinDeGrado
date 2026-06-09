@@ -226,6 +226,8 @@ INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\tex\latex\multirow\multirow.st
 INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\tex\latex\multirow\multirow.sty
 INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\tex\latex\tools\longtable.sty
 INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\tex\latex\tools\longtable.sty
+INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\tex\latex\needspace\needspace.sty
+INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\tex\latex\needspace\needspace.sty
 INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\tex\latex\sourcesans\t1sourcesansthree-tlf.fd
 INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\tex\latex\sourcesans\t1sourcesansthree-tlf.fd
 INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\tex\latex\sourcesans\t1sourcesansthree-tlf.fd
@@ -376,10 +378,17 @@ INPUT .\imgs\gantt.png
 INPUT .\imgs\gantt.png
 INPUT .\imgs\gantt.png
 INPUT .\imgs\gantt.png
+INPUT .\imgs\metodologia_agil.png
+INPUT .\imgs\metodologia_agil.png
+INPUT .\imgs\metodologia_agil.png
+INPUT .\imgs\metodologia_agil.png
+INPUT .\imgs\metodologia_agil.png
+INPUT .\imgs\metodologia_agil.png
+INPUT .\imgs\metodologia_agil.png
 INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\sourcesans\SourceSans3-Regular-tlf-t1.tfm
-INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\sourcesans\SourceSans3-Bold-tlf-t1.tfm
 INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\sourcesans\SourceSans3-Regular-tlf-t1.vf
 INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\sourcesans\SourceSans3-Regular-tlf-t1--base.tfm
+INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\sourcesans\SourceSans3-Bold-tlf-t1.tfm
 INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\sourcesans\SourceSans3-Bold-tlf-t1.vf
 INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\sourcesans\SourceSans3-Bold-tlf-t1--base.tfm
 INPUT C:\Users\Iker\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\sourcesans\SourceSans3-Bold-tlf-t1.tfm

@@ -135,7 +135,6 @@ Para la realización de este proyecto, también ha sido fundamental tener claro 
 
 Este apartado describe las fases y tareas que han sido realizadas para completar el proyecto. El proyecto se divide en 5 partes, cada una de ellas con tareas y/o fases a completar. La fase de realización del proyecto ha sido dividida en 4 fases. La primera de ellas consta de la creación y configuración del proyecto. Las fases restantes se han planificado de esa forma debido a una división de las funcionalidades a implementar. Para esta división se han tenido en cuenta factores como relevancia de la funcionalidad en el proyecto, dificultad de la misma y dependencia de otras funcionalidades.
 
-Esta planificación ha sido seguida de tal manera que no es posible avanzar a la siguiente fase principal del proyecto antes de haber completado todas las tareas o subfases de la anterior, es decir, siguiendo un modelo en cascada. Se entiende por fases principales del proyecto las fases de definición, planificación, realización, control y finalización.
 Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se redacta cada una de las fases de la planificación con sus respectivas tareas a completar:
 
 \textbf{Definición del proyecto:}
@@ -262,11 +261,13 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
 
 \section{Estimación de tiempos}
 
+A continuación, se muestra en forma de tabla una estimación de las horas que llevará realizar cada tarea de cada fase del proyecto:
+
 \renewcommand{\arraystretch}{2}
 \begin{longtable}{|>{\bfseries}p{3.5cm}|p{7cm}|p{2cm}|}
   \hline
   \rowcolor{headerblue}
-  \textbf{Fase} & \textbf{Tarea}                                                                & \textbf{Horas}      \\
+  \textbf{Fase} & \textbf{Tarea}                                                                & \textbf{Estimación} \\
   \hline
   \endfirsthead
 
@@ -290,7 +291,7 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
   \hline
 
   \multirow{3}{*}{Planificación}
-                & TFP-1. Estimación de tiempos                                                  & 1,5h                \\
+                & TFP-1. Estimación de tiempos                                                  & 1h                  \\
   \cline{2-3}
                 & TFP-2. División del desarrollo del proyecto                                   & 1h                  \\
   \hline
@@ -310,7 +311,7 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
   \cline{2-3}
                 & TFR-1.2 Inicio de sesión de usuarios                                          & 12h                 \\
   \cline{2-3}
-                & TFR-1.3 Visualización de partidos de la temporada                             & 6h                  \\
+                & TFR-1.3 Visualización de partidos de la temporada                             & 7h                  \\
   \cline{2-3}
                 & TFR-1.4 Visualización de estadísticas                                         & 10h                 \\
   \cline{2-3}
@@ -320,7 +321,7 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
   \cline{2-3}
                 & TFR-2.3 Módulo inteligente de recomendaciones                                 & 15h                 \\
   \hline
-                & TFR-3.1 Foro de mensajes                                                      & 5h                  \\
+                & TFR-3.1 Foro de mensajes                                                      & 6h                  \\
   \cline{2-3}
                 & TFR-3.2 Gestión de pedidos de material                                        & 8h                  \\
   \cline{2-3}
@@ -372,6 +373,13 @@ En este proyecto he decidido utilizar una metodología ágil para ir implementan
 
 Decidí decantarme por utilizar esta metodología porque me parecía una metodología razonable y adaptable a mis circunstancias, ya que me permitía trabajar de forma autónoma y probar el resultado cada vez que implementaba una nueva funcionalidad. Además, creo que es una metodología que encajaba perfectamente con la planificación elaborada para el proyecto.
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{imgs/metodologia_agil.png}
+  \caption{Metodologías ágiles}
+  \label{fig:metodologia_agis}
+\end{figure}
+
 \section{Scrum}
 
 Scrum es una metodología ágil que trata de hacer de la entrega de un producto complejo una tarea sencilla y manejable. Para logarlo divide el proyecto en ciclos cortos de desarrollo, llamados \textit{sprints}. En cada uno de estos ciclos, el equipo colabora para realizar únicamente las tareas planificadas para ese \textit{sprint}.
@@ -380,13 +388,124 @@ En este proyecto se ha optado por esta metodología para organizar el desarrollo
 
 Este proyecto ha sido dividido en 9 sprints. Se ha definido un \textit{sprint} para las fases de definición, planificación, control y finalización. Mientras que se ha decidido dividir la fase de realización del proyecto en varios ciclos. Estos han sido 4, uno por cada subfase.
 
+La siguiente tabla muestra la distribución de tareas y sprints de forma más visual:
+
+\renewcommand{\arraystretch}{2}
+\begin{longtable}{|>{\bfseries}p{2.5cm}|p{3.5cm}|p{7cm}|}
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Fase}             & \textbf{Periodo}                                                              & \textbf{Tarea}                                                      \\
+  \hline
+  \endfirsthead
+
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Fase}             & \textbf{Periodo}                                                              & \textbf{Tarea}                                                      \\
+  \hline
+  \endhead
+
+  \multicolumn{3}{r}{\small\textit{Continúa en la página siguiente}}                                                                                                              \\
+  \endfoot
+
+  \endlastfoot
+
+  \multirow{3}{*}{Sprint 1} & \multirow{3}{*}{\shortstack{01/12/2025 - 08/12/2025}}
+                            & TFD-1. Análisis del club deportivo                                                                                                                  \\
+  \cline{3-3}
+                            &                                                                               & TFD-2. Estudio de la situación del club y propuesta de solución     \\
+  \cline{3-3}
+                            &                                                                               & TFD-3. Presentación del proyecto a la tutora                        \\
+  \hline
+
+  \multirow{3}{*}{Sprint 2} & \multirow{3}{*}{\shortstack{09/12/2025 - 12/12/2025}}
+                            & TFP-1. Estimación de tiempos                                                                                                                        \\
+  \cline{3-3}
+                            &                                                                               & TFP-2. División del desarrollo del proyecto                         \\
+  \cline{3-3}
+                            &                                                                               & TFP-3. Planificación del desarrollo del proyecto                    \\
+  \hline
+
+  \multirow{4}{*}{Sprint 3} & \multirow{4}{*}{\shortstack{16/12/2025 - 23/12/2025}}
+                            & TFR-0.1 Crear el proyecto de Maven y gestionar las dependencias de Springboot                                                                       \\
+  \cline{3-3}
+                            &                                                                               & TFR-0.2 Crear la base de datos con MySQL y configurar Springboot    \\
+  \cline{3-3}
+                            &                                                                               & TFR-0.3 Crear el proyecto de React para el frontend                 \\
+  \cline{3-3}
+                            &                                                                               & TFR-0.4 Crear Dockerfiles y gestionar servicios con Docker Compose  \\
+  \hline
+  \multirow{2}{*}{Sprint 4} & \multirow{2}{*}{\shortstack{24/12/2025 - 16/01/2026}}
+                            & TFR-1.1 Registro de usuarios                                                                                                                        \\
+  \cline{3-3}
+                            &                                                                               & TFR-1.2 Inicio de sesión de usuarios                                \\
+  \hline
+                            &                                                                               & TFR-1.3 Visualización de partidos de la temporada                   \\
+  \cline{3-3}
+                            &                                                                               & TFR-1.4 Visualización de estadísticas                               \\
+  \hline
+
+  \multirow{3}{*}{Sprint 5} & \multirow{3}{*}{\shortstack{19/01/2026 - 18/02/2026}}
+                            & TFR-2.1 Gestión de convocatorias                                                                                                                    \\
+  \cline{3-3}
+                            &                                                                               & TFR-2.2 Seguimiento de estadísticas e incidencias de partido        \\
+  \cline{3-3}
+                            &                                                                               & TFR-2.3 Módulo inteligente de recomendaciones                       \\
+  \hline
+  \multirow{2}{*}{Sprint 6} & \multirow{2}{*}{\shortstack{19/02/2026 - 02/03/2026}}
+                            & TFR-3.1 Foro de mensajes                                                                                                                            \\
+  \cline{3-3}
+                            &                                                                               & TFR-3.2 Gestión de pedidos de material                              \\
+  \hline
+  \multirow{2}{*}{Sprint 7} & \multirow{2}{*}{\shortstack{03/03/2026 - 25/03/2026}}                         & TFR-4.1 Terminar de dar estilo a las pantallas de la aplicación web \\
+  \cline{3-3}
+                            &                                                                               & TFR-4.2 Aplicar responsividad a las pantallas de la solución        \\
+  \hline
+
+  \multirow{2}{*}{Sprint 8} & \multirow{2}{*}{\shortstack{26/03/2026 - 22/04/2026}}
+                            & TFC-1 Comparar resultados con objetivos iniciales                                                                                                   \\
+  \cline{3-3}
+                            &                                                                               & TFC-2 Realizar pruebas del resultado final                          \\
+  \hline
+
+  \multirow{1}{*}{Sprint 9} & \multirow{1}{*}{\shortstack{23/04/2026 - 18/05/2026}}
+                            & TFF-1 Redactar la memoria del proyecto                                                                                                              \\
+  \hline
+                            &                                                                               & TFF-2 Terminar la aplicación web                                    \\
+  \cline{3-3}
+                            &                                                                               & TFF-3 Preparar la defensa del proyecto                              \\
+  \hline
+  \caption{Distribución de tareas en sprints}
+  \label{tab:tareas}
+\end{longtable}
+
 \chapter{Presupuesto}
 
 Para la realización de este proyecto, se ha definido un presupuesto que puede dividirse en varias partes: costes de mano de obra, costes de material y costes de software, licencias y otros servicios.
 
 \section{Mano de obra}
 
-Los costes de mano de obra se corresponden con el tiempo dedicado al desarrollo del proyecto por parte de los distintos trabajadores. En este caso, el proyecto ha sido realizado por una única persona, que ha asumido todas las funciones necesarias para la compleción del mismo: desde el análisis de la situación del equipo deportivo, pasando por el diseño de la estructura, la arquitectura y la parte visual de la solución, hasta el desarrollo de la aplicación web. Debido al caracter individual del proyecto y para aproximar los costes de mano de obra reales para la realización del proyecto, la tabla a continuación muestra una estimación de dichos costes.
+Los costes de mano de obra se corresponden con el tiempo dedicado al desarrollo del proyecto por parte de los distintos trabajadores. En este caso, el proyecto ha sido realizado por una única persona, que ha asumido todas las funciones necesarias para la compleción del mismo: desde el análisis de la situación del equipo deportivo, pasando por el diseño de la estructura, la arquitectura y la parte visual de la solución, hasta el desarrollo de la aplicación web. Debido al caracter individual del proyecto y para aproximar los costes de mano de obra reales para la realización del proyecto, la tabla a continuación muestra una estimación de dichos costes. Aunque, antes es necesario estimar el coste por hora de cada uno de los trabajadores:
+
+Cabe destacar que el coste/hora de estos trabajadores puede variar dependiendo del perfil de cada uno de ellos. Para hacer una estimación media de los costes de mano de obra, se optará por perfiles intermedios que estén entre los 3 y 5 años de experiencia profesional.
+
+\begin{itemize}
+  \item \textbf{Gestor de proyectos:} El coste de un gestor de proyectos oscila entre 45€ y 70€ la hora. Se considerará una media de 57,5€/hora.
+  \item  \textbf{Diseñador de software:} El coste/hora de un diseñador de software se mueve entre 40€ y 70€. Se estimará una media de 55€/hora.
+  \item \textbf{Diseñador artístico:} El coste de un diseñador artístico oscila 30€ y 50€ la hora. Se estimará una media de 40€/hora.
+  \item \textbf{Desarrollador backend:} El coste/hora de un desarrollador backend varía entre 40€ y 60€. Se considerará una media de 50€/hora.
+  \item \textbf{Desarrollador frontend:} El coste de un desarrollador frontend oscila entre 30€ y 60€ la hora. Se estimará una media de 45€/hora.
+\end{itemize}
+
+Para determinar el coste total de cada perfil, se considerará el tiempo en horas estimadas del proyecto, que son un total de 360 horas. Aunque, se debe tener en cuenta que no todos los perfiles inician su participación en el proyecto en la misma fase de éste. Entonces, se considerará lo siguiente:
+
+
+\begin{itemize}
+  \item \textbf{Gestor de proyectos:} Participación en todas las fases del proyecto: 360 horas.
+  \item \textbf{Diseñador de software:} Participación en todas las fases del proyecto: 360 horas.
+  \item \textbf{Diseñador artístico:} Participación en realización, control y finalización del proyecto: 348 horas.
+  \item \textbf{Desarrollador backend:} Participación en realización, control y finalización del proyecto: 348 horas.
+  \item \textbf{Desarrollador frontend:} Participación en realización, control y finalización del proyecto: 348 horas.
+\end{itemize}
 
 \begin{table}[ht]
   \centering
@@ -396,15 +515,15 @@ Los costes de mano de obra se corresponden con el tiempo dedicado al desarrollo 
     \rowcolor{headerblue}
     \textbf{Rol}           & \textbf{Descripción}                                                                                                         & \textbf{Coste/Hora} & \textbf{Coste total} \\
     \hline
-    Gestor de proyectos    & Persona que gestiona el proyecto, valora su evolución y coordina a todos los participantes para que se realice correctamente & 1.828,65 €          &                      \\
+    Gestor de proyectos    & Persona que gestiona el proyecto, valora su evolución y coordina a todos los participantes para que se realice correctamente & 57,5 €/h            &                      \\
     \hline
-    Diseñador de software  & Encargado de diseñar la parte backend de la solución                                                                         & 1.234,91€           &                      \\
+    Diseñador de software  & Encargado de diseñar la parte backend de la solución                                                                         & 55€/h               &                      \\
     \hline
-    Diseñador artístico    & Persona encargada de diseñar las distintas pantallas de la aplicación                                                        & 1.234,91€           &                      \\
+    Diseñador artístico    & Persona encargada de diseñar las distintas pantallas de la aplicación                                                        & 40€/h               &                      \\
     \hline
-    Desarrollador backend  & Experto en desarrollo de backend                                                                                             & 1.234,91€           &                      \\
+    Desarrollador backend  & Experto en desarrollo de backend                                                                                             & 50€/h               &                      \\
     \hline
-    Desarrollador frontend & Experto en desarrollo de frontend                                                                                            & 1.234,91€           &                      \\
+    Desarrollador frontend & Experto en desarrollo de frontend                                                                                            & 45€/h               &                      \\
     \hline
     \textbf{Total}         &                                                                                                                              & \textbf{3063,56 €}  &                      \\
     \hline
@@ -442,36 +561,48 @@ Los costes de material incluyen los gastos sobre el material físico necesario p
 
 Este tipo de costes engloban gastos en herramientas, licencias y otros servicios necesarios. Para este proyecto se ha recurrido al uso de herramientas gratuitas o de código abierto, exceptuando el uso de de un modelo de inteligencia artificial generativa de Anthropic.
 
-\begin{table}[ht]
-  \centering
-  \renewcommand{\arraystretch}{1.8}
-  \begin{tabular}{|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{5cm}|>{\centering\arraybackslash}p{5cm}|}
-    \hline
-    \rowcolor{headerblue}
-    \textbf{Producto} & \textbf{Descripción}                                                                      & \textbf{Coste}  \\
-    \hline
-    Antigravity IDE   & Entorno de desarrollo utilizado en el proyecto                                            & 0 €             \\
-    \hline
-    MySQL Workbench   & Interfaz gráfica para bases de datos MySQL                                                & 0 €             \\
-    \hline
-    Docker Desktop    & Interfaz gráfica para Docker                                                              & 0 €             \\
-    \hline
-    GitHub Desktop    & Interfaz gráfica para hacer uso de git                                                    & 0 €             \\
-    \hline
-    Draw.io           & Herramienta para elaborar los diagramas                                                   & 0 €             \\
-    \hline
-    Figma             & Herramienta para el diseño de pantallas                                                   & 0 €             \\
-    \hline
-    Inkscape          & Herramienta para dibujar imágenes vectoriales                                             & 0 €             \\
-    \hline
-    Tokens Anthropic  & Tokens de Anthropic para tener acceso a sus modelos de inteligencia artificial generativa & 5,31 €          \\
-    \hline
-    \textbf{Total}    &                                                                                           & \textbf{5,31 €} \\
-    \hline
-  \end{tabular}
+\renewcommand{\arraystretch}{1.8}
+\begin{longtable}{|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{5cm}|>{\centering\arraybackslash}p{5cm}|}
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Producto} & \textbf{Descripción}                                                                      & \textbf{Coste}  \\
+  \hline
+  \endfirsthead
+
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Producto} & \textbf{Descripción}                                                                      & \textbf{Coste}  \\
+  \hline
+  \endhead
+
+  \multicolumn{3}{r}{\small\textit{Continúa en la página siguiente}}                                                              \\
+  \endfoot
+
+  \endlastfoot
+
+  Antigravity IDE   & Entorno de desarrollo utilizado en el proyecto                                            & 0 €             \\
+  \hline
+  MySQL Workbench   & Interfaz gráfica para bases de datos MySQL                                                & 0 €             \\
+  \hline
+  Docker Desktop    & Interfaz gráfica para Docker                                                              & 0 €             \\
+  \hline
+  GitHub Desktop    & Interfaz gráfica para hacer uso de git                                                    & 0 €             \\
+  \hline
+  Draw.io           & Herramienta para elaborar los diagramas                                                   & 0 €             \\
+  \hline
+  Figma             & Herramienta para el diseño de pantallas                                                   & 0 €             \\
+  \hline
+  Inkscape          & Herramienta para dibujar imágenes vectoriales                                             & 0 €             \\
+  \hline
+  Team Gantt        & Herramienta para dibujar diagrama de Gantt                                                & 0 €             \\
+  \hline
+  Tokens Anthropic  & Tokens de Anthropic para tener acceso a sus modelos de inteligencia artificial generativa & 5,31 €          \\
+  \hline
+  \textbf{Total}    &                                                                                           & \textbf{5,31 €} \\
+  \hline
   \caption{Costes de software, licencias y otros servicios}
   \label{tab:costes-software}
-\end{table}
+\end{longtable}
 
 \chapter{Desarrollo del proyecto}
 
@@ -633,37 +764,37 @@ Al tratarse de una solución web, es posible que los usuarios accedan a ella des
 
 \subsection{Maven}
 
-Maven es una herramienta de gestión de proyectos de proyectos software. Se ha utilizado en este proyecto para automatizar la compilación y construcción de la parte servidora del proyecto. Además ha ayudado ha gestionar las dependencias del proyecto, asegurando las distintas dependencias necesarias para que la parte backend del proyecto funcione correctamente.\cite{apache-maven}
+Maven es una herramienta de gestión de proyectos de proyectos software. Se ha utilizado en este proyecto para automatizar la compilación y construcción de la parte servidora del proyecto. Además ha ayudado ha gestionar las dependencias del proyecto, asegurando las distintas dependencias necesarias para que la parte backend del proyecto funcione correctamente. \cite{apache-maven}
 
 \subsection{Spring Boot}
 
-Spring Boot es un framework basado en el framework Spring que facilita el desarrollo de aplicaciones web. En este proyecto se ha utilizado para desarrollar la parte servidora de la aplicación web, encargada de gestionar las distintas funcionalidades que ofrece la aplicación.\cite{springboot}
+Spring Boot es un framework basado en el framework Spring que facilita el desarrollo de aplicaciones web. En este proyecto se ha utilizado para desarrollar la parte servidora de la aplicación web, encargada de gestionar las distintas funcionalidades que ofrece la aplicación. \cite{springboot}
 
 \subsection{React}
 
-React es una biblioteca de JavaScript diseñada para el desarrollo de interfaces web. En este proyecto se ha utilizado para desarrollar la parte cliente de la solución, que se encarga de mostrar los datos proporcionados por la parte servidora de una forma visual y agradable para el usuario.\cite{react}
+React es una biblioteca de JavaScript diseñada para el desarrollo de interfaces web. En este proyecto se ha utilizado para desarrollar la parte cliente de la solución, que se encarga de mostrar los datos proporcionados por la parte servidora de una forma visual y agradable para el usuario. \cite{react}
 
 \subsection{MySQL}
 
-MySQL es un sistema de gestión de bases de datos relacionales de código abierto. Se ha utilizado en este proyecto para gestionar los datos de los que hace uso la solución web.\cite{mysql}
+MySQL es un sistema de gestión de bases de datos relacionales de código abierto. Se ha utilizado en este proyecto para gestionar los datos de los que hace uso la solución web. \cite{mysql}
 
 \subsection{Docker}
 
-Docker es una plataforma de contenedores que permite empaquetar una aplicación en un contenedor junto con todas sus dependencias. Se ha utilizado para crear contenedores con cada uno de los servicios del proyecto y orquestar su ejecución con Docker Compose.\cite{docker}
+Docker es una plataforma de contenedores que permite empaquetar una aplicación en un contenedor junto con todas sus dependencias. Se ha utilizado para crear contenedores con cada uno de los servicios del proyecto y orquestar su ejecución con Docker Compose. \cite{docker}
 
-Cabe destacar que para hacer uso de Docker en Windows, se ha utilizado Docker Desktop, una interfaz gráfica de Docker que facilita su uso en este sistema operativo.\cite{docker-desktop}
+Cabe destacar que para hacer uso de Docker en Windows, se ha utilizado Docker Desktop, una interfaz gráfica de Docker que facilita su uso en este sistema operativo. \cite{docker-desktop}
 
 \subsection{GitHub Desktop}
 
-GitHub Desktop es una interfaz gráfica para GitHub que permite gestionar los repositorios de GitHub. Se ha utilizado para gestionar las versiones del proyecto y a la vez asegurar que el código del proyecto no se pierde almacenándolo en la nube de GitHub.\cite{github-dektop}
+GitHub Desktop es una interfaz gráfica para GitHub que permite gestionar los repositorios de GitHub. Se ha utilizado para gestionar las versiones del proyecto y a la vez asegurar que el código del proyecto no se pierde almacenándolo en la nube de GitHub. \cite{github-dektop}
 
 \subsection{Antigravity IDE}
 
-Antigravity IDE es un entorno de desarrollo muy similar a Visual Studio Code. Lo que lo diferencia de él es que está integrado con herramientas de inteligencia artificial para apoyar el desarrollo del proyecto cuando el usuario lo desee. Ha sido el software con el que se ha desarrollado el proyecto.\cite{antigravity-ide}
+Antigravity IDE es un entorno de desarrollo muy similar a Visual Studio Code. Lo que lo diferencia de él es que está integrado con herramientas de inteligencia artificial para apoyar el desarrollo del proyecto cuando el usuario lo desee. Ha sido el software con el que se ha desarrollado el proyecto. \cite{antigravity-ide}
 
 \subsection{Figma}
 
-Figma es una herramienta de diseño colaborativo para interfaces web. Se ha hecho uso de ella para diseñar la parte de interfaces de usuario, personalizada para el club deportivo de referencia.\cite{figma}
+Figma es una herramienta de diseño colaborativo para interfaces web. Se ha hecho uso de ella para diseñar la parte de interfaces de usuario, personalizada para el club deportivo de referencia. \cite{figma}
 
 \begin{figure}[htbp]
   \centering
@@ -674,11 +805,11 @@ Figma es una herramienta de diseño colaborativo para interfaces web. Se ha hech
 
 \subsection{Draw.io}
 
-Draw.io es una herramienta online diseñada para crear diagramas. Se ha utilizado en el proyecto para definir la arquitectura del mismo.\cite{draw-io}
+Draw.io es una herramienta online diseñada para crear diagramas. Se ha utilizado en el proyecto para definir la arquitectura del mismo. \cite{draw-io}
 
 \subsection{Inkscape}
 
-Inkscape es una herramienta de diseño vectorial de código abierto. En este proyecto, se ha utilizado para crear la imagen de logo de equipo por defecto y la imagen de jugador por defecto.\cite{inkscape}
+Inkscape es una herramienta de diseño vectorial de código abierto. En este proyecto, se ha utilizado para crear la imagen de logo de equipo por defecto y la imagen de jugador por defecto. \cite{inkscape}
 
 \begin{figure}[htbp]
   \centering
@@ -686,6 +817,10 @@ Inkscape es una herramienta de diseño vectorial de código abierto. En este pro
   \caption{Pantalla principal de Inkscape}
   \label{fig:inkscape}
 \end{figure}
+
+\subsection{Team Gantt}
+
+Team Gantt es una herramienta para crear diagramas de Gantt. Se ha utilizado en el proyecto para crear el diagrama de este documento. \cite{team-gantt}
 
 \section{Consideraciones sobre la implementación}
 
