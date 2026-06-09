@@ -1,4 +1,5 @@
 \definecolor{headerblue}{RGB}{180, 210, 255}
+\definecolor{rowgray}{RGB}{242,242,242}
 
 \chapter{Introducción}
 
@@ -130,15 +131,14 @@ Para la realización de este proyecto, también ha sido fundamental tener claro 
 
 \chapter{Plan de trabajo}
 
-Este capítulo documenta la planificación seguida para la realización de este proyecto, agregando un cronograma en forma de diagrama de Gantt para representar visualmente las horas de trabajo. También proporciona y detalla los perfiles de trabajadores que serían necesarios para el correcto desarrollo de la solución software.
-
 \section{Planificación temporal}
 
 Este apartado describe las fases y tareas que han sido realizadas para completar el proyecto. El proyecto se divide en 5 partes, cada una de ellas con tareas y/o fases a completar. La fase de realización del proyecto ha sido dividida en 4 fases. La primera de ellas consta de la creación y configuración del proyecto. Las fases restantes se han planificado de esa forma debido a una división de las funcionalidades a implementar. Para esta división se han tenido en cuenta factores como relevancia de la funcionalidad en el proyecto, dificultad de la misma y dependencia de otras funcionalidades.
 
-Esta planificación ha sido seguida de tal manera que no es posible avanzar a la siguiente fase principal del proyecto antes de haber completado todas las tareas o subfases de la anterior, es decir, siguiendo un modelo en cascada. Se entiende por fases principales del proyecto las fases de definición, planificación, realización, control y finalización. Más adelante en este documento se especificará la metodología seguida para las subfases que componen la realización del proyecto.
-
+Esta planificación ha sido seguida de tal manera que no es posible avanzar a la siguiente fase principal del proyecto antes de haber completado todas las tareas o subfases de la anterior, es decir, siguiendo un modelo en cascada. Se entiende por fases principales del proyecto las fases de definición, planificación, realización, control y finalización.
 Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se redacta cada una de las fases de la planificación con sus respectivas tareas a completar:
+
+\textbf{Definición del proyecto:}
 
 \begin{description}[
     labelindent=2em,
@@ -147,7 +147,34 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
     labelsep=1em,
     font=\normalfont]
 
-  \item[Fase 1.] Definición del proyecto:
+  \item[TFD-1.] Análisis del club deportivo: Analizar el club deportivo e investigar cómo realizan y gestionan los procesos de sus equipos.
+  \item[TFD-2.] Estudio de la situación del club y propuesta de solución: Estudiar e interpretar el análisis realizado y diseñar una solución software para uno de sus equipos.
+  \item[TFD-3.] Presentación del proyecto a la tutora: Presentar la idea a la tutora del proyecto de fin de grado.
+\end{description}
+
+\textbf{Planificación del proyecto:}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+
+  \item[TFP-1.] Estimación de tiempos: Estimar el tiempo que llevará desarrollar cada una de las funcionalidades de la solución.
+  \item[TFP-2.] División del desarrollo del proyecto: Priorizar las funcionalidades a desarrollar y agruparlas en fases para dividir el desarrollo del proyecto.
+  \item[TFP-3.] Planificación del desarrollo del proyecto: Planificar en el tiempo el desarrollo del proyecto basándose en la división del mismo y la estimación de tiempos de las tareas.
+\end{description}
+\textbf{Realización del proyecto:}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+
+  \item[Fase 0.] \leavevmode
         \begin{description}[
             labelindent=0pt,
             leftmargin=!,
@@ -155,12 +182,13 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
             labelsep=1em,
             font=\normalfont
           ]
-
-          \item[Tarea 1.] Análisis del club deportivo: Analizar el club deportivo e investigar cómo realizan y gestionan los procesos de sus equipos.
-          \item[Tarea 2.] Estudio de la situación del club y propuesta de solución: Estudiar e interpretar el análisis realizado y diseñar una solución software para uno de sus equipos.
-          \item[Tarea 3.] Presentación del proyecto a la tutora: Presentar la idea a la tutora del proyecto de fin de grado.
+          \item[TFR-0.1] Crear el proyecto de Maven y gestionar las dependencias de Springboot para la parte backend
+          \item[TFR-0.2] Crear la base de datos con MySQL y configurar Springboot para que haga uso de ella
+          \item[TFR-0.3] Crear el proyecto de React para el desarrollo del frontend
+          \item[TFR-0.4] Crear Dockerfiles necesarios y gestionar los servicios con Docker Compose
         \end{description}
-  \item[Fase 2.] Planificación del proyecto:
+
+  \item[Fase 1.] \leavevmode
         \begin{description}[
             labelindent=0pt,
             leftmargin=!,
@@ -168,11 +196,12 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
             labelsep=1em,
             font=\normalfont
           ]
-
-          \item[Tarea 4.] Estimación de tiempos: Estimar el tiempo que llevará desarrollar cada una de las funcionalidades de la solución.
-          \item[Tarea 5.] División del desarrollo del proyecto: Priorizar las funcionalidades a desarrollar y agruparlas en fases para dividir el desarrollo del proyecto.
+          \item[TFR-1.1] Registro de usuarios
+          \item[TFR-1.2] Inicio de sesión de usuarios
+          \item[TFR-1.3] Visualización de partidos de la temporada
+          \item[TFR-1.4] Visualización de estadísticas
         \end{description}
-  \item[Fase 3.] Realización del proyecto:
+  \item[Fase 2.] \leavevmode
         \begin{description}[
             labelindent=0pt,
             leftmargin=!,
@@ -180,191 +209,11 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
             labelsep=1em,
             font=\normalfont
           ]
-
-          \item[Fase 0.] Creación del proyecto:
-                \begin{description}[
-                    labelindent=0pt,
-                    leftmargin=!,
-                    labelwidth=1.5cm,
-                    labelsep=1em,
-                    font=\normalfont
-                  ]
-
-                  \item[Tarea 6.] Crear el proyecto de Maven y gestionar las dependencias de Springboot para la parte backend
-                  \item[Tarea 7.] Crear la base de datos con MySQL y configurar Springboot para que haga uso de ella
-                  \item[Tarea 8.] Crear el proyecto de React para el desarrollo del frontend
-                  \item[Tarea 9.] Crear Dockerfiles necesarios y gestionar los servicios con Docker Compose
-                \end{description}
-
-          \item[Fase 1.] Gestión de usuarios, próximos partidos y visualización de estadísticas:
-                \begin{description}[
-                    labelindent=0pt,
-                    leftmargin=!,
-                    labelwidth=1.5cm,
-                    labelsep=1em,
-                    font=\normalfont
-                  ]
-                  \item[Funcionalidad: ] Registro de usuarios e inicio de sesión
-                        \begin{description}[
-                            labelindent=0pt,
-                            leftmargin=!,
-                            labelwidth=1.5cm,
-                            labelsep=1em,
-                            font=\normalfont
-                          ]
-                          \item[Tarea 10.] Desarrollar pantalla con formulario de registro de usuario
-                          \item[Tarea 11.] Crear pantalla con formulario de inicio de sesión
-                          \item[Tarea 12.] Programar parte backend para el registro de usuarios
-                          \item[Tarea 13.] Desarrollar backend para permitir inicio de sesión simple
-                          \item[Tarea 14.] Implementar inicio de sesión con Google
-                          \item[Tarea 15.] Gestionar seguridad con Spring Security
-                          \item[Tarea 16.] Programar pantalla de inicio
-                          \item[Tarea 17.] Verificar funcionamiento correcto
-                          \item[Tarea 18.] Corregir posibles errores
-                        \end{description}
-                  \item[Funcionalidad: ] Visualización de partidos de la temporada
-                        \begin{description}[
-                            labelindent=0pt,
-                            leftmargin=!,
-                            labelwidth=1.5cm,
-                            labelsep=1em,
-                            font=\normalfont
-                          ]
-                          \item[Tarea 19.] Crear pantalla para próximos partidos
-                          \item[Tarea 20.] Desarrollar backend para recuperar los próximos partidos de la base de datos
-                          \item[Tarea 21.] Crear componente de React de próximo partido
-                          \item[Tarea 22.] Comprobar correcto funcionamiento
-                          \item[Tarea 23.] Corregir errores que puedan surgir
-                        \end{description}
-                  \item[Funcionalidad: ] Visualización de estadísticas
-                        \begin{description}[
-                            labelindent=0pt,
-                            leftmargin=!,
-                            labelwidth=1.5cm,
-                            labelsep=1em,
-                            font=\normalfont
-                          ]
-                          \item[Tarea 24.] Programar primera pantalla para las estadísticas
-                          \item[Tarea 25.] Implementar en el backend funcionalidad para recuperar jugadores y estadísticas de equipo
-                          \item[Tarea 26.] Crear componente de React de tarjetas de jugadores
-                          \item[Tarea 27.] Desarrollar pantalla de estadísticas para un jugador específico y poder acceder a ella al hacer clic en una tarjeta de jugador
-                          \item[Tarea 28.] Programar backend para obtener las estadísticas de un jugador específico
-                          \item[Tarea 29.] Verificar correcto funcionamiento
-                          \item[Tarea 30.] Corregir posibles errores
-                        \end{description}
-                \end{description}
-          \item[Fase 2.] Convocatorias, seguimiento de estadísticas e incidencias de partido y módulo inteligente de recomendaciones:
-                \begin{description}[
-                    labelindent=0pt,
-                    leftmargin=!,
-                    labelwidth=1.5cm,
-                    labelsep=1em,
-                    font=\normalfont
-                  ]
-                  \item[Funcionalidad: ] Gestión de convocatorias
-                        \begin{description}[
-                            labelindent=0pt,
-                            leftmargin=!,
-                            labelwidth=1.5cm,
-                            labelsep=1em,
-                            font=\normalfont
-                          ]
-                          \item[Tarea 31.] Desarrollar primera pantalla para las convocatorias
-                          \item[Tarea 32.] Recuperar próximos partidos y crear componente de React para ellos en la pantalla de convocatorias
-                          \item[Tarea 33.] Crear pantalla para convocatoria de un partido específico y acceder a ella al hacer clic en un próximo partido
-                          \item[Tarea 34.] Mostrar todos los jugadores candidatos a ser convocados
-                          \item[Tarea 35.] Desarrollar backend para almacenar convocatorias
-                          \item[Tarea 36.] Convocar jugador al hacer clic sobre él
-                          \item[Tarea 37.] Implementar confirmación de asistencia/no asistencia de jugador
-                          \item[Tarea 38.] Comprobar correcto funcionamiento
-                          \item[Tarea 39.] Corregir errores que puedan surgir
-                        \end{description}
-                  \item[Funcionalidad: ] Seguimiento de estadísticas e incidencias de partido
-                        \begin{description}[
-                            labelindent=0pt,
-                            leftmargin=!,
-                            labelwidth=1.5cm,
-                            labelsep=1em,
-                            font=\normalfont
-                          ]
-                          \item[Tarea 40.] Programar pantalla de seguimiento de partido
-                          \item[Tarea 41.] Desarrollar componente de React de marcador
-                          \item[Tarea 42.] Recuperar y mostrar en pantalla jugadores con asistencia confirmada al partido
-                          \item[Tarea 43.] Crear pantalla para estadísticas de partido de jugador y portero
-                          \item[Tarea 44.] Implementar funcionalidad para almacenar dichas estadísticas al ser modificadas en la pantalla
-                          \item[Tarea 45.] Programar pantalla para estadísticas de equipo
-                          \item[Tarea 46.] Almacenar estadísticas del equipo en el partido de igual manera que los jugadores
-                          \item[Tarea 47.] Crear pantalla para marcar incidencias del partido
-                          \item[Tarea 48.] Mostrar incidencias marcadas en la pantalla de seguimiento de partido
-                          \item[Tarea 49.] Verificar correcto funcionamiento
-                          \item[Tarea 50.] Corregir errores que puedan surgir
-                        \end{description}
-                  \item[Funcionalidad: ] Módulo inteligente de recomendaciones
-                        \begin{description}[
-                            labelindent=0pt,
-                            leftmargin=!,
-                            labelwidth=1.5cm,
-                            labelsep=1em,
-                            font=\normalfont
-                          ]
-                          \item[Tarea 51.] Gestionar dependencia de Spring AI Anthropic y comprobar su correcto funcionamiento
-                          \item[Tarea 52.] Desarrollar backend para enviar prompts al modelo de IA de Anthropic
-                          \item[Tarea 53.] Enviar estadísticas del partido al modelo de IA de Anthropic y recibir recomendaciones
-                          \item[Tarea 54.] Recuperar recomendaciones proporcionadas por el modelo de IA y mostrarlas por pantalla
-                          \item[Tarea 55.] Verificar correcto funcionamiento
-                          \item[Tarea 56.] Corregir posibles errores
-                        \end{description}
-                \end{description}
-          \item[Fase 3.] Foro de mensajes y pedidos de material:
-                \begin{description}[
-                    labelindent=0pt,
-                    leftmargin=!,
-                    labelwidth=1.5cm,
-                    labelsep=1em,
-                    font=\normalfont
-                  ]
-                  \item[Funcionalidad: ] Foro de mensajes
-                        \begin{description}[
-                            labelindent=0pt,
-                            leftmargin=!,
-                            labelwidth=1.5cm,
-                            labelsep=1em,
-                            font=\normalfont
-                          ]
-                          \item[Tarea 57.] Desarrollar pantalla para debates
-                          \item[Tarea 58.] Programar backend para crear y recuperar debates
-                          \item[Tarea 59.] Crear pantalla para foro de mensajes y acceder a ella haciendo clic en un debate
-                          \item[Tarea 60.] Implementar funcionalidad de publicación de mensajes en el foro del debate
-                          \item[Tarea 61.] Verificar correcto funcionamiento
-                          \item[Tarea 62.] Corregir errores que puedan surgir
-                        \end{description}
-                  \item[Funcionalidad: ] Gestión de pedidos de material
-                        \begin{description}[
-                            labelindent=0pt,
-                            leftmargin=!,
-                            labelwidth=1.5cm,
-                            labelsep=1em,
-                            font=\normalfont
-                          ]
-                          \item[Tarea 63.] Desarrollar pantalla para gestión de pedidos de material
-                          \item[Tarea 64.] Programar backend para crear y recuperar pedidos de material
-                          \item[Tarea 65.] Implementar funcionalidad para pedir material
-                          \item[Tarea 66.] Descargar fichero excel con la información del pedido
-                        \end{description}
-                \end{description}
-          \item[Fase 4.] Estilo y responsividad
-                \begin{description}[
-                    labelindent=0pt,
-                    leftmargin=!,
-                    labelwidth=1.5cm,
-                    labelsep=1em,
-                    font=\normalfont
-                  ]
-                  \item[Tarea 67.] Terminar de dar estilo a las pantallas de la aplicación web
-                  \item[Tarea 68.] Aplicar responsividad a las pantallas de la solución
-                \end{description}
+          \item[TFR-2.1] Gestión de convocatorias
+          \item[TFR-2.2] Seguimiento de estadísticas e incidencias de partido
+          \item[TFR-2.3] Módulo inteligente de recomendacioneS
         \end{description}
-  \item[Fase 4.] Control del proyecto
+  \item[Fase 3.] \leavevmode
         \begin{description}[
             labelindent=0pt,
             leftmargin=!,
@@ -372,10 +221,10 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
             labelsep=1em,
             font=\normalfont
           ]
-          \item[Tarea 69.] Comparar resultados del proyecto con objetivos iniciales
-          \item[Tarea 70.] Realizar pruebas del resultado final
+          \item[TFR-3.1] Foro de mensajes
+          \item[TFR-3.2] Gestión de pedidos de material
         \end{description}
-  \item[Fase 5.] Finalización del proyecto
+  \item[Fase 4.] \leavevmode
         \begin{description}[
             labelindent=0pt,
             leftmargin=!,
@@ -383,31 +232,153 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
             labelsep=1em,
             font=\normalfont
           ]
-          \item[Tarea 71.] Terminar de redactar la memoria del proyecto
-          \item[Tarea 72.] Terminar la aplicación web
-          \item[Tarea 73.] Preparar la defensa del proyecto
+          \item[TFR-4.1] Terminar de dar estilo a las pantallas de la aplicación web
+          \item[TFR-4.2] Aplicar responsividad a las pantallas de la solución
         \end{description}
 \end{description}
+\textbf{Control del proyecto:}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[TFC-1] Comparar resultados del proyecto con objetivos iniciales
+  \item[TFC-2] Realizar pruebas del resultado final
+\end{description}
+\textbf{Finalización del proyecto:}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[TFF-1] Terminar de redactar la memoria del proyecto
+  \item[TFF-2] Terminar la aplicación web
+  \item[TFF-3] Preparar la defensa del proyecto
+\end{description}
+
+\section{Estimación de tiempos}
+
+\renewcommand{\arraystretch}{2}
+\begin{longtable}{|>{\bfseries}p{3.5cm}|p{7cm}|p{2cm}|}
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Fase} & \textbf{Tarea}                                                                & \textbf{Horas}      \\
+  \hline
+  \endfirsthead
+
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Fase} & \textbf{Tarea}                                                                & \textbf{Estimación} \\
+  \hline
+  \endhead
+
+  \multicolumn{3}{r}{\small\textit{Continúa en la página siguiente}}                                                  \\
+  \endfoot
+
+  \endlastfoot
+
+  \multirow{3}{*}{Definición}
+                & TFD-1. Análisis del club deportivo                                            & 3h                  \\
+  \cline{2-3}
+                & TFD-2. Estudio de la situación del club y propuesta de solución               & 4h                  \\
+  \cline{2-3}
+                & TFD-3. Presentación del proyecto a la tutora                                  & 1h                  \\
+  \hline
+
+  \multirow{3}{*}{Planificación}
+                & TFP-1. Estimación de tiempos                                                  & 1,5h                \\
+  \cline{2-3}
+                & TFP-2. División del desarrollo del proyecto                                   & 1h                  \\
+  \hline
+                & TFP-3. Planificación del desarrollo del proyecto                              & 2h                  \\
+  \hline
+
+  \textbf{Realización}
+                & TFR-0.1 Crear el proyecto de Maven y gestionar las dependencias de Springboot & 4h                  \\
+  \cline{2-3}
+                & TFR-0.2 Crear la base de datos con MySQL y configurar Springboot              & 3h                  \\
+  \cline{2-3}
+                & TFR-0.3 Crear el proyecto de React para el frontend                           & 2h                  \\
+  \cline{2-3}
+                & TFR-0.4 Crear Dockerfiles y gestionar servicios con Docker Compose            & 5h                  \\
+  \cline{2-3}
+                & TFR-1.1 Registro de usuarios                                                  & 8h                  \\
+  \cline{2-3}
+                & TFR-1.2 Inicio de sesión de usuarios                                          & 12h                 \\
+  \cline{2-3}
+                & TFR-1.3 Visualización de partidos de la temporada                             & 6h                  \\
+  \cline{2-3}
+                & TFR-1.4 Visualización de estadísticas                                         & 10h                 \\
+  \cline{2-3}
+                & TFR-2.1 Gestión de convocatorias                                              & 16h                 \\
+  \cline{2-3}
+                & TFR-2.2 Seguimiento de estadísticas e incidencias de partido                  & 40h                 \\
+  \cline{2-3}
+                & TFR-2.3 Módulo inteligente de recomendaciones                                 & 15h                 \\
+  \hline
+                & TFR-3.1 Foro de mensajes                                                      & 5h                  \\
+  \cline{2-3}
+                & TFR-3.2 Gestión de pedidos de material                                        & 8h                  \\
+  \cline{2-3}
+                & TFR-4.1 Terminar de dar estilo a las pantallas de la aplicación web           & 20h                 \\
+  \cline{2-3}
+                & TFR-4.2 Aplicar responsividad a las pantallas de la solución                  & 48h                 \\
+  \hline
+
+  \multirow{2}{*}{Control}
+                & TFC-1 Comparar resultados con objetivos iniciales                             & 2h                  \\
+  \cline{2-3}
+                & TFC-2 Realizar pruebas del resultado final                                    & 10h                 \\
+  \hline
+
+  \multirow{3}{*}{Finalización}
+                & TFF-1 Redactar la memoria del proyecto                                        & 72h                 \\
+  \cline{2-3}
+                & TFF-2 Terminar la aplicación web                                              & 10h                 \\
+  \cline{2-3}
+                & TFF-3 Preparar la defensa del proyecto                                        & 50h                 \\
+  \hline
+  \caption{Estimación de tiempos de las tareas del proyecto}
+  \label{tab:tareas}
+\end{longtable}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.3\textwidth, angle=90]{imgs/gantt.png}
+  \caption{Diagrama de Gannt con la planificación del proyecto}
+  \label{fig:gantt}
+\end{figure}
 
 \chapter{Metodología}
 
-\section{Metodologías iterativas e incrementales}
+\section{Metodologías ágiles}
 
-Las metodologías iterativas son metodologías que dividen los proyectos en ciclos repetitivos cortos. A muchas de ellas también se les llama incrementales, ya que en cada ciclo iterativo añaden nuevas funcionalidades o módulos al producto hasta completarlo.
+Hoy en día, los proyectos y productos software que no evolucionan a tiempo o no cumplen con las necesidades y requisitos del cliente no suelen tener éxito. Por eso, es esencial saber en todo momento qué es lo que quiere el cliente y cuáles son las necesidades del mercado. De esta forma, es posible desarrollar un proyecto o producto que actualizado y que deje al cliente satisfecho. Las metodologías ágiles permiten ajustar sobre la marcha esos requisitos definidos por el cliente, manteniendo al equipo de desarrollo enfocado en pequeños objetivos que suman al resultado final. \cite{iebs}
 
+Por definición, las metodologías ágiles son aquellas que permiten adaptar la forma de trabajo a las condiciones del proyecto, consiguiendo flexibilidad e inmediatez en la respuesta para amoldar el proyecto y su desarrollo a las circunstancias específicas del entorno. \cite{iebs}
+
+\textbf{Ventajas:}
 \begin{itemize}
-  \item \textbf{Flexibilidad:} Este tipo de metodologías aportan mucha flexibilidad, ya que permiten cambiar los requisitos rápidamente si las necesidades del cliente sufrieran algún cambio.
-  \item \textbf{Reducción de riesgos:} Gracias a dividir el proyecto en ciclos cortos, los errores se detectan y corrigen rápidamente. De esta forma, se evitan grandes problemas que se puedan acumular a lo largo del proyecto.
+  \item \textbf{Flexibilidad:} Este tipo de metodologías aportan mucha flexibilidad. Permite cambiar los requisitos rápidamente y adaptarse a ellos.
+  \item \textbf{Reducción de riesgos:} Gracias a dividir el proyecto en ciclos cortos debido a su naturaleza iterativa, los errores se detectan y corrigen rápidamente. De esta forma, se evitan grandes problemas que se puedan acumular a lo largo del proyecto.
   \item \textbf{Feedback continuo:} Debido al caracter incremental de estas metodologías, es posible probar y enseñar el producto al cliente cada vez que se añade una nueva funcionalidad. De esta manera, se obtiene feedback del cliente después de implementar cada funcionalidad y adaptar a su gusto lo que fuera necesario.
 \end{itemize}
 
-En este proyecto he decidido utilizar este tipo de metodología en la fase de realización del proyecto para ir implementando las funcionalidades poco a poco y corregir rápidamente cualquier error que pudiera producirse.
+En este proyecto he decidido utilizar una metodología ágil para ir implementando las funcionalidades poco a poco y corregir rápidamente cualquier error que pudiera producirse.
 
-Decidí decantarme por utilizar esta metodología en la fase de realización del proyecto porque me parecía una metodología razonable y adaptable a mis circunstancias, ya que me permitía trabajar de forma autónoma y probar el resultado cada vez que implementaba una nueva funcionalidad. Además, creo que es una metodología que encajaba perfectamente con la planificación elaborada para esa fase del proyecto.
+Decidí decantarme por utilizar esta metodología porque me parecía una metodología razonable y adaptable a mis circunstancias, ya que me permitía trabajar de forma autónoma y probar el resultado cada vez que implementaba una nueva funcionalidad. Además, creo que es una metodología que encajaba perfectamente con la planificación elaborada para el proyecto.
 
-\section{Proceso Racional Unificado}
+\section{Scrum}
 
-El Proceso Racional Unificado (RUP por sus siglas en inglés, Rational Unified Process) es una metodología iterativa e incremental para el desarrollo de software creado por IBM.
+Scrum es una metodología ágil que trata de hacer de la entrega de un producto complejo una tarea sencilla y manejable. Para logarlo divide el proyecto en ciclos cortos de desarrollo, llamados \textit{sprints}. En cada uno de estos ciclos, el equipo colabora para realizar únicamente las tareas planificadas para ese \textit{sprint}.
+
+En este proyecto se ha optado por esta metodología para organizar el desarrollo del mismo de tal manera que se garantice una gestión ágil y eficiente del trabajo, favoreciendo la entrega continua de funcionalidades, la adaptación a posibles cambios en los requisitos y la evaluación periódica del progreso.
+
+Este proyecto ha sido dividido en 9 sprints. Se ha definido un \textit{sprint} para las fases de definición, planificación, control y finalización. Mientras que se ha decidido dividir la fase de realización del proyecto en varios ciclos. Estos han sido 4, uno por cada subfase.
 
 \chapter{Presupuesto}
 
@@ -662,35 +633,37 @@ Al tratarse de una solución web, es posible que los usuarios accedan a ella des
 
 \subsection{Maven}
 
-Maven es una herramienta de gestión de proyectos de proyectos software. Se ha utilizado en este proyecto para automatizar la compilación y construcción de la parte servidora del proyecto. Además ha ayudado ha gestionar las dependencias del proyecto, asegurando las distintas dependencias necesarias para que la parte backend del proyecto funcione correctamente.
+Maven es una herramienta de gestión de proyectos de proyectos software. Se ha utilizado en este proyecto para automatizar la compilación y construcción de la parte servidora del proyecto. Además ha ayudado ha gestionar las dependencias del proyecto, asegurando las distintas dependencias necesarias para que la parte backend del proyecto funcione correctamente.\cite{apache-maven}
 
 \subsection{Spring Boot}
 
-Spring Boot es un framework basado en el framework Spring que facilita el desarrollo de aplicaciones web. En este proyecto se ha utilizado para desarrollar la parte servidora de la aplicación web, encargada de gestionar las distintas funcionalidades que ofrece la aplicación.
+Spring Boot es un framework basado en el framework Spring que facilita el desarrollo de aplicaciones web. En este proyecto se ha utilizado para desarrollar la parte servidora de la aplicación web, encargada de gestionar las distintas funcionalidades que ofrece la aplicación.\cite{springboot}
 
 \subsection{React}
 
-React es una biblioteca de JavaScript diseñada para el desarrollo de interfaces web. En este proyecto se ha utilizado para desarrollar la parte cliente de la solución, que se encarga de mostrar los datos proporcionados por la parte servidora de una forma visual y agradable para el usuario.
+React es una biblioteca de JavaScript diseñada para el desarrollo de interfaces web. En este proyecto se ha utilizado para desarrollar la parte cliente de la solución, que se encarga de mostrar los datos proporcionados por la parte servidora de una forma visual y agradable para el usuario.\cite{react}
 
 \subsection{MySQL}
 
-MySQL es un sistema de gestión de bases de datos relacionales de código abierto. Se ha utilizado en este proyecto para gestionar los datos de los que hace uso la solución web.
+MySQL es un sistema de gestión de bases de datos relacionales de código abierto. Se ha utilizado en este proyecto para gestionar los datos de los que hace uso la solución web.\cite{mysql}
 
 \subsection{Docker}
 
-Docker es una plataforma de contenedores que permite empaquetar una aplicación en un contenedor junto con todas sus dependencias. Se ha utilizado para crear contenedores con cada uno de los servicios del proyecto y orquestar su ejecución con Docker Compose.
+Docker es una plataforma de contenedores que permite empaquetar una aplicación en un contenedor junto con todas sus dependencias. Se ha utilizado para crear contenedores con cada uno de los servicios del proyecto y orquestar su ejecución con Docker Compose.\cite{docker}
+
+Cabe destacar que para hacer uso de Docker en Windows, se ha utilizado Docker Desktop, una interfaz gráfica de Docker que facilita su uso en este sistema operativo.\cite{docker-desktop}
 
 \subsection{GitHub Desktop}
 
-GitHub Desktop es una interfaz gráfica para GitHub que permite gestionar los repositorios de GitHub. Se ha utilizado para gestionar las versiones del proyecto y a la vez asegurar que el código del proyecto no se pierde almacenándolo en la nube de GitHub.
+GitHub Desktop es una interfaz gráfica para GitHub que permite gestionar los repositorios de GitHub. Se ha utilizado para gestionar las versiones del proyecto y a la vez asegurar que el código del proyecto no se pierde almacenándolo en la nube de GitHub.\cite{github-dektop}
 
 \subsection{Antigravity IDE}
 
-Antigravity IDE es un entorno de desarrollo muy similar a Visual Studio Code. Lo que lo diferencia de él es que está integrado con herramientas de inteligencia artificial para apoyar el desarrollo del proyecto cuando el usuario lo desee. Ha sido el software con el que se ha desarrollado el proyecto.
+Antigravity IDE es un entorno de desarrollo muy similar a Visual Studio Code. Lo que lo diferencia de él es que está integrado con herramientas de inteligencia artificial para apoyar el desarrollo del proyecto cuando el usuario lo desee. Ha sido el software con el que se ha desarrollado el proyecto.\cite{antigravity-ide}
 
 \subsection{Figma}
 
-Figma es una herramienta de diseño colaborativo para interfaces web. Se ha hecho uso de ella para diseñar la parte de interfaces de usuario, personalizada para el club deportivo de referencia.
+Figma es una herramienta de diseño colaborativo para interfaces web. Se ha hecho uso de ella para diseñar la parte de interfaces de usuario, personalizada para el club deportivo de referencia.\cite{figma}
 
 \begin{figure}[htbp]
   \centering
@@ -701,11 +674,11 @@ Figma es una herramienta de diseño colaborativo para interfaces web. Se ha hech
 
 \subsection{Draw.io}
 
-Draw.io es una herramienta online diseñada para crear diagramas. Se ha utilizado en el proyecto para definir la arquitectura del mismo.
+Draw.io es una herramienta online diseñada para crear diagramas. Se ha utilizado en el proyecto para definir la arquitectura del mismo.\cite{draw-io}
 
 \subsection{Inkscape}
 
-Inkscape es una herramienta de diseño vectorial de código abierto. En este proyecto, se ha utilizado para crear la imagen de logo de equipo por defecto y la imagen de jugador por defecto.
+Inkscape es una herramienta de diseño vectorial de código abierto. En este proyecto, se ha utilizado para crear la imagen de logo de equipo por defecto y la imagen de jugador por defecto.\cite{inkscape}
 
 \begin{figure}[htbp]
   \centering
