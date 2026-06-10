@@ -969,6 +969,16 @@ La inteligencia artificial generativa no es perfecta, y no sabemos si en algún 
 
 \subsection{Soluciones para las consideraciones negativas}
 
+Aunque las consideraciones éticas negativas descritas anteriormente presentan riesgos asociados al uso de la solución, nginuna de ellas impide su utilización. No obstante, es necesario tenerlas en cuenta y reaccionar para reducir o eliminar los riesgos que suponen.
+
+\begin{enumerate}
+  \item \textbf{Privacidad de datos:} No es posible la omisión de recopilación de los datos de usuarios mecionados anteriormente, ya que son necesarios para el correcto funcionamiento de la solución. Sin embargo, se recogen únicamente los datos estrictamente necesarios para que la aplicación pueda funcionar. Además, existen mecanismos de autenticación y autorización para controlar el acceso a esos datos. Solo los integrantes del club disponen de ese acceso. También cabe mencionar que las estadísticas enviadas al modelo de inteligencia artificial para obtener las recomendaciones son anonimizadas antes de ser enviadas. Los nombre de cada jugador se convierten en ids, así el modelo solo verá números, lo que reduce el riesgo de filtración de datos personales.
+  \item \textbf{Dependencia excesiva:} Al ser una herramienta de apoyo a las decisiones del entrenador, se debe tener especial cuidado con este aspecto. Para reducir el riesgo, la aplicación no implementa de ningún sistema que recomiende o automatice la toma de decisiones, solo ofrece datos objetivos para apoyar al entrenador en sus propias decisiones.
+  \item \textbf{Sesgos de la inteligencia artificial:} Para reducir el riesgo de sesgos por parte de la inteligencia artificial, se ha ajustado el \textit{prompt} del modelo de tal forma que únicamente proporciona recomendaciones basadas en datos objetivos. En ningún momento toma decisiones de forma autónoma.
+\end{enumerate}
+
+Podemos confirmar que mediante la aplicación de distinas decisiones de diseño, se ha conseguido reducir y eliminar los riesgos que podría tener esta solución web sin afectar a los beneficios que aporta.
+
 \chapter{Conclusiones y trabajo futuro}
 
 \section{Conclusiones}
