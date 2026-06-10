@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.5.1)  10 JUN 2026 20:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.5.1)  10 JUN 2026 20:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1329,23 +1329,23 @@ Package pdftex.def Info: imgs/inkscape.jpeg  used on input line 848.
 (pdftex.def)             Requested size: 455.24411pt x 256.07233pt.
  [35 <./imgs/figma.png>] [36 <./imgs/inkscape.jpeg>] [37]
 chapter 8.
-<imgs/login.jpeg, id=553, 1606.0pt x 903.375pt>
+<imgs/login.jpeg, id=555, 1606.0pt x 903.375pt>
 File: imgs/login.jpeg Graphic file (type jpg)
 <use imgs/login.jpeg>
-Package pdftex.def Info: imgs/login.jpeg  used on input line 895.
+Package pdftex.def Info: imgs/login.jpeg  used on input line 924.
 (pdftex.def)             Requested size: 455.24411pt x 256.07233pt.
 [38
 
  <./imgs/login.jpeg>]
-<imgs/usuario_no_autorizado.jpeg, id=559, 1606.0pt x 903.375pt>
+<imgs/usuario_no_autorizado.jpeg, id=561, 1606.0pt x 903.375pt>
 File: imgs/usuario_no_autorizado.jpeg Graphic file (type jpg)
 <use imgs/usuario_no_autorizado.jpeg>
-Package pdftex.def Info: imgs/usuario_no_autorizado.jpeg  used on input line 904.
+Package pdftex.def Info: imgs/usuario_no_autorizado.jpeg  used on input line 933.
 (pdftex.def)             Requested size: 455.24411pt x 256.07233pt.
-<imgs/registro.jpeg, id=560, 1606.0pt x 903.375pt>
+<imgs/registro.jpeg, id=562, 1606.0pt x 903.375pt>
 File: imgs/registro.jpeg Graphic file (type jpg)
 <use imgs/registro.jpeg>
-Package pdftex.def Info: imgs/registro.jpeg  used on input line 913.
+Package pdftex.def Info: imgs/registro.jpeg  used on input line 942.
 (pdftex.def)             Requested size: 455.24411pt x 256.07233pt.
  [39 <./imgs/usuario_no_autorizado.jpeg>] [40 <./imgs/registro.jpeg>]
 chapter 9.
@@ -1379,17 +1379,17 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 23993 strings out of 467691
- 451715 string characters out of 5415472
+ 24008 strings out of 467691
+ 452215 string characters out of 5415472
  1072277 words of memory out of 5000000
- 52239 multiletter control sequences out of 15000+600000
+ 52252 multiletter control sequences out of 15000+600000
  803947 words of font info for 240 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  122i,21n,121p,11242b,952s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-Bold.pfb><C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-It.pfb><C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-Regular.pfb>
-Output written on main.pdf (55 pages, 2500303 bytes).
+Output written on main.pdf (55 pages, 2501762 bytes).
 PDF statistics:
- 881 PDF objects out of 1000 (max. 8388607)
- 203 named destinations out of 1000 (max. 500000)
- 68184 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 890 PDF objects out of 1000 (max. 8388607)
+ 205 named destinations out of 1000 (max. 500000)
+ 68200 words of extra memory for PDF output out of 74296 (max. 10000000)
 

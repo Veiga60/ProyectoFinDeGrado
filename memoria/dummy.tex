@@ -866,11 +866,40 @@ React Icons es una biblioteca de iconos para React. Se ha utilizado en este proy
 
 \section{Plan de pruebas}
 
-El plan de pruebas es una parte esencial de los proyectos de desarrollo de software. Permite verificar y comprobar el resultado del proyecto, al igual que sus módulos y funcionalidades individualmente. Para este proyecto, se ha llevado a cabo un plan que contiene dos tipos de pruebas diferentes: pruebas unitarias y pruebas de integración.
+El plan de pruebas es una parte esencial de los proyectos de desarrollo de software. Permite verificar y comprobar el resultado del proyecto, al igual que sus módulos y funcionalidades individualmente o de forma integrada. Para este proyecto, se ha llevado a cabo un plan que contiene tres tipos de pruebas diferentes: pruebas unitarias, pruebas de integración y pruebas de validación.
 
 \subsection{Pruebas unitarias}
 
-Las pruebas unitarias son pruebas que se realizan sobre una unidad individual, como un método o una funcionalidad.
+Las pruebas unitarias son pruebas que se realizan sobre una unidad individual, como un método o una funcionalidad. Estas son las pruebas unitarias que se han llevado a cabo en este proyecto:
+
+\subsubsection{Registro de usuarios}
+
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PU-01:] Un usuario puede registrarse correctamente
+  \item[PU-02:] Un usuario no puede registrarse con un nombre de usuario ya existente
+  \item[PU-03:] Un usuario no puede registrarse si su correo electrónico no está registrado en el club
+\end{description}
+
+\subsubsection{Inicio de sesión}
+
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PU-01:] Un usuario puede iniciar sesión correctamente
+  \item[PU-02:] Un usuario no puede no puede iniciar sesión con credenciales incorrectas
+  \item[PU-03:] Un usuario puede iniciar sesión correctamente mediante Google
+  \item[PU-04:] Un usuario cuyo correo electrónico no está registrado en el club no puede iniciar sesión mediante Google
+\end{description}
 
 \section{Incidencias del proyecto}
 
