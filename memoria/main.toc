@@ -37,29 +37,31 @@
 \contentsline {subsection}{\numberline {7.4.9}Draw.io}{35}{subsection.84}%
 \contentsline {subsection}{\numberline {7.4.10}Inkscape}{35}{subsection.85}%
 \contentsline {subsection}{\numberline {7.4.11}Team Gantt}{36}{subsection.88}%
-\contentsline {section}{\numberline {7.5}Consideraciones sobre la implementación}{36}{section.89}%
-\contentsline {section}{\numberline {7.6}Plan de pruebas}{36}{section.90}%
-\contentsline {subsection}{\numberline {7.6.1}Pruebas unitarias}{37}{subsection.91}%
-\contentsline {section}{\numberline {7.7}Incidencias del proyecto}{37}{section.92}%
-\contentsline {chapter}{\numberline {8}Manual de usuario}{38}{chapter.93}%
-\contentsline {section}{\numberline {8.1}Prerrequisitos}{38}{section.94}%
-\contentsline {section}{\numberline {8.2}Registro e inicio de sesión}{38}{section.95}%
-\contentsline {section}{\numberline {8.3}Entrenador}{40}{section.102}%
-\contentsline {section}{\numberline {8.4}Jugador}{40}{section.103}%
-\contentsline {chapter}{\numberline {9}Valoración ética del proyecto}{41}{chapter.104}%
-\contentsline {section}{\numberline {9.1}Justificación ética del proyecto}{41}{section.105}%
-\contentsline {section}{\numberline {9.2}Consideraciones éticas}{42}{section.106}%
-\contentsline {subsection}{\numberline {9.2.1}Positivas}{42}{subsection.107}%
-\contentsline {subsection}{\numberline {9.2.2}Negativas}{43}{subsection.108}%
-\contentsline {subsection}{\numberline {9.2.3}Soluciones para las consideraciones negativas}{43}{subsection.109}%
-\contentsline {chapter}{\numberline {10}Conclusiones y trabajo futuro}{45}{chapter.113}%
-\contentsline {section}{\numberline {10.1}Conclusiones}{45}{section.114}%
-\contentsline {section}{\numberline {10.2}Trabajo futuro}{45}{section.115}%
-\contentsline {subsection}{\numberline {10.2.1}Publicación de la solución web}{45}{subsection.116}%
-\contentsline {subsection}{\numberline {10.2.2}Gestión de todos los equipos del club}{45}{subsection.117}%
-\contentsline {subsection}{\numberline {10.2.3}Implementación de nuevas ligas}{45}{subsection.118}%
-\contentsline {subsection}{\numberline {10.2.4}Mejora del sistema de recomendaciones}{45}{subsection.119}%
-\contentsline {chapter}{Bibliograf\'ia}{46}{subsection.119}%
+\contentsline {subsection}{\numberline {7.4.12}Claude Sonnet 4.5}{36}{subsection.89}%
+\contentsline {subsection}{\numberline {7.4.13}React Icons}{36}{subsection.90}%
+\contentsline {section}{\numberline {7.5}Consideraciones sobre la implementación}{37}{section.91}%
+\contentsline {section}{\numberline {7.6}Plan de pruebas}{37}{section.92}%
+\contentsline {subsection}{\numberline {7.6.1}Pruebas unitarias}{37}{subsection.93}%
+\contentsline {section}{\numberline {7.7}Incidencias del proyecto}{37}{section.94}%
+\contentsline {chapter}{\numberline {8}Manual de usuario}{38}{chapter.95}%
+\contentsline {section}{\numberline {8.1}Prerrequisitos}{38}{section.96}%
+\contentsline {section}{\numberline {8.2}Registro e inicio de sesión}{38}{section.97}%
+\contentsline {section}{\numberline {8.3}Entrenador}{40}{section.104}%
+\contentsline {section}{\numberline {8.4}Jugador}{40}{section.105}%
+\contentsline {chapter}{\numberline {9}Valoración ética del proyecto}{41}{chapter.106}%
+\contentsline {section}{\numberline {9.1}Justificación ética del proyecto}{41}{section.107}%
+\contentsline {section}{\numberline {9.2}Consideraciones éticas}{42}{section.108}%
+\contentsline {subsection}{\numberline {9.2.1}Positivas}{42}{subsection.109}%
+\contentsline {subsection}{\numberline {9.2.2}Negativas}{43}{subsection.110}%
+\contentsline {subsection}{\numberline {9.2.3}Soluciones para las consideraciones negativas}{43}{subsection.111}%
+\contentsline {chapter}{\numberline {10}Conclusiones y trabajo futuro}{45}{chapter.115}%
+\contentsline {section}{\numberline {10.1}Conclusiones}{45}{section.116}%
+\contentsline {section}{\numberline {10.2}Trabajo futuro}{45}{section.117}%
+\contentsline {subsection}{\numberline {10.2.1}Publicación de la solución web}{45}{subsection.118}%
+\contentsline {subsection}{\numberline {10.2.2}Gestión de todos los equipos del club}{45}{subsection.119}%
+\contentsline {subsection}{\numberline {10.2.3}Implementación de nuevas ligas}{45}{subsection.120}%
+\contentsline {subsection}{\numberline {10.2.4}Mejora del sistema de recomendaciones}{45}{subsection.121}%
+\contentsline {chapter}{Bibliograf\'ia}{46}{subsection.121}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Uso de inteligencia artificial}{47}{appendix.121}%
+\contentsline {chapter}{\numberline {A}Uso de inteligencia artificial}{48}{appendix.123}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
