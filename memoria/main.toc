@@ -42,26 +42,28 @@
 \contentsline {section}{\numberline {7.5}Consideraciones sobre la implementación}{37}{section.91}%
 \contentsline {section}{\numberline {7.6}Plan de pruebas}{37}{section.92}%
 \contentsline {subsection}{\numberline {7.6.1}Pruebas unitarias}{37}{subsection.93}%
-\contentsline {section}{\numberline {7.7}Incidencias del proyecto}{37}{section.94}%
-\contentsline {chapter}{\numberline {8}Manual de usuario}{38}{chapter.95}%
-\contentsline {section}{\numberline {8.1}Prerrequisitos}{38}{section.96}%
-\contentsline {section}{\numberline {8.2}Registro e inicio de sesión}{38}{section.97}%
-\contentsline {section}{\numberline {8.3}Entrenador}{40}{section.104}%
-\contentsline {section}{\numberline {8.4}Jugador}{40}{section.105}%
-\contentsline {chapter}{\numberline {9}Valoración ética del proyecto}{41}{chapter.106}%
-\contentsline {section}{\numberline {9.1}Justificación ética del proyecto}{41}{section.107}%
-\contentsline {section}{\numberline {9.2}Consideraciones éticas}{42}{section.108}%
-\contentsline {subsection}{\numberline {9.2.1}Positivas}{42}{subsection.109}%
-\contentsline {subsection}{\numberline {9.2.2}Negativas}{43}{subsection.110}%
-\contentsline {subsection}{\numberline {9.2.3}Soluciones para las consideraciones negativas}{43}{subsection.111}%
-\contentsline {chapter}{\numberline {10}Conclusiones y trabajo futuro}{45}{chapter.115}%
-\contentsline {section}{\numberline {10.1}Conclusiones}{45}{section.116}%
-\contentsline {section}{\numberline {10.2}Trabajo futuro}{45}{section.117}%
-\contentsline {subsection}{\numberline {10.2.1}Publicación de la solución web}{45}{subsection.118}%
-\contentsline {subsection}{\numberline {10.2.2}Gestión de todos los equipos del club}{45}{subsection.119}%
-\contentsline {subsection}{\numberline {10.2.3}Implementación de nuevas ligas}{45}{subsection.120}%
-\contentsline {subsection}{\numberline {10.2.4}Mejora del sistema de recomendaciones}{45}{subsection.121}%
-\contentsline {chapter}{Bibliograf\'ia}{46}{subsection.121}%
+\contentsline {subsubsection}{\numberline {7.6.1.1}Registro de usuarios}{37}{subsubsection.94}%
+\contentsline {subsubsection}{\numberline {7.6.1.2}Inicio de sesión}{37}{subsubsection.95}%
+\contentsline {section}{\numberline {7.7}Incidencias del proyecto}{37}{section.96}%
+\contentsline {chapter}{\numberline {8}Manual de usuario}{38}{chapter.97}%
+\contentsline {section}{\numberline {8.1}Prerrequisitos}{38}{section.98}%
+\contentsline {section}{\numberline {8.2}Registro e inicio de sesión}{38}{section.99}%
+\contentsline {section}{\numberline {8.3}Entrenador}{40}{section.106}%
+\contentsline {section}{\numberline {8.4}Jugador}{40}{section.107}%
+\contentsline {chapter}{\numberline {9}Valoración ética del proyecto}{41}{chapter.108}%
+\contentsline {section}{\numberline {9.1}Justificación ética del proyecto}{41}{section.109}%
+\contentsline {section}{\numberline {9.2}Consideraciones éticas}{42}{section.110}%
+\contentsline {subsection}{\numberline {9.2.1}Positivas}{42}{subsection.111}%
+\contentsline {subsection}{\numberline {9.2.2}Negativas}{43}{subsection.112}%
+\contentsline {subsection}{\numberline {9.2.3}Soluciones para las consideraciones negativas}{43}{subsection.113}%
+\contentsline {chapter}{\numberline {10}Conclusiones y trabajo futuro}{45}{chapter.117}%
+\contentsline {section}{\numberline {10.1}Conclusiones}{45}{section.118}%
+\contentsline {section}{\numberline {10.2}Trabajo futuro}{45}{section.119}%
+\contentsline {subsection}{\numberline {10.2.1}Publicación de la solución web}{45}{subsection.120}%
+\contentsline {subsection}{\numberline {10.2.2}Gestión de todos los equipos del club}{45}{subsection.121}%
+\contentsline {subsection}{\numberline {10.2.3}Implementación de nuevas ligas}{45}{subsection.122}%
+\contentsline {subsection}{\numberline {10.2.4}Mejora del sistema de recomendaciones}{45}{subsection.123}%
+\contentsline {chapter}{Bibliograf\'ia}{46}{subsection.123}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Uso de inteligencia artificial}{48}{appendix.123}%
+\contentsline {chapter}{\numberline {A}Uso de inteligencia artificial}{48}{appendix.125}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
