@@ -386,7 +386,7 @@ Scrum es una metodología ágil que trata de hacer de la entrega de un producto 
 
 En este proyecto se ha optado por esta metodología para organizar el desarrollo del mismo de tal manera que se garantice una gestión ágil y eficiente del trabajo, favoreciendo la entrega continua de funcionalidades, la adaptación a posibles cambios en los requisitos y la evaluación periódica del progreso.
 
-Este proyecto ha sido dividido en 9 sprints. Se ha definido un \textit{sprint} para las fases de definición, planificación, control y finalización. Mientras que se ha decidido dividir la fase de realización del proyecto en varios ciclos. Estos han sido 4, uno por cada subfase.
+Este proyecto ha sido dividido en 9 sprints. Se ha definido un \textit{sprint} para las fases de definición, planificación, control y finalización. Mientras que se ha decidido dividir la fase de realización del proyecto en varios ciclos. Estos han sido 4, uno por cada subfase. Gracias a hacerlo de esta manera, en cada ciclo el equipo (en el caso de este proyecto, yo mismo) podía centrarse únicamente en las funcionalidades planificadas para cada \textit{sprint}, haciendo que el desarrollo fuera rápido, eficiente y con entregables funcionales después de cada \textit{sprint}.
 
 La siguiente tabla muestra la distribución de tareas y sprints de forma más visual:
 
@@ -486,25 +486,14 @@ Para la realización de este proyecto, se ha definido un presupuesto que puede d
 
 Los costes de mano de obra se corresponden con el tiempo dedicado al desarrollo del proyecto por parte de los distintos trabajadores. En este caso, el proyecto ha sido realizado por una única persona, que ha asumido todas las funciones necesarias para la compleción del mismo: desde el análisis de la situación del equipo deportivo, pasando por el diseño de la estructura, la arquitectura y la parte visual de la solución, hasta el desarrollo de la aplicación web. Debido al caracter individual del proyecto y para aproximar los costes de mano de obra reales para la realización del proyecto, la tabla a continuación muestra una estimación de dichos costes. Aunque, antes es necesario estimar el coste por hora de cada uno de los trabajadores:
 
-Cabe destacar que el coste/hora de estos trabajadores puede variar dependiendo del perfil de cada uno de ellos. Para hacer una estimación media de los costes de mano de obra, se optará por perfiles intermedios que estén entre los 3 y 5 años de experiencia profesional.
+Cabe destacar que el coste/hora de estos trabajadores puede variar dependiendo del perfil de cada uno de ellos. Para esta estimación, se considerará un coste medio de perfiles junior de cada trabajador.
 
 \begin{itemize}
-  \item \textbf{Gestor de proyectos:} El coste de un gestor de proyectos oscila entre 45€ y 70€ la hora. Se considerará una media de 57,5€/hora.
-  \item  \textbf{Diseñador de software:} El coste/hora de un diseñador de software se mueve entre 40€ y 70€. Se estimará una media de 55€/hora.
-  \item \textbf{Diseñador artístico:} El coste de un diseñador artístico oscila 30€ y 50€ la hora. Se estimará una media de 40€/hora.
-  \item \textbf{Desarrollador backend:} El coste/hora de un desarrollador backend varía entre 40€ y 60€. Se considerará una media de 50€/hora.
-  \item \textbf{Desarrollador frontend:} El coste de un desarrollador frontend oscila entre 30€ y 60€ la hora. Se estimará una media de 45€/hora.
-\end{itemize}
-
-Para determinar el coste total de cada perfil, se considerará el tiempo en horas estimadas del proyecto, que son un total de 360 horas. Aunque, se debe tener en cuenta que no todos los perfiles inician su participación en el proyecto en la misma fase de éste. Entonces, se considerará lo siguiente:
-
-
-\begin{itemize}
-  \item \textbf{Gestor de proyectos:} Participación en todas las fases del proyecto: 360 horas.
-  \item \textbf{Diseñador de software:} Participación en todas las fases del proyecto: 360 horas.
-  \item \textbf{Diseñador artístico:} Participación en realización, control y finalización del proyecto: 348 horas.
-  \item \textbf{Desarrollador backend:} Participación en realización, control y finalización del proyecto: 348 horas.
-  \item \textbf{Desarrollador frontend:} Participación en realización, control y finalización del proyecto: 348 horas.
+  \item \textbf{Gestor de proyectos:} Es la persona que coordina las actividades del equipo y todo el trabajo de los distintos trabajadores del equipo. Se encarga de que el proyecto avance según lo planeado y cumpliendo con el presupuesto fijado. El coste de un gestor de proyectos oscila entre 30€ y 45€ la hora. Se considerará una media de 37,5€/hora y una estimación de 60 horas de trabajo.
+  \item  \textbf{Diseñador de software:} Para que un producto software tenga éxito, es esencial que disponga de un buen diseño. El diseñador de software se encargará de definir la arquitectura del software para que los desarrolladores entiendan cómo se comunicarán las distintas partes del proyecto y puedan desarrollarlas correctamente. El coste/hora de un diseñador de software se mueve entre 20€ y 40€. Se estimará una media de 30€/hora y se considerarán 30h de trabajo
+  \item \textbf{Diseñador artístico:} El diseñador artístico se encargará de definir la parte visual de la solución web. Diseñará una interfaz de usuario personalizada para el cliente. El coste de un diseñador artístico oscila 15€ y 30€ la hora. Se estimará una media de 22,5€/hora y 30 horas de trabajo.
+  \item \textbf{Desarrollador backend:} El desarrollador backend será el encargado de desarrollar la parte servidora de la solución. Es quién se encargrá de implementar la lógica de negocio y la interacción con la base de datos. También se encargará de desarrollar la API REST de la aplicación. El coste/hora de un desarrollador backend varía entre 20€ y 35€. Se considerará una media de 27,5€/hora y una estimación de 120 horas de trabajo.
+  \item \textbf{Desarrollador frontend:} El desarrollador de la parte frontend de la solución se encarga de desarrollar la parte visual de la misma. Hará uso de los diseños realizados por el diseñador artístico para implementarlos en la parte cliente de la solución. Además deberá comunicarse también con el desarrollador backend para trabajar juntos y que la conexión entre frontend y backend sea coherente. El coste de un desarrollador frontend oscila entre 15€ y 30€ la hora. Se estimará una media de 22,5€/hora y 120 horas de trabajo.
 \end{itemize}
 
 \begin{table}[ht]
@@ -513,53 +502,61 @@ Para determinar el coste total de cada perfil, se considerará el tiempo en hora
   \begin{tabular}{|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{5cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{2cm}|}
     \hline
     \rowcolor{headerblue}
-    \textbf{Rol}           & \textbf{Descripción}                                                                                                         & \textbf{Coste/Hora} & \textbf{Coste total} \\
+    \textbf{Rol}           & \textbf{Estimación horas trabajadas} & \textbf{Coste/Hora} & \textbf{Coste total} \\
     \hline
-    Gestor de proyectos    & Persona que gestiona el proyecto, valora su evolución y coordina a todos los participantes para que se realice correctamente & 57,5 €/h            & 20.700 €             \\
+    Gestor de proyectos    & 60h                                  & 37,5 €/h            & 2.250 €              \\
     \hline
-    Diseñador de software  & Encargado de diseñar la parte backend de la solución                                                                         & 55 €/h              & 19.800 €             \\
+    Diseñador de software  & 30h                                  & 30 €/h              & 900 €                \\
     \hline
-    Diseñador artístico    & Persona encargada de diseñar las distintas pantallas de la aplicación                                                        & 40 €/h              & 13.920 €             \\
+    Diseñador artístico    & 30h                                  & 22,5 €/h            & 675 €                \\
     \hline
-    Desarrollador backend  & Experto en desarrollo de backend                                                                                             & 50 €/h              & 17.400 €             \\
+    Desarrollador backend  & 120h                                 & 27,5 €/h            & 3.300 €              \\
     \hline
-    Desarrollador frontend & Experto en desarrollo de frontend                                                                                            & 45 €/h              & 15.660 €             \\
+    Desarrollador frontend & 120h                                 & 22,5 €/h            & 2.700 €              \\
     \hline
-    \textbf{Total}         &                                                                                                                              &                     & \textbf{87.480 €}    \\
+    \textbf{Total}         &                                      &                     & \textbf{9.825 €}     \\
     \hline
   \end{tabular}
   \caption{Costes de mano de obra}
   \label{tab:costes-mano-obra}
 \end{table}
 
-
-
 \section{Material}
 
 Los costes de material incluyen los gastos sobre el material físico necesario para la realización del proyecto. En este caso, el único material requerido ha sido un ordenador de sobremesa y un ordenador portátil para trabajar en el proyecto fuera de casa.
 
-\begin{table}[ht]
-  \centering
-  \renewcommand{\arraystretch}{1.8}
-  \begin{tabular}{|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{5cm}|>{\centering\arraybackslash}p{5cm}|}
-    \hline
-    \rowcolor{headerblue}
-    \textbf{Producto}  & \textbf{Descripción}                                        & \textbf{Coste}     \\
-    \hline
-    PC                 & Ordenador de sobremesa para trabajar en el proyecto en casa & 1.828,65 €         \\
-    \hline
-    Lenovo Legion Y540 & Ordenador portátil para realizar el proyecto fuera de casa  & 1.234,91€          \\
-    \hline
-    \textbf{Total}     &                                                             & \textbf{3063,56 €} \\
-    \hline
-  \end{tabular}
+\renewcommand{\arraystretch}{1.8}
+\begin{longtable}{|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{5cm}|>{\centering\arraybackslash}p{5cm}|}
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Producto}  & \textbf{Descripción}                                        & \textbf{Coste}      \\
+  \hline
+  \endfirsthead
+
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Producto}  & \textbf{Descripción}                                        & \textbf{Coste}      \\
+  \hline
+  \endhead
+
+  \multicolumn{3}{r}{\small\textit{Continúa en la página siguiente}}                                     \\
+  \endfoot
+
+  \endlastfoot
+
+  PC                 & Ordenador de sobremesa para trabajar en el proyecto en casa & 1.828,65 €          \\
+  \hline
+  Lenovo Legion Y540 & Ordenador portátil para realizar el proyecto fuera de casa  & 1.234,91 €          \\
+  \hline
+  \textbf{Total}     &                                                             & \textbf{3.063,56 €} \\
+  \hline
   \caption{Costes de material}
   \label{tab:costes-material}
-\end{table}
+\end{longtable}
 
 \section{Software, licencias y otros servicios}
 
-Este tipo de costes engloban gastos en herramientas, licencias y otros servicios necesarios. Para este proyecto se ha recurrido al uso de herramientas gratuitas o de código abierto, exceptuando el uso de de un modelo de inteligencia artificial generativa de Anthropic.
+Este tipo de costes engloban gastos en herramientas, licencias y otros servicios necesarios. Para este proyecto se ha recurrido al uso de herramientas gratuitas o de código abierto, exceptuando el uso de de un modelo de inteligencia artificial generativa de Anthropic. El precio que se muestra sobre el coste de los tokens de Anthropic, son los relativos a la primera recarga de estos. Es necesario mencionar que son un gasto recurrente, es decir, una vez se agotan es necesario comprar más para poder seguir utilizando esta inteligencia artificial generativa.
 
 \renewcommand{\arraystretch}{1.8}
 \begin{longtable}{|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{5cm}|>{\centering\arraybackslash}p{5cm}|}
@@ -602,6 +599,41 @@ Este tipo de costes engloban gastos en herramientas, licencias y otros servicios
   \hline
   \caption{Costes de software, licencias y otros servicios}
   \label{tab:costes-software}
+\end{longtable}
+
+\section{Costes totales}
+
+Una vez estimados los costes de mano de obra, los costes de material y los costes de software, licencias y otros servicios, es necesario calcular la estimación de costes totales del proyecto, mostrados en la siguiente tabla:
+
+\renewcommand{\arraystretch}{1.8}
+\begin{longtable}{|>{\centering\arraybackslash}p{5.5cm}|>{\centering\arraybackslash}p{5.5cm}|}
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Tipo de coste}                          & \textbf{Estimación}  \\
+  \hline
+  \endfirsthead
+
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Tipo de coste}                          & \textbf{Estimación}  \\
+  \hline
+  \endhead
+
+  \multicolumn{2}{r}{\small\textit{Continúa en la página siguiente}}     \\
+  \endfoot
+
+  \endlastfoot
+
+  Costes de mano de obra                          & 9.825 €              \\
+  \hline
+  Costes de material                              & 3.063,56 €           \\
+  \hline
+  Costes de software, licencias y otros servicios & 5,31 €               \\
+  \hline
+  \textbf{Total}                                  & \textbf{12.893,87 €} \\
+  \hline
+  \caption{Costes totales del proyecto}
+  \label{tab:costes-totales}
 \end{longtable}
 
 \chapter{Desarrollo del proyecto}
