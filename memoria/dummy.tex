@@ -5,7 +5,7 @@
 
 El presente documento trata el trabajo realizado para el desarrollo del Proyecto Fin de Grado. Trabajo en el que he aplicado todas las competencias adquiridas durante los cuatro años que conforman el grado universitario. En esta memoria se recoge con detalle el proceso hasta llegar al resultado final del proyecto, pasando por la idea, el diseño y el desarrollo de la solución web.
 
-Esta memoria está dividida en varios capítulos, con el objetivo de facilitar su lectura y compresión. Dichos capítulos corresponden a los definidos en la especificación de proyectos fin de grado de ingeniería informática proporcionada por la Universidad de Deusto.
+Esta memoria está dividida en varios capítulos, con el objetivo de facilitar su lectura y compresión. Dichos capítulos corresponden a los definidos en la especificación de proyectos fin de grado de Ingeniería informática proporcionada por la Universidad de Deusto.
 
 \begin{itemize}
   \item Antecedentes y justificación: En este capítulo se recoge el motivo por el que se ha elegido desarrollar este proyecto. Además, se comentará cuál es la situación actual del club deportivo tomado como referencia en cuanto a los procesos de gestión de sus equipos. También se proporcionarán ejemplos de soluciones ya en el mercado similares a este proyecto.
@@ -210,7 +210,7 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
           ]
           \item[TFR-2.1] Gestión de convocatorias
           \item[TFR-2.2] Seguimiento de estadísticas e incidencias de partido
-          \item[TFR-2.3] Módulo inteligente de recomendacioneS
+          \item[TFR-2.3] Módulo inteligente de recomendaciones
         \end{description}
   \item[Fase 3.] \leavevmode
         \begin{description}[
@@ -380,13 +380,13 @@ Decidí decantarme por utilizar esta metodología porque me parecía una metodol
   \label{fig:metodologia_agis}
 \end{figure}
 
-\section{Scrum}
+\section{Scrum}\cite{scrum}
 
 Scrum es una metodología ágil que trata de hacer de la entrega de un producto complejo una tarea sencilla y manejable. Para logarlo divide el proyecto en ciclos cortos de desarrollo, llamados \textit{sprints}. En cada uno de estos ciclos, el equipo colabora para realizar únicamente las tareas planificadas para ese \textit{sprint}.
 
 En este proyecto se ha optado por esta metodología para organizar el desarrollo del mismo de tal manera que se garantice una gestión ágil y eficiente del trabajo, favoreciendo la entrega continua de funcionalidades, la adaptación a posibles cambios en los requisitos y la evaluación periódica del progreso.
 
-Este proyecto ha sido dividido en 9 sprints. Se ha definido un \textit{sprint} para las fases de definición, planificación, control y finalización. Mientras que se ha decidido dividir la fase de realización del proyecto en varios ciclos. Estos han sido 4, uno por cada subfase. Gracias a hacerlo de esta manera, en cada ciclo el equipo (en el caso de este proyecto, yo mismo) podía centrarse únicamente en las funcionalidades planificadas para cada \textit{sprint}, haciendo que el desarrollo fuera rápido, eficiente y con entregables funcionales después de cada \textit{sprint}.
+Este proyecto ha sido dividido en nueve sprints. Se ha definido un \textit{sprint} para las fases de definición, planificación, control y finalización. Mientras que se ha decidido dividir la fase de realización del proyecto en varios ciclos. Estos han sido cuatro, uno por cada subfase. Gracias a hacerlo de esta manera, en cada ciclo el equipo (en el caso de este proyecto, yo mismo) podía centrarse únicamente en las funcionalidades planificadas para cada \textit{sprint}, haciendo que el desarrollo fuera rápido, eficiente y con entregables funcionales después de cada \textit{sprint}.
 
 La siguiente tabla muestra la distribución de tareas y sprints de forma más visual:
 
@@ -858,16 +858,131 @@ Team Gantt es una herramienta para crear diagramas de Gantt. Se ha utilizado en 
 
 \section{Plan de pruebas}
 
+El plan de pruebas es una parte esencial de los proyectos de desarrollo de software. Permite verificar y comprobar el resultado del proyecto, al igual que sus módulos y funcionalidades individualmente. Para este proyecto, se ha llevado a cabo un plan que contiene dos tipos de pruebas diferentes: pruebas unitarias y pruebas de integración.
+
+\subsection{Pruebas unitarias}
+
+Las pruebas unitarias son pruebas que se realizan sobre una unidad individual, como un método o una funcionalidad.
+
 \section{Incidencias del proyecto}
 
 \chapter{Manual de usuario}
 
+\section{Prerrequisitos}
+
+Para poder acceder y hacer uso de la solución, es necesario cumplir unos requisitos previos:
+
+\begin{itemize}
+  \item Disponer de conexión a internet, ya sea inalámbrica o cableada.
+  \item Disponer de un dispositivo capaz de conectarse a la red de internet y que cuente con acceso a un navegador.
+  \item Pertenecer al club deportivo.
+\end{itemize}
+
+\section{Registro e inicio de sesión}
+
+Una vez el usuario haya accedido a la solución desde su navegador, se le mostrarla una pantalla como esta, con el objetivo de que inicie sesión en la aplicación.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{imgs/login.jpeg}
+  \caption{Pantalla de inicio de sesión}
+  \label{fig:login}
+\end{figure}
+
+Si el usuario no dispone de una cuenta con la que poder acceder a la aplicación, podrá iniciar sesión con Google, aunque la solución permitirá el acceso únicamente a los correos electrónicos que formen parte del club deportivo.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{imgs/usuario_no_autorizado.jpeg}
+  \caption{Pantalla de usuario no autorizado}
+  \label{fig:usuario_no_autorizado}
+\end{figure}
+
+Si por el contrario, el usuario desea registrarse en la aplicación y crear una cuenta con la que poder acceder a ella, podrá hacer clic en el enlace que dice "¿No tienes una cuenta? Crea una.". Esto, le redirigirá a la siguiente pantalla:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{imgs/registro.jpeg}
+  \caption{Pantalla de registro}
+  \label{fig:registro}
+\end{figure}
+
+En este formulario, el usuario podrá crearse una cuenta con la que acceder posteriormente a la aplicación. Aunque, al igual que con el inicio de sesión con Google, la solcuión solo permitirá el registro de cuentas a los correos electrónicos pertenecientes al club deportivo.
+
+Una vez se dispone de una cuenta de usuario o de un correo electrónico registrado en el club, se concederá acceso a la solución web. Dependiendo de si el usuario es entrenador o no, estará autorizado a realizar ciertas acciones. Para facilitar la lectura y la comprensión de este manual de usuario se separarán ambos roles: entrenador y jugador.
+
+\section{Entrenador}
+
+\section{Jugador}
+
 \chapter{Valoración ética del proyecto}
+
+Esta solución web para gestionar un equipo deportivo presenta varias consideraciones éticas que deben ser evaluadas. La tecnología conlleva avances, beneficios y consecuencias positivas, aunque si la analizamos con detalle, nos daremos cuenta que, a la vez, presenta consecuencias negativas. Por esta razón, se considera estrictamente necesario hacer un análisis ético de la realización de este proyecto.
+
+\section{Justificación ética del proyecto}
+
+Antes de empezar con dichas consideraciones, resulta imprescindible realizar el cuestionamiento del fin de este proyecto. Éste puede ser analizado desde dos perspectivas distinas: la racionalidad ética y la racionalidad lógico-instrumental. La racionalidad ética es la capacidad de los seres humanos para evaluar acciones y tomar decisiones basándose en principios morales. Mientras que la racionalidad lógico-instrumental es una forma de pensar de los seres humanos que prioriza la eficacia, la utilidad y el cálculo, se enfoca en los medios para lograr un fin. Es decir, la racionalidad ética responde a la pregunta de "¿Por qué debe realizarse este proyecto?" mientras que la racionalidad lógico-instrumental responde a la pregunta de "¿Cómo voy a realizar este proyecto?" (técnicamente, desde una visión ingenieril). Debido al carácter ético de este capítulo y la naturaleza del apartado, me centraré en responder únicamente a la primera pregunta.
+
+\textbf{Racionalidad ética - ¿Por qué debe realizarse este proyecto?}
+
+El objetivo principal de este proyecto es hacer de la gestión de un equipo deportivo un proceso sencillo y ameno, además de proporcionar herramientas que promuevan el crecimiento deportivo de cada jugador y del equipo equipo como conjunto. Pero esto va mucho más allá.
+
+En primer lugar, el origen de este proyecto es, por una parte, académico, ya que surgió para realizarse como Proyecto Fin de Grado. Por otra parte, su origen también se debe a una necesidad real que pude detectar yo mismo. Como ingeniero, considero que la identificación de una necesidad como esta es una oportunidad para aplicar y poner en práctica mis conocimientos y aportar valor a otras personas. Por ello, la detección de este problema y los resultados positivos que podía conllevar el desarrollo de la solución fue una motivación para desarrollarla.
+
+En segundo lugar, la realización de este proyecto aporta una mejora en la experiencia y en el día a día de las personas con las que comparto un espacio deportivo, haciendo que la organización y coordinación del equipo mejore. Esto encaja perfectamente con el principio ético de la beneficiencia, que dicta actuar de tal manera que se busque el bienestar de todas las personas implicadas. La solución web es el medio por el que se conseguirá el fin, el bienestar del equipo. En este caso, el bienestar se traduce en una mejor comunicación, una mejor organización y una mejor coordinación del equipo.
+
+Por último, cabe mencionar el principio de no maleficiencia. Éste dicta no hacer ningún daño a los usuarios y evitar causarles riesgos innecesarios. La gestión de los distintos equipos del club se realiza con varias aplicaciones diferentes y ninguna de ellas reduce o evita errores humanos. Gracias a esta solución, se reduce significativamente el riesgo de errores humanos, ya que se automatizan muchas de las tareas que antes se realizaban manualmente.
+
+\section{Consideraciones éticas}
+
+Después de la justificación ética del proyecto, es conveniente evaluar las consideraciones éticas que aparecen en el mismo, tanto positivas como negativas.
+
+\subsection{Positivas}
+
+\textbf{Promoción del valor de la excelencia}
+
+Esta solución, además de centralizar los procesos de gestión más importantes del equipo deportivo en una sola aplicación, promueve el valor de la excelencia a través de su módulo inteligente. Como ya se ha mencionado anteriormente en este documento, este módulo proporciona áreas a entrenar basándose en las estadísticas recogidas en los partidos. Esto, promueve que los jugadores, tanto individualmente como en equipo, aspiren a mejorar, crezcan deportivamente y se formen como atletas para llegar a lo más alto deportivamente hablando.
+
+\textbf{Fomento de justicia}
+
+La solución web ayuda a recoger y almacena las estadísticas de los jugadores y del equipo. Las estadísticas son datos objetivos que permiten realizar un seguimiento del rendimiento deportivo de cada jugador y del equipo en general. Esto permite realizar un análisis objetivo de los puntos fuertes y débiles, y tomar decisiones basadas en estos datos. El hecho de que las decisiones se basen en datos objetivos hace que se fomente la justicia, ya que el entrenador podrá decidir a qué jugador convocar y qué jugador no, además de decidir cuántos minutos de juego proporcionar a cada jugador. Todo ello gracias a estadísticas objetivas.
+
+\textbf{Transparencia en las decisiones}
+
+En relación al apartado anterior, esas estadísticas están disponibles y visibles para todos los integrantes del equipo, tanto jugadores como entrenadores. Esto fomenta la transparencia, ya que permite que los jugadores conozcan la información utilizada por parte del entrenador para tomar sus decisiones.
+
+\subsection{Negativas}
+
+\textbf{Privacidad de datos}
+
+La privacidad de los datos de los usuarios es fundamental en el desarrollo de soluciones web. En este proyecto se recogen datos de los usuarios de caracter personal como su nombre y apellidos, correo electrónico, fecha de nacimiento, el dorsal del equipo, número de teléfono y fotografía.
+
+\textbf{Dependencia excesiva}
+
+
+\textbf{Sesgos de la inteligencia artificial}
+
+
+\subsection{Soluciones para las consideraciones negativas}
 
 \chapter{Conclusiones y trabajo futuro}
 
 \section{Conclusiones}
 
+Tras finalizar el desarrollo del proyecto, se han logrado cumplir todos los objetivos propuestos. La solución final implementa todas las funcionalidades, requisitos funcionales y no funcionales especificados, y funciona a la perfección. Esto demuestra que mediante una planificación acertada, una metodología que permita flexibilidad y un alcance bien definido es posible lograr un resultado completo y funcional incluso con herramientas gratuitas y de código abierto.
+
+De todas las funcionalidades desarrolladas, el módulo inteligente de recomendaciones es el más destacable y característico de la solución, ya que eleva la gestión del equipo deportivo a un nivel superior. Integrar la inteligencia artificial como un elemento más en la gestión deportiva del entrenador ayuda a que este no pase por alto aspectos que sin su apoyo podría pasar, y hacer que sus jugadores y su equipo crezcan más y más rápido deportivamente.
+
+Por último, el hecho de que este proyecto aporte valor y ayude con una necesidad real de un equipo deportivo real ha sido una motivación importante y le da al proyecto un valor más allá de lo académico. No se trata de realizar un proyecto para cumplir con los requisitos mínimos de la asignatura. Se trata de una herramienta que tiene impacto directo en el día a día de los usuarios y que aporta valor real a sus vidas.
+
 \section{Trabajo futuro}
+
+\subsection{Publicación de la solución web}
+
+\subsection{Gestión de todos los equipos del club}
+
+\subsection{Implementación de nuevas ligas}
+
+\subsection{Mejora del sistema de recomendaciones}
 
 

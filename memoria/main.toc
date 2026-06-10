@@ -39,13 +39,27 @@
 \contentsline {subsection}{\numberline {7.4.11}Team Gantt}{36}{subsection.88}%
 \contentsline {section}{\numberline {7.5}Consideraciones sobre la implementación}{36}{section.89}%
 \contentsline {section}{\numberline {7.6}Plan de pruebas}{36}{section.90}%
-\contentsline {section}{\numberline {7.7}Incidencias del proyecto}{36}{section.91}%
-\contentsline {chapter}{\numberline {8}Manual de usuario}{37}{chapter.92}%
-\contentsline {chapter}{\numberline {9}Valoración ética del proyecto}{38}{chapter.93}%
-\contentsline {chapter}{\numberline {10}Conclusiones y trabajo futuro}{39}{chapter.94}%
-\contentsline {section}{\numberline {10.1}Conclusiones}{39}{section.95}%
-\contentsline {section}{\numberline {10.2}Trabajo futuro}{39}{section.96}%
-\contentsline {chapter}{Bibliograf\'ia}{40}{section.96}%
+\contentsline {subsection}{\numberline {7.6.1}Pruebas unitarias}{37}{subsection.91}%
+\contentsline {section}{\numberline {7.7}Incidencias del proyecto}{37}{section.92}%
+\contentsline {chapter}{\numberline {8}Manual de usuario}{38}{chapter.93}%
+\contentsline {section}{\numberline {8.1}Prerrequisitos}{38}{section.94}%
+\contentsline {section}{\numberline {8.2}Registro e inicio de sesión}{38}{section.95}%
+\contentsline {section}{\numberline {8.3}Entrenador}{40}{section.102}%
+\contentsline {section}{\numberline {8.4}Jugador}{40}{section.103}%
+\contentsline {chapter}{\numberline {9}Valoración ética del proyecto}{41}{chapter.104}%
+\contentsline {section}{\numberline {9.1}Justificación ética del proyecto}{41}{section.105}%
+\contentsline {section}{\numberline {9.2}Consideraciones éticas}{42}{section.106}%
+\contentsline {subsection}{\numberline {9.2.1}Positivas}{42}{subsection.107}%
+\contentsline {subsection}{\numberline {9.2.2}Negativas}{43}{subsection.108}%
+\contentsline {subsection}{\numberline {9.2.3}Soluciones para las consideraciones negativas}{43}{subsection.109}%
+\contentsline {chapter}{\numberline {10}Conclusiones y trabajo futuro}{44}{chapter.110}%
+\contentsline {section}{\numberline {10.1}Conclusiones}{44}{section.111}%
+\contentsline {section}{\numberline {10.2}Trabajo futuro}{44}{section.112}%
+\contentsline {subsection}{\numberline {10.2.1}Publicación de la solución web}{44}{subsection.113}%
+\contentsline {subsection}{\numberline {10.2.2}Gestión de todos los equipos del club}{44}{subsection.114}%
+\contentsline {subsection}{\numberline {10.2.3}Implementación de nuevas ligas}{44}{subsection.115}%
+\contentsline {subsection}{\numberline {10.2.4}Mejora del sistema de recomendaciones}{44}{subsection.116}%
+\contentsline {chapter}{Bibliograf\'ia}{45}{subsection.116}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Uso de inteligencia artificial}{41}{appendix.98}%
+\contentsline {chapter}{\numberline {A}Uso de inteligencia artificial}{46}{appendix.118}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
