@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.5.1)  10 JUN 2026 18:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.5.1)  10 JUN 2026 19:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1298,38 +1298,38 @@ Package pdftex.def Info: imgs/first_database.png  used on input line 747.
 File: imgs/pantallaRegistro.png Graphic file (type png)
 <use imgs/pantallaRegistro.png>
 Package pdftex.def Info: imgs/pantallaRegistro.png  used on input line 767.
-(pdftex.def)             Requested size: 341.43307pt x 191.9667pt.
-<imgs/pantallaPartidos.png, id=475, 815.29594pt x 457.71pt>
-File: imgs/pantallaPartidos.png Graphic file (type png)
-<use imgs/pantallaPartidos.png>
-Package pdftex.def Info: imgs/pantallaPartidos.png  used on input line 774.
-(pdftex.def)             Requested size: 341.43307pt x 191.67816pt.
-<imgs/pantallaConvocatoriasJugador.png, id=476, 813.79031pt x 456.20438pt>
+(pdftex.def)             Requested size: 409.71692pt x 230.35123pt.
+<imgs/pantallaPartidos.jpeg, id=475, 1369.115pt x 771.88374pt>
+File: imgs/pantallaPartidos.jpeg Graphic file (type jpg)
+<use imgs/pantallaPartidos.jpeg>
+Package pdftex.def Info: imgs/pantallaPartidos.jpeg  used on input line 774.
+(pdftex.def)             Requested size: 409.71692pt x 230.98978pt.
+ [31 <./imgs/pantallaRegistro.png>]
+<imgs/pantallaConvocatoriasJugador.png, id=482, 1027.58907pt x 577.40718pt>
 File: imgs/pantallaConvocatoriasJugador.png Graphic file (type png)
 <use imgs/pantallaConvocatoriasJugador.png>
 Package pdftex.def Info: imgs/pantallaConvocatoriasJugador.png  used on input line 781.
-(pdftex.def)             Requested size: 341.43307pt x 191.40265pt.
- [31 <./imgs/pantallaRegistro.png>]
+(pdftex.def)             Requested size: 409.71692pt x 230.21869pt.
 <imgs/pantallaLoginResponsive.png, id=483, 208.52907pt x 456.95718pt>
 File: imgs/pantallaLoginResponsive.png Graphic file (type png)
 <use imgs/pantallaLoginResponsive.png>
 Package pdftex.def Info: imgs/pantallaLoginResponsive.png  used on input line 790.
 (pdftex.def)             Requested size: 113.81102pt x 249.40279pt.
- [32 <./imgs/pantallaPartidos.png> <./imgs/pantallaConvocatoriasJugador.png>] [33 <./imgs/pantallaLoginResponsive.png>]
-<imgs/figma.jpeg, id=509, 1606.0pt x 903.375pt>
+ [32 <./imgs/pantallaPartidos.jpeg> <./imgs/pantallaConvocatoriasJugador.png>] [33 <./imgs/pantallaLoginResponsive.png>]
+<imgs/figma.jpeg, id=508, 1606.0pt x 903.375pt>
 File: imgs/figma.jpeg Graphic file (type jpg)
 <use imgs/figma.jpeg>
 Package pdftex.def Info: imgs/figma.jpeg  used on input line 833.
 (pdftex.def)             Requested size: 455.24411pt x 256.07233pt.
  [34]
-<imgs/inkscape.jpeg, id=522, 1606.0pt x 903.375pt>
+<imgs/inkscape.jpeg, id=521, 1606.0pt x 903.375pt>
 File: imgs/inkscape.jpeg Graphic file (type jpg)
 <use imgs/inkscape.jpeg>
 Package pdftex.def Info: imgs/inkscape.jpeg  used on input line 848.
 (pdftex.def)             Requested size: 455.24411pt x 256.07233pt.
  [35 <./imgs/figma.jpeg>] [36 <./imgs/inkscape.jpeg>] [37]
 chapter 8.
-<imgs/login.jpeg, id=543, 1606.0pt x 903.375pt>
+<imgs/login.jpeg, id=542, 1606.0pt x 903.375pt>
 File: imgs/login.jpeg Graphic file (type jpg)
 <use imgs/login.jpeg>
 Package pdftex.def Info: imgs/login.jpeg  used on input line 887.
@@ -1337,12 +1337,12 @@ Package pdftex.def Info: imgs/login.jpeg  used on input line 887.
 [38
 
  <./imgs/login.jpeg>]
-<imgs/usuario_no_autorizado.jpeg, id=549, 1606.0pt x 903.375pt>
+<imgs/usuario_no_autorizado.jpeg, id=548, 1606.0pt x 903.375pt>
 File: imgs/usuario_no_autorizado.jpeg Graphic file (type jpg)
 <use imgs/usuario_no_autorizado.jpeg>
 Package pdftex.def Info: imgs/usuario_no_autorizado.jpeg  used on input line 896.
 (pdftex.def)             Requested size: 455.24411pt x 256.07233pt.
-<imgs/registro.jpeg, id=550, 1606.0pt x 903.375pt>
+<imgs/registro.jpeg, id=549, 1606.0pt x 903.375pt>
 File: imgs/registro.jpeg Graphic file (type jpg)
 <use imgs/registro.jpeg>
 Package pdftex.def Info: imgs/registro.jpeg  used on input line 905.
@@ -1380,16 +1380,16 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  23984 strings out of 467691
- 451620 string characters out of 5415472
+ 451627 string characters out of 5415472
  1071277 words of memory out of 5000000
  52235 multiletter control sequences out of 15000+600000
  803947 words of font info for 240 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  122i,21n,121p,11242b,952s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-Bold.pfb><C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-It.pfb><C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-Regular.pfb>
-Output written on main.pdf (54 pages, 1903691 bytes).
+Output written on main.pdf (54 pages, 2407338 bytes).
 PDF statistics:
- 857 PDF objects out of 1000 (max. 8388607)
+ 856 PDF objects out of 1000 (max. 8388607)
  198 named destinations out of 1000 (max. 500000)
  68168 words of extra memory for PDF output out of 74296 (max. 10000000)
 
