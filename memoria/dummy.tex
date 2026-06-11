@@ -14,10 +14,10 @@ Esta memoria está dividida en varios capítulos, con el objetivo de facilitar s
   \item Metodología: Una vez planificado el proyecto, es necesario definir la metodología a seguir para relaizarlo eficientemente. En este capítulo se recoge la metodología seguida para el desarrollo del proyecto.
   \item Presupuesto: Todo proyecto debe tener una estimación del presupuesto, con el fin de aproximar lo máximo posible el coste total que conllevará. En este capítulo se recoge con detalle ese presupuesto, teniendo en cuenta costes de material, costes de desarrollo, costes de puesta en marcha y costes de recurrentes.
   \item Desarrollo del proyecto: Este capítulo recoge la fase de desarrollo del proyecto. En primer lugar, identifica los stakeholders. Después, detalla los requisitos del proyecto, tanto funcionales como no funcionales. Sigue recogiendo la especificación de su diseño y nombrando las tecnologías y herramientas utilizadas para su desarrollo. Por último, redacta consideraciones e incidencias del proyecto, además del plan de prueba seguido.
-  \item Valoración ética del proyecto: Todo proyecto o desarrollo informático conlleva unas consecuencias y unos impactos. En este capítulo se realiza una reflexión sobre los aspectos éticos del proyecto, teniendo en cuenta las posibles implicaciones que pueda tener para los usuarios y la sociedad.
-  \item Conclusiones y trabajo futuro: Este capítulo redacta las conclusiones y los resultados obtenidos una vez finalizado el proyecto. Además incluye una serie de ideas para implementar en el futuro que mejorarán el proyecto.
-  \item Bibliografía: La bilbiografía del proyecto recoge todas las fuentes de información que han sido utilizadas para el desarrollo del proyecto.
-  \item Apéndices
+  \item Valoración ética del proyecto: Este capítulo recoge, en primer lugar, la justificación ética del proyecto. Además, todo proyecto o desarrollo informático conlleva unas consecuencias y unos impactos. Por lo que, después de su justificación ética, se realiza una reflexión sobre los aspectos éticos del proyecto, teniendo en cuenta las posibles implicaciones y riesgos que pueda tener.
+  \item Conclusiones y trabajo futuro: Este capítulo redacta las conclusiones y los resultados obtenidos una vez finalizado el proyecto. Además incluye una serie de ideas para implementar en el futuro que mejorarán la solución web.
+  \item Bibliografía: La bibliografía del proyecto recoge todas las fuentes de información que han sido utilizadas para el desarrollo del proyecto. Todas ellas se encuentran referenciadas a lo largo de este documento.
+  \item Apéndices: Para terminar, este último capítulo recoge el uso que se ha hecho de la inteligencia artificial para al realización de este proyecto.
 \end{itemize}
 
 \chapter{Antecedentes y justificación}
@@ -244,7 +244,9 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
     font=\normalfont
   ]
   \item[TFC-1] Comparar resultados del proyecto con objetivos iniciales
-  \item[TFC-2] Realizar pruebas del resultado final
+  \item[TFC-2] Pruebas unitarias
+  \item[TFC-3] Pruebas de integración
+  \item[TFC-3] Pruebas de validación
 \end{description}
 \textbf{Finalización del proyecto:}
 \begin{description}[
@@ -277,7 +279,6 @@ A continuación, se muestra en forma de tabla una estimación de las horas que l
   \hline
   \endhead
 
-  \multicolumn{3}{r}{\small\textit{Continúa en la página siguiente}}                                                  \\
   \endfoot
 
   \endlastfoot
@@ -290,15 +291,15 @@ A continuación, se muestra en forma de tabla una estimación de las horas que l
                 & TFD-3. Presentación del proyecto a la tutora                                  & 1h                  \\
   \hline
 
-  \multirow{3}{*}{Planificación}
+  \multirow{1}{*}{Planificación}
                 & TFP-1. Estimación de tiempos                                                  & 1h                  \\
-  \cline{2-3}
-                & TFP-2. División del desarrollo del proyecto                                   & 1h                  \\
   \hline
+                & TFP-2. División del desarrollo del proyecto                                   & 1h                  \\
+  \cline{2-3}
                 & TFP-3. Planificación del desarrollo del proyecto                              & 2h                  \\
   \hline
 
-  \textbf{Realización}
+  \multirow{4}{*}{Realización}
                 & TFR-0.1 Crear el proyecto de Maven y gestionar las dependencias de Springboot & 4h                  \\
   \cline{2-3}
                 & TFR-0.2 Crear la base de datos con MySQL y configurar Springboot              & 3h                  \\
@@ -330,10 +331,14 @@ A continuación, se muestra en forma de tabla una estimación de las horas que l
                 & TFR-4.2 Aplicar responsividad a las pantallas de la solución                  & 48h                 \\
   \hline
 
-  \multirow{2}{*}{Control}
+  \multirow{4}{*}{Control}
                 & TFC-1 Comparar resultados con objetivos iniciales                             & 2h                  \\
   \cline{2-3}
-                & TFC-2 Realizar pruebas del resultado final                                    & 10h                 \\
+                & TFC-2 Pruebas unitarias                                                       & 10h                 \\
+  \cline{2-3}
+                & TFC-3 Pruebas de integración                                                  & 5h                  \\
+  \cline{2-3}
+                & TFC-4 Pruebas de validación                                                   & 7h                  \\
   \hline
 
   \multirow{3}{*}{Finalización}
@@ -380,9 +385,9 @@ Decidí decantarme por utilizar esta metodología porque me parecía una metodol
   \label{fig:metodologia_agis}
 \end{figure}
 
-\section{Scrum}\cite{scrum}
+\section{Scrum}
 
-Scrum es una metodología ágil que trata de hacer de la entrega de un producto complejo una tarea sencilla y manejable. Para logarlo divide el proyecto en ciclos cortos de desarrollo, llamados \textit{sprints}. En cada uno de estos ciclos, el equipo colabora para realizar únicamente las tareas planificadas para ese \textit{sprint}.
+Scrum es una metodología ágil que trata de hacer de la entrega de un producto complejo una tarea sencilla y manejable. Para logarlo divide el proyecto en ciclos cortos de desarrollo, llamados \textit{sprints}. En cada uno de estos ciclos, el equipo colabora para realizar únicamente las tareas planificadas para ese \textit{sprint}. \cite{scrum}
 
 En este proyecto se ha optado por esta metodología para organizar el desarrollo del mismo de tal manera que se garantice una gestión ágil y eficiente del trabajo, favoreciendo la entrega continua de funcionalidades, la adaptación a posibles cambios en los requisitos y la evaluación periódica del progreso.
 
@@ -404,7 +409,6 @@ La siguiente tabla muestra la distribución de tareas y sprints de forma más vi
   \hline
   \endhead
 
-  \multicolumn{3}{r}{\small\textit{Continúa en la página siguiente}}                                                                                                              \\
   \endfoot
 
   \endlastfoot
@@ -461,15 +465,19 @@ La siguiente tabla muestra la distribución de tareas y sprints de forma más vi
                             &                                                                               & TFR-4.2 Aplicar responsividad a las pantallas de la solución        \\
   \hline
 
-  \multirow{2}{*}{Sprint 8} & \multirow{2}{*}{\shortstack{26/03/2026 - 22/04/2026}}
+  \multirow{4}{*}{Sprint 8} & \multirow{4}{*}{\shortstack{26/03/2026 - 07/04/2026}}
                             & TFC-1 Comparar resultados con objetivos iniciales                                                                                                   \\
   \cline{3-3}
-                            &                                                                               & TFC-2 Realizar pruebas del resultado final                          \\
+                            &                                                                               & TFC-2 Pruebas unitarias                                             \\
+  \cline{3-3}
+                            &                                                                               & TFC-3 Pruebas de integración                                        \\
+  \cline{3-3}
+                            &                                                                               & TFC-4 Pruebas de validación                                         \\
   \hline
 
-  \multirow{1}{*}{Sprint 9} & \multirow{1}{*}{\shortstack{23/04/2026 - 18/05/2026}}
+  \multirow{3}{*}{Sprint 9} & \multirow{3}{*}{\shortstack{08/04/2026 - 25/05/2026}}
                             & TFF-1 Redactar la memoria del proyecto                                                                                                              \\
-  \hline
+  \cline{3-3}
                             &                                                                               & TFF-2 Terminar la aplicación web                                    \\
   \cline{3-3}
                             &                                                                               & TFF-3 Preparar la defensa del proyecto                              \\
@@ -539,7 +547,6 @@ Los costes de material incluyen los gastos sobre el material físico necesario p
   \hline
   \endhead
 
-  \multicolumn{3}{r}{\small\textit{Continúa en la página siguiente}}                                     \\
   \endfoot
 
   \endlastfoot
@@ -572,7 +579,6 @@ Este tipo de costes engloban gastos en herramientas, licencias y otros servicios
   \hline
   \endhead
 
-  \multicolumn{3}{r}{\small\textit{Continúa en la página siguiente}}                                                              \\
   \endfoot
 
   \endlastfoot
@@ -619,7 +625,6 @@ Una vez estimados los costes de mano de obra, los costes de material y los coste
   \hline
   \endhead
 
-  \multicolumn{2}{r}{\small\textit{Continúa en la página siguiente}}     \\
   \endfoot
 
   \endlastfoot
@@ -870,7 +875,7 @@ El plan de pruebas es una parte esencial de los proyectos de desarrollo de softw
 
 \subsection{Pruebas unitarias}
 
-Las pruebas unitarias son pruebas que se realizan sobre una unidad individual, como un método o una funcionalidad. Estas son las pruebas unitarias que se han llevado a cabo en este proyecto:
+Las pruebas unitarias son pruebas que se realizan sobre una unidad individual, como un método o una funcionalidad. En este proyecto se han realizado pruebas unitarias para verificar el correcto funcionamiento de cada funcionalidad por separado. Estas han sido las pruebas unitarias realizadas:
 
 \subsubsection{Registro de usuarios}
 
@@ -895,10 +900,161 @@ Las pruebas unitarias son pruebas que se realizan sobre una unidad individual, c
     labelsep=1em,
     font=\normalfont
   ]
-  \item[PU-01:] Un usuario puede iniciar sesión correctamente
-  \item[PU-02:] Un usuario no puede no puede iniciar sesión con credenciales incorrectas
-  \item[PU-03:] Un usuario puede iniciar sesión correctamente mediante Google
-  \item[PU-04:] Un usuario cuyo correo electrónico no está registrado en el club no puede iniciar sesión mediante Google
+  \item[PU-04:] Un usuario puede iniciar sesión correctamente
+  \item[PU-05:] Un usuario no puede no puede iniciar sesión con credenciales incorrectas
+  \item[PU-06:] Un usuario puede iniciar sesión correctamente mediante Google
+  \item[PU-07:] Un usuario cuyo correo electrónico no está registrado en el club no puede iniciar sesión mediante Google
+  \item[PU-08:] Un usuario puede cerrar sesión con normalidad
+\end{description}
+
+\subsubsection{Visualización de partidos de la temporada}
+
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PU-09:] Un usuario puede ver la lista de partidos correctamente con todos sus datos: equipos, goles y fecha y hora
+\end{description}
+
+\subsubsection{Visualización de estadísticas}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PU-10:] Un usuario visualiza todos los jugadores de la plantilla del equipo
+  \item[PU-11:] Un usuario puede acceder a las estadísticas de cualquier jugador del equipo correctamente con todos sus datos: goles, asistencias, tarjetas, partidos jugados, minutos jugados, etc.
+  \item[PU-12:] Un usuario puede visualizar las estadísticas del equipo
+\end{description}
+
+\subsubsection{Convocatorias}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PU-13:] Un entrenador puede acceder a un partido próximo
+  \item[PU-14:] Un entrenador puede convocar jugadores de entre los disponibles en la plantilla
+  \item[PU-15:] Un jugador puede acceder a un partido al que ha sido convocado
+  \item[PU-16:] Un jugador puede confirmar asistencia o no asistencia al partido
+  \item[PU-17:] Un usuario puede visualizar la asistencia o no asistencia de los jugadores al partido
+\end{description}
+
+\subsubsection{Seguimiento de partidos}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PU-18:] Un entrenador puede acceder a la pantalla de seguimiento de partido, mientras que un jugador no
+  \item[PU-19:] El entrenador puede anotar las estadísticas del equipo durante el partido
+  \item[PU-20:] El entrenador puede apuntar las estadísticas de cada jugador durante el partido
+  \item[PU-21:] El entrenador puede anotar las incidencias del partido respectivas al equipo: goles, faltas y tiempos muertos
+  \item[PU-22:] El entrenador puede seleccionar el jugador que ha marcado y el jugador que ha realizado la asistencia, además de introducir el minuto y segundo del partido en el que se ha producido el gol, en el caso del equipo propio
+  \item[PU-23:] El entrenador puede seleccionar el jugador que ha hecho una falta, indicando los minutos de sanción y el minuto y segundo del partido en el que se ha producido, en el caso del equipo propio
+  \item[PU-24:] El entrenador puede seleccionar el minuto y segundo del partido en el que el equipo rival ha marcado un gol
+  \item[PU-25:] El entrenador puede seleccionar el minuto y segundo del partido en el que el equipo rival ha cometido una falta, además del tipo de falta cometida y los minutos de sanción
+  \item[PU-26:] El entrenador puede seleccionar el minuto y segundo del partido en el que cualquiera de los dos equipos ha solicitado un tiempo muerto
+  \item[PU-27:] El entrenador puede seleccionar el periodo del partido que está siendo disputado
+  \item[PU-28:] El entrenador puede finalizar el partido si el periodo seleccionado no es el periodo uno
+\end{description}
+
+\subsubsection{Módulo inteligente de recomendaciones}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PU-29:] Se envían mensajes al modelo de inteligencia artificial y su respuesta es recibida correctamente.
+  \item[PU-30:] La respuesta del modelo es almacenada y mostrada correctamente
+\end{description}
+
+\subsubsection{Foro de mensajes}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PU-31:] Un usuario puede ver los temas disponibles y seleccionar uno
+  \item[PU-32:] Un usuario puede acceder a uno de los debates disponibles en el tema seleccionado
+  \item[PU-33:] Un usuario puede visualizar todos los mensajes de ese debate
+  \item[PU-34:] Un usuario puede publicar mensajes en el foro. Haya iniciado sesión con su cuenta de usuario o mediante Google
+\end{description}
+
+\subsubsection{Pedidos de material}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PU-35:] Un entrenador puede crear pedidos de materialcorrectamente, indicando la fecha y hora límite y el tipo de pedido
+  \item[PU-36:] Un jugador puede pedir material en un pedido
+  \item[PU-37:] Un jugador no puede pedir material si no hay ningún pedido activo
+  \item[PU-38:] Un jugador no puede pedir material si el pedido ha expirado
+  \item[PU-39:] Un entrenador descarga un fichero excel correctamente con la información del pedido
+  \item[PU-40:] Un entrenador no puede crear un nuevo pedido hasta haber descargado el fichero excel del anterior pedido
+\end{description}
+
+\subsection{Pruebas de integración}
+
+Las pruebas de integración son pruebas en las que se comprueba el correcto funcionamiento en grupo de funcionalidades individuales para evaluar su interacción. En este proyecto se han realizado pruebas de integración para verificar la correcta interacción de funcionalidades que guardan alguna relación o dependencia. Estas han sido las pruebas de integración realizadas:
+
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=2.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PI-01:] Creación de cuenta de usuario e inicio de sesión
+  \item[PI-02:] Seguimiento de partido y actualización automática de estadísticas de jugadores y del equipo al finalizarlo
+  \item[PI-03:] Correcto envío de estadísticas del partido al módulo inteligente de recomendaciones y posterior visualización de las mismas
+  \item[PI-04:] Aparición de únicamente jugadores convocados al partido en la pantalla de seguimiento de éste
+  \item[PI-05:] Prueba del flujo completo de uso de la solución
+\end{description}
+
+\subsection{Pruebas de validación}
+
+Las pruebas de validación sirven para verificar que el resultado final cumple con los requisitos funcionales y no funcionales que se han especificado. Estas han sido las pruebas de validación realizadas en etse proyecto:
+
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=2.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PV-01:] Correcta navegación entre pantallas y uso cómodo e intuitivo de la solución
+  \item[PV-02:] Correcta adaptación de la solución a diferentes tamaños de pantallas
+\end{description}
+
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=2.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PI-01:] Creación de cuenta de usuario e inicio de sesión
+  \item[PI-02:] Seguimiento de partido y actualización automática de estadísticas de jugadores y del equipo al finalizarlo
+  \item[PI-03:] Correcto envío de estadísticas del partido al módulo inteligente de recomendaciones y posterior visualización de las mismas
+  \item[PI-04:] Aparición de únicamente jugadores convocados al partido en la pantalla de seguimiento de éste
+  \item[PI-05:] Prueba del flujo completo de uso de la solución
 \end{description}
 
 \section{Incidencias del proyecto}

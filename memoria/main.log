@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.5.1)  10 JUN 2026 20:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.5.1)  11 JUN 2026 12:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1062,7 +1062,7 @@ LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/regular/it' aliased to
 (Font)              `T1/SourceSansThree-TLF/m/it' on input line 27.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/m/it' will be
 (Font)              scaled to size 10.0pt on input line 27.
-<imgs/sporteasy.png, id=311, 845.40843pt x 578.91281pt>
+<imgs/sporteasy.png, id=317, 845.40843pt x 578.91281pt>
 File: imgs/sporteasy.png Graphic file (type png)
 <use imgs/sporteasy.png>
 Package pdftex.def Info: imgs/sporteasy.png  used on input line 45.
@@ -1070,13 +1070,13 @@ Package pdftex.def Info: imgs/sporteasy.png  used on input line 45.
 [3
 
 ] [4 <./imgs/sporteasy.png>]
-<imgs/sportmember.png, id=326, 982.42032pt x 719.68875pt>
+<imgs/sportmember.png, id=332, 982.42032pt x 719.68875pt>
 File: imgs/sportmember.png Graphic file (type png)
 <use imgs/sportmember.png>
 Package pdftex.def Info: imgs/sportmember.png  used on input line 66.
 (pdftex.def)             Requested size: 455.24411pt x 333.49875pt.
  [5 <./imgs/sportmember.png>]
-<imgs/clupik.png, id=336, 156.585pt x 108.405pt>
+<imgs/clupik.png, id=342, 156.585pt x 108.405pt>
 File: imgs/clupik.png Graphic file (type png)
 <use imgs/clupik.png>
 Package pdftex.def Info: imgs/clupik.png  used on input line 86.
@@ -1094,160 +1094,145 @@ chapter 4.
 [10
 
 ] [11]
-LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/regular/n' aliased to
-(Font)              `T1/SourceSansThree-TLF/m/n' on input line 280.
-LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 280.
-LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/regular/it' aliased to
-(Font)              `T1/SourceSansThree-TLF/m/it' on input line 280.
-LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/m/it' will be
-(Font)              scaled to size 9.0pt on input line 280.
-
 ignored: Infinite glue shrinkage found in box being split [12]
 ignored: Infinite glue shrinkage found in box being split [13]
-<imgs/gantt.png, id=385, 784.43062pt x 514.92375pt>
+<imgs/gantt.png, id=391, 864.22874pt x 569.87906pt>
 File: imgs/gantt.png Graphic file (type png)
 <use imgs/gantt.png>
-Package pdftex.def Info: imgs/gantt.png  used on input line 352.
-(pdftex.def)             Requested size: 591.81873pt x 388.5097pt.
+Package pdftex.def Info: imgs/gantt.png  used on input line 357.
+(pdftex.def)             Requested size: 591.81873pt x 390.26045pt.
  [14]
 Overfull \vbox (10.63898pt too high) has occurred while \output is active []
 
  [15 <./imgs/gantt.png>]
 chapter 5.
-<imgs/metodologia_agil.png, id=398, 335.00156pt x 277.035pt>
+<imgs/metodologia_agil.png, id=404, 335.00156pt x 277.035pt>
 File: imgs/metodologia_agil.png Graphic file (type png)
 <use imgs/metodologia_agil.png>
-Package pdftex.def Info: imgs/metodologia_agil.png  used on input line 378.
+Package pdftex.def Info: imgs/metodologia_agil.png  used on input line 383.
 (pdftex.def)             Requested size: 341.43307pt x 282.35214pt.
 [16
 
-] [17 <./imgs/metodologia_agil.png>]
-Overfull \hbox (1.04509pt too wide) in paragraph at lines 412--413
+]
+Overfull \hbox (1.04509pt too wide) in paragraph at lines 416--417
 []|[]| 
  []
 
 
-Overfull \hbox (1.04509pt too wide) in paragraph at lines 420--421
+Overfull \hbox (1.04509pt too wide) in paragraph at lines 424--425
 []|[]| 
  []
 
 
-Overfull \hbox (1.04509pt too wide) in paragraph at lines 428--429
+Overfull \hbox (1.04509pt too wide) in paragraph at lines 432--433
 []|[]| 
  []
 
 
-Overfull \hbox (1.04509pt too wide) in paragraph at lines 437--438
+Overfull \hbox (1.04509pt too wide) in paragraph at lines 441--442
 []|[]| 
  []
 
 
-Overfull \hbox (1.04509pt too wide) in paragraph at lines 447--448
+Overfull \hbox (1.04509pt too wide) in paragraph at lines 451--452
 []|[]| 
  []
 
 
-Overfull \hbox (1.04509pt too wide) in paragraph at lines 454--455
+Overfull \hbox (1.04509pt too wide) in paragraph at lines 458--459
 []|[]| 
  []
 
 
-Overfull \hbox (1.04509pt too wide) in paragraph at lines 459--459
+Overfull \hbox (1.04509pt too wide) in paragraph at lines 463--463
 []|[]| 
  []
 
 
-Overfull \hbox (1.04509pt too wide) in paragraph at lines 464--465
+Overfull \hbox (1.04509pt too wide) in paragraph at lines 468--469
 []|[]| 
  []
 
 
-Overfull \hbox (1.04509pt too wide) in paragraph at lines 470--471
+Overfull \hbox (1.04509pt too wide) in paragraph at lines 478--479
 []|[]| 
  []
 
-
+[17 <./imgs/metodologia_agil.png>]
 ignored: Infinite glue shrinkage found in box being split [18]
 ignored: Infinite glue shrinkage found in box being split [19] [20]
 chapter 6.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 492.
+(Font)              in TS1 encoding on input line 500.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/regular/n' aliased to
-(Font)              `T1/SourceSansThree-TLF/m/n' on input line 492.
+(Font)              `T1/SourceSansThree-TLF/m/n' on input line 500.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/m/n' will be
-(Font)              scaled to size 6.99997pt on input line 492.
+(Font)              scaled to size 6.99997pt on input line 500.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 492.
+(Font)              in TS1 encoding on input line 500.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 492.
+(Font)              in TS1 encoding on input line 500.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 493.
+(Font)              in TS1 encoding on input line 501.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 493.
+(Font)              in TS1 encoding on input line 501.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 493.
+(Font)              in TS1 encoding on input line 501.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 494.
+(Font)              in TS1 encoding on input line 502.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 494.
+(Font)              in TS1 encoding on input line 502.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 494.
+(Font)              in TS1 encoding on input line 502.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 495.
+(Font)              in TS1 encoding on input line 503.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 495.
+(Font)              in TS1 encoding on input line 503.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 495.
+(Font)              in TS1 encoding on input line 503.
 [21
 
 ]
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 496.
+(Font)              in TS1 encoding on input line 504.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 496.
+(Font)              in TS1 encoding on input line 504.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 496.
-LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 507.
-LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 507.
-LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 509.
-LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 509.
-LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 511.
-LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 511.
-LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 513.
-LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 513.
+(Font)              in TS1 encoding on input line 504.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
 (Font)              in TS1 encoding on input line 515.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
 (Font)              in TS1 encoding on input line 515.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
 (Font)              in TS1 encoding on input line 517.
+LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
+(Font)              in TS1 encoding on input line 517.
+LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
+(Font)              in TS1 encoding on input line 519.
+LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
+(Font)              in TS1 encoding on input line 519.
+LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
+(Font)              in TS1 encoding on input line 521.
+LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
+(Font)              in TS1 encoding on input line 521.
+LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
+(Font)              in TS1 encoding on input line 523.
+LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
+(Font)              in TS1 encoding on input line 523.
+LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
+(Font)              in TS1 encoding on input line 525.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/bold/n' aliased to
-(Font)              `T1/SourceSansThree-TLF/b/n' on input line 517.
+(Font)              `T1/SourceSansThree-TLF/b/n' on input line 525.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/b/n' will be
-(Font)              scaled to size 6.99997pt on input line 517.
+(Font)              scaled to size 6.99997pt on input line 525.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 547.
+(Font)              in TS1 encoding on input line 554.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 549.
+(Font)              in TS1 encoding on input line 556.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 551.
+(Font)              in TS1 encoding on input line 558.
 
 ignored: Infinite glue shrinkage found in box being split [22]
-LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 580.
-LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 582.
-LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 584.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
 (Font)              in TS1 encoding on input line 586.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
@@ -1262,108 +1247,113 @@ LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
 (Font)              in TS1 encoding on input line 596.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
 (Font)              in TS1 encoding on input line 598.
+LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
+(Font)              in TS1 encoding on input line 600.
+LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
+(Font)              in TS1 encoding on input line 602.
+LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
+(Font)              in TS1 encoding on input line 604.
 
 ignored: Infinite glue shrinkage found in box being split [23]
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 627.
+(Font)              in TS1 encoding on input line 632.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 629.
+(Font)              in TS1 encoding on input line 634.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 631.
+(Font)              in TS1 encoding on input line 636.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
-(Font)              in TS1 encoding on input line 633.
-
-ignored: Infinite glue shrinkage found in box being split [24] [25]
+(Font)              in TS1 encoding on input line 638.
+ [24]
 chapter 7.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/bold/n' aliased to
-(Font)              `T1/SourceSansThree-TLF/b/n' on input line 672.
+(Font)              `T1/SourceSansThree-TLF/b/n' on input line 677.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 672.
-[26
+(Font)              scaled to size 12.0pt on input line 677.
+[25
 
-] [27] [28]
-<imgs/arquitectura.png, id=463, 853.5087pt x 369.2997pt>
+] [26] [27]
+<imgs/arquitectura.png, id=465, 853.5087pt x 369.2997pt>
 File: imgs/arquitectura.png Graphic file (type png)
 <use imgs/arquitectura.png>
-Package pdftex.def Info: imgs/arquitectura.png  used on input line 736.
+Package pdftex.def Info: imgs/arquitectura.png  used on input line 741.
 (pdftex.def)             Requested size: 455.24411pt x 196.97324pt.
- [29 <./imgs/arquitectura.png>]
-<imgs/first_database.png, id=472, 1135.24126pt x 786.94pt>
+ [28 <./imgs/arquitectura.png>]
+<imgs/first_database.png, id=474, 1135.24126pt x 786.94pt>
 File: imgs/first_database.png Graphic file (type png)
 <use imgs/first_database.png>
-Package pdftex.def Info: imgs/first_database.png  used on input line 747.
+Package pdftex.def Info: imgs/first_database.png  used on input line 752.
 (pdftex.def)             Requested size: 455.24411pt x 315.57494pt.
- [30 <./imgs/first_database.png>]
-<imgs/pantallaRegistro.png, id=480, 1028.34187pt x 578.16pt>
+ [29 <./imgs/first_database.png>]
+<imgs/pantallaRegistro.png, id=481, 1028.34187pt x 578.16pt>
 File: imgs/pantallaRegistro.png Graphic file (type png)
 <use imgs/pantallaRegistro.png>
-Package pdftex.def Info: imgs/pantallaRegistro.png  used on input line 767.
+Package pdftex.def Info: imgs/pantallaRegistro.png  used on input line 772.
 (pdftex.def)             Requested size: 409.71692pt x 230.35123pt.
-<imgs/pantallaPartidos.jpeg, id=481, 1369.115pt x 771.88374pt>
+<imgs/pantallaPartidos.jpeg, id=482, 1369.115pt x 771.88374pt>
 File: imgs/pantallaPartidos.jpeg Graphic file (type jpg)
 <use imgs/pantallaPartidos.jpeg>
-Package pdftex.def Info: imgs/pantallaPartidos.jpeg  used on input line 774.
+Package pdftex.def Info: imgs/pantallaPartidos.jpeg  used on input line 779.
 (pdftex.def)             Requested size: 409.71692pt x 230.98978pt.
- [31 <./imgs/pantallaRegistro.png>]
-<imgs/pantallaConvocatoriasJugador.png, id=488, 1027.58907pt x 577.40718pt>
+ [30 <./imgs/pantallaRegistro.png>]
+<imgs/pantallaConvocatoriasJugador.png, id=490, 1027.58907pt x 577.40718pt>
 File: imgs/pantallaConvocatoriasJugador.png Graphic file (type png)
 <use imgs/pantallaConvocatoriasJugador.png>
-Package pdftex.def Info: imgs/pantallaConvocatoriasJugador.png  used on input line 781.
+Package pdftex.def Info: imgs/pantallaConvocatoriasJugador.png  used on input line 786.
 (pdftex.def)             Requested size: 409.71692pt x 230.21869pt.
-<imgs/pantallaLoginResponsive.png, id=489, 208.52907pt x 456.95718pt>
+<imgs/pantallaLoginResponsive.png, id=491, 208.52907pt x 456.95718pt>
 File: imgs/pantallaLoginResponsive.png Graphic file (type png)
 <use imgs/pantallaLoginResponsive.png>
-Package pdftex.def Info: imgs/pantallaLoginResponsive.png  used on input line 790.
+Package pdftex.def Info: imgs/pantallaLoginResponsive.png  used on input line 795.
 (pdftex.def)             Requested size: 113.81102pt x 249.40279pt.
- [32 <./imgs/pantallaPartidos.jpeg> <./imgs/pantallaConvocatoriasJugador.png>] [33 <./imgs/pantallaLoginResponsive.png>]
-<imgs/figma.png, id=514, 1445.4pt x 813.0375pt>
+ [31 <./imgs/pantallaPartidos.jpeg> <./imgs/pantallaConvocatoriasJugador.png>] [32 <./imgs/pantallaLoginResponsive.png>]
+<imgs/figma.png, id=516, 1445.4pt x 813.0375pt>
 File: imgs/figma.png Graphic file (type png)
 <use imgs/figma.png>
-Package pdftex.def Info: imgs/figma.png  used on input line 833.
+Package pdftex.def Info: imgs/figma.png  used on input line 838.
 (pdftex.def)             Requested size: 455.24411pt x 256.07095pt.
- [34]
-<imgs/inkscape.jpeg, id=527, 1606.0pt x 903.375pt>
+ [33]
+<imgs/inkscape.jpeg, id=529, 1606.0pt x 903.375pt>
 File: imgs/inkscape.jpeg Graphic file (type jpg)
 <use imgs/inkscape.jpeg>
-Package pdftex.def Info: imgs/inkscape.jpeg  used on input line 848.
+Package pdftex.def Info: imgs/inkscape.jpeg  used on input line 853.
 (pdftex.def)             Requested size: 455.24411pt x 256.07233pt.
- [35 <./imgs/figma.png>] [36 <./imgs/inkscape.jpeg>] [37]
+ [34 <./imgs/figma.png>] [35 <./imgs/inkscape.jpeg>] [36] [37] [38] [39] [40]
 chapter 8.
-<imgs/login.jpeg, id=555, 1606.0pt x 903.375pt>
+<imgs/login.jpeg, id=580, 1606.0pt x 903.375pt>
 File: imgs/login.jpeg Graphic file (type jpg)
 <use imgs/login.jpeg>
-Package pdftex.def Info: imgs/login.jpeg  used on input line 924.
+Package pdftex.def Info: imgs/login.jpeg  used on input line 1080.
 (pdftex.def)             Requested size: 455.24411pt x 256.07233pt.
-[38
-
- <./imgs/login.jpeg>]
-<imgs/usuario_no_autorizado.jpeg, id=561, 1606.0pt x 903.375pt>
-File: imgs/usuario_no_autorizado.jpeg Graphic file (type jpg)
-<use imgs/usuario_no_autorizado.jpeg>
-Package pdftex.def Info: imgs/usuario_no_autorizado.jpeg  used on input line 933.
-(pdftex.def)             Requested size: 455.24411pt x 256.07233pt.
-<imgs/registro.jpeg, id=562, 1606.0pt x 903.375pt>
-File: imgs/registro.jpeg Graphic file (type jpg)
-<use imgs/registro.jpeg>
-Package pdftex.def Info: imgs/registro.jpeg  used on input line 942.
-(pdftex.def)             Requested size: 455.24411pt x 256.07233pt.
- [39 <./imgs/usuario_no_autorizado.jpeg>] [40 <./imgs/registro.jpeg>]
-chapter 9.
 [41
 
-] [42] [43] [44]
+ <./imgs/login.jpeg>]
+<imgs/usuario_no_autorizado.jpeg, id=586, 1606.0pt x 903.375pt>
+File: imgs/usuario_no_autorizado.jpeg Graphic file (type jpg)
+<use imgs/usuario_no_autorizado.jpeg>
+Package pdftex.def Info: imgs/usuario_no_autorizado.jpeg  used on input line 1089.
+(pdftex.def)             Requested size: 455.24411pt x 256.07233pt.
+<imgs/registro.jpeg, id=587, 1606.0pt x 903.375pt>
+File: imgs/registro.jpeg Graphic file (type jpg)
+<use imgs/registro.jpeg>
+Package pdftex.def Info: imgs/registro.jpeg  used on input line 1098.
+(pdftex.def)             Requested size: 455.24411pt x 256.07233pt.
+ [42 <./imgs/usuario_no_autorizado.jpeg>] [43 <./imgs/registro.jpeg>]
+chapter 9.
+[44
+
+] [45] [46] [47]
 chapter 10.
-) [45
+) [48
 
-] (main.bbl [46
-
-
+] (main.bbl [49
 
 
 
-]) [47]
+
+
+]) [50]
 chapter A.
-[48
+[51
 
 ] (main.aux
 LaTeX Info: Redefining \. on input line 14.
@@ -1379,17 +1369,17 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 24008 strings out of 467691
- 452215 string characters out of 5415472
- 1072277 words of memory out of 5000000
- 52252 multiletter control sequences out of 15000+600000
- 803947 words of font info for 240 fonts, out of 8000000 for 9000
+ 24010 strings out of 467691
+ 451865 string characters out of 5415472
+ 1073277 words of memory out of 5000000
+ 52255 multiletter control sequences out of 15000+600000
+ 784739 words of font info for 231 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  122i,21n,121p,11242b,952s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-Bold.pfb><C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-It.pfb><C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-Regular.pfb>
-Output written on main.pdf (55 pages, 2501762 bytes).
+Output written on main.pdf (58 pages, 2527042 bytes).
 PDF statistics:
- 890 PDF objects out of 1000 (max. 8388607)
- 205 named destinations out of 1000 (max. 500000)
- 68200 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 947 PDF objects out of 1000 (max. 8388607)
+ 217 named destinations out of 1000 (max. 500000)
+ 62128 words of extra memory for PDF output out of 74296 (max. 10000000)
 

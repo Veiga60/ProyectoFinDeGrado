@@ -16,54 +16,63 @@
 \contentsline {section}{\numberline {6.2}Material}{22}{section.42}%
 \contentsline {section}{\numberline {6.3}Software, licencias y otros servicios}{23}{section.43}%
 \contentsline {section}{\numberline {6.4}Costes totales}{24}{section.44}%
-\contentsline {chapter}{\numberline {7}Desarrollo del proyecto}{26}{chapter.45}%
-\contentsline {section}{\numberline {7.1}Stakeholders}{26}{section.46}%
-\contentsline {section}{\numberline {7.2}Especificación de requisitos}{26}{section.49}%
-\contentsline {subsection}{\numberline {7.2.1}Requisitos funcionales}{26}{subsection.50}%
-\contentsline {subsection}{\numberline {7.2.2}Requisitos no funcionales}{28}{subsection.51}%
-\contentsline {section}{\numberline {7.3}Especificación del diseño}{28}{section.52}%
-\contentsline {subsection}{\numberline {7.3.1}Diseño de la arquitectura de la solución}{29}{subsection.58}%
-\contentsline {subsection}{\numberline {7.3.2}Diseño relacional de la base de datos}{30}{subsection.61}%
-\contentsline {subsection}{\numberline {7.3.3}Diseño de la interfaz de la solución web}{30}{subsection.64}%
-\contentsline {section}{\numberline {7.4}Tecnologías y herramientas utilizadas}{33}{section.73}%
-\contentsline {subsection}{\numberline {7.4.1}Maven}{33}{subsection.74}%
-\contentsline {subsection}{\numberline {7.4.2}Spring Boot}{33}{subsection.75}%
-\contentsline {subsection}{\numberline {7.4.3}React}{34}{subsection.76}%
-\contentsline {subsection}{\numberline {7.4.4}MySQL}{34}{subsection.77}%
-\contentsline {subsection}{\numberline {7.4.5}Docker}{34}{subsection.78}%
-\contentsline {subsection}{\numberline {7.4.6}GitHub Desktop}{34}{subsection.79}%
-\contentsline {subsection}{\numberline {7.4.7}Antigravity IDE}{34}{subsection.80}%
-\contentsline {subsection}{\numberline {7.4.8}Figma}{35}{subsection.81}%
-\contentsline {subsection}{\numberline {7.4.9}Draw.io}{35}{subsection.84}%
-\contentsline {subsection}{\numberline {7.4.10}Inkscape}{35}{subsection.85}%
-\contentsline {subsection}{\numberline {7.4.11}Team Gantt}{36}{subsection.88}%
-\contentsline {subsection}{\numberline {7.4.12}Claude Sonnet 4.5}{36}{subsection.89}%
-\contentsline {subsection}{\numberline {7.4.13}React Icons}{36}{subsection.90}%
-\contentsline {section}{\numberline {7.5}Consideraciones sobre la implementación}{37}{section.91}%
-\contentsline {section}{\numberline {7.6}Plan de pruebas}{37}{section.92}%
-\contentsline {subsection}{\numberline {7.6.1}Pruebas unitarias}{37}{subsection.93}%
-\contentsline {subsubsection}{\numberline {7.6.1.1}Registro de usuarios}{37}{subsubsection.94}%
-\contentsline {subsubsection}{\numberline {7.6.1.2}Inicio de sesión}{37}{subsubsection.95}%
-\contentsline {section}{\numberline {7.7}Incidencias del proyecto}{37}{section.96}%
-\contentsline {chapter}{\numberline {8}Manual de usuario}{38}{chapter.97}%
-\contentsline {section}{\numberline {8.1}Prerrequisitos}{38}{section.98}%
-\contentsline {section}{\numberline {8.2}Registro e inicio de sesión}{38}{section.99}%
-\contentsline {section}{\numberline {8.3}Entrenador}{40}{section.106}%
-\contentsline {section}{\numberline {8.4}Jugador}{40}{section.107}%
-\contentsline {chapter}{\numberline {9}Valoración ética del proyecto}{41}{chapter.108}%
-\contentsline {section}{\numberline {9.1}Justificación ética del proyecto}{41}{section.109}%
-\contentsline {section}{\numberline {9.2}Consideraciones éticas}{42}{section.110}%
-\contentsline {subsection}{\numberline {9.2.1}Positivas}{42}{subsection.111}%
-\contentsline {subsection}{\numberline {9.2.2}Negativas}{43}{subsection.112}%
-\contentsline {subsection}{\numberline {9.2.3}Soluciones para las consideraciones negativas}{43}{subsection.113}%
-\contentsline {chapter}{\numberline {10}Conclusiones y trabajo futuro}{45}{chapter.117}%
-\contentsline {section}{\numberline {10.1}Conclusiones}{45}{section.118}%
-\contentsline {section}{\numberline {10.2}Trabajo futuro}{45}{section.119}%
-\contentsline {subsection}{\numberline {10.2.1}Publicación de la solución web}{45}{subsection.120}%
-\contentsline {subsection}{\numberline {10.2.2}Gestión de todos los equipos del club}{45}{subsection.121}%
-\contentsline {subsection}{\numberline {10.2.3}Implementación de nuevas ligas}{45}{subsection.122}%
-\contentsline {subsection}{\numberline {10.2.4}Mejora del sistema de recomendaciones}{45}{subsection.123}%
-\contentsline {chapter}{Bibliograf\'ia}{46}{subsection.123}%
+\contentsline {chapter}{\numberline {7}Desarrollo del proyecto}{25}{chapter.45}%
+\contentsline {section}{\numberline {7.1}Stakeholders}{25}{section.46}%
+\contentsline {section}{\numberline {7.2}Especificación de requisitos}{25}{section.49}%
+\contentsline {subsection}{\numberline {7.2.1}Requisitos funcionales}{25}{subsection.50}%
+\contentsline {subsection}{\numberline {7.2.2}Requisitos no funcionales}{27}{subsection.51}%
+\contentsline {section}{\numberline {7.3}Especificación del diseño}{27}{section.52}%
+\contentsline {subsection}{\numberline {7.3.1}Diseño de la arquitectura de la solución}{28}{subsection.58}%
+\contentsline {subsection}{\numberline {7.3.2}Diseño relacional de la base de datos}{29}{subsection.61}%
+\contentsline {subsection}{\numberline {7.3.3}Diseño de la interfaz de la solución web}{29}{subsection.64}%
+\contentsline {section}{\numberline {7.4}Tecnologías y herramientas utilizadas}{32}{section.73}%
+\contentsline {subsection}{\numberline {7.4.1}Maven}{32}{subsection.74}%
+\contentsline {subsection}{\numberline {7.4.2}Spring Boot}{32}{subsection.75}%
+\contentsline {subsection}{\numberline {7.4.3}React}{33}{subsection.76}%
+\contentsline {subsection}{\numberline {7.4.4}MySQL}{33}{subsection.77}%
+\contentsline {subsection}{\numberline {7.4.5}Docker}{33}{subsection.78}%
+\contentsline {subsection}{\numberline {7.4.6}GitHub Desktop}{33}{subsection.79}%
+\contentsline {subsection}{\numberline {7.4.7}Antigravity IDE}{33}{subsection.80}%
+\contentsline {subsection}{\numberline {7.4.8}Figma}{34}{subsection.81}%
+\contentsline {subsection}{\numberline {7.4.9}Draw.io}{34}{subsection.84}%
+\contentsline {subsection}{\numberline {7.4.10}Inkscape}{34}{subsection.85}%
+\contentsline {subsection}{\numberline {7.4.11}Team Gantt}{35}{subsection.88}%
+\contentsline {subsection}{\numberline {7.4.12}Claude Sonnet 4.5}{35}{subsection.89}%
+\contentsline {subsection}{\numberline {7.4.13}React Icons}{35}{subsection.90}%
+\contentsline {section}{\numberline {7.5}Consideraciones sobre la implementación}{36}{section.91}%
+\contentsline {section}{\numberline {7.6}Plan de pruebas}{36}{section.92}%
+\contentsline {subsection}{\numberline {7.6.1}Pruebas unitarias}{36}{subsection.93}%
+\contentsline {subsubsection}{\numberline {7.6.1.1}Registro de usuarios}{36}{subsubsection.94}%
+\contentsline {subsubsection}{\numberline {7.6.1.2}Inicio de sesión}{36}{subsubsection.95}%
+\contentsline {subsubsection}{\numberline {7.6.1.3}Visualización de partidos de la temporada}{37}{subsubsection.96}%
+\contentsline {subsubsection}{\numberline {7.6.1.4}Visualización de estadísticas}{37}{subsubsection.97}%
+\contentsline {subsubsection}{\numberline {7.6.1.5}Convocatorias}{37}{subsubsection.98}%
+\contentsline {subsubsection}{\numberline {7.6.1.6}Seguimiento de partidos}{37}{subsubsection.99}%
+\contentsline {subsubsection}{\numberline {7.6.1.7}Módulo inteligente de recomendaciones}{38}{subsubsection.100}%
+\contentsline {subsubsection}{\numberline {7.6.1.8}Foro de mensajes}{38}{subsubsection.101}%
+\contentsline {subsubsection}{\numberline {7.6.1.9}Pedidos de material}{39}{subsubsection.102}%
+\contentsline {subsection}{\numberline {7.6.2}Pruebas de integración}{39}{subsection.103}%
+\contentsline {subsection}{\numberline {7.6.3}Pruebas de validación}{40}{subsection.104}%
+\contentsline {section}{\numberline {7.7}Incidencias del proyecto}{40}{section.105}%
+\contentsline {chapter}{\numberline {8}Manual de usuario}{41}{chapter.106}%
+\contentsline {section}{\numberline {8.1}Prerrequisitos}{41}{section.107}%
+\contentsline {section}{\numberline {8.2}Registro e inicio de sesión}{41}{section.108}%
+\contentsline {section}{\numberline {8.3}Entrenador}{43}{section.115}%
+\contentsline {section}{\numberline {8.4}Jugador}{43}{section.116}%
+\contentsline {chapter}{\numberline {9}Valoración ética del proyecto}{44}{chapter.117}%
+\contentsline {section}{\numberline {9.1}Justificación ética del proyecto}{44}{section.118}%
+\contentsline {section}{\numberline {9.2}Consideraciones éticas}{45}{section.119}%
+\contentsline {subsection}{\numberline {9.2.1}Positivas}{45}{subsection.120}%
+\contentsline {subsection}{\numberline {9.2.2}Negativas}{46}{subsection.121}%
+\contentsline {subsection}{\numberline {9.2.3}Soluciones para las consideraciones negativas}{46}{subsection.122}%
+\contentsline {chapter}{\numberline {10}Conclusiones y trabajo futuro}{48}{chapter.126}%
+\contentsline {section}{\numberline {10.1}Conclusiones}{48}{section.127}%
+\contentsline {section}{\numberline {10.2}Trabajo futuro}{48}{section.128}%
+\contentsline {subsection}{\numberline {10.2.1}Publicación de la solución web}{48}{subsection.129}%
+\contentsline {subsection}{\numberline {10.2.2}Gestión de todos los equipos del club}{48}{subsection.130}%
+\contentsline {subsection}{\numberline {10.2.3}Implementación de nuevas ligas}{48}{subsection.131}%
+\contentsline {subsection}{\numberline {10.2.4}Mejora del sistema de recomendaciones}{48}{subsection.132}%
+\contentsline {chapter}{Bibliograf\'ia}{49}{subsection.132}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Uso de inteligencia artificial}{48}{appendix.125}%
+\contentsline {chapter}{\numberline {A}Uso de inteligencia artificial}{51}{appendix.134}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
