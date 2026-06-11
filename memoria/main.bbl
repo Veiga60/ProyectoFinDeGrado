@@ -32,386 +32,62 @@
 \bibitem{clupik}
 ``{Clupik},'' \url{https://clupik.com/}, (accedido 6 de junio de 2026).
 
-\bibitem{div-arriba-izquierda}
-``{Quora},''
-  \url{https://www.quora.com/How-do-you-position-div-in-the-top-right-corner},
-  (accedido 1 de noviembre de 2025).
+\bibitem{iebs}
+``{Innovation \& Entrepreneurship Business School},''
+  \url{https://www.iebschool.com/hub/que-son-metodologias-agiles-agile-scrum/},
+  (accedido 9 de junio de 2026).
 
-\bibitem{fuente-personalizada-blog}
-``{Elementor},''
-  \url{https://elementor.com/blog/es/como-utilizar-font-face-en-css/},
-  (accedido 1 de noviembre de 2025).
+\bibitem{scrum}
+``{Scrum},'' \url{https://www.scrum.org/}, (accedido 10 de junio de 2026).
 
-\bibitem{fuente-personalizada-google-fonts}
-``{Google Fonts},'' \url{https://fonts.google.com/}, (accedido 1 de noviembre
-  de 2025).
+\bibitem{apache-maven}
+``{Apache Maven},'' \url{https://maven.apache.org/}, (accedido 9 de junio de
+  2026).
 
-\bibitem{subrayar-text-css}
-``{Elementor},''
-  \url{https://elementor.com/blog/how-to-underline-text-in-css/}, (accedido 1
-  de noviembre de 2025).
+\bibitem{springboot}
+``{Spring Boot},'' \url{https://spring.io/projects/spring-boot}, (accedido 9 de
+  junio de 2026).
 
-\bibitem{variables-estado-react}
-``{React},'' \url{https://legacy.reactjs.org/docs/hooks-state.html}, (accedido
-  2 de noviembre de 2025).
+\bibitem{react}
+``{React},'' \url{https://es.react.dev/}, (accedido 9 de junio de 2026).
 
-\bibitem{propiedades-a-componente}
-``{React},'' \url{https://es.react.dev/learn/passing-props-to-a-component},
-  (accedido 2 de noviembre de 2025).
+\bibitem{mysql}
+``{MySQL},'' \url{https://www.mysql.com/}, (accedido 9 de junio de 2026).
 
-\bibitem{sentencia-if-else-ternaria}
-``{Javascript.Info},'' \url{https://es.javascript.info/ifelse}, (accedido 3 de
-  noviembre de 2025).
+\bibitem{docker}
+``{Docker},'' \url{https://www.docker.com/}, (accedido 9 de junio de 2026).
 
-\bibitem{comando-crear-proyeto-maven}
-``{Maven},''
-  \url{https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html},
-  (accedido 10 de noviembre de 2025).
+\bibitem{docker-desktop}
+``{Docker Desktop},'' \url{https://www.docker.com/products/docker-desktop/},
+  (accedido 9 de junio de 2026).
 
-\bibitem{dependencias-maven-springboot}
-``{Josealopez},''
-  \url{https://josealopez.dev/blog/spring-boot-key-dependencies}, (accedido 10
-  de noviembre de 2025).
+\bibitem{github-dektop}
+``{Github Desktop},'' \url{https://github.com/apps/desktop}, (accedido 9 de
+  junio de 2026).
 
-\bibitem{springboot-starter}
-``{Spring},'' \url{https://spring.io/guides/gs/rest-service}, (accedido 10 de
-  noviembre de 2025).
+\bibitem{antigravity-ide}
+``{Antigravity IDE},'' \url{https://antigravityide.net/}, (accedido 9 de junio
+  de 2026).
 
-\bibitem{dependencia-mysql}
-``{Maven Repository},''
-  \url{https://mvnrepository.com/artifact/com.mysql/mysql-connector-j/9.5.0},
-  (accedido 10 de noviembre de 2025).
+\bibitem{figma}
+``{Figma},'' \url{https://www.figma.com/}, (accedido 9 de junio de 2026).
 
-\bibitem{application-properties-mysql-spring}
-``{Spring},'' \url{https://spring.io/guides/gs/accessing-data-mysql}, (accedido
-  10 de noviembre de 2025).
+\bibitem{draw-io}
+``{Draw.io},'' \url{https://www.draw.io/}, (accedido 9 de junio de 2026).
 
-\bibitem{application-properties-mysql-arquitecturajava}
-``{ArquitecturaJava},''
-  \url{https://www.arquitecturajava.com/spring-boot-jdbc-y-su-configuracion/},
-  (accedido 10 de noviembre de 2025).
+\bibitem{inkscape}
+``{Inkscape},'' \url{https://inkscape.app/es/}, (accedido 9 de junio de 2026).
 
-\bibitem{springboot-maven-plugin}
-``{Spring},''
-  \url{https://docs.spring.io/spring-boot/maven-plugin/getting-started.html},
-  (accedido 10 de noviembre de 2025).
+\bibitem{team-gantt}
+``{Team Gantt},'' \url{https://www.teamgantt.com/}, (accedido 9 de junio de
+  2026).
 
-\bibitem{dockerfile-springboot}
-``{Stack Overflow},''
-  \url{https://stackoverflow.com/questions/21083170/how-to-configure-port-for-a-spring-boot-application},
-  (accedido 10 de noviembre de 2025).
-
-\bibitem{ejemplo-docker-compose}
-``{Callicoder},''
-  \url{https://www.callicoder.com/spring-boot-mysql-react-docker-compose-example/},
-  (accedido 11 de noviembre de 2025).
-
-\bibitem{react-router}
-``{W3Schools},'' \url{https://www.w3schools.com/react/react_router.asp},
-  (accedido 15 de noviembre de 2025).
-
-\bibitem{tutorial-routing-react}
-``{Youtube},'' \url{https://www.youtube.com/watch?v=943D7U74_sQ&t=3004s},
-  (accedido 15 de noviembre de 2025).
-
-\bibitem{asignar-permisos-mysql}
-``{CodigoFacilito},''
-  \url{https://codigofacilito.com/articulos/asignar-permisos-mysql}, (accedido
-  16 de noviembre de 2025).
-
-\bibitem{spring-cors-stack-overflow}
-``{Stack Overflow},''
-  \url{https://stackoverflow.com/questions/36968963/how-to-configure-cors-in-a-spring-boot-spring-security-application},
-  (accedido 16 de noviembre de 2025).
-
-\bibitem{comunicar-frontend-con-backend}
-``{Codewalnut},''
-  \url{https://www.codewalnut.com/learn/how-to-build-react-app-with-java-backend},
-  (accedido 16 de noviembre de 2025).
-
-\bibitem{oauth2-login-youtube}
-``{Youtube},'' \url{https://www.youtube.com/watch?v=JUOSHhbbBOY}, (accedido 18
-  de diciembre de 2025).
-
-\bibitem{jwt-passwords-youtube}
-``{Youtube},'' \url{https://www.youtube.com/watch?v=5TY9V5xLW8o}, (accedido 18
-  de diciembre de 2025).
-
-\bibitem{jwt-oauth2-youtube}
-``{Youtube},'' \url{https://www.youtube.com/watch?v=ibxPpCVJXNY}, (accedido 18
-  de diciembre de 2025).
-
-\bibitem{jwt-secret-generator}
-``{JWTsecrets},'' \url{https://jwtsecrets.com/}, (accedido 18 de diciembre de
-  2025).
-
-\bibitem{javascript-cookies}
-``{Javascript.Info},'' \url{https://es.javascript.info/cookie}, (accedido 19 de
-  diciembre de 2025).
-
-\bibitem{healthcheck-docker-compose}
-``{Dockerdocks},''
-  \url{https://docs.docker.com/reference/compose-file/services/}, (accedido 19
-  de diciembre de 2025).
-
-\bibitem{healthcheck-docker-compose-medium}
-``{Medium},''
-  \url{https://medium.com/@saklani1408/configuring-healthcheck-in-docker-compose-3fa6439ee280},
-  (accedido 19 de diciembre de 2025).
-
-\bibitem{relacion-many-to-many-jpa}
-``{ArquitecturaJava},''
-  \url{https://www.arquitecturajava.com/many-to-many-jpa-todo-lo-que-necesitas-saber/},
-  (accedido 21 de diciembre de 2025).
-
-\bibitem{tabs-react}
-``{NPM},'' \url{https://www.npmjs.com/package/react-tabs}, (accedido 22 de
-  diciembre de 2025).
-
-\bibitem{path-variable}
-``{ArquitecturaJava},''
-  \url{https://www.arquitecturajava.com/spring-pathvariable-y-segmentos-de-url/},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{react-router-params}
-``{Fireship},'' \url{https://ui.dev/react-router-url-parameters}, (accedido 24
-  de diciembre de 2025).
-
-\bibitem{html-tbody-mdn}
-``{MDN},''
-  \url{https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/tbody},
-  (accedido 24 de diciembre de 2025).
-
-\bibitem{date-format}
-``{Stack Overflow},''
-  \url{https://es.stackoverflow.com/questions/511685/convertit-fecha-yyyy-mm-dd-a-dd-mm-yyyy},
-  (accedido 4 de enero de 2026).
-
-\bibitem{substring-hour-format}
-``{Stack Overflow},'' \url{https://es.stackoverflow.com/questions/234083/},
-  (accedido 4 de enero de 2026).
-
-\bibitem{conditional-style-react}
-``{Preguntas típicas de React.js},''
-  \url{https://www.reactjs.wiki/como-puedo-aplicar-estilos-de-forma-condicional-a-un-componente-en-react},
-  (accedido 4 de enero de 2026).
-
-\bibitem{round-decimals-js}
-``{Stack Overflow},''
-  \url{https://es.stackoverflow.com/questions/48958/redondear-a-dos-decimales-cuando-sea-necesario},
-  (accedido 5 de enero de 2025).
-
-\bibitem{css-image-color}
-``{Cambiar color de imagen con CSS},''
-  \url{https://es.stackoverflow.com/questions/87567/cambiar-color-de-una-imagen-con-css},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{browser-route}
-``{Obtener ruta del navegador},''
-  \url{https://es.stackoverflow.com/questions/519911/obtener-la-url-de-la-pagina-que-se-visita-con-react},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{hide-scrollbar}
-``{Ocultar scrollbar sin deshabilitarla},''
-  \url{https://es.stackoverflow.com/questions/70701/ocultar-barra-de-scroll-sin-deshabilitarlo},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{hover-button}
-``{Mostrar botón al hacer hover},''
-  \url{https://es.stackoverflow.com/questions/560909/hacer-aparecer-botones-al-hacer-un-hover},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{darken-hover}
-``{Oscurecer div al hacer hover},''
-  \url{https://www.youtube.com/shorts/hfqiZ80uuEs}, (accedido 23 de diciembre
-  de 2025).
-
-\bibitem{jpa-map}
-``{Almacenar un mapa con JPA},''
-  \url{https://stackoverflow.com/questions/3393649/storing-a-mapstring-string-using-jpa},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{transparent-overlay}
-``{Capa semitransparente en un div},''
-  \url{https://es.stackoverflow.com/questions/540394/c%C3%B3mo-puedo-superponer-un-color-semitransparente-sobre-toda-la-p%C3%A1gina-en-css-e},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{css-checkmark}
-``{Caracteres Unicode con CSS},''
-  \url{https://stackoverflow.com/questions/21968531/how-to-draw-a-checkmark-tick-using-css},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{unicode-codes}
-``{Código de caracteres Unicode},''
-  \url{https://www.w3schools.com/charsets/ref_utf_dingbats.asp}, (accedido 23
-  de diciembre de 2025).
-
-\bibitem{reload-page-react}
-``{Recargar página en React},''
-  \url{https://es.stackoverflow.com/questions/264786/refrescar-pagina-react},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{axios-request-params}
-``{Request params con Axios},''
-  \url{https://stackabuse.com/bytes/getting-request-query-parameters-with-axios/},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{html-table-title}
-``{Título de tabla en HTML},''
-  \url{https://www.abrirllave.com/html/ejemplo-tabla-con-titulo.php}, (accedido
-  23 de diciembre de 2025).
-
-\bibitem{jwt-roles}
-``{Restringir endpoints a ciertos roles},''
-  \url{https://adictosaltrabajo.com/2019/03/07/securizando-un-api-rest-con-jwt-y-roles/},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{extract-jwt-claims}
-``{Extraer claims del JWT},''
-  \url{https://www.reddit.com/r/SpringBoot/comments/1m5hxp0/how_should_i_extract_jwt_claims/?tl=es-419},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{react-uselocation}
-``{useLocation en React Router},''
-  \url{https://medium.com/@alexanie_/https-ocxigin-hashnode-dev-uselocation-hook-in-react-router-758a0a711308},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{react-navigation-state}
-``{Pasar estado entre pantallas},''
-  \url{https://es.stackoverflow.com/questions/505550/pasar-objetos-entre-componentes-usando-usenavigation},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{array-filter}
-``{Método .filter()},''
-  \url{https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/filter},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{react-modal}
-``{Mostrar modal con React},''
-  \url{https://www.youtube.com/watch?v=9DwGahSqcEc}, (accedido 23 de diciembre
-  de 2025).
-
-\bibitem{object-sum-js}
-``{Sumatorio de elementos de un objeto JavaScript},''
-  \url{https://youtube.com/watch?time_continue=256&v=NhvFRjFGpdc&embeds_referring_euri=https%3A%2F%2Fwww.google.com%2Fsearch%3Fnewwindow%3D1%26sca_esv%3Ddb2351f46a6aa745%26sxsrf%3DANbL-n4h2DpPMztbLg585ubRQovIddAfHw%3A1772135272562%26q%3Dredu&source_ve_path=Mjg2NjY},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{leading-zeros}
-``{Añadir ceros a la izquierda},''
-  \url{https://midu.dev/como-anadir-un-cero-a-la-izquierda-de-un-numero-en-javascript/},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{spring-anthropic}
-``{Spring AI con Anthropic},''
-  \url{https://docs.spring.io/spring-ai/reference/api/chat/anthropic-chat.html},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{spring-anthropic-video}
-``{Spring + Anthropic Tutorial},''
-  \url{https://www.youtube.com/watch?v=mLsx_VInHl4}, (accedido 23 de diciembre
-  de 2025).
-
-\bibitem{jpa-onetomany}
-``{Relación OneToMany con JPA},''
-  \url{https://www.arquitecturajava.com/jpa-onetomany/}, (accedido 23 de
-  diciembre de 2025).
-
-\bibitem{java-excel-export}
-``{Exportar a Excel con Java},''
-  \url{https://www.youtube.com/watch?v=qe_NrRRsuVg}, (accedido 23 de diciembre
-  de 2025).
-
-\bibitem{insert-ignore}
-``{INSERT IGNORE en MySQL},''
-  \url{https://www.reddit.com/r/SQL/comments/q0lh10/mysql_is_there_a_way_to_do_insert_if_a_record/?tl=es-es},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{react-download-blob}
-``{Descargar blob en React},''
-  \url{https://gist.github.com/jbutko/d7b992086634a94e84b6a3e526336da3},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{single-line-text}
-``{Texto HTML en una sola línea},''
-  \url{https://www.forosdelweb.com/f53/como-hacer-que-texto-no-haga-salto-linea-1120353/},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{react-icons-guide}
-``{Cómo usar React Icons},''
-  \url{https://www.freecodecamp.org/espanol/news/como-usar-react-icons/},
-  (accedido 23 de diciembre de 2025).
+\bibitem{claude}
+``{Claude Sonnet 4.5},'' \url{https://claude.com/}, (accedido 10 de junio de
+  2026).
 
 \bibitem{react-icons}
 ``{React Icons},'' \url{https://react-icons.github.io/react-icons/}, (accedido
-  23 de diciembre de 2025).
-
-\bibitem{icons-in-div}
-``{Poner iconos dentro de un div},''
-  \url{https://www.youtube.com/watch?v=XCAevEnMTq8}, (accedido 23 de diciembre
-  de 2025).
-
-\bibitem{media-queries}
-``{Recordar media queries},''
-  \url{https://developer.mozilla.org/es/docs/Web/CSS/Guides/Media_queries/Using},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{show-hide-password}
-``{Mostrar y ocultar contraseña},''
-  \url{https://dev.to/annaqharder/hideshow-password-in-react-513a}, (accedido
-  23 de diciembre de 2025).
-
-\bibitem{checkbox-style}
-``{Estilo para checkbox y radio},''
-  \url{https://josetxu.com/aplicar-estilos-css-a-campos-radio-y-checkbox/},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{remove-number-input-arrows}
-``{Quitar flechas de input number},''
-  \url{https://www.creatuwebnicaragua.com/como-dar-estilo-al-input-type-number/},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{current-date-js}
-``{Obtener fecha actual con JavaScript},''
-  \url{https://www.freecodecamp.org/espanol/news/javascript-date-now-como-obtener-la-fecha-actual-con-javascript/},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{mysql-current-date}
-``{Fecha y hora actuales en MySQL},''
-  \url{https://andrezgz.wordpress.com/2014/07/17/obtener-la-fecha-y-hora-actuales-en-mysql/},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{docker-timezone}
-``{Establecer zona horaria en Docker Compose},''
-  \url{https://stringenieria.es/linux-docker-establecer-zona-horaria/},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{calendar-icon-color}
-``{Cambiar color del icono del calendario},''
-  \url{https://es.stackoverflow.com/questions/545467/c%C3%B3mo-se-puede-cambiar-el-color-del-icono-del-calendario},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{sql-long-text}
-``{Tipos de datos SQL para textos largos},''
-  \url{https://www.datacamp.com/es/tutorial/sql-data-types}, (accedido 23 de
-  diciembre de 2025).
-
-\bibitem{jpa-column-annotation}
-``{Definición personalizada de columnas SQL},''
-  \url{https://www.geeksforgeeks.org/advance-java/spring-data-jpa-column-annotation/},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{overflow-wrap}
-``{Romper palabras con overflow-wrap},''
-  \url{https://www.arsys.es/blog/overflow-wrap-romper-palabras}, (accedido 23
-  de diciembre de 2025).
-
-\bibitem{json-to-object}
-``{Convertir JSON a objeto JavaScript},''
-  \url{https://es.stackoverflow.com/questions/1648/c%C3%B3mo-puedo-convertir-un-string-json-a-un-objeto-en-javascript},
-  (accedido 23 de diciembre de 2025).
-
-\bibitem{curvas-bezier-inkscape}
-``{Youtube},'' \url{https://www.youtube.com/watch?v=IpqiTxtP2Sc}, (accedido 16
-  de mayo de 2026).
+  10 de junio de 2026).
 
 \end{thebibliography}

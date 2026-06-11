@@ -1,10 +1,11 @@
 \definecolor{headerblue}{RGB}{180, 210, 255}
+\definecolor{rowgray}{RGB}{242,242,242}
 
 \chapter{Introducción}
 
 El presente documento trata el trabajo realizado para el desarrollo del Proyecto Fin de Grado. Trabajo en el que he aplicado todas las competencias adquiridas durante los cuatro años que conforman el grado universitario. En esta memoria se recoge con detalle el proceso hasta llegar al resultado final del proyecto, pasando por la idea, el diseño y el desarrollo de la solución web.
 
-Esta memoria está dividida en varios capítulos, con el objetivo de facilitar su lectura y compresión. Dichos capítulos corresponden a los definidos en la especificación de proyectos fin de grado de ingeniería informática proporcionada por la Universidad de Deusto.
+Esta memoria está dividida en varios capítulos, con el objetivo de facilitar su lectura y compresión. Dichos capítulos corresponden a los definidos en la especificación de proyectos fin de grado de Ingeniería informática proporcionada por la Universidad de Deusto.
 
 \begin{itemize}
   \item Antecedentes y justificación: En este capítulo se recoge el motivo por el que se ha elegido desarrollar este proyecto. Además, se comentará cuál es la situación actual del club deportivo tomado como referencia en cuanto a los procesos de gestión de sus equipos. También se proporcionarán ejemplos de soluciones ya en el mercado similares a este proyecto.
@@ -13,10 +14,10 @@ Esta memoria está dividida en varios capítulos, con el objetivo de facilitar s
   \item Metodología: Una vez planificado el proyecto, es necesario definir la metodología a seguir para relaizarlo eficientemente. En este capítulo se recoge la metodología seguida para el desarrollo del proyecto.
   \item Presupuesto: Todo proyecto debe tener una estimación del presupuesto, con el fin de aproximar lo máximo posible el coste total que conllevará. En este capítulo se recoge con detalle ese presupuesto, teniendo en cuenta costes de material, costes de desarrollo, costes de puesta en marcha y costes de recurrentes.
   \item Desarrollo del proyecto: Este capítulo recoge la fase de desarrollo del proyecto. En primer lugar, identifica los stakeholders. Después, detalla los requisitos del proyecto, tanto funcionales como no funcionales. Sigue recogiendo la especificación de su diseño y nombrando las tecnologías y herramientas utilizadas para su desarrollo. Por último, redacta consideraciones e incidencias del proyecto, además del plan de prueba seguido.
-  \item Valoración ética del proyecto: Todo proyecto o desarrollo informático conlleva unas consecuencias y unos impactos. En este capítulo se realiza una reflexión sobre los aspectos éticos del proyecto, teniendo en cuenta las posibles implicaciones que pueda tener para los usuarios y la sociedad.
-  \item Conclusiones y trabajo futuro: Este capítulo redacta las conclusiones y los resultados obtenidos una vez finalizado el proyecto. Además incluye una serie de ideas para implementar en el futuro que mejorarán el proyecto.
-  \item Bibliografía: La bilbiografía del proyecto recoge todas las fuentes de información que han sido utilizadas para el desarrollo del proyecto.
-  \item Apéndices
+  \item Valoración ética del proyecto: Este capítulo recoge, en primer lugar, la justificación ética del proyecto. Además, todo proyecto o desarrollo informático conlleva unas consecuencias y unos impactos. Por lo que, después de su justificación ética, se realiza una reflexión sobre los aspectos éticos del proyecto, teniendo en cuenta las posibles implicaciones y riesgos que pueda tener.
+  \item Conclusiones y trabajo futuro: Este capítulo redacta las conclusiones y los resultados obtenidos una vez finalizado el proyecto. Además incluye una serie de ideas para implementar en el futuro que mejorarán la solución web.
+  \item Bibliografía: La bibliografía del proyecto recoge todas las fuentes de información que han sido utilizadas para el desarrollo del proyecto. Todas ellas se encuentran referenciadas a lo largo de este documento.
+  \item Apéndices: Para terminar, este último capítulo recoge el uso que se ha hecho de la inteligencia artificial para al realización de este proyecto.
 \end{itemize}
 
 \chapter{Antecedentes y justificación}
@@ -130,15 +131,13 @@ Para la realización de este proyecto, también ha sido fundamental tener claro 
 
 \chapter{Plan de trabajo}
 
-Este capítulo documenta la planificación seguida para la realización de este proyecto, agregando un cronograma en forma de diagrama de Gantt para representar visualmente las horas de trabajo. También proporciona y detalla los perfiles de trabajadores que serían necesarios para el correcto desarrollo de la solución software.
-
 \section{Planificación temporal}
 
 Este apartado describe las fases y tareas que han sido realizadas para completar el proyecto. El proyecto se divide en 5 partes, cada una de ellas con tareas y/o fases a completar. La fase de realización del proyecto ha sido dividida en 4 fases. La primera de ellas consta de la creación y configuración del proyecto. Las fases restantes se han planificado de esa forma debido a una división de las funcionalidades a implementar. Para esta división se han tenido en cuenta factores como relevancia de la funcionalidad en el proyecto, dificultad de la misma y dependencia de otras funcionalidades.
 
-Esta planificación ha sido seguida de tal manera que no es posible avanzar a la siguiente fase principal del proyecto antes de haber completado todas las tareas o subfases de la anterior, es decir, siguiendo un modelo en cascada. Se entiende por fases principales del proyecto las fases de definición, planificación, realización, control y finalización. Más adelante en este documento se especificará la metodología seguida para las subfases que componen la realización del proyecto.
-
 Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se redacta cada una de las fases de la planificación con sus respectivas tareas a completar:
+
+\textbf{Definición del proyecto:}
 
 \begin{description}[
     labelindent=2em,
@@ -147,7 +146,34 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
     labelsep=1em,
     font=\normalfont]
 
-  \item[Fase 1.] Definición del proyecto:
+  \item[TFD-1.] Análisis del club deportivo: Analizar el club deportivo e investigar cómo realizan y gestionan los procesos de sus equipos.
+  \item[TFD-2.] Estudio de la situación del club y propuesta de solución: Estudiar e interpretar el análisis realizado y diseñar una solución software para uno de sus equipos.
+  \item[TFD-3.] Presentación del proyecto a la tutora: Presentar la idea a la tutora del proyecto de fin de grado.
+\end{description}
+
+\textbf{Planificación del proyecto:}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+
+  \item[TFP-1.] Estimación de tiempos: Estimar el tiempo que llevará desarrollar cada una de las funcionalidades de la solución.
+  \item[TFP-2.] División del desarrollo del proyecto: Priorizar las funcionalidades a desarrollar y agruparlas en fases para dividir el desarrollo del proyecto.
+  \item[TFP-3.] Planificación del desarrollo del proyecto: Planificar en el tiempo el desarrollo del proyecto basándose en la división del mismo y la estimación de tiempos de las tareas.
+\end{description}
+\textbf{Realización del proyecto:}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+
+  \item[Fase 0.] \leavevmode
         \begin{description}[
             labelindent=0pt,
             leftmargin=!,
@@ -155,12 +181,13 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
             labelsep=1em,
             font=\normalfont
           ]
-
-          \item[Tarea 1.] Análisis del club deportivo: Analizar el club deportivo e investigar cómo realizan y gestionan los procesos de sus equipos.
-          \item[Tarea 2.] Estudio de la situación del club y propuesta de solución: Estudiar e interpretar el análisis realizado y diseñar una solución software para uno de sus equipos.
-          \item[Tarea 3.] Presentación del proyecto a la tutora: Presentar la idea a la tutora del proyecto de fin de grado.
+          \item[TFR-0.1] Crear el proyecto de Maven y gestionar las dependencias de Springboot para la parte backend
+          \item[TFR-0.2] Crear la base de datos con MySQL y configurar Springboot para que haga uso de ella
+          \item[TFR-0.3] Crear el proyecto de React para el desarrollo del frontend
+          \item[TFR-0.4] Crear Dockerfiles necesarios y gestionar los servicios con Docker Compose
         \end{description}
-  \item[Fase 2.] Planificación del proyecto:
+
+  \item[Fase 1.] \leavevmode
         \begin{description}[
             labelindent=0pt,
             leftmargin=!,
@@ -168,11 +195,12 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
             labelsep=1em,
             font=\normalfont
           ]
-
-          \item[Tarea 4.] Estimación de tiempos: Estimar el tiempo que llevará desarrollar cada una de las funcionalidades de la solución.
-          \item[Tarea 5.] División del desarrollo del proyecto: Priorizar las funcionalidades a desarrollar y agruparlas en fases para dividir el desarrollo del proyecto.
+          \item[TFR-1.1] Registro de usuarios
+          \item[TFR-1.2] Inicio de sesión de usuarios
+          \item[TFR-1.3] Visualización de partidos de la temporada
+          \item[TFR-1.4] Visualización de estadísticas
         \end{description}
-  \item[Fase 3.] Realización del proyecto:
+  \item[Fase 2.] \leavevmode
         \begin{description}[
             labelindent=0pt,
             leftmargin=!,
@@ -180,191 +208,11 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
             labelsep=1em,
             font=\normalfont
           ]
-
-          \item[Fase 0.] Creación del proyecto:
-                \begin{description}[
-                    labelindent=0pt,
-                    leftmargin=!,
-                    labelwidth=1.5cm,
-                    labelsep=1em,
-                    font=\normalfont
-                  ]
-
-                  \item[Tarea 6.] Crear el proyecto de Maven y gestionar las dependencias de Springboot para la parte backend
-                  \item[Tarea 7.] Crear la base de datos con MySQL y configurar Springboot para que haga uso de ella
-                  \item[Tarea 8.] Crear el proyecto de React para el desarrollo del frontend
-                  \item[Tarea 9.] Crear Dockerfiles necesarios y gestionar los servicios con Docker Compose
-                \end{description}
-
-          \item[Fase 1.] Gestión de usuarios, próximos partidos y visualización de estadísticas:
-                \begin{description}[
-                    labelindent=0pt,
-                    leftmargin=!,
-                    labelwidth=1.5cm,
-                    labelsep=1em,
-                    font=\normalfont
-                  ]
-                  \item[Funcionalidad: ] Registro de usuarios e inicio de sesión
-                        \begin{description}[
-                            labelindent=0pt,
-                            leftmargin=!,
-                            labelwidth=1.5cm,
-                            labelsep=1em,
-                            font=\normalfont
-                          ]
-                          \item[Tarea 10.] Desarrollar pantalla con formulario de registro de usuario
-                          \item[Tarea 11.] Crear pantalla con formulario de inicio de sesión
-                          \item[Tarea 12.] Programar parte backend para el registro de usuarios
-                          \item[Tarea 13.] Desarrollar backend para permitir inicio de sesión simple
-                          \item[Tarea 14.] Implementar inicio de sesión con Google
-                          \item[Tarea 15.] Gestionar seguridad con Spring Security
-                          \item[Tarea 16.] Programar pantalla de inicio
-                          \item[Tarea 17.] Verificar funcionamiento correcto
-                          \item[Tarea 18.] Corregir posibles errores
-                        \end{description}
-                  \item[Funcionalidad: ] Visualización de partidos de la temporada
-                        \begin{description}[
-                            labelindent=0pt,
-                            leftmargin=!,
-                            labelwidth=1.5cm,
-                            labelsep=1em,
-                            font=\normalfont
-                          ]
-                          \item[Tarea 19.] Crear pantalla para próximos partidos
-                          \item[Tarea 20.] Desarrollar backend para recuperar los próximos partidos de la base de datos
-                          \item[Tarea 21.] Crear componente de React de próximo partido
-                          \item[Tarea 22.] Comprobar correcto funcionamiento
-                          \item[Tarea 23.] Corregir errores que puedan surgir
-                        \end{description}
-                  \item[Funcionalidad: ] Visualización de estadísticas
-                        \begin{description}[
-                            labelindent=0pt,
-                            leftmargin=!,
-                            labelwidth=1.5cm,
-                            labelsep=1em,
-                            font=\normalfont
-                          ]
-                          \item[Tarea 24.] Programar primera pantalla para las estadísticas
-                          \item[Tarea 25.] Implementar en el backend funcionalidad para recuperar jugadores y estadísticas de equipo
-                          \item[Tarea 26.] Crear componente de React de tarjetas de jugadores
-                          \item[Tarea 27.] Desarrollar pantalla de estadísticas para un jugador específico y poder acceder a ella al hacer clic en una tarjeta de jugador
-                          \item[Tarea 28.] Programar backend para obtener las estadísticas de un jugador específico
-                          \item[Tarea 29.] Verificar correcto funcionamiento
-                          \item[Tarea 30.] Corregir posibles errores
-                        \end{description}
-                \end{description}
-          \item[Fase 2.] Convocatorias, seguimiento de estadísticas e incidencias de partido y módulo inteligente de recomendaciones:
-                \begin{description}[
-                    labelindent=0pt,
-                    leftmargin=!,
-                    labelwidth=1.5cm,
-                    labelsep=1em,
-                    font=\normalfont
-                  ]
-                  \item[Funcionalidad: ] Gestión de convocatorias
-                        \begin{description}[
-                            labelindent=0pt,
-                            leftmargin=!,
-                            labelwidth=1.5cm,
-                            labelsep=1em,
-                            font=\normalfont
-                          ]
-                          \item[Tarea 31.] Desarrollar primera pantalla para las convocatorias
-                          \item[Tarea 32.] Recuperar próximos partidos y crear componente de React para ellos en la pantalla de convocatorias
-                          \item[Tarea 33.] Crear pantalla para convocatoria de un partido específico y acceder a ella al hacer clic en un próximo partido
-                          \item[Tarea 34.] Mostrar todos los jugadores candidatos a ser convocados
-                          \item[Tarea 35.] Desarrollar backend para almacenar convocatorias
-                          \item[Tarea 36.] Convocar jugador al hacer clic sobre él
-                          \item[Tarea 37.] Implementar confirmación de asistencia/no asistencia de jugador
-                          \item[Tarea 38.] Comprobar correcto funcionamiento
-                          \item[Tarea 39.] Corregir errores que puedan surgir
-                        \end{description}
-                  \item[Funcionalidad: ] Seguimiento de estadísticas e incidencias de partido
-                        \begin{description}[
-                            labelindent=0pt,
-                            leftmargin=!,
-                            labelwidth=1.5cm,
-                            labelsep=1em,
-                            font=\normalfont
-                          ]
-                          \item[Tarea 40.] Programar pantalla de seguimiento de partido
-                          \item[Tarea 41.] Desarrollar componente de React de marcador
-                          \item[Tarea 42.] Recuperar y mostrar en pantalla jugadores con asistencia confirmada al partido
-                          \item[Tarea 43.] Crear pantalla para estadísticas de partido de jugador y portero
-                          \item[Tarea 44.] Implementar funcionalidad para almacenar dichas estadísticas al ser modificadas en la pantalla
-                          \item[Tarea 45.] Programar pantalla para estadísticas de equipo
-                          \item[Tarea 46.] Almacenar estadísticas del equipo en el partido de igual manera que los jugadores
-                          \item[Tarea 47.] Crear pantalla para marcar incidencias del partido
-                          \item[Tarea 48.] Mostrar incidencias marcadas en la pantalla de seguimiento de partido
-                          \item[Tarea 49.] Verificar correcto funcionamiento
-                          \item[Tarea 50.] Corregir errores que puedan surgir
-                        \end{description}
-                  \item[Funcionalidad: ] Módulo inteligente de recomendaciones
-                        \begin{description}[
-                            labelindent=0pt,
-                            leftmargin=!,
-                            labelwidth=1.5cm,
-                            labelsep=1em,
-                            font=\normalfont
-                          ]
-                          \item[Tarea 51.] Gestionar dependencia de Spring AI Anthropic y comprobar su correcto funcionamiento
-                          \item[Tarea 52.] Desarrollar backend para enviar prompts al modelo de IA de Anthropic
-                          \item[Tarea 53.] Enviar estadísticas del partido al modelo de IA de Anthropic y recibir recomendaciones
-                          \item[Tarea 54.] Recuperar recomendaciones proporcionadas por el modelo de IA y mostrarlas por pantalla
-                          \item[Tarea 55.] Verificar correcto funcionamiento
-                          \item[Tarea 56.] Corregir posibles errores
-                        \end{description}
-                \end{description}
-          \item[Fase 3.] Foro de mensajes y pedidos de material:
-                \begin{description}[
-                    labelindent=0pt,
-                    leftmargin=!,
-                    labelwidth=1.5cm,
-                    labelsep=1em,
-                    font=\normalfont
-                  ]
-                  \item[Funcionalidad: ] Foro de mensajes
-                        \begin{description}[
-                            labelindent=0pt,
-                            leftmargin=!,
-                            labelwidth=1.5cm,
-                            labelsep=1em,
-                            font=\normalfont
-                          ]
-                          \item[Tarea 57.] Desarrollar pantalla para debates
-                          \item[Tarea 58.] Programar backend para crear y recuperar debates
-                          \item[Tarea 59.] Crear pantalla para foro de mensajes y acceder a ella haciendo clic en un debate
-                          \item[Tarea 60.] Implementar funcionalidad de publicación de mensajes en el foro del debate
-                          \item[Tarea 61.] Verificar correcto funcionamiento
-                          \item[Tarea 62.] Corregir errores que puedan surgir
-                        \end{description}
-                  \item[Funcionalidad: ] Gestión de pedidos de material
-                        \begin{description}[
-                            labelindent=0pt,
-                            leftmargin=!,
-                            labelwidth=1.5cm,
-                            labelsep=1em,
-                            font=\normalfont
-                          ]
-                          \item[Tarea 63.] Desarrollar pantalla para gestión de pedidos de material
-                          \item[Tarea 64.] Programar backend para crear y recuperar pedidos de material
-                          \item[Tarea 65.] Implementar funcionalidad para pedir material
-                          \item[Tarea 66.] Descargar fichero excel con la información del pedido
-                        \end{description}
-                \end{description}
-          \item[Fase 4.] Estilo y responsividad
-                \begin{description}[
-                    labelindent=0pt,
-                    leftmargin=!,
-                    labelwidth=1.5cm,
-                    labelsep=1em,
-                    font=\normalfont
-                  ]
-                  \item[Tarea 67.] Terminar de dar estilo a las pantallas de la aplicación web
-                  \item[Tarea 68.] Aplicar responsividad a las pantallas de la solución
-                \end{description}
+          \item[TFR-2.1] Gestión de convocatorias
+          \item[TFR-2.2] Seguimiento de estadísticas e incidencias de partido
+          \item[TFR-2.3] Módulo inteligente de recomendaciones
         \end{description}
-  \item[Fase 4.] Control del proyecto
+  \item[Fase 3.] \leavevmode
         \begin{description}[
             labelindent=0pt,
             leftmargin=!,
@@ -372,10 +220,10 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
             labelsep=1em,
             font=\normalfont
           ]
-          \item[Tarea 69.] Comparar resultados del proyecto con objetivos iniciales
-          \item[Tarea 70.] Realizar pruebas del resultado final
+          \item[TFR-3.1] Foro de mensajes
+          \item[TFR-3.2] Gestión de pedidos de material
         \end{description}
-  \item[Fase 5.] Finalización del proyecto
+  \item[Fase 4.] \leavevmode
         \begin{description}[
             labelindent=0pt,
             leftmargin=!,
@@ -383,31 +231,260 @@ Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se re
             labelsep=1em,
             font=\normalfont
           ]
-          \item[Tarea 71.] Terminar de redactar la memoria del proyecto
-          \item[Tarea 72.] Terminar la aplicación web
-          \item[Tarea 73.] Preparar la defensa del proyecto
+          \item[TFR-4.1] Terminar de dar estilo a las pantallas de la aplicación web
+          \item[TFR-4.2] Aplicar responsividad a las pantallas de la solución
         \end{description}
 \end{description}
+\textbf{Control del proyecto:}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[TFC-1] Comparar resultados del proyecto con objetivos iniciales
+  \item[TFC-2] Pruebas unitarias
+  \item[TFC-3] Pruebas de integración
+  \item[TFC-3] Pruebas de validación
+\end{description}
+\textbf{Finalización del proyecto:}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[TFF-1] Terminar de redactar la memoria del proyecto
+  \item[TFF-2] Terminar la aplicación web
+  \item[TFF-3] Preparar la defensa del proyecto
+\end{description}
+
+\section{Estimación de tiempos}
+
+A continuación, se muestra en forma de tabla una estimación de las horas que llevará realizar cada tarea de cada fase del proyecto:
+
+\renewcommand{\arraystretch}{2}
+\begin{longtable}{|>{\bfseries}p{3.5cm}|p{7cm}|p{2cm}|}
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Fase} & \textbf{Tarea}                                                                & \textbf{Estimación} \\
+  \hline
+  \endfirsthead
+
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Fase} & \textbf{Tarea}                                                                & \textbf{Estimación} \\
+  \hline
+  \endhead
+
+  \endfoot
+
+  \endlastfoot
+
+  \multirow{3}{*}{Definición}
+                & TFD-1. Análisis del club deportivo                                            & 3h                  \\
+  \cline{2-3}
+                & TFD-2. Estudio de la situación del club y propuesta de solución               & 4h                  \\
+  \cline{2-3}
+                & TFD-3. Presentación del proyecto a la tutora                                  & 1h                  \\
+  \hline
+
+  \multirow{1}{*}{Planificación}
+                & TFP-1. Estimación de tiempos                                                  & 1h                  \\
+  \hline
+                & TFP-2. División del desarrollo del proyecto                                   & 1h                  \\
+  \cline{2-3}
+                & TFP-3. Planificación del desarrollo del proyecto                              & 2h                  \\
+  \hline
+
+  \multirow{4}{*}{Realización}
+                & TFR-0.1 Crear el proyecto de Maven y gestionar las dependencias de Springboot & 4h                  \\
+  \cline{2-3}
+                & TFR-0.2 Crear la base de datos con MySQL y configurar Springboot              & 3h                  \\
+  \cline{2-3}
+                & TFR-0.3 Crear el proyecto de React para el frontend                           & 2h                  \\
+  \cline{2-3}
+                & TFR-0.4 Crear Dockerfiles y gestionar servicios con Docker Compose            & 5h                  \\
+  \cline{2-3}
+                & TFR-1.1 Registro de usuarios                                                  & 8h                  \\
+  \cline{2-3}
+                & TFR-1.2 Inicio de sesión de usuarios                                          & 12h                 \\
+  \cline{2-3}
+                & TFR-1.3 Visualización de partidos de la temporada                             & 7h                  \\
+  \cline{2-3}
+                & TFR-1.4 Visualización de estadísticas                                         & 10h                 \\
+  \cline{2-3}
+                & TFR-2.1 Gestión de convocatorias                                              & 16h                 \\
+  \cline{2-3}
+                & TFR-2.2 Seguimiento de estadísticas e incidencias de partido                  & 40h                 \\
+  \cline{2-3}
+                & TFR-2.3 Módulo inteligente de recomendaciones                                 & 15h                 \\
+  \hline
+                & TFR-3.1 Foro de mensajes                                                      & 6h                  \\
+  \cline{2-3}
+                & TFR-3.2 Gestión de pedidos de material                                        & 8h                  \\
+  \cline{2-3}
+                & TFR-4.1 Terminar de dar estilo a las pantallas de la aplicación web           & 20h                 \\
+  \cline{2-3}
+                & TFR-4.2 Aplicar responsividad a las pantallas de la solución                  & 48h                 \\
+  \hline
+
+  \multirow{4}{*}{Control}
+                & TFC-1 Comparar resultados con objetivos iniciales                             & 2h                  \\
+  \cline{2-3}
+                & TFC-2 Pruebas unitarias                                                       & 10h                 \\
+  \cline{2-3}
+                & TFC-3 Pruebas de integración                                                  & 5h                  \\
+  \cline{2-3}
+                & TFC-4 Pruebas de validación                                                   & 7h                  \\
+  \hline
+
+  \multirow{3}{*}{Finalización}
+                & TFF-1 Redactar la memoria del proyecto                                        & 72h                 \\
+  \cline{2-3}
+                & TFF-2 Terminar la aplicación web                                              & 10h                 \\
+  \cline{2-3}
+                & TFF-3 Preparar la defensa del proyecto                                        & 50h                 \\
+  \hline
+  \caption{Estimación de tiempos de las tareas del proyecto}
+  \label{tab:tareas}
+\end{longtable}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.3\textwidth, angle=90]{imgs/gantt.png}
+  \caption{Diagrama de Gannt con la planificación del proyecto}
+  \label{fig:gantt}
+\end{figure}
 
 \chapter{Metodología}
 
-\section{Metodologías iterativas e incrementales}
+\section{Metodologías ágiles}
 
-Las metodologías iterativas son metodologías que dividen los proyectos en ciclos repetitivos cortos. A muchas de ellas también se les llama incrementales, ya que en cada ciclo iterativo añaden nuevas funcionalidades o módulos al producto hasta completarlo.
+Hoy en día, los proyectos y productos software que no evolucionan a tiempo o no cumplen con las necesidades y requisitos del cliente no suelen tener éxito. Por eso, es esencial saber en todo momento qué es lo que quiere el cliente y cuáles son las necesidades del mercado. De esta forma, es posible desarrollar un proyecto o producto que actualizado y que deje al cliente satisfecho. Las metodologías ágiles permiten ajustar sobre la marcha esos requisitos definidos por el cliente, manteniendo al equipo de desarrollo enfocado en pequeños objetivos que suman al resultado final. \cite{iebs}
 
+Por definición, las metodologías ágiles son aquellas que permiten adaptar la forma de trabajo a las condiciones del proyecto, consiguiendo flexibilidad e inmediatez en la respuesta para amoldar el proyecto y su desarrollo a las circunstancias específicas del entorno. \cite{iebs}
+
+\textbf{Ventajas:}
 \begin{itemize}
-  \item \textbf{Flexibilidad:} Este tipo de metodologías aportan mucha flexibilidad, ya que permiten cambiar los requisitos rápidamente si las necesidades del cliente sufrieran algún cambio.
-  \item \textbf{Reducción de riesgos:} Gracias a dividir el proyecto en ciclos cortos, los errores se detectan y corrigen rápidamente. De esta forma, se evitan grandes problemas que se puedan acumular a lo largo del proyecto.
+  \item \textbf{Flexibilidad:} Este tipo de metodologías aportan mucha flexibilidad. Permite cambiar los requisitos rápidamente y adaptarse a ellos.
+  \item \textbf{Reducción de riesgos:} Gracias a dividir el proyecto en ciclos cortos debido a su naturaleza iterativa, los errores se detectan y corrigen rápidamente. De esta forma, se evitan grandes problemas que se puedan acumular a lo largo del proyecto.
   \item \textbf{Feedback continuo:} Debido al caracter incremental de estas metodologías, es posible probar y enseñar el producto al cliente cada vez que se añade una nueva funcionalidad. De esta manera, se obtiene feedback del cliente después de implementar cada funcionalidad y adaptar a su gusto lo que fuera necesario.
 \end{itemize}
 
-En este proyecto he decidido utilizar este tipo de metodología en la fase de realización del proyecto para ir implementando las funcionalidades poco a poco y corregir rápidamente cualquier error que pudiera producirse.
+En este proyecto he decidido utilizar una metodología ágil para ir implementando las funcionalidades poco a poco y corregir rápidamente cualquier error que pudiera producirse.
 
-Decidí decantarme por utilizar esta metodología en la fase de realización del proyecto porque me parecía una metodología razonable y adaptable a mis circunstancias, ya que me permitía trabajar de forma autónoma y probar el resultado cada vez que implementaba una nueva funcionalidad. Además, creo que es una metodología que encajaba perfectamente con la planificación elaborada para esa fase del proyecto.
+Decidí decantarme por utilizar esta metodología porque me parecía una metodología razonable y adaptable a mis circunstancias, ya que me permitía trabajar de forma autónoma y probar el resultado cada vez que implementaba una nueva funcionalidad. Además, creo que es una metodología que encajaba perfectamente con la planificación elaborada para el proyecto.
 
-\section{Proceso Racional Unificado}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{imgs/metodologia_agil.png}
+  \caption{Metodologías ágiles}
+  \label{fig:metodologia_agis}
+\end{figure}
 
-El Proceso Racional Unificado (RUP por sus siglas en inglés, Rational Unified Process) es una metodología iterativa e incremental para el desarrollo de software creado por IBM.
+\section{Scrum}
+
+Scrum es una metodología ágil que trata de hacer de la entrega de un producto complejo una tarea sencilla y manejable. Para logarlo divide el proyecto en ciclos cortos de desarrollo, llamados \textit{sprints}. En cada uno de estos ciclos, el equipo colabora para realizar únicamente las tareas planificadas para ese \textit{sprint}. \cite{scrum}
+
+En este proyecto se ha optado por esta metodología para organizar el desarrollo del mismo de tal manera que se garantice una gestión ágil y eficiente del trabajo, favoreciendo la entrega continua de funcionalidades, la adaptación a posibles cambios en los requisitos y la evaluación periódica del progreso.
+
+Este proyecto ha sido dividido en nueve sprints. Se ha definido un \textit{sprint} para las fases de definición, planificación, control y finalización. Mientras que se ha decidido dividir la fase de realización del proyecto en varios ciclos. Estos han sido cuatro, uno por cada subfase. Gracias a hacerlo de esta manera, en cada ciclo el equipo (en el caso de este proyecto, yo mismo) podía centrarse únicamente en las funcionalidades planificadas para cada \textit{sprint}, haciendo que el desarrollo fuera rápido, eficiente y con entregables funcionales después de cada \textit{sprint}.
+
+La siguiente tabla muestra la distribución de tareas y sprints de forma más visual:
+
+\renewcommand{\arraystretch}{2}
+\begin{longtable}{|>{\bfseries}p{2.5cm}|p{3.5cm}|p{7cm}|}
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Fase}             & \textbf{Periodo}                                                              & \textbf{Tarea}                                                      \\
+  \hline
+  \endfirsthead
+
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Fase}             & \textbf{Periodo}                                                              & \textbf{Tarea}                                                      \\
+  \hline
+  \endhead
+
+  \endfoot
+
+  \endlastfoot
+
+  \multirow{3}{*}{Sprint 1} & \multirow{3}{*}{\shortstack{01/12/2025 - 08/12/2025}}
+                            & TFD-1. Análisis del club deportivo                                                                                                                  \\
+  \cline{3-3}
+                            &                                                                               & TFD-2. Estudio de la situación del club y propuesta de solución     \\
+  \cline{3-3}
+                            &                                                                               & TFD-3. Presentación del proyecto a la tutora                        \\
+  \hline
+
+  \multirow{3}{*}{Sprint 2} & \multirow{3}{*}{\shortstack{09/12/2025 - 12/12/2025}}
+                            & TFP-1. Estimación de tiempos                                                                                                                        \\
+  \cline{3-3}
+                            &                                                                               & TFP-2. División del desarrollo del proyecto                         \\
+  \cline{3-3}
+                            &                                                                               & TFP-3. Planificación del desarrollo del proyecto                    \\
+  \hline
+
+  \multirow{4}{*}{Sprint 3} & \multirow{4}{*}{\shortstack{16/12/2025 - 23/12/2025}}
+                            & TFR-0.1 Crear el proyecto de Maven y gestionar las dependencias de Springboot                                                                       \\
+  \cline{3-3}
+                            &                                                                               & TFR-0.2 Crear la base de datos con MySQL y configurar Springboot    \\
+  \cline{3-3}
+                            &                                                                               & TFR-0.3 Crear el proyecto de React para el frontend                 \\
+  \cline{3-3}
+                            &                                                                               & TFR-0.4 Crear Dockerfiles y gestionar servicios con Docker Compose  \\
+  \hline
+  \multirow{2}{*}{Sprint 4} & \multirow{2}{*}{\shortstack{24/12/2025 - 16/01/2026}}
+                            & TFR-1.1 Registro de usuarios                                                                                                                        \\
+  \cline{3-3}
+                            &                                                                               & TFR-1.2 Inicio de sesión de usuarios                                \\
+  \hline
+                            &                                                                               & TFR-1.3 Visualización de partidos de la temporada                   \\
+  \cline{3-3}
+                            &                                                                               & TFR-1.4 Visualización de estadísticas                               \\
+  \hline
+
+  \multirow{3}{*}{Sprint 5} & \multirow{3}{*}{\shortstack{19/01/2026 - 18/02/2026}}
+                            & TFR-2.1 Gestión de convocatorias                                                                                                                    \\
+  \cline{3-3}
+                            &                                                                               & TFR-2.2 Seguimiento de estadísticas e incidencias de partido        \\
+  \cline{3-3}
+                            &                                                                               & TFR-2.3 Módulo inteligente de recomendaciones                       \\
+  \hline
+  \multirow{2}{*}{Sprint 6} & \multirow{2}{*}{\shortstack{19/02/2026 - 02/03/2026}}
+                            & TFR-3.1 Foro de mensajes                                                                                                                            \\
+  \cline{3-3}
+                            &                                                                               & TFR-3.2 Gestión de pedidos de material                              \\
+  \hline
+  \multirow{2}{*}{Sprint 7} & \multirow{2}{*}{\shortstack{03/03/2026 - 25/03/2026}}                         & TFR-4.1 Terminar de dar estilo a las pantallas de la aplicación web \\
+  \cline{3-3}
+                            &                                                                               & TFR-4.2 Aplicar responsividad a las pantallas de la solución        \\
+  \hline
+
+  \multirow{4}{*}{Sprint 8} & \multirow{4}{*}{\shortstack{26/03/2026 - 07/04/2026}}
+                            & TFC-1 Comparar resultados con objetivos iniciales                                                                                                   \\
+  \cline{3-3}
+                            &                                                                               & TFC-2 Pruebas unitarias                                             \\
+  \cline{3-3}
+                            &                                                                               & TFC-3 Pruebas de integración                                        \\
+  \cline{3-3}
+                            &                                                                               & TFC-4 Pruebas de validación                                         \\
+  \hline
+
+  \multirow{3}{*}{Sprint 9} & \multirow{3}{*}{\shortstack{08/04/2026 - 25/05/2026}}
+                            & TFF-1 Redactar la memoria del proyecto                                                                                                              \\
+  \cline{3-3}
+                            &                                                                               & TFF-2 Terminar la aplicación web                                    \\
+  \cline{3-3}
+                            &                                                                               & TFF-3 Preparar la defensa del proyecto                              \\
+  \hline
+  \caption{Distribución de tareas en sprints}
+  \label{tab:tareas}
+\end{longtable}
 
 \chapter{Presupuesto}
 
@@ -415,7 +492,17 @@ Para la realización de este proyecto, se ha definido un presupuesto que puede d
 
 \section{Mano de obra}
 
-Los costes de mano de obra se corresponden con el tiempo dedicado al desarrollo del proyecto por parte de los distintos trabajadores. En este caso, el proyecto ha sido realizado por una única persona, que ha asumido todas las funciones necesarias para la compleción del mismo: desde el análisis de la situación del equipo deportivo, pasando por el diseño de la estructura, la arquitectura y la parte visual de la solución, hasta el desarrollo de la aplicación web. Debido al caracter individual del proyecto y para aproximar los costes de mano de obra reales para la realización del proyecto, la tabla a continuación muestra una estimación de dichos costes.
+Los costes de mano de obra se corresponden con el tiempo dedicado al desarrollo del proyecto por parte de los distintos trabajadores. En este caso, el proyecto ha sido realizado por una única persona, que ha asumido todas las funciones necesarias para la compleción del mismo: desde el análisis de la situación del equipo deportivo, pasando por el diseño de la estructura, la arquitectura y la parte visual de la solución, hasta el desarrollo de la aplicación web. Debido al caracter individual del proyecto y para aproximar los costes de mano de obra reales para la realización del proyecto, la tabla a continuación muestra una estimación de dichos costes. Aunque, antes es necesario estimar el coste por hora de cada uno de los trabajadores:
+
+Cabe destacar que el coste/hora de estos trabajadores puede variar dependiendo del perfil de cada uno de ellos. Para esta estimación, se considerará un coste medio de perfiles junior de cada trabajador.
+
+\begin{itemize}
+  \item \textbf{Gestor de proyectos:} Es la persona que coordina las actividades del equipo y todo el trabajo de los distintos trabajadores del equipo. Se encarga de que el proyecto avance según lo planeado y cumpliendo con el presupuesto fijado. El coste de un gestor de proyectos oscila entre 30€ y 45€ la hora. Se considerará una media de 37,5€/hora y una estimación de 60 horas de trabajo.
+  \item  \textbf{Diseñador de software:} Para que un producto software tenga éxito, es esencial que disponga de un buen diseño. El diseñador de software se encargará de definir la arquitectura del software para que los desarrolladores entiendan cómo se comunicarán las distintas partes del proyecto y puedan desarrollarlas correctamente. El coste/hora de un diseñador de software se mueve entre 20€ y 40€. Se estimará una media de 30€/hora y se considerarán 30h de trabajo
+  \item \textbf{Diseñador artístico:} El diseñador artístico se encargará de definir la parte visual de la solución web. Diseñará una interfaz de usuario personalizada para el cliente. El coste de un diseñador artístico oscila 15€ y 30€ la hora. Se estimará una media de 22,5€/hora y 30 horas de trabajo.
+  \item \textbf{Desarrollador backend:} El desarrollador backend será el encargado de desarrollar la parte servidora de la solución. Es quién se encargrá de implementar la lógica de negocio y la interacción con la base de datos. También se encargará de desarrollar la API REST de la aplicación. El coste/hora de un desarrollador backend varía entre 20€ y 35€. Se considerará una media de 27,5€/hora y una estimación de 120 horas de trabajo.
+  \item \textbf{Desarrollador frontend:} El desarrollador de la parte frontend de la solución se encarga de desarrollar la parte visual de la misma. Hará uso de los diseños realizados por el diseñador artístico para implementarlos en la parte cliente de la solución. Además deberá comunicarse también con el desarrollador backend para trabajar juntos y que la conexión entre frontend y backend sea coherente. El coste de un desarrollador frontend oscila entre 15€ y 30€ la hora. Se estimará una media de 22,5€/hora y 120 horas de trabajo.
+\end{itemize}
 
 \begin{table}[ht]
   \centering
@@ -423,84 +510,136 @@ Los costes de mano de obra se corresponden con el tiempo dedicado al desarrollo 
   \begin{tabular}{|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{5cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{2cm}|}
     \hline
     \rowcolor{headerblue}
-    \textbf{Rol}           & \textbf{Descripción}                                                                                                         & \textbf{Coste/Hora} & \textbf{Coste total} \\
+    \textbf{Rol}           & \textbf{Estimación horas trabajadas} & \textbf{Coste/Hora} & \textbf{Coste total} \\
     \hline
-    Gestor de proyectos    & Persona que gestiona el proyecto, valora su evolución y coordina a todos los participantes para que se realice correctamente & 1.828,65 €          &                      \\
+    Gestor de proyectos    & 60h                                  & 37,5 €/h            & 2.250 €              \\
     \hline
-    Diseñador de software  & Encargado de diseñar la parte backend de la solución                                                                         & 1.234,91€           &                      \\
+    Diseñador de software  & 30h                                  & 30 €/h              & 900 €                \\
     \hline
-    Diseñador artístico    & Persona encargada de diseñar las distintas pantallas de la aplicación                                                        & 1.234,91€           &                      \\
+    Diseñador artístico    & 30h                                  & 22,5 €/h            & 675 €                \\
     \hline
-    Desarrollador backend  & Experto en desarrollo de backend                                                                                             & 1.234,91€           &                      \\
+    Desarrollador backend  & 120h                                 & 27,5 €/h            & 3.300 €              \\
     \hline
-    Desarrollador frontend & Experto en desarrollo de frontend                                                                                            & 1.234,91€           &                      \\
+    Desarrollador frontend & 120h                                 & 22,5 €/h            & 2.700 €              \\
     \hline
-    \textbf{Total}         &                                                                                                                              & \textbf{3063,56 €}  &                      \\
+    \textbf{Total}         &                                      &                     & \textbf{9.825 €}     \\
     \hline
   \end{tabular}
   \caption{Costes de mano de obra}
   \label{tab:costes-mano-obra}
 \end{table}
 
-
-
 \section{Material}
 
 Los costes de material incluyen los gastos sobre el material físico necesario para la realización del proyecto. En este caso, el único material requerido ha sido un ordenador de sobremesa y un ordenador portátil para trabajar en el proyecto fuera de casa.
 
-\begin{table}[ht]
-  \centering
-  \renewcommand{\arraystretch}{1.8}
-  \begin{tabular}{|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{5cm}|>{\centering\arraybackslash}p{5cm}|}
-    \hline
-    \rowcolor{headerblue}
-    \textbf{Producto}  & \textbf{Descripción}                                        & \textbf{Coste}     \\
-    \hline
-    PC                 & Ordenador de sobremesa para trabajar en el proyecto en casa & 1.828,65 €         \\
-    \hline
-    Lenovo Legion Y540 & Ordenador portátil para realizar el proyecto fuera de casa  & 1.234,91€          \\
-    \hline
-    \textbf{Total}     &                                                             & \textbf{3063,56 €} \\
-    \hline
-  \end{tabular}
+\renewcommand{\arraystretch}{1.8}
+\begin{longtable}{|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{5cm}|>{\centering\arraybackslash}p{5cm}|}
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Producto}  & \textbf{Descripción}                                        & \textbf{Coste}      \\
+  \hline
+  \endfirsthead
+
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Producto}  & \textbf{Descripción}                                        & \textbf{Coste}      \\
+  \hline
+  \endhead
+
+  \endfoot
+
+  \endlastfoot
+
+  PC                 & Ordenador de sobremesa para trabajar en el proyecto en casa & 1.828,65 €          \\
+  \hline
+  Lenovo Legion Y540 & Ordenador portátil para realizar el proyecto fuera de casa  & 1.234,91 €          \\
+  \hline
+  \textbf{Total}     &                                                             & \textbf{3.063,56 €} \\
+  \hline
   \caption{Costes de material}
   \label{tab:costes-material}
-\end{table}
+\end{longtable}
 
 \section{Software, licencias y otros servicios}
 
-Este tipo de costes engloban gastos en herramientas, licencias y otros servicios necesarios. Para este proyecto se ha recurrido al uso de herramientas gratuitas o de código abierto, exceptuando el uso de de un modelo de inteligencia artificial generativa de Anthropic.
+Este tipo de costes engloban gastos en herramientas, licencias y otros servicios necesarios. Para este proyecto se ha recurrido al uso de herramientas gratuitas o de código abierto, exceptuando el uso de de un modelo de inteligencia artificial generativa de Anthropic. El precio que se muestra sobre el coste de los tokens de Anthropic, son los relativos a la primera recarga de estos. Es necesario mencionar que son un gasto recurrente, es decir, una vez se agotan es necesario comprar más para poder seguir utilizando esta inteligencia artificial generativa.
 
-\begin{table}[ht]
-  \centering
-  \renewcommand{\arraystretch}{1.8}
-  \begin{tabular}{|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{5cm}|>{\centering\arraybackslash}p{5cm}|}
-    \hline
-    \rowcolor{headerblue}
-    \textbf{Producto} & \textbf{Descripción}                                                                      & \textbf{Coste}  \\
-    \hline
-    Antigravity IDE   & Entorno de desarrollo utilizado en el proyecto                                            & 0 €             \\
-    \hline
-    MySQL Workbench   & Interfaz gráfica para bases de datos MySQL                                                & 0 €             \\
-    \hline
-    Docker Desktop    & Interfaz gráfica para Docker                                                              & 0 €             \\
-    \hline
-    GitHub Desktop    & Interfaz gráfica para hacer uso de git                                                    & 0 €             \\
-    \hline
-    Draw.io           & Herramienta para elaborar los diagramas                                                   & 0 €             \\
-    \hline
-    Figma             & Herramienta para el diseño de pantallas                                                   & 0 €             \\
-    \hline
-    Inkscape          & Herramienta para dibujar imágenes vectoriales                                             & 0 €             \\
-    \hline
-    Tokens Anthropic  & Tokens de Anthropic para tener acceso a sus modelos de inteligencia artificial generativa & 5,31 €          \\
-    \hline
-    \textbf{Total}    &                                                                                           & \textbf{5,31 €} \\
-    \hline
-  \end{tabular}
+\renewcommand{\arraystretch}{1.8}
+\begin{longtable}{|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{5cm}|>{\centering\arraybackslash}p{5cm}|}
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Producto} & \textbf{Descripción}                                                                      & \textbf{Coste}  \\
+  \hline
+  \endfirsthead
+
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Producto} & \textbf{Descripción}                                                                      & \textbf{Coste}  \\
+  \hline
+  \endhead
+
+  \endfoot
+
+  \endlastfoot
+
+  Antigravity IDE   & Entorno de desarrollo utilizado en el proyecto                                            & 0 €             \\
+  \hline
+  MySQL Workbench   & Interfaz gráfica para bases de datos MySQL                                                & 0 €             \\
+  \hline
+  Docker Desktop    & Interfaz gráfica para Docker                                                              & 0 €             \\
+  \hline
+  GitHub Desktop    & Interfaz gráfica para hacer uso de git                                                    & 0 €             \\
+  \hline
+  Draw.io           & Herramienta para elaborar los diagramas                                                   & 0 €             \\
+  \hline
+  Figma             & Herramienta para el diseño de pantallas                                                   & 0 €             \\
+  \hline
+  Inkscape          & Herramienta para dibujar imágenes vectoriales                                             & 0 €             \\
+  \hline
+  Team Gantt        & Herramienta para dibujar diagrama de Gantt                                                & 0 €             \\
+  \hline
+  Tokens Anthropic  & Tokens de Anthropic para tener acceso a sus modelos de inteligencia artificial generativa & 5,31 €          \\
+  \hline
+  \textbf{Total}    &                                                                                           & \textbf{5,31 €} \\
+  \hline
   \caption{Costes de software, licencias y otros servicios}
   \label{tab:costes-software}
-\end{table}
+\end{longtable}
+
+\section{Costes totales}
+
+Una vez estimados los costes de mano de obra, los costes de material y los costes de software, licencias y otros servicios, es necesario calcular la estimación de costes totales del proyecto, mostrados en la siguiente tabla:
+
+\renewcommand{\arraystretch}{1.8}
+\begin{longtable}{|>{\centering\arraybackslash}p{5.5cm}|>{\centering\arraybackslash}p{5.5cm}|}
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Tipo de coste}                          & \textbf{Estimación}  \\
+  \hline
+  \endfirsthead
+
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Tipo de coste}                          & \textbf{Estimación}  \\
+  \hline
+  \endhead
+
+  \endfoot
+
+  \endlastfoot
+
+  Costes de mano de obra                          & 9.825 €              \\
+  \hline
+  Costes de material                              & 3.063,56 €           \\
+  \hline
+  Costes de software, licencias y otros servicios & 5,31 €               \\
+  \hline
+  \textbf{Total}                                  & \textbf{12.893,87 €} \\
+  \hline
+  \caption{Costes totales del proyecto}
+  \label{tab:costes-totales}
+\end{longtable}
 
 \chapter{Desarrollo del proyecto}
 
@@ -630,21 +769,21 @@ A continuación se muestran algunos ejemplos del diseño de las pantallas de la 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.75\textwidth]{imgs/pantallaRegistro.png}
+  \includegraphics[width=0.9\textwidth]{imgs/pantallaRegistro.png}
   \caption{Prototipo de pantalla de registro}
   \label{fig:pantalla-registro}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
   \centering
-  \includegraphics[width=0.75\textwidth]{imgs/pantallaPartidos.png}
+  \includegraphics[width=0.9\textwidth]{imgs/pantallaPartidos.jpeg}
   \caption{Prototipo de pantalla de partidos}
   \label{fig:pantalla-partidos}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.75\textwidth]{imgs/pantallaConvocatoriasJugador.png}
+  \includegraphics[width=0.9\textwidth]{imgs/pantallaConvocatoriasJugador.png}
   \caption{Prototipo de pantalla de convocatorias de jugador}
   \label{fig:pantalla-convocatorias-jugador}
 \end{figure}
@@ -662,50 +801,52 @@ Al tratarse de una solución web, es posible que los usuarios accedan a ella des
 
 \subsection{Maven}
 
-Maven es una herramienta de gestión de proyectos de proyectos software. Se ha utilizado en este proyecto para automatizar la compilación y construcción de la parte servidora del proyecto. Además ha ayudado ha gestionar las dependencias del proyecto, asegurando las distintas dependencias necesarias para que la parte backend del proyecto funcione correctamente.
+Maven es una herramienta de gestión de proyectos de proyectos software. Se ha utilizado en este proyecto para automatizar la compilación y construcción de la parte servidora del proyecto. Además ha ayudado ha gestionar las dependencias del proyecto, asegurando las distintas dependencias necesarias para que la parte backend del proyecto funcione correctamente. \cite{apache-maven}
 
 \subsection{Spring Boot}
 
-Spring Boot es un framework basado en el framework Spring que facilita el desarrollo de aplicaciones web. En este proyecto se ha utilizado para desarrollar la parte servidora de la aplicación web, encargada de gestionar las distintas funcionalidades que ofrece la aplicación.
+Spring Boot es un framework basado en el framework Spring que facilita el desarrollo de aplicaciones web. En este proyecto se ha utilizado para desarrollar la parte servidora de la aplicación web, encargada de gestionar las distintas funcionalidades que ofrece la aplicación. \cite{springboot}
 
 \subsection{React}
 
-React es una biblioteca de JavaScript diseñada para el desarrollo de interfaces web. En este proyecto se ha utilizado para desarrollar la parte cliente de la solución, que se encarga de mostrar los datos proporcionados por la parte servidora de una forma visual y agradable para el usuario.
+React es una biblioteca de JavaScript diseñada para el desarrollo de interfaces web. En este proyecto se ha utilizado para desarrollar la parte cliente de la solución, que se encarga de mostrar los datos proporcionados por la parte servidora de una forma visual y agradable para el usuario. \cite{react}
 
 \subsection{MySQL}
 
-MySQL es un sistema de gestión de bases de datos relacionales de código abierto. Se ha utilizado en este proyecto para gestionar los datos de los que hace uso la solución web.
+MySQL es un sistema de gestión de bases de datos relacionales de código abierto. Se ha utilizado en este proyecto para gestionar los datos de los que hace uso la solución web. \cite{mysql}
 
 \subsection{Docker}
 
-Docker es una plataforma de contenedores que permite empaquetar una aplicación en un contenedor junto con todas sus dependencias. Se ha utilizado para crear contenedores con cada uno de los servicios del proyecto y orquestar su ejecución con Docker Compose.
+Docker es una plataforma de contenedores que permite empaquetar una aplicación en un contenedor junto con todas sus dependencias. Se ha utilizado para crear contenedores con cada uno de los servicios del proyecto y orquestar su ejecución con Docker Compose. \cite{docker}
+
+Cabe destacar que para hacer uso de Docker en Windows, se ha utilizado Docker Desktop, una interfaz gráfica de Docker que facilita su uso en este sistema operativo. \cite{docker-desktop}
 
 \subsection{GitHub Desktop}
 
-GitHub Desktop es una interfaz gráfica para GitHub que permite gestionar los repositorios de GitHub. Se ha utilizado para gestionar las versiones del proyecto y a la vez asegurar que el código del proyecto no se pierde almacenándolo en la nube de GitHub.
+GitHub Desktop es una interfaz gráfica para GitHub que permite gestionar los repositorios de GitHub. Se ha utilizado para gestionar las versiones del proyecto y a la vez asegurar que el código del proyecto no se pierde almacenándolo en la nube de GitHub. \cite{github-dektop}
 
 \subsection{Antigravity IDE}
 
-Antigravity IDE es un entorno de desarrollo muy similar a Visual Studio Code. Lo que lo diferencia de él es que está integrado con herramientas de inteligencia artificial para apoyar el desarrollo del proyecto cuando el usuario lo desee. Ha sido el software con el que se ha desarrollado el proyecto.
+Antigravity IDE es un entorno de desarrollo muy similar a Visual Studio Code. Lo que lo diferencia de él es que está integrado con herramientas de inteligencia artificial para apoyar el desarrollo del proyecto cuando el usuario lo desee. Ha sido el software con el que se ha desarrollado el proyecto. \cite{antigravity-ide}
 
 \subsection{Figma}
 
-Figma es una herramienta de diseño colaborativo para interfaces web. Se ha hecho uso de ella para diseñar la parte de interfaces de usuario, personalizada para el club deportivo de referencia.
+Figma es una herramienta de diseño colaborativo para interfaces web. Se ha hecho uso de ella para diseñar la parte de interfaces de usuario, personalizada para el club deportivo de referencia. \cite{figma}
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=1.0\textwidth]{imgs/figma.jpeg}
+  \includegraphics[width=1.0\textwidth]{imgs/figma.png}
   \caption{Editor de Figma}
   \label{fig:figma}
 \end{figure}
 
 \subsection{Draw.io}
 
-Draw.io es una herramienta online diseñada para crear diagramas. Se ha utilizado en el proyecto para definir la arquitectura del mismo.
+Draw.io es una herramienta online diseñada para crear diagramas. Se ha utilizado en el proyecto para definir la arquitectura del mismo. \cite{draw-io}
 
 \subsection{Inkscape}
 
-Inkscape es una herramienta de diseño vectorial de código abierto. En este proyecto, se ha utilizado para crear la imagen de logo de equipo por defecto y la imagen de jugador por defecto.
+Inkscape es una herramienta de diseño vectorial de código abierto. En este proyecto, se ha utilizado para crear la imagen de logo de equipo por defecto y la imagen de jugador por defecto. \cite{inkscape}
 
 \begin{figure}[htbp]
   \centering
@@ -714,20 +855,341 @@ Inkscape es una herramienta de diseño vectorial de código abierto. En este pro
   \label{fig:inkscape}
 \end{figure}
 
+\subsection{Team Gantt}
+
+Team Gantt es una herramienta para crear diagramas de Gantt. Se ha utilizado en el proyecto para crear el diagrama de este documento. \cite{team-gantt}
+
+\subsection{Claude Sonnet 4.5}
+
+Claude Sonnet 4.5 es un modelo de inteligencia artificial generativa desarrollado por Anthropic. Se ha utilizado en este proyecto como modelo que utiliza el módulo inteligente para generar las recomendaciones de áreas a entrenar. \cite{claude}
+
+\subsection{React Icons}
+
+React Icons es una biblioteca de iconos para React. Se ha utilizado en este proyecto para mostrar iconos en la interfaz de usuario. \cite{react-icons}
+
 \section{Consideraciones sobre la implementación}
 
 \section{Plan de pruebas}
+
+El plan de pruebas es una parte esencial de los proyectos de desarrollo de software. Permite verificar y comprobar el resultado del proyecto, al igual que sus módulos y funcionalidades individualmente o de forma integrada. Para este proyecto, se ha llevado a cabo un plan que contiene tres tipos de pruebas diferentes: pruebas unitarias, pruebas de integración y pruebas de validación.
+
+\subsection{Pruebas unitarias}
+
+Las pruebas unitarias son pruebas que se realizan sobre una unidad individual, como un método o una funcionalidad. En este proyecto se han realizado pruebas unitarias para verificar el correcto funcionamiento de cada funcionalidad por separado. Estas han sido las pruebas unitarias realizadas:
+
+\subsubsection{Registro de usuarios}
+
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PU-01:] Un usuario puede registrarse correctamente
+  \item[PU-02:] Un usuario no puede registrarse con un nombre de usuario ya existente
+  \item[PU-03:] Un usuario no puede registrarse si su correo electrónico no está registrado en el club
+\end{description}
+
+\subsubsection{Inicio de sesión}
+
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PU-04:] Un usuario puede iniciar sesión correctamente
+  \item[PU-05:] Un usuario no puede no puede iniciar sesión con credenciales incorrectas
+  \item[PU-06:] Un usuario puede iniciar sesión correctamente mediante Google
+  \item[PU-07:] Un usuario cuyo correo electrónico no está registrado en el club no puede iniciar sesión mediante Google
+  \item[PU-08:] Un usuario puede cerrar sesión con normalidad
+\end{description}
+
+\subsubsection{Visualización de partidos de la temporada}
+
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PU-09:] Un usuario puede ver la lista de partidos correctamente con todos sus datos: equipos, goles y fecha y hora
+\end{description}
+
+\subsubsection{Visualización de estadísticas}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PU-10:] Un usuario visualiza todos los jugadores de la plantilla del equipo
+  \item[PU-11:] Un usuario puede acceder a las estadísticas de cualquier jugador del equipo correctamente con todos sus datos: goles, asistencias, tarjetas, partidos jugados, minutos jugados, etc.
+  \item[PU-12:] Un usuario puede visualizar las estadísticas del equipo
+\end{description}
+
+\subsubsection{Convocatorias}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PU-13:] Un entrenador puede acceder a un partido próximo
+  \item[PU-14:] Un entrenador puede convocar jugadores de entre los disponibles en la plantilla
+  \item[PU-15:] Un jugador puede acceder a un partido al que ha sido convocado
+  \item[PU-16:] Un jugador puede confirmar asistencia o no asistencia al partido
+  \item[PU-17:] Un usuario puede visualizar la asistencia o no asistencia de los jugadores al partido
+\end{description}
+
+\subsubsection{Seguimiento de partidos}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PU-18:] Un entrenador puede acceder a la pantalla de seguimiento de partido, mientras que un jugador no
+  \item[PU-19:] El entrenador puede anotar las estadísticas del equipo durante el partido
+  \item[PU-20:] El entrenador puede apuntar las estadísticas de cada jugador durante el partido
+  \item[PU-21:] El entrenador puede anotar las incidencias del partido respectivas al equipo: goles, faltas y tiempos muertos
+  \item[PU-22:] El entrenador puede seleccionar el jugador que ha marcado y el jugador que ha realizado la asistencia, además de introducir el minuto y segundo del partido en el que se ha producido el gol, en el caso del equipo propio
+  \item[PU-23:] El entrenador puede seleccionar el jugador que ha hecho una falta, indicando los minutos de sanción y el minuto y segundo del partido en el que se ha producido, en el caso del equipo propio
+  \item[PU-24:] El entrenador puede seleccionar el minuto y segundo del partido en el que el equipo rival ha marcado un gol
+  \item[PU-25:] El entrenador puede seleccionar el minuto y segundo del partido en el que el equipo rival ha cometido una falta, además del tipo de falta cometida y los minutos de sanción
+  \item[PU-26:] El entrenador puede seleccionar el minuto y segundo del partido en el que cualquiera de los dos equipos ha solicitado un tiempo muerto
+  \item[PU-27:] El entrenador puede seleccionar el periodo del partido que está siendo disputado
+  \item[PU-28:] El entrenador puede finalizar el partido si el periodo seleccionado no es el periodo uno
+\end{description}
+
+\subsubsection{Módulo inteligente de recomendaciones}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PU-29:] Se envían mensajes al modelo de inteligencia artificial y su respuesta es recibida correctamente.
+  \item[PU-30:] La respuesta del modelo es almacenada y mostrada correctamente
+\end{description}
+
+\subsubsection{Foro de mensajes}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PU-31:] Un usuario puede ver los temas disponibles y seleccionar uno
+  \item[PU-32:] Un usuario puede acceder a uno de los debates disponibles en el tema seleccionado
+  \item[PU-33:] Un usuario puede visualizar todos los mensajes de ese debate
+  \item[PU-34:] Un usuario puede publicar mensajes en el foro. Haya iniciado sesión con su cuenta de usuario o mediante Google
+\end{description}
+
+\subsubsection{Pedidos de material}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PU-35:] Un entrenador puede crear pedidos de materialcorrectamente, indicando la fecha y hora límite y el tipo de pedido
+  \item[PU-36:] Un jugador puede pedir material en un pedido
+  \item[PU-37:] Un jugador no puede pedir material si no hay ningún pedido activo
+  \item[PU-38:] Un jugador no puede pedir material si el pedido ha expirado
+  \item[PU-39:] Un entrenador descarga un fichero excel correctamente con la información del pedido
+  \item[PU-40:] Un entrenador no puede crear un nuevo pedido hasta haber descargado el fichero excel del anterior pedido
+\end{description}
+
+\subsection{Pruebas de integración}
+
+Las pruebas de integración son pruebas en las que se comprueba el correcto funcionamiento en grupo de funcionalidades individuales para evaluar su interacción. En este proyecto se han realizado pruebas de integración para verificar la correcta interacción de funcionalidades que guardan alguna relación o dependencia. Estas han sido las pruebas de integración realizadas:
+
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=2.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PI-01:] Creación de cuenta de usuario e inicio de sesión
+  \item[PI-02:] Seguimiento de partido y actualización automática de estadísticas de jugadores y del equipo al finalizarlo
+  \item[PI-03:] Correcto envío de estadísticas del partido al módulo inteligente de recomendaciones y posterior visualización de las mismas
+  \item[PI-04:] Aparición de únicamente jugadores convocados al partido en la pantalla de seguimiento de éste
+  \item[PI-05:] Prueba del flujo completo de uso de la solución
+\end{description}
+
+\subsection{Pruebas de validación}
+
+Las pruebas de validación sirven para verificar que el resultado final cumple con los requisitos funcionales y no funcionales que se han especificado. Estas han sido las pruebas de validación realizadas en etse proyecto:
+
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=2.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PV-01:] Correcta navegación entre pantallas y uso cómodo e intuitivo de la solución
+  \item[PV-02:] Correcta adaptación de la solución a diferentes tamaños de pantallas
+\end{description}
+
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=2.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PI-01:] Creación de cuenta de usuario e inicio de sesión
+  \item[PI-02:] Seguimiento de partido y actualización automática de estadísticas de jugadores y del equipo al finalizarlo
+  \item[PI-03:] Correcto envío de estadísticas del partido al módulo inteligente de recomendaciones y posterior visualización de las mismas
+  \item[PI-04:] Aparición de únicamente jugadores convocados al partido en la pantalla de seguimiento de éste
+  \item[PI-05:] Prueba del flujo completo de uso de la solución
+\end{description}
 
 \section{Incidencias del proyecto}
 
 \chapter{Manual de usuario}
 
+\section{Prerrequisitos}
+
+Para poder acceder y hacer uso de la solución, es necesario cumplir unos requisitos previos:
+
+\begin{itemize}
+  \item Disponer de conexión a internet, ya sea inalámbrica o cableada.
+  \item Disponer de un dispositivo capaz de conectarse a la red de internet y que cuente con acceso a un navegador.
+  \item Pertenecer al club deportivo.
+\end{itemize}
+
+\section{Registro e inicio de sesión}
+
+Una vez el usuario haya accedido a la solución desde su navegador, se le mostrarla una pantalla como esta, con el objetivo de que inicie sesión en la aplicación.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{imgs/login.jpeg}
+  \caption{Pantalla de inicio de sesión}
+  \label{fig:login}
+\end{figure}
+
+Si el usuario no dispone de una cuenta con la que poder acceder a la aplicación, podrá iniciar sesión con Google, aunque la solución permitirá el acceso únicamente a los correos electrónicos que formen parte del club deportivo.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{imgs/usuario_no_autorizado.jpeg}
+  \caption{Pantalla de usuario no autorizado}
+  \label{fig:usuario_no_autorizado}
+\end{figure}
+
+Si por el contrario, el usuario desea registrarse en la aplicación y crear una cuenta con la que poder acceder a ella, podrá hacer clic en el enlace que dice "¿No tienes una cuenta? Crea una.". Esto, le redirigirá a la siguiente pantalla:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{imgs/registro.jpeg}
+  \caption{Pantalla de registro}
+  \label{fig:registro}
+\end{figure}
+
+En este formulario, el usuario podrá crearse una cuenta con la que acceder posteriormente a la aplicación. Aunque, al igual que con el inicio de sesión con Google, la solcuión solo permitirá el registro de cuentas a los correos electrónicos pertenecientes al club deportivo.
+
+Una vez se dispone de una cuenta de usuario o de un correo electrónico registrado en el club, se concederá acceso a la solución web. Dependiendo de si el usuario es entrenador o no, estará autorizado a realizar ciertas acciones. Para facilitar la lectura y la comprensión de este manual de usuario se separarán ambos roles: entrenador y jugador.
+
+\section{Entrenador}
+
+\section{Jugador}
+
 \chapter{Valoración ética del proyecto}
+
+Esta solución web para gestionar un equipo deportivo presenta varias consideraciones éticas que deben ser evaluadas. La tecnología conlleva avances, beneficios y consecuencias positivas, aunque si la analizamos con detalle, nos daremos cuenta que, a la vez, presenta consecuencias negativas. Por esta razón, se considera estrictamente necesario hacer un análisis ético de la realización de este proyecto.
+
+\section{Justificación ética del proyecto}
+
+Antes de empezar con dichas consideraciones, resulta imprescindible realizar el cuestionamiento del fin de este proyecto. Éste puede ser analizado desde dos perspectivas distinas: la racionalidad ética y la racionalidad lógico-instrumental. La racionalidad ética es la capacidad de los seres humanos para evaluar acciones y tomar decisiones basándose en principios morales. Mientras que la racionalidad lógico-instrumental es una forma de pensar de los seres humanos que prioriza la eficacia, la utilidad y el cálculo, se enfoca en los medios para lograr un fin. Es decir, la racionalidad ética responde a la pregunta de "¿Por qué debe realizarse este proyecto?" mientras que la racionalidad lógico-instrumental responde a la pregunta de "¿Cómo voy a realizar este proyecto?" (técnicamente, desde una visión ingenieril). Debido al carácter ético de este capítulo y la naturaleza del apartado, me centraré en responder únicamente a la primera pregunta.
+
+\textbf{Racionalidad ética - ¿Por qué debe realizarse este proyecto?}
+
+El objetivo principal de este proyecto es hacer de la gestión de un equipo deportivo un proceso sencillo y ameno, además de proporcionar herramientas que promuevan el crecimiento deportivo de cada jugador y del equipo equipo como conjunto. Pero esto va mucho más allá.
+
+En primer lugar, el origen de este proyecto es, por una parte, académico, ya que surgió para realizarse como Proyecto Fin de Grado. Por otra parte, su origen también se debe a una necesidad real que pude detectar yo mismo. Como ingeniero, considero que la identificación de una necesidad como esta es una oportunidad para aplicar y poner en práctica mis conocimientos y aportar valor a otras personas. Por ello, la detección de este problema y los resultados positivos que podía conllevar el desarrollo de la solución fue una motivación para desarrollarla.
+
+En segundo lugar, la realización de este proyecto aporta una mejora en la experiencia y en el día a día de las personas con las que comparto un espacio deportivo, haciendo que la organización y coordinación del equipo mejore. Esto encaja perfectamente con el principio ético de la beneficiencia, que dicta actuar de tal manera que se busque el bienestar de todas las personas implicadas. La solución web es el medio por el que se conseguirá el fin, el bienestar del equipo. En este caso, el bienestar se traduce en una mejor comunicación, una mejor organización y una mejor coordinación del equipo.
+
+Por último, cabe mencionar el principio de no maleficiencia. Éste dicta no hacer ningún daño a los usuarios y evitar causarles riesgos innecesarios. La gestión de los distintos equipos del club se realiza con varias aplicaciones diferentes y ninguna de ellas reduce o evita errores humanos. Gracias a esta solución, se reduce significativamente el riesgo de errores humanos, ya que se automatizan muchas de las tareas que antes se realizaban manualmente.
+
+\section{Consideraciones éticas}
+
+Después de la justificación ética del proyecto, es conveniente evaluar las consideraciones éticas que aparecen en el mismo, tanto positivas como negativas.
+
+\subsection{Positivas}
+
+\textbf{Promoción del valor de la excelencia}
+
+Esta solución, además de centralizar los procesos de gestión más importantes del equipo deportivo en una sola aplicación, promueve el valor de la excelencia a través de su módulo inteligente. Como ya se ha mencionado anteriormente en este documento, este módulo proporciona áreas a entrenar basándose en las estadísticas recogidas en los partidos. Esto, promueve que los jugadores, tanto individualmente como en equipo, aspiren a mejorar, crezcan deportivamente y se formen como atletas para llegar a lo más alto deportivamente hablando.
+
+\textbf{Fomento de justicia}
+
+La solución web ayuda a recoger y almacena las estadísticas de los jugadores y del equipo. Las estadísticas son datos objetivos que permiten realizar un seguimiento del rendimiento deportivo de cada jugador y del equipo en general. Esto permite realizar un análisis objetivo de los puntos fuertes y débiles, y tomar decisiones basadas en estos datos. El hecho de que las decisiones se basen en datos objetivos hace que se fomente la justicia, ya que el entrenador podrá decidir a qué jugador convocar y qué jugador no, además de decidir cuántos minutos de juego proporcionar a cada jugador. Todo ello gracias a estadísticas objetivas.
+
+\textbf{Transparencia en las decisiones}
+
+En relación al apartado anterior, esas estadísticas están disponibles y visibles para todos los integrantes del equipo, tanto jugadores como entrenadores. Esto fomenta la transparencia, ya que permite que los jugadores conozcan la información utilizada por parte del entrenador para tomar sus decisiones.
+
+\subsection{Negativas}
+
+\textbf{Privacidad de datos}
+
+La privacidad de los datos de los usuarios es fundamental en el desarrollo de soluciones web. En este proyecto se recogen datos de los usuarios de caracter personal como su nombre y apellidos, correo electrónico, fecha de nacimiento, el dorsal del equipo, número de teléfono y fotografía.
+
+Además, las estadísticas de los jugadores recogidas en los partidos se envían a un modelo de inteligencia artificial comercial, y se debe tener cuidado con eso.
+
+\textbf{Dependencia excesiva}
+
+Esta solución proporciona gran ayuda a la hora de gestionar el equipo deportivo y tomar decisiones sobre los jugadores mediante las estadísticas. Se debe tener especial cuidado con el último aspecto mecionado. Esta solución debe servir de apoyo a las decisiones, nunca como única herramienta o instrumento para decidir.
+
+\textbf{Sesgos de la inteligencia artificial}
+
+La inteligencia artificial generativa no es perfecta, y no sabemos si en algún momento llegará a serlo. Por ello, siempre existe el riesgo de que se cometan errores. En el caso de las aplicaciones de inteligencia artificial, esto significa que en algún momento podrían generar información poco precisa o sesgada. En el caso de este proyecto, el módulo inteligente podría producir este tipo de respuestas indeseadas, por lo que se debe tener especial cuidado a la hora de tomar decisiones basándose en estas recomendaciones. Siempre debe haber supervisión humana.
+
+\subsection{Soluciones para las consideraciones negativas}
+
+Aunque las consideraciones éticas negativas descritas anteriormente presentan riesgos asociados al uso de la solución, nginuna de ellas impide su utilización. No obstante, es necesario tenerlas en cuenta y reaccionar para reducir o eliminar los riesgos que suponen.
+
+\begin{enumerate}
+  \item \textbf{Privacidad de datos:} No es posible la omisión de recopilación de los datos de usuarios mecionados anteriormente, ya que son necesarios para el correcto funcionamiento de la solución. Sin embargo, se recogen únicamente los datos estrictamente necesarios para que la aplicación pueda funcionar. Además, existen mecanismos de autenticación y autorización para controlar el acceso a esos datos. Solo los integrantes del club disponen de ese acceso. También cabe mencionar que las estadísticas enviadas al modelo de inteligencia artificial para obtener las recomendaciones son anonimizadas antes de ser enviadas. Los nombre de cada jugador se convierten en ids, así el modelo solo verá números, lo que reduce el riesgo de filtración de datos personales.
+  \item \textbf{Dependencia excesiva:} Al ser una herramienta de apoyo a las decisiones del entrenador, se debe tener especial cuidado con este aspecto. Para reducir el riesgo, la aplicación no implementa de ningún sistema que recomiende o automatice la toma de decisiones, solo ofrece datos objetivos para apoyar al entrenador en sus propias decisiones.
+  \item \textbf{Sesgos de la inteligencia artificial:} Para reducir el riesgo de sesgos por parte de la inteligencia artificial, se ha ajustado el \textit{prompt} del modelo de tal forma que únicamente proporciona recomendaciones basadas en datos objetivos. En ningún momento toma decisiones de forma autónoma.
+\end{enumerate}
+
+Podemos confirmar que mediante la aplicación de distinas decisiones de diseño, se ha conseguido reducir y eliminar los riesgos que podría tener esta solución web sin afectar a los beneficios que aporta.
 
 \chapter{Conclusiones y trabajo futuro}
 
 \section{Conclusiones}
 
+Tras finalizar el desarrollo del proyecto, se han logrado cumplir todos los objetivos propuestos. La solución final implementa todas las funcionalidades, requisitos funcionales y no funcionales especificados, y funciona a la perfección. Esto demuestra que mediante una planificación acertada, una metodología que permita flexibilidad y un alcance bien definido es posible lograr un resultado completo y funcional incluso con herramientas gratuitas y de código abierto.
+
+De todas las funcionalidades desarrolladas, el módulo inteligente de recomendaciones es el más destacable y característico de la solución, ya que eleva la gestión del equipo deportivo a un nivel superior. Integrar la inteligencia artificial como un elemento más en la gestión deportiva del entrenador ayuda a que este no pase por alto aspectos que sin su apoyo podría pasar, y hacer que sus jugadores y su equipo crezcan más y más rápido deportivamente.
+
+Por último, el hecho de que este proyecto aporte valor y ayude con una necesidad real de un equipo deportivo real ha sido una motivación importante y le da al proyecto un valor más allá de lo académico. No se trata de realizar un proyecto para cumplir con los requisitos mínimos de la asignatura. Se trata de una herramienta que tiene impacto directo en el día a día de los usuarios y que aporta valor real a sus vidas.
+
 \section{Trabajo futuro}
+
+\subsection{Publicación de la solución web}
+
+\subsection{Gestión de todos los equipos del club}
+
+\subsection{Implementación de nuevas ligas}
+
+\subsection{Mejora del sistema de recomendaciones}
 
 

@@ -7,18 +7,23 @@
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Monitorización de asistencia con Clupik}}{6}{figure.13}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Diagrama de Gannt con la planificación del proyecto}}{15}{figure.32}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Metodologías ágiles}}{17}{figure.36}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Arquitectura de la solución}}{28}{figure.60}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Primer diseño relacional de la base de datos}}{29}{figure.63}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Prototipo de pantalla de registro}}{30}{figure.66}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Prototipo de pantalla de partidos}}{31}{figure.68}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Prototipo de pantalla de convocatorias de jugador}}{31}{figure.70}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Prototipo de pantalla de login responsiva}}{32}{figure.72}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Editor de Figma}}{34}{figure.83}%
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Pantalla principal de Inkscape}}{35}{figure.87}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Arquitectura de la solución}}{24}{figure.58}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Primer diseño relacional de la base de datos}}{25}{figure.61}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Prototipo de pantalla de registro}}{26}{figure.64}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Prototipo de pantalla de partidos}}{27}{figure.66}%
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Prototipo de pantalla de convocatorias de jugador}}{27}{figure.68}%
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Prototipo de pantalla de login responsiva}}{28}{figure.70}%
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Editor de Figma}}{30}{figure.81}%
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Pantalla principal de Inkscape}}{31}{figure.85}%
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Pantalla de inicio de sesión}}{41}{figure.110}%
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Pantalla de usuario no autorizado}}{42}{figure.112}%
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Pantalla de registro}}{43}{figure.114}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \def \@chapapp {\appendixname }

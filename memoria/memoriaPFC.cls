@@ -124,6 +124,7 @@
 %% Cabecera y pie de página
 %% ------------------------------
 \clearpairofpagestyles
+\renewcommand*{\chapterpagestyle}{scrheadings}
 \ihead{}
 \chead{}
 \ohead{{\fontsize{8}{10}\selectfont\textit{PROYECTO FIN DE GRADO}}}  % Cabecera a la derecha
@@ -137,6 +138,7 @@
 %% ------------------------------
 \renewcommand{\frontmatter}{%
   \pagestyle{scrheadings}
+  \renewcommand*{\chapterpagestyle}{scrheadings}
   \pagenumbering{roman}
   \RedeclareSectionCommand[
     beforeskip=0pt,
@@ -149,6 +151,7 @@
 \renewcommand{\mainmatter}{%
   \cleardoublepage
   \pagestyle{scrheadings}
+  \renewcommand*{\chapterpagestyle}{scrheadings}
   \pagenumbering{arabic}
   \setcounter{secnumdepth}{5}
   \setcounter{tocdepth}{3}
