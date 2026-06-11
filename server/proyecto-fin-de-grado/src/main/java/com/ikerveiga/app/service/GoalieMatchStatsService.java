@@ -82,16 +82,19 @@ public class GoalieMatchStatsService {
     }
 
     public GoalieMatchStats getLastPlayedMatchGoalieMatchStats(long playerId) {
-        Match match = matchDAO.findPlayedMatchesBackwards().get(0);
+        List<Match> matches = matchDAO.findPlayedMatchesBackwards();
 
-        if (match == null) {
+        Match match;
+        if (matches == null || matches.isEmpty()) {
             match = new Match();
+        } else {
+            match = matches.get(0);
         }
 
         GoalieMatchStats goalieMatchStats = goalieMatchStatsDAO.findByMatchIdAndPlayerId(match.getId(), playerId);
 
         if (goalieMatchStats == null) {
-            return new GoalieMatchStats(null, match, 0, 0, 0, 0, 0);
+            goalieMatchStats = new GoalieMatchStats(null, match, 0, 0, 0, 0, 0);
         }
 
         return goalieMatchStats;

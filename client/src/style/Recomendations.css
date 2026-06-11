@@ -22,7 +22,7 @@
     display: none;
 }
 
-#logoImageDiv {
+#myTeamImageDiv {
     width: 200px;
     height: 180px;
     border: 2px solid rgb(7, 78, 200);
@@ -33,7 +33,7 @@
     margin-bottom: 20px;
 }
 
-#logoImage {
+#myTeamImage {
     width: 90%;
     height: 100%;
 }

@@ -9,7 +9,7 @@ export default function Forum() {
     const location = useLocation();
     const navigate = useNavigate();
 
-    const categories = ['LIGA PLATA', 'TEMAS COMUNES'];
+    const categories = ['LIGA PLATA', 'TRASLADO A PARTIDOS', 'TEMAS COMUNES'];
 
     const [debates, setDebates] = useState();
 
