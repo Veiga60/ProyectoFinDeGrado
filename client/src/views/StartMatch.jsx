@@ -262,6 +262,7 @@ export default function StartMatch() {
             '-Power play es lo contrario. El equipo contrario ha hecho una falta y tenemos superioridad numérica durante un tiempo.' +
             '-Penalty shot = tiro de penalti.' +
             'A TENER EN CUENTA' +
+            '-La respuesta en español' +
             '-No marcar gol en penalty kill es lo normal. Lo importante es que no te marquen. Siempre y cuando haya habido penalty killing.' +
             '-Un power play no lo genera el equipo. Falta del equipo contrario = power play.' +
             '-El power play merece ser mejorado si la eficacia es menor al 50%. 1 gol de 1 es perfecto. Si no ha habido power play, no nay nada que analizar' +

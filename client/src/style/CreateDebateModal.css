@@ -66,3 +66,15 @@
     align-items: center;
     justify-content: center;
 }
+
+.createDebateModalButton {
+    background-color: rgb(7, 78, 200);
+    border: none;
+    color: white;
+    border-radius: 12px;
+    height: 40px;
+    font-family: Inria Sans;
+    font-size: larger;
+    transition: 0.5s;
+    width: 20%;
+}
