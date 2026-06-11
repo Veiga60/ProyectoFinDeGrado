@@ -1210,6 +1210,57 @@ Para convocar a los jugadores, el entrenador puede hacer clic sobre ellos. Se mo
 
 Un entrenador puede acceder a esta sección cuando desea crear un nuevo pedido de material para los jugadores. Para ello deberá introducir la fecha y hora límite y el tipo de pedido.
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{imgs/pedidos_crear_nuevo.jpeg}
+  \caption{Creación de un nuevo pedido}
+  \label{fig:pedidos_crear_nuevo}
+\end{figure}
+
+El entrenador puede descargar un fichero excel que recoge toda la información del pedido. Si el entrenador intenta crear un nuevo pedido antes de descargar el fichero excel del último pedido del mismo tipo que ya ha expirado, la aplicación no se lo permitirá. Esto es una medida de seguridad para evitar perder la información del pedido.
+
+\subsubsection{Seguimiento de partido}
+
+El entrenador puede acceder a esta funcionalidad haciendo clic en el botón que dice "Empezar partido" de la pantalla de inicio. El entrenador navegará a la siguiente pantalla:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{imgs/pantalla_seguimiento_partido.jpeg}
+  \caption{Pantalla de seguimiento de partido}
+  \label{fig:pantalla_seguimiento_partido}
+\end{figure}
+
+En la alineación del partido aparecerán únicamente los jugadores que hayan confirmado su asistencia.
+
+Desde aquí, el entrenador es capaz de anotar las estadísticas de los jugadores y las del equipo, además de las incidencias del partido. También es capaz de seleccionar el periodo del partido que se está disputando en ese momento.
+
+Si hace clic en cualquiera de los jugadores de la alineación, podrá modificar sus estadísticas del partido.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{imgs/estadisticas_jugador_partido.jpeg}
+  \caption{Anotación de estadísticas de un jugador durante el partido}
+  \label{fig:estadisticas_jugador_partido}
+\end{figure}
+
+Para apuntar las estadísticas del equipo, deberá pulsar el botón que así lo dice. Eso le llevará a la siguiente pantalla:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{imgs/estadisticas_equipo_partido.jpeg}
+  \caption{Anotación de estadísticas del equipo durante el partido}
+  \label{fig:estadisticas_equipo_partido}
+\end{figure}
+
+El entrenador también puede apuntar las incidencias que ocurren a lo largo del partido: goles, faltas y tiempos muertos. Para ello, primero deberá pulsar el botón que dice "Incidencias" para navegar a la siguiente pantalla:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{imgs/pantalla_incidencias_partido.jpeg}
+  \caption{Pantalla de selección de incidencia a anotar}
+  \label{fig:incidencias_partido}
+\end{figure}
+
 \section{Jugador}
 
 \subsubsection{Convocatorias}
@@ -1231,6 +1282,19 @@ Una vez el jugador seleccione el partido al que ha sido convocado, podrá confir
   \caption{Confirmación de asistencia o falta de un jugador}
   \label{fig:convocatorias_confirmar_asistencia_falta}
 \end{figure}
+
+\subsubsection{Pedidos}
+
+Un jugador accederá a esta sección cuando desee pedir material. Si hay un pedido abierto por el entrenador, el jugador podrá completar los campos necesarios para pedir el material deseado. Puede moverse por los tipos de pedido con las pestañas de la pantalla.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{imgs/pedidos_pedir_material.jpeg}
+  \caption{Pedido de material por parte de un jugador}
+  \label{fig:pedidos_pedir_material}
+\end{figure}
+
+Si el pedido ya ha expirado, el jugador no podrá seguir pidiendo material en ese pedido.
 
 \chapter{Valoración ética del proyecto}
 

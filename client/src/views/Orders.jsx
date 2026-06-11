@@ -284,14 +284,17 @@ export default function Orders() {
                     withCredentials: true
                 });
 
-                await axios.put(`${SERVER_URL}/orders/${wheelNextOrder.id}`, {}, {
-                    params: {
-                        isExcelDownloaded: true
-                    },
-                    withCredentials: true
-                });
+                if (Date.now() > Date.parse(wheelNextOrder.deadline)) {
 
-                setWheelExcelDownloaded(true);
+                    await axios.put(`${SERVER_URL}/orders/${wheelNextOrder.id}`, {}, {
+                        params: {
+                            isExcelDownloaded: true
+                        },
+                        withCredentials: true
+                    });
+
+                    setWheelExcelDownloaded(true);
+                }
 
             } else if (orderType === 'STICKS') {
                 filename = 'pedido_sticks.xls';
@@ -309,14 +312,16 @@ export default function Orders() {
                     withCredentials: true
                 });
 
-                await axios.put(`${SERVER_URL}/orders/${stickNextOrder.id}`, {}, {
-                    params: {
-                        isExcelDownloaded: true
-                    },
-                    withCredentials: true
-                });
+                if (Date.now() > Date.parse(wheelNextOrder.deadline)) {
+                    await axios.put(`${SERVER_URL}/orders/${stickNextOrder.id}`, {}, {
+                        params: {
+                            isExcelDownloaded: true
+                        },
+                        withCredentials: true
+                    });
 
-                setStickExcelDownloaded(true);
+                    setStickExcelDownloaded(true);
+                }
             }
 
             const blob = new Blob([response.data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;' });
