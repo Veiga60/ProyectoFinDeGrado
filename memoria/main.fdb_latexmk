@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1781220539.98115 "main.aux" "main.bbl" "main" 1781221535.28653 0
+["bibtex main"] 1781223499.11098 "main.aux" "main.bbl" "main" 1781223507.48302 0
   "./referencias.bib" 1781190778 3189 09bb2aad9606282415a9e2a3c9c86fd6 ""
   "C:/Users/estib/AppData/Local/Programs/MiKTeX/bibtex/bst/ieeetran/IEEEtran.bst" 1440622569 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "main.aux" 1781221534 48471 6d944bffd97ea5b40ed2c9228c9eaae4 "pdflatex"
+  "main.aux" 1781223506 48471 3018101c21a54fda637e4562d2911298 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1781221528.27041 "d:/git/ProyectoFinDeGrado/memoria/main.tex" "main.pdf" "main" 1781221535.28747 0
+["pdflatex"] 1781223499.51757 "d:/git/ProyectoFinDeGrado/memoria/main.tex" "main.pdf" "main" 1781223507.48385 0
   "C:/Users/estib/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1781213343 170181 8951b8cb5539a64785ff7f3f4a941eab ""
   "C:/Users/estib/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1777657426 13350271 d8f330e574fc76ce037b86566181d7a7 ""
   "C:/Users/estib/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/sourcesans/a_44crgg.enc" 1772377178 3189 771b29eb6b50002b7080e180cebd0122 ""
@@ -152,7 +152,7 @@
   "C:/Users/estib/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "C:/Users/estib/AppData/Local/Programs/MiKTeX/tex/latex/xurl/xurl.sty" 1641733940 4675 e4b8c405820368c2dfb03526e16d725a ""
   "d:/git/ProyectoFinDeGrado/memoria/main.tex" 1781190778 4408 f33b0e6bc9e5316f42940ee9262b5da9 ""
-  "dummy.tex" 1781221527 92545 6ff2d98d629f0e0e9a098d3903932e8e ""
+  "dummy.tex" 1781223490 92678 e943e2bf54c22adf2ff31c679cabe5d6 ""
   "imgs/arquitectura.png" 1781000861 395580 d6ed7864a7c89b85f9427f3a4ffcf3de ""
   "imgs/clupik.png" 1781000861 117708 6b144de1e1aaa37c533cce3c49522c3d ""
   "imgs/convocatorias_asistencia_jugadores.jpeg" 1781212878 123338 5b61e640bc073ca6c06d9ec7b2c02b7b ""
@@ -184,18 +184,18 @@
   "imgs/pedidos_crear_nuevo.jpeg" 1781213197 59209 8e079f01f3067188c5ee2e2eecff2bf7 ""
   "imgs/pedidos_pedir_material.jpeg" 1781213934 130604 79c322391412926e925074c1d3e8fa71 ""
   "imgs/registro.jpeg" 1781190778 50194 5f5e490803d7d99eaf3ab6d35ab2b165 ""
-  "imgs/seguimiento_partido_incidencias.jpeg" 1781220466 138267 99b45e783b6b1496363b3c5504801d87 ""
+  "imgs/seguimiento_partido_incidencias.jpeg" 1781223484 138454 a7e23004d780cf34738f8c5c8fae66ba ""
   "imgs/sporteasy.png" 1781000861 247422 1986956eecd40a812e3c039a6d34a10c ""
   "imgs/sportmember.png" 1781000861 215620 5939ef8d0e8493912ee6f34de8bd8a5b ""
   "imgs/usuario_no_autorizado.jpeg" 1781190778 31385 31b1be65f48a22343b4e9e768f8dade2 ""
-  "main.aux" 1781221534 48471 6d944bffd97ea5b40ed2c9228c9eaae4 "pdflatex"
-  "main.bbl" 1781220540 3054 d03e7320afbbd69b6a5d99db43699ac2 "bibtex main"
-  "main.lof" 1781221534 4314 2fc670a1518d68ac93d7686a765b91d5 "pdflatex"
-  "main.lot" 1781221534 1038 20a17bcc8956d01099fdaf231d1c7663 "pdflatex"
+  "main.aux" 1781223506 48471 3018101c21a54fda637e4562d2911298 "pdflatex"
+  "main.bbl" 1781223499 3054 d03e7320afbbd69b6a5d99db43699ac2 "bibtex main"
+  "main.lof" 1781223506 4314 2fc670a1518d68ac93d7686a765b91d5 "pdflatex"
+  "main.lot" 1781223506 1038 20a17bcc8956d01099fdaf231d1c7663 "pdflatex"
   "main.tex" 1781190778 4408 f33b0e6bc9e5316f42940ee9262b5da9 ""
-  "main.toc" 1781221534 7245 d1b30a1b611b753db79f7cbec908651e "pdflatex"
+  "main.toc" 1781223506 7245 d1b30a1b611b753db79f7cbec908651e "pdflatex"
   "memoriaPFC.cls" 1781190778 7860 4aa90d43829d7267452f714154b1bd12 ""
-  "otras.aux" 1781221529 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "otras.aux" 1781223500 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "portada.pdf" 1780561101 109370 8eecd0a8ba6d1845ae3b6fc83dfedd96 ""
   (generated)
   "main.aux"

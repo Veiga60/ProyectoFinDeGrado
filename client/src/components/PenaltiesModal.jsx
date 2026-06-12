@@ -47,7 +47,7 @@ export default function PenaltiesModal({ teamPenalty, onClose, matchEvents, setM
         if (matchEvents == undefined) {
             newMatchEvents = [{ penalty: { team: teamPenalty, penaltyType: penaltyType, penaltyTime: penaltyTime, player: playerPenalty, matchTime: `${matchMinute}:${matchSecond}`, matchPeriod: location.state.matchPeriod } }];
         } else {
-            newMatchEvents = [...matchEvents, { penalty: { team: teamPenalty, penaltyType: penaltyType, penaltyTime: penaltyTime, player: playerPenalty, matchTime: `${matchMinute}:${matchSecond}` } }];
+            newMatchEvents = [...matchEvents, { penalty: { team: teamPenalty, penaltyType: penaltyType, penaltyTime: penaltyTime, player: playerPenalty, matchTime: `${matchMinute}:${matchSecond}`, matchPeriod: location.state.matchPeriod } }];
         }
         setMatchEvents(newMatchEvents);
     }

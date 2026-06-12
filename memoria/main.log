@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.5.1)  12 JUN 2026 01:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.5.1)  12 JUN 2026 02:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1401,10 +1401,6 @@ File: imgs/pedidos_crear_nuevo.jpeg Graphic file (type jpg)
 Package pdftex.def Info: imgs/pedidos_crear_nuevo.jpeg  used on input line 1215.
 (pdftex.def)             Requested size: 409.71692pt x 230.46095pt.
  [51 <./imgs/convocatorias_asistencia_jugadores.jpeg>]
-LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/regular/n' aliased to
-(Font)              `T1/SourceSansThree-TLF/m/n' on input line 1224.
-LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/m/n' will be
-(Font)              scaled to size 5.0pt on input line 1224.
 <imgs/pantalla_seguimiento_partido.jpeg, id=722, 1606.0pt x 903.375pt>
 File: imgs/pantalla_seguimiento_partido.jpeg Graphic file (type jpg)
 <use imgs/pantalla_seguimiento_partido.jpeg>
@@ -1437,19 +1433,19 @@ Package pdftex.def Info: imgs/seguimiento_partido_incidencias.jpeg  used on inpu
 <imgs/convocatorias_aviso_convocado.jpeg, id=750, 1606.0pt x 903.375pt>
 File: imgs/convocatorias_aviso_convocado.jpeg Graphic file (type jpg)
 <use imgs/convocatorias_aviso_convocado.jpeg>
-Package pdftex.def Info: imgs/convocatorias_aviso_convocado.jpeg  used on input line 1283.
+Package pdftex.def Info: imgs/convocatorias_aviso_convocado.jpeg  used on input line 1285.
 (pdftex.def)             Requested size: 409.71692pt x 230.46095pt.
  [56 <./imgs/seguimiento_partido_incidencias.jpeg>]
 <imgs/convocatorias_confirmar_asistencia_falta.jpeg, id=757, 1606.0pt x 903.375pt>
 File: imgs/convocatorias_confirmar_asistencia_falta.jpeg Graphic file (type jpg)
 <use imgs/convocatorias_confirmar_asistencia_falta.jpeg>
-Package pdftex.def Info: imgs/convocatorias_confirmar_asistencia_falta.jpeg  used on input line 1292.
+Package pdftex.def Info: imgs/convocatorias_confirmar_asistencia_falta.jpeg  used on input line 1294.
 (pdftex.def)             Requested size: 409.71692pt x 230.46095pt.
  [57 <./imgs/convocatorias_aviso_convocado.jpeg> <./imgs/convocatorias_confirmar_asistencia_falta.jpeg>]
 <imgs/pedidos_pedir_material.jpeg, id=764, 1606.0pt x 903.375pt>
 File: imgs/pedidos_pedir_material.jpeg Graphic file (type jpg)
 <use imgs/pedidos_pedir_material.jpeg>
-Package pdftex.def Info: imgs/pedidos_pedir_material.jpeg  used on input line 1303.
+Package pdftex.def Info: imgs/pedidos_pedir_material.jpeg  used on input line 1305.
 (pdftex.def)             Requested size: 409.71692pt x 230.46095pt.
  [58 <./imgs/pedidos_pedir_material.jpeg>]
 chapter 9.
@@ -1483,17 +1479,17 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 24247 strings out of 467691
- 459104 string characters out of 5414988
+ 24225 strings out of 467691
+ 458573 string characters out of 5414988
  1073276 words of memory out of 5000000
- 52420 multiletter control sequences out of 15000+600000
- 795167 words of font info for 237 fonts, out of 8000000 for 9000
+ 52407 multiletter control sequences out of 15000+600000
+ 784739 words of font info for 231 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  122i,21n,121p,11242b,952s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/estib/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-Bold.pfb><C:/Users/estib/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-It.pfb><C:/Users/estib/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-Regular.pfb>
-Output written on main.pdf (74 pages, 4627820 bytes).
+Output written on main.pdf (74 pages, 4627709 bytes).
 PDF statistics:
  1159 PDF objects out of 1200 (max. 8388607)
  280 named destinations out of 1000 (max. 500000)
- 66391 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 62295 words of extra memory for PDF output out of 74296 (max. 10000000)
 
