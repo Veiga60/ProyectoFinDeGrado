@@ -815,8 +815,12 @@
         width: 18%;
     }
 
-    #penaltyEventTimeText {
+    #penaltyEventPeriodText {
         font-size: small;
+    }
+
+    #penaltyEventTimeText {
+        font-size: medium;
         white-space: nowrap;
     }
 
@@ -830,7 +834,7 @@
     }
 
     #penaltyTeamImageDiv {
-        width: 40%;
+        width: 50%;
     }
 
     #penaltyTeamImageDivMyTeam {

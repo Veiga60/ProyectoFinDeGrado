@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react'
 import '../style/GoalsModal.css'
+import { useLocation } from 'react-router-dom';
 
 export default function GoalsModal({ teamGoal, onClose, matchEvents, setMatchEvents, match }) {
+
+    const location = useLocation();
 
     const [players, setPlayers] = useState([]);
     const [scorer, setScorer] = useState();
@@ -41,9 +44,9 @@ export default function GoalsModal({ teamGoal, onClose, matchEvents, setMatchEve
     const setGoal = (scorer, assister) => {
         let newMatchEvents;
         if (matchEvents == undefined) {
-            newMatchEvents = [{ goal: { team: teamGoal, scorer: scorer, assister: assister, matchTime: `${matchMinute}:${matchSecond}` } }];
+            newMatchEvents = [{ goal: { team: teamGoal, scorer: scorer, assister: assister, matchTime: `${matchMinute}:${matchSecond}`, matchPeriod: location.state.matchPeriod } }];
         } else {
-            newMatchEvents = [...matchEvents, { goal: { team: teamGoal, scorer: scorer, assister: assister, matchTime: `${matchMinute}:${matchSecond}` } }]
+            newMatchEvents = [...matchEvents, { goal: { team: teamGoal, scorer: scorer, assister: assister, matchTime: `${matchMinute}:${matchSecond}`, matchPeriod: location.state.matchPeriod } }]
         }
         setMatchEvents(newMatchEvents);
     }

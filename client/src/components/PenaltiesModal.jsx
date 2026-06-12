@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
 import '../style/PenaltiesModal.css'
+import { useLocation } from 'react-router-dom';
 
 export default function PenaltiesModal({ teamPenalty, onClose, matchEvents, setMatchEvents, match }) {
+
+    const location = useLocation();
 
     const [penaltyTime, setPenaltyTime] = useState(0);
     const [penaltyType, setPenaltyType] = useState('');
@@ -42,7 +45,7 @@ export default function PenaltiesModal({ teamPenalty, onClose, matchEvents, setM
     const setPenalty = () => {
         let newMatchEvents;
         if (matchEvents == undefined) {
-            newMatchEvents = [{ penalty: { team: teamPenalty, penaltyType: penaltyType, penaltyTime: penaltyTime, player: playerPenalty, matchTime: `${matchMinute}:${matchSecond}` } }];
+            newMatchEvents = [{ penalty: { team: teamPenalty, penaltyType: penaltyType, penaltyTime: penaltyTime, player: playerPenalty, matchTime: `${matchMinute}:${matchSecond}`, matchPeriod: location.state.matchPeriod } }];
         } else {
             newMatchEvents = [...matchEvents, { penalty: { team: teamPenalty, penaltyType: penaltyType, penaltyTime: penaltyTime, player: playerPenalty, matchTime: `${matchMinute}:${matchSecond}` } }];
         }

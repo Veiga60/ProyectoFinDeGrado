@@ -18,7 +18,7 @@ export default function TimeoutEvent({ matchPeriod, matchTime, team }) {
             <div id="timeoutEventDiv">
                 <div id="periodAndTimeDiv">
                     <div id="periodDiv">
-                        <p id="timeText">{matchTime}</p>
+                        <p id="timeoutEventTimeText">{matchTime}</p>
                     </div>
                     <div id="timeDiv">
                         <p id="periodText">{period}</p>

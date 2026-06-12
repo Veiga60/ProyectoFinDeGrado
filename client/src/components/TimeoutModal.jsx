@@ -1,8 +1,10 @@
 import { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import '../style/TimeoutModal.css'
 
 export default function TimeoutModal({ teamTimeout, onClose, matchEvents, setMatchEvents }) {
+
+    const location = useLocation();
 
     const [matchMinute, setMatchMinute] = useState('');
     const [matchSecond, setMatchSecond] = useState('');
@@ -10,9 +12,9 @@ export default function TimeoutModal({ teamTimeout, onClose, matchEvents, setMat
     const setTimeout = () => {
         let newMatchEvents;
         if (matchEvents == undefined) {
-            newMatchEvents = [{ timeout: { team: teamTimeout, matchTime: `${matchMinute}:${matchSecond}` } }];
+            newMatchEvents = [{ timeout: { team: teamTimeout, matchTime: `${matchMinute}:${matchSecond}`, matchPeriod: location.state.matchPeriod } }];
         } else {
-            newMatchEvents = [...matchEvents, { timeout: { team: teamTimeout, matchTime: `${matchMinute}:${matchSecond}` } }]
+            newMatchEvents = [...matchEvents, { timeout: { team: teamTimeout, matchTime: `${matchMinute}:${matchSecond}`, matchPeriod: location.state.matchPeriod } }]
         }
         setMatchEvents(newMatchEvents);
     }

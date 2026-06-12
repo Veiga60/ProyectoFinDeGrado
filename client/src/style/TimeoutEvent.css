@@ -17,6 +17,7 @@
     height: 100%;
     width: 20%;
     flex-shrink: 0;
+    margin-left: -6px;
 }
 
 #periodText {
@@ -28,13 +29,15 @@
     margin: 0;
     padding-left: 5px;
     padding-right: 5px;
+    font-size: small;
 }
 
-#timeText {
+#timeoutEventTimeText {
     margin: 0;
     color: black;
     font-family: Inria Sans;
     font-weight: bold;
+    font-size: medium;
 }
 
 #timeoutTeamImageDiv {

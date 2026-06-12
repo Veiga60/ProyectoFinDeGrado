@@ -22,8 +22,8 @@ export default function StartMatch() {
     const [matchEvents, setMatchEvents] = useState([]);
 
     const [match, setMatch] = useState();
-    const localTeamGoals = matchEvents?.filter((matchEvent) => (matchEvent.goal) ? ((String(matchEvent.goal.team.id) === String(match?.localTeam.id))) : (0)).length || 0;
-    const visitingTeamGoals = matchEvents?.filter((matchEvent) => (matchEvent.goal) ? ((String(matchEvent.goal.team.id) === String(match?.visitingTeam.id))) : (0)).length || 0;
+    const localTeamGoals = matchEvents?.filter((matchEvent) => (matchEvent.goal && matchEvent.goal.period != 'overtime') ? ((String(matchEvent.goal.team.id) === String(match?.localTeam.id))) : (0)).length || 0;
+    const visitingTeamGoals = matchEvents?.filter((matchEvent) => (matchEvent.goal && matchEvent.goal.period != 'overtime') ? ((String(matchEvent.goal.team.id) === String(match?.visitingTeam.id))) : (0)).length || 0;
     const [players, setPlayers] = useState([]);
 
     const [teamMatchStats, setTeamMatchStats] = useState();
@@ -366,9 +366,10 @@ export default function StartMatch() {
                         <div id='matchEventsDiv'>
                             {matchEvents?.map((matchEvent) => {
                                 if (matchEvent.hasOwnProperty('goal')) {
+                                    console.log('Hola', matchEvent);
                                     if (matchEvent.goal.scorer == undefined) {
                                         return <GoalEvent
-                                            matchPeriod={location.state.matchPeriod}
+                                            matchPeriod={matchEvent.goal.matchPeriod}
                                             matchTime={matchEvent.goal.matchTime}
                                             team={matchEvent.goal.team}
                                             scorer={matchEvent.goal.scorer}
@@ -376,7 +377,7 @@ export default function StartMatch() {
                                         />
                                     } else {
                                         return <GoalEvent
-                                            matchPeriod={location.state.matchPeriod}
+                                            matchPeriod={matchEvent.goal.matchPeriod}
                                             matchTime={matchEvent.goal.matchTime}
                                             team={matchEvent.goal.team}
                                             scorer={matchEvent.goal.scorer}
@@ -385,7 +386,7 @@ export default function StartMatch() {
                                     }
                                 } else if (matchEvent.hasOwnProperty('penalty')) {
                                     return <PenaltyEvent
-                                        matchPeriod={location.state.matchPeriod}
+                                        matchPeriod={matchEvent.penalty.matchPeriod}
                                         matchTime={matchEvent.penalty.matchTime}
                                         team={matchEvent.penalty.team}
                                         player={matchEvent.penalty.player}
@@ -394,7 +395,7 @@ export default function StartMatch() {
                                     />
                                 } else if (matchEvent.hasOwnProperty('timeout')) {
                                     return <TimeoutEvent
-                                        matchPeriod={location.state.matchPeriod}
+                                        matchPeriod={matchEvent.timeout.matchPeriod}
                                         matchTime={matchEvent.timeout.matchTime}
                                         team={matchEvent.timeout.team}
                                     />
