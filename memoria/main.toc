@@ -65,23 +65,24 @@
 \contentsline {subsubsection}{\numberline {8.4.0.1}Convocatorias}{49}{subsubsection.134}%
 \contentsline {subsubsection}{\numberline {8.4.0.2}Pedidos}{51}{subsubsection.141}%
 \contentsline {subsubsection}{\numberline {8.4.0.3}Seguimiento de partido}{52}{subsubsection.144}%
-\contentsline {section}{\numberline {8.5}Jugador}{56}{section.155}%
-\contentsline {subsubsection}{\numberline {8.5.0.1}Convocatorias}{56}{subsubsection.156}%
-\contentsline {subsubsection}{\numberline {8.5.0.2}Pedidos}{58}{subsubsection.161}%
-\contentsline {chapter}{\numberline {9}Valoración ética del proyecto}{59}{chapter.164}%
-\contentsline {section}{\numberline {9.1}Justificación ética del proyecto}{59}{section.165}%
-\contentsline {section}{\numberline {9.2}Consideraciones éticas}{60}{section.166}%
-\contentsline {subsection}{\numberline {9.2.1}Positivas}{60}{subsection.167}%
-\contentsline {subsection}{\numberline {9.2.2}Negativas}{61}{subsection.168}%
-\contentsline {subsection}{\numberline {9.2.3}Soluciones para las consideraciones negativas}{61}{subsection.169}%
-\contentsline {chapter}{\numberline {10}Conclusiones y trabajo futuro}{63}{chapter.173}%
-\contentsline {section}{\numberline {10.1}Conclusiones}{63}{section.174}%
-\contentsline {section}{\numberline {10.2}Trabajo futuro}{63}{section.175}%
-\contentsline {subsection}{\numberline {10.2.1}Publicación de la solución web}{63}{subsection.176}%
-\contentsline {subsection}{\numberline {10.2.2}Gestión de todos los equipos del club}{63}{subsection.177}%
-\contentsline {subsection}{\numberline {10.2.3}Implementación de nuevas ligas}{63}{subsection.178}%
-\contentsline {subsection}{\numberline {10.2.4}Mejora del sistema de recomendaciones}{63}{subsection.179}%
-\contentsline {chapter}{Bibliograf\'ia}{64}{subsection.179}%
+\contentsline {section}{\numberline {8.5}Jugador}{58}{section.159}%
+\contentsline {subsubsection}{\numberline {8.5.0.1}Convocatorias}{58}{subsubsection.160}%
+\contentsline {subsubsection}{\numberline {8.5.0.2}Pedidos}{59}{subsubsection.165}%
+\contentsline {subsubsection}{\numberline {8.5.0.3}Pantalla de inicio}{60}{subsubsection.168}%
+\contentsline {chapter}{\numberline {9}Valoración ética del proyecto}{62}{chapter.171}%
+\contentsline {section}{\numberline {9.1}Justificación ética del proyecto}{62}{section.172}%
+\contentsline {section}{\numberline {9.2}Consideraciones éticas}{63}{section.173}%
+\contentsline {subsection}{\numberline {9.2.1}Positivas}{63}{subsection.174}%
+\contentsline {subsection}{\numberline {9.2.2}Negativas}{64}{subsection.175}%
+\contentsline {subsection}{\numberline {9.2.3}Soluciones para las consideraciones negativas}{64}{subsection.176}%
+\contentsline {chapter}{\numberline {10}Conclusiones y trabajo futuro}{66}{chapter.180}%
+\contentsline {section}{\numberline {10.1}Conclusiones}{66}{section.181}%
+\contentsline {section}{\numberline {10.2}Trabajo futuro}{66}{section.182}%
+\contentsline {subsection}{\numberline {10.2.1}Publicación de la solución web}{66}{subsection.183}%
+\contentsline {subsection}{\numberline {10.2.2}Gestión de todos los equipos del club}{66}{subsection.184}%
+\contentsline {subsection}{\numberline {10.2.3}Implementación de nuevas ligas}{66}{subsection.185}%
+\contentsline {subsection}{\numberline {10.2.4}Mejora del sistema de recomendaciones}{66}{subsection.186}%
+\contentsline {chapter}{Bibliograf\'ia}{67}{subsection.186}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Uso de inteligencia artificial}{66}{appendix.181}%
+\contentsline {chapter}{\numberline {A}Uso de inteligencia artificial}{69}{appendix.188}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

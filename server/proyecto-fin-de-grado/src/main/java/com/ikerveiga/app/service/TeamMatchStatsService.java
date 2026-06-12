@@ -63,6 +63,8 @@ public class TeamMatchStatsService {
             return new TeamMatchStats(null, false, 0, 0, match, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         }
 
+        System.out.println(teamMatchStats.toString());
+
         return teamMatchStats;
     }
 }
