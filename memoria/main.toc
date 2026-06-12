@@ -78,11 +78,7 @@
 \contentsline {chapter}{\numberline {10}Conclusiones y trabajo futuro}{66}{chapter.180}%
 \contentsline {section}{\numberline {10.1}Conclusiones}{66}{section.181}%
 \contentsline {section}{\numberline {10.2}Trabajo futuro}{66}{section.182}%
-\contentsline {subsection}{\numberline {10.2.1}Publicación de la solución web}{66}{subsection.183}%
-\contentsline {subsection}{\numberline {10.2.2}Gestión de todos los equipos del club}{66}{subsection.184}%
-\contentsline {subsection}{\numberline {10.2.3}Implementación de nuevas ligas}{66}{subsection.185}%
-\contentsline {subsection}{\numberline {10.2.4}Mejora del sistema de recomendaciones}{66}{subsection.186}%
-\contentsline {chapter}{Bibliograf\'ia}{67}{subsection.186}%
+\contentsline {chapter}{Bibliograf\'ia}{68}{section.182}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Uso de inteligencia artificial}{69}{appendix.188}%
+\contentsline {chapter}{\numberline {A}Uso de inteligencia artificial}{70}{appendix.184}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
