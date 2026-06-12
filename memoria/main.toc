@@ -60,29 +60,29 @@
 \contentsline {chapter}{\numberline {8}Manual de usuario}{45}{chapter.111}%
 \contentsline {section}{\numberline {8.1}Prerrequisitos}{45}{section.112}%
 \contentsline {section}{\numberline {8.2}Registro e inicio de sesión}{45}{section.113}%
-\contentsline {section}{\numberline {8.3}Funcionalidades comunes}{47}{section.120}%
-\contentsline {subsubsection}{\numberline {8.3.0.1}Partidos}{47}{subsubsection.121}%
-\contentsline {subsubsection}{\numberline {8.3.0.2}Estadísticas}{48}{subsubsection.124}%
-\contentsline {subsubsection}{\numberline {8.3.0.3}Foro}{49}{subsubsection.131}%
-\contentsline {section}{\numberline {8.4}Entrenador}{51}{section.138}%
-\contentsline {subsubsection}{\numberline {8.4.0.1}Convocatorias}{51}{subsubsection.139}%
-\contentsline {subsubsection}{\numberline {8.4.0.2}Pedidos}{53}{subsubsection.146}%
-\contentsline {subsubsection}{\numberline {8.4.0.3}Seguimiento de partido}{54}{subsubsection.149}%
-\contentsline {section}{\numberline {8.5}Jugador}{59}{section.164}%
-\contentsline {subsubsection}{\numberline {8.5.0.1}Convocatorias}{59}{subsubsection.165}%
-\contentsline {subsubsection}{\numberline {8.5.0.2}Pedidos}{61}{subsubsection.170}%
-\contentsline {subsubsection}{\numberline {8.5.0.3}Pantalla de inicio}{61}{subsubsection.173}%
-\contentsline {chapter}{\numberline {9}Valoración ética del proyecto}{63}{chapter.176}%
-\contentsline {section}{\numberline {9.1}Justificación ética del proyecto}{63}{section.177}%
-\contentsline {section}{\numberline {9.2}Consideraciones éticas}{64}{section.178}%
-\contentsline {subsection}{\numberline {9.2.1}Positivas}{64}{subsection.179}%
-\contentsline {subsection}{\numberline {9.2.2}Negativas}{65}{subsection.180}%
-\contentsline {subsection}{\numberline {9.2.3}Soluciones para las consideraciones negativas}{65}{subsection.181}%
-\contentsline {chapter}{\numberline {10}Conclusiones y trabajo futuro}{67}{chapter.185}%
-\contentsline {section}{\numberline {10.1}Conclusiones}{67}{section.186}%
-\contentsline {section}{\numberline {10.2}Trabajo futuro}{67}{section.187}%
-\contentsline {chapter}{\numberline {11}Definiciones, acrónimos y abreviaturas}{69}{chapter.188}%
-\contentsline {chapter}{Bibliograf\'ia}{70}{chapter.188}%
+\contentsline {section}{\numberline {8.3}Funcionalidades comunes}{48}{section.122}%
+\contentsline {subsubsection}{\numberline {8.3.0.1}Partidos}{48}{subsubsection.123}%
+\contentsline {subsubsection}{\numberline {8.3.0.2}Estadísticas}{48}{subsubsection.126}%
+\contentsline {subsubsection}{\numberline {8.3.0.3}Foro}{50}{subsubsection.133}%
+\contentsline {section}{\numberline {8.4}Entrenador}{52}{section.140}%
+\contentsline {subsubsection}{\numberline {8.4.0.1}Convocatorias}{52}{subsubsection.141}%
+\contentsline {subsubsection}{\numberline {8.4.0.2}Pedidos}{54}{subsubsection.148}%
+\contentsline {subsubsection}{\numberline {8.4.0.3}Seguimiento de partido}{55}{subsubsection.151}%
+\contentsline {section}{\numberline {8.5}Jugador}{60}{section.166}%
+\contentsline {subsubsection}{\numberline {8.5.0.1}Convocatorias}{60}{subsubsection.167}%
+\contentsline {subsubsection}{\numberline {8.5.0.2}Pedidos}{62}{subsubsection.172}%
+\contentsline {subsubsection}{\numberline {8.5.0.3}Pantalla de inicio}{62}{subsubsection.175}%
+\contentsline {chapter}{\numberline {9}Valoración ética del proyecto}{64}{chapter.178}%
+\contentsline {section}{\numberline {9.1}Justificación ética del proyecto}{64}{section.179}%
+\contentsline {section}{\numberline {9.2}Consideraciones éticas}{65}{section.180}%
+\contentsline {subsection}{\numberline {9.2.1}Positivas}{65}{subsection.181}%
+\contentsline {subsection}{\numberline {9.2.2}Negativas}{66}{subsection.182}%
+\contentsline {subsection}{\numberline {9.2.3}Soluciones para las consideraciones negativas}{66}{subsection.183}%
+\contentsline {chapter}{\numberline {10}Conclusiones y trabajo futuro}{68}{chapter.187}%
+\contentsline {section}{\numberline {10.1}Conclusiones}{68}{section.188}%
+\contentsline {section}{\numberline {10.2}Trabajo futuro}{68}{section.189}%
+\contentsline {chapter}{\numberline {11}Definiciones, acrónimos y abreviaturas}{70}{chapter.190}%
+\contentsline {chapter}{Bibliograf\'ia}{71}{chapter.190}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Uso de inteligencia artificial}{72}{appendix.190}%
+\contentsline {chapter}{\numberline {A}Uso de inteligencia artificial}{73}{appendix.192}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

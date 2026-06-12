@@ -756,7 +756,6 @@ A la hora de diseñar la solución es fundamental tener claro qué información 
 
 Este diseño no refleja la estructura final de la base de datos. A medida que el desarrollo del proyecto avanzaba y se implementaban las funcionalidades, era necesario adaptarlo para que se ajustara a las necesidades del proyecto. Por lo que, este diseño evolucionó para dar lugar a la estructura final de la base de datos:
 
-
 \subsection{Diseño de la interfaz de la solución web}
 
 Cuando se desarrolla una aplicación web, es importante tener en cuenta cómo será su interfaz, ya que es lo primero que ven los usuarios. Una buena interfaz debe ser atractiva e intuitiva, es decir, que cualquier usuario sin formación sobre la solcuión pueda navegar y hacer uso de ella sin problemas.
@@ -1185,6 +1184,15 @@ Si el usuario no dispone de una cuenta con la que poder acceder a la aplicación
   \includegraphics[width=0.85\textwidth]{imgs/usuario_no_autorizado.jpeg}
   \caption{Pantalla de usuario no autorizado}
   \label{fig:usuario_no_autorizado}
+\end{figure}
+
+Además, si un usuario es la primera vez que accede a la solución mediante OAuth2, se le preguntará si es entrenador o jugador para poder determinar su rol.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{imgs/seleccion_rol.jpeg}
+  \caption{Pantalla de selección de rol}
+  \label{fig:seleccion_rol}
 \end{figure}
 
 Si por el contrario, el usuario desea registrarse en la aplicación y crear una cuenta con la que poder acceder a ella, podrá hacer clic en el enlace que dice ``¿No tienes una cuenta? Crea una.'' para navegar a la siguiente pantalla:
