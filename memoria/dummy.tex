@@ -869,6 +869,92 @@ React Icons es una biblioteca de iconos para React. Se ha utilizado en este proy
 
 \section{Consideraciones sobre la implementación}
 
+\subsection{Spring Security y JWT}
+
+La autenticación y la autorización son una parte fundamental de cualquier desarrollo de software. Para este proyecto se ha decidido utilizar Spring Security, un framework para proyectos Spring que ofrece soporte para estas dos características. \cite{spring-security}
+
+Además, este framework se ha apoyado en JSON Web Token para garantizar la seguridad en estos dos aspectos de la solución web. \cite{jwt}
+
+La autenticación es el proceso de verificar la identidad de un usuario. Mientras que la autorización es el proceso que determina de qué permisos dispone un usuario previamente autenticado. Es importante entender la diferencia entre estos dos conceptos.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{imgs/autorizacion_autenticacion.png}
+  \caption{Autenticación y autorización}
+  \label{fig:autorizacion_autenticacion}
+\end{figure}
+
+El flujo de estas dos características en este proyecto es el siguiente:
+
+\textbf{Cuenta de usuario}
+
+Un usuario introduce las credenciales de su cuenta de usuario para iniciar sesión. La solución busca esa combinación de credenciales en la base de datos. Si no es correcta, el usuario no puede acceder. Si las credenciales son correctas, la solución genera un JWT que almacena el email de usuario y su rol (jugador o entrenador). Después, introduce ese JWT en una cookie HttpOnly, de esta manera no puede ser modificada.
+
+El usuario ya está autenticado. Entonces, cada vez que hace una petición al servidor, envia esa cookie en ella. Si su rol dispone de autorización para ejecutar el método de esa petición, la petición continúa con normalidad. Pero, si por el contrario el usuario no dispone de autorización, el método no se ejecutará y lanzará un error de que el usuario no está autorizado.
+
+\textbf{OAuth2}
+
+OAuth2 es la tecnología que está detrás de muchos servicios de login sociales: Google, Microsoft, Github, Facebook, etc.
+
+El flujo de inicio de sesión con OAuth2 en este proyecto es el que se redacta a continuación:
+
+Cuando un usuario pulsa el botón de inicio de sesión con Google, Spring Security le redirige al proveedor externo (Google) y recoge el nombre de usuario y el correo electrónico de la cuenta de Google utilizada para iniciar sesión. Una vez estos datos han sido conseguidos, se comprueba si el usuario existe en la base de datos con el email, y si es así, se le permite acceso al usuario. Si el nombre de usuario no figura en la base de datos de la solución, se verifica que exista un registro de ese correo electrónico en la tabla de emails autorizados para acceder a la solución. Si la verificación es exitosa, creará un nuevo usuario y un JWT para guardarlo en una cookie HttpOnly. De lo contrario, el usuario no podrá acceder a la aplicación.
+
+\subsection{Spring AI}
+
+Spring AI es un framework de Spring que facilita la integración de modelos de inteligencia artificial en aplicaciones Java. \cite{spring-ai}
+
+Ofrece soporte para modelos de lenguaje de muchas empresas. En este proyecto se ha optado por utilizar Claude Sonnet 4.5. Se eligió un modelo de Anthropic porque es una empresa que está avanzando a pasos muy grandes respecto a sus modelos de IA. El modelo escogido para el proyecto no es el mejor de Anthropic ni mucho menos, pero tiene la potencia suficiente para cumplir con las necesidades del proyecto.
+
+Utilizar un modelo de IA en el desarrollo de software fue muy sencillo gracias a Spring AI. Simplemente hay que llamar al modelo pasándole como parámetro un \textit{prompt}. El modelo lo procesará y devolverá su respuesta. Para que esto funcione, es necesario disponer de una \textit{API Key} de Anthropic con \textit{tokens}.
+
+El \textit{prompt} que se envía al modelo es más importante de lo que parece, ya que es el contexto con el que el modelo responderá a lo que se le pregunte. Sin un buen contexto, la inteligencia artificial no sbrá de que estás hablando y no podrá proporcionar una respuesta precisa. Este es el \textit{prompt} que se ha utilizado en este proyecto para las recomendaciones inteligentes:
+
+\begin{quotation}
+  \itshape
+  \guillemotleft Eres un entrenador de HOCKEY LINEA profesional, y sabes encontrar las áreas a mejorar analizando las estadísticas de un partido.
+
+  Viendo estas estadísticas de un partido proporcióname las áreas a mejorar que consideres, para el equipo como conjunto y para cada jugador y portero, para trabajarlas en los entrenamientos de la siguiente semana.
+
+  Las primeras estadísticas que te proporciono son las del equipo, lo siguiente son dos listas con las estadísticas de cada jugador y cada portero del partido, respectivamente. Devuelve las áreas a mejorar/entrenar en formato JSON. No me des un análisis general. Resume el JSON de la respuesta lo máximo posible.
+
+  TERMINOLOGIA
+
+  -Penalty kill significa que el equipo ha hecho una falta y está en inferioridad numérica durante un tiempo.
+
+  -Power play es lo contrario. El equipo contrario ha hecho una falta y tenemos superioridad numérica durante un tiempo.
+
+  -Penalty shot = tiro de penalti.
+
+  A TENER EN CUENTA
+
+  -La respuesta en español.
+
+  -No marcar gol en penalty kill es lo normal. Lo importante es que no te marquen. Siempre y cuando haya habido penalty killing.
+
+  -Un poder play no lo genera el equipo. Falta del equipo contrario = power play.
+
+  -El power play merece ser mejorado si la eficacia es menor al 50\%. 1 gol de 1 es perfecto. Si no ha habido power play, no hay nada que analizar.
+
+  -La eficacia de los tiros debe ser entrenada cuando sea menor al 25\%. Una eficacia superior a esa es buena estadística. No analices los goles independientemente. Analiza los goles en base a los tiros totales realizados.
+
+  -Las situaciones como 1vs0, 2vs1, etc son en ataque. Si acaba en gol = +1 punto. Si no = -1 punto en esa estadística.
+
+  -En este deporte se juega con un disco y 4vs4 + 1 portero en la pista. Los power play suelen ser 4vs3.
+
+  -No agrupes los jugadores ni los porteros en un mismo objeto.
+
+  -Por favor que el JSON se divida en 3 partes (equipo, jugadores, porteros). En la parte de equipo, que la clave sea el área a entrenar y el valor la descripción.
+
+  En la parte de jugadores, las claves serán el id de cada jugador, y el valor un objeto con clave el área a entrenar y valor la descripción. Los porteros igual que los jugadores.
+
+  Estadísticas del equipo [objeto con las estadísticas del equipo].
+
+  Lista de estadísticas de jugadores [objeto con las estadísticas de jugadores].
+
+  Lista de estadísticas de porteros [objeto con las estadísticas de porteros].\guillemotright
+\end{quotation}
+
 \section{Plan de pruebas}
 
 El plan de pruebas es una parte esencial de los proyectos de desarrollo de software. Permite verificar y comprobar el resultado del proyecto, al igual que sus módulos y funcionalidades individualmente o de forma integrada. Para este proyecto, se ha llevado a cabo un plan que contiene tres tipos de pruebas diferentes: pruebas unitarias, pruebas de integración y pruebas de validación.
@@ -1059,6 +1145,16 @@ Las pruebas de validación sirven para verificar que el resultado final cumple c
 
 \section{Incidencias del proyecto}
 
+\subsubsection{Diseño relacional de la base de datos}
+
+Como ya se ha comentado anteriormente en este documento, inicialmente se planteó un diseño relacional de la base de datos de la solución. Sin embargo, hubo algún aspecto que requirió que se modificara. Muchos de esos aspectos fueron simplemente darme cuenta que hacerlo de otra manera sería más óptimo. Pero el mayor problema tuvo que ver con los dos tipos de inicio de sesión.
+
+Al inicio del proyecto, pensaba almacenar todos los usuarios en una sola tabla de base de datos, tanto los creados con cuentas de usuario de la solución como los relacionados con OAuth2. Esto presentó varios problemas.
+
+El primero de esos problemas era que los usuarios que inician sesión con OAuth2 no introducen ninguna contraseña. Si se almacenaran los dos tipos de usuario en la misma tabla, se estaría permitiendo que el otro tipo de usuariostampoco tuviera contraseña. Para evitar este problema, se separaron ambos tipos de usuarios. De tal manera que existe una tabla en la base de datos para cada uno. De esta forma no hay conflicto entre ellos.
+
+La solución anterior provocó otro problema, esta vez relacionado con el foro de mensajes. Es necesario que un mensaje disponga de una relación hacia el usuario que lo ha publicado. El problema fue que existían dos tipos de usuarios. Una de las soluciones podía ser que cada mensaje guardase una relación hacia cada uno de los tipos de usuario, aunque de esta manera, una columna en la base de datos siempre quedaría vacía, lo que no es una buena práctica. La solución más limpia fue crear una herencia entre un usuario normal y uno que ha iniciado sesión con OAuth2, siendo el usuario normal el ``padre''. De esta forma habrá una única relación y la base de datos quedará más limpia.
+
 \chapter{Manual de usuario}
 
 \section{Prerrequisitos}
@@ -1077,7 +1173,7 @@ Una vez el usuario haya accedido a la solución desde su navegador, se le mostra
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{imgs/login.jpeg}
+  \includegraphics[width=0.85\textwidth]{imgs/login.jpeg}
   \caption{Pantalla de inicio de sesión}
   \label{fig:login}
 \end{figure}
@@ -1086,7 +1182,7 @@ Si el usuario no dispone de una cuenta con la que poder acceder a la aplicación
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{imgs/usuario_no_autorizado.jpeg}
+  \includegraphics[width=0.85\textwidth]{imgs/usuario_no_autorizado.jpeg}
   \caption{Pantalla de usuario no autorizado}
   \label{fig:usuario_no_autorizado}
 \end{figure}
@@ -1095,7 +1191,7 @@ Si por el contrario, el usuario desea registrarse en la aplicación y crear una 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{imgs/registro.jpeg}
+  \includegraphics[width=0.85\textwidth]{imgs/registro.jpeg}
   \caption{Pantalla de registro}
   \label{fig:registro}
 \end{figure}
@@ -1114,7 +1210,7 @@ En esta pantalla el usuario podrá ver los partidos disputados y los que están 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{imgs/partidos.jpeg}
+  \includegraphics[width=0.85\textwidth]{imgs/partidos.jpeg}
   \caption{Pantalla de partidos}
   \label{fig:partidos}
 \end{figure}
@@ -1125,21 +1221,21 @@ Esta pantalla corresponde a las estadísticas tanto individuales como del equipo
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{imgs/estadisticas_jugadores.jpeg}
+  \includegraphics[width=0.85\textwidth]{imgs/estadisticas_jugadores.jpeg}
   \caption{Pantalla de selección de jugador para visualizar estadísticas individuales}
   \label{fig:estadisticas_jugadores}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{imgs/estadisticas_equipo.jpeg}
+  \includegraphics[width=0.85\textwidth]{imgs/estadisticas_equipo.jpeg}
   \caption{Pantalla de estadísticas del equipo}
   \label{fig:estadisticas_equipo}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{imgs/estadisticas_jugador.jpeg}
+  \includegraphics[width=0.85\textwidth]{imgs/estadisticas_jugador.jpeg}
   \caption{Pantalla de estadísticas de un jugador}
   \label{fig:estadisticas_jugador}
 \end{figure}
@@ -1150,7 +1246,7 @@ Cuando el usuario navega a esta pantalla de la solución, lo primero que se enco
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{imgs/foro_temas.jpeg}
+  \includegraphics[width=0.85\textwidth]{imgs/foro_temas.jpeg}
   \caption{Pantalla de selección de tema del foro}
   \label{fig:foro}
 \end{figure}
@@ -1161,7 +1257,7 @@ Para crear un nuevo debate será necesario introducir el título del mismo.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{imgs/foro_debates.jpeg}
+  \includegraphics[width=0.85\textwidth]{imgs/foro_debates.jpeg}
   \caption{Pantalla de selección de debate}
   \label{fig:foro_debates}
 \end{figure}
@@ -1183,16 +1279,16 @@ Un entrenador accederá a esta sección cuando desee realizar la convocatoria pa
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{imgs/convocatorias_partidos.jpeg}
+  \includegraphics[width=0.85\textwidth]{imgs/convocatorias_partidos.jpeg}
   \caption{Selección de partido para convocatorias}
   \label{fig:convocatorias}
 \end{figure}
 
-El entrenador seleccionará un partido y podrá ver una lista con los jugadores que pueden ser convocados al partido. Podrá marcar como convocado a aquellos que desee. Además, podrá indicar el dorsal que llevará cada jugador y si llevará o no el brazalete de capitán.
+El entrenador seleccionará un partido y podrá ver una lista con los jugadores que pueden ser convocados al partido. Podrá marcar como convocados a aquellos que desee.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{imgs/convocatorias_lista_jugadores.jpeg}
+  \includegraphics[width=0.85\textwidth]{imgs/convocatorias_lista_jugadores.jpeg}
   \caption{Selección de jugadores a convocar}
   \label{fig:convocatorias_jugadores}
 \end{figure}
@@ -1201,7 +1297,7 @@ Para convocar a los jugadores, el entrenador puede hacer clic sobre ellos. Se mo
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{imgs/convocatorias_asistencia_jugadores.jpeg}
+  \includegraphics[width=0.85\textwidth]{imgs/convocatorias_asistencia_jugadores.jpeg}
   \caption{Asistencia de jugadores convocados}
   \label{fig:convocatorias_asistencia_jugadores}
 \end{figure}
@@ -1212,7 +1308,7 @@ Un entrenador puede acceder a esta sección cuando desea crear un nuevo pedido d
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{imgs/pedidos_crear_nuevo.jpeg}
+  \includegraphics[width=0.85\textwidth]{imgs/pedidos_crear_nuevo.jpeg}
   \caption{Creación de un nuevo pedido}
   \label{fig:pedidos_crear_nuevo}
 \end{figure}
@@ -1225,7 +1321,7 @@ El entrenador puede acceder a esta funcionalidad haciendo clic en el botón que 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{imgs/pantalla_seguimiento_partido.jpeg}
+  \includegraphics[width=0.85\textwidth]{imgs/pantalla_seguimiento_partido.jpeg}
   \caption{Pantalla de seguimiento de partido}
   \label{fig:pantalla_seguimiento_partido}
 \end{figure}
@@ -1238,7 +1334,7 @@ Si hace clic en cualquiera de los jugadores de la alineación, podrá modificar 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{imgs/estadisticas_jugador_partido.jpeg}
+  \includegraphics[width=0.85\textwidth]{imgs/estadisticas_jugador_partido.jpeg}
   \caption{Anotación de estadísticas de un jugador durante el partido}
   \label{fig:estadisticas_jugador_partido}
 \end{figure}
@@ -1247,7 +1343,7 @@ Para apuntar las estadísticas del equipo, deberá pulsar el botón que así lo 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{imgs/estadisticas_equipo_partido.jpeg}
+  \includegraphics[width=0.85\textwidth]{imgs/estadisticas_equipo_partido.jpeg}
   \caption{Anotación de estadísticas del equipo durante el partido}
   \label{fig:estadisticas_equipo_partido}
 \end{figure}
@@ -1256,7 +1352,7 @@ El entrenador también puede apuntar las incidencias que ocurren a lo largo del 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{imgs/pantalla_incidencias_partido.jpeg}
+  \includegraphics[width=0.85\textwidth]{imgs/pantalla_incidencias_partido.jpeg}
   \caption{Pantalla de selección de incidencia a anotar}
   \label{fig:incidencias_partido}
 \end{figure}
@@ -1265,7 +1361,7 @@ Después, solo tendrá que seleccionar el tipo de incidencia que quiere anotar e
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{imgs/seguimiento_partido_incidencias.jpeg}
+  \includegraphics[width=0.85\textwidth]{imgs/seguimiento_partido_incidencias.jpeg}
   \caption{Seguimiento de partido con incidencias}
   \label{fig:seguimiento_partido_incidencias}
 \end{figure}
@@ -1276,7 +1372,7 @@ Si su decisión es afirmativa, al regresar a la pantalla de inicio podrá visual
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{imgs/pantalla_inicio_recomendaciones.jpeg}
+  \includegraphics[width=0.85\textwidth]{imgs/pantalla_inicio_recomendaciones.jpeg}
   \caption{Pantalla de inicio con recomendaciones}
   \label{fig:pantalla_inicio_recomendaciones}
 \end{figure}
@@ -1285,7 +1381,7 @@ Si su decisión es afirmativa, al regresar a la pantalla de inicio podrá visual
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{imgs/recomendaciones_equipo.jpeg}
+  \includegraphics[width=0.85\textwidth]{imgs/recomendaciones_equipo.jpeg}
   \caption{Recomendaciones del equipo}
   \label{fig:recomendaciones_equipo}
 \end{figure}
@@ -1298,7 +1394,7 @@ Un jugador accede a la sección de convocatorias para ver si ha sido convocado p
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{imgs/convocatorias_aviso_convocado.jpeg}
+  \includegraphics[width=0.85\textwidth]{imgs/convocatorias_aviso_convocado.jpeg}
   \caption{Aviso de convocatoria para un jugador}
   \label{fig:convocatorias_aviso_convocado}
 \end{figure}
@@ -1307,7 +1403,7 @@ Una vez el jugador seleccione el partido al que ha sido convocado, podrá confir
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{imgs/convocatorias_confirmar_asistencia_falta.jpeg}
+  \includegraphics[width=0.85\textwidth]{imgs/convocatorias_confirmar_asistencia_falta.jpeg}
   \caption{Confirmación de asistencia o falta de un jugador}
   \label{fig:convocatorias_confirmar_asistencia_falta}
 \end{figure}
@@ -1318,7 +1414,7 @@ Un jugador accederá a esta sección cuando desee pedir material. Si hay un pedi
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{imgs/pedidos_pedir_material.jpeg}
+  \includegraphics[width=0.85\textwidth]{imgs/pedidos_pedir_material.jpeg}
   \caption{Pedido de material por parte de un jugador}
   \label{fig:pedidos_pedir_material}
 \end{figure}
@@ -1331,7 +1427,7 @@ La pantalla de inicio de los jugadores presenta algunas diferencias importantes 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{imgs/pantalla_inicio_jugador.jpeg}
+  \includegraphics[width=0.85\textwidth]{imgs/pantalla_inicio_jugador.jpeg}
   \caption{Pantalla de inicio de jugador}
   \label{fig:pantalla_inicio_jugador}
 \end{figure}
@@ -1418,6 +1514,17 @@ Debido al reducido tiempo para realizar el proyecto, hubo ciertas tareas y aspec
   \item \textbf{Publicación de la solución web:} Este proyectó se planificó para desarrollarlo completamente de manera local en mis propios dispositivos. Aunque, si el tiempo lo permitía se publicaría para que cualquier persona con acceso a internet y a un navegador pudiera acceder a la solución. Lamentablemente, no ha sido así, por lo que se ha planteado a futuro la publicación de la solución web.
   \item \textbf{Gestión de todos los equipos del club:} Es muy frecuente que los clubes deportivos cuenten con más de un equipo. Este proyecto, originalmente se definió para apoyar a la gestión de un único equipo del club. Se ha planteado a futuro cubrir todos los equipos del club y que la solución pueda ser utilizada por los entrenadores y jugadores de todos ellos.
   \item \textbf{Implementación de nuevas ligas:} En el caso del club deportivo al que pertenezco, varios de sus equipos compiten en diferentes ligas: a nivel autonómico y a nivel nacional. Es por eso que en una versión futura se planea implementar soporte para diferentes ligas: visualización y seguimiento de los partidos de todas las ligas, estadísticas de cada liga, convocatorias para partidos de las diferentes ligas.
+\end{itemize}
+
+\chapter{Definiciones, acrónimos y abreviaturas}
+
+\begin{itemize}
+  \item \textbf{IA:} Inteligencia artificial
+  \item \textbf{Prompt:} Texto proporcionado a un sistema de inteligencia artificial
+  \item \textbf{Tokens:} Unidad mínima de información utilizada por sistemas de inteligencia artificial para leer, procesar y generar texto
+  \item \textbf{API Key:} Código alfanumérico que funciona como credencial digital para la autenticación de un usuario en un servicio
+  \item \textbf{OT}: Overtime. Tiempo extra a gol de oro en los partidos de hockey línea
+  \item \textbf{Punto bonus:} Punto extra otorgado al ganador de un partido de hockey línea en el tiempo extra
 \end{itemize}
 
 
