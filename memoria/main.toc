@@ -40,49 +40,49 @@
 \contentsline {subsection}{\numberline {7.4.12}Claude Sonnet 4.5}{35}{subsection.89}%
 \contentsline {subsection}{\numberline {7.4.13}React Icons}{35}{subsection.90}%
 \contentsline {section}{\numberline {7.5}Consideraciones sobre la implementación}{36}{section.91}%
-\contentsline {section}{\numberline {7.6}Plan de pruebas}{36}{section.92}%
-\contentsline {subsection}{\numberline {7.6.1}Pruebas unitarias}{36}{subsection.93}%
-\contentsline {subsubsection}{\numberline {7.6.1.1}Registro de usuarios}{36}{subsubsection.94}%
-\contentsline {subsubsection}{\numberline {7.6.1.2}Inicio de sesión}{36}{subsubsection.95}%
-\contentsline {subsubsection}{\numberline {7.6.1.3}Visualización de partidos de la temporada}{37}{subsubsection.96}%
-\contentsline {subsubsection}{\numberline {7.6.1.4}Visualización de estadísticas}{37}{subsubsection.97}%
-\contentsline {subsubsection}{\numberline {7.6.1.5}Convocatorias}{37}{subsubsection.98}%
-\contentsline {subsubsection}{\numberline {7.6.1.6}Seguimiento de partidos}{37}{subsubsection.99}%
-\contentsline {subsubsection}{\numberline {7.6.1.7}Módulo inteligente de recomendaciones}{38}{subsubsection.100}%
-\contentsline {subsubsection}{\numberline {7.6.1.8}Foro de mensajes}{38}{subsubsection.101}%
-\contentsline {subsubsection}{\numberline {7.6.1.9}Pedidos de material}{39}{subsubsection.102}%
-\contentsline {subsection}{\numberline {7.6.2}Pruebas de integración}{39}{subsection.103}%
-\contentsline {subsection}{\numberline {7.6.3}Pruebas de validación}{40}{subsection.104}%
-\contentsline {section}{\numberline {7.7}Incidencias del proyecto}{40}{section.105}%
-\contentsline {chapter}{\numberline {8}Manual de usuario}{41}{chapter.106}%
-\contentsline {section}{\numberline {8.1}Prerrequisitos}{41}{section.107}%
-\contentsline {section}{\numberline {8.2}Registro e inicio de sesión}{41}{section.108}%
-\contentsline {section}{\numberline {8.3}Funcionalidades comunes}{44}{section.115}%
-\contentsline {subsubsection}{\numberline {8.3.0.1}Partidos}{44}{subsubsection.116}%
-\contentsline {subsubsection}{\numberline {8.3.0.2}Estadísticas}{44}{subsubsection.119}%
-\contentsline {subsubsection}{\numberline {8.3.0.3}Foro}{46}{subsubsection.126}%
-\contentsline {section}{\numberline {8.4}Entrenador}{49}{section.133}%
-\contentsline {subsubsection}{\numberline {8.4.0.1}Convocatorias}{49}{subsubsection.134}%
-\contentsline {subsubsection}{\numberline {8.4.0.2}Pedidos}{51}{subsubsection.141}%
-\contentsline {subsubsection}{\numberline {8.4.0.3}Seguimiento de partido}{52}{subsubsection.144}%
-\contentsline {section}{\numberline {8.5}Jugador}{58}{section.159}%
-\contentsline {subsubsection}{\numberline {8.5.0.1}Convocatorias}{58}{subsubsection.160}%
-\contentsline {subsubsection}{\numberline {8.5.0.2}Pedidos}{59}{subsubsection.165}%
-\contentsline {subsubsection}{\numberline {8.5.0.3}Pantalla de inicio}{60}{subsubsection.168}%
-\contentsline {chapter}{\numberline {9}Valoración ética del proyecto}{62}{chapter.171}%
-\contentsline {section}{\numberline {9.1}Justificación ética del proyecto}{62}{section.172}%
-\contentsline {section}{\numberline {9.2}Consideraciones éticas}{63}{section.173}%
-\contentsline {subsection}{\numberline {9.2.1}Positivas}{63}{subsection.174}%
-\contentsline {subsection}{\numberline {9.2.2}Negativas}{64}{subsection.175}%
-\contentsline {subsection}{\numberline {9.2.3}Soluciones para las consideraciones negativas}{64}{subsection.176}%
-\contentsline {chapter}{\numberline {10}Conclusiones y trabajo futuro}{66}{chapter.180}%
-\contentsline {section}{\numberline {10.1}Conclusiones}{66}{section.181}%
-\contentsline {section}{\numberline {10.2}Trabajo futuro}{66}{section.182}%
-\contentsline {subsection}{\numberline {10.2.1}Publicación de la solución web}{66}{subsection.183}%
-\contentsline {subsection}{\numberline {10.2.2}Gestión de todos los equipos del club}{66}{subsection.184}%
-\contentsline {subsection}{\numberline {10.2.3}Implementación de nuevas ligas}{66}{subsection.185}%
-\contentsline {subsection}{\numberline {10.2.4}Mejora del sistema de recomendaciones}{66}{subsection.186}%
-\contentsline {chapter}{Bibliograf\'ia}{67}{subsection.186}%
+\contentsline {subsection}{\numberline {7.5.1}Spring Security y JWT}{36}{subsection.92}%
+\contentsline {subsection}{\numberline {7.5.2}Spring AI}{37}{subsection.95}%
+\contentsline {section}{\numberline {7.6}Plan de pruebas}{39}{section.96}%
+\contentsline {subsection}{\numberline {7.6.1}Pruebas unitarias}{39}{subsection.97}%
+\contentsline {subsubsection}{\numberline {7.6.1.1}Registro de usuarios}{39}{subsubsection.98}%
+\contentsline {subsubsection}{\numberline {7.6.1.2}Inicio de sesión}{39}{subsubsection.99}%
+\contentsline {subsubsection}{\numberline {7.6.1.3}Visualización de partidos de la temporada}{40}{subsubsection.100}%
+\contentsline {subsubsection}{\numberline {7.6.1.4}Visualización de estadísticas}{40}{subsubsection.101}%
+\contentsline {subsubsection}{\numberline {7.6.1.5}Convocatorias}{40}{subsubsection.102}%
+\contentsline {subsubsection}{\numberline {7.6.1.6}Seguimiento de partidos}{40}{subsubsection.103}%
+\contentsline {subsubsection}{\numberline {7.6.1.7}Módulo inteligente de recomendaciones}{41}{subsubsection.104}%
+\contentsline {subsubsection}{\numberline {7.6.1.8}Foro de mensajes}{41}{subsubsection.105}%
+\contentsline {subsubsection}{\numberline {7.6.1.9}Pedidos de material}{42}{subsubsection.106}%
+\contentsline {subsection}{\numberline {7.6.2}Pruebas de integración}{42}{subsection.107}%
+\contentsline {subsection}{\numberline {7.6.3}Pruebas de validación}{43}{subsection.108}%
+\contentsline {section}{\numberline {7.7}Incidencias del proyecto}{43}{section.109}%
+\contentsline {subsubsection}{\numberline {7.7.0.1}Diseño relacional de la base de datos}{43}{subsubsection.110}%
+\contentsline {chapter}{\numberline {8}Manual de usuario}{45}{chapter.111}%
+\contentsline {section}{\numberline {8.1}Prerrequisitos}{45}{section.112}%
+\contentsline {section}{\numberline {8.2}Registro e inicio de sesión}{45}{section.113}%
+\contentsline {section}{\numberline {8.3}Funcionalidades comunes}{48}{section.122}%
+\contentsline {subsubsection}{\numberline {8.3.0.1}Partidos}{48}{subsubsection.123}%
+\contentsline {subsubsection}{\numberline {8.3.0.2}Estadísticas}{48}{subsubsection.126}%
+\contentsline {subsubsection}{\numberline {8.3.0.3}Foro}{50}{subsubsection.133}%
+\contentsline {section}{\numberline {8.4}Entrenador}{52}{section.140}%
+\contentsline {subsubsection}{\numberline {8.4.0.1}Convocatorias}{52}{subsubsection.141}%
+\contentsline {subsubsection}{\numberline {8.4.0.2}Pedidos}{54}{subsubsection.148}%
+\contentsline {subsubsection}{\numberline {8.4.0.3}Seguimiento de partido}{55}{subsubsection.151}%
+\contentsline {section}{\numberline {8.5}Jugador}{60}{section.166}%
+\contentsline {subsubsection}{\numberline {8.5.0.1}Convocatorias}{60}{subsubsection.167}%
+\contentsline {subsubsection}{\numberline {8.5.0.2}Pedidos}{62}{subsubsection.172}%
+\contentsline {subsubsection}{\numberline {8.5.0.3}Pantalla de inicio}{62}{subsubsection.175}%
+\contentsline {chapter}{\numberline {9}Valoración ética del proyecto}{64}{chapter.178}%
+\contentsline {section}{\numberline {9.1}Justificación ética del proyecto}{64}{section.179}%
+\contentsline {section}{\numberline {9.2}Consideraciones éticas}{65}{section.180}%
+\contentsline {subsection}{\numberline {9.2.1}Positivas}{65}{subsection.181}%
+\contentsline {subsection}{\numberline {9.2.2}Negativas}{66}{subsection.182}%
+\contentsline {subsection}{\numberline {9.2.3}Soluciones para las consideraciones negativas}{66}{subsection.183}%
+\contentsline {chapter}{\numberline {10}Conclusiones y trabajo futuro}{68}{chapter.187}%
+\contentsline {section}{\numberline {10.1}Conclusiones}{68}{section.188}%
+\contentsline {section}{\numberline {10.2}Trabajo futuro}{68}{section.189}%
+\contentsline {chapter}{\numberline {11}Definiciones, acrónimos y abreviaturas}{70}{chapter.190}%
+\contentsline {chapter}{Bibliograf\'ia}{71}{chapter.190}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Uso de inteligencia artificial}{69}{appendix.188}%
+\contentsline {chapter}{\numberline {A}Uso de inteligencia artificial}{73}{appendix.192}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
