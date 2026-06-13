@@ -4,6 +4,7 @@ import '../style/SelectRole.css'
 import axios from 'axios'
 import player from '../assets/images/player.png'
 import coach from '../assets/images/coach.png'
+import Header from '../components/Header.jsx'
 
 export default function SelectRole() {
 
@@ -39,6 +40,7 @@ export default function SelectRole() {
 
     return (
         <>
+            <Header />
             <div id="optionsDiv">
                 <div className="option" onClick={() => setCoachRole(true)}>
                     <img id='hockeyCoachPhoto' src={coach} alt="Coach" /><p className="selectText">ENTRENADOR</p>

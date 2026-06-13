@@ -32,14 +32,14 @@ function Header({ authenticatedUserPlayerId, isCoach }) {
                 }
                 {
                     (width <= 1050) && (
-                        ((location.pathname != '/' && location.pathname != '/signup' && location.pathname != '/error/unauthorized'))
+                        ((location.pathname != '/' && location.pathname != '/signup' && location.pathname != '/error/unauthorized' && location.pathname != '/select_role'))
                         && ((!showHamburgerMenu)
                             ? (<RxHamburgerMenu className='menuIcon' color='white' size={35} onClick={() => setShowHamburgerMenu(true)} />)
                             : (<RxCross1 className='menuIcon' color='white' size={35} onClick={() => setShowHamburgerMenu(false)} />))
                     )
                 }
             </div>
-            {((location.pathname != '/' && location.pathname != '/signup' && location.pathname != '/error/unauthorized') && (width > 1050)) &&
+            {((location.pathname != '/' && location.pathname != '/signup' && location.pathname != '/error/unauthorized' && location.pathname != '/select_role') && (width > 1050)) &&
                 <div id='navbar'>
                     <NavBar
                         authenticatedUserPlayerId={authenticatedUserPlayerId}

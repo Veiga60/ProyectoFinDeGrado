@@ -38,7 +38,7 @@
     margin-left: 20px;
     padding: 0;
     margin-right: 0;
-    filter: hue-rotate(-27deg) saturate(255) brightness(5);
+    filter: hue-rotate(-27deg) saturate(255) brightness(0);
 }
 
 #playerText {
@@ -50,5 +50,4 @@
     margin-left: 30px;
     padding: 0;
     margin-right: 0;
-    filter: hue-rotate(217deg) saturate(93) brightness(40);
 }
