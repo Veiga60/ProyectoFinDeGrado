@@ -21,7 +21,7 @@ export default function GoalEvent({ matchPeriod, matchTime, team, scorer, assist
                         <p id="timeText">{matchTime}</p>
                     </div>
                     <div id="goalEventTimeDiv">
-                        <p id="periodText">{period}</p>
+                        <p id="goalEventPeriodText">{period}</p>
                     </div>
                 </div>
                 {

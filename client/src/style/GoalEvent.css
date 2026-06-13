@@ -19,7 +19,7 @@
     flex-shrink: 0;
 }
 
-#periodText {
+#goalEventPeriodText {
     color: white;
     background-color: rgb(7, 78, 200);
     border-radius: 1000px;
@@ -171,7 +171,7 @@
         white-space: nowrap;
     }
 
-    #periodText {
+    #goalEventPeriodText {
         font-size: 11px;
     }
 
@@ -244,7 +244,7 @@
 
 @media(max-width: 600px) and (orientation: landscape) {
     #goalEventPeriodAndTimeDiv {
-        width: 15%;
+        width: 25%;
         margin-left: 5px;
     }
 
@@ -330,7 +330,7 @@
 
 @media (min-width: 601px) and (max-width: 700px) and (orientation: landscape) {
     #goalEventPeriodAndTimeDiv {
-        width: 15%;
+        width: 20%;
         margin-left: 5px;
     }
 
@@ -340,7 +340,7 @@
     }
 
     #goalEventPeriodDiv {
-        font-size: smaller;
+        font-size: small;
     }
 
     .goalEventIcon {
@@ -362,8 +362,8 @@
     }
 
     #goalTeamImageDiv {
-        margin-left: -20px;
-        width: 30%;
+        margin-left: 0px;
+        width: 40%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -371,7 +371,7 @@
 
     #goalEventTeamNameText {
         font-size: x-large;
-        margin-left: 0;
+        margin-left: -40px;
     }
 
     #goalEventInfoDivMyTeam {
@@ -388,16 +388,16 @@
     }
 
     #scorerAndAssisterInfoDiv {
-        width: 59%;
+        width: 50%;
     }
 
     #scorerText {
-        font-size: small;
+        font-size: medium;
     }
 
     #assisterText {
         white-space: nowrap;
-        font-size: x-small;
+        font-size: small;
     }
 
     #teamNameTextDiv {
@@ -425,7 +425,7 @@
         white-space: nowrap;
     }
 
-    #periodText {
+    #goalEventPeriodText {
         font-size: small;
     }
 
@@ -790,7 +790,7 @@
 
 @media (max-width: 550px) and (orientation: landscape) {
     #goalEventPeriodAndTimeDiv {
-        width: 15%;
+        width: 20%;
     }
 
     #goalEventTimeDiv {
@@ -799,7 +799,7 @@
     }
 
     #goalEventPeriodDiv {
-        font-size: small;
+        font-size: x-small;
     }
 
     .goalEventIcon {
@@ -808,19 +808,19 @@
     }
 
     #goalText {
-        font-size: large;
+        font-size: medium;
     }
 
     #goalTeamImageDivMyTeam {
-        width: 30%;
+        width: 40%;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
     #goalTeamImageDiv {
-        margin-left: 0px;
-        width: 20%;
+        margin-left: 20px;
+        width: 40%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -828,7 +828,7 @@
 
     #goalEventTeamNameText {
         font-size: x-large;
-        margin-left: 0;
+        margin-left: -20px;
     }
 
     #goalEventInfoDivMyTeam {
@@ -840,17 +840,17 @@
     }
 
     #scorerNumberDiv {
-        height: 35px;
-        width: 28px;
+        height: 30px;
+        width: 25px;
     }
 
     #scorerAndAssisterInfoDiv {
-        width: 54%;
-        margin-left: -10px;
+        width: 50%;
+        margin-left: 5px;
     }
 
     #scorerText {
-        font-size: small;
+        font-size: x-small;
     }
 
     #assisterText {
