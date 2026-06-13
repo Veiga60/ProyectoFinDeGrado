@@ -186,6 +186,8 @@
     border: 1px solid rgb(7, 78, 200);
     max-height: 500px;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 #matchEventsDiv::-webkit-scrollbar {
@@ -329,6 +331,10 @@
     .eventsIcon {
         width: 50px;
         height: 50px;
+    }
+
+    #matchEventsDiv {
+        max-height: 400px;
     }
 }
 
