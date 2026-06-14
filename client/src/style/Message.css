@@ -47,3 +47,29 @@
     margin-left: 5px;
     margin-right: 5px;
 }
+
+@media (max-width: 767px) {
+    #messageUserInfoDiv {
+        width: 25%;
+    }
+
+    #messageUserPlayerPhoto {
+        width: 36px;
+        height: 36px;
+    }
+
+    #messageUserPlayerText {
+        font-size: 11px;
+        width: 90%;
+        max-width: 90%;
+    }
+
+    #messageContainerDiv {
+        width: 75%;
+    }
+
+    #messageText {
+        font-size: 13px;
+        padding: 4px 6px;
+    }
+}
