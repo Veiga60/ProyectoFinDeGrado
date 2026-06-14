@@ -12,42 +12,42 @@
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Metodologías ágiles}}{17}{figure.36}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Arquitectura de la solución}}{28}{figure.60}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Primer diseño relacional de la base de datos}}{29}{figure.63}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Prototipo de pantalla de registro}}{30}{figure.66}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Prototipo de pantalla de partidos}}{31}{figure.68}%
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Prototipo de pantalla de convocatorias de jugador}}{31}{figure.70}%
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Prototipo de pantalla de login responsiva}}{32}{figure.72}%
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Editor de Figma}}{34}{figure.83}%
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Pantalla principal de Inkscape}}{35}{figure.87}%
-\contentsline {figure}{\numberline {7.9}{\ignorespaces Autenticación y autorización}}{36}{figure.94}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Arquitectura de la solución}}{30}{figure.60}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Primer diseño relacional de la base de datos}}{30}{figure.63}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Prototipo de pantalla de registro}}{31}{figure.66}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Prototipo de pantalla de partidos}}{32}{figure.68}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Prototipo de pantalla de convocatorias de jugador}}{32}{figure.70}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Prototipo de pantalla de login responsiva}}{33}{figure.72}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Editor de Figma}}{35}{figure.83}%
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Pantalla principal de Inkscape}}{36}{figure.87}%
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Autenticación y autorización}}{37}{figure.94}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Pantalla de inicio de sesión}}{45}{figure.115}%
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Pantalla de usuario no autorizado}}{46}{figure.117}%
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Pantalla de selección de rol}}{46}{figure.119}%
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Pantalla de registro}}{47}{figure.121}%
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Pantalla de partidos}}{48}{figure.125}%
-\contentsline {figure}{\numberline {8.6}{\ignorespaces Pantalla de selección de jugador para visualizar estadísticas individuales}}{49}{figure.128}%
-\contentsline {figure}{\numberline {8.7}{\ignorespaces Pantalla de estadísticas del equipo}}{49}{figure.130}%
-\contentsline {figure}{\numberline {8.8}{\ignorespaces Pantalla de estadísticas de un jugador}}{50}{figure.132}%
-\contentsline {figure}{\numberline {8.9}{\ignorespaces Pantalla de selección de tema del foro}}{50}{figure.135}%
-\contentsline {figure}{\numberline {8.10}{\ignorespaces Pantalla de selección de debate}}{51}{figure.137}%
-\contentsline {figure}{\numberline {8.11}{\ignorespaces Pantalla de mensajes de un debate}}{52}{figure.139}%
-\contentsline {figure}{\numberline {8.12}{\ignorespaces Selección de partido para convocatorias}}{53}{figure.143}%
-\contentsline {figure}{\numberline {8.13}{\ignorespaces Selección de jugadores a convocar}}{53}{figure.145}%
-\contentsline {figure}{\numberline {8.14}{\ignorespaces Asistencia de jugadores convocados}}{54}{figure.147}%
-\contentsline {figure}{\numberline {8.15}{\ignorespaces Creación de un nuevo pedido}}{55}{figure.150}%
-\contentsline {figure}{\numberline {8.16}{\ignorespaces Pantalla de seguimiento de partido}}{56}{figure.153}%
-\contentsline {figure}{\numberline {8.17}{\ignorespaces Anotación de estadísticas de un jugador durante el partido}}{57}{figure.155}%
-\contentsline {figure}{\numberline {8.18}{\ignorespaces Anotación de estadísticas del equipo durante el partido}}{57}{figure.157}%
-\contentsline {figure}{\numberline {8.19}{\ignorespaces Pantalla de selección de incidencia a anotar}}{58}{figure.159}%
-\contentsline {figure}{\numberline {8.20}{\ignorespaces Seguimiento de partido con incidencias}}{58}{figure.161}%
-\contentsline {figure}{\numberline {8.21}{\ignorespaces Pantalla de inicio con recomendaciones}}{59}{figure.163}%
-\contentsline {figure}{\numberline {8.22}{\ignorespaces Recomendaciones del equipo}}{60}{figure.165}%
-\contentsline {figure}{\numberline {8.23}{\ignorespaces Aviso de convocatoria para un jugador}}{61}{figure.169}%
-\contentsline {figure}{\numberline {8.24}{\ignorespaces Confirmación de asistencia o falta de un jugador}}{61}{figure.171}%
-\contentsline {figure}{\numberline {8.25}{\ignorespaces Pedido de material por parte de un jugador}}{62}{figure.174}%
-\contentsline {figure}{\numberline {8.26}{\ignorespaces Pantalla de inicio de jugador}}{63}{figure.177}%
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Pantalla de inicio de sesión}}{46}{figure.115}%
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Pantalla de usuario no autorizado}}{47}{figure.117}%
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Pantalla de selección de rol}}{48}{figure.119}%
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Pantalla de registro}}{48}{figure.121}%
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Pantalla de partidos}}{49}{figure.125}%
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Pantalla de selección de jugador para visualizar estadísticas individuales}}{50}{figure.128}%
+\contentsline {figure}{\numberline {8.7}{\ignorespaces Pantalla de estadísticas del equipo}}{50}{figure.130}%
+\contentsline {figure}{\numberline {8.8}{\ignorespaces Pantalla de estadísticas de un jugador}}{51}{figure.132}%
+\contentsline {figure}{\numberline {8.9}{\ignorespaces Pantalla de selección de tema del foro}}{51}{figure.135}%
+\contentsline {figure}{\numberline {8.10}{\ignorespaces Pantalla de selección de debate}}{52}{figure.137}%
+\contentsline {figure}{\numberline {8.11}{\ignorespaces Pantalla de mensajes de un debate}}{53}{figure.139}%
+\contentsline {figure}{\numberline {8.12}{\ignorespaces Selección de partido para convocatorias}}{54}{figure.143}%
+\contentsline {figure}{\numberline {8.13}{\ignorespaces Selección de jugadores a convocar}}{54}{figure.145}%
+\contentsline {figure}{\numberline {8.14}{\ignorespaces Asistencia de jugadores convocados}}{55}{figure.147}%
+\contentsline {figure}{\numberline {8.15}{\ignorespaces Creación de un nuevo pedido}}{56}{figure.150}%
+\contentsline {figure}{\numberline {8.16}{\ignorespaces Pantalla de seguimiento de partido}}{57}{figure.153}%
+\contentsline {figure}{\numberline {8.17}{\ignorespaces Anotación de estadísticas de un jugador durante el partido}}{58}{figure.155}%
+\contentsline {figure}{\numberline {8.18}{\ignorespaces Anotación de estadísticas del equipo durante el partido}}{58}{figure.157}%
+\contentsline {figure}{\numberline {8.19}{\ignorespaces Pantalla de selección de incidencia a anotar}}{59}{figure.159}%
+\contentsline {figure}{\numberline {8.20}{\ignorespaces Seguimiento de partido con incidencias}}{59}{figure.161}%
+\contentsline {figure}{\numberline {8.21}{\ignorespaces Pantalla de inicio con recomendaciones}}{60}{figure.163}%
+\contentsline {figure}{\numberline {8.22}{\ignorespaces Recomendaciones del equipo}}{61}{figure.165}%
+\contentsline {figure}{\numberline {8.23}{\ignorespaces Aviso de convocatoria para un jugador}}{62}{figure.169}%
+\contentsline {figure}{\numberline {8.24}{\ignorespaces Confirmación de asistencia o falta de un jugador}}{62}{figure.171}%
+\contentsline {figure}{\numberline {8.25}{\ignorespaces Pedido de material por parte de un jugador}}{63}{figure.174}%
+\contentsline {figure}{\numberline {8.26}{\ignorespaces Pantalla de inicio de jugador}}{64}{figure.177}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

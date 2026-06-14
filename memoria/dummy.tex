@@ -360,7 +360,7 @@ A continuación, se muestra en forma de tabla una estimación de las horas que l
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=1.3\textwidth, angle=90]{imgs/gantt.png}
+  \includegraphics[width=1.4\textwidth, angle=90]{imgs/gantt.png}
   \caption{Diagrama de Gannt con la planificación del proyecto}
   \label{fig:gantt}
 \end{figure}
@@ -473,11 +473,11 @@ La siguiente tabla muestra la distribución de tareas y sprints de forma más vi
                             &                                                                               & TFR-4.2 Aplicar responsividad a las pantallas de la solución        \\
   \hline
 
-  \multirow{4}{*}{Sprint 8} & \multirow{4}{*}{\shortstack{26/03/2026 - 07/04/2026}}
+  \multirow{2}{*}{Sprint 8} & \multirow{2}{*}{\shortstack{26/03/2026 - 07/04/2026}}
                             & TFC-1 Comparar resultados con objetivos iniciales                                                                                                   \\
   \cline{3-3}
                             &                                                                               & TFC-2 Pruebas unitarias                                             \\
-  \cline{3-3}
+  \hline
                             &                                                                               & TFC-3 Pruebas de integración                                        \\
   \cline{3-3}
                             &                                                                               & TFC-4 Pruebas de validación                                         \\
@@ -496,7 +496,7 @@ La siguiente tabla muestra la distribución de tareas y sprints de forma más vi
 
 \chapter{Presupuesto}
 
-Para la realización de este proyecto, se ha definido un presupuesto que puede dividirse en varias partes: costes de mano de obra, costes de material y costes de software, licencias y otros servicios.
+Este capítulo recoge el presupuesto del proyecto. Para su mejor comprensión, dicho presupuesto ha sido dividido en tres bloques: costes de mano de obra, costes de material y costes de software, licencias y otros servicios. En cada uno de los bloques se muestra un tabla con su desglose. Por último, ofrece la suma de los costes totales de la realización del proyecto.
 
 \section{Mano de obra}
 
@@ -571,7 +571,7 @@ Los costes de material incluyen los gastos sobre el material físico necesario p
 
 \section{Software, licencias y otros servicios}
 
-Este tipo de costes engloban gastos en herramientas, licencias y otros servicios necesarios. Para este proyecto se ha recurrido al uso de herramientas gratuitas o de código abierto, exceptuando el uso de de un modelo de inteligencia artificial generativa de Anthropic. El precio que se muestra sobre el coste de los tokens de Anthropic, son los relativos a la primera recarga de estos. Es necesario mencionar que son un gasto recurrente, es decir, una vez se agotan es necesario comprar más para poder seguir utilizando esta inteligencia artificial generativa.
+Este tipo de costes engloban gastos en herramientas, licencias y otros servicios necesarios. Para este proyecto se ha recurrido al uso de herramientas gratuitas o de código abierto, exceptuando el uso de de un modelo de inteligencia artificial generativa de Anthropic. El precio que se muestra sobre el coste de los tokens de Anthropic, son los relativos a la primera recarga de estos. Es necesario mencionar que son un gasto recurrente, es decir, una vez se agotan es necesario adquirir más para poder seguir utilizando esta inteligencia artificial generativa.
 
 \renewcommand{\arraystretch}{1.8}
 \begin{longtable}{|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{5cm}|>{\centering\arraybackslash}p{5cm}|}
@@ -650,6 +650,8 @@ Una vez estimados los costes de mano de obra, los costes de material y los coste
 \end{longtable}
 
 \chapter{Desarrollo del proyecto}
+
+Este capítulo redacta todo el proceso de desarrollo del proyecto. Comienza definiendo los stakeholders del mismo y continúa con la especificación de sus requisitos, tanto funcionales como no funcionales. Después, muestra la especificación de su diseño, incluyendo la arquitectura de la solución, el diseño relacional de la base de datos y el diseño de la interfaz de usuario. A continuación, describe las tecnologías utilizadas para la realización del proyecto y algunas consideraciones sobre la implementación. Por último, proporciona el plan de pruebas seguido y unas incidencias del proyecto.
 
 \section{Stakeholders}
 
@@ -1163,6 +1165,8 @@ El primero de esos problemas era que los usuarios que inician sesión con OAuth2
 La solución anterior provocó otro problema, esta vez relacionado con el foro de mensajes. Es necesario que un mensaje disponga de una relación hacia el usuario que lo ha publicado. El problema fue que existían dos tipos de usuarios. Una de las soluciones podía ser que cada mensaje guardase una relación hacia cada uno de los tipos de usuario, aunque de esta manera, una columna en la base de datos siempre quedaría vacía, lo que no es una buena práctica. La solución más limpia fue crear una herencia entre un usuario normal y uno que ha iniciado sesión con OAuth2, siendo el usuario normal el ``padre''. De esta forma habrá una única relación y la base de datos quedará más limpia.
 
 \chapter{Manual de usuario}
+
+Este capítulo muestra un manual para que un usuario comprenda cómo hacer uso de la solución web.
 
 \section{Prerrequisitos}
 

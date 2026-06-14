@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.5.1)  14 JUN 2026 13:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.5.1)  14 JUN 2026 14:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1131,9 +1131,9 @@ ignored: Infinite glue shrinkage found in box being split [13]
 File: imgs/gantt.png Graphic file (type png)
 <use imgs/gantt.png>
 Package pdftex.def Info: imgs/gantt.png  used on input line 363.
-(pdftex.def)             Requested size: 591.81873pt x 390.26045pt.
+(pdftex.def)             Requested size: 637.33897pt x 420.2778pt.
  [14]
-Overfull \vbox (10.63898pt too high) has occurred while \output is active []
+Overfull \vbox (56.15923pt too high) has occurred while \output is active []
 
  [15 <./imgs/gantt.png>]
 chapter 5.
@@ -1295,238 +1295,238 @@ LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
 (Font)              in TS1 encoding on input line 644.
 LaTeX Font Info:    Faking \texteuro for font family SourceSansThree-TLF
 (Font)              in TS1 encoding on input line 646.
- [24]
+
+ignored: Infinite glue shrinkage found in box being split [24] [25]
 chapter 7.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/bold/n' aliased to
-(Font)              `T1/SourceSansThree-TLF/b/n' on input line 685.
+(Font)              `T1/SourceSansThree-TLF/b/n' on input line 687.
 LaTeX Font Info:    Font shape `T1/SourceSansThree-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 685.
-[25
+(Font)              scaled to size 12.0pt on input line 687.
+[26
 
-] [26] [27]
-<imgs/arquitectura.png, id=546, 853.5087pt x 369.2997pt>
+] [27] [28]
+<imgs/arquitectura.png, id=549, 853.5087pt x 369.2997pt>
 File: imgs/arquitectura.png Graphic file (type png)
 <use imgs/arquitectura.png>
-Package pdftex.def Info: imgs/arquitectura.png  used on input line 749.
+Package pdftex.def Info: imgs/arquitectura.png  used on input line 751.
 (pdftex.def)             Requested size: 455.24411pt x 196.97324pt.
- [28 <./imgs/arquitectura.png>]
-<imgs/first_database.png, id=556, 818.0964pt x 567.3195pt>
+<imgs/first_database.png, id=550, 818.0964pt x 567.3195pt>
 File: imgs/first_database.png Graphic file (type png)
 <use imgs/first_database.png>
-Package pdftex.def Info: imgs/first_database.png  used on input line 760.
+Package pdftex.def Info: imgs/first_database.png  used on input line 762.
 (pdftex.def)             Requested size: 455.24411pt x 315.68843pt.
- [29 <./imgs/first_database.png>]
-<imgs/pantallaRegistro.png, id=563, 1028.34187pt x 578.16pt>
+ [29] [30 <./imgs/arquitectura.png> <./imgs/first_database.png>]
+<imgs/pantallaRegistro.png, id=567, 1028.34187pt x 578.16pt>
 File: imgs/pantallaRegistro.png Graphic file (type png)
 <use imgs/pantallaRegistro.png>
-Package pdftex.def Info: imgs/pantallaRegistro.png  used on input line 779.
+Package pdftex.def Info: imgs/pantallaRegistro.png  used on input line 781.
 (pdftex.def)             Requested size: 409.71692pt x 230.35123pt.
-<imgs/pantallaPartidos.jpeg, id=564, 1369.115pt x 771.88374pt>
+<imgs/pantallaPartidos.jpeg, id=568, 1369.115pt x 771.88374pt>
 File: imgs/pantallaPartidos.jpeg Graphic file (type jpg)
 <use imgs/pantallaPartidos.jpeg>
-Package pdftex.def Info: imgs/pantallaPartidos.jpeg  used on input line 786.
+Package pdftex.def Info: imgs/pantallaPartidos.jpeg  used on input line 788.
 (pdftex.def)             Requested size: 409.71692pt x 230.98978pt.
- [30 <./imgs/pantallaRegistro.png>]
-<imgs/pantallaConvocatoriasJugador.png, id=571, 1027.58907pt x 577.40718pt>
+ [31 <./imgs/pantallaRegistro.png>]
+<imgs/pantallaConvocatoriasJugador.png, id=575, 1027.58907pt x 577.40718pt>
 File: imgs/pantallaConvocatoriasJugador.png Graphic file (type png)
 <use imgs/pantallaConvocatoriasJugador.png>
-Package pdftex.def Info: imgs/pantallaConvocatoriasJugador.png  used on input line 793.
+Package pdftex.def Info: imgs/pantallaConvocatoriasJugador.png  used on input line 795.
 (pdftex.def)             Requested size: 409.71692pt x 230.21869pt.
-<imgs/pantallaLoginResponsive.png, id=572, 208.52907pt x 456.95718pt>
+<imgs/pantallaLoginResponsive.png, id=576, 208.52907pt x 456.95718pt>
 File: imgs/pantallaLoginResponsive.png Graphic file (type png)
 <use imgs/pantallaLoginResponsive.png>
-Package pdftex.def Info: imgs/pantallaLoginResponsive.png  used on input line 802.
+Package pdftex.def Info: imgs/pantallaLoginResponsive.png  used on input line 804.
 (pdftex.def)             Requested size: 113.81102pt x 249.40279pt.
- [31 <./imgs/pantallaPartidos.jpeg> <./imgs/pantallaConvocatoriasJugador.png>] [32 <./imgs/pantallaLoginResponsive.png>]
-<imgs/figma.png, id=597, 1445.4pt x 813.0375pt>
+ [32 <./imgs/pantallaPartidos.jpeg> <./imgs/pantallaConvocatoriasJugador.png>] [33 <./imgs/pantallaLoginResponsive.png>]
+<imgs/figma.png, id=601, 1445.4pt x 813.0375pt>
 File: imgs/figma.png Graphic file (type png)
 <use imgs/figma.png>
-Package pdftex.def Info: imgs/figma.png  used on input line 845.
+Package pdftex.def Info: imgs/figma.png  used on input line 847.
 (pdftex.def)             Requested size: 455.24411pt x 256.07095pt.
- [33]
-<imgs/inkscape.jpeg, id=610, 1606.0pt x 903.375pt>
+ [34]
+<imgs/inkscape.jpeg, id=615, 1606.0pt x 903.375pt>
 File: imgs/inkscape.jpeg Graphic file (type jpg)
 <use imgs/inkscape.jpeg>
-Package pdftex.def Info: imgs/inkscape.jpeg  used on input line 860.
+Package pdftex.def Info: imgs/inkscape.jpeg  used on input line 862.
 (pdftex.def)             Requested size: 455.24411pt x 256.07233pt.
- [34 <./imgs/figma.png>] [35 <./imgs/inkscape.jpeg>]
-<imgs/autorizacion_autenticacion.png, id=634, 962.84718pt x 383.18156pt>
+ [35 <./imgs/figma.png>] [36 <./imgs/inkscape.jpeg>]
+<imgs/autorizacion_autenticacion.png, id=638, 962.84718pt x 383.18156pt>
 File: imgs/autorizacion_autenticacion.png Graphic file (type png)
 <use imgs/autorizacion_autenticacion.png>
-Package pdftex.def Info: imgs/autorizacion_autenticacion.png  used on input line 889.
+Package pdftex.def Info: imgs/autorizacion_autenticacion.png  used on input line 891.
 (pdftex.def)             Requested size: 455.24411pt x 181.17117pt.
- [36 <./imgs/autorizacion_autenticacion.png>] [37] [38] [39] [40] [41] [42] [43] [44]
+ [37 <./imgs/autorizacion_autenticacion.png>] [38] [39] [40] [41] [42] [43] [44] [45]
 chapter 8.
-<imgs/login.jpeg, id=688, 1606.0pt x 903.375pt>
+<imgs/login.jpeg, id=692, 1606.0pt x 903.375pt>
 File: imgs/login.jpeg Graphic file (type jpg)
 <use imgs/login.jpeg>
-Package pdftex.def Info: imgs/login.jpeg  used on input line 1183.
+Package pdftex.def Info: imgs/login.jpeg  used on input line 1187.
 (pdftex.def)             Requested size: 386.96027pt x 217.65527pt.
-<imgs/usuario_no_autorizado.jpeg, id=689, 1606.0pt x 903.375pt>
-File: imgs/usuario_no_autorizado.jpeg Graphic file (type jpg)
-<use imgs/usuario_no_autorizado.jpeg>
-Package pdftex.def Info: imgs/usuario_no_autorizado.jpeg  used on input line 1192.
-(pdftex.def)             Requested size: 386.96027pt x 217.65527pt.
-[45
+[46
 
  <./imgs/login.jpeg>]
-<imgs/seleccion_rol.jpeg, id=695, 1606.0pt x 903.375pt>
+<imgs/usuario_no_autorizado.jpeg, id=699, 1606.0pt x 903.375pt>
+File: imgs/usuario_no_autorizado.jpeg Graphic file (type jpg)
+<use imgs/usuario_no_autorizado.jpeg>
+Package pdftex.def Info: imgs/usuario_no_autorizado.jpeg  used on input line 1196.
+(pdftex.def)             Requested size: 386.96027pt x 217.65527pt.
+<imgs/seleccion_rol.jpeg, id=700, 1606.0pt x 903.375pt>
 File: imgs/seleccion_rol.jpeg Graphic file (type jpg)
 <use imgs/seleccion_rol.jpeg>
-Package pdftex.def Info: imgs/seleccion_rol.jpeg  used on input line 1201.
+Package pdftex.def Info: imgs/seleccion_rol.jpeg  used on input line 1205.
 (pdftex.def)             Requested size: 386.96027pt x 217.65527pt.
- [46 <./imgs/usuario_no_autorizado.jpeg> <./imgs/seleccion_rol.jpeg>]
-<imgs/registro.jpeg, id=703, 1606.0pt x 903.375pt>
+ [47 <./imgs/usuario_no_autorizado.jpeg>]
+<imgs/registro.jpeg, id=706, 1606.0pt x 903.375pt>
 File: imgs/registro.jpeg Graphic file (type jpg)
 <use imgs/registro.jpeg>
-Package pdftex.def Info: imgs/registro.jpeg  used on input line 1210.
+Package pdftex.def Info: imgs/registro.jpeg  used on input line 1214.
 (pdftex.def)             Requested size: 386.96027pt x 217.65527pt.
- [47 <./imgs/registro.jpeg>]
-<imgs/partidos.jpeg, id=709, 1606.0pt x 903.375pt>
+ [48 <./imgs/seleccion_rol.jpeg> <./imgs/registro.jpeg>]
+<imgs/partidos.jpeg, id=713, 1606.0pt x 903.375pt>
 File: imgs/partidos.jpeg Graphic file (type jpg)
 <use imgs/partidos.jpeg>
-Package pdftex.def Info: imgs/partidos.jpeg  used on input line 1229.
+Package pdftex.def Info: imgs/partidos.jpeg  used on input line 1233.
 (pdftex.def)             Requested size: 386.96027pt x 217.65527pt.
-<imgs/estadisticas_jugadores.jpeg, id=710, 1606.0pt x 903.375pt>
+ [49 <./imgs/partidos.jpeg>]
+<imgs/estadisticas_jugadores.jpeg, id=720, 1606.0pt x 903.375pt>
 File: imgs/estadisticas_jugadores.jpeg Graphic file (type jpg)
 <use imgs/estadisticas_jugadores.jpeg>
-Package pdftex.def Info: imgs/estadisticas_jugadores.jpeg  used on input line 1240.
+Package pdftex.def Info: imgs/estadisticas_jugadores.jpeg  used on input line 1244.
 (pdftex.def)             Requested size: 386.96027pt x 217.65527pt.
- [48 <./imgs/partidos.jpeg>]
-<imgs/estadisticas_equipo.jpeg, id=718, 1606.0pt x 903.375pt>
+<imgs/estadisticas_equipo.jpeg, id=721, 1606.0pt x 903.375pt>
 File: imgs/estadisticas_equipo.jpeg Graphic file (type jpg)
 <use imgs/estadisticas_equipo.jpeg>
-Package pdftex.def Info: imgs/estadisticas_equipo.jpeg  used on input line 1247.
+Package pdftex.def Info: imgs/estadisticas_equipo.jpeg  used on input line 1251.
 (pdftex.def)             Requested size: 386.96027pt x 217.65527pt.
-<imgs/estadisticas_jugador.jpeg, id=719, 1606.0pt x 903.375pt>
+<imgs/estadisticas_jugador.jpeg, id=722, 1606.0pt x 903.375pt>
 File: imgs/estadisticas_jugador.jpeg Graphic file (type jpg)
 <use imgs/estadisticas_jugador.jpeg>
-Package pdftex.def Info: imgs/estadisticas_jugador.jpeg  used on input line 1254.
+Package pdftex.def Info: imgs/estadisticas_jugador.jpeg  used on input line 1258.
 (pdftex.def)             Requested size: 386.96027pt x 217.65527pt.
- [49 <./imgs/estadisticas_jugadores.jpeg> <./imgs/estadisticas_equipo.jpeg>]
-<imgs/foro_temas.jpeg, id=726, 1606.0pt x 903.375pt>
+ [50 <./imgs/estadisticas_jugadores.jpeg> <./imgs/estadisticas_equipo.jpeg>]
+<imgs/foro_temas.jpeg, id=730, 1606.0pt x 903.375pt>
 File: imgs/foro_temas.jpeg Graphic file (type jpg)
 <use imgs/foro_temas.jpeg>
-Package pdftex.def Info: imgs/foro_temas.jpeg  used on input line 1265.
+Package pdftex.def Info: imgs/foro_temas.jpeg  used on input line 1269.
 (pdftex.def)             Requested size: 386.96027pt x 217.65527pt.
- [50 <./imgs/estadisticas_jugador.jpeg> <./imgs/foro_temas.jpeg>]
-<imgs/foro_debates.jpeg, id=734, 1606.0pt x 903.375pt>
+ [51 <./imgs/estadisticas_jugador.jpeg> <./imgs/foro_temas.jpeg>]
+<imgs/foro_debates.jpeg, id=738, 1606.0pt x 903.375pt>
 File: imgs/foro_debates.jpeg Graphic file (type jpg)
 <use imgs/foro_debates.jpeg>
-Package pdftex.def Info: imgs/foro_debates.jpeg  used on input line 1276.
+Package pdftex.def Info: imgs/foro_debates.jpeg  used on input line 1280.
 (pdftex.def)             Requested size: 386.96027pt x 217.65527pt.
-<imgs/foro_mensajes.jpeg, id=735, 1606.0pt x 903.375pt>
+<imgs/foro_mensajes.jpeg, id=739, 1606.0pt x 903.375pt>
 File: imgs/foro_mensajes.jpeg Graphic file (type jpg)
 <use imgs/foro_mensajes.jpeg>
-Package pdftex.def Info: imgs/foro_mensajes.jpeg  used on input line 1285.
+Package pdftex.def Info: imgs/foro_mensajes.jpeg  used on input line 1289.
 (pdftex.def)             Requested size: 409.71692pt x 230.46095pt.
- [51 <./imgs/foro_debates.jpeg>]
-<imgs/convocatorias_partidos.jpeg, id=741, 1606.0pt x 903.375pt>
+ [52 <./imgs/foro_debates.jpeg>]
+<imgs/convocatorias_partidos.jpeg, id=746, 1606.0pt x 903.375pt>
 File: imgs/convocatorias_partidos.jpeg Graphic file (type jpg)
 <use imgs/convocatorias_partidos.jpeg>
-Package pdftex.def Info: imgs/convocatorias_partidos.jpeg  used on input line 1298.
+Package pdftex.def Info: imgs/convocatorias_partidos.jpeg  used on input line 1302.
 (pdftex.def)             Requested size: 386.96027pt x 217.65527pt.
- [52 <./imgs/foro_mensajes.jpeg>]
-<imgs/convocatorias_lista_jugadores.jpeg, id=749, 1606.0pt x 903.375pt>
+ [53 <./imgs/foro_mensajes.jpeg>]
+<imgs/convocatorias_lista_jugadores.jpeg, id=753, 1606.0pt x 903.375pt>
 File: imgs/convocatorias_lista_jugadores.jpeg Graphic file (type jpg)
 <use imgs/convocatorias_lista_jugadores.jpeg>
-Package pdftex.def Info: imgs/convocatorias_lista_jugadores.jpeg  used on input line 1307.
+Package pdftex.def Info: imgs/convocatorias_lista_jugadores.jpeg  used on input line 1311.
 (pdftex.def)             Requested size: 386.96027pt x 217.65527pt.
- [53 <./imgs/convocatorias_partidos.jpeg> <./imgs/convocatorias_lista_jugadores.jpeg>]
-<imgs/convocatorias_asistencia_jugadores.jpeg, id=756, 1606.0pt x 903.375pt>
+ [54 <./imgs/convocatorias_partidos.jpeg> <./imgs/convocatorias_lista_jugadores.jpeg>]
+<imgs/convocatorias_asistencia_jugadores.jpeg, id=760, 1606.0pt x 903.375pt>
 File: imgs/convocatorias_asistencia_jugadores.jpeg Graphic file (type jpg)
 <use imgs/convocatorias_asistencia_jugadores.jpeg>
-Package pdftex.def Info: imgs/convocatorias_asistencia_jugadores.jpeg  used on input line 1316.
+Package pdftex.def Info: imgs/convocatorias_asistencia_jugadores.jpeg  used on input line 1320.
 (pdftex.def)             Requested size: 386.96027pt x 217.65527pt.
-<imgs/pedidos_crear_nuevo.jpeg, id=757, 1606.0pt x 903.375pt>
+<imgs/pedidos_crear_nuevo.jpeg, id=761, 1606.0pt x 903.375pt>
 File: imgs/pedidos_crear_nuevo.jpeg Graphic file (type jpg)
 <use imgs/pedidos_crear_nuevo.jpeg>
-Package pdftex.def Info: imgs/pedidos_crear_nuevo.jpeg  used on input line 1327.
+Package pdftex.def Info: imgs/pedidos_crear_nuevo.jpeg  used on input line 1331.
 (pdftex.def)             Requested size: 386.96027pt x 217.65527pt.
- [54 <./imgs/convocatorias_asistencia_jugadores.jpeg>]
-<imgs/pantalla_seguimiento_partido.jpeg, id=764, 1606.0pt x 903.375pt>
+ [55 <./imgs/convocatorias_asistencia_jugadores.jpeg>]
+<imgs/pantalla_seguimiento_partido.jpeg, id=768, 1606.0pt x 903.375pt>
 File: imgs/pantalla_seguimiento_partido.jpeg Graphic file (type jpg)
 <use imgs/pantalla_seguimiento_partido.jpeg>
-Package pdftex.def Info: imgs/pantalla_seguimiento_partido.jpeg  used on input line 1340.
+Package pdftex.def Info: imgs/pantalla_seguimiento_partido.jpeg  used on input line 1344.
 (pdftex.def)             Requested size: 386.96027pt x 217.65527pt.
- [55 <./imgs/pedidos_crear_nuevo.jpeg>]
-<imgs/estadisticas_jugador_partido.jpeg, id=771, 1606.0pt x 903.375pt>
+ [56 <./imgs/pedidos_crear_nuevo.jpeg>]
+<imgs/estadisticas_jugador_partido.jpeg, id=775, 1606.0pt x 903.375pt>
 File: imgs/estadisticas_jugador_partido.jpeg Graphic file (type jpg)
 <use imgs/estadisticas_jugador_partido.jpeg>
-Package pdftex.def Info: imgs/estadisticas_jugador_partido.jpeg  used on input line 1353.
+Package pdftex.def Info: imgs/estadisticas_jugador_partido.jpeg  used on input line 1357.
 (pdftex.def)             Requested size: 386.96027pt x 217.65527pt.
- [56 <./imgs/pantalla_seguimiento_partido.jpeg>]
-<imgs/estadisticas_equipo_partido.jpeg, id=777, 1606.0pt x 903.375pt>
+ [57 <./imgs/pantalla_seguimiento_partido.jpeg>]
+<imgs/estadisticas_equipo_partido.jpeg, id=781, 1606.0pt x 903.375pt>
 File: imgs/estadisticas_equipo_partido.jpeg Graphic file (type jpg)
 <use imgs/estadisticas_equipo_partido.jpeg>
-Package pdftex.def Info: imgs/estadisticas_equipo_partido.jpeg  used on input line 1362.
+Package pdftex.def Info: imgs/estadisticas_equipo_partido.jpeg  used on input line 1366.
 (pdftex.def)             Requested size: 386.96027pt x 217.65527pt.
-<imgs/pantalla_incidencias_partido.jpeg, id=778, 1606.0pt x 903.375pt>
+<imgs/pantalla_incidencias_partido.jpeg, id=782, 1606.0pt x 903.375pt>
 File: imgs/pantalla_incidencias_partido.jpeg Graphic file (type jpg)
 <use imgs/pantalla_incidencias_partido.jpeg>
-Package pdftex.def Info: imgs/pantalla_incidencias_partido.jpeg  used on input line 1371.
+Package pdftex.def Info: imgs/pantalla_incidencias_partido.jpeg  used on input line 1375.
 (pdftex.def)             Requested size: 386.96027pt x 217.65527pt.
- [57 <./imgs/estadisticas_jugador_partido.jpeg> <./imgs/estadisticas_equipo_partido.jpeg>]
-<imgs/seguimiento_partido_incidencias.jpeg, id=785, 1606.0pt x 903.375pt>
+ [58 <./imgs/estadisticas_jugador_partido.jpeg> <./imgs/estadisticas_equipo_partido.jpeg>]
+<imgs/seguimiento_partido_incidencias.jpeg, id=790, 1606.0pt x 903.375pt>
 File: imgs/seguimiento_partido_incidencias.jpeg Graphic file (type jpg)
 <use imgs/seguimiento_partido_incidencias.jpeg>
-Package pdftex.def Info: imgs/seguimiento_partido_incidencias.jpeg  used on input line 1380.
+Package pdftex.def Info: imgs/seguimiento_partido_incidencias.jpeg  used on input line 1384.
 (pdftex.def)             Requested size: 386.96027pt x 217.65527pt.
- [58 <./imgs/pantalla_incidencias_partido.jpeg> <./imgs/seguimiento_partido_incidencias.jpeg>]
-<imgs/pantalla_inicio_recomendaciones.jpeg, id=793, 1606.0pt x 903.375pt>
+ [59 <./imgs/pantalla_incidencias_partido.jpeg> <./imgs/seguimiento_partido_incidencias.jpeg>]
+<imgs/pantalla_inicio_recomendaciones.jpeg, id=797, 1606.0pt x 903.375pt>
 File: imgs/pantalla_inicio_recomendaciones.jpeg Graphic file (type jpg)
 <use imgs/pantalla_inicio_recomendaciones.jpeg>
-Package pdftex.def Info: imgs/pantalla_inicio_recomendaciones.jpeg  used on input line 1391.
+Package pdftex.def Info: imgs/pantalla_inicio_recomendaciones.jpeg  used on input line 1395.
 (pdftex.def)             Requested size: 386.96027pt x 217.65527pt.
-<imgs/recomendaciones_equipo.jpeg, id=794, 1606.0pt x 903.375pt>
+<imgs/recomendaciones_equipo.jpeg, id=798, 1606.0pt x 903.375pt>
 File: imgs/recomendaciones_equipo.jpeg Graphic file (type jpg)
 <use imgs/recomendaciones_equipo.jpeg>
-Package pdftex.def Info: imgs/recomendaciones_equipo.jpeg  used on input line 1400.
+Package pdftex.def Info: imgs/recomendaciones_equipo.jpeg  used on input line 1404.
 (pdftex.def)             Requested size: 386.96027pt x 217.65527pt.
- [59 <./imgs/pantalla_inicio_recomendaciones.jpeg>]
-<imgs/convocatorias_aviso_convocado.jpeg, id=800, 1606.0pt x 903.375pt>
+ [60 <./imgs/pantalla_inicio_recomendaciones.jpeg>]
+<imgs/convocatorias_aviso_convocado.jpeg, id=804, 1606.0pt x 903.375pt>
 File: imgs/convocatorias_aviso_convocado.jpeg Graphic file (type jpg)
 <use imgs/convocatorias_aviso_convocado.jpeg>
-Package pdftex.def Info: imgs/convocatorias_aviso_convocado.jpeg  used on input line 1413.
+Package pdftex.def Info: imgs/convocatorias_aviso_convocado.jpeg  used on input line 1417.
 (pdftex.def)             Requested size: 386.96027pt x 217.65527pt.
- [60 <./imgs/recomendaciones_equipo.jpeg>]
-<imgs/convocatorias_confirmar_asistencia_falta.jpeg, id=807, 1606.0pt x 903.375pt>
+ [61 <./imgs/recomendaciones_equipo.jpeg>]
+<imgs/convocatorias_confirmar_asistencia_falta.jpeg, id=811, 1606.0pt x 903.375pt>
 File: imgs/convocatorias_confirmar_asistencia_falta.jpeg Graphic file (type jpg)
 <use imgs/convocatorias_confirmar_asistencia_falta.jpeg>
-Package pdftex.def Info: imgs/convocatorias_confirmar_asistencia_falta.jpeg  used on input line 1422.
+Package pdftex.def Info: imgs/convocatorias_confirmar_asistencia_falta.jpeg  used on input line 1426.
 (pdftex.def)             Requested size: 386.96027pt x 217.65527pt.
- [61 <./imgs/convocatorias_aviso_convocado.jpeg> <./imgs/convocatorias_confirmar_asistencia_falta.jpeg>]
-<imgs/pedidos_pedir_material.jpeg, id=814, 1606.0pt x 903.375pt>
+ [62 <./imgs/convocatorias_aviso_convocado.jpeg> <./imgs/convocatorias_confirmar_asistencia_falta.jpeg>]
+<imgs/pedidos_pedir_material.jpeg, id=818, 1606.0pt x 903.375pt>
 File: imgs/pedidos_pedir_material.jpeg Graphic file (type jpg)
 <use imgs/pedidos_pedir_material.jpeg>
-Package pdftex.def Info: imgs/pedidos_pedir_material.jpeg  used on input line 1433.
+Package pdftex.def Info: imgs/pedidos_pedir_material.jpeg  used on input line 1437.
 (pdftex.def)             Requested size: 386.96027pt x 217.65527pt.
-<imgs/pantalla_inicio_jugador.jpeg, id=815, 1606.0pt x 903.375pt>
+<imgs/pantalla_inicio_jugador.jpeg, id=819, 1606.0pt x 903.375pt>
 File: imgs/pantalla_inicio_jugador.jpeg Graphic file (type jpg)
 <use imgs/pantalla_inicio_jugador.jpeg>
-Package pdftex.def Info: imgs/pantalla_inicio_jugador.jpeg  used on input line 1446.
+Package pdftex.def Info: imgs/pantalla_inicio_jugador.jpeg  used on input line 1450.
 (pdftex.def)             Requested size: 386.96027pt x 217.65527pt.
- [62 <./imgs/pedidos_pedir_material.jpeg>] [63 <./imgs/pantalla_inicio_jugador.jpeg>]
+ [63 <./imgs/pedidos_pedir_material.jpeg>] [64 <./imgs/pantalla_inicio_jugador.jpeg>]
 chapter 9.
-[64
+[65
 
-] [65] [66] [67]
+] [66] [67] [68]
 chapter 10.
-[68
+[69
 
-] [69]
+] [70]
 chapter 11.
-) [70
+) [71
 
-] (main.bbl [71
-
-
+] (main.bbl [72
 
 
 
-]) [72]
+
+
+]) [73]
 chapter A.
-[73
+[74
 
 ] (main.aux
 LaTeX Info: Redefining \. on input line 14.
@@ -1542,17 +1542,17 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 24333 strings out of 467691
- 461182 string characters out of 5415472
- 1073281 words of memory out of 5000000
+ 24334 strings out of 467691
+ 461189 string characters out of 5415472
+ 1074281 words of memory out of 5000000
  52453 multiletter control sequences out of 15000+600000
  789805 words of font info for 258 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 122i,21n,121p,11242b,952s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 122i,20n,121p,11242b,952s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-Bold.pfb><C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-It.pfb><C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcesans/SourceSans3-Regular.pfb>
-Output written on main.pdf (82 pages, 5341447 bytes).
+Output written on main.pdf (83 pages, 5343200 bytes).
 PDF statistics:
- 1235 PDF objects out of 1440 (max. 8388607)
- 302 named destinations out of 1000 (max. 500000)
+ 1239 PDF objects out of 1440 (max. 8388607)
+ 303 named destinations out of 1000 (max. 500000)
  62333 words of extra memory for PDF output out of 74296 (max. 10000000)
 
