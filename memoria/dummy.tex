@@ -22,6 +22,8 @@ Esta memoria está dividida en varios capítulos, con el objetivo de facilitar s
 
 \chapter{Antecedentes y justificación}
 
+En este capítulo se aborda la motivación que llevó a la realización de este proyecto. Muestra una visión actual del deporte competitivo en nuestro país y de la gestión deportiva del club tomado como referencia. Además se proporcionan ejemplos de soluciones ya existentes en el mercado similares a este proyecto.
+
 Vivimos en un país en el que los deportes por excelencia siempre han sido el fútbol y el baloncesto, aunque también hay muchos más deportes con gran visibilidad en España. No obstante, también existen cantidad de deportes minoritarios en nuestro país. Estos deportes carecen de profesionalización debido a la escasa visibilidad que se les proporciona. Por ello, estos clubes disponen de recursos mucho más limitados que los de los clubes deportivos profesionales.
 
 El hockey línea en España es un deporte minoritario y semiprofesional, que en los últimos años ha ganado mucha visibilidad gracias a la retransmisión en directo de sus partidos en plataformas de \textit{streaming} como YouTube o Twitch. Lamentablemente, esto no es suficiente para profesionalizar este deporte.
@@ -42,7 +44,7 @@ Es la aplicación que más se asemeja a este proyecto.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=1.0\textwidth]{imgs/sporteasy.png}
+  \includegraphics[width=0.9\textwidth]{imgs/sporteasy.png}
   \caption{Panel de estadísticas de SportEasy}
   \label{fig:panel-estadisticas-sporteasy}
 \end{figure}
@@ -81,9 +83,9 @@ Además de estas funcionalidades, también incluye la gestión de los miembros d
 
 Esta aplicación cuenta con muchas más funcionalidades que las comentadas anteriormente, pero no forman parte de la gestión de los equipos del club.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
   \centering
-  \includegraphics[width=1.0\textwidth]{imgs/clupik.png}
+  \includegraphics[width=0.9\textwidth]{imgs/clupik.png}
   \caption{Monitorización de asistencia con Clupik}
   \label{fig:monitorizacion-asistencia-clupik}
 \end{figure}
@@ -91,6 +93,8 @@ Esta aplicación cuenta con muchas más funcionalidades que las comentadas anter
 Existen muchas funcionalidades que son comunes a todas las soluciones de este tipo, y hay otras que son exclusivas de aplicaciones específicas como elemento diferenciador. En el caso de este proyecto, implementará una funcionalidad para gestionar pedidos de material para el equipo y permitirá la anotación de estadísticas, tanto de jugadores como del equipo, durante el partido. Además, proporcionará recomendaciones basándose en las estadísticas recopiladas durante el partido, para cada jugador y para el equipo.
 
 \chapter{Objetivos y alcance}
+
+En este capítulo se definen, en primer lugar,  los objetivos que se han establecido para el proyecto. Posteriormente, se define el alcance del mismo, tanto lo que se incluye en él como lo que no.
 
 \section{Objetivos}
 
@@ -131,11 +135,13 @@ Para la realización de este proyecto, también ha sido fundamental tener claro 
 
 \chapter{Plan de trabajo}
 
+En el plan de trabajo del proyecto se redacta la planificación en el tiempo del mismo y la estimación de tiempos del mismo. En primer lugar se definen las tareas a completar en cada una de las fases del proyecto. Después, se ilustra en forma de tabla una estimación de las horas que llevará completar cada tarea definida en la planificación. Por último se muestra dicha planificación de forma visual mediante un diagrama de Gantt.
+
 \section{Planificación temporal}
 
 Este apartado describe las fases y tareas que han sido realizadas para completar el proyecto. El proyecto se divide en 5 partes, cada una de ellas con tareas y/o fases a completar. La fase de realización del proyecto ha sido dividida en 4 fases. La primera de ellas consta de la creación y configuración del proyecto. Las fases restantes se han planificado de esa forma debido a una división de las funcionalidades a implementar. Para esta división se han tenido en cuenta factores como relevancia de la funcionalidad en el proyecto, dificultad de la misma y dependencia de otras funcionalidades.
 
-Antes de mostrar el cronograma del proyecto mediante el diagrama de Gantt, se redacta cada una de las fases de la planificación con sus respectivas tareas a completar:
+A continuación, se redacta cada una de las fases de la planificación con sus respectivas tareas a completar:
 
 \textbf{Definición del proyecto:}
 
@@ -293,7 +299,7 @@ A continuación, se muestra en forma de tabla una estimación de las horas que l
 
   \multirow{1}{*}{Planificación}
                 & TFP-1. Estimación de tiempos                                                  & 1h                  \\
-  \hline
+  \cline{2-3}
                 & TFP-2. División del desarrollo del proyecto                                   & 1h                  \\
   \cline{2-3}
                 & TFP-3. Planificación del desarrollo del proyecto                              & 2h                  \\
@@ -319,9 +325,9 @@ A continuación, se muestra en forma de tabla una estimación de las horas que l
                 & TFR-2.1 Gestión de convocatorias                                              & 16h                 \\
   \cline{2-3}
                 & TFR-2.2 Seguimiento de estadísticas e incidencias de partido                  & 40h                 \\
-  \cline{2-3}
-                & TFR-2.3 Módulo inteligente de recomendaciones                                 & 15h                 \\
   \hline
+                & TFR-2.3 Módulo inteligente de recomendaciones                                 & 15h                 \\
+  \cline{2-3}
                 & TFR-3.1 Foro de mensajes                                                      & 6h                  \\
   \cline{2-3}
                 & TFR-3.2 Gestión de pedidos de material                                        & 8h                  \\
@@ -354,12 +360,14 @@ A continuación, se muestra en forma de tabla una estimación de las horas que l
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=1.3\textwidth, angle=90]{imgs/gantt.png}
+  \includegraphics[width=1.4\textwidth, angle=90]{imgs/gantt.png}
   \caption{Diagrama de Gannt con la planificación del proyecto}
   \label{fig:gantt}
 \end{figure}
 
 \chapter{Metodología}
+
+Este capítulo detalla la metodología seguida para la realización de este proyecto. En primer lugar, se exponen las metodologías ágiles y se explica por qué se ha optado por una de ellas para este proyecto. A continuación, se describe el marco de trabajo utilizado con una tabla con los sprints planificados.
 
 \section{Metodologías ágiles}
 
@@ -465,11 +473,11 @@ La siguiente tabla muestra la distribución de tareas y sprints de forma más vi
                             &                                                                               & TFR-4.2 Aplicar responsividad a las pantallas de la solución        \\
   \hline
 
-  \multirow{4}{*}{Sprint 8} & \multirow{4}{*}{\shortstack{26/03/2026 - 07/04/2026}}
+  \multirow{2}{*}{Sprint 8} & \multirow{2}{*}{\shortstack{26/03/2026 - 07/04/2026}}
                             & TFC-1 Comparar resultados con objetivos iniciales                                                                                                   \\
   \cline{3-3}
                             &                                                                               & TFC-2 Pruebas unitarias                                             \\
-  \cline{3-3}
+  \hline
                             &                                                                               & TFC-3 Pruebas de integración                                        \\
   \cline{3-3}
                             &                                                                               & TFC-4 Pruebas de validación                                         \\
@@ -488,7 +496,7 @@ La siguiente tabla muestra la distribución de tareas y sprints de forma más vi
 
 \chapter{Presupuesto}
 
-Para la realización de este proyecto, se ha definido un presupuesto que puede dividirse en varias partes: costes de mano de obra, costes de material y costes de software, licencias y otros servicios.
+Este capítulo recoge el presupuesto del proyecto. Para su mejor comprensión, dicho presupuesto ha sido dividido en tres bloques: costes de mano de obra, costes de material y costes de software, licencias y otros servicios. En cada uno de los bloques se muestra un tabla con su desglose. Por último, ofrece la suma de los costes totales de la realización del proyecto.
 
 \section{Mano de obra}
 
@@ -563,7 +571,7 @@ Los costes de material incluyen los gastos sobre el material físico necesario p
 
 \section{Software, licencias y otros servicios}
 
-Este tipo de costes engloban gastos en herramientas, licencias y otros servicios necesarios. Para este proyecto se ha recurrido al uso de herramientas gratuitas o de código abierto, exceptuando el uso de de un modelo de inteligencia artificial generativa de Anthropic. El precio que se muestra sobre el coste de los tokens de Anthropic, son los relativos a la primera recarga de estos. Es necesario mencionar que son un gasto recurrente, es decir, una vez se agotan es necesario comprar más para poder seguir utilizando esta inteligencia artificial generativa.
+Este tipo de costes engloban gastos en herramientas, licencias y otros servicios necesarios. Para este proyecto se ha recurrido al uso de herramientas gratuitas o de código abierto, exceptuando el uso de de un modelo de inteligencia artificial generativa de Anthropic. El precio que se muestra sobre el coste de los tokens de Anthropic, son los relativos a la primera recarga de estos. Es necesario mencionar que son un gasto recurrente, es decir, una vez se agotan es necesario adquirir más para poder seguir utilizando esta inteligencia artificial generativa.
 
 \renewcommand{\arraystretch}{1.8}
 \begin{longtable}{|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{5cm}|>{\centering\arraybackslash}p{5cm}|}
@@ -642,6 +650,8 @@ Una vez estimados los costes de mano de obra, los costes de material y los coste
 \end{longtable}
 
 \chapter{Desarrollo del proyecto}
+
+Este capítulo redacta todo el proceso de desarrollo del proyecto. Comienza definiendo los stakeholders del mismo y continúa con la especificación de sus requisitos, tanto funcionales como no funcionales. Después, muestra la especificación de su diseño, incluyendo la arquitectura de la solución, el diseño relacional de la base de datos y el diseño de la interfaz de usuario. A continuación, describe las tecnologías utilizadas para la realización del proyecto y algunas consideraciones sobre la implementación. Por último, proporciona el plan de pruebas seguido y unas incidencias del proyecto.
 
 \section{Stakeholders}
 
@@ -971,9 +981,10 @@ Las pruebas unitarias son pruebas que se realizan sobre una unidad individual, c
     labelsep=1em,
     font=\normalfont
   ]
-  \item[PU-01:] Un usuario puede registrarse correctamente
-  \item[PU-02:] Un usuario no puede registrarse con un nombre de usuario ya existente
-  \item[PU-03:] Un usuario no puede registrarse si su correo electrónico no está registrado en el club
+  \item[PU-01:] Un usuario puede crear una cuenta correctamente
+  \item[PU-02:] Un usuario no puede crear una cuenta con un nombre de usuario ya existente
+  \item[PU-03:] Un usuario no puede crear una cuenta si su correo electrónico no está registrado en el club
+  \item[\textbf{Resultado obtenido:}] El registro de usuarios ha pasado todas las pruebas correctamente.
 \end{description}
 
 \subsubsection{Inicio de sesión}
@@ -990,6 +1001,7 @@ Las pruebas unitarias son pruebas que se realizan sobre una unidad individual, c
   \item[PU-06:] Un usuario puede iniciar sesión correctamente mediante Google
   \item[PU-07:] Un usuario cuyo correo electrónico no está registrado en el club no puede iniciar sesión mediante Google
   \item[PU-08:] Un usuario puede cerrar sesión con normalidad
+  \item[\textbf{Resultado obtenido:}] La funcionalidad ha pasado las pruebas correctamente.
 \end{description}
 
 \subsubsection{Visualización de partidos de la temporada}
@@ -1002,6 +1014,7 @@ Las pruebas unitarias son pruebas que se realizan sobre una unidad individual, c
     font=\normalfont
   ]
   \item[PU-09:] Un usuario puede ver la lista de partidos correctamente con todos sus datos: equipos, goles y fecha y hora
+  \item[\textbf{Resultado obtenido:}] Los partidos se visualizan correctamente con toda su información.
 \end{description}
 
 \subsubsection{Visualización de estadísticas}
@@ -1015,6 +1028,7 @@ Las pruebas unitarias son pruebas que se realizan sobre una unidad individual, c
   \item[PU-10:] Un usuario visualiza todos los jugadores de la plantilla del equipo
   \item[PU-11:] Un usuario puede acceder a las estadísticas de cualquier jugador del equipo correctamente con todos sus datos: goles, asistencias, tarjetas, partidos jugados, minutos jugados, etc.
   \item[PU-12:] Un usuario puede visualizar las estadísticas del equipo
+  \item[\textbf{Resultado obtenido:}] La funcionalidad ha pasado las pruebas correctamente.
 \end{description}
 
 \subsubsection{Convocatorias}
@@ -1030,6 +1044,7 @@ Las pruebas unitarias son pruebas que se realizan sobre una unidad individual, c
   \item[PU-15:] Un jugador puede acceder a un partido al que ha sido convocado
   \item[PU-16:] Un jugador puede confirmar asistencia o no asistencia al partido
   \item[PU-17:] Un usuario puede visualizar la asistencia o no asistencia de los jugadores al partido
+  \item[\textbf{Resultado obtenido:}] La gestión de convocatorias funciona correctamente y cumple con lo esperado.
 \end{description}
 
 \subsubsection{Seguimiento de partidos}
@@ -1051,6 +1066,7 @@ Las pruebas unitarias son pruebas que se realizan sobre una unidad individual, c
   \item[PU-26:] El entrenador puede seleccionar el minuto y segundo del partido en el que cualquiera de los dos equipos ha solicitado un tiempo muerto
   \item[PU-27:] El entrenador puede seleccionar el periodo del partido que está siendo disputado
   \item[PU-28:] El entrenador puede finalizar el partido si el periodo seleccionado no es el periodo uno
+  \item[\textbf{Resultado obtenido:}] El seguimiento de partidos funciona correctamente.
 \end{description}
 
 \subsubsection{Módulo inteligente de recomendaciones}
@@ -1063,6 +1079,7 @@ Las pruebas unitarias son pruebas que se realizan sobre una unidad individual, c
   ]
   \item[PU-29:] Se envían mensajes al modelo de inteligencia artificial y su respuesta es recibida correctamente.
   \item[PU-30:] La respuesta del modelo es almacenada y mostrada correctamente
+  \item[\textbf{Resultado obtenido:}] El módulo inteligente de recomendaciones funciona correctamente.
 \end{description}
 
 \subsubsection{Foro de mensajes}
@@ -1077,6 +1094,7 @@ Las pruebas unitarias son pruebas que se realizan sobre una unidad individual, c
   \item[PU-32:] Un usuario puede acceder a uno de los debates disponibles en el tema seleccionado
   \item[PU-33:] Un usuario puede visualizar todos los mensajes de ese debate
   \item[PU-34:] Un usuario puede publicar mensajes en el foro. Haya iniciado sesión con su cuenta de usuario o mediante Google
+  \item[\textbf{Resultado obtenido:}] La funcionalidad ha pasado todas las pruebas correctamente.
 \end{description}
 
 \subsubsection{Pedidos de material}
@@ -1087,12 +1105,14 @@ Las pruebas unitarias son pruebas que se realizan sobre una unidad individual, c
     labelsep=1em,
     font=\normalfont
   ]
-  \item[PU-35:] Un entrenador puede crear pedidos de materialcorrectamente, indicando la fecha y hora límite y el tipo de pedido
-  \item[PU-36:] Un jugador puede pedir material en un pedido
-  \item[PU-37:] Un jugador no puede pedir material si no hay ningún pedido activo
-  \item[PU-38:] Un jugador no puede pedir material si el pedido ha expirado
-  \item[PU-39:] Un entrenador descarga un fichero excel correctamente con la información del pedido
-  \item[PU-40:] Un entrenador no puede crear un nuevo pedido hasta haber descargado el fichero excel del anterior pedido
+  \item[PU-35:] Un entrenador puede crear pedidos de material correctamente, indicando la fecha y hora límite y el tipo de pedido
+  \item[PU-36:] Un jugador no puede crear pedidos de material
+  \item[PU-37:] Un jugador puede pedir material en un pedido
+  \item[PU-38:] Un jugador no puede pedir material si no hay ningún pedido activo
+  \item[PU-39:] Un jugador no puede pedir material si el pedido ha expirado
+  \item[PU-40:] Un entrenador descarga un fichero excel correctamente con la información del pedido
+  \item[PU-41:] Un entrenador no puede crear un nuevo pedido hasta haber descargado el fichero excel del anterior pedido
+  \item[\textbf{Resultado obtenido:}] La gestión de pedidos de material funciona correctamente.
 \end{description}
 
 \subsection{Pruebas de integración}
@@ -1108,9 +1128,11 @@ Las pruebas de integración son pruebas en las que se comprueba el correcto func
   ]
   \item[PI-01:] Creación de cuenta de usuario e inicio de sesión
   \item[PI-02:] Seguimiento de partido y actualización automática de estadísticas de jugadores y del equipo al finalizarlo
+  \item[PI-03:] Seguimiento de partido y actualización de resultado del partido en el calendario
   \item[PI-03:] Correcto envío de estadísticas del partido al módulo inteligente de recomendaciones y posterior visualización de las mismas
   \item[PI-04:] Aparición de únicamente jugadores convocados al partido en la pantalla de seguimiento de éste
   \item[PI-05:] Prueba del flujo completo de uso de la solución
+  \item[\textbf{Resultado obtenido:}] La solución ha pasado todas las pruebas de integración correctamente.
 \end{description}
 
 \subsection{Pruebas de validación}
@@ -1126,6 +1148,7 @@ Las pruebas de validación sirven para verificar que el resultado final cumple c
   ]
   \item[PV-01:] Correcta navegación entre pantallas y uso cómodo e intuitivo de la solución
   \item[PV-02:] Correcta adaptación de la solución a diferentes tamaños de pantallas
+  \item[\textbf{Resultado obtenido:}] La solución ha pasado todas las pruebas de validación correctamente.
 \end{description}
 
 \begin{description}[
@@ -1155,6 +1178,8 @@ El primero de esos problemas era que los usuarios que inician sesión con OAuth2
 La solución anterior provocó otro problema, esta vez relacionado con el foro de mensajes. Es necesario que un mensaje disponga de una relación hacia el usuario que lo ha publicado. El problema fue que existían dos tipos de usuarios. Una de las soluciones podía ser que cada mensaje guardase una relación hacia cada uno de los tipos de usuario, aunque de esta manera, una columna en la base de datos siempre quedaría vacía, lo que no es una buena práctica. La solución más limpia fue crear una herencia entre un usuario normal y uno que ha iniciado sesión con OAuth2, siendo el usuario normal el ``padre''. De esta forma habrá una única relación y la base de datos quedará más limpia.
 
 \chapter{Manual de usuario}
+
+Este capítulo muestra un manual para que un usuario comprenda cómo hacer uso de la solución web. Redacta las funcionalidades de las que dispone y cómo puede hacer uso de ellas cada uno de los roles.
 
 \section{Prerrequisitos}
 
@@ -1444,6 +1469,8 @@ La pantalla de inicio de los jugadores presenta algunas diferencias importantes 
 
 Esta solución web para gestionar un equipo deportivo presenta varias consideraciones éticas que deben ser evaluadas. La tecnología conlleva avances, beneficios y consecuencias positivas, aunque si la analizamos con detalle, nos daremos cuenta que, a la vez, presenta consecuencias negativas. Por esta razón, se considera estrictamente necesario hacer un análisis ético de la realización de este proyecto.
 
+En este capítulo se recoge la justificación ética del proyecto, para posteriormente analizar las consideraciones éticas que se encuentran en el mismo. Al final del capítulo, se redactan soluciones para las consideraciones éticas negativas detectadas.
+
 \section{Justificación ética del proyecto}
 
 Antes de empezar con dichas consideraciones, resulta imprescindible realizar el cuestionamiento del fin de este proyecto. Éste puede ser analizado desde dos perspectivas distinas: la racionalidad ética y la racionalidad lógico-instrumental. La racionalidad ética es la capacidad de los seres humanos para evaluar acciones y tomar decisiones basándose en principios morales. Mientras que la racionalidad lógico-instrumental es una forma de pensar de los seres humanos que prioriza la eficacia, la utilidad y el cálculo, se enfoca en los medios para lograr un fin. Es decir, la racionalidad ética responde a la pregunta de ``¿Por qué debe realizarse este proyecto?'' mientras que la racionalidad lógico-instrumental responde a la pregunta de ``¿Cómo voy a realizar este proyecto?'' (técnicamente, desde una visión ingenieril). Debido al carácter ético de este capítulo y la naturaleza del apartado, me centraré en responder únicamente a la primera pregunta.
@@ -1526,13 +1553,30 @@ Debido al reducido tiempo para realizar el proyecto, hubo ciertas tareas y aspec
 
 \chapter{Definiciones, acrónimos y abreviaturas}
 
+\section{Definiciones}
+
 \begin{itemize}
-  \item \textbf{IA:} Inteligencia artificial
-  \item \textbf{Prompt:} Texto proporcionado a un sistema de inteligencia artificial
-  \item \textbf{Tokens:} Unidad mínima de información utilizada por sistemas de inteligencia artificial para leer, procesar y generar texto
-  \item \textbf{API Key:} Código alfanumérico que funciona como credencial digital para la autenticación de un usuario en un servicio
-  \item \textbf{OT}: Overtime. Tiempo extra a gol de oro en los partidos de hockey línea
-  \item \textbf{Punto bonus:} Punto extra otorgado al ganador de un partido de hockey línea en el tiempo extra
+  \item \textbf{Prompt:} Texto proporcionado a un sistema de inteligencia artificial.
+  \item \textbf{Tokens:} Unidad mínima de información utilizada por sistemas de inteligencia artificial para leer, procesar y generar texto.
+  \item \textbf{API Key:} Código alfanumérico que funciona como credencial digital para la autenticación de un usuario en un servicio.
+  \item \textbf{Punto bonus:} Punto extra otorgado al ganador de un partido de hockey línea en el tiempo extra.
+  \item \textbf{Power play:} Situación en un partido de hockey línea en la que un equipo dispone de superioridad númerica por una falta cometida por el equipo rival.
+  \item \textbf{Penalty kill:} Situación en un partido de hockey línea en la que un equipo dispone de inferioridad númerica por una falta cometida por dicho equipo.
+  \item \textbf{Flex:} El flex de un stick es la capacidad que tiene para doblarse. Se mide con un número. Cuanto más alto sea ese número, menos flexible es el stick.
+  \item \textbf{Kickpoint:} Es el punto por donde se dobla el stick.
+  \item \textbf{Grip:} El grip de un stick es una característica que indica la textura del stick cuando se agarra. Si el stick tiene grip quiere decir que la mano no resbala al sujetarlo.
+  \item \textbf{+/-:} Representa la diferencia entre goles a favor y goles en contra de un jugador cuando se encuentra en la pista.
+  \item \textbf{Puck:} Disco con el que se juega un partido de hockey. Es el equivalente a un balón de fútbol.
+  \item \textbf{Overtime:} Tiempo extra a gol de oro en los partidos de hockey línea.
+\end{itemize}
+
+\section{Acrónimos y abreviaturas}
+
+\begin{itemize}
+  \item \textbf{IA:} Inteligencia artificial.
+  \item \textbf{OT}: Overtime.
+  \item \textbf{PP:} Power play.
+  \item \textbf{PK:} Penalty kill.
 \end{itemize}
 
 
