@@ -49,14 +49,14 @@
 \contentsline {subsubsection}{\numberline {7.6.1.3}Visualización de partidos de la temporada}{41}{subsubsection.100}%
 \contentsline {subsubsection}{\numberline {7.6.1.4}Visualización de estadísticas}{41}{subsubsection.101}%
 \contentsline {subsubsection}{\numberline {7.6.1.5}Convocatorias}{41}{subsubsection.102}%
-\contentsline {subsubsection}{\numberline {7.6.1.6}Seguimiento de partidos}{41}{subsubsection.103}%
-\contentsline {subsubsection}{\numberline {7.6.1.7}Módulo inteligente de recomendaciones}{42}{subsubsection.104}%
-\contentsline {subsubsection}{\numberline {7.6.1.8}Foro de mensajes}{42}{subsubsection.105}%
+\contentsline {subsubsection}{\numberline {7.6.1.6}Seguimiento de partidos}{42}{subsubsection.103}%
+\contentsline {subsubsection}{\numberline {7.6.1.7}Módulo inteligente de recomendaciones}{43}{subsubsection.104}%
+\contentsline {subsubsection}{\numberline {7.6.1.8}Foro de mensajes}{43}{subsubsection.105}%
 \contentsline {subsubsection}{\numberline {7.6.1.9}Pedidos de material}{43}{subsubsection.106}%
-\contentsline {subsection}{\numberline {7.6.2}Pruebas de integración}{43}{subsection.107}%
+\contentsline {subsection}{\numberline {7.6.2}Pruebas de integración}{44}{subsection.107}%
 \contentsline {subsection}{\numberline {7.6.3}Pruebas de validación}{44}{subsection.108}%
-\contentsline {section}{\numberline {7.7}Incidencias del proyecto}{44}{section.109}%
-\contentsline {subsubsection}{\numberline {7.7.0.1}Diseño relacional de la base de datos}{44}{subsubsection.110}%
+\contentsline {section}{\numberline {7.7}Incidencias del proyecto}{45}{section.109}%
+\contentsline {subsubsection}{\numberline {7.7.0.1}Diseño relacional de la base de datos}{45}{subsubsection.110}%
 \contentsline {chapter}{\numberline {8}Manual de usuario}{46}{chapter.111}%
 \contentsline {section}{\numberline {8.1}Prerrequisitos}{46}{section.112}%
 \contentsline {section}{\numberline {8.2}Registro e inicio de sesión}{46}{section.113}%
@@ -77,12 +77,14 @@
 \contentsline {section}{\numberline {9.2}Consideraciones éticas}{66}{section.180}%
 \contentsline {subsection}{\numberline {9.2.1}Positivas}{66}{subsection.181}%
 \contentsline {subsection}{\numberline {9.2.2}Negativas}{67}{subsection.182}%
-\contentsline {subsection}{\numberline {9.2.3}Soluciones para las consideraciones negativas}{67}{subsection.183}%
+\contentsline {subsection}{\numberline {9.2.3}Soluciones para las consideraciones negativas}{68}{subsection.183}%
 \contentsline {chapter}{\numberline {10}Conclusiones y trabajo futuro}{69}{chapter.187}%
 \contentsline {section}{\numberline {10.1}Conclusiones}{69}{section.188}%
 \contentsline {section}{\numberline {10.2}Trabajo futuro}{69}{section.189}%
 \contentsline {chapter}{\numberline {11}Definiciones, acrónimos y abreviaturas}{71}{chapter.190}%
-\contentsline {chapter}{Bibliograf\'ia}{72}{chapter.190}%
+\contentsline {section}{\numberline {11.1}Definiciones}{71}{section.191}%
+\contentsline {section}{\numberline {11.2}Acrónimos y abreviaturas}{72}{section.192}%
+\contentsline {chapter}{Bibliograf\'ia}{73}{section.192}%
 \def \@chapapp {\appendixname }
-\contentsline {chapter}{\numberline {A}Uso de inteligencia artificial}{74}{appendix.192}%
+\contentsline {chapter}{\numberline {A}Uso de inteligencia artificial}{75}{appendix.194}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
