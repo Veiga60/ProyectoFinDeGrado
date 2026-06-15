@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1781538613.63065 "main.aux" "main.bbl" "main" 1781538824.33572 0
+["bibtex main"] 1781544855.84512 "main.aux" "main.bbl" "main" 1781544869.46437 0
   "./referencias.bib" 1781536738 3573 f142f4b1b06b29e362d9b1f86ba2ec53 ""
   "C:/Users/Iker/AppData/Local/Programs/MiKTeX/bibtex/bst/ieeetran/IEEEtran.bst" 1440622569 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "main.aux" 1781538823 51076 6b37aca4b3e98f2feabe1ae8a3a152d4 "pdflatex"
+  "main.aux" 1781544868 51076 1f78a1943bf96253735138384ff6b82b "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1781538811.33422 "d:/git/ProyectoFinDeGrado/memoria/main.tex" "main.pdf" "main" 1781538824.33647 0
+["pdflatex"] 1781544856.11639 "d:/git/ProyectoFinDeGrado/memoria/main.tex" "main.pdf" "main" 1781544869.46507 0
   "C:/Users/Iker/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1781027723 171779 920ec64410a00de0bf7428757f0f0eee ""
   "C:/Users/Iker/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1777663992 13349787 a02da4c48706a1560486e56434a9bfb3 ""
   "C:/Users/Iker/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/sourcesans/a_44crgg.enc" 1772377178 3189 771b29eb6b50002b7080e180cebd0122 ""
@@ -151,7 +151,7 @@
   "C:/Users/Iker/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/Iker/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "C:/Users/Iker/AppData/Local/Programs/MiKTeX/tex/latex/xurl/xurl.sty" 1641733940 4675 e4b8c405820368c2dfb03526e16d725a ""
-  "d:/git/ProyectoFinDeGrado/memoria/main.tex" 1781536875 6359 2728eeea1144590ded7e6d745c0d2919 ""
+  "d:/git/ProyectoFinDeGrado/memoria/main.tex" 1781538962 6376 84b71862e0f9d6e997f4b56bdcebc709 ""
   "dummy.tex" 1781538810 109943 5c60f4b0406aa5c7af16639a862d0142 ""
   "imgs/arquitectura.png" 1780768055 395580 d6ed7864a7c89b85f9427f3a4ffcf3de ""
   "imgs/autorizacion_autenticacion.png" 1781275921 177007 593e82c00c2af10839a93f6f8ff78165 ""
@@ -194,14 +194,14 @@
   "imgs/sporteasy.png" 1780740348 247422 1986956eecd40a812e3c039a6d34a10c ""
   "imgs/sportmember.png" 1780743114 215620 5939ef8d0e8493912ee6f34de8bd8a5b ""
   "imgs/usuario_no_autorizado.jpeg" 1781087246 31385 31b1be65f48a22343b4e9e768f8dade2 ""
-  "main.aux" 1781538823 51076 6b37aca4b3e98f2feabe1ae8a3a152d4 "pdflatex"
-  "main.bbl" 1781538613 3439 3d5b321c86145a762b5f4e3258a0a994 "bibtex main"
-  "main.lof" 1781538823 4995 8c9d4adfd0784a1e272f3113972e5a6e "pdflatex"
-  "main.lot" 1781538823 1058 518e1db4b193684fcd40b8e7f01703b7 "pdflatex"
-  "main.tex" 1781536875 6359 2728eeea1144590ded7e6d745c0d2919 ""
-  "main.toc" 1781538823 7464 407beb6792a439caa3e3543ae514ada5 "pdflatex"
-  "memoriaPFC.cls" 1781538599 7593 dbac22488ae2891ac6d4a1836aa2090e ""
-  "otras.aux" 1781538812 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.aux" 1781544868 51076 1f78a1943bf96253735138384ff6b82b "pdflatex"
+  "main.bbl" 1781544856 3439 3d5b321c86145a762b5f4e3258a0a994 "bibtex main"
+  "main.lof" 1781544868 4995 b0b2f829df6cd5788b068b7a5f96e367 "pdflatex"
+  "main.lot" 1781544868 1058 1563b1b8735f54d7528a50cf4c14d32b "pdflatex"
+  "main.tex" 1781538962 6376 84b71862e0f9d6e997f4b56bdcebc709 ""
+  "main.toc" 1781544868 7464 50ccb34b06e9833bee3b511f2e7a7b7e "pdflatex"
+  "memoriaPFC.cls" 1781544841 7593 ed0e091ccbda200d76ee65e71d81dbbd ""
+  "otras.aux" 1781544857 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "portada.pdf" 1780239303 109370 8eecd0a8ba6d1845ae3b6fc83dfedd96 ""
   (generated)
   "main.aux"

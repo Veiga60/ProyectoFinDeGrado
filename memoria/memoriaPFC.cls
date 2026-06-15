@@ -111,11 +111,11 @@
 \RequirePackage[a4paper,
   top=1.0cm,
   headheight=0.2cm,
-  headsep=2.4cm,
-  bottom=1.2cm,
-  footskip=1.3cm,
-  inner=2.5cm,
-  outer=2.5cm,
+  headsep=1.9cm,
+  bottom=1.0cm,
+  footskip=1.0cm,
+  inner=2.2cm,
+  outer=2.2cm,
   includehead,
   includefoot
 ]{geometry}
