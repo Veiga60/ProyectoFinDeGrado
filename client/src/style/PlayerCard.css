@@ -1,0 +1,116 @@
+#playerCardDiv {
+    width: 200px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.playerCardHover:hover {
+    translate: 0px -10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#playerPhotoDiv {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    height: 86%;
+    width: 200px;
+}
+
+.playerPendingDiv {
+    position: relative;
+    width: 200px;
+}
+
+.playerPendingDiv::before {
+    content: "?";
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: 6em;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(7, 78, 200, 0.55);
+    z-index: 1;
+    border-radius: 20px;
+    height: 180px;
+    width: 198px;
+    margin-left: 1px;
+}
+
+.playerConfirmedDiv {
+    position: relative;
+    width: 200px;
+}
+
+.playerConfirmedDiv::before {
+    content: "\2714";
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: 6em;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 200, 7, 0.55);
+    z-index: 1;
+    border-radius: 20px;
+    height: 180px;
+    width: 198px;
+    margin-left: 1px;
+}
+
+.playerOutDiv {
+    position: relative;
+    width: 200px;
+}
+
+.playerOutDiv::before {
+    content: "\2716";
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: 6em;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(200, 10, 7, 0.55);
+    z-index: 1;
+    border-radius: 20px;
+    height: 180px;
+    width: 198px;
+    margin-left: 1px;
+}
+
+#playerPhoto {
+    width: 99%;
+    height: 180px;
+    border: 2px solid rgb(7, 78, 200);
+    border-radius: 20px;
+}
+
+#playerName {
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: medium;
+    margin: 0;
+    color: black;
+    white-space: nowrap;
+}

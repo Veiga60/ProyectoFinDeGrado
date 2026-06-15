@@ -1,0 +1,79 @@
+#teamRecomendationsMainDiv {
+    width: 100%;
+    height: calc(100% - 80px);
+    position: absolute;
+    left: 0;
+    top: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#teamRecomendationsLeftDiv {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+#teamRecomendationsteamImageDiv {
+    width: 80%;
+    padding: 0;
+    border: 1px solid rgb(7, 78, 200);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+#teamRecomendationsteamImage {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#teamRecomendationsRightDiv {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#teamRecomendationsDiv {
+    width: 90%;
+    height: 80%;
+    background-color: white;
+    border: 2px solid rgb(7, 78, 200);
+    max-height: 80%;
+    overflow-y: auto;
+    scrollbar-color: rgb(7, 78, 200) transparent;
+}
+
+#teamRecomendationTitleText {
+    font-family: Inria Sans;
+    color: rgb(7, 78, 200);
+    font-weight: bold;
+    margin: 0;
+}
+
+#teamRecomendationDescriptionText {
+    font-family: Inria Sans;
+    color: black;
+    margin: 0;
+}
+
+#teamRecomendation {
+    margin-left: 2.5%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}

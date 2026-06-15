@@ -1,0 +1,49 @@
+#mainMessageDiv {
+    display: flex;
+    flex-direction: row;
+}
+
+#messageUserInfoDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 20%;
+}
+
+#messageUserPlayerText {
+    color: black;
+    font-family: Inria Sans;
+    margin: 0;
+    width: 80%;
+    max-width: 80%;
+}
+
+#messageUserPlayerPhoto {
+    width: 50px;
+    height: 50px;
+    border-radius: 100000px;
+}
+
+#messageContainerDiv {
+    width: 80%;
+}
+
+#messageDiv {
+    border: 1px solid rgb(7, 78, 200);
+    background-color: white;
+    height: 100%;
+}
+
+#messageText {
+    color: black;
+    font-family: Inria Sans;
+    margin-left: 5px;
+    text-align: left;
+    margin: 0;
+    max-width: 100%;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    margin-left: 5px;
+    margin-right: 5px;
+}

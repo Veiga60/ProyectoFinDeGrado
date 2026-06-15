@@ -1,0 +1,226 @@
+#mainContentDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#matchStatsTeamDiv {
+    width: 25%;
+}
+
+#matchTeamStatsDiv {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 150px));
+    align-items: center;
+    justify-content: center;
+    column-gap: 5%;
+    row-gap: 0;
+}
+
+.statTitle {
+    color: black;
+    font-family: Inria Sans;
+    font-size: large;
+    font-weight: bold;
+    width: 100%;
+}
+
+.matchStatTextDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 1000px;
+    border: 4px solid rgb(7, 78, 200);
+}
+
+.matchStatText {
+    color: black;
+    font-family: Inria Sans;
+    font-size: xx-large;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.statDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 60%;
+}
+
+#startMatchTeamButtonsDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    gap: 5%;
+    margin-top: 2%;
+}
+
+#matchStatsTeamRightDiv {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 60%;
+}
+
+.startMatchTeamButton {
+    background-color: rgb(7, 78, 200);
+    border: none;
+    border-radius: 12px;
+    width: 10%;
+    height: 40px;
+    font-family: Inria Sans;
+    font-size: larger;
+    transition: 0.5s;
+}
+
+@media (min-width: 951px) and (max-width: 1250px) {
+    .matchStatTextDiv {
+        width: 60px;
+        height: 60px;
+    }
+
+    .matchStatText {
+        font-size: x-large;
+    }
+
+    .statTitle {
+        font-size: medium;
+    }
+
+    #matchTeamStatsDiv {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 100px));
+        align-items: center;
+        justify-content: center;
+    }
+
+    .startMatchTeamButton {
+        width: 15%;
+    }
+
+}
+
+@media (min-width: 901px) and (max-width: 950px) {
+    .matchStatTextDiv {
+        width: 45px;
+        height: 45px;
+    }
+
+    .matchStatText {
+        font-size: larger;
+    }
+
+    .statTitle {
+        font-size: medium;
+    }
+
+    #matchTeamStatsDiv {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 100px));
+        align-items: center;
+        justify-content: center;
+    }
+
+    .startMatchTeamButton {
+        width: 15%;
+    }
+}
+
+@media (min-width: 635px) and (max-width: 900px) {
+    .matchStatTextDiv {
+        width: 45px;
+        height: 45px;
+    }
+
+    .matchStatText {
+        font-size: larger;
+    }
+
+    .statTitle {
+        font-size: medium;
+    }
+
+    #matchTeamStatsDiv {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 100px));
+        align-items: center;
+        justify-content: center;
+    }
+
+    .startMatchTeamButton {
+        width: 20%;
+    }
+}
+
+@media (max-width: 635px) {
+    .matchStatTextDiv {
+        width: 45px;
+        height: 45px;
+    }
+
+    .matchStatText {
+        font-size: larger;
+    }
+
+    .statTitle {
+        font-size: medium;
+    }
+
+    #matchTeamStatsDiv {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 100px));
+        align-items: center;
+        justify-content: center;
+    }
+
+    #matchStatsTeamDiv {
+        display: none;
+    }
+
+    #matchStatsTeamRightDiv {
+        height: 100%;
+        width: 100%;
+        border: 2px solid black;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .arrowUpIcon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .arrowDownIcon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .startMatchTeamButton {
+        width: 30%;
+    }
+
+    #startMatchTeamButtonsDiv {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+}

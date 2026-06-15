@@ -1,5 +1,7 @@
 package com.ikerveiga.app.entity;
 
+import com.ikerveiga.app.dto.TeamDTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,7 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "teams")
+@Table(name = "Teams")
 public class Team {
 
     @Id
@@ -19,11 +21,11 @@ public class Team {
     @Column(name = "team_name", nullable = false, unique = true)
     private String name;
 
-    @Column(name ="team_logo",  nullable = false, unique = true)
+    @Column(name = "team_logo", nullable = true, unique = false)
     private String logo;
-    
+
     public Team() {
-        
+
     }
 
     public Team(String name, String logo) {
@@ -45,5 +47,11 @@ public class Team {
 
     public void setLogo(String logo) {
         this.logo = logo;
+    }
+
+    public TeamDTO toDTO() {
+        TeamDTO teamDTO = new TeamDTO(this.id, this.name, this.logo);
+
+        return teamDTO;
     }
 }

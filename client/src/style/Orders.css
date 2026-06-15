@@ -1,0 +1,311 @@
+#ordersMainDiv {
+    position: absolute;
+    left: 0;
+    top: 80px;
+    height: calc(100vh - 80px);
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#ordersTabDiv {
+    width: 100%;
+    display: flex;
+    margin-top: 5%;
+    justify-content: center;
+}
+
+#ordersTab {
+    width: 95%;
+}
+
+.playerOrdersTab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-height: 58vh;
+}
+
+.inputsDiv {
+    display: flex;
+    flex-direction: row;
+    gap: 1%;
+    align-items: center;
+    justify-content: center;
+}
+
+.deadlineDiv {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: min-content;
+    justify-content: flex-end;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.deadlineText {
+    color: black;
+    text-align: right;
+    height: min-content;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+#wheelOrdersDiv {
+    white-space: nowrap;
+    width: 90%;
+    max-width: 90%;
+    overflow-x: auto;
+    scrollbar-color: rgb(7, 78, 200) transparent;
+}
+
+#wheelOrdersTable {
+    width: 70%;
+    margin: 0 auto;
+}
+
+#wheelOrdersTableHead {
+    color: white;
+    background-color: rgb(7, 78, 200);
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: large;
+}
+
+.ordersTableHeadText {
+    margin: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.ordersTableHeadDiv {
+    margin: 0;
+}
+
+#wheelOrdersTableBody {
+    color: black;
+    background-color: white;
+    font-family: Inria Sans;
+    font-size: large;
+}
+
+.ordersButtonsDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.orderButton,
+.stickOrderButton {
+    background-color: rgb(7, 78, 200);
+    border: none;
+    border-radius: 12px;
+    height: 40px;
+    font-family: Inria Sans;
+    font-size: larger;
+    transition: 0.5s;
+}
+
+#excelButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#sticksExcelButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#newOrderButton {
+    width: 150px;
+}
+
+#sticksNewOrderButton {
+    width: 150px;
+}
+
+.ordersTableBodyText {
+    margin: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.ordersTableBodyDiv {
+    margin: 0;
+    border: 1px solid rgb(7, 78, 200);
+}
+
+.inputsDiv {
+    height: auto;
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 5px;
+}
+
+#stickInputsDiv {
+    width: 90%;
+}
+
+.noActiveOrdersDiv {
+    margin-top: 3%;
+}
+
+.noActiveOrdersText {
+    color: black;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.orderInput,
+.stickOrderInput {
+    background-color: rgb(233, 233, 233);
+    color: black;
+    border: none;
+    border-radius: 12px;
+    height: 40px;
+    width: 16%;
+    font-family: Inria Sans;
+    margin-right: 10px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.orderInput:focus {
+    outline: none;
+    border: 2px solid rgb(7, 78, 200);
+}
+
+.orderSelect,
+.stickOrderSelect {
+    height: 40px;
+    width: fit-content;
+    background-color: white;
+    color: black;
+    border: 2px solid rgb(7, 78, 200);
+    outline: none;
+    font-family: Inria Sans;
+    border-radius: 10px;
+}
+
+#wheelAmountInput,
+#stickAmountInput {
+    width: 70px;
+}
+
+#wheelAmountInput::-webkit-inner-spin-button {
+    display: none
+}
+
+#stickAmountInput::-webkit-inner-spin-button {
+    display: none;
+}
+
+.orderButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(7, 78, 200);
+    border: none;
+    border-radius: 12px;
+    width: 80px;
+    height: 40px;
+    font-family: Inria Sans;
+    font-size: larger;
+    transition: 0.5s;
+}
+
+.orderButton:hover {
+    background-color: rgb(5, 54, 138);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.orderExpiredText {
+    color: black;
+    font-family: Inria Sans;
+    font-weight: bold;
+}
+
+#wheelPhoneNumberInput,
+#stickPhoneNumberInput {
+    width: 100px;
+}
+
+#stickOrdersDiv {
+    white-space: nowrap;
+    width: 90%;
+    max-width: 90%;
+    overflow-x: auto;
+    scrollbar-color: rgb(7, 78, 200) transparent;
+}
+
+#nametagInput {
+    width: 100px;
+}
+
+.excelIcon {
+    width: 17px;
+    height: 17px;
+}
+
+@media (max-width: 600px) {
+    .orderButton {
+        height: 30px;
+        font-size: medium;
+    }
+}
+
+@media (max-height: 345px) {
+    .playerOrdersTab {
+        max-height: 51vh;
+    }
+
+    #wheelOrdersDiv {
+        min-height: 50px;
+    }
+
+    #stickOrdersDiv {
+        min-height: 65px;
+    }
+}
+
+@media (max-height: 390px) and (orientation: landscape) {
+
+    .stickOrderInput,
+    .stickOrderSelect,
+    .stickOrderButton {
+        height: 20px;
+    }
+
+    .stickOrderButton {
+        font-size: medium;
+        display: flex;
+        align-items: center;
+    }
+
+    .deadlineText {
+        margin-top: 0;
+        margin-bottom: -20px;
+    }
+}

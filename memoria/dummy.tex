@@ -1,0 +1,1590 @@
+\definecolor{headerblue}{RGB}{180, 210, 255}
+\definecolor{rowgray}{RGB}{242,242,242}
+
+\chapter{Introducción}
+
+El presente documento trata el trabajo realizado para el desarrollo del Proyecto Fin de Grado. Trabajo en el que he aplicado todas las competencias adquiridas durante los cuatro años que conforman el grado universitario. En esta memoria se recoge con detalle el proceso hasta llegar al resultado final del proyecto, pasando por la idea, el diseño y el desarrollo de la solución web.
+
+Esta memoria está dividida en varios capítulos, con el objetivo de facilitar su lectura y compresión. Dichos capítulos corresponden a los definidos en la especificación de proyectos fin de grado de Ingeniería informática proporcionada por la Universidad de Deusto.
+
+\begin{itemize}
+  \item Antecedentes y justificación: En este capítulo se recoge el motivo por el que se ha elegido desarrollar este proyecto. Además, se comentará cuál es la situación actual del club deportivo tomado como referencia en cuanto a los procesos de gestión de sus equipos. También se proporcionarán ejemplos de soluciones ya en el mercado similares a este proyecto.
+  \item Objetivos y alcance: Es importante fijar el alcance y los objetivos que se desean cumplir con el proyecto. Este capítulo redacta las funcionalidades que recoge y los objetivos que se pretenden lograr con la solución web. También incluye qué no forma parte del alcance del proyecto.
+  \item Plan de trabajo: Este capítulo detalla la planificación seguida para la realización de este proyecto. Cómo se ha dividido el proyecto en fases, y cada una de ellas en tareas para el desarrollo eficiente del proyecto. Además, proporciona dicha planificación de forma visual.
+  \item Metodología: Una vez planificado el proyecto, es necesario definir la metodología a seguir para relaizarlo eficientemente. En este capítulo se recoge la metodología seguida para el desarrollo del proyecto.
+  \item Presupuesto: Todo proyecto debe tener una estimación del presupuesto, con el fin de aproximar lo máximo posible el coste total que conllevará. En este capítulo se recoge con detalle ese presupuesto, teniendo en cuenta costes de material, costes de desarrollo, costes de puesta en marcha y costes de recurrentes.
+  \item Desarrollo del proyecto: Este capítulo recoge la fase de desarrollo del proyecto. En primer lugar, identifica los stakeholders. Después, detalla los requisitos del proyecto, tanto funcionales como no funcionales. Sigue recogiendo la especificación de su diseño y nombrando las tecnologías y herramientas utilizadas para su desarrollo. Por último, redacta consideraciones e incidencias del proyecto, además del plan de prueba seguido.
+  \item Valoración ética del proyecto: Este capítulo recoge, en primer lugar, la justificación ética del proyecto. Además, todo proyecto o desarrollo informático conlleva unas consecuencias y unos impactos. Por lo que, después de su justificación ética, se realiza una reflexión sobre los aspectos éticos del proyecto, teniendo en cuenta las posibles implicaciones y riesgos que pueda tener.
+  \item Conclusiones y trabajo futuro: Este capítulo redacta las conclusiones y los resultados obtenidos una vez finalizado el proyecto. Además incluye una serie de ideas para implementar en el futuro que mejorarán la solución web.
+  \item Bibliografía: La bibliografía del proyecto recoge todas las fuentes de información que han sido utilizadas para el desarrollo del proyecto. Todas ellas se encuentran referenciadas a lo largo de este documento.
+  \item Apéndices: Para terminar, este último capítulo recoge el uso que se ha hecho de la inteligencia artificial para al realización de este proyecto.
+\end{itemize}
+
+\chapter{Antecedentes y justificación}
+
+En este capítulo se aborda la motivación que llevó a la realización de este proyecto. Muestra una visión actual del deporte competitivo en nuestro país y de la gestión deportiva del club tomado como referencia. Además se proporcionan ejemplos de soluciones ya existentes en el mercado similares a este proyecto.
+
+Vivimos en un país en el que los deportes por excelencia siempre han sido el fútbol y el baloncesto, aunque también hay muchos más deportes con gran visibilidad en España. No obstante, también existen cantidad de deportes minoritarios en nuestro país. Estos deportes carecen de profesionalización debido a la escasa visibilidad que se les proporciona. Por ello, estos clubes disponen de recursos mucho más limitados que los de los clubes deportivos profesionales.
+
+El hockey línea en España es un deporte minoritario y semiprofesional, que en los últimos años ha ganado mucha visibilidad gracias a la retransmisión en directo de sus partidos en plataformas de \textit{streaming} como YouTube o Twitch. Lamentablemente, esto no es suficiente para profesionalizar este deporte.
+
+El club deportivo tomado como referencia gestiona los procesos de sus distintos equipos acorde a su profesionalidad. Esto implica que dichos procesos (convocatorias, avisos, pedidos de material, análisis de partidos, etc.) se lleven a cabo a través del grupo de Whatsapp del equipo, de la intranet del club o de otra herramienta. Esto hace que sea necesario disponer de varias aplicaciones distintas, haciendo que la gestión de los equipos sea un proceso engorroso y tedioso.
+
+Este proyecto surge de mi pasión por el deporte y como agradecimiento al club. La idea es proporcionar una solución web que centralice esos procesos.
+
+Hoy en día existen ya soluciones diseñadas para gestionar equipos o clubes deportivos, aunque este proyecto se centra únicamente en la parte del equipo. Estas son algunas de esas soluciones:
+
+\textbf{SportEasy}
+
+SportEasy es una plataforma de origen francés creada en el año 2012. Permite el registro de equipos deportivos. Ofrece una gran variedad de funcionalidades para gestionarlos, y la cantidad de deportes disponibles también es muy amplia, incluido el hockey línea.
+
+Esta solución facilita la gestión de los datos de los miembros del equipo, ya sean jugadores o padres. También ofrece un sistema de mensajería, un calendario para planificar los eventos deportivos y extra-deportivos y un sistema de convocatorias. Además, incluye una función para preparar la alineación antes de los partidos y una gestión de tareas para éstos. Por último, ofrece la planificación de las jornadas de la temporada, seguimiento de incidencias del partido y estadísticas de los jugadores y el equipo. Al finalizar el partido, SportEasy permite votar al mejor jugador del partido, así como puntuar la actuación del equipo y de cada jugador. \cite{sporteasy}
+
+Es la aplicación que más se asemeja a este proyecto.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{imgs/sporteasy.png}
+  \caption{Panel de estadísticas de SportEasy}
+  \label{fig:panel-estadisticas-sporteasy}
+\end{figure}
+
+\textbf{Sportmember}
+
+Sportmember es una solución danesa desarrollada para la gestión de clubes deportivos \cite{sportmember}. Entre todas sus funcionalidades, incluye varias destinadas a la gestión de los equipos deportivos del club:
+
+\begin{itemize}
+  \item Calendario para coordinar eventos
+  \item Control de asistencia a eventos (partidos y entrenamientos entre otros)
+  \item Comunicación por correo electrónico con jugadores
+  \item Seguimiento de estadísticas de los deportistas
+  \item Sanciones (multas internas del equipo)
+  \item Creación de alineaciones y tácticas
+  \item Informe del partido
+\end{itemize}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1.0\textwidth]{imgs/sportmember.png}
+  \caption{Creación de alineación con Sportmember}
+  \label{fig:creacion-alineaciones-sportmember}
+\end{figure}
+
+\textbf{Clupik}
+
+Clupik es una plataforma española orientada a la gestión de un club deportivo \cite{clupik}. Uno de sus módulos está dedicado a la gestión deportiva, y contiene las siguientes funcionalidades relacionadas con la gestión de los equipos del club:
+
+\begin{enumerate}
+  \item \textbf{Entrenamientos:} Dispone de un calendario para cada equipo o grupo de entrenamiento para planificar entrenamientos, actividades, eventos, etc. Permite programar las sesiones de los deportistas y controlar su asistencia. Puede generar informes para cada deportista y hacer un seguimiento y control de las lesiones. Incluye un módulo COVID para registrar las temperaturas de los deportistas y tener un control de los protocolos en el club.
+  \item \textbf{Competiciones para clubes:} Permite visualizar todos los partidos y las clasificaciones de todos los equipos del club, enviar convocatorias digitalmente, registrar la asistencia de los jugadores y obtener estadísticas de los deportistas, y genera publicaciones automáticas con los resultados de los equipos del club. Aunque esta última función solo está disponible para algunos deportes.
+\end{enumerate}
+
+Además de estas funcionalidades, también incluye la gestión de los miembros del club mediante una única base de datos.
+
+Esta aplicación cuenta con muchas más funcionalidades que las comentadas anteriormente, pero no forman parte de la gestión de los equipos del club.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{imgs/clupik.png}
+  \caption{Monitorización de asistencia con Clupik}
+  \label{fig:monitorizacion-asistencia-clupik}
+\end{figure}
+
+Existen muchas funcionalidades que son comunes a todas las soluciones de este tipo, y hay otras que son exclusivas de aplicaciones específicas como elemento diferenciador. En el caso de este proyecto, implementará una funcionalidad para gestionar pedidos de material para el equipo y permitirá la anotación de estadísticas, tanto de jugadores como del equipo, durante el partido. Además, proporcionará recomendaciones basándose en las estadísticas recopiladas durante el partido, para cada jugador y para el equipo.
+
+\chapter{Objetivos y alcance}
+
+En este capítulo se definen, en primer lugar,  los objetivos que se han establecido para el proyecto. Posteriormente, se define el alcance del mismo, tanto lo que se incluye en él como lo que no.
+
+\section{Objetivos}
+
+El objetivo principal de este proyecto es diseñar y desarrollar una solución web que organizace y facilite los procesos de gestión de un equipo deportivo, a la vez que proporciona herramientas para mejorar su rendimiento. Cabe destacar que este proyecto ha sido diseñado para uno de los equipos de un club en específico. Para lograr el objetivo principal del proyecto, se han establecido varios objetivos basándose en el principal. Estos objetivos servirán para comprobar si el resultado final del proyecto es un éxito o un fracaso. Dichos objetivos son los siguientes:
+
+\begin{itemize}
+  \item Objetivo 1: Diseñar y desarrollar una aplicación web que centralice los procesos de gestión más importantes y repetitivos del equipo deportivo.
+  \item Objetivo 2: Implementar un sistema de login que permita el acceso únicamente a integrantes del club.
+  \item Objetivo 3: Implementar un sistema de seguimiento de incidencias y estadísticas de los partidos en directo.
+  \item Objetivo 4: Desarrollar un módulo inteligente que ofrezca recomendaciones sobre aspectos del partido a mejorar.
+  \item Objetivo 5: Implementar distintos tipos de roles para el acceso a la aplicación web.
+  \item Objetivo 6: Diseñar una interfaz original y personalizada para el club deportivo de referencia.
+  \item Objetivo 7: Desarrollar una aplicación web adaptable a cualquier tipo de pantalla y dispositivo.
+\end{itemize}
+
+\section{Alcance}
+
+Dado el carácter académico de este trabajo, el proyecto ha sido desarrollado con recursos y tiempo limitados. Esto implica que su alcance ha tenido que determinarse con claridad desde el principio. Además, se planea la ampliación del proyecto una vez realizada su defensa, por lo que delimitar sus funcionalidades para la presentación en la universidad ha sido una parte importante. Los objetivos anteriormente mencionados forman parte del alcance. Además se enumeran a continuación aspectos que también entran en el mismo:
+
+\begin{enumerate}
+  \item Desarrollo de la base de datos.
+  \item Implementación de un sistema de login social.
+  \item Desarrollo de la API REST.
+  \item Implementación de un modelo de inteligencia artificial generativa comercial.
+  \item Uso de Docker para el despliegue de la solución.
+\end{enumerate}
+
+Para la realización de este proyecto, también ha sido fundamental tener claro qué no forma parte del alcance de éste:
+
+\begin{enumerate}
+  \item Desarrollo de un sistema de seguimiento de jugadores y disco en tiempo real.
+  \item Implementación de diferentes equipos del club.
+  \item Desarrollo y entrenamiento de un modelo de inteligencia artificial propio.
+  \item Almacenamiento de datos por temporadas.
+  \item Persistencia de incidencias de partidos.
+  \item Seguimiento de estadísticas por cada liga.
+\end{enumerate}
+
+\chapter{Plan de trabajo}
+
+En el plan de trabajo del proyecto se redacta la planificación en el tiempo del mismo y la estimación de tiempos del mismo. En primer lugar se definen las tareas a completar en cada una de las fases del proyecto. Después, se ilustra en forma de tabla una estimación de las horas que llevará completar cada tarea definida en la planificación. Por último se muestra dicha planificación de forma visual mediante un diagrama de Gantt.
+
+\section{Planificación temporal}
+
+Este apartado describe las fases y tareas que han sido realizadas para completar el proyecto. El proyecto se divide en 5 partes, cada una de ellas con tareas y/o fases a completar. La fase de realización del proyecto ha sido dividida en 4 fases. La primera de ellas consta de la creación y configuración del proyecto. Las fases restantes se han planificado de esa forma debido a una división de las funcionalidades a implementar. Para esta división se han tenido en cuenta factores como relevancia de la funcionalidad en el proyecto, dificultad de la misma y dependencia de otras funcionalidades.
+
+A continuación, se redacta cada una de las fases de la planificación con sus respectivas tareas a completar:
+
+\textbf{Definición del proyecto:}
+
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont]
+
+  \item[TFD-1.] Análisis del club deportivo: Analizar el club deportivo e investigar cómo realizan y gestionan los procesos de sus equipos.
+  \item[TFD-2.] Estudio de la situación del club y propuesta de solución: Estudiar e interpretar el análisis realizado y diseñar una solución software para uno de sus equipos.
+  \item[TFD-3.] Presentación del proyecto a la tutora: Presentar la idea a la tutora del proyecto de fin de grado.
+\end{description}
+
+\textbf{Planificación del proyecto:}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+
+  \item[TFP-1.] Estimación de tiempos: Estimar el tiempo que llevará desarrollar cada una de las funcionalidades de la solución.
+  \item[TFP-2.] División del desarrollo del proyecto: Priorizar las funcionalidades a desarrollar y agruparlas en fases para dividir el desarrollo del proyecto.
+  \item[TFP-3.] Planificación del desarrollo del proyecto: Planificar en el tiempo el desarrollo del proyecto basándose en la división del mismo y la estimación de tiempos de las tareas.
+\end{description}
+\textbf{Realización del proyecto:}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+
+  \item[Fase 0.] \leavevmode
+        \begin{description}[
+            labelindent=0pt,
+            leftmargin=!,
+            labelwidth=1.5cm,
+            labelsep=1em,
+            font=\normalfont
+          ]
+          \item[TFR-0.1] Crear el proyecto de Maven y gestionar las dependencias de Springboot para la parte backend
+          \item[TFR-0.2] Crear la base de datos con MySQL y configurar Springboot para que haga uso de ella
+          \item[TFR-0.3] Crear el proyecto de React para el desarrollo del frontend
+          \item[TFR-0.4] Crear Dockerfiles necesarios y gestionar los servicios con Docker Compose
+        \end{description}
+
+  \item[Fase 1.] \leavevmode
+        \begin{description}[
+            labelindent=0pt,
+            leftmargin=!,
+            labelwidth=1.5cm,
+            labelsep=1em,
+            font=\normalfont
+          ]
+          \item[TFR-1.1] Registro de usuarios
+          \item[TFR-1.2] Inicio de sesión de usuarios
+          \item[TFR-1.3] Visualización de partidos de la temporada
+          \item[TFR-1.4] Visualización de estadísticas
+        \end{description}
+  \item[Fase 2.] \leavevmode
+        \begin{description}[
+            labelindent=0pt,
+            leftmargin=!,
+            labelwidth=1.5cm,
+            labelsep=1em,
+            font=\normalfont
+          ]
+          \item[TFR-2.1] Gestión de convocatorias
+          \item[TFR-2.2] Seguimiento de estadísticas e incidencias de partido
+          \item[TFR-2.3] Módulo inteligente de recomendaciones
+        \end{description}
+  \item[Fase 3.] \leavevmode
+        \begin{description}[
+            labelindent=0pt,
+            leftmargin=!,
+            labelwidth=1.5cm,
+            labelsep=1em,
+            font=\normalfont
+          ]
+          \item[TFR-3.1] Foro de mensajes
+          \item[TFR-3.2] Gestión de pedidos de material
+        \end{description}
+  \item[Fase 4.] \leavevmode
+        \begin{description}[
+            labelindent=0pt,
+            leftmargin=!,
+            labelwidth=1.5cm,
+            labelsep=1em,
+            font=\normalfont
+          ]
+          \item[TFR-4.1] Terminar de dar estilo a las pantallas de la aplicación web
+          \item[TFR-4.2] Aplicar responsividad a las pantallas de la solución
+        \end{description}
+\end{description}
+\textbf{Control del proyecto:}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[TFC-1] Comparar resultados del proyecto con objetivos iniciales
+  \item[TFC-2] Pruebas unitarias
+  \item[TFC-3] Pruebas de integración
+  \item[TFC-3] Pruebas de validación
+\end{description}
+\textbf{Finalización del proyecto:}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[TFF-1] Terminar de redactar la memoria del proyecto
+  \item[TFF-2] Terminar la aplicación web
+  \item[TFF-3] Preparar la defensa del proyecto
+\end{description}
+
+\section{Estimación de tiempos}
+
+A continuación, se muestra en forma de tabla una estimación de las horas que llevará realizar cada tarea de cada fase del proyecto:
+
+\renewcommand{\arraystretch}{2}
+\begin{longtable}{|>{\bfseries}p{3.5cm}|p{7cm}|p{2cm}|}
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Fase} & \textbf{Tarea}                                                                & \textbf{Estimación} \\
+  \hline
+  \endfirsthead
+
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Fase} & \textbf{Tarea}                                                                & \textbf{Estimación} \\
+  \hline
+  \endhead
+
+  \endfoot
+
+  \endlastfoot
+
+  \multirow{3}{*}{Definición}
+                & TFD-1. Análisis del club deportivo                                            & 3h                  \\
+  \cline{2-3}
+                & TFD-2. Estudio de la situación del club y propuesta de solución               & 4h                  \\
+  \cline{2-3}
+                & TFD-3. Presentación del proyecto a la tutora                                  & 1h                  \\
+  \hline
+
+  \multirow{1}{*}{Planificación}
+                & TFP-1. Estimación de tiempos                                                  & 1h                  \\
+  \cline{2-3}
+                & TFP-2. División del desarrollo del proyecto                                   & 1h                  \\
+  \cline{2-3}
+                & TFP-3. Planificación del desarrollo del proyecto                              & 2h                  \\
+  \hline
+
+  \multirow{4}{*}{Realización}
+                & TFR-0.1 Crear el proyecto de Maven y gestionar las dependencias de Springboot & 4h                  \\
+  \cline{2-3}
+                & TFR-0.2 Crear la base de datos con MySQL y configurar Springboot              & 3h                  \\
+  \cline{2-3}
+                & TFR-0.3 Crear el proyecto de React para el frontend                           & 2h                  \\
+  \cline{2-3}
+                & TFR-0.4 Crear Dockerfiles y gestionar servicios con Docker Compose            & 5h                  \\
+  \cline{2-3}
+                & TFR-1.1 Registro de usuarios                                                  & 8h                  \\
+  \cline{2-3}
+                & TFR-1.2 Inicio de sesión de usuarios                                          & 12h                 \\
+  \cline{2-3}
+                & TFR-1.3 Visualización de partidos de la temporada                             & 7h                  \\
+  \cline{2-3}
+                & TFR-1.4 Visualización de estadísticas                                         & 10h                 \\
+  \cline{2-3}
+                & TFR-2.1 Gestión de convocatorias                                              & 16h                 \\
+  \cline{2-3}
+                & TFR-2.2 Seguimiento de estadísticas e incidencias de partido                  & 40h                 \\
+  \hline
+                & TFR-2.3 Módulo inteligente de recomendaciones                                 & 15h                 \\
+  \cline{2-3}
+                & TFR-3.1 Foro de mensajes                                                      & 6h                  \\
+  \cline{2-3}
+                & TFR-3.2 Gestión de pedidos de material                                        & 8h                  \\
+  \cline{2-3}
+                & TFR-4.1 Terminar de dar estilo a las pantallas de la aplicación web           & 20h                 \\
+  \cline{2-3}
+                & TFR-4.2 Aplicar responsividad a las pantallas de la solución                  & 48h                 \\
+  \hline
+
+  \multirow{4}{*}{Control}
+                & TFC-1 Comparar resultados con objetivos iniciales                             & 2h                  \\
+  \cline{2-3}
+                & TFC-2 Pruebas unitarias                                                       & 10h                 \\
+  \cline{2-3}
+                & TFC-3 Pruebas de integración                                                  & 5h                  \\
+  \cline{2-3}
+                & TFC-4 Pruebas de validación                                                   & 7h                  \\
+  \hline
+
+  \multirow{3}{*}{Finalización}
+                & TFF-1 Redactar la memoria del proyecto                                        & 72h                 \\
+  \cline{2-3}
+                & TFF-2 Terminar la aplicación web                                              & 10h                 \\
+  \cline{2-3}
+                & TFF-3 Preparar la defensa del proyecto                                        & 50h                 \\
+  \hline
+  \caption{Estimación de tiempos de las tareas del proyecto}
+  \label{tab:tareas}
+\end{longtable}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.4\textwidth, angle=90]{imgs/gantt.png}
+  \caption{Diagrama de Gannt con la planificación del proyecto}
+  \label{fig:gantt}
+\end{figure}
+
+\chapter{Metodología}
+
+Este capítulo detalla la metodología seguida para la realización de este proyecto. En primer lugar, se exponen las metodologías ágiles y se explica por qué se ha optado por una de ellas para este proyecto. A continuación, se describe el marco de trabajo utilizado con una tabla con los sprints planificados.
+
+\section{Metodologías ágiles}
+
+Hoy en día, los proyectos y productos software que no evolucionan a tiempo o no cumplen con las necesidades y requisitos del cliente no suelen tener éxito. Por eso, es esencial saber en todo momento qué es lo que quiere el cliente y cuáles son las necesidades del mercado. De esta forma, es posible desarrollar un proyecto o producto que actualizado y que deje al cliente satisfecho. Las metodologías ágiles permiten ajustar sobre la marcha esos requisitos definidos por el cliente, manteniendo al equipo de desarrollo enfocado en pequeños objetivos que suman al resultado final. \cite{iebs}
+
+Por definición, las metodologías ágiles son aquellas que permiten adaptar la forma de trabajo a las condiciones del proyecto, consiguiendo flexibilidad e inmediatez en la respuesta para amoldar el proyecto y su desarrollo a las circunstancias específicas del entorno. \cite{iebs}
+
+\textbf{Ventajas:}
+\begin{itemize}
+  \item \textbf{Flexibilidad:} Este tipo de metodologías aportan mucha flexibilidad. Permite cambiar los requisitos rápidamente y adaptarse a ellos.
+  \item \textbf{Reducción de riesgos:} Gracias a dividir el proyecto en ciclos cortos debido a su naturaleza iterativa, los errores se detectan y corrigen rápidamente. De esta forma, se evitan grandes problemas que se puedan acumular a lo largo del proyecto.
+  \item \textbf{Feedback continuo:} Debido al caracter incremental de estas metodologías, es posible probar y enseñar el producto al cliente cada vez que se añade una nueva funcionalidad. De esta manera, se obtiene feedback del cliente después de implementar cada funcionalidad y adaptar a su gusto lo que fuera necesario.
+\end{itemize}
+
+En este proyecto he decidido utilizar una metodología ágil para ir implementando las funcionalidades poco a poco y corregir rápidamente cualquier error que pudiera producirse.
+
+Decidí decantarme por utilizar esta metodología porque me parecía una metodología razonable y adaptable a mis circunstancias, ya que me permitía trabajar de forma autónoma y probar el resultado cada vez que implementaba una nueva funcionalidad. Además, creo que es una metodología que encajaba perfectamente con la planificación elaborada para el proyecto.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{imgs/metodologia_agil.png}
+  \caption{Metodologías ágiles}
+  \label{fig:metodologia_agis}
+\end{figure}
+
+\section{Scrum}
+
+Scrum es una metodología ágil que trata de hacer de la entrega de un producto complejo una tarea sencilla y manejable. Para logarlo divide el proyecto en ciclos cortos de desarrollo, llamados \textit{sprints}. En cada uno de estos ciclos, el equipo colabora para realizar únicamente las tareas planificadas para ese \textit{sprint}. \cite{scrum}
+
+En este proyecto se ha optado por esta metodología para organizar el desarrollo del mismo de tal manera que se garantice una gestión ágil y eficiente del trabajo, favoreciendo la entrega continua de funcionalidades, la adaptación a posibles cambios en los requisitos y la evaluación periódica del progreso.
+
+Este proyecto ha sido dividido en nueve sprints. Se ha definido un \textit{sprint} para las fases de definición, planificación, control y finalización. Mientras que se ha decidido dividir la fase de realización del proyecto en varios ciclos. Estos han sido cuatro, uno por cada subfase. Gracias a hacerlo de esta manera, en cada ciclo el equipo (en el caso de este proyecto, yo mismo) podía centrarse únicamente en las funcionalidades planificadas para cada \textit{sprint}, haciendo que el desarrollo fuera rápido, eficiente y con entregables funcionales después de cada \textit{sprint}.
+
+La siguiente tabla muestra la distribución de tareas y sprints de forma más visual:
+
+\renewcommand{\arraystretch}{2}
+\begin{longtable}{|>{\bfseries}p{2.5cm}|p{3.5cm}|p{7cm}|}
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Fase}             & \textbf{Periodo}                                                              & \textbf{Tarea}                                                      \\
+  \hline
+  \endfirsthead
+
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Fase}             & \textbf{Periodo}                                                              & \textbf{Tarea}                                                      \\
+  \hline
+  \endhead
+
+  \endfoot
+
+  \endlastfoot
+
+  \multirow{3}{*}{Sprint 1} & \multirow{3}{*}{\shortstack{01/12/2025 - 08/12/2025}}
+                            & TFD-1. Análisis del club deportivo                                                                                                                  \\
+  \cline{3-3}
+                            &                                                                               & TFD-2. Estudio de la situación del club y propuesta de solución     \\
+  \cline{3-3}
+                            &                                                                               & TFD-3. Presentación del proyecto a la tutora                        \\
+  \hline
+
+  \multirow{3}{*}{Sprint 2} & \multirow{3}{*}{\shortstack{09/12/2025 - 12/12/2025}}
+                            & TFP-1. Estimación de tiempos                                                                                                                        \\
+  \cline{3-3}
+                            &                                                                               & TFP-2. División del desarrollo del proyecto                         \\
+  \cline{3-3}
+                            &                                                                               & TFP-3. Planificación del desarrollo del proyecto                    \\
+  \hline
+
+  \multirow{4}{*}{Sprint 3} & \multirow{4}{*}{\shortstack{16/12/2025 - 23/12/2025}}
+                            & TFR-0.1 Crear el proyecto de Maven y gestionar las dependencias de Springboot                                                                       \\
+  \cline{3-3}
+                            &                                                                               & TFR-0.2 Crear la base de datos con MySQL y configurar Springboot    \\
+  \cline{3-3}
+                            &                                                                               & TFR-0.3 Crear el proyecto de React para el frontend                 \\
+  \cline{3-3}
+                            &                                                                               & TFR-0.4 Crear Dockerfiles y gestionar servicios con Docker Compose  \\
+  \hline
+  \multirow{2}{*}{Sprint 4} & \multirow{2}{*}{\shortstack{24/12/2025 - 16/01/2026}}
+                            & TFR-1.1 Registro de usuarios                                                                                                                        \\
+  \cline{3-3}
+                            &                                                                               & TFR-1.2 Inicio de sesión de usuarios                                \\
+  \hline
+                            &                                                                               & TFR-1.3 Visualización de partidos de la temporada                   \\
+  \cline{3-3}
+                            &                                                                               & TFR-1.4 Visualización de estadísticas                               \\
+  \hline
+
+  \multirow{3}{*}{Sprint 5} & \multirow{3}{*}{\shortstack{19/01/2026 - 18/02/2026}}
+                            & TFR-2.1 Gestión de convocatorias                                                                                                                    \\
+  \cline{3-3}
+                            &                                                                               & TFR-2.2 Seguimiento de estadísticas e incidencias de partido        \\
+  \cline{3-3}
+                            &                                                                               & TFR-2.3 Módulo inteligente de recomendaciones                       \\
+  \hline
+  \multirow{2}{*}{Sprint 6} & \multirow{2}{*}{\shortstack{19/02/2026 - 02/03/2026}}
+                            & TFR-3.1 Foro de mensajes                                                                                                                            \\
+  \cline{3-3}
+                            &                                                                               & TFR-3.2 Gestión de pedidos de material                              \\
+  \hline
+  \multirow{2}{*}{Sprint 7} & \multirow{2}{*}{\shortstack{03/03/2026 - 25/03/2026}}                         & TFR-4.1 Terminar de dar estilo a las pantallas de la aplicación web \\
+  \cline{3-3}
+                            &                                                                               & TFR-4.2 Aplicar responsividad a las pantallas de la solución        \\
+  \hline
+
+  \multirow{2}{*}{Sprint 8} & \multirow{2}{*}{\shortstack{26/03/2026 - 07/04/2026}}
+                            & TFC-1 Comparar resultados con objetivos iniciales                                                                                                   \\
+  \cline{3-3}
+                            &                                                                               & TFC-2 Pruebas unitarias                                             \\
+  \hline
+                            &                                                                               & TFC-3 Pruebas de integración                                        \\
+  \cline{3-3}
+                            &                                                                               & TFC-4 Pruebas de validación                                         \\
+  \hline
+
+  \multirow{3}{*}{Sprint 9} & \multirow{3}{*}{\shortstack{08/04/2026 - 25/05/2026}}
+                            & TFF-1 Redactar la memoria del proyecto                                                                                                              \\
+  \cline{3-3}
+                            &                                                                               & TFF-2 Terminar la aplicación web                                    \\
+  \cline{3-3}
+                            &                                                                               & TFF-3 Preparar la defensa del proyecto                              \\
+  \hline
+  \caption{Distribución de tareas en sprints}
+  \label{tab:tareas}
+\end{longtable}
+
+\chapter{Presupuesto}
+
+Este capítulo recoge el presupuesto del proyecto. Para su mejor comprensión, dicho presupuesto ha sido dividido en tres bloques: costes de mano de obra, costes de material y costes de software, licencias y otros servicios. En cada uno de los bloques se muestra un tabla con su desglose. Por último, ofrece la suma de los costes totales de la realización del proyecto.
+
+\section{Mano de obra}
+
+Los costes de mano de obra se corresponden con el tiempo dedicado al desarrollo del proyecto por parte de los distintos trabajadores. En este caso, el proyecto ha sido realizado por una única persona, que ha asumido todas las funciones necesarias para la compleción del mismo: desde el análisis de la situación del equipo deportivo, pasando por el diseño de la estructura, la arquitectura y la parte visual de la solución, hasta el desarrollo de la aplicación web. Debido al caracter individual del proyecto y para aproximar los costes de mano de obra reales para la realización del proyecto, la tabla a continuación muestra una estimación de dichos costes. Aunque, antes es necesario estimar el coste por hora de cada uno de los trabajadores:
+
+Cabe destacar que el coste/hora de estos trabajadores puede variar dependiendo del perfil de cada uno de ellos. Para esta estimación, se considerará un coste medio de perfiles junior de cada trabajador.
+
+\begin{itemize}
+  \item \textbf{Gestor de proyectos:} Es la persona que coordina las actividades del equipo y todo el trabajo de los distintos trabajadores del equipo. Se encarga de que el proyecto avance según lo planeado y cumpliendo con el presupuesto fijado. El coste de un gestor de proyectos oscila entre 30€ y 45€ la hora. Se considerará una media de 37,5€/hora y una estimación de 60 horas de trabajo.
+  \item  \textbf{Diseñador de software:} Para que un producto software tenga éxito, es esencial que disponga de un buen diseño. El diseñador de software se encargará de definir la arquitectura del software para que los desarrolladores entiendan cómo se comunicarán las distintas partes del proyecto y puedan desarrollarlas correctamente. El coste/hora de un diseñador de software se mueve entre 20€ y 40€. Se estimará una media de 30€/hora y se considerarán 30h de trabajo
+  \item \textbf{Diseñador artístico:} El diseñador artístico se encargará de definir la parte visual de la solución web. Diseñará una interfaz de usuario personalizada para el cliente. El coste de un diseñador artístico oscila 15€ y 30€ la hora. Se estimará una media de 22,5€/hora y 30 horas de trabajo.
+  \item \textbf{Desarrollador backend:} El desarrollador backend será el encargado de desarrollar la parte servidora de la solución. Es quién se encargrá de implementar la lógica de negocio y la interacción con la base de datos. También se encargará de desarrollar la API REST de la aplicación. El coste/hora de un desarrollador backend varía entre 20€ y 35€. Se considerará una media de 27,5€/hora y una estimación de 120 horas de trabajo.
+  \item \textbf{Desarrollador frontend:} El desarrollador de la parte frontend de la solución se encarga de desarrollar la parte visual de la misma. Hará uso de los diseños realizados por el diseñador artístico para implementarlos en la parte cliente de la solución. Además deberá comunicarse también con el desarrollador backend para trabajar juntos y que la conexión entre frontend y backend sea coherente. El coste de un desarrollador frontend oscila entre 15€ y 30€ la hora. Se estimará una media de 22,5€/hora y 120 horas de trabajo.
+\end{itemize}
+
+\begin{table}[ht]
+  \centering
+  \renewcommand{\arraystretch}{1.8}
+  \begin{tabular}{|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{5cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{2cm}|}
+    \hline
+    \rowcolor{headerblue}
+    \textbf{Rol}           & \textbf{Estimación horas trabajadas} & \textbf{Coste/Hora} & \textbf{Coste total} \\
+    \hline
+    Gestor de proyectos    & 60h                                  & 37,5 €/h            & 2.250 €              \\
+    \hline
+    Diseñador de software  & 30h                                  & 30 €/h              & 900 €                \\
+    \hline
+    Diseñador artístico    & 30h                                  & 22,5 €/h            & 675 €                \\
+    \hline
+    Desarrollador backend  & 120h                                 & 27,5 €/h            & 3.300 €              \\
+    \hline
+    Desarrollador frontend & 120h                                 & 22,5 €/h            & 2.700 €              \\
+    \hline
+    \textbf{Total}         &                                      &                     & \textbf{9.825 €}     \\
+    \hline
+  \end{tabular}
+  \caption{Costes de mano de obra}
+  \label{tab:costes-mano-obra}
+\end{table}
+
+\section{Material}
+
+Los costes de material incluyen los gastos sobre el material físico necesario para la realización del proyecto. En este caso, el único material requerido ha sido un ordenador de sobremesa y un ordenador portátil para trabajar en el proyecto fuera de casa.
+
+\renewcommand{\arraystretch}{1.8}
+\begin{longtable}{|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{5cm}|>{\centering\arraybackslash}p{5cm}|}
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Producto}  & \textbf{Descripción}                                        & \textbf{Coste}      \\
+  \hline
+  \endfirsthead
+
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Producto}  & \textbf{Descripción}                                        & \textbf{Coste}      \\
+  \hline
+  \endhead
+
+  \endfoot
+
+  \endlastfoot
+
+  PC                 & Ordenador de sobremesa para trabajar en el proyecto en casa & 1.828,65 €          \\
+  \hline
+  Lenovo Legion Y540 & Ordenador portátil para realizar el proyecto fuera de casa  & 1.234,91 €          \\
+  \hline
+  \textbf{Total}     &                                                             & \textbf{3.063,56 €} \\
+  \hline
+  \caption{Costes de material}
+  \label{tab:costes-material}
+\end{longtable}
+
+\section{Software, licencias y otros servicios}
+
+Este tipo de costes engloban gastos en herramientas, licencias y otros servicios necesarios. Para este proyecto se ha recurrido al uso de herramientas gratuitas o de código abierto, exceptuando el uso de de un modelo de inteligencia artificial generativa de Anthropic. El precio que se muestra sobre el coste de los tokens de Anthropic, son los relativos a la primera recarga de estos. Es necesario mencionar que son un gasto recurrente, es decir, una vez se agotan es necesario adquirir más para poder seguir utilizando esta inteligencia artificial generativa.
+
+\renewcommand{\arraystretch}{1.8}
+\begin{longtable}{|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{5cm}|>{\centering\arraybackslash}p{5cm}|}
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Producto} & \textbf{Descripción}                                                                      & \textbf{Coste}  \\
+  \hline
+  \endfirsthead
+
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Producto} & \textbf{Descripción}                                                                      & \textbf{Coste}  \\
+  \hline
+  \endhead
+
+  \endfoot
+
+  \endlastfoot
+
+  Antigravity IDE   & Entorno de desarrollo utilizado en el proyecto                                            & 0 €             \\
+  \hline
+  MySQL Workbench   & Interfaz gráfica para bases de datos MySQL                                                & 0 €             \\
+  \hline
+  Docker Desktop    & Interfaz gráfica para Docker                                                              & 0 €             \\
+  \hline
+  GitHub Desktop    & Interfaz gráfica para hacer uso de git                                                    & 0 €             \\
+  \hline
+  Draw.io           & Herramienta para elaborar los diagramas                                                   & 0 €             \\
+  \hline
+  Figma             & Herramienta para el diseño de pantallas                                                   & 0 €             \\
+  \hline
+  Inkscape          & Herramienta para dibujar imágenes vectoriales                                             & 0 €             \\
+  \hline
+  Team Gantt        & Herramienta para dibujar diagrama de Gantt                                                & 0 €             \\
+  \hline
+  Tokens Anthropic  & Tokens de Anthropic para tener acceso a sus modelos de inteligencia artificial generativa & 5,31 €          \\
+  \hline
+  \textbf{Total}    &                                                                                           & \textbf{5,31 €} \\
+  \hline
+  \caption{Costes de software, licencias y otros servicios}
+  \label{tab:costes-software}
+\end{longtable}
+
+\section{Costes totales}
+
+Una vez estimados los costes de mano de obra, los costes de material y los costes de software, licencias y otros servicios, es necesario calcular la estimación de costes totales del proyecto, mostrados en la siguiente tabla:
+
+\renewcommand{\arraystretch}{1.8}
+\begin{longtable}{|>{\centering\arraybackslash}p{5.5cm}|>{\centering\arraybackslash}p{5.5cm}|}
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Tipo de coste}                          & \textbf{Estimación}  \\
+  \hline
+  \endfirsthead
+
+  \hline
+  \rowcolor{headerblue}
+  \textbf{Tipo de coste}                          & \textbf{Estimación}  \\
+  \hline
+  \endhead
+
+  \endfoot
+
+  \endlastfoot
+
+  Costes de mano de obra                          & 9.825 €              \\
+  \hline
+  Costes de material                              & 3.063,56 €           \\
+  \hline
+  Costes de software, licencias y otros servicios & 5,31 €               \\
+  \hline
+  \textbf{Total}                                  & \textbf{12.893,87 €} \\
+  \hline
+  \caption{Costes totales del proyecto}
+  \label{tab:costes-totales}
+\end{longtable}
+
+\chapter{Desarrollo del proyecto}
+
+Este capítulo redacta todo el proceso de desarrollo del proyecto. Comienza definiendo los stakeholders del mismo y continúa con la especificación de sus requisitos, tanto funcionales como no funcionales. Después, muestra la especificación de su diseño, incluyendo la arquitectura de la solución, el diseño relacional de la base de datos y el diseño de la interfaz de usuario. A continuación, describe las tecnologías utilizadas para la realización del proyecto y algunas consideraciones sobre la implementación. Por último, proporciona el plan de pruebas seguido y unas incidencias del proyecto.
+
+\section{Stakeholders}
+
+En el contexto de este proyecto, los stakeholders son aquellas personas o entidades a las que, de alguna forma, les afecta el desarrollo y la puesta en marcha de esta solución web. Es fundamental reconocerlos y conocer sus intereses y necesidades para lograr que el resultado del proyecto cumpla con sus expectativas.
+
+A continuación, se muestra una tabla con los stakeholders identificados, su rol y el interés o necesidad del proyecto:
+
+\begin{table}[ht]
+  \centering
+  \renewcommand{\arraystretch}{1.8}
+  \begin{tabular}{|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{5cm}|>{\centering\arraybackslash}p{5cm}|}
+    \hline
+    \rowcolor{headerblue}
+    \textbf{Stakeholder}         & \textbf{Rol}                                               & \textbf{Interés o necesidad}                                                                    \\
+    \hline
+    Entrenador del equipo        & Usuario final de la solución                               & Procesos de gestión sencillos, amenos, centralizados y mejora individual y colectiva del equipo \\
+    \hline
+    Jugador del equipo           & Usuario final de la solución                               & Mejora del rendimiento deportivo propio y centralización y amenidad de procesos de gestión      \\
+    \hline
+    Club deportivo de referencia & Cliente del proyecto                                       & Mejora del rendimiento deportivo del equipo                                                     \\
+    \hline
+    Autor del proyecto           & Encargado del diseño y desarrollo del proyecto             & Desarrollar una solución funcional y útil para el cliente                                       \\
+    \hline
+    Anthropic                    & Proveedor de modelos de inteligencia artificial generativa & Obtener datos del uso de sus modelos por parte de la aplicación                                 \\
+    \hline
+  \end{tabular}
+  \caption{Stakeholders del proyecto}
+  \label{tab:stakeholders}
+\end{table}
+
+\section{Especificación de requisitos}
+
+\subsection{Requisitos funcionales}
+
+Los requisitos funcionales del proyecto son el conjunto de funcionalidades que debe tener el proyecto. Es decir, recogen qué debe ser capaz de hacer la solución web final. Dichos requerimientos provienen de las necesidades y deseos de los stakeholders del proyecto, especialmente de los usuarios finales, además de los objetivos definidos al inicio del proyecto.
+
+A continuación, se definen los requisitos funcionales del proyecto:
+
+\begin{description}
+  [labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[RF-01] La solución debe permitir al usuario registrarse con su correo electrónico vinculado al club.
+  \item[RF-02] La aplicación debe permitir a un usuario iniciar sesión con su nombre de usuario y contraseña o mediante Google.
+  \item[RF-03] Los usuarios deben poder visualizar los partidos de la temporada con su fecha, hora, equipo rival y resultado.
+  \item[RF-04] El sistema debe permitir a los usuarios visualizar las estadísticas de la temporada tanto de los jugadores como del equipo.
+  \item[RF-05] Los entrenadores deben poder convocar jugadores a un partido.
+  \item[RF-06] Cada jugador debe poder confirmar su asistencia o no asistencia a los partidos a los que es convocado.
+  \item[RF-07] El sistema debe proporcionar a los entrenadores un sistema de seguimiento de partidos en directo.
+  \item[RF-08] La solución debe actualizar las estadísticas de jugadores y del equipo automáticamente una vez terminado el partido en juego.
+  \item[RF-09] La aplicación debe proporcionar recomendaciones sobre áreas a entrenar relativas al último partido a los entrenadores.
+  \item[RF-10] Los entrenadores deben poder crear pedidos de material y descargar su información en un fichero Excel.
+  \item[RF-11] Los jugadores deben poder solicitar material en los pedidos creados por los entrenadores.
+  \item[RF-12] La solución debe proporcionar un foro para el intercambio de mensajes de usuarios sobre un tema específico.
+\end{description}
+
+\subsection{Requisitos no funcionales}
+
+Los requisitos no funcionales del proyecto son el conjunto de características y cualidades que debe tener el proyecto. A diferencia de los funcionales, no recogen qué hace la solución, sino cómo lo hace. Los requisitos no funcionales de este proyecto se han definido para garantizar la facilidad de uso, la facilidad de aprendizaje y una mínima seguridad, dado su carácter académico.
+
+Estos son los requisitos no funcionales que se han definido para el proyecto:
+
+\begin{description}
+  [labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[RnF-01] La interfaz de la solución debe estar personalizada para el club deportivo.
+  \item[RnF-02] La interfaz de usuario debe ser intuitiva, con una navegación sencilla e inputs claramente definidos. El objetivo es que cualquier usuario, aún sin una formación sobre la aplicación, pueda usarla con facilidad.
+  \item[RnF-03] La solución debe permitir acceso únicamente a miembros del club.
+  \item[RnF-04] La interfaz debe ser adaptable a distintos tamaños de pantallas.
+\end{description}
+
+\section{Especificación del diseño}
+
+Para llevar a cabo el proyecto, ha sido necesario especificar el diseño del mismo antes de empezar con su desarrollo. Dicho diseño ha sido especificado en base a los requisitos funcionales y no funcionales y los objetivos del proyecto. El propósito de este apartado es definir el diseño de la arquitectura de la solución, el diseño relacional de la base de datos y el diseño de la interfaz de la aplicación web.
+
+\begin{enumerate}
+  \item \textbf{Backend:} Está desarrollado en Java 21, haciendo uso del framework SpringBoot. La parte backend se encarga de comunicarse con la base de datos mediante una API REST, desarrollada con las herramientas que proporciona SpringBoot para ello. Almacena datos y los recupera cuando es necesario, y los envía a la parte frontend para que sea ella la que se encargue de mostrar la información al usuario.
+  \item \textbf{Frontend:} El frontend es quien se encarga de recibir los datos que llegan de la parte backend para mostrarlos al usuario en pantalla. Está desarrollado con React.
+  \item \textbf{Base de datos relacional:} El backend se comunica con ella para almacenar y recuperar los datos que sean necesarios cuando sea necesario. Funciona como almacenamiento persistente del proyecto, y se ha hecho uso de MySQL para su gestión.
+  \item \textbf{Anthropic:} Es una organización que dispone de modelos de inteligencia artificial generativa. La parte frontend llama a la API REST del proyecto para que sea el backend quien se comunique con uno de los modelos de IA de Anthropic. El backend recibirá la respuesta del modelo y la enviará al frontend para mostrarla al usuario.
+  \item \textbf{Docker:} Es una herramienta de contenerización que permite empaquetar una aplicación y sus dependencias en un contenedor. Se utilizará para empaquetar la aplicación en un contenedor y poder ejecutarla en cualquier entorno.
+\end{enumerate}
+
+\subsection{Diseño de la arquitectura de la solución}
+
+La solución está basada en una arquitectura cliente-servidor, compuesta por una parte backend que ejecuta toda la lógica de negocio y una parte frontend que muestra al usuario la información. La parte backend hace uso de una base de datos relacional para almacenar toda la información del proyecto. Además, el backend se comunicará con Anthropic para utilizar uno de sus modelos de IA. El proyecto estará embebido dentro de un contenedor de Docker.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{imgs/arquitectura.png}
+  \caption{Arquitectura de la solución}
+  \label{fig:architecture}
+\end{figure}
+
+\subsection{Diseño relacional de la base de datos}
+
+A la hora de diseñar la solución es fundamental tener claro qué información será necesaria almacenar y qué no. Para ello, se ha realizado un diseño relacional de la base de datos teniendo en cuenta los requisitos del proyecto y sus objetivos. El diseño inicial era el que aparece a continuación:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{imgs/first_database.png}
+  \caption{Primer diseño relacional de la base de datos}
+  \label{fig:primer-database}
+\end{figure}
+
+Este diseño no refleja la estructura final de la base de datos. A medida que el desarrollo del proyecto avanzaba y se implementaban las funcionalidades, era necesario adaptarlo para que se ajustara a las necesidades del proyecto. Por lo que, este diseño evolucionó para dar lugar a la estructura final de la base de datos:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{imgs/final_database.png}
+  \caption{Diseño relacional final de la base de datos}
+  \label{fig:final-database}
+\end{figure}
+
+\subsection{Diseño de la interfaz de la solución web}
+
+Cuando se desarrolla una aplicación web, es importante tener en cuenta cómo será su interfaz, ya que es lo primero que ven los usuarios. Una buena interfaz debe ser atractiva e intuitiva, es decir, que cualquier usuario sin formación sobre la solcuión pueda navegar y hacer uso de ella sin problemas.
+
+Para este proyecto se ha optado por un diseño personalizado para el club deportivo tomado como referencia. Se han elaborado las distintas pantallas que componen la solución utilizando una gama de colores acorde a la identidad visual del club. Además, se han insertado en la cabecera de la solución el logo y el nombre del club para reforzar la sensación de estar utilizando una aplicación personalizada.
+
+Cabe destacar que los diseños de las pantallas no han sido necesariamente los definitivos, son meros prototipos que muestran una idea de cómo se verá la solución. Aunque se ha mantenido la línea de diseño de las pantallas en la medida de lo posible.
+
+A continuación se muestran algunos ejemplos del diseño de las pantallas de la solución web.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{imgs/pantallaRegistro.png}
+  \caption{Prototipo de pantalla de registro}
+  \label{fig:pantalla-registro}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{imgs/pantallaPartidos.jpeg}
+  \caption{Prototipo de pantalla de partidos}
+  \label{fig:pantalla-partidos}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{imgs/pantallaConvocatoriasJugador.png}
+  \caption{Prototipo de pantalla de convocatorias de jugador}
+  \label{fig:pantalla-convocatorias-jugador}
+\end{figure}
+
+Al tratarse de una solución web, es posible que los usuarios accedan a ella desde cualquier tipo de dispositivo que disponga de acceso a un navegador. Esto hace que la solución deba ser responsiva, es decir, que sea adaptable a cualquier tamaño de pantalla. A continuación, un ejemplo de ello:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.25\textwidth]{imgs/pantallaLoginResponsive.png}
+  \caption{Prototipo de pantalla de login responsiva}
+  \label{fig:pantalla-login-responsiva}
+\end{figure}
+
+\section{Tecnologías y herramientas utilizadas}
+
+\subsection{Maven}
+
+Maven es una herramienta de gestión de proyectos de proyectos software. Se ha utilizado en este proyecto para automatizar la compilación y construcción de la parte servidora del proyecto. Además ha ayudado ha gestionar las dependencias del proyecto, asegurando las distintas dependencias necesarias para que la parte backend del proyecto funcione correctamente. \cite{apache-maven}
+
+\subsection{Spring Boot}
+
+Spring Boot es un framework basado en el framework Spring que facilita el desarrollo de aplicaciones web. En este proyecto se ha utilizado para desarrollar la parte servidora de la aplicación web, encargada de gestionar las distintas funcionalidades que ofrece la aplicación. \cite{springboot}
+
+\subsection{React}
+
+React es una biblioteca de JavaScript diseñada para el desarrollo de interfaces web. En este proyecto se ha utilizado para desarrollar la parte cliente de la solución, que se encarga de mostrar los datos proporcionados por la parte servidora de una forma visual y agradable para el usuario. \cite{react}
+
+\subsection{MySQL}
+
+MySQL es un sistema de gestión de bases de datos relacionales de código abierto. Se ha utilizado en este proyecto para gestionar los datos de los que hace uso la solución web. \cite{mysql}
+
+\subsection{Docker}
+
+Docker es una plataforma de contenedores que permite empaquetar una aplicación en un contenedor junto con todas sus dependencias. Se ha utilizado para crear contenedores con cada uno de los servicios del proyecto y orquestar su ejecución con Docker Compose. \cite{docker}
+
+Cabe destacar que para hacer uso de Docker en Windows, se ha utilizado Docker Desktop, una interfaz gráfica de Docker que facilita su uso en este sistema operativo. \cite{docker-desktop}
+
+\subsection{GitHub Desktop}
+
+GitHub Desktop es una interfaz gráfica para GitHub que permite gestionar los repositorios de GitHub. Se ha utilizado para gestionar las versiones del proyecto y a la vez asegurar que el código del proyecto no se pierde almacenándolo en la nube de GitHub. \cite{github-dektop}
+
+\subsection{Antigravity IDE}
+
+Antigravity IDE es un entorno de desarrollo muy similar a Visual Studio Code. Lo que lo diferencia de él es que está integrado con herramientas de inteligencia artificial para apoyar el desarrollo del proyecto cuando el usuario lo desee. Ha sido el software con el que se ha desarrollado el proyecto. \cite{antigravity-ide}
+
+\subsection{Figma}
+
+Figma es una herramienta de diseño colaborativo para interfaces web. Se ha hecho uso de ella para diseñar la parte de interfaces de usuario, personalizada para el club deportivo de referencia. \cite{figma}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1.0\textwidth]{imgs/figma.png}
+  \caption{Editor de Figma}
+  \label{fig:figma}
+\end{figure}
+
+\subsection{Draw.io}
+
+Draw.io es una herramienta online diseñada para crear diagramas. Se ha utilizado en el proyecto para definir la arquitectura del mismo. \cite{draw-io}
+
+\subsection{Inkscape}
+
+Inkscape es una herramienta de diseño vectorial de código abierto. En este proyecto, se ha utilizado para crear la imagen de logo de equipo por defecto y la imagen de jugador por defecto. \cite{inkscape}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1.0\textwidth]{imgs/inkscape.jpeg}
+  \caption{Pantalla principal de Inkscape}
+  \label{fig:inkscape}
+\end{figure}
+
+\subsection{Team Gantt}
+
+Team Gantt es una herramienta para crear diagramas de Gantt. Se ha utilizado en el proyecto para crear el diagrama de este documento. \cite{team-gantt}
+
+\subsection{Claude Sonnet 4.5}
+
+Claude Sonnet 4.5 es un modelo de inteligencia artificial generativa desarrollado por Anthropic. Se ha utilizado en este proyecto como modelo que utiliza el módulo inteligente para generar las recomendaciones de áreas a entrenar. \cite{claude}
+
+\subsection{React Icons}
+
+React Icons es una biblioteca de iconos para React. Se ha utilizado en este proyecto para mostrar iconos en la interfaz de usuario. \cite{react-icons}
+
+\section{Consideraciones sobre la implementación}
+
+\subsection{Spring Security y JWT}
+
+La autenticación y la autorización son una parte fundamental de cualquier desarrollo de software. Para este proyecto se ha decidido utilizar Spring Security, un framework para proyectos Spring que ofrece soporte para estas dos características. \cite{spring-security}
+
+Además, este framework se ha apoyado en JSON Web Token para garantizar la seguridad en estos dos aspectos de la solución web. \cite{jwt}
+
+La autenticación es el proceso de verificar la identidad de un usuario. Mientras que la autorización es el proceso que determina de qué permisos dispone un usuario previamente autenticado. Es importante entender la diferencia entre estos dos conceptos.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\textwidth]{imgs/autorizacion_autenticacion.png}
+  \caption{Autenticación y autorización}
+  \label{fig:autorizacion_autenticacion}
+\end{figure}
+
+El flujo de estas dos características en este proyecto es el siguiente:
+
+\textbf{Cuenta de usuario}
+
+Un usuario introduce las credenciales de su cuenta de usuario para iniciar sesión. La solución busca esa combinación de credenciales en la base de datos. Si no es correcta, el usuario no puede acceder. Si las credenciales son correctas, la solución genera un JWT que almacena el email de usuario y su rol (jugador o entrenador). Después, introduce ese JWT en una cookie HttpOnly, de esta manera no puede ser modificada.
+
+El usuario ya está autenticado. Entonces, cada vez que hace una petición al servidor, envia esa cookie en ella. Si su rol dispone de autorización para ejecutar el método de esa petición, la petición continúa con normalidad. Pero, si por el contrario el usuario no dispone de autorización, el método no se ejecutará y lanzará un error de que el usuario no está autorizado.
+
+\textbf{OAuth2}
+
+OAuth2 es la tecnología que está detrás de muchos servicios de login sociales: Google, Microsoft, Github, Facebook, etc.
+
+El flujo de inicio de sesión con OAuth2 en este proyecto es el que se redacta a continuación:
+
+Cuando un usuario pulsa el botón de inicio de sesión con Google, Spring Security le redirige al proveedor externo (Google) y recoge el nombre de usuario y el correo electrónico de la cuenta de Google utilizada para iniciar sesión. Una vez estos datos han sido conseguidos, se comprueba si el usuario existe en la base de datos con el email, y si es así, se le permite acceso al usuario. Si el nombre de usuario no figura en la base de datos de la solución, se verifica que exista un registro de ese correo electrónico en la tabla de emails autorizados para acceder a la solución. Si la verificación es exitosa, creará un nuevo usuario y un JWT para guardarlo en una cookie HttpOnly. De lo contrario, el usuario no podrá acceder a la aplicación.
+
+\subsection{Spring AI}
+
+Spring AI es un framework de Spring que facilita la integración de modelos de inteligencia artificial en aplicaciones Java. \cite{spring-ai}
+
+Ofrece soporte para modelos de lenguaje de muchas empresas. En este proyecto se ha optado por utilizar Claude Sonnet 4.5. Se eligió un modelo de Anthropic porque es una empresa que está avanzando a pasos muy grandes respecto a sus modelos de IA. El modelo escogido para el proyecto no es el mejor de Anthropic ni mucho menos, pero tiene la potencia suficiente para cumplir con las necesidades del proyecto.
+
+Utilizar un modelo de IA en el desarrollo de software fue muy sencillo gracias a Spring AI. Simplemente hay que llamar al modelo pasándole como parámetro un \textit{prompt}. El modelo lo procesará y devolverá su respuesta. Para que esto funcione, es necesario disponer de una \textit{API Key} de Anthropic con \textit{tokens}.
+
+El \textit{prompt} que se envía al modelo es más importante de lo que parece, ya que es el contexto con el que el modelo responderá a lo que se le pregunte. Sin un buen contexto, la inteligencia artificial no sbrá de que estás hablando y no podrá proporcionar una respuesta precisa. Este es el \textit{prompt} que se ha utilizado en este proyecto para las recomendaciones inteligentes:
+
+\begin{quotation}
+  \itshape
+  \guillemotleft Eres un entrenador de HOCKEY LINEA profesional, y sabes encontrar las áreas a mejorar analizando las estadísticas de un partido.
+
+  Viendo estas estadísticas de un partido proporcióname las áreas a mejorar que consideres, para el equipo como conjunto y para cada jugador y portero, para trabajarlas en los entrenamientos de la siguiente semana.
+
+  Las primeras estadísticas que te proporciono son las del equipo, lo siguiente son dos listas con las estadísticas de cada jugador y cada portero del partido, respectivamente. Devuelve las áreas a mejorar/entrenar en formato JSON. No me des un análisis general. Resume el JSON de la respuesta lo máximo posible.
+
+  TERMINOLOGIA
+
+  -Penalty kill significa que el equipo ha hecho una falta y está en inferioridad numérica durante un tiempo.
+
+  -Power play es lo contrario. El equipo contrario ha hecho una falta y tenemos superioridad numérica durante un tiempo.
+
+  -Penalty shot = tiro de penalti.
+
+  A TENER EN CUENTA
+
+  -La respuesta en español.
+
+  -No marcar gol en penalty kill es lo normal. Lo importante es que no te marquen. Siempre y cuando haya habido penalty killing.
+
+  -Un poder play no lo genera el equipo. Falta del equipo contrario = power play.
+
+  -El power play merece ser mejorado si la eficacia es menor al 50\%. 1 gol de 1 es perfecto. Si no ha habido power play, no hay nada que analizar.
+
+  -La eficacia de los tiros debe ser entrenada cuando sea menor al 25\%. Una eficacia superior a esa es buena estadística. No analices los goles independientemente. Analiza los goles en base a los tiros totales realizados.
+
+  -Las situaciones como 1vs0, 2vs1, etc son en ataque. Si acaba en gol = +1 punto. Si no = -1 punto en esa estadística.
+
+  -En este deporte se juega con un disco y 4vs4 + 1 portero en la pista. Los power play suelen ser 4vs3.
+
+  -No agrupes los jugadores ni los porteros en un mismo objeto.
+
+  -Por favor que el JSON se divida en 3 partes (equipo, jugadores, porteros). En la parte de equipo, que la clave sea el área a entrenar y el valor la descripción.
+
+  En la parte de jugadores, las claves serán el id de cada jugador, y el valor un objeto con clave el área a entrenar y valor la descripción. Los porteros igual que los jugadores.
+
+  Estadísticas del equipo [objeto con las estadísticas del equipo].
+
+  Lista de estadísticas de jugadores [objeto con las estadísticas de jugadores].
+
+  Lista de estadísticas de porteros [objeto con las estadísticas de porteros].\guillemotright
+\end{quotation}
+
+\section{Plan de pruebas}
+
+El plan de pruebas es una parte esencial de los proyectos de desarrollo de software. Permite verificar y comprobar el resultado del proyecto, al igual que sus módulos y funcionalidades individualmente o de forma integrada. Para este proyecto, se ha llevado a cabo un plan que contiene tres tipos de pruebas diferentes: pruebas unitarias, pruebas de integración y pruebas de validación.
+
+\subsection{Pruebas unitarias}
+
+Las pruebas unitarias son pruebas que se realizan sobre una unidad individual, como un método o una funcionalidad. En este proyecto se han realizado pruebas unitarias para verificar el correcto funcionamiento de cada funcionalidad por separado. Estas han sido las pruebas unitarias realizadas:
+
+\subsubsection{Registro de usuarios}
+
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PU-01:] Un usuario puede crear una cuenta correctamente
+  \item[PU-02:] Un usuario no puede crear una cuenta con un nombre de usuario ya existente
+  \item[PU-03:] Un usuario no puede crear una cuenta si su correo electrónico no está registrado en el club
+  \item[\textbf{Resultado obtenido:}] El registro de usuarios ha pasado todas las pruebas correctamente.
+\end{description}
+
+\subsubsection{Inicio de sesión}
+
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PU-04:] Un usuario puede iniciar sesión correctamente
+  \item[PU-05:] Un usuario no puede no puede iniciar sesión con credenciales incorrectas
+  \item[PU-06:] Un usuario puede iniciar sesión correctamente mediante Google
+  \item[PU-07:] Un usuario cuyo correo electrónico no está registrado en el club no puede iniciar sesión mediante Google
+  \item[PU-08:] Un usuario puede cerrar sesión con normalidad
+  \item[\textbf{Resultado obtenido:}] La funcionalidad ha pasado las pruebas correctamente.
+\end{description}
+
+\subsubsection{Visualización de partidos de la temporada}
+
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PU-09:] Un usuario puede ver la lista de partidos correctamente con todos sus datos: equipos, goles y fecha y hora
+  \item[\textbf{Resultado obtenido:}] Los partidos se visualizan correctamente con toda su información.
+\end{description}
+
+\subsubsection{Visualización de estadísticas}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PU-10:] Un usuario visualiza todos los jugadores de la plantilla del equipo
+  \item[PU-11:] Un usuario puede acceder a las estadísticas de cualquier jugador del equipo correctamente con todos sus datos: goles, asistencias, tarjetas, partidos jugados, minutos jugados, etc.
+  \item[PU-12:] Un usuario puede visualizar las estadísticas del equipo
+  \item[\textbf{Resultado obtenido:}] La funcionalidad ha pasado las pruebas correctamente.
+\end{description}
+
+\subsubsection{Convocatorias}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PU-13:] Un entrenador puede acceder a un partido próximo
+  \item[PU-14:] Un entrenador puede convocar jugadores de entre los disponibles en la plantilla
+  \item[PU-15:] Un jugador puede acceder a un partido al que ha sido convocado
+  \item[PU-16:] Un jugador puede confirmar asistencia o no asistencia al partido
+  \item[PU-17:] Un usuario puede visualizar la asistencia o no asistencia de los jugadores al partido
+  \item[\textbf{Resultado obtenido:}] La gestión de convocatorias funciona correctamente y cumple con lo esperado.
+\end{description}
+
+\subsubsection{Seguimiento de partidos}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PU-18:] Un entrenador puede acceder a la pantalla de seguimiento de partido, mientras que un jugador no
+  \item[PU-19:] El entrenador puede anotar las estadísticas del equipo durante el partido
+  \item[PU-20:] El entrenador puede apuntar las estadísticas de cada jugador durante el partido
+  \item[PU-21:] El entrenador puede anotar las incidencias del partido respectivas al equipo: goles, faltas y tiempos muertos
+  \item[PU-22:] El entrenador puede seleccionar el jugador que ha marcado y el jugador que ha realizado la asistencia, además de introducir el minuto y segundo del partido en el que se ha producido el gol, en el caso del equipo propio
+  \item[PU-23:] El entrenador puede seleccionar el jugador que ha hecho una falta, indicando los minutos de sanción y el minuto y segundo del partido en el que se ha producido, en el caso del equipo propio
+  \item[PU-24:] El entrenador puede seleccionar el minuto y segundo del partido en el que el equipo rival ha marcado un gol
+  \item[PU-25:] El entrenador puede seleccionar el minuto y segundo del partido en el que el equipo rival ha cometido una falta, además del tipo de falta cometida y los minutos de sanción
+  \item[PU-26:] El entrenador puede seleccionar el minuto y segundo del partido en el que cualquiera de los dos equipos ha solicitado un tiempo muerto
+  \item[PU-27:] El entrenador puede seleccionar el periodo del partido que está siendo disputado
+  \item[PU-28:] El entrenador puede finalizar el partido si el periodo seleccionado no es el periodo uno
+  \item[\textbf{Resultado obtenido:}] El seguimiento de partidos funciona correctamente.
+\end{description}
+
+\subsubsection{Módulo inteligente de recomendaciones}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PU-29:] Se envían mensajes al modelo de inteligencia artificial y su respuesta es recibida correctamente.
+  \item[PU-30:] La respuesta del modelo es almacenada y mostrada correctamente
+  \item[\textbf{Resultado obtenido:}] El módulo inteligente de recomendaciones funciona correctamente.
+\end{description}
+
+\subsubsection{Foro de mensajes}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PU-31:] Un usuario puede ver los temas disponibles y seleccionar uno
+  \item[PU-32:] Un usuario puede acceder a uno de los debates disponibles en el tema seleccionado
+  \item[PU-33:] Un usuario puede visualizar todos los mensajes de ese debate
+  \item[PU-34:] Un usuario puede publicar mensajes en el foro. Haya iniciado sesión con su cuenta de usuario o mediante Google
+  \item[\textbf{Resultado obtenido:}] La funcionalidad ha pasado todas las pruebas correctamente.
+\end{description}
+
+\subsubsection{Pedidos de material}
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=1.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PU-35:] Un entrenador puede crear pedidos de material correctamente, indicando la fecha y hora límite y el tipo de pedido
+  \item[PU-36:] Un jugador no puede crear pedidos de material
+  \item[PU-37:] Un jugador puede pedir material en un pedido
+  \item[PU-38:] Un jugador no puede pedir material si no hay ningún pedido activo
+  \item[PU-39:] Un jugador no puede pedir material si el pedido ha expirado
+  \item[PU-40:] Un entrenador descarga un fichero excel correctamente con la información del pedido
+  \item[PU-41:] Un entrenador no puede crear un nuevo pedido hasta haber descargado el fichero excel del anterior pedido
+  \item[\textbf{Resultado obtenido:}] La gestión de pedidos de material funciona correctamente.
+\end{description}
+
+\subsection{Pruebas de integración}
+
+Las pruebas de integración son pruebas en las que se comprueba el correcto funcionamiento en grupo de funcionalidades individuales para evaluar su interacción. En este proyecto se han realizado pruebas de integración para verificar la correcta interacción de funcionalidades que guardan alguna relación o dependencia. Estas han sido las pruebas de integración realizadas:
+
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=2.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PI-01:] Creación de cuenta de usuario e inicio de sesión
+  \item[PI-02:] Seguimiento de partido y actualización automática de estadísticas de jugadores y del equipo al finalizarlo
+  \item[PI-03:] Seguimiento de partido y actualización de resultado del partido en el calendario
+  \item[PI-03:] Correcto envío de estadísticas del partido al módulo inteligente de recomendaciones y posterior visualización de las mismas
+  \item[PI-04:] Aparición de únicamente jugadores convocados al partido en la pantalla de seguimiento de éste
+  \item[PI-05:] Prueba del flujo completo de uso de la solución
+  \item[\textbf{Resultado obtenido:}] La solución ha pasado todas las pruebas de integración correctamente.
+\end{description}
+
+\subsection{Pruebas de validación}
+
+Las pruebas de validación sirven para verificar que el resultado final cumple con los requisitos funcionales y no funcionales que se han especificado. Estas han sido las pruebas de validación realizadas en etse proyecto:
+
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=2.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PV-01:] Correcta navegación entre pantallas y uso cómodo e intuitivo de la solución
+  \item[PV-02:] Correcta adaptación de la solución a diferentes tamaños de pantallas
+  \item[\textbf{Resultado obtenido:}] La solución ha pasado todas las pruebas de validación correctamente.
+\end{description}
+
+\begin{description}[
+    labelindent=2em,
+    leftmargin=!,
+    labelwidth=2.5cm,
+    labelsep=1em,
+    font=\normalfont
+  ]
+  \item[PI-01:] Creación de cuenta de usuario e inicio de sesión
+  \item[PI-02:] Seguimiento de partido y actualización automática de estadísticas de jugadores y del equipo al finalizarlo
+  \item[PI-03:] Correcto envío de estadísticas del partido al módulo inteligente de recomendaciones y posterior visualización de las mismas
+  \item[PI-04:] Aparición de únicamente jugadores convocados al partido en la pantalla de seguimiento de éste
+  \item[PI-05:] Prueba del flujo completo de uso de la solución
+\end{description}
+
+\section{Incidencias del proyecto}
+
+\subsubsection{Diseño relacional de la base de datos}
+
+Como ya se ha comentado anteriormente en este documento, inicialmente se planteó un diseño relacional de la base de datos de la solución. Sin embargo, hubo algún aspecto que requirió que se modificara. Muchos de esos aspectos fueron simplemente darme cuenta que hacerlo de otra manera sería más óptimo. Pero el mayor problema tuvo que ver con los dos tipos de inicio de sesión.
+
+Al inicio del proyecto, pensaba almacenar todos los usuarios en una sola tabla de base de datos, tanto los creados con cuentas de usuario de la solución como los relacionados con OAuth2. Esto presentó varios problemas.
+
+El primero de esos problemas era que los usuarios que inician sesión con OAuth2 no introducen ninguna contraseña. Si se almacenaran los dos tipos de usuario en la misma tabla, se estaría permitiendo que el otro tipo de usuariostampoco tuviera contraseña. Para evitar este problema, se separaron ambos tipos de usuarios. De tal manera que existe una tabla en la base de datos para cada uno. De esta forma no hay conflicto entre ellos.
+
+La solución anterior provocó otro problema, esta vez relacionado con el foro de mensajes. Es necesario que un mensaje disponga de una relación hacia el usuario que lo ha publicado. El problema fue que existían dos tipos de usuarios. Una de las soluciones podía ser que cada mensaje guardase una relación hacia cada uno de los tipos de usuario, aunque de esta manera, una columna en la base de datos siempre quedaría vacía, lo que no es una buena práctica. La solución más limpia fue crear una herencia entre un usuario normal y uno que ha iniciado sesión con OAuth2, siendo el usuario normal el ``padre''. De esta forma habrá una única relación y la base de datos quedará más limpia.
+
+\chapter{Manual de usuario}
+
+Este capítulo muestra un manual para que un usuario comprenda cómo hacer uso de la solución web. Redacta las funcionalidades de las que dispone y cómo puede hacer uso de ellas cada uno de los roles.
+
+\section{Prerrequisitos}
+
+Para poder acceder y hacer uso de la solución, es necesario cumplir unos requisitos previos:
+
+\begin{itemize}
+  \item Disponer de conexión a internet, ya sea inalámbrica o cableada.
+  \item Disponer de un dispositivo capaz de conectarse a la red de internet y que cuente con acceso a un navegador.
+  \item Pertenecer al club deportivo.
+\end{itemize}
+
+\section{Registro e inicio de sesión}
+
+Una vez el usuario haya accedido a la solución desde su navegador, se le mostrarla una pantalla como esta, con el objetivo de que inicie sesión en la aplicación.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{imgs/login.jpeg}
+  \caption{Pantalla de inicio de sesión}
+  \label{fig:login}
+\end{figure}
+
+Si el usuario no dispone de una cuenta con la que poder acceder a la aplicación, podrá iniciar sesión con Google, aunque la solución permitirá el acceso únicamente a los correos electrónicos que formen parte del club deportivo.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{imgs/usuario_no_autorizado.jpeg}
+  \caption{Pantalla de usuario no autorizado}
+  \label{fig:usuario_no_autorizado}
+\end{figure}
+
+Además, si un usuario es la primera vez que accede a la solución mediante OAuth2, se le preguntará si es entrenador o jugador para poder determinar su rol.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{imgs/seleccion_rol.jpeg}
+  \caption{Pantalla de selección de rol}
+  \label{fig:seleccion_rol}
+\end{figure}
+
+Si por el contrario, el usuario desea registrarse en la aplicación y crear una cuenta con la que poder acceder a ella, podrá hacer clic en el enlace que dice ``¿No tienes una cuenta? Crea una.'' para navegar a la siguiente pantalla:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{imgs/registro.jpeg}
+  \caption{Pantalla de registro}
+  \label{fig:registro}
+\end{figure}
+
+En este formulario, el usuario podrá crearse una cuenta con la que acceder posteriormente a la aplicación. Aunque, al igual que con el inicio de sesión con Google, la solcuión solo permitirá el registro de cuentas a los correos electrónicos pertenecientes al club deportivo.
+
+Una vez se dispone de una cuenta de usuario o de un correo electrónico registrado en el club, se concederá acceso a la solución web. En la barra superior se puede ver el menú de navegación el que el usuario hará clic para navegar por las distintas pantallas que ofrece la solución.
+
+Dependiendo de si el usuario es entrenador o no, estará autorizado a realizar ciertas acciones. Para facilitar la lectura y la comprensión de este manual de usuario se va a estructurar de la siguiente manera: en primer lugar se mostrará el uso de las funcionalidades comunes a ambos roles. Después se separarán dichas funcionalidades por roles: jugador y entrenador.
+
+\section{Funcionalidades comunes}
+
+\subsubsection{Partidos}
+
+En esta pantalla el usuario podrá ver los partidos disputados y los que están por disputar. Cada partido incluye: los equipos que enfrenta, fecha y hora del partido, resultado (si corresponde) y un rectángulo rodeando los goles marcados por el equipo que ha ganado el punto bonus (si corresponde).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{imgs/partidos.jpeg}
+  \caption{Pantalla de partidos}
+  \label{fig:partidos}
+\end{figure}
+
+\subsubsection{Estadísticas}
+
+Esta pantalla corresponde a las estadísticas tanto individuales como del equipo. El usuario puede decidir cuál de los dos tipos visualizar haciendo clic en la pestaña correspondiente. Además, si hace clic en un jugador, podrá visualizar sus estadísticas individuales.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{imgs/estadisticas_jugadores.jpeg}
+  \caption{Pantalla de selección de jugador para visualizar estadísticas individuales}
+  \label{fig:estadisticas_jugadores}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{imgs/estadisticas_equipo.jpeg}
+  \caption{Pantalla de estadísticas del equipo}
+  \label{fig:estadisticas_equipo}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{imgs/estadisticas_jugador.jpeg}
+  \caption{Pantalla de estadísticas de un jugador}
+  \label{fig:estadisticas_jugador}
+\end{figure}
+
+\subsubsection{Foro}
+
+Cuando el usuario navega a esta pantalla de la solución, lo primero que se encontrará serán temas de conversación entre los que puede escoger.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{imgs/foro_temas.jpeg}
+  \caption{Pantalla de selección de tema del foro}
+  \label{fig:foro}
+\end{figure}
+
+Una vez elegido el tema, deberá escoger entre los debates disponibles para ese tema. En esta pantalla existe una mínima diferencia para jugadores y entrenadores: los entrenadores disponen de autorización para crear nuevos debates, mientras que los usuarios no.
+
+Para crear un nuevo debate será necesario introducir el título del mismo.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{imgs/foro_debates.jpeg}
+  \caption{Pantalla de selección de debate}
+  \label{fig:foro_debates}
+\end{figure}
+
+Cuando el usuario seleccione el tema al que desea acceder. Se le mostrarán los mensajes de ese debate y un área de texto donde puede escribir el mensaje a enviar.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{imgs/foro_mensajes.jpeg}
+  \caption{Pantalla de mensajes de un debate}
+  \label{fig:foro_mensajes}
+\end{figure}
+
+\section{Entrenador}
+
+\subsubsection{Convocatorias}
+
+Un entrenador accederá a esta sección cuando desee realizar la convocatoria para los partidos. Cuando acceda, se le mostrará una lista con los próximos partidos.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{imgs/convocatorias_partidos.jpeg}
+  \caption{Selección de partido para convocatorias}
+  \label{fig:convocatorias}
+\end{figure}
+
+El entrenador seleccionará un partido y podrá ver una lista con los jugadores que pueden ser convocados al partido. Podrá marcar como convocados a aquellos que desee.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{imgs/convocatorias_lista_jugadores.jpeg}
+  \caption{Selección de jugadores a convocar}
+  \label{fig:convocatorias_jugadores}
+\end{figure}
+
+Para convocar a los jugadores, el entrenador puede hacer clic sobre ellos. Se mostrará que la asistencia de los jugadores convocados está pendiente de confirmación. Una vez hayan confirmado su asistencia o su falta al partido, se marcará como tal para informar al entrenador.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{imgs/convocatorias_asistencia_jugadores.jpeg}
+  \caption{Asistencia de jugadores convocados}
+  \label{fig:convocatorias_asistencia_jugadores}
+\end{figure}
+
+\subsubsection{Pedidos}
+
+Un entrenador puede acceder a esta sección cuando desea crear un nuevo pedido de material para los jugadores. Para ello deberá introducir la fecha y hora límite y el tipo de pedido.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{imgs/pedidos_crear_nuevo.jpeg}
+  \caption{Creación de un nuevo pedido}
+  \label{fig:pedidos_crear_nuevo}
+\end{figure}
+
+El entrenador puede descargar un fichero excel que recoge toda la información del pedido. Si el entrenador intenta crear un nuevo pedido antes de descargar el fichero excel del último pedido del mismo tipo que ya ha expirado, la aplicación no se lo permitirá. Esto es una medida de seguridad para evitar perder la información del pedido.
+
+\subsubsection{Seguimiento de partido}
+
+El entrenador puede acceder a esta funcionalidad haciendo clic en el botón que dice ``Empezar partido'' de la pantalla de inicio. El entrenador navegará a la siguiente pantalla:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{imgs/pantalla_seguimiento_partido.jpeg}
+  \caption{Pantalla de seguimiento de partido}
+  \label{fig:pantalla_seguimiento_partido}
+\end{figure}
+
+En la alineación del partido aparecerán únicamente los jugadores que hayan confirmado su asistencia.
+
+Desde aquí, el entrenador es capaz de anotar las estadísticas de los jugadores y las del equipo, además de las incidencias del partido. También es capaz de seleccionar el periodo del partido que se está disputando en ese momento.
+
+Si hace clic en cualquiera de los jugadores de la alineación, podrá modificar sus estadísticas del partido.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{imgs/estadisticas_jugador_partido.jpeg}
+  \caption{Anotación de estadísticas de un jugador durante el partido}
+  \label{fig:estadisticas_jugador_partido}
+\end{figure}
+
+Para apuntar las estadísticas del equipo, deberá pulsar el botón que así lo dice. Eso le llevará a la siguiente pantalla:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{imgs/estadisticas_equipo_partido.jpeg}
+  \caption{Anotación de estadísticas del equipo durante el partido}
+  \label{fig:estadisticas_equipo_partido}
+\end{figure}
+
+El entrenador también puede apuntar las incidencias que ocurren a lo largo del partido: goles, faltas y tiempos muertos. Para ello, primero deberá pulsar el botón que dice ``Incidencias'' para navegar a la siguiente pantalla:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{imgs/pantalla_incidencias_partido.jpeg}
+  \caption{Pantalla de selección de incidencia a anotar}
+  \label{fig:incidencias_partido}
+\end{figure}
+
+Después, solo tendrá que seleccionar el tipo de incidencia que quiere anotar e introducir los datos necesarios. Los goles, las asistencias, los puntos y los minutos de sanción de cada jugador se actualizarán automáticamente al anotar estas incidencias.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{imgs/seguimiento_partido_incidencias.jpeg}
+  \caption{Seguimiento de partido con incidencias}
+  \label{fig:seguimiento_partido_incidencias}
+\end{figure}
+
+Para poder finalizar el partido, debe estar seleccionado el periodo dos o el ``OT'' (prórroga) si corresponde. En el momento en el que el entrenador de por terminado el partido, se le mostrará una ventana preguntando si desea recibir recomendaciones de áreas a entrenar. El entrenador dispone de libre decisión.
+
+Si su decisión es afirmativa, al regresar a la pantalla de inicio podrá visualizar las recomendaciones generadas, tanto las individuales como las del equipo. Solo deberá hacer clic en el bloque correspondiente y será navegado a una pantalla en la que puede seleccionar las recomendaciones de cada uno de los jugadores y las del equipo.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{imgs/pantalla_inicio_recomendaciones.jpeg}
+  \caption{Pantalla de inicio con recomendaciones}
+  \label{fig:pantalla_inicio_recomendaciones}
+\end{figure}
+
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{imgs/recomendaciones_equipo.jpeg}
+  \caption{Recomendaciones del equipo}
+  \label{fig:recomendaciones_equipo}
+\end{figure}
+
+\section{Jugador}
+
+\subsubsection{Convocatorias}
+
+Un jugador accede a la sección de convocatorias para ver si ha sido convocado por el entrenador a alguno de los próximos partidos. Cuando es así, podrá ver un aviso que le notifique de ello.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{imgs/convocatorias_aviso_convocado.jpeg}
+  \caption{Aviso de convocatoria para un jugador}
+  \label{fig:convocatorias_aviso_convocado}
+\end{figure}
+
+Una vez el jugador seleccione el partido al que ha sido convocado, podrá confirmar su asistencia o su falta al partido, y de esta forma informar a los demás jugadores y al entrenador.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{imgs/convocatorias_confirmar_asistencia_falta.jpeg}
+  \caption{Confirmación de asistencia o falta de un jugador}
+  \label{fig:convocatorias_confirmar_asistencia_falta}
+\end{figure}
+
+\subsubsection{Pedidos}
+
+Un jugador accederá a esta sección cuando desee pedir material. Si hay un pedido abierto por el entrenador, el jugador podrá completar los campos necesarios para pedir el material deseado. Puede moverse por los tipos de pedido con las pestañas de la pantalla.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{imgs/pedidos_pedir_material.jpeg}
+  \caption{Pedido de material por parte de un jugador}
+  \label{fig:pedidos_pedir_material}
+\end{figure}
+
+Si el pedido ya ha expirado, el jugador no podrá seguir pidiendo material en ese pedido.
+
+\subsubsection{Pantalla de inicio}
+
+La pantalla de inicio de los jugadores presenta algunas diferencias importantes respecto a la de los entrenadores. En primer lugar, un jugador no está autorizado a realizar el seguimiento de los partidos, por lo que no podrá ver el botón que dice ``Empezar partido''. Además, los jugadores tampoco poseen autorización para visualizar las recomendaciones de áreas a entrenar. En su lugar, aparece un bloque con sus estadísticas en el último partido en el que ha sido alineado.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{imgs/pantalla_inicio_jugador.jpeg}
+  \caption{Pantalla de inicio de jugador}
+  \label{fig:pantalla_inicio_jugador}
+\end{figure}
+
+\chapter{Valoración ética del proyecto}
+
+Esta solución web para gestionar un equipo deportivo presenta varias consideraciones éticas que deben ser evaluadas. La tecnología conlleva avances, beneficios y consecuencias positivas, aunque si la analizamos con detalle, nos daremos cuenta que, a la vez, presenta consecuencias negativas. Por esta razón, se considera estrictamente necesario hacer un análisis ético de la realización de este proyecto.
+
+En este capítulo se recoge la justificación ética del proyecto, para posteriormente analizar las consideraciones éticas que se encuentran en el mismo. Al final del capítulo, se redactan soluciones para las consideraciones éticas negativas detectadas.
+
+\section{Justificación ética del proyecto}
+
+Antes de empezar con dichas consideraciones, resulta imprescindible realizar el cuestionamiento del fin de este proyecto. Éste puede ser analizado desde dos perspectivas distinas: la racionalidad ética y la racionalidad lógico-instrumental. La racionalidad ética es la capacidad de los seres humanos para evaluar acciones y tomar decisiones basándose en principios morales. Mientras que la racionalidad lógico-instrumental es una forma de pensar de los seres humanos que prioriza la eficacia, la utilidad y el cálculo, se enfoca en los medios para lograr un fin. Es decir, la racionalidad ética responde a la pregunta de ``¿Por qué debe realizarse este proyecto?'' mientras que la racionalidad lógico-instrumental responde a la pregunta de ``¿Cómo voy a realizar este proyecto?'' (técnicamente, desde una visión ingenieril). Debido al carácter ético de este capítulo y la naturaleza del apartado, me centraré en responder únicamente a la primera pregunta.
+
+\textbf{Racionalidad ética - ¿Por qué debe realizarse este proyecto?}
+
+El objetivo principal de este proyecto es hacer de la gestión de un equipo deportivo un proceso sencillo y ameno, además de proporcionar herramientas que promuevan el crecimiento deportivo de cada jugador y del equipo equipo como conjunto. Pero esto va mucho más allá.
+
+En primer lugar, el origen de este proyecto es, por una parte, académico, ya que surgió para realizarse como Proyecto Fin de Grado. Por otra parte, su origen también se debe a una necesidad real que pude detectar yo mismo. Como ingeniero, considero que la identificación de una necesidad como esta es una oportunidad para aplicar y poner en práctica mis conocimientos y aportar valor a otras personas. Por ello, la detección de este problema y los resultados positivos que podía conllevar el desarrollo de la solución fue una motivación para desarrollarla.
+
+En segundo lugar, la realización de este proyecto aporta una mejora en la experiencia y en el día a día de las personas con las que comparto un espacio deportivo, haciendo que la organización y coordinación del equipo mejore. Esto encaja perfectamente con el principio ético de la beneficiencia, que dicta actuar de tal manera que se busque el bienestar de todas las personas implicadas. La solución web es el medio por el que se conseguirá el fin, el bienestar del equipo. En este caso, el bienestar se traduce en una mejor comunicación, una mejor organización y una mejor coordinación del equipo.
+
+Por último, cabe mencionar el principio de no maleficiencia. Éste dicta no hacer ningún daño a los usuarios y evitar causarles riesgos innecesarios. La gestión de los distintos equipos del club se realiza con varias aplicaciones diferentes y ninguna de ellas reduce o evita errores humanos. Gracias a esta solución, se reduce significativamente el riesgo de errores humanos, ya que se automatizan muchas de las tareas que antes se realizaban manualmente.
+
+\section{Consideraciones éticas}
+
+Después de la justificación ética del proyecto, es conveniente evaluar las consideraciones éticas que aparecen en el mismo, tanto positivas como negativas.
+
+\subsection{Positivas}
+
+\textbf{Promoción del valor de la excelencia}
+
+Esta solución, además de centralizar los procesos de gestión más importantes del equipo deportivo en una sola aplicación, promueve el valor de la excelencia a través de su módulo inteligente. Como ya se ha mencionado anteriormente en este documento, este módulo proporciona áreas a entrenar basándose en las estadísticas recogidas en los partidos. Esto, promueve que los jugadores, tanto individualmente como en equipo, aspiren a mejorar, crezcan deportivamente y se formen como atletas para llegar a lo más alto deportivamente hablando.
+
+\textbf{Fomento de justicia}
+
+La solución web ayuda a recoger y almacena las estadísticas de los jugadores y del equipo. Las estadísticas son datos objetivos que permiten realizar un seguimiento del rendimiento deportivo de cada jugador y del equipo en general. Esto permite realizar un análisis objetivo de los puntos fuertes y débiles, y tomar decisiones basadas en estos datos. El hecho de que las decisiones se basen en datos objetivos hace que se fomente la justicia, ya que el entrenador podrá decidir a qué jugador convocar y qué jugador no, además de decidir cuántos minutos de juego proporcionar a cada jugador. Todo ello gracias a estadísticas objetivas.
+
+\textbf{Transparencia en las decisiones}
+
+En relación al apartado anterior, esas estadísticas están disponibles y visibles para todos los integrantes del equipo, tanto jugadores como entrenadores. Esto fomenta la transparencia, ya que permite que los jugadores conozcan la información utilizada por parte del entrenador para tomar sus decisiones.
+
+\subsection{Negativas}
+
+\textbf{Privacidad de datos}
+
+La privacidad de los datos de los usuarios es fundamental en el desarrollo de soluciones web. En este proyecto se recogen datos de los usuarios de caracter personal como su nombre y apellidos, correo electrónico, fecha de nacimiento, el dorsal del equipo, número de teléfono y fotografía.
+
+Además, las estadísticas de los jugadores recogidas en los partidos se envían a un modelo de inteligencia artificial comercial, y se debe tener cuidado con eso.
+
+\textbf{Dependencia excesiva}
+
+Esta solución proporciona gran ayuda a la hora de gestionar el equipo deportivo y tomar decisiones sobre los jugadores mediante las estadísticas. Se debe tener especial cuidado con el último aspecto mecionado. Esta solución debe servir de apoyo a las decisiones, nunca como única herramienta o instrumento para decidir.
+
+\textbf{Sesgos de la inteligencia artificial}
+
+La inteligencia artificial generativa no es perfecta, y no sabemos si en algún momento llegará a serlo. Por ello, siempre existe el riesgo de que se cometan errores. En el caso de las aplicaciones de inteligencia artificial, esto significa que en algún momento podrían generar información poco precisa o sesgada. En el caso de este proyecto, el módulo inteligente podría producir este tipo de respuestas indeseadas, por lo que se debe tener especial cuidado a la hora de tomar decisiones basándose en estas recomendaciones. Siempre debe haber supervisión humana.
+
+\subsection{Soluciones para las consideraciones negativas}
+
+Aunque las consideraciones éticas negativas descritas anteriormente presentan riesgos asociados al uso de la solución, nginuna de ellas impide su utilización. No obstante, es necesario tenerlas en cuenta y reaccionar para reducir o eliminar los riesgos que suponen.
+
+\begin{enumerate}
+  \item \textbf{Privacidad de datos:} No es posible la omisión de recopilación de los datos de usuarios mecionados anteriormente, ya que son necesarios para el correcto funcionamiento de la solución. Sin embargo, se recogen únicamente los datos estrictamente necesarios para que la aplicación pueda funcionar. Además, existen mecanismos de autenticación y autorización para controlar el acceso a esos datos. Solo los integrantes del club disponen de ese acceso. También cabe mencionar que las estadísticas enviadas al modelo de inteligencia artificial para obtener las recomendaciones son anonimizadas antes de ser enviadas. Los nombre de cada jugador se convierten en ids, así el modelo solo verá números, lo que reduce el riesgo de filtración de datos personales.
+  \item \textbf{Dependencia excesiva:} Al ser una herramienta de apoyo a las decisiones del entrenador, se debe tener especial cuidado con este aspecto. Para reducir el riesgo, la aplicación no implementa de ningún sistema que recomiende o automatice la toma de decisiones, solo ofrece datos objetivos para apoyar al entrenador en sus propias decisiones.
+  \item \textbf{Sesgos de la inteligencia artificial:} Para reducir el riesgo de sesgos por parte de la inteligencia artificial, se ha ajustado el \textit{prompt} del modelo de tal forma que únicamente proporciona recomendaciones basadas en datos objetivos. En ningún momento toma decisiones de forma autónoma.
+\end{enumerate}
+
+Podemos confirmar que mediante la aplicación de distinas decisiones de diseño, se ha conseguido reducir y eliminar los riesgos que podría tener esta solución web sin afectar a los beneficios que aporta.
+
+\chapter{Conclusiones y trabajo futuro}
+
+\section{Conclusiones}
+
+Tras finalizar el desarrollo del proyecto, se han logrado cumplir todos los objetivos propuestos. La solución final implementa todas las funcionalidades, requisitos funcionales y no funcionales especificados, y funciona a la perfección. Esto demuestra que mediante una planificación acertada, una metodología que permita flexibilidad y un alcance bien definido es posible lograr un resultado completo y funcional incluso con herramientas gratuitas y de código abierto.
+
+De todas las funcionalidades desarrolladas, el módulo inteligente de recomendaciones es el más destacable y característico de la solución, ya que eleva la gestión del equipo deportivo a un nivel superior. Integrar la inteligencia artificial como un elemento más en la gestión deportiva del entrenador ayuda a que este no pase por alto aspectos que sin su apoyo podría pasar, y hacer que sus jugadores y su equipo crezcan más y más rápido deportivamente.
+
+Por último, el hecho de que este proyecto aporte valor y ayude con una necesidad real de un equipo deportivo real ha sido una motivación importante y le da al proyecto un valor más allá de lo académico. No se trata de realizar un proyecto para cumplir con los requisitos mínimos de la asignatura. Se trata de una herramienta que tiene impacto directo en el día a día de los usuarios y que aporta valor real a sus vidas.
+
+\section{Trabajo futuro}
+
+Debido al reducido tiempo para realizar el proyecto, hubo ciertas tareas y aspectos que no fueron consideradas para realizarse o implementarse en esta primera versión de la solución. Dichas tareas que en la definición inicial del proyecto fueron descartadas y que se piensan realizar en el futuro son las siguentes:
+
+\begin{itemize}
+  \item \textbf{Publicación de la solución web:} Este proyectó se planificó para desarrollarlo completamente de manera local en mis propios dispositivos. Aunque, si el tiempo lo permitía se publicaría para que cualquier persona con acceso a internet y a un navegador pudiera acceder a la solución. Lamentablemente, no ha sido así, por lo que se ha planteado a futuro la publicación de la solución web.
+  \item \textbf{Gestión de todos los equipos del club:} Es muy frecuente que los clubes deportivos cuenten con más de un equipo. Este proyecto, originalmente se definió para apoyar a la gestión de un único equipo del club. Se ha planteado a futuro cubrir todos los equipos del club y que la solución pueda ser utilizada por los entrenadores y jugadores de todos ellos.
+  \item \textbf{Implementación de nuevas ligas:} En el caso del club deportivo al que pertenezco, varios de sus equipos compiten en diferentes ligas: a nivel autonómico y a nivel nacional. Es por eso que en una versión futura se planea implementar soporte para diferentes ligas: visualización y seguimiento de los partidos de todas las ligas, estadísticas de cada liga, convocatorias para partidos de las diferentes ligas.
+\end{itemize}
+
+\chapter{Definiciones, acrónimos y abreviaturas}
+
+\section{Definiciones}
+
+\begin{itemize}
+  \item \textbf{Prompt:} Texto proporcionado a un sistema de inteligencia artificial.
+  \item \textbf{Tokens:} Unidad mínima de información utilizada por sistemas de inteligencia artificial para leer, procesar y generar texto.
+  \item \textbf{API Key:} Código alfanumérico que funciona como credencial digital para la autenticación de un usuario en un servicio.
+  \item \textbf{Punto bonus:} Punto extra otorgado al ganador de un partido de hockey línea en el tiempo extra.
+  \item \textbf{Power play:} Situación en un partido de hockey línea en la que un equipo dispone de superioridad númerica por una falta cometida por el equipo rival.
+  \item \textbf{Penalty kill:} Situación en un partido de hockey línea en la que un equipo dispone de inferioridad númerica por una falta cometida por dicho equipo.
+  \item \textbf{Flex:} El flex de un stick es la capacidad que tiene para doblarse. Se mide con un número. Cuanto más alto sea ese número, menos flexible es el stick.
+  \item \textbf{Kickpoint:} Es el punto por donde se dobla el stick.
+  \item \textbf{Grip:} El grip de un stick es una característica que indica la textura del stick cuando se agarra. Si el stick tiene grip quiere decir que la mano no resbala al sujetarlo.
+  \item \textbf{+/-:} Representa la diferencia entre goles a favor y goles en contra de un jugador cuando se encuentra en la pista.
+  \item \textbf{Puck:} Disco con el que se juega un partido de hockey. Es el equivalente a un balón de fútbol.
+  \item \textbf{Overtime:} Tiempo extra a gol de oro en los partidos de hockey línea.
+\end{itemize}
+
+\section{Acrónimos y abreviaturas}
+
+\begin{itemize}
+  \item \textbf{IA:} Inteligencia artificial.
+  \item \textbf{OT}: Overtime.
+  \item \textbf{PP:} Power play.
+  \item \textbf{PK:} Penalty kill.
+\end{itemize}
+
+
+

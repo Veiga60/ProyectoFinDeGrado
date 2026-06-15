@@ -1,0 +1,43 @@
+#navbarDiv {
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2%;
+    justify-content: flex-end;
+    margin-right: 2%;
+}
+
+#navButtonsDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.logoutIcon:hover {
+    cursor: pointer;
+}
+
+.navbarText {
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: large;
+    color: white;
+}
+
+.navbarSectionDiv {
+    padding-right: 10px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    height: 50%;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.navbarSectionDiv:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 15px 1px white;
+    transition: 0.3s;
+}

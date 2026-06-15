@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -19,17 +23,18 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  width: 100vw;
 }
 
 @font-face {
-    font-family: Inria Sans;
-    src: url('../assets/fonts/InriaSans-Regular.ttf');
+  font-family: Inria Sans;
+  src: url('../assets/fonts/InriaSans-Regular.ttf');
 }
 
 @font-face {
-    font-family: Inria Sans;
-    src: url('../assets/fonts/InriaSans-Bold.ttf');
-    font-weight: bold;
+  font-family: Inria Sans;
+  src: url('../assets/fonts/InriaSans-Bold.ttf');
+  font-weight: bold;
 }
 
 @media (prefers-color-scheme: light) {
@@ -37,9 +42,11 @@ body {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }

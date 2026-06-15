@@ -1,18 +1,24 @@
 services:
   server:
-    build: 
+    build:
       context: server/proyecto-fin-de-grado
       dockerfile: Dockerfile
     ports:
       - "8081:8081"
     depends_on:
       - database
+    healthcheck:
+      test: curl --fail http://localhost:8081/health || exit 1
+      interval: 40s
+      timeout: 180s
+      retries: 3
+      start_period: 100s
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://database:3306/mhcdatabase
     volumes:
       - ./server/proyecto-fin-de-grado:/app
     command: "mvn spring-boot:run"
-  
+
   client:
     build:
       context: client
@@ -20,7 +26,8 @@ services:
     ports:
       - "5173:5173"
     depends_on:
-      - server
+      server:
+        condition: service_healthy
     volumes:
       - ./client:/app
       - /app/node_modules
@@ -36,9 +43,11 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: user
       MYSQL_ROOT_PASSWORD: root
+      TZ: Europe/Madrid
     volumes:
       - database:/var/lib/mysql
-  
+
 volumes:
   database:
+
 

@@ -1,0 +1,124 @@
+#debatesMainDiv {
+    position: absolute;
+    left: 0;
+    top: 80px;
+    height: calc(100% - 80px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#debateText {
+    color: black;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: larger;
+}
+
+#debatesDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 60%;
+    gap: 5%;
+}
+
+.debateDiv {
+    background-color: white;
+    border: 2px solid rgb(7, 78, 200);
+    border-radius: 10px;
+    width: 100%;
+}
+
+.debateDiv:hover {
+    cursor: pointer;
+}
+
+#createDebateButtonDiv {
+    width: 100%;
+}
+
+.createDebateButton {
+    background-color: rgb(7, 78, 200);
+    border: none;
+    border-radius: 12px;
+    width: 10%;
+    height: 40px;
+    font-family: Inria Sans;
+    font-size: larger;
+    transition: 0.5s;
+}
+
+@media (min-width: 300px) and (max-width: 400px) {
+    .createDebateButton {
+        width: 50%;
+    }
+
+    #debatesDiv {
+        width: 90%;
+    }
+}
+
+@media (min-width: 401px) and (max-width: 500px) {
+    .createDebateButton {
+        width: 40%;
+    }
+
+    #debatesDiv {
+        width: 80%;
+    }
+}
+
+@media (min-width: 501px) and (max-width: 600px) {
+    .createDebateButton {
+        width: 30%;
+    }
+
+    #debatesDiv {
+        width: 70%;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 700px) {
+    .createDebateButton {
+        width: 25%;
+    }
+
+    #debatesDiv {
+        width: 60%;
+    }
+}
+
+@media (min-width: 701px) and (max-width: 1000px) {
+    .createDebateButton {
+        width: 20%;
+    }
+
+    #debatesDiv {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1001px) and (max-width: 1300px) {
+    .createDebateButton {
+        width: 15%;
+    }
+
+    #debatesDiv {
+        width: 45%;
+    }
+}
+
+@media (min-width: 1301px) {
+    .createDebateButton {
+        width: 10%;
+    }
+
+    #debatesDiv {
+        width: 40%;
+    }
+}

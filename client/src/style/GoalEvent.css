@@ -1,0 +1,237 @@
+#goalEventDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px solid rgb(7, 78, 200);
+    border-bottom: 2px solid rgb(7, 78, 200);
+    width: 100%;
+    min-height: 72px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#goalEventPeriodAndTimeDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 18%;
+    min-width: 52px;
+    height: 100%;
+    padding: 4px 2px;
+    box-sizing: border-box;
+}
+
+#timeText {
+    margin: 0;
+    color: black;
+    font-family: Inria Sans, sans-serif;
+    font-weight: bold;
+    font-size: clamp(10px, 2vw, 15px);
+    white-space: nowrap;
+}
+
+#goalEventPeriodText {
+    color: white;
+    background-color: rgb(7, 78, 200);
+    border-radius: 1000px;
+    font-family: Inria Sans, sans-serif;
+    font-weight: bold;
+    margin: 2px 0 0;
+    padding: 1px 6px;
+    font-size: clamp(9px, 1.6vw, 13px);
+    white-space: nowrap;
+    text-align: center;
+}
+
+#goalEventInfoDivMyTeam {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 0 0 auto;
+    height: 100%;
+    gap: 4px;
+    padding: 0 4px;
+}
+
+#goalEventInfoDivMyTeam .goalEventIcon {
+    flex-shrink: 0;
+    width: clamp(22px, 4vw, 38px);
+    height: clamp(22px, 4vw, 38px);
+}
+
+#goalEventInfoDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 0 0 auto;
+    height: 100%;
+    gap: 4px;
+    padding: 0 4px;
+}
+
+#goalEventInfoDiv .goalEventIcon {
+    flex-shrink: 0;
+    width: clamp(22px, 4vw, 38px);
+    height: clamp(22px, 4vw, 38px);
+}
+
+.goalEventIcon {
+    flex-shrink: 0;
+}
+
+#goalText {
+    color: black;
+    font-family: Inria Sans, sans-serif;
+    font-size: clamp(16px, 3.5vw, 28px);
+    font-weight: bold;
+    white-space: nowrap;
+    margin: 0;
+}
+
+#goalTeamImageDivMyTeam {
+    flex: 0 0 auto;
+    width: clamp(32px, 6vw, 52px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#goalTeamImageMyTeam {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+#scorerAndAssisterInfoDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1 1 0;
+    min-width: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+#scorerNumberDiv {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: clamp(26px, 5vw, 44px);
+    height: 65%;
+    background-color: rgb(7, 78, 200);
+    border-radius: 8px;
+    margin: 0 6px 0 4px;
+    padding: 0 4px;
+}
+
+#scorerNumberText {
+    color: white;
+    font-family: Inria Sans, sans-serif;
+    font-weight: bold;
+    font-size: clamp(14px, 3vw, 24px);
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+#scorerAndAssisterDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    flex: 1 1 0;
+    min-width: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+#scorerText {
+    margin: 0;
+    color: black;
+    font-family: Inria Sans, sans-serif;
+    font-size: clamp(11px, 2.2vw, 17px);
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+#assisterText {
+    margin: 0;
+    color: rgb(7, 78, 200);
+    font-family: Inria Sans, sans-serif;
+    font-weight: bold;
+    font-size: clamp(9px, 1.8vw, 14px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+#teamGoalDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1 1 0;
+    min-width: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+#goalTeamImageDiv {
+    flex: 0 0 auto;
+    width: clamp(36px, 7vw, 60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 6px;
+}
+
+#goalTeamImage {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+#teamNameTextDiv {
+    flex: 1 1 0;
+    min-width: 0;
+    overflow: hidden;
+}
+
+#goalEventTeamNameText {
+    color: black;
+    font-family: Inria Sans, sans-serif;
+    font-weight: bold;
+    font-size: clamp(12px, 2.8vw, 22px);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 400px) {
+    .goalEventIcon {
+        display: none;
+    }
+
+    #goalEventPeriodAndTimeDiv {
+        flex: 0 0 22%;
+    }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .goalEventIcon {
+        display: none;
+    }
+
+    #goalEventDiv {
+        min-height: 56px;
+    }
+}

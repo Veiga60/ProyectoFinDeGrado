@@ -1,10 +1,12 @@
-package com.ikerveiga.app.DAO;
+package com.ikerveiga.app.dao;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.*;
 
 import com.ikerveiga.app.entity.Team;
 
 @Repository
-public interface TeamRepository {
-    Team finById(long id);
+public interface TeamRepository extends JpaRepository<Team, Long> {
+
+    Team findById(long id);
 }

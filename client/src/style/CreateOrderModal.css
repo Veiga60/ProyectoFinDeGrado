@@ -1,0 +1,106 @@
+#createOrderModalMainDiv {
+    top: 80px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(100% - 80px);
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#createOrderMainDiv {
+    width: 450px;
+    height: 200px;
+    background-color: white;
+    border: 2px solid rgb(7, 78, 200);
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#createOrder {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#createOrderText {
+    color: black;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: larger;
+}
+
+#createOrderModalButtons {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5%;
+}
+
+.createOrderModalButton {
+    background-color: rgb(7, 78, 200);
+    border: none;
+    border-radius: 12px;
+    height: 40px;
+    font-family: Inria Sans;
+    font-size: larger;
+    transition: 0.5s;
+}
+
+.createOrderModalButton:hover {
+    background-color: rgb(5, 54, 138);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+#createOrderButton {
+    width: 30%;
+}
+
+#closeCreateOrderModalButton {
+    width: 30%;
+}
+
+#createOrderModalInputsDiv {
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    justify-content: center;
+    align-items: center;
+}
+
+#deadline {
+    height: 40px;
+    width: 160px;
+    border-radius: 10px;
+    border: 2px solid rgb(7, 78, 200);
+    background-color: white;
+    color: black;
+    font-family: Inria Sans;
+    font-size: medium;
+}
+
+#deadline::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+#deadline::-webkit-calendar-picker {
+    background-color: white;
+}
+
+#orderType {
+    color: black;
+    font-family: Inria Sans;
+    font-size: medium;
+    height: 40px;
+    border-radius: 10px;
+    background-color: white;
+    border: 2px solid rgb(7, 78, 200);
+    width: 160px;
+}

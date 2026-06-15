@@ -1,0 +1,104 @@
+#matchDiv {
+    width: 600px;
+    height: 100px;
+    background-color: white;
+    border: 2px solid rgb(7, 78, 200);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+
+#infoContainer {
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.matchText {
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: large;
+    color: black;
+    margin: 0;
+}
+
+#localTeamDiv {
+    width: 40%;
+    height: 100px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+#centralDiv {
+    margin: 0 auto;
+    width: 20%;
+}
+
+#visitingTeamDiv {
+    width: 40%;
+    height: 100px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.teamLogoDiv {
+    width: 20%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+img {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.matchGoals {
+    color: black;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: xx-large;
+    margin: 0;
+    padding: 0;
+}
+
+#matchDate {
+    text-align: center;
+    width: 100px;
+    color: black;
+    font-family: Inria Sans;
+    margin: 0 auto;
+}
+
+#matchTime {
+    color: black;
+    font-family: Inria Sans;
+    margin: 0 auto;
+}
+
+#visitingTeamGoalsDiv {
+    padding: 0;
+    margin: 0;
+    border-radius: 10px;
+    width: 30px;
+}
+
+#localTeamGoalsDiv {
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+    width: 30px;
+}

@@ -1,0 +1,47 @@
+package com.ikerveiga.app.facade;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ikerveiga.app.dto.PlayerStatsDTO;
+import com.ikerveiga.app.service.PlayerStatsService;
+
+@RestController
+public class PlayerStatsController {
+
+    private PlayerStatsService playerStatsService;
+
+    @Autowired
+    public PlayerStatsController(PlayerStatsService playerStatsService) {
+        this.playerStatsService = playerStatsService;
+    }
+
+    @Secured("ROLE_COACH")
+    @PutMapping("/playersStats/all/update")
+    public ResponseEntity<Void> updatePlayersStats(@RequestBody List<PlayerStatsDTO> playersStats) {
+        try {
+            for (PlayerStatsDTO playerStats : playersStats) {
+                playerStatsService.updatePlayersStats(playerStats.getPlayer().getId(), playerStats.getGoals(),
+                        playerStats.getAssists(), playerStats.getPlusMinus(), playerStats.getShots(),
+                        playerStats.getGoodPasses(), playerStats.getBadPasses(), playerStats.getRecoveredPucks(),
+                        playerStats.getLostPucks(), playerStats.getPenaltyMins(), playerStats.getPenaltyShotGoals(),
+                        playerStats.getPenaltyShotMisses());
+            }
+
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (RuntimeException e) {
+            if (e.getMessage().equals("Player stats not found")) {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            } else {
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
+        }
+    }
+}

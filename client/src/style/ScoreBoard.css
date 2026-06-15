@@ -1,0 +1,352 @@
+#scoreBoardDiv {
+    top: 0;
+    position: absolute;
+    width: 70%;
+    height: 12%;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 2px solid rgb(7, 78, 200);
+}
+
+#localDiv {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#separatorTextDiv {
+    width: 10%;
+    text-align: center;
+}
+
+#visitingDiv {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#localGoalsDiv {
+    margin-left: 15%;
+}
+
+#localGoalsText {
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+#visitingGoalsDiv {
+    margin-right: 15%;
+}
+
+#visitingGoalsText {
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+#localNameDiv {
+    width: 70%;
+    margin-left: 5%;
+}
+
+#localNameText {
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+#visitingNameDiv {
+    width: 70%;
+    margin-right: 5%;
+}
+
+#visitingNameText {
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+#separatorText {
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.teamImageDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+}
+
+@media(max-width: 500px) and (orientation: portrait) {
+
+    #localNameDiv,
+    #visitingNameDiv {
+        display: none;
+    }
+
+    .teamImageDiv {
+        width: 40%;
+    }
+
+    #scoreBoardDiv {
+        height: 9%;
+    }
+}
+
+@media(min-width: 501px) and (max-width: 800px) and (orientation: portrait) {
+
+    #localNameDiv,
+    #visitingNameDiv {
+        display: none;
+    }
+
+    .teamImageDiv {
+        width: 30%;
+    }
+
+    #scoreBoardDiv {
+        height: 9%;
+    }
+}
+
+@media(min-width: 801px) and (max-width: 900px) and (orientation: portrait) {
+
+    #localNameDiv,
+    #visitingNameDiv {
+        display: none;
+    }
+
+    .teamImageDiv {
+        width: 30%;
+    }
+
+    #scoreBoardDiv {
+        height: 9%;
+    }
+
+    #localGoalsDiv {
+        margin-left: 30%;
+    }
+
+    #visitingGoalsDiv {
+        margin-right: 30%;
+    }
+}
+
+@media(min-width: 901px) and (max-width: 1000px) and (orientation: portrait) {
+
+    #localNameDiv,
+    #visitingNameDiv {
+        display: none;
+    }
+
+    .teamImageDiv {
+        width: 30%;
+    }
+
+    #scoreBoardDiv {
+        height: 9%;
+    }
+}
+
+@media(min-width: 1001px) and (max-width: 1200px) and (orientation: portrait) {
+
+    #localNameText,
+    #visitingNameText {
+        font-size: x-large;
+    }
+
+    .teamImageDiv {
+        width: 30%;
+    }
+
+    #scoreBoardDiv {
+        height: 9%;
+        width: 80%;
+    }
+
+    #localGoalsDiv {
+        margin-left: 10%;
+    }
+
+    #localGoalsText,
+    #visitingGoalsText,
+    #separatorText {
+        font-size: x-large;
+    }
+
+    #visitingGoalsDiv {
+        margin-right: 10%;
+    }
+}
+
+@media(min-width: 1201px) and (orientation: portrait) {
+
+    .teamImageDiv {
+        width: 120px;
+    }
+
+    #scoreBoardDiv {
+        height: 120px;
+        width: 80%;
+    }
+
+    #localGoalsDiv {
+        margin-left: 10%;
+    }
+
+    #localGoalsText,
+    #visitingGoalsText,
+    #separatorText {
+        font-size: xx-large;
+    }
+
+    #visitingGoalsDiv {
+        margin-right: 10%;
+    }
+}
+
+@media(min-width: 1352px) and (orientation: portrait) {
+
+    #localNameText,
+    #visitingNameText {
+        font-size: xx-large;
+    }
+}
+
+@media(max-width: 700px) and (orientation: landscape) {
+
+    #localNameText,
+    #visitingNameText {
+        font-size: medium;
+    }
+
+    .teamImageDiv {
+        width: 23%;
+    }
+
+    #scoreBoardDiv {
+        height: 15%;
+        width: 80%;
+    }
+
+    #localGoalsDiv {
+        margin-left: 10%;
+    }
+
+    #localGoalsText,
+    #visitingGoalsText,
+    #separatorText {
+        font-size: large;
+    }
+
+    #visitingGoalsDiv {
+        margin-right: 10%;
+    }
+}
+
+@media(min-width: 701px) and (max-width: 800px) and (orientation: landscape) {
+
+    #localNameText,
+    #visitingNameText {
+        font-size: medium;
+    }
+
+    .teamImageDiv {
+        width: 20%;
+    }
+
+    #scoreBoardDiv {
+        height: 15%;
+        width: 80%;
+    }
+
+    #localGoalsDiv {
+        margin-left: 10%;
+    }
+
+    #localGoalsText,
+    #visitingGoalsText,
+    #separatorText {
+        font-size: large;
+    }
+
+    #visitingGoalsDiv {
+        margin-right: 10%;
+    }
+}
+
+@media(min-width: 801px) and (max-width: 900px) and (orientation: landscape) {
+
+    #localNameText,
+    #visitingNameText {
+        font-size: medium;
+    }
+
+    .teamImageDiv {
+        width: 17%;
+    }
+
+    #scoreBoardDiv {
+        height: 15%;
+        width: 80%;
+    }
+
+    #localGoalsDiv {
+        margin-left: 10%;
+    }
+
+    #localGoalsText,
+    #visitingGoalsText,
+    #separatorText {
+        font-size: large;
+    }
+
+    #visitingGoalsDiv {
+        margin-right: 10%;
+    }
+}
+
+@media(min-width: 901px) and (max-width: 1000px) and (orientation: landscape) {
+
+    #localNameText,
+    #visitingNameText {
+        font-size: large;
+    }
+
+    .teamImageDiv {
+        width: 14%;
+    }
+
+    #scoreBoardDiv {
+        height: 15%;
+        width: 700px;
+    }
+
+    #localGoalsDiv {
+        margin-left: 10%;
+    }
+
+    #localGoalsText,
+    #visitingGoalsText,
+    #separatorText {
+        font-size: x-large;
+    }
+
+    #visitingGoalsDiv {
+        margin-right: 10%;
+    }
+}

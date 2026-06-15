@@ -1,0 +1,140 @@
+.react-tabs {
+    width: 90%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.react-tabs__tab-list {
+    margin: 0 0 10px;
+    margin-bottom: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.react-tabs__tab {
+    display: inline-block;
+    border: 1px solid transparent;
+    border-bottom: none;
+    bottom: -1px;
+    position: relative;
+    list-style: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color: rgb(7, 78, 200);
+    filter: brightness(0.6);
+    color: white;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid rgb(7, 78, 200);
+}
+
+.react-tabs__tab--selected {
+    background: #fff;
+    border: 1px solid rgb(7, 78, 200);
+    filter: brightness(1);
+    color: rgb(7, 78, 200);
+    border-radius: 5px 5px 0 0;
+    padding-top: 10px;
+}
+
+.react-tabs__tab--disabled {
+    color: GrayText;
+    cursor: default;
+}
+
+.react-tabs__tab:focus {
+    outline: none;
+}
+
+.react-tabs__tab-panel {
+    display: none;
+}
+
+.react-tabs__tab-panel--selected {
+    width: 100%;
+    display: block;
+    gap: 30px;
+    border: 1px solid rgb(7, 78, 200);
+    margin-top: 0;
+    background-color: white;
+    justify-content: center;
+}
+
+#statsTabs {
+    color: rgb(7, 78, 200);
+    font-family: Inria Sans;
+}
+
+#statsMainDiv {
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#tabsDiv {
+    width: 100%;
+    margin-top: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#playersTab {
+    width: 100%;
+    max-height: calc(100vh - 190px);
+    display: grid;
+    justify-content: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    gap: 0 30px;
+    padding-right: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 190px));
+    scrollbar-color: rgb(7, 78, 200) transparent;
+}
+
+#teamTab {
+    height: calc(100vh - 190px);
+    max-height: calc(100vh - 190px);
+    overflow-y: auto;
+    gap: 40px 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 190px));
+    justify-content: center;
+    scrollbar-color: rgb(7, 78, 200) transparent;
+}
+
+.statDiv {
+    height: fit-content;
+    width: 100%;
+}
+
+.statText {
+    background-color: rgb(7, 78, 200);
+    font-family: Inria Sans;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.statValue {
+    margin-top: 0;
+    color: black;
+    font-weight: bold;
+    font-size: larger;
+}
+
+#logoImageDiv {
+    margin-left: auto;
+    width: 100%;
+    margin-right: auto;
+    padding: 0;
+}
+
+#logoImage {
+    margin: 0;
+    padding: 0;
+}
