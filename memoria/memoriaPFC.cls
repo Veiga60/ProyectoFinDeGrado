@@ -110,7 +110,7 @@
 %% ------------------------------
 \RequirePackage[a4paper,
   top=1.0cm,
-  headheight=0.1cm,
+  headheight=0.2cm,
   headsep=2.4cm,
   bottom=1.2cm,
   footskip=1.3cm,

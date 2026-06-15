@@ -49,9 +49,9 @@
 \contentsline {subsubsection}{\numberline {7.6.1.3}Visualización de partidos de la temporada}{39}{subsubsection.102}%
 \contentsline {subsubsection}{\numberline {7.6.1.4}Visualización de estadísticas}{39}{subsubsection.103}%
 \contentsline {subsubsection}{\numberline {7.6.1.5}Convocatorias}{39}{subsubsection.104}%
-\contentsline {subsubsection}{\numberline {7.6.1.6}Seguimiento de partidos}{39}{subsubsection.105}%
+\contentsline {subsubsection}{\numberline {7.6.1.6}Seguimiento de partidos}{40}{subsubsection.105}%
 \contentsline {subsubsection}{\numberline {7.6.1.7}Módulo inteligente de recomendaciones}{40}{subsubsection.106}%
-\contentsline {subsubsection}{\numberline {7.6.1.8}Foro de mensajes}{40}{subsubsection.107}%
+\contentsline {subsubsection}{\numberline {7.6.1.8}Foro de mensajes}{41}{subsubsection.107}%
 \contentsline {subsubsection}{\numberline {7.6.1.9}Pedidos de material}{41}{subsubsection.108}%
 \contentsline {subsection}{\numberline {7.6.2}Pruebas de integración}{41}{subsection.109}%
 \contentsline {subsection}{\numberline {7.6.3}Pruebas de validación}{42}{subsection.110}%
