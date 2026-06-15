@@ -5,6 +5,7 @@
     display: flex;
     width: 100%;
     height: calc(100% - 80px);
+    overflow-y: hidden;
 }
 
 #greetingDiv {
