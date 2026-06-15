@@ -11,7 +11,7 @@ Esta memoria está dividida en varios capítulos, con el objetivo de facilitar s
   \item Antecedentes y justificación: En este capítulo se recoge el motivo por el que se ha elegido desarrollar este proyecto. Además, se comentará cuál es la situación actual del club deportivo tomado como referencia en cuanto a los procesos de gestión de sus equipos. También se proporcionarán ejemplos de soluciones ya en el mercado similares a este proyecto.
   \item Objetivos y alcance: Es importante fijar el alcance y los objetivos que se desean cumplir con el proyecto. Este capítulo redacta las funcionalidades que recoge y los objetivos que se pretenden lograr con la solución web. También incluye qué no forma parte del alcance del proyecto.
   \item Plan de trabajo: Este capítulo detalla la planificación seguida para la realización de este proyecto. Cómo se ha dividido el proyecto en fases, y cada una de ellas en tareas para el desarrollo eficiente del proyecto. Además, proporciona dicha planificación de forma visual.
-  \item Metodología: Una vez planificado el proyecto, es necesario definir la metodología a seguir para relaizarlo eficientemente. En este capítulo se recoge la metodología seguida para el desarrollo del proyecto.
+  \item Metodología: Una vez planificado el proyecto, es necesario definir la metodología a seguir para realizarlo eficientemente. En este capítulo se recoge la metodología seguida para el desarrollo del proyecto.
   \item Presupuesto: Todo proyecto debe tener una estimación del presupuesto, con el fin de aproximar lo máximo posible el coste total que conllevará. En este capítulo se recoge con detalle ese presupuesto, teniendo en cuenta costes de material, costes de desarrollo, costes de puesta en marcha y costes de recurrentes.
   \item Desarrollo del proyecto: Este capítulo recoge la fase de desarrollo del proyecto. En primer lugar, identifica los stakeholders. Después, detalla los requisitos del proyecto, tanto funcionales como no funcionales. Sigue recogiendo la especificación de su diseño y nombrando las tecnologías y herramientas utilizadas para su desarrollo. Por último, redacta consideraciones e incidencias del proyecto, además del plan de prueba seguido.
   \item Valoración ética del proyecto: Este capítulo recoge, en primer lugar, la justificación ética del proyecto. Además, todo proyecto o desarrollo informático conlleva unas consecuencias y unos impactos. Por lo que, después de su justificación ética, se realiza una reflexión sobre los aspectos éticos del proyecto, teniendo en cuenta las posibles implicaciones y riesgos que pueda tener.
@@ -776,7 +776,7 @@ Este diseño no refleja la estructura final de la base de datos. A medida que el
 
 \subsection{Diseño de la interfaz de la solución web}
 
-Cuando se desarrolla una aplicación web, es importante tener en cuenta cómo será su interfaz, ya que es lo primero que ven los usuarios. Una buena interfaz debe ser atractiva e intuitiva, es decir, que cualquier usuario sin formación sobre la solcuión pueda navegar y hacer uso de ella sin problemas.
+Cuando se desarrolla una aplicación web, es importante tener en cuenta cómo será su interfaz, ya que es lo primero que ven los usuarios. Una buena interfaz debe ser atractiva e intuitiva, es decir, que cualquier usuario sin formación sobre la solución pueda navegar y hacer uso de ella sin problemas.
 
 Para este proyecto se ha optado por un diseño personalizado para el club deportivo tomado como referencia. Se han elaborado las distintas pantallas que componen la solución utilizando una gama de colores acorde a la identidad visual del club. Además, se han insertado en la cabecera de la solución el logo y el nombre del club para reforzar la sensación de estar utilizando una aplicación personalizada.
 
@@ -925,7 +925,7 @@ Ofrece soporte para modelos de lenguaje de muchas empresas. En este proyecto se 
 
 Utilizar un modelo de IA en el desarrollo de software fue muy sencillo gracias a Spring AI. Simplemente hay que llamar al modelo pasándole como parámetro un \textit{prompt}. El modelo lo procesará y devolverá su respuesta. Para que esto funcione, es necesario disponer de una \textit{API Key} de Anthropic con \textit{tokens}.
 
-El \textit{prompt} que se envía al modelo es más importante de lo que parece, ya que es el contexto con el que el modelo responderá a lo que se le pregunte. Sin un buen contexto, la inteligencia artificial no sbrá de que estás hablando y no podrá proporcionar una respuesta precisa. Este es el \textit{prompt} que se ha utilizado en este proyecto para las recomendaciones inteligentes:
+El \textit{prompt} que se envía al modelo es más importante de lo que parece, ya que es el contexto con el que el modelo responderá a lo que se le pregunte. Sin un buen contexto, la inteligencia artificial no sabrá de qué estás hablando y no podrá proporcionar una respuesta precisa. Este es el \textit{prompt} que se ha utilizado en este proyecto para las recomendaciones inteligentes:
 
 \begin{quotation}
   \itshape
@@ -1137,9 +1137,9 @@ Las pruebas de integración son pruebas en las que se comprueba el correcto func
   \item[PI-01:] Creación de cuenta de usuario e inicio de sesión
   \item[PI-02:] Seguimiento de partido y actualización automática de estadísticas de jugadores y del equipo al finalizarlo
   \item[PI-03:] Seguimiento de partido y actualización de resultado del partido en el calendario
-  \item[PI-03:] Correcto envío de estadísticas del partido al módulo inteligente de recomendaciones y posterior visualización de las mismas
-  \item[PI-04:] Aparición de únicamente jugadores convocados al partido en la pantalla de seguimiento de éste
-  \item[PI-05:] Prueba del flujo completo de uso de la solución
+  \item[PI-04:] Correcto envío de estadísticas del partido al módulo inteligente de recomendaciones y posterior visualización de las mismas
+  \item[PI-05:] Aparición de únicamente jugadores convocados al partido en la pantalla de seguimiento de éste
+  \item[PI-06:] Prueba del flujo completo de uso de la solución
   \item[\textbf{Resultado obtenido:}] La solución ha pasado todas las pruebas de integración correctamente.
 \end{description}
 
@@ -1157,20 +1157,6 @@ Las pruebas de validación sirven para verificar que el resultado final cumple c
   \item[PV-01:] Correcta navegación entre pantallas y uso cómodo e intuitivo de la solución
   \item[PV-02:] Correcta adaptación de la solución a diferentes tamaños de pantallas
   \item[\textbf{Resultado obtenido:}] La solución ha pasado todas las pruebas de validación correctamente.
-\end{description}
-
-\begin{description}[
-    labelindent=2em,
-    leftmargin=!,
-    labelwidth=2.5cm,
-    labelsep=1em,
-    font=\normalfont
-  ]
-  \item[PI-01:] Creación de cuenta de usuario e inicio de sesión
-  \item[PI-02:] Seguimiento de partido y actualización automática de estadísticas de jugadores y del equipo al finalizarlo
-  \item[PI-03:] Correcto envío de estadísticas del partido al módulo inteligente de recomendaciones y posterior visualización de las mismas
-  \item[PI-04:] Aparición de únicamente jugadores convocados al partido en la pantalla de seguimiento de éste
-  \item[PI-05:] Prueba del flujo completo de uso de la solución
 \end{description}
 
 \section{Incidencias del proyecto}
@@ -1237,7 +1223,7 @@ Si por el contrario, el usuario desea registrarse en la aplicación y crear una 
   \label{fig:registro}
 \end{figure}
 
-En este formulario, el usuario podrá crearse una cuenta con la que acceder posteriormente a la aplicación. Aunque, al igual que con el inicio de sesión con Google, la solcuión solo permitirá el registro de cuentas a los correos electrónicos pertenecientes al club deportivo.
+En este formulario, el usuario podrá crearse una cuenta con la que acceder posteriormente a la aplicación. Aunque, al igual que con el inicio de sesión con Google, la solución solo permitirá el registro de cuentas a los correos electrónicos pertenecientes al club deportivo.
 
 Una vez se dispone de una cuenta de usuario o de un correo electrónico registrado en el club, se concederá acceso a la solución web. En la barra superior se puede ver el menú de navegación el que el usuario hará clic para navegar por las distintas pantallas que ofrece la solución.
 
@@ -1529,7 +1515,7 @@ La inteligencia artificial generativa no es perfecta, y no sabemos si en algún 
 
 \subsection{Soluciones para las consideraciones negativas}
 
-Aunque las consideraciones éticas negativas descritas anteriormente presentan riesgos asociados al uso de la solución, nginuna de ellas impide su utilización. No obstante, es necesario tenerlas en cuenta y reaccionar para reducir o eliminar los riesgos que suponen.
+Aunque las consideraciones éticas negativas descritas anteriormente presentan riesgos asociados al uso de la solución, ninguna de ellas impide su utilización. No obstante, es necesario tenerlas en cuenta y reaccionar para reducir o eliminar los riesgos que suponen.
 
 \begin{enumerate}
   \item \textbf{Privacidad de datos:} No es posible la omisión de recopilación de los datos de usuarios mecionados anteriormente, ya que son necesarios para el correcto funcionamiento de la solución. Sin embargo, se recogen únicamente los datos estrictamente necesarios para que la aplicación pueda funcionar. Además, existen mecanismos de autenticación y autorización para controlar el acceso a esos datos. Solo los integrantes del club disponen de ese acceso. También cabe mencionar que las estadísticas enviadas al modelo de inteligencia artificial para obtener las recomendaciones son anonimizadas antes de ser enviadas. Los nombre de cada jugador se convierten en ids, así el modelo solo verá números, lo que reduce el riesgo de filtración de datos personales.
