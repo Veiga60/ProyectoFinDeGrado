@@ -22,7 +22,7 @@ export default function Home() {
     const [lastPlayedMatchPlayerMatchStats, setLastPlayedMatchPlayerMatchStats] = useState();
     const [lastPlayedMatchGoalieMatchStats, setLastPlayedMatchGoalieMatchStats] = useState();
 
-    var matchesPlayed = false;
+    const [matchesPlayed, setMatchesPlayed] = useState(false);
 
     const whoAmI = async () => {
         try {
@@ -46,9 +46,9 @@ export default function Home() {
         try {
             const response = await axios.get(`${SERVER_URL}/matches/lastPlayed`, { withCredentials: true });
             setLastPlayedMatch(response.data);
-            matchesPlayed = true;
+            setMatchesPlayed(true);
         } catch (error) {
-            matchesPlayed = false;
+            setMatchesPlayed(false);
         }
     }
 
@@ -56,9 +56,9 @@ export default function Home() {
         try {
             const response = await axios.get(`${SERVER_URL}/playersMatchStats/matches/lastPlayed/players/${playerId}`, { withCredentials: true })
             setLastPlayedMatchPlayerMatchStats(response.data);
-            matchesPlayed = true;
+            setMatchesPlayed(true);
         } catch (error) {
-            matchesPlayed = false;
+            setMatchesPlayed(false);
         }
     }
 
@@ -66,9 +66,9 @@ export default function Home() {
         try {
             const response = await axios.get(`${SERVER_URL}/playersMatchStats/matches/lastPlayed/goalies/${playerId}`, { withCredentials: true })
             setLastPlayedMatchGoalieMatchStats(response.data);
-            console.log(response.data);
+            setMatchesPlayed(true);
         } catch (error) {
-            console.log('Error fetching stats from last match: ', error);
+            setMatchesPlayed(false);
         }
     }
 
@@ -304,7 +304,6 @@ export default function Home() {
                                             ) : (
                                                 <p id='noStatsText'>No están disponibles las estadísticas del último partido</p>
                                             )
-
                                         }
                                     </div>
                                 </div>

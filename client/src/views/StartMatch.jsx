@@ -24,6 +24,10 @@ export default function StartMatch() {
     const [match, setMatch] = useState();
     const localTeamGoals = matchEvents?.filter((matchEvent) => (matchEvent.goal && matchEvent.goal.matchPeriod != 'overtime') ? ((String(matchEvent.goal.team.id) === String(match?.localTeam.id))) : (0)).length || 0;
     const visitingTeamGoals = matchEvents?.filter((matchEvent) => (matchEvent.goal && matchEvent.goal.matchPeriod != 'overtime') ? ((String(matchEvent.goal.team.id) === String(match?.visitingTeam.id))) : (0)).length || 0;
+
+    const localTeamGoalsReal = matchEvents?.filter((matchEvent) => (matchEvent.goal) ? ((String(matchEvent.goal.team.id) === String(match?.localTeam.id))) : (0)).length || 0;
+    const visitingTeamGoalsReal = matchEvents?.filter((matchEvent) => (matchEvent.goal) ? ((String(matchEvent.goal.team.id) === String(match?.visitingTeam.id))) : (0)).length || 0;
+
     const [players, setPlayers] = useState([]);
 
     const [teamMatchStats, setTeamMatchStats] = useState();
@@ -162,11 +166,11 @@ export default function StartMatch() {
                     teamMatchStatsResponse.data.matchResult = 'WIN';
                 } else if (localTeamGoals < visitingTeamGoals && matchPeriod == 'period2') {
                     teamMatchStatsResponse.data.matchResult = 'LOSS';
-                } else if (localTeamGoals > visitingTeamGoals && matchPeriod == 'overtime') {
+                } else if (localTeamGoals === visitingTeamGoals && matchPeriod == 'overtime' && localTeamGoalsReal > visitingTeamGoalsReal) {
                     teamMatchStatsResponse.data.matchResult = 'TIE';
                     teamMatchStatsResponse.data.bonusPoint = true;
                     await setBonusPointTeam(match?.localTeam);
-                } else if (localTeamGoals < visitingTeamGoals && matchPeriod == 'overtime') {
+                } else if (localTeamGoals === visitingTeamGoals && matchPeriod == 'overtime' && localTeamGoalsReal < visitingTeamGoalsReal) {
                     teamMatchStatsResponse.data.matchResult = 'TIE';
                     teamMatchStatsResponse.data.bonusPoint = false;
                     await setBonusPointTeam(match?.visitingTeam);
@@ -182,7 +186,11 @@ export default function StartMatch() {
                     teamMatchStatsResponse.data.matchResult = 'TIE';
                     teamMatchStatsResponse.data.bonusPoint = true;
                     await setBonusPointTeam(match?.visitingTeam);
-                } else if (visitingTeamGoals < localTeamGoals && matchPeriod == 'overtime') {
+                } else if (localTeamGoals === visitingTeamGoals && matchPeriod == 'overtime' && localTeamGoalsReal < visitingTeamGoalsReal) {
+                    teamMatchStatsResponse.data.matchResult = 'TIE';
+                    teamMatchStatsResponse.data.bonusPoint = true;
+                    await setBonusPointTeam(match?.visitingTeam);
+                } else if (localTeamGoals === visitingTeamGoals && matchPeriod == 'overtime' && localTeamGoalsReal > visitingTeamGoalsReal) {
                     teamMatchStatsResponse.data.matchResult = 'TIE';
                     teamMatchStatsResponse.data.bonusPoint = false;
                     await setBonusPointTeam(match?.localTeam);
