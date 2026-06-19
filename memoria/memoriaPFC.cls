@@ -13,6 +13,7 @@
 %% ------------------------------
 %% Paquetes esenciales
 %% ------------------------------
+
 \RequirePackage[automark,markcase=upper]{scrlayer-scrpage} % Cabeceras y pies
 \RequirePackage[T1]{fontenc}     % Codificación de fuente
 \RequirePackage[utf8]{inputenc}  % Codificación de entrada
@@ -108,12 +109,13 @@
 %% ------------------------------
 %% Márgenes y disposición
 %% ------------------------------
-\RequirePackage[a4paper,
+\RequirePackage[
+  a4paper,
   top=1.0cm,
-  headheight=0.2cm,
-  headsep=2.4cm,
+  headheight=0.5cm,
+  headsep=1.9cm,
   bottom=1.2cm,
-  footskip=3.3cm,
+  footskip=1.3cm,
   inner=2.5cm,
   outer=2.5cm,
   includehead,

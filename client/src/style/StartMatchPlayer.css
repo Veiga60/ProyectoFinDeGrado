@@ -222,6 +222,24 @@
 
 @media (max-width: 415px) {
     #matchPlayerStatsDiv {
+        margin-left: 20px;
+        width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(90px, 90px));
+    }
+
+    .matchStatTextDivPlayer {
+        width: 50px;
+        height: 50px;
+    }
+
+    .arrowUpIconPlayer {
+        width: 25px;
+        height: 25px;
+    }
+
+    .arrowDownIconPlayer {
+        width: 25px;
+        height: 25px;
         width: 100%;
         grid-template-columns: repeat(auto-fit, minmax(85px, 85px));
     }
