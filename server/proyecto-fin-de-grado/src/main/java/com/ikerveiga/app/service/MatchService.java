@@ -74,4 +74,16 @@ public class MatchService {
 
         return lastPlayedMatch;
     }
+
+    public Match getLastPlayedMatchWithRecomendations() {
+        List<Match> playedMatches = matchDAO.findPlayedMatchesWithRecomendationsBackwards();
+
+        if (playedMatches.isEmpty()) {
+            throw new RuntimeException("No matches played with recommendations");
+        }
+
+        Match lastPlayedMatch = playedMatches.get(0);
+
+        return lastPlayedMatch;
+    }
 }

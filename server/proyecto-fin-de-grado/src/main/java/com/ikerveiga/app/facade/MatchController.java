@@ -127,4 +127,19 @@ public class MatchController {
             }
         }
     }
+
+    @GetMapping("/matches/lastPlayedWithRecomendations")
+    public ResponseEntity<MatchDTO> getLastPlayedMatchWithRecomendations() {
+        try {
+            MatchDTO lastPlayedMatch = matchService.getLastPlayedMatchWithRecomendations().toDTO();
+
+            return ResponseEntity.ok(lastPlayedMatch);
+        } catch (RuntimeException e) {
+            if (e.getMessage().equals("No matches played with recommendations")) {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            } else {
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
+        }
+    }
 }

@@ -19,4 +19,7 @@ public interface MatchRepository extends JpaRepository<Match, Long> {
 
     @Query("SELECT a FROM Match a WHERE isPlayed = true ORDER BY date DESC, time DESC")
     List<Match> findPlayedMatchesBackwards();
+
+    @Query("SELECT a FROM Match a WHERE a.isPlayed = true AND EXISTS (SELECT r FROM TeamRecomendation r WHERE r.match = a) ORDER BY a.date DESC, a.time DESC")
+    List<Match> findPlayedMatchesWithRecomendationsBackwards();
 }

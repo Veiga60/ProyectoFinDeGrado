@@ -22,7 +22,8 @@ export default function Home() {
     const [lastPlayedMatchPlayerMatchStats, setLastPlayedMatchPlayerMatchStats] = useState();
     const [lastPlayedMatchGoalieMatchStats, setLastPlayedMatchGoalieMatchStats] = useState();
 
-    const [matchesPlayed, setMatchesPlayed] = useState(false);
+    const [statsAvailable, setStatsAvailable] = useState(false);
+    const [recomendationsAvailable, setRecomendationsAvailable] = useState(false);
 
     const whoAmI = async () => {
         try {
@@ -44,11 +45,11 @@ export default function Home() {
 
     const getLastPlayedMatch = async () => {
         try {
-            const response = await axios.get(`${SERVER_URL}/matches/lastPlayed`, { withCredentials: true });
+            const response = await axios.get(`${SERVER_URL}/matches/lastPlayedWithRecomendations`, { withCredentials: true });
             setLastPlayedMatch(response.data);
-            setMatchesPlayed(true);
+            setRecomendationsAvailable(true);
         } catch (error) {
-            setMatchesPlayed(false);
+            setRecomendationsAvailable(false);
         }
     }
 
@@ -56,9 +57,9 @@ export default function Home() {
         try {
             const response = await axios.get(`${SERVER_URL}/playersMatchStats/matches/lastPlayed/players/${playerId}`, { withCredentials: true })
             setLastPlayedMatchPlayerMatchStats(response.data);
-            setMatchesPlayed(true);
+            setStatsAvailable(true);
         } catch (error) {
-            setMatchesPlayed(false);
+            setStatsAvailable(false);
         }
     }
 
@@ -66,9 +67,9 @@ export default function Home() {
         try {
             const response = await axios.get(`${SERVER_URL}/playersMatchStats/matches/lastPlayed/goalies/${playerId}`, { withCredentials: true })
             setLastPlayedMatchGoalieMatchStats(response.data);
-            setMatchesPlayed(true);
+            setStatsAvailable(true);
         } catch (error) {
-            setMatchesPlayed(false);
+            setStatsAvailable(false);
         }
     }
 
@@ -141,7 +142,7 @@ export default function Home() {
                                 <div id='recomendationsDiv'>
                                     <p id='recomendationsText'>Recomendaciones</p>
                                     {
-                                        (matchesPlayed == true) ? (
+                                        (recomendationsAvailable == true) ? (
                                             <div id='recomendations' onClick={() => { navigate(`/recomendations/matches/${lastPlayedMatch.id}`, { state: { authenticatedUserPlayerId: authenticatedUser?.player?.id, isCoach: authenticatedUser?.isCoach, match: lastPlayedMatch } }) }}>
                                                 <p id='seeRecomendationsText'>Ver recomendaciones del partido:</p>
                                                 <div id='lastPlayedMatchDiv'>
@@ -164,7 +165,7 @@ export default function Home() {
                                 <div id='lastMatchPlayerMatchStatsDiv'>
                                     <div id='lastMatchDiv'>
                                         {
-                                            (matchesPlayed == true) ? (
+                                            (statsAvailable == true) ? (
                                                 (authenticatedUser.player.playerType == 'RINK_PLAYER') ? (
                                                     <>
                                                         <img id='lastMatchLocalTeamImage' src={lastPlayedMatchPlayerMatchStats?.match.localTeam.logo ? `/logos/${lastPlayedMatchPlayerMatchStats?.match.localTeam.logo}` : basicLogo} alt={lastPlayedMatchPlayerMatchStats?.match.localTeam.name} />
@@ -183,9 +184,9 @@ export default function Home() {
                                             )
                                         }
                                     </div>
-                                    <div id={matchesPlayed ? 'lastMatchPlayerStats' : 'noStatsAvailable'}>
+                                    <div id={statsAvailable ? 'lastMatchPlayerStats' : 'noStatsAvailable'}>
                                         {
-                                            (matchesPlayed == true) ? (
+                                            (statsAvailable == true) ? (
                                                 (authenticatedUser.player.playerType == 'RINK_PLAYER') ? (
                                                     <>
                                                         <div className='playerStat'>
