@@ -8,6 +8,7 @@ import coachHomePhoto from '../assets/images/coachHomePhoto.png'
 import '../style/Home.css'
 import basicLogo from '../assets/images/basicLogo.png'
 import basicUser from '../assets/images/basicUser.png'
+import StartMatchModal from '../components/StartMatchModal.jsx'
 
 export default function Home() {
 
@@ -24,6 +25,8 @@ export default function Home() {
 
     const [statsAvailable, setStatsAvailable] = useState(false);
     const [recomendationsAvailable, setRecomendationsAvailable] = useState(false);
+
+    const [showStartMatchModal, setShowStartMatchModal] = useState(false);
 
     const whoAmI = async () => {
         try {
@@ -71,6 +74,10 @@ export default function Home() {
         } catch (error) {
             setStatsAvailable(false);
         }
+    }
+
+    const toggleStartMatchModal = () => {
+        setShowStartMatchModal(!showStartMatchModal);
     }
 
     useEffect(() => {
@@ -129,7 +136,7 @@ export default function Home() {
                                     {(authenticatedUser.isCoach == true) &&
                                         (
                                             <div id='startMatchDiv'>
-                                                <button id='startMatchButton' onClick={() => navigate(`/matches/${nextMatch.id}/start_match`)}>EMPEZAR PARTIDO</button>
+                                                <button id='startMatchButton' onClick={() => toggleStartMatchModal()}>EMPEZAR PARTIDO</button>
                                             </div>
                                         )}
                                 </div>
@@ -312,6 +319,14 @@ export default function Home() {
                         )
                     }
                 </div>
+            }
+            {
+                (showStartMatchModal) && (
+                    <StartMatchModal
+                        matchId={nextMatch.id}
+                        onClose={() => setShowStartMatchModal(false)}
+                    />
+                )
             }
         </>
     )
