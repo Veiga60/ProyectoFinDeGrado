@@ -76,6 +76,9 @@ export default function UseAIModal({ onClose, onMatchFinished, prompt, matchId }
                         <button className='useAIModalButton' onClick={async () => { await handleUseAI(); onMatchFinished() }}>SI</button>
                         <button className='useAIModalButton' onClick={() => { onClose(); onMatchFinished() }}>NO</button>
                     </div>
+                    <div id='useAIModalLastButtonsDiv'>
+                        <button className='useAIModalButton' onClick={() => { onClose(); }}>VOLVER</button>
+                    </div>
                 </div>
             </div>
         </>
