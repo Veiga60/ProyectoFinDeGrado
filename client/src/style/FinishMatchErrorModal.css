@@ -1,0 +1,66 @@
+#finishMatchErrorModalMainDiv {
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1000000;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#finishMatchErrorMainDiv {
+    width: 450px;
+    height: 200px;
+    background-color: white;
+    border: 2px solid red;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#finishMatchError {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#finishMatchErrorText {
+    color: red;
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: larger;
+}
+
+#finishMatchErrorTextDesc {
+    font-family: Inria Sans;
+    color: rgb(253, 0, 0);
+    font-size: medium;
+    margin: 0;
+    padding: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+
+}
+
+.finishMatchErrorButton {
+    background-color: red;
+    border: none;
+    border-radius: 12px;
+    height: 40px;
+    width: 25%;
+    font-family: Inria Sans;
+    font-size: large;
+    transition: 0.5s;
+    margin-top: 10px;
+}
+
+.finishMatchErrorButton:hover {
+    background-color: rgb(165, 0, 0);
+    transition: 0.5s;
+    cursor: pointer;
+}

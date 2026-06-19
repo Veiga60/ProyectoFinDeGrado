@@ -7,6 +7,7 @@ import '../style/StartMatch.css'
 import GoalEvent from '../components/GoalEvent.jsx'
 import PenaltyEvent from '../components/PenaltyEvent.jsx'
 import TimeoutEvent from '../components/TimeoutEvent.jsx'
+import FinishMatchErrorModal from '../components/FinishMatchErrorModal.jsx'
 import { RiTeamFill } from "react-icons/ri";
 import { PiHockeyFill } from "react-icons/pi";
 
@@ -41,8 +42,14 @@ export default function StartMatch() {
 
     const [prompt, setPrompt] = useState('');
 
+    const [finishMatchError, setFinishMatchError] = useState(false);
+
     const toggleUseAIModal = () => {
         setUseAIModal(!useAIModal);
+    }
+
+    const toggleFinishMatchErrorModal = () => {
+        setFinishMatchError(!finishMatchError);
     }
 
     const getNextMatch = async () => {
@@ -319,9 +326,13 @@ export default function StartMatch() {
                 </div>
                 <div id='finishMatchButtonDiv'>
                     <button id='finishMatchButton' onClick={async () => {
-                        const statsToUpdate = await prepareStatsToUpdate();
-                        prepareAIPrompt(statsToUpdate);
-                        toggleUseAIModal();
+                        if (matchPeriod === 'period1' || localTeamGoalsReal === visitingTeamGoalsReal) {
+                            toggleFinishMatchErrorModal();
+                        } else {
+                            const statsToUpdate = await prepareStatsToUpdate();
+                            prepareAIPrompt(statsToUpdate);
+                            toggleUseAIModal();
+                        }
                     }}>FINALIZAR PARTIDO</button>
                 </div>
                 <div id='matchInfoMainDiv'>
@@ -412,7 +423,7 @@ export default function StartMatch() {
                         </div>
                     </div>
                 </div>
-                {(useAIModal) &&
+                {(useAIModal) && (matchPeriod !== 'period1') && ((localTeamGoalsReal !== visitingTeamGoalsReal)) &&
                     (
                         <UseAIModal
                             onClose={toggleUseAIModal}
@@ -423,7 +434,11 @@ export default function StartMatch() {
                             prompt={prompt}
                             matchId={matchId}
                         />
-                    )}
+                    )
+                }
+                {(finishMatchError) && (
+                    <FinishMatchErrorModal onClose={toggleFinishMatchErrorModal} />
+                )}
             </div >
         </>
     )
