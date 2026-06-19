@@ -13,13 +13,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    width: 30%;
-    height: 30%;
+    justify-content: center;
+    width: 90%;
+    max-width: 450px;
+    height: auto;
+    min-height: 250px;
+    padding: 20px;
+    box-sizing: border-box;
     background-color: white;
     border: 2px solid rgb(7, 78, 200);
     border-radius: 15px;
-    gap: 15%;
+    gap: 20px;
+    text-align: center;
 }
 
 #useAIText {
@@ -31,37 +36,39 @@
 
 #useAITextDiv {
     width: 100%;
-    margin-top: 50px;
     font-size: large;
 }
 
 #useAIModalButtonsDiv {
-    height: 40px;
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 5%;
+    gap: 15px;
 }
 
 .useAIModalButton {
     background-color: rgb(7, 78, 200);
     border: none;
+    color: white;
     border-radius: 12px;
-    width: 20%;
+    width: 100px;
     height: 40px;
     font-family: Inria Sans;
     font-size: larger;
     transition: 0.5s;
 }
 
+.useAIModalButton:hover {
+    background-color: rgb(5, 60, 160);
+    cursor: pointer;
+}
+
 #useAIModalLastButtonsDiv {
-    height: 40px;
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-top: -20px;
 }

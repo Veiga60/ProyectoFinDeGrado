@@ -273,7 +273,7 @@ export default function Home() {
                                                     <>
                                                         <div className='playerStat'>
                                                             <div className='playerStatDiv'>
-                                                                <p className='playerStatText'>{(lastPlayedMatchGoalieMatchStats?.shotsReceived > 0) && (((Number(lastPlayedMatchGoalieMatchStats?.shotsReceived) - Number(lastPlayedMatchGoalieMatchStats?.goalsReceived)) / Number(lastPlayedMatchGoalieMatchStats?.shotsReceived))).toFixed(3)}</p>
+                                                                <p className='playerStatText'>{(lastPlayedMatchGoalieMatchStats?.shotsReceived > 0) ? ((Number(lastPlayedMatchGoalieMatchStats?.shotsReceived) - Number(lastPlayedMatchGoalieMatchStats?.goalsReceived)) / Number(lastPlayedMatchGoalieMatchStats?.shotsReceived)).toFixed(3) : '-'}</p>
                                                             </div>
                                                             <p className='playerStatsTitle'>% PARADAS</p>
                                                         </div>
