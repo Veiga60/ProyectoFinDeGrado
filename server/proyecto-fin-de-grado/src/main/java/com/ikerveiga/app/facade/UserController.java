@@ -90,9 +90,9 @@ public class UserController {
     }
 
     @PostMapping("/me/role")
-    public ResponseEntity<Void> setIsCoachTrue(@RequestParam boolean isCoach, @RequestParam String email) {
+    public ResponseEntity<Void> setIsCoachTrue(@RequestParam boolean isCoach, @RequestParam String email, HttpServletResponse response) {
         try {
-            userService.setIsCoach(isCoach, email);
+            userService.setIsCoach(isCoach, email, response);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (RuntimeException e) {
             if (e.getMessage().equals("Usuario no registrado")) {

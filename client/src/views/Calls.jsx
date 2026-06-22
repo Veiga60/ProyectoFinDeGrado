@@ -31,7 +31,6 @@ export default function Calls() {
                 tempCallsOfPlayer.push({ match: response.data[i]?.match.id, callStatus: response.data[i].callPlayerStatus[location.state.authenticatedUserPlayerId] });
             }
             setCallsOfPlayer(tempCallsOfPlayer);
-            console.log('Calls', response.data);
         } catch (error) {
             console.log('Error fetching your calls: ', error);
         }
@@ -41,7 +40,6 @@ export default function Calls() {
         if (location.state?.isCoach == false) {
             getCallsOfPlayer(location.state?.authenticatedUserPlayerId);
         }
-        console.log(location.state);
         getNextMatches();
     }, []);
 

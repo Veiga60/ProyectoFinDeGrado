@@ -25,7 +25,6 @@ public class TeamStatsService {
         if (teamStats.isEmpty()) {
             throw new RuntimeException("No se han encontrado estadísticas");
         }
-        System.out.println(teamStats.toString());
         return teamStats.get(0);
     }
 

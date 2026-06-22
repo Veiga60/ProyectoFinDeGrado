@@ -22,8 +22,6 @@ export default function CreatOrderModal({ orderTypes, onClose, wheelNextOrder, s
         const wheelOrderDeadline = new Date(wheelNextOrder?.deadline);
         const stickOrderDeadline = new Date(stickNextOrder?.deadline);
 
-        console.log('Excel descargado: ', downloadExcelModal);
-
         if (type.description === 'Ruedas' && (currentDate > wheelOrderDeadline) && !wheelExcelDownloaded) {
             toggleDownloadExcelModal();
             return false;

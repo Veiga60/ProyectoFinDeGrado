@@ -19,7 +19,6 @@ export default function Messages() {
         try {
             const response = await axios.get(`${SERVER_URL}/debates/${debateId}/messages`, { withCredentials: true });
             setMessages(response.data);
-            console.log(response.data);
         } catch (error) {
             console.log('Error fetching messages: ', error);
         }

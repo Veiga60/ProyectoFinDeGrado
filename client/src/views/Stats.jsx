@@ -29,7 +29,6 @@ export default function Stats() {
         try {
             const response = await axios.get(`${SERVER_URL}/team/stats`, { withCredentials: true });
             setTeamStats(response.data);
-            console.log(response.data);
         } catch (error) {
             console.log('Error al cargar las estadísticas del equipo: ', error);
         }

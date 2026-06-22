@@ -106,7 +106,7 @@ public class UserService {
         cookiesService.deleteCookie("jwt", response);
     }
 
-    public void setIsCoach(boolean isCoach, String email) {
+    public void setIsCoach(boolean isCoach, String email, HttpServletResponse response) {
         User user = userDAO.findByEmail(email);
 
         if (user == null) {
@@ -119,5 +119,9 @@ public class UserService {
         }
 
         userDAO.setIsCoach(isCoach, email);
+
+        String role = isCoach ? "ROLE_COACH" : "ROLE_PLAYER";
+        String jwt = jwtUtil.generateJwtToken(email, role);
+        cookiesService.addHttpOnlyCookie("jwt", jwt, 30 * 60, response);
     }
 }

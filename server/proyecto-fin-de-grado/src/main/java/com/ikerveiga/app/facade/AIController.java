@@ -25,7 +25,6 @@ public class AIController {
     public ResponseEntity<String> getRecomendations(@RequestBody String prompt) {
         try {
             String response = aiService.getRecomendations(prompt);
-            System.out.println(response);
             return ResponseEntity.ok(response);
         } catch (RuntimeException e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);

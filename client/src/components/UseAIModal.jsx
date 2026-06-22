@@ -9,7 +9,6 @@ export default function UseAIModal({ onClose, onMatchFinished, prompt, matchId }
         try {
             const response = await axios.post(`${SERVER_URL}/ai/recomendations`, { prompt: prompt }, { withCredentials: true });
             const objectResponse = JSON.parse(String(response.data).replace('```json', '').replace('```', ''));
-            console.log(objectResponse);
 
             const teamRecomendations = objectResponse.equipo;
             const playerRecomendations = Object.assign(objectResponse.jugadores, objectResponse.porteros);

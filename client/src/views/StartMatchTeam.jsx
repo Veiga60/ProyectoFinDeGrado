@@ -55,7 +55,6 @@ export default function StartMatchTeam() {
     const getTeamMatchStats = async (matchId) => {
         try {
             const response = await axios.get(`${SERVER_URL}/matchStats/matches/${matchId}/team`, { withCredentials: true });
-            console.log(response.data);
             setPowerPlayGoals(response?.data?.powerPlayGoals);
             setPowerPlayNoGoals(response?.data?.powerPlayNoGoals);
             setPenaltyKillGoals(response?.data?.penaltyKillGoals);

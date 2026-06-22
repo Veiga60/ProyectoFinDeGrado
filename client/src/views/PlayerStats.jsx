@@ -16,7 +16,6 @@ export default function PlayerStats() {
         try {
             const response = await axios.get(`${SERVER_URL}/players/${playerId}`, { withCredentials: true });
             setPlayer(response.data);
-            console.log(response.data);
         } catch (error) {
             console.log('Error fetching the player: ', error);
         }

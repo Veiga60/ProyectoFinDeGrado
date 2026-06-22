@@ -91,7 +91,6 @@ export default function Home() {
 
     useEffect(() => {
         if (!authenticatedUser) return;
-        console.log(authenticatedUser);
         if (authenticatedUser?.isCoach == true) {
             getLastPlayedMatch();
         } else {

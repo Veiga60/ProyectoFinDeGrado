@@ -43,6 +43,7 @@ textarea {
     font-family: Inria Sans;
     outline: none;
     height: 100%;
+    resize: none;
 }
 
 textarea::-webkit-scrollbar {
@@ -56,6 +57,7 @@ textarea::-webkit-scrollbar {
     background-color: rgb(7, 78, 200);
     border-radius: 100000px;
     transition: 0.5s;
+    padding: 5px;
 }
 
 .sendIcon:hover {

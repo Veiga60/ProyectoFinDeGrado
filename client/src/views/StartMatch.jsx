@@ -57,7 +57,6 @@ export default function StartMatch() {
             const response = await axios.get(`${SERVER_URL}/matches/next`, { withCredentials: true });
             setMatch(response.data[0]);
             setPlayers(response.data[0].call.players);
-            console.log(response.data[0]);
         } catch (error) {
             console.log('Error fetching next match: ', error);
         }
@@ -252,8 +251,6 @@ export default function StartMatch() {
             playersStatsToPrompt.push(playerStatsAnonimized);
         }
 
-        console.log(playersStatsToPrompt);
-
         for (const goalieStats of stats.goaliesMatchStats) {
             const goalieStatsAnonimized = {
                 goalieId: goalieStats.goalie.id,
@@ -308,7 +305,6 @@ export default function StartMatch() {
         getNextMatch();
         setMatchEvents(location.state?.matchEvents);
         (location.state?.matchPeriod) ? (selectPeriod(location.state?.matchPeriod)) : (selectPeriod(matchPeriod))
-        console.log('Stats: ', playersMatchStats);
     }, []);
 
     return (
@@ -384,7 +380,6 @@ export default function StartMatch() {
                         <p id='matchEventsText'>ACTA DEL PARTIDO</p>
                         <div id='matchEventsDiv'>
                             {matchEvents?.map((matchEvent) => {
-                                console.log('Hola', matchEvent);
                                 if (matchEvent.hasOwnProperty('goal')) {
                                     if (matchEvent.goal.scorer == undefined) {
                                         return <GoalEvent
