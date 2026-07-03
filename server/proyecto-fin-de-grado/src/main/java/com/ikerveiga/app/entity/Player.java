@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.ikerveiga.app.dto.CallDTO;
+import com.ikerveiga.app.dto.ClubTeamDTO;
 import com.ikerveiga.app.dto.PlayerDTO;
 import com.ikerveiga.app.enums.PlayerType;
 
@@ -66,6 +67,10 @@ public class Player {
     @OneToOne(mappedBy = "player")
     private User user;
 
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "player_club_team", joinColumns = @JoinColumn(name = "player_id"), inverseJoinColumns = @JoinColumn(name = "club_team_id"))
+    List<ClubTeam> clubTeams;
+
     public Player() {
 
     }
@@ -73,7 +78,8 @@ public class Player {
     public Player(String name, String lastName1, String lastName2, LocalDate birthDate, int number, String photo,
             PlayerType playerType,
             List<Call> calls,
-            PlayerStats playerStats) {
+            PlayerStats playerStats,
+            List<ClubTeam> clubTeams) {
         this.name = name;
         this.lastName1 = lastName1;
         this.lastName2 = lastName2;
@@ -83,12 +89,14 @@ public class Player {
         this.playerType = playerType;
         this.calls = calls;
         this.playerStats = playerStats;
+        this.clubTeams = clubTeams;
     }
 
     public Player(String name, String lastName1, String lastName2, LocalDate birthDate, int number, String photo,
             PlayerType playerType,
             List<Call> calls,
-            GoalieStats goalieStats) {
+            GoalieStats goalieStats,
+            List<ClubTeam> clubTeams) {
         this.name = name;
         this.lastName1 = lastName1;
         this.lastName2 = lastName2;
@@ -98,6 +106,7 @@ public class Player {
         this.playerType = playerType;
         this.calls = calls;
         this.goalieStats = goalieStats;
+        this.clubTeams = clubTeams;
     }
 
     public long getId() {
@@ -156,10 +165,24 @@ public class Player {
         this.playerStats = playerStats;
     }
 
+    public List<ClubTeam> getCLubTeams() {
+        return this.clubTeams;
+    }
+
+    public void setClubTeams(List<ClubTeam> clubTeams) {
+        this.clubTeams = clubTeams;
+    }
+
     public PlayerDTO toDTO() {
         List<CallDTO> callsDTO = new ArrayList<>();
+        List<ClubTeamDTO> clubTeamsDTO = new ArrayList<>();
+
         for (Call call : this.calls) {
             callsDTO.add(call.toDTO());
+        }
+
+        for (ClubTeam clubTeam : clubTeams) {
+            clubTeamsDTO.add(clubTeam.toDTO());
         }
 
         PlayerDTO playerDTO;
@@ -167,12 +190,12 @@ public class Player {
             playerDTO = new PlayerDTO(this.id, this.name, this.lastName1, this.lastName2, this.birthDate, this.number,
                     this.photo, this.playerType,
                     callsDTO,
-                    this.playerStats.toDTOWithoutPlayer());
+                    this.playerStats.toDTOWithoutPlayer(), clubTeamsDTO);
         } else {
             playerDTO = new PlayerDTO(this.id, this.name, this.lastName1, this.lastName2, this.birthDate, this.number,
                     this.photo, this.playerType,
                     callsDTO,
-                    this.goalieStats.toDTOWithoutGoalie());
+                    this.goalieStats.toDTOWithoutGoalie(), clubTeamsDTO);
         }
 
         return playerDTO;
@@ -180,20 +203,32 @@ public class Player {
 
     public PlayerDTO toDTOWithoutStats() {
         List<CallDTO> callsDTO = new ArrayList<>();
+        List<ClubTeamDTO> clubTeamsDTO = new ArrayList<>();
+
         for (Call call : this.calls) {
             callsDTO.add(call.toDTO());
         }
 
+        for (ClubTeam clubTeam : clubTeams) {
+            clubTeamsDTO.add(clubTeam.toDTO());
+        }
+
         PlayerDTO playerDTO = new PlayerDTO(this.id, this.name, this.lastName1, this.lastName2, this.birthDate,
                 this.number, this.photo,
-                this.playerType, callsDTO);
+                this.playerType, callsDTO, clubTeamsDTO);
 
         return playerDTO;
     }
 
     public PlayerDTO toDTOWithoutStatsAndCalls() {
+        List<ClubTeamDTO> clubTeamsDTO = new ArrayList<>();
+
+        for (ClubTeam clubTeam : clubTeams) {
+            clubTeamsDTO.add(clubTeam.toDTO());
+        }
+
         PlayerDTO playerDTO = new PlayerDTO(this.id, this.name, this.lastName1, this.lastName2, this.birthDate,
-                this.number, this.photo, this.playerType);
+                this.number, this.photo, this.playerType, clubTeamsDTO);
 
         return playerDTO;
     }

@@ -2,6 +2,8 @@ package com.ikerveiga.app.service;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -66,15 +68,23 @@ public class UserService {
     }
 
     public void signup(String userName, String email, String password, boolean isCoach) {
+        String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!¡¿?*])(?=\\S+$).{8,16}$";
         User existingUser = userDAO.findByEmail(email);
         if (existingUser != null) {
             throw new RuntimeException("User already exists");
         } else {
             AuthorizedEmail authorizedEmail = authorizedEmailDAO.findByEmail(email);
             if (authorizedEmail != null) {
-                User user = new User(userName, email, passwordEncoder.encode(password), isCoach,
-                        authorizedEmail.getPlayer());
-                userDAO.save(user);
+                Pattern pattern = Pattern.compile(regex);
+                Matcher matcher = pattern.matcher(password);
+
+                if (matcher.matches()) {
+                    User user = new User(userName, email, passwordEncoder.encode(password), isCoach,
+                            authorizedEmail.getPlayer());
+                    userDAO.save(user);
+                } else {
+                    throw new RuntimeException("Password not allowed");
+                }
             } else {
                 throw new RuntimeException("User not authorized");
             }

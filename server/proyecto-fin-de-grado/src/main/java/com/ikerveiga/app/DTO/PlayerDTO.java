@@ -18,6 +18,7 @@ public class PlayerDTO {
     private List<CallDTO> calls;
     private PlayerStatsDTO playerStats;
     private GoalieStatsDTO goalieStats;
+    private List<ClubTeamDTO> clubTeams;
 
     public PlayerDTO() {
 
@@ -26,7 +27,8 @@ public class PlayerDTO {
     public PlayerDTO(String name, String lastName1, String lastName2, LocalDate birthDate, int number, String photo,
             PlayerType playerType,
             List<CallDTO> calls,
-            PlayerStatsDTO playerStats) {
+            PlayerStatsDTO playerStats,
+            List<ClubTeamDTO> clubTeams) {
         this.name = name;
         this.lastName1 = lastName1;
         this.lastName2 = lastName2;
@@ -36,12 +38,14 @@ public class PlayerDTO {
         this.playerType = playerType;
         this.calls = calls;
         this.playerStats = playerStats;
+        this.clubTeams = clubTeams;
     }
 
     public PlayerDTO(String name, String lastName1, String lastName2, LocalDate birthDate, int number, String photo,
             PlayerType playerType,
             List<CallDTO> calls,
-            GoalieStatsDTO goalieStats) {
+            GoalieStatsDTO goalieStats,
+            List<ClubTeamDTO> clubTeams) {
         this.name = name;
         this.lastName1 = lastName1;
         this.lastName2 = lastName2;
@@ -51,12 +55,14 @@ public class PlayerDTO {
         this.playerType = playerType;
         this.calls = calls;
         this.goalieStats = goalieStats;
+        this.clubTeams = clubTeams;
     }
 
     public PlayerDTO(long id, String name, String lastName1, String lastName2, LocalDate birthDate, int number,
             String photo, PlayerType playerType,
             List<CallDTO> calls,
-            PlayerStatsDTO playerStats) {
+            PlayerStatsDTO playerStats,
+            List<ClubTeamDTO> clubTeams) {
         this.id = id;
         this.name = name;
         this.lastName1 = lastName1;
@@ -67,12 +73,14 @@ public class PlayerDTO {
         this.playerType = playerType;
         this.calls = calls;
         this.playerStats = playerStats;
+        this.clubTeams = clubTeams;
     }
 
     public PlayerDTO(long id, String name, String lastName1, String lastName2, LocalDate birthDate, int number,
             String photo, PlayerType playerType,
             List<CallDTO> calls,
-            GoalieStatsDTO goalieStats) {
+            GoalieStatsDTO goalieStats,
+            List<ClubTeamDTO> clubTeams) {
         this.id = id;
         this.name = name;
         this.lastName1 = lastName1;
@@ -83,11 +91,13 @@ public class PlayerDTO {
         this.playerType = playerType;
         this.calls = calls;
         this.goalieStats = goalieStats;
+        this.clubTeams = clubTeams;
     }
 
     public PlayerDTO(long id, String name, String lastName1, String lastName2, LocalDate birthDate, int number,
             String photo, PlayerType playerType,
-            List<CallDTO> calls) {
+            List<CallDTO> calls,
+            List<ClubTeamDTO> clubTeams) {
         this.id = id;
         this.name = name;
         this.lastName1 = lastName1;
@@ -97,10 +107,11 @@ public class PlayerDTO {
         this.photo = photo;
         this.playerType = playerType;
         this.calls = calls;
+        this.clubTeams = clubTeams;
     }
 
     public PlayerDTO(long id, String name, String lastName1, String lastName2, LocalDate birthDate, int number,
-            String photo, PlayerType playerType) {
+            String photo, PlayerType playerType, List<ClubTeamDTO> clubTeams) {
         this.id = id;
         this.name = name;
         this.lastName1 = lastName1;
@@ -109,6 +120,7 @@ public class PlayerDTO {
         this.number = number;
         this.photo = photo;
         this.playerType = playerType;
+        this.clubTeams = clubTeams;
     }
 
     public long getId() {
@@ -189,5 +201,13 @@ public class PlayerDTO {
 
     public void setGoalieStatsDTO(GoalieStatsDTO goalieStats) {
         this.goalieStats = goalieStats;
+    }
+
+    public List<ClubTeamDTO> getClubTeams() {
+        return this.clubTeams;
+    }
+
+    public void setClubTeams(List<ClubTeamDTO> clubTeams) {
+        this.clubTeams = clubTeams;
     }
 }

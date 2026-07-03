@@ -49,6 +49,8 @@ export default function Signup() {
                 setError('Correo eléctronico no permitido');
             } else if (error.status == 409) {
                 setError('Nombre de usuario ya en uso');
+            } else if (error.status == 403) {
+                setError('Contraseña no válida');
             } else {
                 setError('Error al crear cuenta de usuario');
             }

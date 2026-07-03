@@ -48,6 +48,8 @@ public class UserController {
                 return new ResponseEntity<>(HttpStatus.CONFLICT);
             } else if (e.getMessage().equals("User not authorized")) {
                 return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+            } else if (e.getMessage().equals("Password not allowed")) {
+                return new ResponseEntity<>(HttpStatus.FORBIDDEN);
             } else {
                 e.printStackTrace();
                 return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -90,7 +92,8 @@ public class UserController {
     }
 
     @PostMapping("/me/role")
-    public ResponseEntity<Void> setIsCoachTrue(@RequestParam boolean isCoach, @RequestParam String email, HttpServletResponse response) {
+    public ResponseEntity<Void> setIsCoachTrue(@RequestParam boolean isCoach, @RequestParam String email,
+            HttpServletResponse response) {
         try {
             userService.setIsCoach(isCoach, email, response);
             return new ResponseEntity<>(HttpStatus.OK);
