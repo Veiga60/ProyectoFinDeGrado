@@ -3,7 +3,7 @@ import axios from 'axios'
 import '../style/NavBar.css'
 import { FiLogOut } from "react-icons/fi";
 
-export default function NavBar({ authenticatedUserPlayerId, isCoach }) {
+export default function NavBar({ authenticatedUserPlayerId, isCoach, authenticatedUser }) {
 
     const SERVER_URL = 'http://localhost:8081';
     const navigate = useNavigate();
@@ -25,7 +25,7 @@ export default function NavBar({ authenticatedUserPlayerId, isCoach }) {
             <div id="homeNavDiv" className="navbarSectionDiv" onClick={() => navigate('/home', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
                 <p id="homeNavText" className="navbarText">INICIO</p>
             </div>
-            <div id="matchesNavDiv" className="navbarSectionDiv" onClick={() => navigate('/matches', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
+            <div id="matchesNavDiv" className="navbarSectionDiv" onClick={() => navigate('/matches', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach, authenticatedUser: authenticatedUser } })}>
                 <p id="matchesNavText" className="navbarText">PARTIDOS</p>
             </div>
             <div id="statsNavDiv" className="navbarSectionDiv" onClick={() => navigate('/stats', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>

@@ -3,7 +3,7 @@ import Match from '../components/Match.jsx'
 import MatchCompressed from '../components/MatchCompressed.jsx'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import coachHomePhoto from '../assets/images/coachHomePhoto.png'
 import '../style/Home.css'
 import basicLogo from '../assets/images/basicLogo.png'
@@ -14,6 +14,7 @@ export default function Home() {
 
     const SERVER_URL = 'http://localhost:8081';
     const navigate = useNavigate();
+    const location = useLocation();
 
     const [authenticatedUser, setAuthenticatedUser] = useState(null);
     const [nextMatch, setNextMatch] = useState();
@@ -32,6 +33,8 @@ export default function Home() {
         try {
             const response = await axios.get(`${SERVER_URL}/me`, { withCredentials: true });
             setAuthenticatedUser(response.data);
+            location.state.authenticatedUser = response.data;
+            console.log(response.data);
         } catch (error) {
             console.log('Error al obtener la información del usuario: ', error);
         }
@@ -105,6 +108,7 @@ export default function Home() {
     return (
         <>
             <Header
+                authenticatedUser={authenticatedUser}
                 authenticatedUserPlayerId={authenticatedUser?.player?.id}
                 isCoach={authenticatedUser?.isCoach}
             />

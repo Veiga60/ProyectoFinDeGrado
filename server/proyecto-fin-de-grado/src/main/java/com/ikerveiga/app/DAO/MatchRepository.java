@@ -11,6 +11,9 @@ public interface MatchRepository extends JpaRepository<Match, Long> {
 
     Match findById(long id);
 
+    @Query("SELECT a FROM Match a WHERE a.clubTeam.id = :clubTeamId ORDER BY date, time ASC")
+    List<Match> findByClubTeamId(Long clubTeamId);
+
     @Query("SELECT a FROM Match a ORDER BY date, time ASC")
     List<Match> findAll();
 

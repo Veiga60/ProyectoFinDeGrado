@@ -52,12 +52,15 @@ public class Match {
     @OneToOne(mappedBy = "match")
     private Call call;
 
+    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private ClubTeam clubTeam;
+
     public Match() {
 
     }
 
     public Match(Team localTeam, Integer localTeamGoals, Team visitingTeam, Integer visitingTeamGoals, LocalDate date,
-            LocalTime time, boolean isPlayed, Long bonusPoint, Call call) {
+            LocalTime time, boolean isPlayed, Long bonusPoint, Call call, ClubTeam clubTeam) {
         this.localTeam = localTeam;
         this.localTeamGoals = localTeamGoals;
         this.visitingTeam = visitingTeam;
@@ -67,10 +70,11 @@ public class Match {
         this.isPlayed = isPlayed;
         this.bonusPoint = bonusPoint;
         this.call = call;
+        this.clubTeam = clubTeam;
     }
 
     public Match(Team localTeam, Integer localTeamGoals, Team visitingTeam, Integer visitingTeamGoals, LocalDate date,
-            LocalTime time, boolean isPlayed, Long bonusPoint) {
+            LocalTime time, boolean isPlayed, Long bonusPoint, ClubTeam clubTeam) {
         this.localTeam = localTeam;
         this.localTeamGoals = localTeamGoals;
         this.visitingTeam = visitingTeam;
@@ -79,6 +83,7 @@ public class Match {
         this.time = time;
         this.isPlayed = isPlayed;
         this.bonusPoint = bonusPoint;
+        this.clubTeam = clubTeam;
     }
 
     public long getId() {
@@ -157,10 +162,19 @@ public class Match {
         this.call = call;
     }
 
+    public ClubTeam getClubTeam() {
+        return this.clubTeam;
+    }
+
+    public void setClubTeam(ClubTeam clubTeam) {
+        this.clubTeam = clubTeam;
+    }
+
     public MatchDTO toDTO() {
         MatchDTO matchDTO = new MatchDTO(this.id, this.localTeam.toDTO(), this.localTeamGoals,
                 this.visitingTeam.toDTO(),
-                this.visitingTeamGoals, this.date, this.time, this.isPlayed, this.bonusPoint, this.call.toDTO());
+                this.visitingTeamGoals, this.date, this.time, this.isPlayed, this.bonusPoint, this.call.toDTO(),
+                this.clubTeam.toDTO());
 
         return matchDTO;
     }
@@ -168,7 +182,7 @@ public class Match {
     public MatchDTO toDTOwithoutCalls() {
         MatchDTO matchDTO = new MatchDTO(this.id, this.localTeam.toDTO(), this.localTeamGoals,
                 this.visitingTeam.toDTO(), this.visitingTeamGoals, this.date, this.time, this.isPlayed,
-                this.bonusPoint);
+                this.bonusPoint, this.clubTeam.toDTO());
 
         return matchDTO;
     }

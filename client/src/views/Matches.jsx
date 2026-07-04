@@ -16,7 +16,8 @@ export default function Matches() {
 
     const getMatches = async () => {
         try {
-            const response = await axios.get(`${SERVER_URL}/matches`, { withCredentials: true });
+            console.log(`${SERVER_URL}/matches/clubTeam/${location?.state?.authenticatedUser?.player?.clubTeams[0].id}`);
+            const response = await axios.get(`${SERVER_URL}/matches/clubTeam/${location?.state?.authenticatedUser?.player?.clubTeams[0].id}`, { withCredentials: true });
             setMatches(response.data);
         } catch (error) {
             console.log('Error al cargar los partidos: ', error);

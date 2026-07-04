@@ -27,12 +27,12 @@ public class MatchController {
         this.matchService = matchService;
     }
 
-    @GetMapping("/matches")
-    public ResponseEntity<List<MatchDTO>> getMatches() {
+    @GetMapping("/matches/clubTeam/{clubTeam}")
+    public ResponseEntity<List<MatchDTO>> getMatches(@PathVariable("clubTeam") long clubTeamId) {
         List<Match> matches = new ArrayList<>();
         List<MatchDTO> matchesDTO = new ArrayList<>();
         try {
-            matches = matchService.getMatches();
+            matches = matchService.getMatches(clubTeamId);
             for (Match match : matches) {
                 MatchDTO matchDTO = match.toDTOwithoutCalls();
                 matchesDTO.add(matchDTO);

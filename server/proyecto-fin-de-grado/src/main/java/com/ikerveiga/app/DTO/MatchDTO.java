@@ -15,6 +15,7 @@ public class MatchDTO {
     private boolean isPlayed;
     private Long bonusPoint;
     private CallDTO call;
+    private ClubTeamDTO clubTeam;
 
     public MatchDTO() {
 
@@ -22,7 +23,7 @@ public class MatchDTO {
 
     public MatchDTO(TeamDTO localTeam, Integer localTeamGoals, TeamDTO visitingTeam, Integer visitingTeamGoals,
             LocalDate date,
-            LocalTime time, boolean isPlayed, Long bonusPoint, CallDTO call) {
+            LocalTime time, boolean isPlayed, Long bonusPoint, CallDTO call, ClubTeamDTO clubTeam) {
         this.localTeam = localTeam;
         this.localTeamGoals = localTeamGoals;
         this.visitingTeam = visitingTeam;
@@ -32,10 +33,11 @@ public class MatchDTO {
         this.isPlayed = isPlayed;
         this.bonusPoint = bonusPoint;
         this.call = call;
+        this.clubTeam = clubTeam;
     }
 
     public MatchDTO(long id, TeamDTO localTeam, Integer localTeamGoals, TeamDTO visitingTeam, Integer visitingTeamGoals,
-            LocalDate date, LocalTime time, boolean isPlayed, Long bonusPoint, CallDTO call) {
+            LocalDate date, LocalTime time, boolean isPlayed, Long bonusPoint, CallDTO call, ClubTeamDTO clubTeam) {
         this.id = id;
         this.localTeam = localTeam;
         this.localTeamGoals = localTeamGoals;
@@ -46,10 +48,11 @@ public class MatchDTO {
         this.isPlayed = isPlayed;
         this.bonusPoint = bonusPoint;
         this.call = call;
+        this.clubTeam = clubTeam;
     }
 
     public MatchDTO(long id, TeamDTO localTeam, Integer localTeamGoals, TeamDTO visitingTeam, Integer visitingTeamGoals,
-            LocalDate date, LocalTime time, boolean isPlayed, Long bonusPoint) {
+            LocalDate date, LocalTime time, boolean isPlayed, Long bonusPoint, ClubTeamDTO clubTeam) {
         this.id = id;
         this.localTeam = localTeam;
         this.localTeamGoals = localTeamGoals;
@@ -59,6 +62,7 @@ public class MatchDTO {
         this.time = time;
         this.isPlayed = isPlayed;
         this.bonusPoint = bonusPoint;
+        this.clubTeam = clubTeam;
     }
 
     public long getId() {
@@ -135,5 +139,13 @@ public class MatchDTO {
 
     public void setCall(CallDTO call) {
         this.call = call;
+    }
+
+    public ClubTeamDTO getClubTeam() {
+        return this.clubTeam;
+    }
+
+    public void setClubTeam(ClubTeamDTO clubTeam) {
+        this.clubTeam = clubTeam;
     }
 }

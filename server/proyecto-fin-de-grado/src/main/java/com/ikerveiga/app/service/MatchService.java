@@ -18,8 +18,8 @@ public class MatchService {
         this.matchDAO = matchDAO;
     }
 
-    public List<Match> getMatches() {
-        List<Match> matches = matchDAO.findAll();
+    public List<Match> getMatches(Long clubTeamId) {
+        List<Match> matches = matchDAO.findByClubTeamId(clubTeamId);
 
         if (matches.isEmpty()) {
             throw new RuntimeException("No se han encontrado partidos");
