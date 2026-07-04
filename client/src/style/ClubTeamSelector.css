@@ -1,0 +1,42 @@
+#clubTeamSelectorMainDiv {
+    position: absolute;
+    top: 90px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+}
+
+.clubTeamSelectorDiv {
+    border: 1px solid rgb(7, 78, 200);
+    background-color: white;
+}
+
+.clubTeamSelectorText {
+    color: rgb(7, 78, 200);
+    font-family: Inria Sans;
+    font-weight: bold;
+    margin: 0;
+    padding: 0px 10px;
+    user-select: none;
+}
+
+.clubTeamSelectorDivFirst {
+    border: 1px solid rgb(7, 78, 200);
+    background-color: white;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.clubTeamSelectorDivLast {
+    border: 1px solid rgb(7, 78, 200);
+    background-color: white;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.clubTeamSelectorDiv:hover,
+.clubTeamSelectorDivFirst:hover,
+.clubTeamSelectorDivLast:hover {
+    cursor: pointer;
+}

@@ -5,6 +5,7 @@ import Match from '../components/Match.jsx'
 import '../style/Matches.css'
 import axios from 'axios'
 import MatchCompressed from '../components/MatchCompressed.jsx'
+import ClubTeamSelector from '../components/ClubTeamSelector.jsx'
 
 export default function Matches() {
 
@@ -38,6 +39,16 @@ export default function Matches() {
                 authenticatedUserPlayerId={location.state?.authenticatedUserPlayerId}
                 isCoach={location.state?.isCoach}
             />
+            {
+                (location.state?.authenticatedUser.player.clubTeams.length > 1) ?
+
+                    <ClubTeamSelector clubTeams={location.state?.authenticatedUser.player.clubTeams} />
+
+                    :
+
+                    (null)
+
+            }
             <div id='matchesDiv'>
                 {matches.map((match) =>
                     (width >= 600) ? (
