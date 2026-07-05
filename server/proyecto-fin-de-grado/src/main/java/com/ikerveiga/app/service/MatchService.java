@@ -38,8 +38,8 @@ public class MatchService {
         return match;
     }
 
-    public List<Match> getNextMatches() {
-        List<Match> nextMatches = matchDAO.findNextMatches();
+    public List<Match> getNextMatches(Long clubTeamId) {
+        List<Match> nextMatches = matchDAO.findNextMatches(clubTeamId);
 
         if (nextMatches.isEmpty()) {
             throw new RuntimeException("Next matches not found");

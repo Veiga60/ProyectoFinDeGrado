@@ -27,8 +27,8 @@ public class MatchController {
         this.matchService = matchService;
     }
 
-    @GetMapping("/matches/clubTeam/{clubTeam}")
-    public ResponseEntity<List<MatchDTO>> getMatches(@PathVariable("clubTeam") long clubTeamId) {
+    @GetMapping("/matches/clubTeam/{clubTeamId}")
+    public ResponseEntity<List<MatchDTO>> getMatches(@PathVariable("clubTeamId") long clubTeamId) {
         List<Match> matches = new ArrayList<>();
         List<MatchDTO> matchesDTO = new ArrayList<>();
         try {
@@ -70,10 +70,10 @@ public class MatchController {
         }
     }
 
-    @GetMapping("/matches/next")
-    public ResponseEntity<List<MatchDTO>> getNextMatches() {
+    @GetMapping("/matches/next/clubTeam/{clubTeamId}")
+    public ResponseEntity<List<MatchDTO>> getNextMatches(@PathVariable("clubTeamId") Long clubTeamId) {
         try {
-            List<Match> nextMatches = matchService.getNextMatches();
+            List<Match> nextMatches = matchService.getNextMatches(clubTeamId);
             List<MatchDTO> matchesDTO = new ArrayList<>();
             for (Match match : nextMatches) {
                 MatchDTO matchDTO;

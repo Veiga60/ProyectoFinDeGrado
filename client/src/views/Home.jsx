@@ -9,6 +9,7 @@ import '../style/Home.css'
 import basicLogo from '../assets/images/basicLogo.png'
 import basicUser from '../assets/images/basicUser.png'
 import StartMatchModal from '../components/StartMatchModal.jsx'
+import ClubTeamSelector from '../components/ClubTeamSelector.jsx'
 
 export default function Home() {
 
@@ -17,6 +18,13 @@ export default function Home() {
     const location = useLocation();
 
     const [authenticatedUser, setAuthenticatedUser] = useState(null);
+    const [clubTeamId, setClubTeamId] = useState(null);
+
+    useEffect(() => {
+        if (authenticatedUser?.player?.clubTeams?.length > 0) {
+            setClubTeamId(authenticatedUser.player.clubTeams[0].id);
+        }
+    }, [authenticatedUser]);
     const [nextMatch, setNextMatch] = useState();
     const [width, setWidth] = useState(window.innerWidth);
 
@@ -33,8 +41,6 @@ export default function Home() {
         try {
             const response = await axios.get(`${SERVER_URL}/me`, { withCredentials: true });
             setAuthenticatedUser(response.data);
-            location.state.authenticatedUser = response.data;
-            console.log(response.data);
         } catch (error) {
             console.log('Error al obtener la información del usuario: ', error);
         }
@@ -42,7 +48,8 @@ export default function Home() {
 
     const getNextMatch = async () => {
         try {
-            const response = await axios.get(`${SERVER_URL}/matches/next`, { withCredentials: true });
+            console.log(`${SERVER_URL}/matches/next/clubTeam/${clubTeamId}`);
+            const response = await axios.get(`${SERVER_URL}/matches/next/clubTeam/${clubTeamId}`, { withCredentials: true });
             setNextMatch(response.data[0]);
         } catch (error) {
             console.log('Error fetching next match: ', error);
@@ -86,11 +93,15 @@ export default function Home() {
     useEffect(() => {
         const handleResize = () => setWidth(window.innerWidth);
         window.addEventListener('resize', handleResize);
-
         whoAmI();
-        getNextMatch();
         return () => window.removeEventListener('resize', handleResize);
     }, []);
+
+    useEffect(() => {
+        if (clubTeamId) {
+            getNextMatch();
+        }
+    }, [clubTeamId]);
 
     useEffect(() => {
         if (!authenticatedUser) return;
@@ -112,6 +123,10 @@ export default function Home() {
                 authenticatedUserPlayerId={authenticatedUser?.player?.id}
                 isCoach={authenticatedUser?.isCoach}
             />
+            <ClubTeamSelector
+                clubTeams={authenticatedUser?.player?.clubTeams}
+                setClubTeamId={setClubTeamId}
+            />
             {(authenticatedUser != null) &&
                 <div id='homePageContentDiv'>
                     <div id='leftDiv'>
@@ -132,9 +147,11 @@ export default function Home() {
                                 </div>
                                 <div id='nextMatchAndButtonDiv'>
                                     {
-                                        (width < 700)
-                                            ? (<MatchCompressed match={nextMatch} />)
-                                            : (<Match match={nextMatch} />)
+                                        nextMatch && (
+                                            (width < 700)
+                                                ? (<MatchCompressed match={nextMatch} />)
+                                                : (<Match match={nextMatch} />)
+                                        )
                                     }
                                     {(authenticatedUser.isCoach == true) &&
                                         (
@@ -178,15 +195,15 @@ export default function Home() {
                                             (statsAvailable == true) ? (
                                                 (authenticatedUser.player.playerType == 'RINK_PLAYER') ? (
                                                     <>
-                                                        <img id='lastMatchLocalTeamImage' src={lastPlayedMatchPlayerMatchStats?.match.localTeam.logo ? `/logos/${lastPlayedMatchPlayerMatchStats?.match.localTeam.logo}` : basicLogo} alt={lastPlayedMatchPlayerMatchStats?.match.localTeam.name} />
+                                                        <img id='lastMatchLocalTeamImage' src={lastPlayedMatchPlayerMatchStats?.match?.localTeam?.logo ? `/logos/${lastPlayedMatchPlayerMatchStats?.match?.localTeam?.logo}` : basicLogo} alt={lastPlayedMatchPlayerMatchStats?.match?.localTeam?.name} />
                                                         <p id='lastMatchSeparator'>VS</p>
-                                                        <img id='lastMatchVisitingTeamImage' src={lastPlayedMatchPlayerMatchStats?.match.visitingTeam.logo ? `/logos/${lastPlayedMatchPlayerMatchStats?.match.visitingTeam.logo}` : basicLogo} alt={lastPlayedMatchPlayerMatchStats?.match.visitingTeam.name} />
+                                                        <img id='lastMatchVisitingTeamImage' src={lastPlayedMatchPlayerMatchStats?.match?.visitingTeam?.logo ? `/logos/${lastPlayedMatchPlayerMatchStats?.match?.visitingTeam?.logo}` : basicLogo} alt={lastPlayedMatchPlayerMatchStats?.match?.visitingTeam?.name} />
                                                     </>
                                                 ) : (
                                                     <>
-                                                        <img id='lastMatchLocalTeamImage' src={lastPlayedMatchGoalieMatchStats?.match.localTeam.logo ? `/logos/${lastPlayedMatchGoalieMatchStats?.match.localTeam.logo}` : basicLogo} alt={lastPlayedMatchGoalieMatchStats?.match.localTeam.name} />
+                                                        <img id='lastMatchLocalTeamImage' src={lastPlayedMatchGoalieMatchStats?.match?.localTeam?.logo ? `/logos/${lastPlayedMatchGoalieMatchStats?.match?.localTeam?.logo}` : basicLogo} alt={lastPlayedMatchGoalieMatchStats?.match?.localTeam?.name} />
                                                         <p id='lastMatchSeparator'>VS</p>
-                                                        <img id='lastMatchVisitingTeamImage' src={lastPlayedMatchGoalieMatchStats?.match.visitingTeam.logo ? `/logos/${lastPlayedMatchGoalieMatchStats?.match.visitingTeam.logo}` : basicLogo} alt={lastPlayedMatchGoalieMatchStats?.match.visitingTeam.name} />
+                                                        <img id='lastMatchVisitingTeamImage' src={lastPlayedMatchGoalieMatchStats?.match?.visitingTeam?.logo ? `/logos/${lastPlayedMatchGoalieMatchStats?.match?.visitingTeam?.logo}` : basicLogo} alt={lastPlayedMatchGoalieMatchStats?.match?.visitingTeam?.name} />
                                                     </>
                                                 )
                                             ) : (
