@@ -13,12 +13,13 @@ export default function Matches() {
     const location = useLocation();
 
     const [matches, setMatches] = useState([]);
+    const [clubTeamId, setClubTeamId] = useState(location.state?.authenticatedUser?.player?.clubTeams[0].id);
     const [width, setWidth] = useState(window.innerWidth)
 
     const getMatches = async () => {
         try {
-            console.log(`${SERVER_URL}/matches/clubTeam/${location?.state?.authenticatedUser?.player?.clubTeams[0].id}`);
-            const response = await axios.get(`${SERVER_URL}/matches/clubTeam/${location?.state?.authenticatedUser?.player?.clubTeams[0].id}`, { withCredentials: true });
+            console.log(`${SERVER_URL}/matches/clubTeam/${clubTeamId}`);
+            const response = await axios.get(`${SERVER_URL}/matches/clubTeam/${clubTeamId}`, { withCredentials: true });
             setMatches(response.data);
         } catch (error) {
             console.log('Error al cargar los partidos: ', error);
@@ -33,6 +34,10 @@ export default function Matches() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    useEffect(() => {
+        getMatches();
+    }, [clubTeamId])
+
     return (
         <>
             <Header
@@ -42,14 +47,17 @@ export default function Matches() {
             {
                 (location.state?.authenticatedUser.player.clubTeams.length > 1) ?
 
-                    <ClubTeamSelector clubTeams={location.state?.authenticatedUser.player.clubTeams} />
+                    <ClubTeamSelector
+                        clubTeams={location.state?.authenticatedUser.player.clubTeams}
+                        setClubTeamId={setClubTeamId}
+                    />
 
                     :
 
                     (null)
 
             }
-            <div id='matchesDiv'>
+            <div id='matchesDiv' onClick={() => console.log(clubTeamId)}>
                 {matches.map((match) =>
                     (width >= 600) ? (
                         <Match
