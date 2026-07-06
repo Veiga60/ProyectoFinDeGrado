@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,10 +24,10 @@ public class TeamStatsController {
         this.teamStatsService = teamStatsService;
     }
 
-    @GetMapping("/team/stats")
-    public ResponseEntity<TeamStatsDTO> getTeamStats() {
+    @GetMapping("/team/stats/clubTeam/{clubTeamId}")
+    public ResponseEntity<TeamStatsDTO> getTeamStats(@PathVariable("clubTeamId") Long clubTeamId) {
         try {
-            TeamStatsDTO teamStatsDTO = teamStatsService.getTeamStats().toDTO();
+            TeamStatsDTO teamStatsDTO = teamStatsService.getTeamStats(clubTeamId).toDTO();
             return ResponseEntity.ok(teamStatsDTO);
         } catch (RuntimeException e) {
             if (e.getMessage().equals("No se han encontrado estadísticas")) {

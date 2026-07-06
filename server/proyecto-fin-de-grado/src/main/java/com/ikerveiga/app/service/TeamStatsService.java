@@ -1,7 +1,5 @@
 package com.ikerveiga.app.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,13 +17,13 @@ public class TeamStatsService {
         this.teamStatsDAO = teamStatsDAO;
     }
 
-    public TeamStats getTeamStats() {
-        List<TeamStats> teamStats = teamStatsDAO.findAll();
+    public TeamStats getTeamStats(Long clubTeamId) {
+        TeamStats teamStats = teamStatsDAO.findByClubTeamId(clubTeamId);
 
-        if (teamStats.isEmpty()) {
+        if (teamStats == null) {
             throw new RuntimeException("No se han encontrado estadísticas");
         }
-        return teamStats.get(0);
+        return teamStats;
     }
 
     public void updateTeamStats(MatchResult matchResult, boolean bonusPoint, int goalsFor, int goalsAgainst,

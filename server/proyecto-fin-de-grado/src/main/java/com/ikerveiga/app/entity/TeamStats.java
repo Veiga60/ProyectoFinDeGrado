@@ -2,11 +2,14 @@ package com.ikerveiga.app.entity;
 
 import com.ikerveiga.app.dto.TeamStatsDTO;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -66,6 +69,10 @@ public class TeamStats {
     @Column(name = "three_vs_two", nullable = false, unique = false)
     private int threeVsTwo;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "club_team_id", referencedColumnName = "club_team_id")
+    ClubTeam clubTeam;
+
     public TeamStats() {
 
     }
@@ -73,7 +80,7 @@ public class TeamStats {
     public TeamStats(long id, int points, int gamesPlayed, int gamesWon, int gamesLost, int gamesTied, int bonusPoints,
             int goalsFor, int goalsAgainst, float powerPlayPercentage, float penaltyKillPercentage, int oneVsZero,
             int oneVsOne,
-            int twoVsOne, int twoVsTwo, int threeVsOne, int threeVsTwo) {
+            int twoVsOne, int twoVsTwo, int threeVsOne, int threeVsTwo, ClubTeam clubTeam) {
         this.id = id;
         this.points = points;
         this.gamesPlayed = gamesPlayed;
@@ -91,12 +98,13 @@ public class TeamStats {
         this.twoVsTwo = twoVsTwo;
         this.threeVsOne = threeVsOne;
         this.threeVsTwo = threeVsTwo;
+        this.clubTeam = clubTeam;
     }
 
     public TeamStats(int points, int gamesPlayed, int gamesWon, int gamesLost, int gamesTied, int bonusPoints,
             int goalsFor, int goalsAgainst, float powerPlayPercentage, float penaltyKillPercentage, int oneVsZero,
             int oneVsOne,
-            int twoVsOne, int twoVsTwo, int threeVsOne, int threeVsTwo) {
+            int twoVsOne, int twoVsTwo, int threeVsOne, int threeVsTwo, ClubTeam clubTeam) {
         this.points = points;
         this.gamesPlayed = gamesPlayed;
         this.gamesWon = gamesWon;
@@ -113,6 +121,7 @@ public class TeamStats {
         this.twoVsTwo = twoVsTwo;
         this.threeVsOne = threeVsOne;
         this.threeVsTwo = threeVsTwo;
+        this.clubTeam = clubTeam;
     }
 
     public long getId() {
@@ -247,12 +256,20 @@ public class TeamStats {
         this.threeVsTwo = threeVsTwo;
     }
 
+    public ClubTeam getClubTeam() {
+        return this.clubTeam;
+    }
+
+    public void setClubTeam(ClubTeam clubTeam) {
+        this.clubTeam = clubTeam;
+    }
+
     public TeamStatsDTO toDTO() {
         TeamStatsDTO teamStatsDTO = new TeamStatsDTO(this.id, this.points, this.gamesPlayed, this.gamesWon,
                 this.gamesLost,
                 this.gamesTied, this.bonusPoints, this.goalsFor, this.goalsAgainst, this.powerPlayPercentage,
                 this.penaltyKillPercentage, this.oneVsZero, this.oneVsOne, this.twoVsOne, this.twoVsTwo,
-                this.threeVsOne, this.threeVsTwo);
+                this.threeVsOne, this.threeVsTwo, this.clubTeam.toDTO());
 
         return teamStatsDTO;
     }

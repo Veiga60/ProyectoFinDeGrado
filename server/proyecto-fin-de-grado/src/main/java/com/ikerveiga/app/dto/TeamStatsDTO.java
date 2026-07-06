@@ -19,6 +19,7 @@ public class TeamStatsDTO {
     private int twoVsTwo;
     private int threeVsOne;
     private int threeVsTwo;
+    private ClubTeamDTO clubTeam;
 
     public TeamStatsDTO() {
 
@@ -28,7 +29,7 @@ public class TeamStatsDTO {
             int bonusPoints,
             int goalsFor, int goalsAgainst, float powerPlayPercentage, float penaltyKillPercentage, int oneVsZero,
             int oneVsOne,
-            int twoVsOne, int twoVsTwo, int threeVsOne, int threeVsTwo) {
+            int twoVsOne, int twoVsTwo, int threeVsOne, int threeVsTwo, ClubTeamDTO clubTeam) {
         this.id = id;
         this.points = points;
         this.gamesPlayed = gamesPlayed;
@@ -46,12 +47,13 @@ public class TeamStatsDTO {
         this.twoVsTwo = twoVsTwo;
         this.threeVsOne = threeVsOne;
         this.threeVsTwo = threeVsTwo;
+        this.clubTeam = clubTeam;
     }
 
     public TeamStatsDTO(int points, int gamesPlayed, int gamesWon, int gamesLost, int gamesTied, int bonusPoints,
             int goalsFor, int goalsAgainst, float powerPlayPercentage, float penaltyKillPercentage, int oneVsZero,
             int oneVsOne,
-            int twoVsOne, int twoVsTwo, int threeVsOne, int threeVsTwo) {
+            int twoVsOne, int twoVsTwo, int threeVsOne, int threeVsTwo, ClubTeamDTO clubTeam) {
         this.points = points;
         this.gamesPlayed = gamesPlayed;
         this.gamesWon = gamesWon;
@@ -68,6 +70,7 @@ public class TeamStatsDTO {
         this.twoVsTwo = twoVsTwo;
         this.threeVsOne = threeVsOne;
         this.threeVsTwo = threeVsTwo;
+        this.clubTeam = clubTeam;
     }
 
     public long getId() {
@@ -200,5 +203,13 @@ public class TeamStatsDTO {
 
     public void setThreeVsTwo(int threeVsTwo) {
         this.threeVsTwo = threeVsTwo;
+    }
+
+    public ClubTeamDTO getClubTeam() {
+        return this.clubTeam;
+    }
+
+    public void setClubTeam(ClubTeamDTO clubTeam) {
+        this.clubTeam = clubTeam;
     }
 }

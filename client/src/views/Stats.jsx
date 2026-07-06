@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import PlayerCard from '../components/PlayerCard';
 import { useNavigate, useLocation } from 'react-router-dom';
 import logoMetropolitano from '../assets/images/logo-metropolitanohc-negro-transparente.png'
+import ClubTeamSelector from '../components/ClubTeamSelector';
 
 export default function Stats() {
 
@@ -15,10 +16,11 @@ export default function Stats() {
 
     const [players, setPlayers] = useState([]);
     const [teamStats, setTeamStats] = useState({});
+    const [clubTeamId, setClubTeamId] = useState(location.state?.authenticatedUser?.player?.clubTeams[0].id);
 
     const getPlayers = async () => {
         try {
-            const response = await axios.get(`${SERVER_URL}/players`, { withCredentials: true });
+            const response = await axios.get(`${SERVER_URL}/players/clubTeam/${clubTeamId}`, { withCredentials: true });
             setPlayers(response.data);
         } catch (error) {
             console.log('Error al cargar los jugadores: ', error);
@@ -27,7 +29,8 @@ export default function Stats() {
 
     const getTeamStats = async () => {
         try {
-            const response = await axios.get(`${SERVER_URL}/team/stats`, { withCredentials: true });
+            console.log(`${SERVER_URL}/team/stats/clubTeam/${clubTeamId}`);
+            const response = await axios.get(`${SERVER_URL}/team/stats/clubTeam/${clubTeamId}`, { withCredentials: true });
             setTeamStats(response.data);
         } catch (error) {
             console.log('Error al cargar las estadísticas del equipo: ', error);
@@ -39,11 +42,20 @@ export default function Stats() {
         getTeamStats();
     }, []);
 
+    useEffect(() => {
+        getPlayers();
+        getTeamStats();
+    }, [clubTeamId]);
+
     return (
         <>
             <Header
                 authenticatedUserPlayerId={location.state?.authenticatedUserPlayerId}
                 isCoach={location.state?.isCoach}
+            />
+            <ClubTeamSelector
+                clubTeams={location.state?.authenticatedUser?.player?.clubTeams}
+                setClubTeamId={setClubTeamId}
             />
             <div id='statsMainDiv'>
                 <div id='tabsDiv'>
