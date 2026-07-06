@@ -24,13 +24,13 @@ public class PlayerController {
         this.playerService = playerService;
     }
 
-    @GetMapping("/players")
-    public ResponseEntity<List<PlayerDTO>> getPlayers() {
+    @GetMapping("/players/clubTeam/{clubTeamId}")
+    public ResponseEntity<List<PlayerDTO>> getPlayersByClubTeamId(@PathVariable("clubTeamId") long clubTeamId) {
         List<Player> players;
         List<PlayerDTO> playersDTO = new ArrayList<>();
 
         try {
-            players = playerService.getPlayers();
+            players = playerService.getPlayersByClubTeamId(clubTeamId);
             for (Player player : players) {
                 PlayerDTO playerDTO = player.toDTOWithoutStats();
                 playersDTO.add(playerDTO);

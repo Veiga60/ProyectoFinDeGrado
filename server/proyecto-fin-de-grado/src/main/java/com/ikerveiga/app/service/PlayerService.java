@@ -1,10 +1,12 @@
 package com.ikerveiga.app.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import com.ikerveiga.app.dao.PlayerRepository;
+import com.ikerveiga.app.entity.ClubTeam;
 import com.ikerveiga.app.entity.Player;
 
 @Service
@@ -16,14 +18,23 @@ public class PlayerService {
         this.playerDAO = playerDAO;
     }
 
-    public List<Player> getPlayers() {
+    public List<Player> getPlayersByClubTeamId(long clubTeamId) {
+        List<Player> playersToReturn = new ArrayList<>();
         List<Player> players = playerDAO.findAll();
 
         if (players.isEmpty()) {
             throw new RuntimeException("No se han encontrado jugadores");
         }
 
-        return players;
+        for (Player player : players) {
+            for (ClubTeam clubTeam : player.getClubTeams()) {
+                if (clubTeam.getId() == clubTeamId) {
+                    playersToReturn.add(player);
+                }
+            }
+        }
+
+        return playersToReturn;
     }
 
     public Player getPlayer(long id) {

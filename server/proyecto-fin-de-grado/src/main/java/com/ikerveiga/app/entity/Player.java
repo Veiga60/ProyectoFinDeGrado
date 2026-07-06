@@ -165,7 +165,7 @@ public class Player {
         this.playerStats = playerStats;
     }
 
-    public List<ClubTeam> getCLubTeams() {
+    public List<ClubTeam> getClubTeams() {
         return this.clubTeams;
     }
 

@@ -22,6 +22,7 @@ export default function Stats() {
         try {
             const response = await axios.get(`${SERVER_URL}/players/clubTeam/${clubTeamId}`, { withCredentials: true });
             setPlayers(response.data);
+            console.log(response.data);
         } catch (error) {
             console.log('Error al cargar los jugadores: ', error);
         }
@@ -29,7 +30,6 @@ export default function Stats() {
 
     const getTeamStats = async () => {
         try {
-            console.log(`${SERVER_URL}/team/stats/clubTeam/${clubTeamId}`);
             const response = await axios.get(`${SERVER_URL}/team/stats/clubTeam/${clubTeamId}`, { withCredentials: true });
             setTeamStats(response.data);
         } catch (error) {
