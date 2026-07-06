@@ -32,6 +32,7 @@ export default function Home() {
     const [lastPlayedMatchPlayerMatchStats, setLastPlayedMatchPlayerMatchStats] = useState();
     const [lastPlayedMatchGoalieMatchStats, setLastPlayedMatchGoalieMatchStats] = useState();
 
+    const [nextMatchAvailable, setNextMatchAvailable] = useState(false);
     const [statsAvailable, setStatsAvailable] = useState(false);
     const [recomendationsAvailable, setRecomendationsAvailable] = useState(false);
 
@@ -51,7 +52,9 @@ export default function Home() {
             console.log(`${SERVER_URL}/matches/next/clubTeam/${clubTeamId}`);
             const response = await axios.get(`${SERVER_URL}/matches/next/clubTeam/${clubTeamId}`, { withCredentials: true });
             setNextMatch(response.data[0]);
+            setNextMatchAvailable(true);
         } catch (error) {
+            setNextMatchAvailable(false);
             console.log('Error fetching next match: ', error);
         }
     }
@@ -147,11 +150,14 @@ export default function Home() {
                                 </div>
                                 <div id='nextMatchAndButtonDiv'>
                                     {
-                                        nextMatch && (
+                                        (nextMatchAvailable) ? (nextMatch && (
                                             (width < 700)
                                                 ? (<MatchCompressed match={nextMatch} />)
                                                 : (<Match match={nextMatch} />)
-                                        )
+                                        )) :
+                                            (<div id='notNextMatchDiv'>
+                                                <p id='notNextMatchText'>No hay próximo partido</p>
+                                            </div>)
                                     }
                                     {(authenticatedUser.isCoach == true) &&
                                         (

@@ -298,6 +298,23 @@
     justify-content: center;
 }
 
+#notNextMatchDiv {
+    width: 600px;
+    height: 100px;
+    background-color: white;
+    border: 2px solid rgb(7, 78, 200);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#notNextMatchText {
+    font-family: Inria Sans;
+    font-size: x-large;
+    color: black;
+}
+
 @media (max-width: 700px) {
     #greetingDiv {
         height: auto;
