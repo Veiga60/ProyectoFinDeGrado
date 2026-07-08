@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import Header from '../components/Header.jsx'
 import Match from '../components/Match.jsx'
@@ -6,6 +6,7 @@ import '../style/Matches.css'
 import axios from 'axios'
 import MatchCompressed from '../components/MatchCompressed.jsx'
 import ClubTeamSelector from '../components/ClubTeamSelector.jsx'
+import { AuthContext } from '../components/AuthContext.jsx'
 
 export default function Matches() {
 
@@ -13,7 +14,8 @@ export default function Matches() {
     const location = useLocation();
 
     const [matches, setMatches] = useState([]);
-    const [clubTeamId, setClubTeamId] = useState(location.state?.authenticatedUser?.player?.clubTeams[0].id);
+    const { authenticatedUser } = useContext(AuthContext);
+    const [clubTeamId, setClubTeamId] = useState(authenticatedUser?.player?.clubTeams?.[0]?.id);
     const [width, setWidth] = useState(window.innerWidth)
 
     const getMatches = async () => {
@@ -38,6 +40,10 @@ export default function Matches() {
         getMatches();
     }, [clubTeamId])
 
+    useEffect(() => {
+        setClubTeamId(authenticatedUser.player.clubTeams[0].id);
+    }, [authenticatedUser]);
+
     return (
         <>
             <Header
@@ -45,10 +51,10 @@ export default function Matches() {
                 isCoach={location.state?.isCoach}
             />
             {
-                (location.state?.authenticatedUser.player.clubTeams.length > 1) ?
+                (authenticatedUser?.player.clubTeams.length > 1) ?
 
                     <ClubTeamSelector
-                        clubTeams={location.state?.authenticatedUser.player.clubTeams}
+                        clubTeams={authenticatedUser?.player.clubTeams}
                         setClubTeamId={setClubTeamId}
                     />
 

@@ -1,15 +1,17 @@
 import '../style/Login.css'
 import Header from '../components/Header.jsx'
 import { useNavigate } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import axios from 'axios'
+import { useState, useContext } from 'react'
 import googleLogo from '../assets/images/google.png'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
+import { AuthContext } from '../components/AuthContext.jsx'
 
 export default function Login() {
 
     const SERVER_URL = "http://localhost:8081"
     const navigate = useNavigate()
+    const { login: loginContext } = useContext(AuthContext);
+
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -20,17 +22,7 @@ export default function Login() {
 
     const login = async () => {
         try {
-            const response = await axios.post(`${SERVER_URL}/login`,
-                {
-                    username: username,
-                    password: password
-                },
-                {
-                    headers: { 'Content-Type': 'application/json' },
-                    withCredentials: true
-                }
-            )
-            localStorage.setItem('jwt', response.data);
+            await loginContext(username, password);
             navigate("/home");
         } catch (error) {
             if (error.status == 403) {

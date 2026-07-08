@@ -22,19 +22,19 @@ export default function NavBar({ authenticatedUserPlayerId, isCoach, authenticat
 
     return (
         <div id="navbarDiv">
-            <div id="homeNavDiv" className="navbarSectionDiv" onClick={() => navigate('/home', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach, authenticatedUser: authenticatedUser } })}>
+            <div id="homeNavDiv" className="navbarSectionDiv" onClick={() => navigate('/home', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
                 <p id="homeNavText" className="navbarText">INICIO</p>
             </div>
-            <div id="matchesNavDiv" className="navbarSectionDiv" onClick={() => navigate('/matches', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach, authenticatedUser: authenticatedUser } })}>
+            <div id="matchesNavDiv" className="navbarSectionDiv" onClick={() => navigate('/matches', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
                 <p id="matchesNavText" className="navbarText">PARTIDOS</p>
             </div>
-            <div id="statsNavDiv" className="navbarSectionDiv" onClick={() => navigate('/stats', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach, authenticatedUser: authenticatedUser } })}>
+            <div id="statsNavDiv" className="navbarSectionDiv" onClick={() => navigate('/stats', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
                 <p id="statsNavText" className="navbarText">ESTADÍSTICAS</p>
             </div>
-            <div id="callsNavDiv" className="navbarSectionDiv" onClick={() => navigate('/calls', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach, authenticatedUser: authenticatedUser } })}>
+            <div id="callsNavDiv" className="navbarSectionDiv" onClick={() => navigate('/calls', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
                 <p id="callsNavText" className="navbarText">CONVOCATORIAS</p>
             </div>
-            <div id="forumNavDiv" className="navbarSectionDiv" onClick={() => navigate('/forum', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach, authenticatedUser: authenticatedUser } })}>
+            <div id="forumNavDiv" className="navbarSectionDiv" onClick={() => navigate('/forum', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>
                 <p id="forumNavText" className="navbarText">FORO</p>
             </div>
             <div id="ordersNavDiv" className="navbarSectionDiv" onClick={() => navigate('/orders', { state: { authenticatedUserPlayerId: authenticatedUserPlayerId, isCoach: isCoach } })}>

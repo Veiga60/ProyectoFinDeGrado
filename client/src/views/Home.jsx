@@ -2,7 +2,7 @@ import Header from '../components/Header.jsx'
 import Match from '../components/Match.jsx'
 import MatchCompressed from '../components/MatchCompressed.jsx'
 import axios from 'axios'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import coachHomePhoto from '../assets/images/coachHomePhoto.png'
 import '../style/Home.css'
@@ -10,21 +10,15 @@ import basicLogo from '../assets/images/basicLogo.png'
 import basicUser from '../assets/images/basicUser.png'
 import StartMatchModal from '../components/StartMatchModal.jsx'
 import ClubTeamSelector from '../components/ClubTeamSelector.jsx'
+import { AuthContext } from '../components/AuthContext.jsx'
 
 export default function Home() {
 
     const SERVER_URL = 'http://localhost:8081';
     const navigate = useNavigate();
-    const location = useLocation();
 
-    const [authenticatedUser, setAuthenticatedUser] = useState(null);
-    const [clubTeamId, setClubTeamId] = useState(null);
-
-    useEffect(() => {
-        if (authenticatedUser?.player?.clubTeams?.length > 0) {
-            setClubTeamId(authenticatedUser.player.clubTeams[0].id);
-        }
-    }, [authenticatedUser]);
+    const { authenticatedUser, isLoading, isAuthenticated } = useContext(AuthContext);
+    const [clubTeamId, setClubTeamId] = useState(authenticatedUser?.player?.clubTeams[0].id);
     const [nextMatch, setNextMatch] = useState();
     const [width, setWidth] = useState(window.innerWidth);
 
@@ -37,15 +31,6 @@ export default function Home() {
     const [recomendationsAvailable, setRecomendationsAvailable] = useState(false);
 
     const [showStartMatchModal, setShowStartMatchModal] = useState(false);
-
-    const whoAmI = async () => {
-        try {
-            const response = await axios.get(`${SERVER_URL}/me`, { withCredentials: true });
-            setAuthenticatedUser(response.data);
-        } catch (error) {
-            console.log('Error al obtener la información del usuario: ', error);
-        }
-    }
 
     const getNextMatch = async () => {
         try {
@@ -96,7 +81,6 @@ export default function Home() {
     useEffect(() => {
         const handleResize = () => setWidth(window.innerWidth);
         window.addEventListener('resize', handleResize);
-        whoAmI();
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 

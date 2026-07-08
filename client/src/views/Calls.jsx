@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import '../style/Calls.css'
+import ClubTeamSelector from '../components/ClubTeamSelector.jsx'
 
 export default function Calls() {
 
@@ -14,9 +15,11 @@ export default function Calls() {
     const [matches, setMatches] = useState([]);
     const [callsOfPlayer, setCallsOfPlayer] = useState([]);
 
+    const [clubTeamId, setClubTeamId] = useState(location.state?.authenticatedUser?.player?.clubTeams[0].id)
+
     const getNextMatches = async () => {
         try {
-            const response = await axios.get(`${SERVER_URL}/matches/next`, { withCredentials: true });
+            const response = await axios.get(`${SERVER_URL}/matches/next/clubTeam/${clubTeamId}`, { withCredentials: true });
             setMatches(response.data);
         } catch (error) {
             console.log('Error fetching next match: ', error);
@@ -43,11 +46,22 @@ export default function Calls() {
         getNextMatches();
     }, []);
 
+    useEffect(() => {
+        if (location.state?.isCoach == false) {
+            getCallsOfPlayer(location.state?.authenticatedUserPlayerId);
+        }
+        getNextMatches();
+    }, [clubTeamId]);
+
     return (
         <>
             <Header
                 authenticatedUserPlayerId={location.state.authenticatedUserPlayerId}
                 isCoach={location.state.isCoach}
+            />
+            <ClubTeamSelector
+                clubTeams={location.state?.authenticatedUser?.player?.clubTeams}
+                setClubTeamId={setClubTeamId}
             />
             <div id='callsMainDiv'>
                 <div id='nextMatchesDiv'>
