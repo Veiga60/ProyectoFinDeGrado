@@ -32,7 +32,7 @@ export default function CallDetail() {
 
     const getPlayers = async () => {
         try {
-            const response = await axios.get(`${SERVER_URL}/players`, { withCredentials: true });
+            const response = await axios.get(`${SERVER_URL}/players/clubTeam/${location.state?.clubTeamId}`, { withCredentials: true });
             setPlayers(response.data);
         } catch (error) {
             console.log('Error fetching players: ', error);
@@ -62,7 +62,6 @@ export default function CallDetail() {
             console.log('Error confirming attendance/not attendance: ', error);
         }
     }
-
 
     useEffect(() => {
         const handleResize = () => setWidth(window.innerWidth);

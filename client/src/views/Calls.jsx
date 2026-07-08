@@ -94,7 +94,7 @@ export default function Calls() {
                                 return <MatchCard
                                     key={match.id}
                                     match={match}
-                                    onClick={() => navigate(`/calls/match/${match.id}`, { state: { authenticatedUserPlayerId: location.state?.authenticatedUserPlayerId, isCoach: location.state?.isCoach } })}
+                                    onClick={() => navigate(`/calls/match/${match.id}`, { state: { authenticatedUserPlayerId: location.state?.authenticatedUserPlayerId, isCoach: location.state?.isCoach, clubTeamId: clubTeamId } })}
                                     className={(pendingCall) ? ('pendingCall') : (undefined)}
                                 />
                             }
