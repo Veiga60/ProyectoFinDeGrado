@@ -1,5 +1,4 @@
 import Header from '../components/Header.jsx'
-import { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import '../style/Forum.css'
 

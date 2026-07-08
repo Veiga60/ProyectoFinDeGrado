@@ -13,6 +13,14 @@ public class UserDTO {
 
     }
 
+    public UserDTO(long id, String username, String email, String password, boolean isCoach) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.isCoach = isCoach;
+    }
+
     public UserDTO(long id, String username, String email, String password, boolean isCoach, PlayerDTO player) {
         this.id = id;
         this.username = username;
@@ -22,12 +30,25 @@ public class UserDTO {
         this.player = player;
     }
 
+    public UserDTO(long id, String username, String email, boolean isCoach) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.isCoach = isCoach;
+    }
+
     public UserDTO(long id, String username, String email, boolean isCoach, PlayerDTO player) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.isCoach = isCoach;
         this.player = player;
+    }
+
+    public UserDTO(String username, String email, boolean isCoach) {
+        this.username = username;
+        this.email = email;
+        this.isCoach = isCoach;
     }
 
     public UserDTO(String username, String email, boolean isCoach, PlayerDTO player) {

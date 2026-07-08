@@ -35,6 +35,13 @@ public class User {
 
     }
 
+    public User(String username, String email, String password, boolean isCoach) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.isCoach = isCoach;
+    }
+
     public User(String username, String email, String password, boolean isCoach, Player player) {
         this.username = username;
         this.email = email;
@@ -54,6 +61,19 @@ public class User {
         this.email = email;
         this.isCoach = isCoach;
         this.player = player;
+    }
+
+    public User(long id, String username, String email, boolean isCoach) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.isCoach = isCoach;
+    }
+
+    public User(String username, String email, boolean isCoach) {
+        this.username = username;
+        this.email = email;
+        this.isCoach = isCoach;
     }
 
     public User(String username, String email, boolean isCoach, Player player) {

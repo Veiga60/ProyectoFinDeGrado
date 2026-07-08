@@ -1,14 +1,14 @@
 import Header from '../components/Header.jsx'
-import { useLocation, useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import CreateDebateModal from '../components/CreateDebateModal.jsx'
 import '../style/ForumDebates.css'
+import { AuthContext } from '../components/AuthContext.jsx';
 
 export default function ForumDebates() {
 
     const SERVER_URL = 'http://localhost:8081'
-    const location = useLocation();
     const { category } = useParams();
     const navigate = useNavigate();
 
@@ -16,6 +16,8 @@ export default function ForumDebates() {
 
     const [debates, setDebates] = useState([]);
     const [title, setTitle] = useState();
+
+    const { authenticatedUser } = useContext(AuthContext);
 
     const toggleCreateDebateModal = async () => {
         await setCreateDebateModal(!createDebateModal);
@@ -55,18 +57,13 @@ export default function ForumDebates() {
 
     return (
         <>
-            <Header
-                authenticatedUserPlayerId={location.state.authenticatedUserPlayerId}
-                isCoach={location.state.isCoach}
-            />
+            <Header />
             <div id='debatesMainDiv'>
                 <div id='debatesDiv'>
                     {
                         debates.map((debate) => {
                             return (
-                                <div key={debate.id} className='debateDiv' onClick={() => navigate(`/forum/categories/${category}/${debate.id}`, {
-                                    state: { authenticatedUserPlayerId: location.state.authenticatedUserPlayerId, isCoach: location.state.isCoach }
-                                })}>
+                                <div key={debate.id} className='debateDiv' onClick={() => navigate(`/forum/categories/${category}/${debate.id}`)}>
                                     <p id='debateText'>{debate.title}</p>
                                 </div>
                             )
@@ -74,7 +71,7 @@ export default function ForumDebates() {
                     }
                 </div>
                 <div id='createDebateButtonDiv'>
-                    {(location.state.isCoach) &&
+                    {(authenticatedUser?.isCoach) &&
                         (
                             <button className='createDebateButton' onClick={toggleCreateDebateModal}>NUEVO DEBATE</button>
                         )
