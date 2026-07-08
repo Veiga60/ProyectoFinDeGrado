@@ -14,10 +14,27 @@
 
 #nextMatchesDiv {
     width: 100%;
-    margin-top: 30px;
+    margin-top: 50px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
     align-items: center;
     justify-content: center;
     gap: 50px;
+}
+
+#callsErrorDiv {
+    white-space: nowrap;
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+#callsErrorText {
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: xx-large;
+    color: black;
+    text-align: center;
 }

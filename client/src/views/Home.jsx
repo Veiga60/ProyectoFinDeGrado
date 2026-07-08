@@ -18,7 +18,7 @@ export default function Home() {
     const navigate = useNavigate();
 
     const { authenticatedUser, isLoading, isAuthenticated } = useContext(AuthContext);
-    const [clubTeamId, setClubTeamId] = useState(authenticatedUser?.player?.clubTeams[0].id);
+    const [clubTeamId, setClubTeamId] = useState();
     const [nextMatch, setNextMatch] = useState();
     const [width, setWidth] = useState(window.innerWidth);
 

@@ -18,7 +18,7 @@ export default function Stats() {
     const [players, setPlayers] = useState([]);
     const [teamStats, setTeamStats] = useState({});
     const { authenticatedUser } = useContext(AuthContext);
-    const [clubTeamId, setClubTeamId] = useState(authenticatedUser?.player?.clubTeams[0].id);
+    const [clubTeamId, setClubTeamId] = useState();
 
     const getPlayers = async () => {
         try {

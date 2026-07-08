@@ -15,7 +15,7 @@ export default function Matches() {
 
     const [matches, setMatches] = useState([]);
     const { authenticatedUser } = useContext(AuthContext);
-    const [clubTeamId, setClubTeamId] = useState(authenticatedUser?.player?.clubTeams?.[0]?.id);
+    const [clubTeamId, setClubTeamId] = useState();
     const [width, setWidth] = useState(window.innerWidth)
 
     const getMatches = async () => {
