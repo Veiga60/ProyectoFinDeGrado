@@ -1,11 +1,12 @@
 import Header from '../components/Header.jsx'
 import Match from '../components/Match.jsx'
 import PlayerCard from '../components/PlayerCard.jsx'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { useParams, useLocation } from 'react-router-dom'
 import MatchCompressed from '../components/MatchCompressed.jsx'
 import axios from 'axios'
 import '../style/CallDetail.css'
+import { AuthContext } from '../components/AuthContext.jsx'
 
 export default function CallDetail() {
 
@@ -17,6 +18,8 @@ export default function CallDetail() {
     const [players, setPlayers] = useState([]);
     const [call, setCall] = useState();
     const [width, setWidth] = useState(window.innerWidth)
+
+    const { authenticatedUser } = useContext(AuthContext);
 
     const getMatch = async () => {
         try {
@@ -50,7 +53,7 @@ export default function CallDetail() {
 
     const setAttendance = async (callId, attendance) => {
         try {
-            await axios.put(`${SERVER_URL}/calls/${callId}/players/${location.state.authenticatedUserPlayerId}`,
+            await axios.put(`${SERVER_URL}/calls/${callId}/players/${authenticatedUser?.player?.id}`,
                 {},
                 {
                     params: { attendance: attendance },
@@ -74,10 +77,7 @@ export default function CallDetail() {
 
     return (
         <>
-            <Header
-                authenticatedUserPlayerId={location.state?.authenticatedUserPlayerId}
-                isCoach={location.state?.isCoach}
-            />
+            <Header />
             <div id='callDetailContentDiv'>
                 <div id='selectedMatchDiv'>
                     <div id='callDetailMatchDiv'>
@@ -94,7 +94,7 @@ export default function CallDetail() {
                         }
                     </div>
                     {
-                        ((call != undefined && location.state?.isCoach == false && call?.callPlayerStatus[Number(location.state.authenticatedUserPlayerId)] == 'PENDING')
+                        ((call != undefined && authenticatedUser?.isCoach == false && call?.callPlayerStatus[Number(authenticatedUser?.player?.id)] == 'PENDING')
                             &&
                             (
                                 <div id='attendanceButtonsDiv'>
@@ -115,7 +115,7 @@ export default function CallDetail() {
                                 player={player}
                                 onClick={() => callPlayer(player.id)}
                                 status={call?.callPlayerStatus[player.id]}
-                                enableHover={location.state?.isCoach}
+                                enableHover={authenticatedUser?.isCoach}
                             />
                         )}
                     </div>

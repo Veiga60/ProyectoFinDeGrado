@@ -105,11 +105,7 @@ export default function Home() {
 
     return (
         <>
-            <Header
-                authenticatedUser={authenticatedUser}
-                authenticatedUserPlayerId={authenticatedUser?.player?.id}
-                isCoach={authenticatedUser?.isCoach}
-            />
+            <Header />
             <ClubTeamSelector
                 clubTeams={authenticatedUser?.player?.clubTeams}
                 setClubTeamId={setClubTeamId}
@@ -160,7 +156,7 @@ export default function Home() {
                                     <p id='recomendationsText'>Recomendaciones</p>
                                     {
                                         (recomendationsAvailable == true) ? (
-                                            <div id='recomendations' onClick={() => { navigate(`/recomendations/matches/${lastPlayedMatch.id}`, { state: { authenticatedUserPlayerId: authenticatedUser?.player?.id, isCoach: authenticatedUser?.isCoach, match: lastPlayedMatch } }) }}>
+                                            <div id='recomendations' onClick={() => { navigate(`/recomendations/matches/${lastPlayedMatch.id}`, { match: lastPlayedMatch }) }}>
                                                 <p id='seeRecomendationsText'>Ver recomendaciones del partido:</p>
                                                 <div id='lastPlayedMatchDiv'>
                                                     <img id='lastPlayedMatchLocalTeamImage' src={lastPlayedMatch?.localTeam?.logo ? `/logos/${lastPlayedMatch?.localTeam?.logo}` : basicLogo} alt={`${lastPlayedMatch?.localTeam?.name}`} />

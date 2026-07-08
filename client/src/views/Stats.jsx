@@ -56,10 +56,7 @@ export default function Stats() {
 
     return (
         <>
-            <Header
-                authenticatedUserPlayerId={location.state?.authenticatedUserPlayerId}
-                isCoach={location.state?.isCoach}
-            />
+            <Header />
             <ClubTeamSelector
                 clubTeams={authenticatedUser?.player?.clubTeams}
                 setClubTeamId={setClubTeamId}

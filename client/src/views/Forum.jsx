@@ -5,24 +5,18 @@ import '../style/Forum.css'
 
 export default function Forum() {
 
-    const SERVER_URL = 'http://localhost:8081';
     const location = useLocation();
     const navigate = useNavigate();
 
     const categories = ['LIGA PLATA', 'ENTRENAMIENTOS', 'TRASLADO A PARTIDOS', 'CAMPEONATO DE ESPAÑA', 'TEMAS COMUNES'];
 
-    const [debates, setDebates] = useState();
-
     return (
         <>
-            <Header
-                authenticatedUserPlayerId={location.state.authenticatedUserPlayerId}
-                isCoach={location.state.isCoach}
-            />
+            <Header />
             <div id='forumMainDiv'>
                 {
                     categories.map((category, index) => (
-                        <div key={index} className='categoryDiv' onClick={() => navigate(`/forum/categories/${category.replace(' ', '_').toLowerCase()}`, { state: { authenticatedUserPlayerId: location.state.authenticatedUserPlayerId, isCoach: location.state.isCoach } })}>
+                        <div key={index} className='categoryDiv' onClick={() => navigate(`/forum/categories/${category.replace(' ', '_').toLowerCase()}`)}>
                             <p className='categoryText'>{category}</p>
                         </div>
                     ))

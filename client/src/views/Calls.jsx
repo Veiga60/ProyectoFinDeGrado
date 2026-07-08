@@ -40,7 +40,7 @@ export default function Calls() {
             const response = await axios.get(`${SERVER_URL}/calls/player/${playerId}`, { withCredentials: true });
             let tempCallsOfPlayer = [];
             for (let i = 0; i < response.data.length; i++) {
-                tempCallsOfPlayer.push({ match: response.data[i]?.match.id, callStatus: response.data[i].callPlayerStatus[location.state.authenticatedUserPlayerId] });
+                tempCallsOfPlayer.push({ match: response.data[i]?.match.id, callStatus: response.data[i].callPlayerStatus[authenticatedUser?.player?.id] });
             }
             setCallsOfPlayer(tempCallsOfPlayer);
         } catch (error) {
@@ -50,7 +50,7 @@ export default function Calls() {
 
     useEffect(() => {
         if (authenticatedUser?.isCoach == false) {
-            getCallsOfPlayer(location.state?.authenticatedUserPlayerId);
+            getCallsOfPlayer(authenticatedUser?.player?.id);
         }
         getNextMatches();
     }, []);
@@ -68,10 +68,7 @@ export default function Calls() {
 
     return (
         <>
-            <Header
-                authenticatedUserPlayerId={location.state.authenticatedUserPlayerId}
-                isCoach={location.state.isCoach}
-            />
+            <Header />
             <ClubTeamSelector
                 clubTeams={authenticatedUser?.player?.clubTeams}
                 setClubTeamId={setClubTeamId}
@@ -94,7 +91,7 @@ export default function Calls() {
                                 return <MatchCard
                                     key={match.id}
                                     match={match}
-                                    onClick={() => navigate(`/calls/match/${match.id}`, { state: { authenticatedUserPlayerId: location.state?.authenticatedUserPlayerId, isCoach: location.state?.isCoach, clubTeamId: clubTeamId } })}
+                                    onClick={() => navigate(`/calls/match/${match.id}`, { state: { clubTeamId: clubTeamId } })}
                                     className={(pendingCall) ? ('pendingCall') : (undefined)}
                                 />
                             }

@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react'
 import HamburgerMenu from './HamburgerMenu.jsx'
 
 
-function Header({ authenticatedUserPlayerId, isCoach, authenticatedUser }) {
+function Header() {
 
     const location = useLocation();
 
@@ -41,18 +41,12 @@ function Header({ authenticatedUserPlayerId, isCoach, authenticatedUser }) {
             </div>
             {((location.pathname != '/' && location.pathname != '/signup' && location.pathname != '/error/unauthorized' && location.pathname != '/select_role') && (width > 1050)) &&
                 <div id='navbar'>
-                    <NavBar
-                        authenticatedUser={authenticatedUser}
-                        authenticatedUserPlayerId={authenticatedUserPlayerId}
-                        isCoach={isCoach}
-                    />
+                    <NavBar />
                 </div>
             }
             {
                 (width < 1050) && (
                     <HamburgerMenu
-                        authenticatedUserPlayerId={authenticatedUserPlayerId}
-                        isCoach={isCoach}
                         className={showHamburgerMenu ? 'menuIsOpen' : 'menuIsClosed'}
                     />
                 )

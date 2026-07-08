@@ -46,10 +46,7 @@ export default function Matches() {
 
     return (
         <>
-            <Header
-                authenticatedUserPlayerId={location.state?.authenticatedUserPlayerId}
-                isCoach={location.state?.isCoach}
-            />
+            <Header />
             {
                 (authenticatedUser?.player.clubTeams.length > 1) ?
 
