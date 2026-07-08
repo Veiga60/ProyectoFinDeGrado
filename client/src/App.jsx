@@ -25,6 +25,7 @@ import './style/App.css'
 import Recomendations from './views/Recomendations.jsx'
 import RecomendationsPlayer from './views/RecomendationsPlayer.jsx'
 import RecomendationsTeam from './views/RecomendationsTeam.jsx'
+import SelectClubTeam from './views/SelectClubTeam.jsx'
 
 export default function App() {
 
@@ -52,6 +53,7 @@ export default function App() {
           <Route path="/recomendations/matches/:matchId" element={<Recomendations />} />
           <Route path="/recomendations/matches/:matchId/players/:playerId" element={<RecomendationsPlayer />} />
           <Route path="/recomendations/matches/:matchId/team" element={<RecomendationsTeam />} />
+          <Route path="/select_clubTeams" element={<SelectClubTeam />} />
           <Route path="/error/unauthorized" element={<Unauthorized />} />
         </Routes>
       </BrowserRouter>

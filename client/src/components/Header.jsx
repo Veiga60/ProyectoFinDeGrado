@@ -39,7 +39,7 @@ function Header() {
                     )
                 }
             </div>
-            {((location.pathname != '/' && location.pathname != '/signup' && location.pathname != '/error/unauthorized' && location.pathname != '/select_role') && (width > 1050)) &&
+            {((location.pathname != '/' && location.pathname != '/signup' && location.pathname != '/error/unauthorized' && location.pathname != '/select_role' && location.pathname != '/select_clubTeams') && (width > 1050)) &&
                 <div id='navbar'>
                     <NavBar />
                 </div>

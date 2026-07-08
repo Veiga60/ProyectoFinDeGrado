@@ -1,0 +1,17 @@
+#selectClubTeamMainDiv {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    height: calc(100% - 80px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#clubTeamsDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
