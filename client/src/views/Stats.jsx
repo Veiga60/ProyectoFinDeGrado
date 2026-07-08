@@ -2,11 +2,12 @@ import Header from '../components/Header'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import '../style/Stats.css'
 import axios from 'axios'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import PlayerCard from '../components/PlayerCard';
 import { useNavigate, useLocation } from 'react-router-dom';
 import logoMetropolitano from '../assets/images/logo-metropolitanohc-negro-transparente.png'
 import ClubTeamSelector from '../components/ClubTeamSelector';
+import { AuthContext } from '../components/AuthContext';
 
 export default function Stats() {
 
@@ -16,13 +17,14 @@ export default function Stats() {
 
     const [players, setPlayers] = useState([]);
     const [teamStats, setTeamStats] = useState({});
-    const [clubTeamId, setClubTeamId] = useState(location.state?.authenticatedUser?.player?.clubTeams[0].id);
+    const { authenticatedUser } = useContext(AuthContext);
+    const [clubTeamId, setClubTeamId] = useState(authenticatedUser?.player?.clubTeams[0].id);
 
     const getPlayers = async () => {
         try {
+            if (!clubTeamId) return;
             const response = await axios.get(`${SERVER_URL}/players/clubTeam/${clubTeamId}`, { withCredentials: true });
             setPlayers(response.data);
-            console.log(response.data);
         } catch (error) {
             console.log('Error al cargar los jugadores: ', error);
         }
@@ -30,6 +32,7 @@ export default function Stats() {
 
     const getTeamStats = async () => {
         try {
+            if (!clubTeamId) return;
             const response = await axios.get(`${SERVER_URL}/team/stats/clubTeam/${clubTeamId}`, { withCredentials: true });
             setTeamStats(response.data);
         } catch (error) {
@@ -47,6 +50,10 @@ export default function Stats() {
         getTeamStats();
     }, [clubTeamId]);
 
+    useEffect(() => {
+        setClubTeamId(authenticatedUser?.player?.clubTeams[0].id);
+    }, [authenticatedUser]);
+
     return (
         <>
             <Header
@@ -54,7 +61,7 @@ export default function Stats() {
                 isCoach={location.state?.isCoach}
             />
             <ClubTeamSelector
-                clubTeams={location.state?.authenticatedUser?.player?.clubTeams}
+                clubTeams={authenticatedUser?.player?.clubTeams}
                 setClubTeamId={setClubTeamId}
             />
             <div id='statsMainDiv'>

@@ -20,7 +20,7 @@ export default function Matches() {
 
     const getMatches = async () => {
         try {
-            console.log(`${SERVER_URL}/matches/clubTeam/${clubTeamId}`);
+            if (!clubTeamId) return;
             const response = await axios.get(`${SERVER_URL}/matches/clubTeam/${clubTeamId}`, { withCredentials: true });
             setMatches(response.data);
         } catch (error) {
@@ -41,7 +41,7 @@ export default function Matches() {
     }, [clubTeamId])
 
     useEffect(() => {
-        setClubTeamId(authenticatedUser.player.clubTeams[0].id);
+        setClubTeamId(authenticatedUser?.player?.clubTeams[0].id);
     }, [authenticatedUser]);
 
     return (
