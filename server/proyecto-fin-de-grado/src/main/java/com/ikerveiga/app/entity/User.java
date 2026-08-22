@@ -31,6 +31,10 @@ public class User {
     @JoinColumn(name = "player_id", referencedColumnName = "player_id")
     protected Player player;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "coach_id", referencedColumnName = "coach_id")
+    protected Coach coach;
+
     public User() {
 
     }
@@ -117,6 +121,18 @@ public class User {
 
     public Player getPlayer() {
         return this.player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Coach getCoach() {
+        return this.coach;
+    }
+
+    public void setCoach(Coach coach) {
+        this.coach = coach;
     }
 
     public UserDTO toDTO() {

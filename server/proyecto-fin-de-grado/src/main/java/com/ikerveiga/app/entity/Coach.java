@@ -9,6 +9,9 @@ import com.ikerveiga.app.dto.CoachDTO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
@@ -16,47 +19,35 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "coaches")
-public class Coach extends User {
+public class Coach {
 
-    @Column(name = "coach_password", nullable = true, unique = false)
-    String password;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "coach_id", nullable = false, unique = true)
+    private long id;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "coach_club_teams", joinColumns = @JoinColumn(name = "coach_id"), inverseJoinColumns = @JoinColumn(name = "club_team_id"))
     private List<ClubTeam> clubTeams;
 
     public Coach() {
-
     }
 
-    public Coach(String username, String email, String password, boolean isCoach,
-            List<ClubTeam> clubTeams) {
-        super(username, email, true);
-        this.password = password;
+    public Coach(long id, List<ClubTeam> clubTeams) {
+        this.id = id;
         this.clubTeams = clubTeams;
     }
 
-    public Coach(long id, String username, List<ClubTeam> clubTeams) {
-        super(id, username);
+    public Coach(List<ClubTeam> clubTeams) {
         this.clubTeams = clubTeams;
     }
 
-    public Coach(long id, String username, String email, boolean isCoach, List<ClubTeam> clubTeams) {
-        super(id, username, email, true);
-        this.clubTeams = clubTeams;
+    public long getId() {
+        return this.id;
     }
 
-    public Coach(String username, String email, boolean isCoach, List<ClubTeam> clubTeams) {
-        super(username, email, true);
-        this.clubTeams = clubTeams;
-    }
-
-    public String getPassword() {
-        return this.password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public List<ClubTeam> getClubTeams() {
@@ -70,11 +61,13 @@ public class Coach extends User {
     public CoachDTO toDTO() {
         List<ClubTeamDTO> clubTeamsDTO = new ArrayList<>();
 
-        for (ClubTeam clubTeam : this.clubTeams) {
-            clubTeamsDTO.add(clubTeam.toDTO());
+        if (this.clubTeams != null) {
+            for (ClubTeam clubTeam : this.clubTeams) {
+                clubTeamsDTO.add(clubTeam.toDTO());
+            }
         }
 
-        return new CoachDTO(this.id, this.username, this.email, this.password, true, clubTeamsDTO);
+        return new CoachDTO(this.id, clubTeamsDTO);
     }
 
 }

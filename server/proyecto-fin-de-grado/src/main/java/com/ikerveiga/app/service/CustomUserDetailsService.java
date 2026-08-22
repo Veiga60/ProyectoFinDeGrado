@@ -30,6 +30,9 @@ public class CustomUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userDAO.findByUsername(username);
         if (user == null) {
+            user = oAuth2UserDAO.findByUsername(username);
+        }
+        if (user == null) {
             throw new UsernameNotFoundException("Usuario con nombre " + username + " no encontrado.");
         }
 
@@ -41,17 +44,22 @@ public class CustomUserDetailsService implements UserDetailsService {
             password = "";
         }
 
+        PlayerDTO playerDTO = user.getPlayer() != null ? user.getPlayer().toDTOWithoutStatsAndCalls() : null;
+
         return new CustomUserDetails(
                 user.getUsername(),
                 user.getEmail(),
                 password,
                 user.getIsCoach(),
-                user.getPlayer().toDTOWithoutStatsAndCalls(),
+                playerDTO,
                 Collections.emptyList());
     }
 
     public UserDetails loadUserByEmail(String email) throws UsernameNotFoundException {
         User user = userDAO.findByEmail(email);
+        if (user == null) {
+            user = oAuth2UserDAO.findByEmail(email);
+        }
 
         if (user == null) {
             throw new UsernameNotFoundException("Usuario con nombre " + email + " no encontrado.");

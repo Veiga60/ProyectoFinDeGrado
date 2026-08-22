@@ -13,7 +13,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.ikerveiga.app.entity.AuthorizedEmail;
-import com.ikerveiga.app.entity.OAuth2User;
 import com.ikerveiga.app.entity.User;
 
 import jakarta.servlet.http.HttpServletResponse;
@@ -26,11 +25,15 @@ import com.ikerveiga.app.dao.UserRepository;
 import com.ikerveiga.app.dto.PlayerDTO;
 import com.ikerveiga.app.CustomUserDetails;
 
+import com.ikerveiga.app.dao.CoachRepository;
+import com.ikerveiga.app.entity.Coach;
+
 @Service
 public class UserService {
 
     UserRepository userDAO;
     OAuth2UserRepository oAuth2UserDAO;
+    CoachRepository coachDAO;
     JwtUtil jwtUtil;
     AuthenticationManager authManager;
     PasswordEncoder passwordEncoder;
@@ -38,12 +41,14 @@ public class UserService {
     AuthorizedEmailRepository authorizedEmailDAO;
 
     @Autowired
-    public UserService(UserRepository userDAO, OAuth2UserRepository oAuth2UserDAO, JwtUtil jwtUtil,
+    public UserService(UserRepository userDAO, OAuth2UserRepository oAuth2UserDAO, CoachRepository coachDAO,
+            JwtUtil jwtUtil,
             AuthenticationManager authManager,
             PasswordEncoder passwordEncoder, CookiesService cookiesService,
             AuthorizedEmailRepository authorizedEmailDAO) {
         this.userDAO = userDAO;
         this.oAuth2UserDAO = oAuth2UserDAO;
+        this.coachDAO = coachDAO;
         this.jwtUtil = jwtUtil;
         this.authManager = authManager;
         this.passwordEncoder = passwordEncoder;
@@ -120,15 +125,23 @@ public class UserService {
         User user = userDAO.findByEmail(email);
 
         if (user == null) {
-            OAuth2User oAuth2User = oAuth2UserDAO.findByEmail(email);
-            if (oAuth2User == null) {
+            user = oAuth2UserDAO.findByEmail(email);
+            if (user == null) {
                 throw new RuntimeException("Usuario no registrado");
             }
-
-            oAuth2UserDAO.setIsCoach(isCoach, email);
         }
 
-        userDAO.setIsCoach(isCoach, email);
+        user.setIsCoach(isCoach);
+
+        if (isCoach) {
+            if (user.getCoach() == null) {
+                Coach coach = new Coach();
+                coachDAO.save(coach);
+                user.setCoach(coach);
+            }
+        }
+
+        userDAO.save(user);
 
         String role = isCoach ? "ROLE_COACH" : "ROLE_PLAYER";
         String jwt = jwtUtil.generateJwtToken(email, role);

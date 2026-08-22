@@ -9,6 +9,11 @@ public class CoachDTO extends UserDTO {
     public CoachDTO() {
     }
 
+    public CoachDTO(long id, List<ClubTeamDTO> clubTeams) {
+        this.id = id;
+        this.clubTeams = clubTeams;
+    }
+
     public CoachDTO(long id, String username, String email, String password, boolean isCoach,
             List<ClubTeamDTO> clubTeams) {
         super(id, username, email, password, true);

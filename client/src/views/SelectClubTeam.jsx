@@ -1,14 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import ClubTeam from "../components/ClubTeam";
 import Header from "../components/Header";
 import '../style/SelectClubTeam.css'
 import axios from 'axios'
+import { useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../components/AuthContext';
 
 export default function SelectClubTeam() {
 
+    const { authenticatedUser } = useContext(AuthContext);
     const SERVER_URL = 'http://localhost:8081'
     const [clubTeams, setClubTeams] = useState([]);
     const [selectedClubTeams, setSelectedClubTeams] = useState([]);
+    const navigate = useNavigate();
 
     const toggleClubTeam = (clubTeam) => {
         setSelectedClubTeams((prevSelectedClubTeams) => {
@@ -30,8 +34,18 @@ export default function SelectClubTeam() {
         }
     }
 
+    const setCoachClubTeams = async () => {
+        try {
+            const response = await axios.put(`${SERVER_URL}/coaches/clubTeams?email=${authenticatedUser?.email}`, selectedClubTeams, { withCredentials: true });
+            navigate("/home");
+        } catch (error) {
+            console.log('Error al actualizar las categorías del entrenador', error);
+        }
+    }
+
     useEffect(() => {
         getClubTeams();
+        console.log(authenticatedUser);
     }, []);
 
     return (
@@ -48,7 +62,7 @@ export default function SelectClubTeam() {
                         />
                     ))}
                 </div>
-                <button id='confirmSelectedClubTeamsButton'>CONFIRMAR</button>
+                <button id='confirmSelectedClubTeamsButton' onClick={setCoachClubTeams}>CONFIRMAR</button>
             </div>
         </>
     )

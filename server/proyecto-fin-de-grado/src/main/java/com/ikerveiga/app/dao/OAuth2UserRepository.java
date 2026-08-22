@@ -16,6 +16,8 @@ public interface OAuth2UserRepository extends JpaRepository<OAuth2User, Long> {
 
     OAuth2User findByEmail(String email);
 
+    OAuth2User findByUsername(String username);
+
     @Query("UPDATE OAuth2User a SET a.isCoach = :isCoach WHERE a.email = :email")
     @Modifying
     @Transactional
