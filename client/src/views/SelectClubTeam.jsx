@@ -1,34 +1,50 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ClubTeam from "../components/ClubTeam";
 import Header from "../components/Header";
 import '../style/SelectClubTeam.css'
+import axios from 'axios'
 
 export default function SelectClubTeam() {
+
+    const SERVER_URL = 'http://localhost:8081'
+    const [clubTeams, setClubTeams] = useState([]);
     const [selectedClubTeams, setSelectedClubTeams] = useState([]);
 
-    const toggleClubTeam = (teamName) => {
+    const toggleClubTeam = (clubTeam) => {
         setSelectedClubTeams((prevSelectedClubTeams) => {
-            if (prevSelectedClubTeams.includes(teamName)) {
-                return prevSelectedClubTeams.filter((t) => t !== teamName);
+            if (prevSelectedClubTeams.includes(clubTeam)) {
+                return prevSelectedClubTeams.filter((c) => c !== clubTeam);
             } else {
-                return [...prevSelectedClubTeams, teamName];
+                return [...prevSelectedClubTeams, clubTeam];
             }
         });
     };
 
-    const teams = ['ÉLITE', 'PLATA', 'JÚNIOR', 'JUVENIL', 'INFANTIL', 'ALEVÍN'];
+    const getClubTeams = async () => {
+        try {
+            const response = await axios.get(`${SERVER_URL}/clubTeams/all`, { withCredentials: true });
+            setClubTeams(response.data);
+            console.log(response.data);
+        } catch (error) {
+            console.log('Error recuperando categorías', error);
+        }
+    }
+
+    useEffect(() => {
+        getClubTeams();
+    }, []);
 
     return (
         <>
             <Header />
             <div id="selectClubTeamMainDiv">
                 <div id="clubTeamsDiv">
-                    {teams.map((teamName) => (
+                    {clubTeams.map((clubTeam) => (
                         <ClubTeam
-                            key={teamName}
-                            description={teamName}
-                            isSelected={selectedClubTeams.includes(teamName)}
-                            onClick={() => toggleClubTeam(teamName)}
+                            key={clubTeam.id}
+                            description={clubTeam.description}
+                            isSelected={selectedClubTeams.includes(clubTeam.code)}
+                            onClick={() => toggleClubTeam(clubTeam.code)}
                         />
                     ))}
                 </div>
