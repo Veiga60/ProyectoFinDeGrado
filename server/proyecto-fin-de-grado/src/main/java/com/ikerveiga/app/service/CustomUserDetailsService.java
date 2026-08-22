@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.ikerveiga.app.CustomUserDetails;
 import com.ikerveiga.app.dao.OAuth2UserRepository;
 import com.ikerveiga.app.dao.UserRepository;
+import com.ikerveiga.app.dto.CoachDTO;
 import com.ikerveiga.app.dto.PlayerDTO;
 import com.ikerveiga.app.entity.User;
 
@@ -45,6 +46,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         }
 
         PlayerDTO playerDTO = user.getPlayer() != null ? user.getPlayer().toDTOWithoutStatsAndCalls() : null;
+        CoachDTO coachDTO = user.getCoach() != null ? user.getCoach().toDTO() : null;
 
         return new CustomUserDetails(
                 user.getUsername(),
@@ -52,6 +54,7 @@ public class CustomUserDetailsService implements UserDetailsService {
                 password,
                 user.getIsCoach(),
                 playerDTO,
+                coachDTO,
                 Collections.emptyList());
     }
 
@@ -66,6 +69,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         }
 
         PlayerDTO playerDTO;
+        CoachDTO coachDTO;
         String password;
 
         if (user.getPassword() != null) {
@@ -80,12 +84,19 @@ public class CustomUserDetailsService implements UserDetailsService {
             playerDTO = null;
         }
 
+        if (user.getCoach() != null) {
+            coachDTO = user.getCoach().toDTO();
+        } else {
+            coachDTO = null;
+        }
+
         return new CustomUserDetails(
                 user.getUsername(),
                 user.getEmail(),
                 password,
                 user.getIsCoach(),
                 playerDTO,
+                coachDTO,
                 Collections.emptyList());
     }
 }

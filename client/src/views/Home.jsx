@@ -92,6 +92,7 @@ export default function Home() {
 
     useEffect(() => {
         if (!authenticatedUser) return;
+        console.log(authenticatedUser);
         if (authenticatedUser?.isCoach == true) {
             getLastPlayedMatch();
         } else {
@@ -108,6 +109,10 @@ export default function Home() {
             <Header />
             <ClubTeamSelector
                 clubTeams={authenticatedUser?.player?.clubTeams}
+                setClubTeamId={setClubTeamId}
+            />
+            <ClubTeamSelector
+                clubTeams={authenticatedUser?.coach?.clubTeams}
                 setClubTeamId={setClubTeamId}
             />
             {(authenticatedUser != null) &&
