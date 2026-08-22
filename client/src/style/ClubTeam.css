@@ -11,10 +11,27 @@
     transition: 0.3s;
 }
 
+.clubTeamMainDivSelected {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgb(7, 78, 200);
+    border: 2px solid rgb(7, 78, 200);
+    border-radius: 15px;
+    width: 220px;
+    gap: 20px;
+    transition: 0.3s;
+}
+
 .clubTeamMainDiv:hover {
     cursor: pointer;
     box-shadow: 1px 1px 15px 1px rgb(7, 78, 200);
     transition: 0.3s;
+}
+
+.clubTeamMainDivSelected:hover {
+    cursor: pointer;
 }
 
 .clubTeamImageDiv {
@@ -34,4 +51,13 @@
     font-weight: bold;
     font-size: x-large;
     color: rgb(7, 78, 200);
+    user-select: none;
+}
+
+.clubTeamDescTextSelected {
+    font-family: Inria Sans;
+    font-weight: bold;
+    font-size: x-large;
+    color: white;
+    user-select: none;
 }
