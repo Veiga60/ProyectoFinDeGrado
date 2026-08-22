@@ -15,3 +15,7 @@ body::-webkit-scrollbar {
 input[type=number]::-webkit-inner-spin-button {
   display: none;
 }
+
+button {
+  user-select: none;
+}

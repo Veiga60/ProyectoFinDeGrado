@@ -10,7 +10,6 @@ export default function RecomendationsTeam() {
     const SERVER_URL = 'http://localhost:8081';
     const location = useLocation();
     const { matchId } = useParams();
-    const { playerId } = useParams();
 
     const [teamRecomendations, setTeamRecomendations] = useState([]);
 

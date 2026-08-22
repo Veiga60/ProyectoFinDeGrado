@@ -48,6 +48,7 @@ export default function SelectClubTeam() {
                         />
                     ))}
                 </div>
+                <button id='confirmSelectedClubTeamsButton'>CONFIRMAR</button>
             </div>
         </>
     )

@@ -7,6 +7,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    gap: 10%;
 }
 
 #clubTeamsDiv {
@@ -14,4 +16,20 @@
     align-items: center;
     justify-content: center;
     gap: 50px;
+}
+
+#confirmSelectedClubTeamsButton {
+    background-color: rgb(7, 78, 200);
+    border: none;
+    border-radius: 12px;
+    height: 45px;
+    font-family: Inria Sans;
+    font-size: x-large;
+    transition: 0.5s;
+}
+
+#confirmSelectedClubTeamsButton:hover {
+    background-color: rgb(5, 54, 138);
+    transition: 0.5s;
+    cursor: pointer;
 }
