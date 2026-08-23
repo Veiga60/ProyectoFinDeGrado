@@ -2,7 +2,7 @@
 import axios from 'axios'
 import '../style/NavBar.css'
 import { FiLogOut } from "react-icons/fi";
-import SERVER_URL from './config.js'
+import SERVER_URL from '../config.js'
 
 export default function NavBar() {
     const navigate = useNavigate();

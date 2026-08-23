@@ -1,6 +1,6 @@
 ﻿import axios from 'axios'
 import '../style/UseAIModal.css'
-import SERVER_URL from './config.js'
+import SERVER_URL from '../config.js'
 
 export default function UseAIModal({ onClose, onMatchFinished, prompt, matchId }) {
 

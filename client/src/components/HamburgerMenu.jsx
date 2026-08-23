@@ -6,7 +6,7 @@ import { IoStatsChart } from "react-icons/io5";
 import { FaCalendarDays, FaBox } from "react-icons/fa6";
 import { FiLogOut } from "react-icons/fi";
 import '../style/HamburgerMenu.css'
-import SERVER_URL from './config.js'
+import SERVER_URL from '../config.js'
 
 export default function HamburgerMenu({ className }) {
     const navigate = useNavigate();

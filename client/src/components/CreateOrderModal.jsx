@@ -2,7 +2,7 @@
 import axios from 'axios'
 import DownloadExcelModal from '../components/DownloadExcelModal.jsx'
 import '../style/CreateOrderModal.css'
-import SERVER_URL from './config.js'
+import SERVER_URL from '../config.js'
 
 export default function CreatOrderModal({ orderTypes, onClose, wheelNextOrder, stickNextOrder, wheelExcelDownloaded, stickExcelDownloaded }) {
 
