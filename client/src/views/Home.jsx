@@ -108,11 +108,7 @@ export default function Home() {
         <>
             <Header />
             <ClubTeamSelector
-                clubTeams={authenticatedUser?.player?.clubTeams}
-                setClubTeamId={setClubTeamId}
-            />
-            <ClubTeamSelector
-                clubTeams={authenticatedUser?.coach?.clubTeams}
+                clubTeams={(authenticatedUser?.isCoach == true) ? (authenticatedUser?.coach?.clubTeams) : (authenticatedUser?.player?.clubTeams)}
                 setClubTeamId={setClubTeamId}
             />
             {(authenticatedUser != null) &&

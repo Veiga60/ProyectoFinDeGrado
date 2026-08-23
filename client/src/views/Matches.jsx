@@ -48,10 +48,10 @@ export default function Matches() {
         <>
             <Header />
             {
-                (authenticatedUser?.player.clubTeams.length > 1) ?
+                ((authenticatedUser?.player?.clubTeams.length > 1) || (authenticatedUser?.coach?.clubTeams.length > 1)) ?
 
                     <ClubTeamSelector
-                        clubTeams={authenticatedUser?.player.clubTeams}
+                        clubTeams={(authenticatedUser?.isCoach == true) ? (authenticatedUser?.coach?.clubTeams) : (authenticatedUser?.player?.clubTeams)}
                         setClubTeamId={setClubTeamId}
                     />
 

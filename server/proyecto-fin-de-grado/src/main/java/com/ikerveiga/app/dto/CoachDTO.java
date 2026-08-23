@@ -2,26 +2,20 @@ package com.ikerveiga.app.dto;
 
 import java.util.List;
 
-public class CoachDTO extends UserDTO {
+public class CoachDTO {
 
+    private long id;
     private List<ClubTeamDTO> clubTeams;
 
     public CoachDTO() {
     }
 
+    public long getId() {
+        return this.id;
+    }
+
     public CoachDTO(long id, List<ClubTeamDTO> clubTeams) {
         this.id = id;
-        this.clubTeams = clubTeams;
-    }
-
-    public CoachDTO(long id, String username, String email, String password, boolean isCoach,
-            List<ClubTeamDTO> clubTeams) {
-        super(id, username, email, password, true);
-        this.clubTeams = clubTeams;
-    }
-
-    public CoachDTO(long id, String username, String email, List<ClubTeamDTO> clubTeams) {
-        super(id, username, email, true);
         this.clubTeams = clubTeams;
     }
 

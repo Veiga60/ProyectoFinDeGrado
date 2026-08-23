@@ -70,7 +70,7 @@ export default function Calls() {
         <>
             <Header />
             <ClubTeamSelector
-                clubTeams={authenticatedUser?.player?.clubTeams}
+                clubTeams={(authenticatedUser?.isCoach == true) ? (authenticatedUser?.coach?.clubTeams) : (authenticatedUser?.player?.clubTeams)}
                 setClubTeamId={setClubTeamId}
             />
             <div id='callsMainDiv'>

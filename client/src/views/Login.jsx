@@ -10,7 +10,7 @@ export default function Login() {
 
     const SERVER_URL = "http://localhost:8081"
     const navigate = useNavigate()
-    const { login: loginContext } = useContext(AuthContext);
+    const { login: loginContext, authenticatedUser } = useContext(AuthContext);
 
 
     const [username, setUsername] = useState('');
@@ -22,8 +22,13 @@ export default function Login() {
 
     const login = async () => {
         try {
-            await loginContext(username, password);
-            navigate("/home");
+            const user = await loginContext(username, password);
+            console.log(user);
+            if (user?.coach?.clubTeams == null || user?.coach?.clubTeams.length == 0) {
+                navigate("/select_clubTeams")
+            } else {
+                navigate("/home");
+            }
         } catch (error) {
             if (error.status == 403) {
                 setError('Usuario y/o contraseña incorrectos');

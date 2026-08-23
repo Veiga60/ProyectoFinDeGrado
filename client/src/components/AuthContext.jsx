@@ -20,9 +20,11 @@ export const AuthProvider = ({ children }) => {
             //Peticion al backend para recuperar informacion del usuario
             const response = await axios.get(`${SERVER_URL}/me`, { withCredentials: true });
             setAuthenticatedUser(response.data);
+            return response.data;
         } catch (error) {
             console.log('Error verificando sesión: ', error);
             setAuthenticatedUser(null);
+            return null;
         } finally {
             setIsLoading(false);
         }
@@ -34,6 +36,7 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (username, password) => {
         // Hace la peticion al backend. El backend debe enviar el header Set-Cookie con la cookie HttpOnly
+        setAuthenticatedUser(null);
         const response = await axios.post(`${SERVER_URL}/login`,
             { username, password },
             {
@@ -41,10 +44,10 @@ export const AuthProvider = ({ children }) => {
                 withCredentials: true
             }
         );
-        
+
         // Tras el login exitoso, llamamos a /me para traernos los datos del usuario logueado
-        await verifyUserSession();
-        return response; 
+        const user = await verifyUserSession();
+        return user;
     };
 
     const logout = async () => {

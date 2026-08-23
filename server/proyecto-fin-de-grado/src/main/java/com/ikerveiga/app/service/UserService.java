@@ -1,5 +1,6 @@
 package com.ikerveiga.app.service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -90,6 +91,12 @@ public class UserService {
                     User user = new User(userName, email, passwordEncoder.encode(password), isCoach,
                             authorizedEmail.getPlayer());
                     userDAO.save(user);
+                    if (isCoach) {
+                        Coach coach = new Coach(new ArrayList<>());
+                        coachDAO.save(coach);
+                        user.setCoach(coach);
+                        userDAO.save(user);
+                    }
                 } else {
                     throw new RuntimeException("Password not allowed");
                 }
