@@ -1,9 +1,7 @@
 CREATE SCHEMA IF NOT EXISTS mhcdatabase;
 
-DROP USER 'user'@'localhost';
-CREATE USER IF NOT EXISTS 'user'@'localhost' IDENTIFIED BY 'user';
 USE mhcdatabase;
-GRANT ALL PRIVILEGES ON mhcdatabase TO 'user'@'localhost';
+
 
 INSERT IGNORE INTO wheel_models(wheel_model_description) VALUES ('RINKSTER MAVERICK');
 INSERT IGNORE INTO wheel_models(wheel_model_description) VALUES ('RINK RAT TRICKSTER');
