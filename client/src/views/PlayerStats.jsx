@@ -3,7 +3,7 @@ import Header from '../components/Header.jsx'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import '../style/PlayerStats.css'
-import basicUser from '../assets/images/basicUSer.png'
+import basicUser from '../assets/images/basicUser.png'
 import SERVER_URL from '../config.js'
 
 export default function PlayerStats() {
