@@ -17,7 +17,7 @@ export default function Home() {
     const SERVER_URL = 'http://localhost:8081';
     const navigate = useNavigate();
 
-    const { authenticatedUser, isLoading, isAuthenticated } = useContext(AuthContext);
+    const { authenticatedUser } = useContext(AuthContext);
     const [clubTeamId, setClubTeamId] = useState();
     const [nextMatch, setNextMatch] = useState();
     const [width, setWidth] = useState(window.innerWidth);
@@ -92,7 +92,14 @@ export default function Home() {
 
     useEffect(() => {
         if (!authenticatedUser) return;
-        console.log(authenticatedUser);
+
+        const defaultClubTeams = authenticatedUser?.isCoach
+            ? authenticatedUser?.coach?.clubTeams
+            : authenticatedUser?.player?.clubTeams;
+        if (defaultClubTeams?.length > 0 && !clubTeamId) {
+            setClubTeamId(defaultClubTeams[0].id);
+        }
+
         if (authenticatedUser?.isCoach == true) {
             getLastPlayedMatch();
         } else {

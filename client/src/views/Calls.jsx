@@ -11,7 +11,6 @@ export default function Calls() {
 
     const SERVER_URL = 'http://localhost:8081';
     const navigate = useNavigate();
-    const location = useLocation();
 
     const { authenticatedUser } = useContext(AuthContext);
     const [matches, setMatches] = useState([]);
@@ -49,6 +48,12 @@ export default function Calls() {
     }
 
     useEffect(() => {
+        const defaultClubTeams = authenticatedUser?.isCoach
+            ? authenticatedUser?.coach?.clubTeams
+            : authenticatedUser?.player?.clubTeams;
+        if (defaultClubTeams?.length > 0 && !clubTeamId) {
+            setClubTeamId(defaultClubTeams[0].id);
+        }
         if (authenticatedUser?.isCoach == false) {
             getCallsOfPlayer(authenticatedUser?.player?.id);
         }

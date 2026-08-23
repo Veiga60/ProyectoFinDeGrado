@@ -29,6 +29,14 @@ export default function Matches() {
     }
 
     useEffect(() => {
+
+        const defaultClubTeams = authenticatedUser?.isCoach
+            ? authenticatedUser?.coach?.clubTeams
+            : authenticatedUser?.player?.clubTeams;
+        if (defaultClubTeams?.length > 0 && !clubTeamId) {
+            setClubTeamId(defaultClubTeams[0].id);
+        }
+
         const handleResize = () => setWidth(window.innerWidth);
         window.addEventListener('resize', handleResize);
         getMatches();

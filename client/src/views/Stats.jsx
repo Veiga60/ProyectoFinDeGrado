@@ -41,6 +41,12 @@ export default function Stats() {
     }
 
     useEffect(() => {
+        const defaultClubTeams = authenticatedUser?.isCoach
+            ? authenticatedUser?.coach?.clubTeams
+            : authenticatedUser?.player?.clubTeams;
+        if (defaultClubTeams?.length > 0 && !clubTeamId) {
+            setClubTeamId(defaultClubTeams[0].id);
+        }
         getPlayers();
         getTeamStats();
     }, []);
