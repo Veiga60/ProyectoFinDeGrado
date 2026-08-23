@@ -24,7 +24,7 @@ export default function Login() {
         try {
             const user = await loginContext(username, password);
             console.log(user);
-            if (user?.coach?.clubTeams == null || user?.coach?.clubTeams.length == 0) {
+            if ((user?.isCoach == true) && (user?.coach?.clubTeams == null || user?.coach?.clubTeams.length == 0)) {
                 navigate("/select_clubTeams")
             } else {
                 navigate("/home");

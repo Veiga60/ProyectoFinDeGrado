@@ -107,10 +107,14 @@ export default function Home() {
     return (
         <>
             <Header />
-            <ClubTeamSelector
-                clubTeams={(authenticatedUser?.isCoach == true) ? (authenticatedUser?.coach?.clubTeams) : (authenticatedUser?.player?.clubTeams)}
-                setClubTeamId={setClubTeamId}
-            />
+            {
+                ((authenticatedUser?.coach?.clubTeams?.length > 1) || (authenticatedUser?.player?.clubTeams?.length > 1)) && (
+                    <ClubTeamSelector
+                        clubTeams={(authenticatedUser?.isCoach == true) ? (authenticatedUser?.coach?.clubTeams) : (authenticatedUser?.player?.clubTeams)}
+                        setClubTeamId={setClubTeamId}
+                    />
+                )
+            }
             {(authenticatedUser != null) &&
                 <div id='homePageContentDiv'>
                     <div id='leftDiv'>
