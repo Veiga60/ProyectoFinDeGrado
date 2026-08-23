@@ -1,6 +1,6 @@
 ﻿import React, { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
-import SERVER_URL from './config.js'
+import SERVER_URL from '../config'
 
 //Crear el contexto
 export const AuthContext = createContext();
