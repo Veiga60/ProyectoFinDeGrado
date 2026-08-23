@@ -1,5 +1,5 @@
 import Header from '../components/Header.jsx'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { useLocation } from 'react-router-dom'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import axios from 'axios'
@@ -7,11 +7,13 @@ import CreateOrderModal from '../components/CreateOrderModal.jsx'
 import OrderExpiredModal from '../components/OrderExpiredModal.jsx'
 import { PiMicrosoftExcelLogoFill } from "react-icons/pi";
 import '../style/Orders.css'
+import { AuthContext } from '../components/AuthContext.jsx'
 
 export default function Orders() {
 
     const SERVER_URL = 'http://localhost:8081';
     const location = useLocation();
+    const { authenticatedUser } = useContext(AuthContext)
 
     const [wheelModels, setWheelModels] = useState([]);
     const [wheelHardnesses, setWheelHardnesses] = useState([]);
@@ -151,7 +153,7 @@ export default function Orders() {
             try {
                 await axios.post(`${SERVER_URL}/orders/wheels`, {
                     player: {
-                        id: location.state.authenticatedUserPlayerId
+                        id: authenticatedUser?.player?.id
                     },
                     phoneNumber: wheelOrderPhoneNumber,
                     order: {
@@ -196,7 +198,7 @@ export default function Orders() {
             try {
                 await axios.post(`${SERVER_URL}/orders/sticks`, {
                     player: {
-                        id: location.state.authenticatedUserPlayerId
+                        id: authenticatedUser?.player?.id
                     },
                     phoneNumber: stickOrderPhoneNumber,
                     order: {
@@ -358,10 +360,7 @@ export default function Orders() {
 
     return (
         <>
-            <Header
-                authenticatedUserPlayerId={location.state.authenticatedUserPlayerId}
-                isCoach={location.state.isCoach}
-            />
+            <Header />
             <div id='ordersMainDiv'>
                 <div id='ordersTabDiv'>
                     {orderTypes.length > 0 && (
@@ -419,7 +418,7 @@ export default function Orders() {
                                 }
                                 {
                                     (wheelNextOrder) && (
-                                        (!location.state.isCoach) && (
+                                        (!authenticatedUser?.isCoach) && (
                                             (!wheelOrderExpired) ? (
                                                 <div className='inputsDiv'>
                                                     <input id='wheelPhoneNumberInput' className='orderInput' type="text" placeholder='Nº tfno.' onChange={(e) => setWheelOrderPhoneNumber(e.target.value)} />
@@ -456,7 +455,7 @@ export default function Orders() {
                                     )
                                 }
                                 {
-                                    (location.state.isCoach) && (
+                                    (authenticatedUser?.isCoach) && (
                                         <div className='ordersButtonsDiv'>
                                             <button id='newOrderButton' className='orderButton' onClick={toggleCreateOrderModal}>NUEVO PEDIDO</button>
                                             <button id='excelButton' className='orderButton' onClick={() => exportOrdersToExcel('WHEELS')}><PiMicrosoftExcelLogoFill className='excelIcon' /><p>EXCEL</p></button>
@@ -592,7 +591,7 @@ export default function Orders() {
                                     )
                                 }
                                 {
-                                    (location.state.isCoach) && (
+                                    (authenticatedUser?.isCoach) && (
                                         <div className='ordersButtonsDiv'>
                                             <button id='sticksNewOrderButton' className='orderButton' onClick={toggleCreateOrderModal}>NUEVO PEDIDO</button>
                                             <button id='sticksExcelButton' className='orderButton' onClick={() => exportOrdersToExcel('STICKS')}><PiMicrosoftExcelLogoFill className='excelIcon' /><p>EXCEL</p></button>
