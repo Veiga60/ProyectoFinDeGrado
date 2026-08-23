@@ -1,13 +1,12 @@
-import { useParams, useNavigate, useLocation } from 'react-router-dom'
+﻿import { useParams, useNavigate, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import { FaCaretUp } from "react-icons/fa";
 import { FaCaretDown } from "react-icons/fa";
 import axios from 'axios'
 import '../style/StartMatchPlayer.css'
+import SERVER_URL from '../config.js'
 
 export default function StartMatchPlayer() {
-
-    const SERVER_URL = 'http://localhost:8081';
     const { playerId } = useParams();
     const { matchId } = useParams();
     const location = useLocation();

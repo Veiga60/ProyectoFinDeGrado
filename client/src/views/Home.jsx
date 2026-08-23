@@ -1,4 +1,4 @@
-import Header from '../components/Header.jsx'
+﻿import Header from '../components/Header.jsx'
 import Match from '../components/Match.jsx'
 import MatchCompressed from '../components/MatchCompressed.jsx'
 import axios from 'axios'
@@ -11,10 +11,9 @@ import basicUser from '../assets/images/basicUser.png'
 import StartMatchModal from '../components/StartMatchModal.jsx'
 import ClubTeamSelector from '../components/ClubTeamSelector.jsx'
 import { AuthContext } from '../components/AuthContext.jsx'
+import SERVER_URL from '../config.js'
 
 export default function Home() {
-
-    const SERVER_URL = 'http://localhost:8081';
     const navigate = useNavigate();
 
     const { authenticatedUser } = useContext(AuthContext);

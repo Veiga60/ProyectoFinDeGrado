@@ -1,14 +1,13 @@
-import Header from '../components/Header.jsx'
+﻿import Header from '../components/Header.jsx'
 import { useLocation, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import '../style/Messages.css'
 import { IoSend } from "react-icons/io5";
 import Message from '../components/Message.jsx'
+import SERVER_URL from '../config.js'
 
 export default function Messages() {
-
-    const SERVER_URL = 'http://localhost:8081'
     const location = useLocation();
     const { debateId } = useParams();
 

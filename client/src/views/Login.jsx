@@ -5,10 +5,9 @@ import { useState, useContext } from 'react'
 import googleLogo from '../assets/images/google.png'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { AuthContext } from '../components/AuthContext.jsx'
+import SERVER_URL from '../config.js'
 
 export default function Login() {
-
-    const SERVER_URL = "http://localhost:8081"
     const navigate = useNavigate()
     const { login: loginContext, authenticatedUser } = useContext(AuthContext);
 
@@ -40,7 +39,7 @@ export default function Login() {
     }
 
     const googleLogin = async () => {
-        window.location.href = 'http://localhost:8081/oauth2/authorization/google'
+        window.location.href = `${SERVER_URL}/oauth2/authorization/google`
     }
 
     const toggleShowPassword = () => {

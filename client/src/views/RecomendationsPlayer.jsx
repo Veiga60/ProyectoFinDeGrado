@@ -1,13 +1,12 @@
-import { useLocation, useParams } from "react-router-dom"
+﻿import { useLocation, useParams } from "react-router-dom"
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Header from '../components/Header.jsx'
 import '../style/RecomendationsPlayer.css'
 import basicUser from '../assets/images/basicUser.png'
+import SERVER_URL from '../config.js'
 
 export default function RecomendationsPlayer() {
-
-    const SERVER_URL = 'http://localhost:8081';
     const location = useLocation();
     const { matchId } = useParams();
     const { playerId } = useParams();

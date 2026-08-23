@@ -16,3 +16,6 @@ node_modules/
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+
+# Secretos locales - nunca subir a git
+application-local.properties

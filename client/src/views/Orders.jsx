@@ -1,4 +1,4 @@
-import Header from '../components/Header.jsx'
+﻿import Header from '../components/Header.jsx'
 import { useState, useEffect, useContext } from 'react'
 import { useLocation } from 'react-router-dom'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
@@ -8,10 +8,9 @@ import OrderExpiredModal from '../components/OrderExpiredModal.jsx'
 import { PiMicrosoftExcelLogoFill } from "react-icons/pi";
 import '../style/Orders.css'
 import { AuthContext } from '../components/AuthContext.jsx'
+import SERVER_URL from '../config.js'
 
 export default function Orders() {
-
-    const SERVER_URL = 'http://localhost:8081';
     const location = useLocation();
     const { authenticatedUser } = useContext(AuthContext)
 

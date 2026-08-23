@@ -1,11 +1,10 @@
-import { useNavigate } from 'react-router-dom'
+﻿import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import '../style/NavBar.css'
 import { FiLogOut } from "react-icons/fi";
+import SERVER_URL from './config.js'
 
 export default function NavBar() {
-
-    const SERVER_URL = 'http://localhost:8081';
     const navigate = useNavigate();
 
     const logout = async () => {

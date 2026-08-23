@@ -1,13 +1,12 @@
-import React, { createContext, useState, useEffect } from 'react';
+﻿import React, { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
+import SERVER_URL from './config.js'
 
 //Crear el contexto
 export const AuthContext = createContext();
 
 //Crear el componente
 export const AuthProvider = ({ children }) => {
-
-    const SERVER_URL = 'http://localhost:8081'
 
     //Usuario autenticado
     const [authenticatedUser, setAuthenticatedUser] = useState(null);

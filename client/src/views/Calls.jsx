@@ -1,4 +1,4 @@
-import Header from '../components/Header.jsx'
+﻿import Header from '../components/Header.jsx'
 import MatchCard from '../components/MatchCard.jsx'
 import axios from 'axios'
 import { useContext, useEffect, useState } from 'react'
@@ -6,10 +6,9 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import '../style/Calls.css'
 import ClubTeamSelector from '../components/ClubTeamSelector.jsx'
 import { AuthContext } from '../components/AuthContext.jsx'
+import SERVER_URL from '../config.js'
 
 export default function Calls() {
-
-    const SERVER_URL = 'http://localhost:8081';
     const navigate = useNavigate();
 
     const { authenticatedUser } = useContext(AuthContext);

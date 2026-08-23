@@ -3,6 +3,7 @@ package com.ikerveiga.app.OAuth2;
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.ikerveiga.app.JWT.JwtUtil;
@@ -16,6 +17,9 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @Service
 public class OAuth2Service {
+
+    @Value("${app.client.url}")
+    private String clientUrl;
 
     JwtUtil jwtUtil;
     CookiesService cookiesService;
@@ -34,7 +38,7 @@ public class OAuth2Service {
     public String handleLoginSuccess(String username, String email, HttpServletResponse response) {
         OAuth2User existingUser = userDAO.findByEmail(email);
 
-        String url = (existingUser == null) ? ("http://localhost:5173/select_role") : ("http://localhost:5173/home");
+        String url = (existingUser == null) ? (clientUrl + "/select_role") : (clientUrl + "/home");
 
         if (existingUser == null) {
             AuthorizedEmail authorizedEmail = authorizedEmailDAO.findByEmail(email);

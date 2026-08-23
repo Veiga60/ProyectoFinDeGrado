@@ -1,15 +1,15 @@
-import { useState, useEffect, useContext } from 'react';
+﻿import { useState, useEffect, useContext } from 'react';
 import ClubTeam from "../components/ClubTeam";
 import Header from "../components/Header";
 import '../style/SelectClubTeam.css'
 import axios from 'axios'
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../components/AuthContext';
+import SERVER_URL from '../config.js'
 
 export default function SelectClubTeam() {
 
     const { authenticatedUser } = useContext(AuthContext);
-    const SERVER_URL = 'http://localhost:8081'
     const [clubTeams, setClubTeams] = useState([]);
     const [selectedClubTeams, setSelectedClubTeams] = useState([]);
     const navigate = useNavigate();

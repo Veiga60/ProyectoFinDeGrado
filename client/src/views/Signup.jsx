@@ -1,13 +1,12 @@
-import '../style/Signup.css'
+﻿import '../style/Signup.css'
 import Header from '../components/Header.jsx'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useState } from 'react'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
+import SERVER_URL from '../config.js'
 
 export default function Signup() {
-
-    const SERVER_URL = 'http://localhost:8081';
     const navigate = useNavigate();
 
     const [name, setName] = useState('');

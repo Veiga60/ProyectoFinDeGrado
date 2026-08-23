@@ -1,9 +1,8 @@
-import axios from 'axios'
+﻿import axios from 'axios'
 import '../style/UseAIModal.css'
+import SERVER_URL from './config.js'
 
 export default function UseAIModal({ onClose, onMatchFinished, prompt, matchId }) {
-
-    const SERVER_URL = 'http://localhost:8081';
 
     const getRecomendations = async () => {
         try {

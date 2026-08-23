@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+﻿import { useContext, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import Header from '../components/Header.jsx'
 import Match from '../components/Match.jsx'
@@ -7,10 +7,9 @@ import axios from 'axios'
 import MatchCompressed from '../components/MatchCompressed.jsx'
 import ClubTeamSelector from '../components/ClubTeamSelector.jsx'
 import { AuthContext } from '../components/AuthContext.jsx'
+import SERVER_URL from '../config.js'
 
 export default function Matches() {
-
-    const SERVER_URL = 'http://localhost:8081'
     const location = useLocation();
 
     const [matches, setMatches] = useState([]);

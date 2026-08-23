@@ -1,11 +1,10 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import axios from 'axios'
 import DownloadExcelModal from '../components/DownloadExcelModal.jsx'
 import '../style/CreateOrderModal.css'
+import SERVER_URL from './config.js'
 
 export default function CreatOrderModal({ orderTypes, onClose, wheelNextOrder, stickNextOrder, wheelExcelDownloaded, stickExcelDownloaded }) {
-
-    const SERVER_URL = 'http://localhost:8081';
 
     const [deadline, setDeadline] = useState();
     const [orderType, setOrderType] = useState(orderTypes[0].id);

@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+﻿import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../style/SelectRole.css';
 import axios from 'axios';
@@ -6,11 +6,11 @@ import player from '../assets/images/player.png';
 import coach from '../assets/images/coach.png';
 import Header from '../components/Header.jsx';
 import { AuthContext } from '../components/AuthContext';
+import SERVER_URL from '../config.js'
 
 export default function SelectRole() {
 
     const navigate = useNavigate();
-    const SERVER_URL = 'http://localhost:8081';
 
     const { authenticatedUser, verifyUserSession } = useContext(AuthContext);
 

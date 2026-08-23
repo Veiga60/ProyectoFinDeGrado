@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { useNavigate, useParams, useLocation } from 'react-router-dom'
 import ScoreBoard from '../components/ScoreBoard.jsx'
 import UseAIModal from '../components/UseAIModal.jsx'
@@ -10,10 +10,9 @@ import TimeoutEvent from '../components/TimeoutEvent.jsx'
 import FinishMatchErrorModal from '../components/FinishMatchErrorModal.jsx'
 import { RiTeamFill } from "react-icons/ri";
 import { PiHockeyFill } from "react-icons/pi";
+import SERVER_URL from '../config.js'
 
 export default function StartMatch() {
-
-    const SERVER_URL = 'http://localhost:8081';
     const navigate = useNavigate();
     const { matchId } = useParams();
     const location = useLocation();

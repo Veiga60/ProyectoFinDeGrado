@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+﻿import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { BiSolidHome, BiSolidMessageDetail } from "react-icons/bi";
 import { GiHockey } from "react-icons/gi";
@@ -6,10 +6,9 @@ import { IoStatsChart } from "react-icons/io5";
 import { FaCalendarDays, FaBox } from "react-icons/fa6";
 import { FiLogOut } from "react-icons/fi";
 import '../style/HamburgerMenu.css'
+import SERVER_URL from './config.js'
 
 export default function HamburgerMenu({ className }) {
-
-    const SERVER_URL = 'http://localhost:8081';
     const navigate = useNavigate();
 
     const logout = async () => {

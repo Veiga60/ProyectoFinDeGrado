@@ -1,4 +1,4 @@
-import Header from '../components/Header'
+﻿import Header from '../components/Header'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import '../style/Stats.css'
 import axios from 'axios'
@@ -8,10 +8,9 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import logoMetropolitano from '../assets/images/logo-metropolitanohc-negro-transparente.png'
 import ClubTeamSelector from '../components/ClubTeamSelector';
 import { AuthContext } from '../components/AuthContext';
+import SERVER_URL from '../config.js'
 
 export default function Stats() {
-
-    const SERVER_URL = 'http://localhost:8081';
     const navigate = useNavigate();
     const location = useLocation();
 
