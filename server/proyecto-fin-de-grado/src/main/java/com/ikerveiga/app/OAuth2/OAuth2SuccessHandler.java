@@ -3,6 +3,7 @@ package com.ikerveiga.app.OAuth2;
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
@@ -14,6 +15,9 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @Component
 public class OAuth2SuccessHandler implements AuthenticationSuccessHandler {
+
+    @Value("${app.client.url}")
+    String clientUrl;
 
     @Autowired
     OAuth2Service oAuth2Service;
@@ -28,7 +32,7 @@ public class OAuth2SuccessHandler implements AuthenticationSuccessHandler {
                     (String) oAuth2User.getAttributes().get("email"), response);
         } catch (RuntimeException e) {
             e.printStackTrace();
-            response.sendRedirect("http://localhost:5173/error/unauthorized");
+            response.sendRedirect(clientUrl + "/error/unauthorized");
         }
     }
 }
