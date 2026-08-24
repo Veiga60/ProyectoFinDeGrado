@@ -18,7 +18,7 @@ export default function Match({ className, match }) {
                     <div id='centralDiv'>
                         <p id='matchDate'>{match?.date.split('-').reverse().join('/')}</p>
                         <p className='matchText'> - </p>
-                        <p id='matchTime'>{match?.time.substring(0, 5)}</p>
+                        <p id='matchTime'>{match?.time?.substring(0, 5)}</p>
                     </div>
                     <div id='visitingTeamGoalsDiv' style={{ border: (match?.bonusPoint == match?.visitingTeam.id) && '2px solid rgb(7, 78, 200)' }}>
                         <p className='matchGoals'>{match?.visitingTeamGoals}</p>
