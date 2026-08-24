@@ -20,6 +20,7 @@ public class CorsConfiguration {
         cors.addAllowedMethod("*");
         cors.addAllowedOrigin("http://127.0.0.1:5173");
         cors.addAllowedOrigin("http://localhost:5173");
+        cors.addAllowedOrigin("https://metropolitanohc.onrender.com");
         cors.addAllowedOrigin(clientUrl);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
@@ -27,4 +28,4 @@ public class CorsConfiguration {
 
         return source;
     }
-}
+}
