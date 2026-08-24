@@ -32,7 +32,7 @@ public class OAuth2SuccessHandler implements AuthenticationSuccessHandler {
                     (String) oAuth2User.getAttributes().get("email"), response);
         } catch (RuntimeException e) {
             e.printStackTrace();
-            response.sendRedirect(clientUrl + "/error/unauthorized");
+            response.sendRedirect(clientUrl + "error/unauthorized");
         }
     }
 }
