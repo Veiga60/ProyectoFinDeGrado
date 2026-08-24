@@ -28,7 +28,6 @@ export default function SelectClubTeam() {
         try {
             const response = await axios.get(`${SERVER_URL}/clubTeams/all`, { withCredentials: true });
             setClubTeams(response.data);
-            console.log(response.data);
         } catch (error) {
             console.log('Error recuperando categorías', error);
         }
@@ -45,7 +44,6 @@ export default function SelectClubTeam() {
 
     useEffect(() => {
         getClubTeams();
-        console.log(authenticatedUser);
     }, []);
 
     return (
