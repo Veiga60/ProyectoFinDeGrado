@@ -62,10 +62,16 @@ export default function Stats() {
     return (
         <>
             <Header />
-            <ClubTeamSelector
-                clubTeams={(authenticatedUser?.isCoach == true) ? (authenticatedUser?.coach?.clubTeams) : (authenticatedUser?.player?.clubTeams)}
-                setClubTeamId={setClubTeamId}
-            />
+            {
+                ((authenticatedUser?.player?.clubTeams.length > 1) || (authenticatedUser?.coach?.clubTeams.length > 1)) ? (
+
+                    <ClubTeamSelector
+                        clubTeams={(authenticatedUser?.isCoach == true) ? (authenticatedUser?.coach?.clubTeams) : (authenticatedUser?.player?.clubTeams)}
+                        setClubTeamId={setClubTeamId}
+                    />
+                ) :
+                    (null)
+            }
             <div id='statsMainDiv'>
                 <div id='tabsDiv'>
                     <Tabs id='statsTabs' default='0'>

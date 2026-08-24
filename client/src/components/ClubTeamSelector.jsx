@@ -1,9 +1,13 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../style/ClubTeamSelector.css'
 
 export default function ClubTeamSelector({ clubTeams, setClubTeamId }) {
 
-    const [selectedClubTeam, setSelectedClubTeam] = useState(clubTeams[0].code);
+    const [selectedClubTeam, setSelectedClubTeam] = useState();
+
+    useEffect(() => {
+        setSelectedClubTeam(clubTeams?.[0].code);
+    }, []);
 
     return (
         <>
