@@ -2,14 +2,13 @@ package com.ikerveiga.app.entity;
 
 import com.ikerveiga.app.dto.GoalieStatsDTO;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -21,7 +20,7 @@ public class GoalieStats {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "player_id", referencedColumnName = "player_id")
     private Player goalie;
 
@@ -43,12 +42,16 @@ public class GoalieStats {
     @Column(name = "penalty_shot_saves", nullable = false, unique = false)
     private int penaltyShotSaves;
 
+    @ManyToOne
+    @JoinColumn(name = "club_team_id", referencedColumnName = "club_team_id")
+    ClubTeam clubTeam;
+
     public GoalieStats() {
 
     }
 
     public GoalieStats(Player goalie, int gamesPlayed, int shotsReceived, int goalsReceived, int penaltyMins,
-            int penaltyShotGoals, int penaltyShotSaves) {
+            int penaltyShotGoals, int penaltyShotSaves, ClubTeam clubTeam) {
         this.goalie = goalie;
         this.gamesPlayed = gamesPlayed;
         this.shotsReceived = shotsReceived;
@@ -59,7 +62,7 @@ public class GoalieStats {
     }
 
     public GoalieStats(int gamesPlayed, int shotsReceived, int goalsReceived, int penaltyMins,
-            int penaltyShotGoals, int penaltyShotSaves) {
+            int penaltyShotGoals, int penaltyShotSaves, ClubTeam clubTeam) {
         this.gamesPlayed = gamesPlayed;
         this.shotsReceived = shotsReceived;
         this.goalsReceived = goalsReceived;
@@ -124,16 +127,26 @@ public class GoalieStats {
         this.penaltyShotSaves = penaltyShotSaves;
     }
 
+    public ClubTeam getClubTeam() {
+        return this.clubTeam;
+    }
+
+    public void setClubTeam(ClubTeam clubTeam) {
+        this.clubTeam = clubTeam;
+    }
+
     public GoalieStatsDTO toDTO() {
         GoalieStatsDTO goalieStatsDTO = new GoalieStatsDTO(this.id, this.goalie.toDTOWithoutStats(), this.gamesPlayed,
-                this.shotsReceived, this.goalsReceived, this.penaltyMins, this.penaltyShotGoals, this.penaltyShotSaves);
+                this.shotsReceived, this.goalsReceived, this.penaltyMins, this.penaltyShotGoals, this.penaltyShotSaves,
+                this.clubTeam.toDTO());
 
         return goalieStatsDTO;
     }
 
     public GoalieStatsDTO toDTOWithoutGoalie() {
         GoalieStatsDTO goalieStatsDTO = new GoalieStatsDTO(this.id, this.gamesPlayed,
-                this.shotsReceived, this.goalsReceived, this.penaltyMins, this.penaltyShotGoals, this.penaltyShotSaves);
+                this.shotsReceived, this.goalsReceived, this.penaltyMins, this.penaltyShotGoals, this.penaltyShotSaves,
+                this.clubTeam.toDTO());
 
         return goalieStatsDTO;
     }

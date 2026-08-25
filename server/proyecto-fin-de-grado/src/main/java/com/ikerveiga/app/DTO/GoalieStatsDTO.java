@@ -10,13 +10,14 @@ public class GoalieStatsDTO {
     private int penaltyMins;
     private int penaltyShotGoals;
     private int penaltyShotSaves;
+    private ClubTeamDTO clubTeam;
 
     public GoalieStatsDTO() {
 
     }
 
     public GoalieStatsDTO(long id, PlayerDTO goalie, int gamesPlayed, int shotsReceived, int goalsReceived,
-            int penaltyMins, int penaltyShotGoals, int penaltyShotSaves) {
+            int penaltyMins, int penaltyShotGoals, int penaltyShotSaves, ClubTeamDTO clubTeam) {
         this.id = id;
         this.goalie = goalie;
         this.gamesPlayed = gamesPlayed;
@@ -25,10 +26,11 @@ public class GoalieStatsDTO {
         this.penaltyMins = penaltyMins;
         this.penaltyShotGoals = penaltyShotGoals;
         this.penaltyShotSaves = penaltyShotSaves;
+        this.clubTeam = clubTeam;
     }
 
     public GoalieStatsDTO(long id, int gamesPlayed, int shotsReceived, int goalsReceived,
-            int penaltyMins, int penaltyShotGoals, int penaltyShotSaves) {
+            int penaltyMins, int penaltyShotGoals, int penaltyShotSaves, ClubTeamDTO clubTeam) {
         this.id = id;
         this.gamesPlayed = gamesPlayed;
         this.shotsReceived = shotsReceived;
@@ -36,6 +38,7 @@ public class GoalieStatsDTO {
         this.penaltyMins = penaltyMins;
         this.penaltyShotGoals = penaltyShotGoals;
         this.penaltyShotSaves = penaltyShotSaves;
+        this.clubTeam = clubTeam;
     }
 
     public long getId() {
@@ -96,6 +99,14 @@ public class GoalieStatsDTO {
 
     public void setPenaltyShotSaves(int penaltyShotSaves) {
         this.penaltyShotSaves = penaltyShotSaves;
+    }
+
+    public ClubTeamDTO getClubTeam() {
+        return this.clubTeam;
+    }
+
+    public void setClubTeam(ClubTeamDTO clubTeam) {
+        this.clubTeam = clubTeam;
     }
 
 }

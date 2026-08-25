@@ -12,7 +12,6 @@ import SERVER_URL from '../config.js'
 
 export default function Stats() {
     const navigate = useNavigate();
-    const location = useLocation();
 
     const [players, setPlayers] = useState([]);
     const [teamStats, setTeamStats] = useState({});
@@ -86,7 +85,7 @@ export default function Stats() {
                                         id='playerCard'
                                         key={player.id}
                                         player={player}
-                                        onClick={() => navigate(`/stats/players/${player.id}`)}
+                                        onClick={() => navigate(`/stats/players/${player.id}`, { state: { clubTeamId: clubTeamId } })}
                                         enableHover={'true'}
                                     />
                                 )}

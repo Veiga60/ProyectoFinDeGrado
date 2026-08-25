@@ -1,6 +1,7 @@
-﻿import React, { createContext, useState, useEffect } from 'react';
+﻿import { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
 import SERVER_URL from '../config'
+import { useLocation } from 'react-router-dom';
 
 //Crear el contexto
 export const AuthContext = createContext();
@@ -8,8 +9,10 @@ export const AuthContext = createContext();
 //Crear el componente
 export const AuthProvider = ({ children }) => {
 
+    const location = useLocation();
+
     //Usuario autenticado
-    const [authenticatedUser, setAuthenticatedUser] = useState(null);
+    const [authenticatedUser, setAuthenticatedUser] = useState();
 
     //Para saber si la sesion esta siendo verificada
     const [isLoading, setIsLoading] = useState(true);
@@ -30,7 +33,9 @@ export const AuthProvider = ({ children }) => {
     };
 
     useEffect(() => {
-        verifyUserSession();
+        if (location.pathname != '/' || location.pathname != 'signup') {
+            verifyUserSession();
+        }
     }, []);
 
     const login = async (username, password) => {

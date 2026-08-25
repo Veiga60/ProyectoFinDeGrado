@@ -6,7 +6,9 @@ import java.util.List;
 
 import com.ikerveiga.app.dto.CallDTO;
 import com.ikerveiga.app.dto.ClubTeamDTO;
+import com.ikerveiga.app.dto.GoalieStatsDTO;
 import com.ikerveiga.app.dto.PlayerDTO;
+import com.ikerveiga.app.dto.PlayerStatsDTO;
 import com.ikerveiga.app.enums.PlayerType;
 
 import jakarta.persistence.Column;
@@ -20,6 +22,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -58,11 +61,11 @@ public class Player {
     @JoinTable(name = "player_call", joinColumns = @JoinColumn(name = "player_id"), inverseJoinColumns = @JoinColumn(name = "call_id"))
     private List<Call> calls;
 
-    @OneToOne(mappedBy = "player")
-    private PlayerStats playerStats;
+    @OneToMany(mappedBy = "player")
+    private List<PlayerStats> playerStats;
 
-    @OneToOne(mappedBy = "goalie")
-    private GoalieStats goalieStats;
+    @OneToMany(mappedBy = "goalie")
+    private List<GoalieStats> goalieStats;
 
     @OneToOne(mappedBy = "player")
     private User user;
@@ -78,7 +81,8 @@ public class Player {
     public Player(String name, String lastName1, String lastName2, LocalDate birthDate, int number, String photo,
             PlayerType playerType,
             List<Call> calls,
-            PlayerStats playerStats,
+            List<PlayerStats> playerStats,
+            List<GoalieStats> goalieStats,
             List<ClubTeam> clubTeams) {
         this.name = name;
         this.lastName1 = lastName1;
@@ -89,22 +93,6 @@ public class Player {
         this.playerType = playerType;
         this.calls = calls;
         this.playerStats = playerStats;
-        this.clubTeams = clubTeams;
-    }
-
-    public Player(String name, String lastName1, String lastName2, LocalDate birthDate, int number, String photo,
-            PlayerType playerType,
-            List<Call> calls,
-            GoalieStats goalieStats,
-            List<ClubTeam> clubTeams) {
-        this.name = name;
-        this.lastName1 = lastName1;
-        this.lastName2 = lastName2;
-        this.birthDate = birthDate;
-        this.number = number;
-        this.photo = photo;
-        this.playerType = playerType;
-        this.calls = calls;
         this.goalieStats = goalieStats;
         this.clubTeams = clubTeams;
     }
@@ -157,12 +145,20 @@ public class Player {
         this.calls = calls;
     }
 
-    public PlayerStats getStats() {
+    public List<PlayerStats> getStats() {
         return this.playerStats;
     }
 
-    public void setPlayerStats(PlayerStats playerStats) {
+    public void setPlayerStats(List<PlayerStats> playerStats) {
         this.playerStats = playerStats;
+    }
+
+    public List<GoalieStats> getGoalieStats() {
+        return this.goalieStats;
+    }
+
+    public void setGoalieStats(List<GoalieStats> goalieStats) {
+        this.goalieStats = goalieStats;
     }
 
     public List<ClubTeam> getClubTeams() {
@@ -187,15 +183,27 @@ public class Player {
 
         PlayerDTO playerDTO;
         if (this.playerType.equals(PlayerType.RINK_PLAYER)) {
+            List<PlayerStatsDTO> playerStatsDTO = new ArrayList<>();
+
+            for (PlayerStats playerStats : this.playerStats) {
+                playerStatsDTO.add(playerStats.toDTOWithoutPlayer());
+            }
+
             playerDTO = new PlayerDTO(this.id, this.name, this.lastName1, this.lastName2, this.birthDate, this.number,
                     this.photo, this.playerType,
                     callsDTO,
-                    this.playerStats.toDTOWithoutPlayer(), clubTeamsDTO);
+                    playerStatsDTO, null, clubTeamsDTO);
         } else {
+
+            List<GoalieStatsDTO> goalieStatsDTO = new ArrayList<>();
+            for (GoalieStats playerStats : this.goalieStats) {
+                goalieStatsDTO.add(playerStats.toDTOWithoutGoalie());
+            }
+
             playerDTO = new PlayerDTO(this.id, this.name, this.lastName1, this.lastName2, this.birthDate, this.number,
                     this.photo, this.playerType,
-                    callsDTO,
-                    this.goalieStats.toDTOWithoutGoalie(), clubTeamsDTO);
+                    callsDTO, null,
+                    goalieStatsDTO, clubTeamsDTO);
         }
 
         return playerDTO;

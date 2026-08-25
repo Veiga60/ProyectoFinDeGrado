@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,6 +23,24 @@ public class GoalieStatsController {
     @Autowired
     public GoalieStatsController(GoalieStatsService goalieStatsService) {
         this.goalieStatsService = goalieStatsService;
+    }
+
+    @GetMapping("/stats/goalies/{playerId}/clubTeams/{clubTeamId}")
+    public ResponseEntity<GoalieStatsDTO> getGoalieStatsofPlayerOfClubTeam(@PathVariable("playerId") long playerId,
+            @PathVariable("clubTeamId") long clubTeamId) {
+        try {
+
+            GoalieStatsDTO goalieStats = goalieStatsService.getGoalieStatsofPlayerOfClubTeam(playerId, clubTeamId)
+                    .toDTO();
+            return ResponseEntity.ok(goalieStats);
+        } catch (RuntimeException e) {
+            if (e.getMessage().equals("No se ha encontrado al jugador")) {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            } else {
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
+        }
+
     }
 
     @Secured("ROLE_COACH")
