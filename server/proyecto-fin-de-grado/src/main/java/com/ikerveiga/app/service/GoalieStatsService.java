@@ -16,6 +16,15 @@ public class GoalieStatsService {
         this.goalieStatsDAO = goalieStatsDAO;
     }
 
+    public GoalieStats getGoalieStatsofPlayerOfClubTeam(long playerId, long clubTeamId) {
+        GoalieStats goalieStats = goalieStatsDAO.findByPlayerIdAndClubTeamId(playerId, clubTeamId);
+
+        if (goalieStats == null)
+            throw new RuntimeException("No se han encontrado estadísticas");
+
+        return goalieStats;
+    }
+
     public void updateGoaliesStats(long goalieId, int goalsReceived, int shotsReceived, int penaltyMins,
             int penaltyShotGoals,
             int penaltyShotSaves) {

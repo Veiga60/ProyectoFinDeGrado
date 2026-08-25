@@ -30,8 +30,8 @@ import SelectClubTeam from './views/SelectClubTeam.jsx'
 export default function App() {
 
   return (
-    <AuthProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <AuthProvider>
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
@@ -56,7 +56,7 @@ export default function App() {
           <Route path="/select_clubTeams" element={<SelectClubTeam />} />
           <Route path="/error/unauthorized" element={<Unauthorized />} />
         </Routes>
-      </BrowserRouter>
-    </AuthProvider>
+      </AuthProvider>
+    </BrowserRouter>
   )
 }

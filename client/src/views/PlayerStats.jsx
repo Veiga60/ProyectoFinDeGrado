@@ -1,4 +1,4 @@
-﻿import { useParams } from 'react-router-dom'
+﻿import { useLocation, useParams } from 'react-router-dom'
 import Header from '../components/Header.jsx'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
@@ -8,8 +8,10 @@ import SERVER_URL from '../config.js'
 
 export default function PlayerStats() {
     const { playerId } = useParams();
+    const location = useLocation();
 
     const [player, setPlayer] = useState(null);
+    const [playerStats, setPlayerStats] = useState(null);
 
     const getPlayer = async () => {
         try {
@@ -20,9 +22,27 @@ export default function PlayerStats() {
         }
     }
 
+    const getPlayerStats = async () => {
+        try {
+            let response;
+            if (player?.playerType == "RINK_PLAYER") {
+                response = await axios.get(`${SERVER_URL}/stats/players/${playerId}/clubTeams/${location?.state?.clubTeamId}`, { withCredentials: true });
+            } else if (player?.playerType == "GOALIE") {
+                response = await axios.get(`${SERVER_URL}/stats/goalies/${playerId}/clubTeams/${location?.state?.clubTeamId}`, { withCredentials: true });
+            }
+            setPlayerStats(response?.data);
+        } catch (error) {
+            console.log('Error fetching the player: ', error);
+        }
+    }
+
     useEffect(() => {
         getPlayer();
     }, []);
+
+    useEffect(() => {
+        getPlayerStats();
+    }, [player]);
 
     return (
         <>
@@ -64,19 +84,19 @@ export default function PlayerStats() {
                                             </thead>
                                             <tbody id='tableBody'>
                                                 <tr>
-                                                    <td className='bodyCell'><p>{player.playerStats.gamesPlayed}</p></td>
-                                                    <td className='bodyCell'><p>{player.playerStats.goals + player.playerStats.assists}</p></td>
-                                                    <td className='bodyCell'><p>{player.playerStats.goals}</p></td>
-                                                    <td className='bodyCell'><p>{player.playerStats.assists}</p></td>
-                                                    <td className='bodyCell'><p>{player.playerStats.plusMinus}</p></td>
-                                                    <td className='bodyCell'><p>{player.playerStats.shots}</p></td>
-                                                    <td className='bodyCell'><p>{player.playerStats.recoveredPucks}</p></td>
-                                                    <td className='bodyCell'><p>{player.playerStats.lostPucks}</p></td>
-                                                    <td className='bodyCell'><p>{player.playerStats.goodPasses}</p></td>
-                                                    <td className='bodyCell'><p>{player.playerStats.badPasses}</p></td>
-                                                    <td className='bodyCell'><p>{player.playerStats.penaltyMins}</p></td>
-                                                    <td className='bodyCell'><p>{player.playerStats.penaltyShotGoals}</p></td>
-                                                    <td className='bodyCell'><p>{player.playerStats.penaltyShotMisses}</p></td>
+                                                    <td className='bodyCell'><p>{playerStats?.gamesPlayed}</p></td>
+                                                    <td className='bodyCell'><p>{playerStats?.goals + playerStats?.assists}</p></td>
+                                                    <td className='bodyCell'><p>{playerStats?.goals}</p></td>
+                                                    <td className='bodyCell'><p>{playerStats?.assists}</p></td>
+                                                    <td className='bodyCell'><p>{playerStats?.plusMinus}</p></td>
+                                                    <td className='bodyCell'><p>{playerStats?.shots}</p></td>
+                                                    <td className='bodyCell'><p>{playerStats?.recoveredPucks}</p></td>
+                                                    <td className='bodyCell'><p>{playerStats?.lostPucks}</p></td>
+                                                    <td className='bodyCell'><p>{playerStats?.goodPasses}</p></td>
+                                                    <td className='bodyCell'><p>{playerStats?.badPasses}</p></td>
+                                                    <td className='bodyCell'><p>{playerStats?.penaltyMins}</p></td>
+                                                    <td className='bodyCell'><p>{playerStats?.penaltyShotGoals}</p></td>
+                                                    <td className='bodyCell'><p>{playerStats?.penaltyShotMisses}</p></td>
                                                 </tr>
                                             </tbody>
                                         </>
@@ -96,13 +116,13 @@ export default function PlayerStats() {
                                             </thead>
                                             <tbody id='tableBody'>
                                                 <tr>
-                                                    <td className='bodyCell'><p>{player.goalieStats.gamesPlayed}</p></td>
-                                                    <td className='bodyCell'><p>{((player.goalieStats.shotsReceived - player.goalieStats.goalsReceived) / player.goalieStats.shotsReceived).toFixed(3)}</p></td>
-                                                    <td className='bodyCell'><p>{player.goalieStats.shotsReceived}</p></td>
-                                                    <td className='bodyCell'><p>{player.goalieStats.goalsReceived}</p></td>
-                                                    <td className='bodyCell'><p>{player.goalieStats.penaltyMins}</p></td>
-                                                    <td className='bodyCell'><p>{player.goalieStats.penaltyShotGoals}</p></td>
-                                                    <td className='bodyCell'><p>{player.goalieStats.penaltyShotSaves}</p></td>
+                                                    <td className='bodyCell'><p>{playerStats?.gamesPlayed}</p></td>
+                                                    <td className='bodyCell'><p>{(((playerStats?.shotsReceived - playerStats?.goalsReceived) / playerStats?.shotsReceived).toFixed(3) == 'NaN') ? ('') : (((playerStats?.shotsReceived - playerStats?.goalsReceived) / playerStats?.shotsReceived).toFixed(3))}</p></td>
+                                                    <td className='bodyCell'><p>{playerStats?.shotsReceived}</p></td>
+                                                    <td className='bodyCell'><p>{playerStats?.goalsReceived}</p></td>
+                                                    <td className='bodyCell'><p>{playerStats?.penaltyMins}</p></td>
+                                                    <td className='bodyCell'><p>{playerStats?.penaltyShotGoals}</p></td>
+                                                    <td className='bodyCell'><p>{playerStats?.penaltyShotSaves}</p></td>
                                                 </tr>
                                             </tbody>
                                         </>

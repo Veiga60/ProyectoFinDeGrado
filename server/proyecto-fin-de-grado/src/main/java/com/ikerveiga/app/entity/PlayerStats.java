@@ -2,18 +2,17 @@ package com.ikerveiga.app.entity;
 
 import com.ikerveiga.app.dto.PlayerStatsDTO;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Players_Stats")
+@Table(name = "players_stats")
 public class PlayerStats {
 
     @Id
@@ -21,7 +20,7 @@ public class PlayerStats {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "player_id", referencedColumnName = "player_id")
     private Player player;
 
@@ -61,6 +60,10 @@ public class PlayerStats {
     @Column(name = "penalty_shot_misses", nullable = false, unique = false)
     private int penaltyShotMisses;
 
+    @ManyToOne
+    @JoinColumn(name = "club_team_id", referencedColumnName = "club_team_id")
+    ClubTeam clubTeam;
+
     public PlayerStats() {
 
     }
@@ -68,7 +71,7 @@ public class PlayerStats {
     public PlayerStats(Player player, int gamesPlayed, int goals, int assists, int plusMinus, int shots,
             int goodPasses,
             int badPasses, int recoveredPucks, int lostPucks, int penaltyMins, int penaltyShotGoals,
-            int penaltyShotMisses) {
+            int penaltyShotMisses, ClubTeam clubTeam) {
         this.player = player;
         this.gamesPlayed = gamesPlayed;
         this.goals = goals;
@@ -82,12 +85,13 @@ public class PlayerStats {
         this.penaltyMins = penaltyMins;
         this.penaltyShotGoals = penaltyShotGoals;
         this.penaltyShotMisses = penaltyShotMisses;
+        this.clubTeam = clubTeam;
     }
 
     public PlayerStats(int gamesPlayed, int goals, int assists, int plusMinus, int shots,
             int goodPasses,
             int badPasses, int recoveredPucks, int lostPucks, int penaltyMins, int penaltyShotGoals,
-            int penaltyShotMisses) {
+            int penaltyShotMisses, ClubTeam clubTeam) {
         this.gamesPlayed = gamesPlayed;
         this.goals = goals;
         this.assists = assists;
@@ -100,6 +104,7 @@ public class PlayerStats {
         this.penaltyMins = penaltyMins;
         this.penaltyShotGoals = penaltyShotGoals;
         this.penaltyShotMisses = penaltyShotMisses;
+        this.clubTeam = clubTeam;
     }
 
     public Player getPlayer() {
@@ -206,10 +211,19 @@ public class PlayerStats {
         this.penaltyShotMisses = penaltyShotMisses;
     }
 
+    public ClubTeam getClubTeam() {
+        return this.clubTeam;
+    }
+
+    public void setClubTeam(ClubTeam clubTeam) {
+        this.clubTeam = clubTeam;
+    }
+
     public PlayerStatsDTO toDTO() {
         PlayerStatsDTO playerStatsDTO = new PlayerStatsDTO(this.id, this.player.toDTOWithoutStats(), this.gamesPlayed,
                 this.goals, this.assists, this.plusMinus, this.shots, this.goodPasses, this.badPasses,
-                this.recoveredPucks, this.lostPucks, this.penaltyMins, this.penaltyShotGoals, this.penaltyShotMisses);
+                this.recoveredPucks, this.lostPucks, this.penaltyMins, this.penaltyShotGoals, this.penaltyShotMisses,
+                this.clubTeam.toDTO());
 
         return playerStatsDTO;
     }
@@ -217,7 +231,8 @@ public class PlayerStats {
     public PlayerStatsDTO toDTOWithoutPlayer() {
         PlayerStatsDTO playerStatsDTO = new PlayerStatsDTO(this.id, this.gamesPlayed,
                 this.goals, this.assists, this.plusMinus, this.shots, this.goodPasses, this.badPasses,
-                this.recoveredPucks, this.lostPucks, this.penaltyMins, this.penaltyShotGoals, this.penaltyShotMisses);
+                this.recoveredPucks, this.lostPucks, this.penaltyMins, this.penaltyShotGoals, this.penaltyShotMisses,
+                this.clubTeam.toDTO());
 
         return playerStatsDTO;
     }

@@ -33,7 +33,6 @@ export default function Home() {
 
     const getNextMatch = async () => {
         try {
-            console.log(`${SERVER_URL}/matches/next/clubTeam/${clubTeamId}`);
             const response = await axios.get(`${SERVER_URL}/matches/next/clubTeam/${clubTeamId}`, { withCredentials: true });
             setNextMatch(response.data[0]);
             setNextMatchAvailable(true);
@@ -90,7 +89,6 @@ export default function Home() {
     }, [clubTeamId]);
 
     useEffect(() => {
-        if (!authenticatedUser) return;
 
         const defaultClubTeams = authenticatedUser?.isCoach
             ? authenticatedUser?.coach?.clubTeams
