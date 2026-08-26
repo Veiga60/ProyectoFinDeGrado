@@ -1,0 +1,15 @@
+{
+    "name": "Metropolitano HC App",
+    "short_name": "MHC App",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "icons": [
+        {
+            "src": "/icons/icon.png",
+            "sizes": "469x454",
+            "type": "image/png"
+        }
+    ]
+}
