@@ -6,6 +6,7 @@
     padding-bottom: 30px;
     max-height: calc(100vh - 125px);
     overflow-y: auto;
+    overscroll-behavior-y: contain;
 }
 
 #callsMainDiv::-webkit-scrollbar {
