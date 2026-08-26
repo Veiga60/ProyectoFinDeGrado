@@ -7,6 +7,10 @@
     overflow-y: auto;
 }
 
+#matchesMainDiv::-webkit-scrollbar {
+    display: none;
+}
+
 #matchesDiv {
     display: flex;
     flex-direction: column;
