@@ -1,10 +1,10 @@
 #callsMainDiv {
     left: 0;
-    top: 80px;
+    top: 125px;
     position: absolute;
     width: 100%;
     padding-bottom: 30px;
-    max-height: calc(100vh - 80px);
+    max-height: calc(100vh - 125px);
     overflow-y: auto;
 }
 
@@ -14,7 +14,7 @@
 
 #nextMatchesDiv {
     width: 100%;
-    margin-top: 50px;
+    margin-top: 10px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
     align-items: center;
