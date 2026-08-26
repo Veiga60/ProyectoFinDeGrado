@@ -67,20 +67,22 @@ export default function Matches() {
                     (null)
 
             }
-            <div id='matchesDiv' onClick={() => console.log(clubTeamId)}>
-                {matches.map((match) =>
-                    (width >= 600) ? (
-                        <Match
-                            key={match.id}
-                            match={match}
-                        />
-                    ) : (
-                        <MatchCompressed
-                            key={match.id}
-                            match={match}
-                        />
-                    )
-                )}
+            <div id='matchesMainDiv'>
+                <div id='matchesDiv'>
+                    {matches.map((match) =>
+                        (width >= 600) ? (
+                            <Match
+                                key={match.id}
+                                match={match}
+                            />
+                        ) : (
+                            <MatchCompressed
+                                key={match.id}
+                                match={match}
+                            />
+                        )
+                    )}
+                </div>
             </div>
         </>
     )

@@ -85,6 +85,7 @@ input:focus {
     font-family: Inria Sans;
     font-size: larger;
     transition: 0.5s;
+    color: white;
 }
 
 button:hover {

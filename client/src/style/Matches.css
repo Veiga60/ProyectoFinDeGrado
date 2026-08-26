@@ -1,9 +1,18 @@
+#matchesMainDiv {
+    position: absolute;
+    left: 0;
+    top: 125px;
+    width: 100%;
+    height: calc(100% - 125px);
+    overflow-y: auto;
+}
+
 #matchesDiv {
-    margin-top: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 50px;
     margin-bottom: 30px;
+    gap: 50px;
+    overflow: hidden;
 }

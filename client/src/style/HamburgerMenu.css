@@ -18,6 +18,7 @@
 
 .menuIsOpen {
     transform: translateX(0);
+    z-index: 100000;
 }
 
 .menuIsClosed {
@@ -37,6 +38,7 @@
     height: 100%;
     gap: 5%;
     max-height: 300px;
+    z-index: 100000;
 }
 
 #menuHomeDiv {
@@ -49,6 +51,7 @@
     align-items: flex-end;
     gap: 5%;
     width: 100%;
+    z-index: 100000;
 }
 
 .menuDiv:hover {
