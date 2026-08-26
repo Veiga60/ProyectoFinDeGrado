@@ -1,4 +1,4 @@
-﻿import { createContext, useState, useEffect } from 'react';
+import { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
 import SERVER_URL from '../config'
 import { useLocation } from 'react-router-dom';
@@ -20,9 +20,11 @@ export const AuthProvider = ({ children }) => {
     const verifyUserSession = async () => {
         try {
             //Peticion al backend para recuperar informacion del usuario
-            const response = await axios.get(`${SERVER_URL}/me`, { withCredentials: true });
-            setAuthenticatedUser(response.data);
-            return response.data;
+            if (location.pathname !== '/' && location.pathname !== '/signup') {
+                const response = await axios.get(`${SERVER_URL}/me`, { withCredentials: true });
+                setAuthenticatedUser(response.data);
+                return response.data;
+            }
         } catch (error) {
             console.log('Error verificando sesión: ', error);
             setAuthenticatedUser(null);
@@ -33,9 +35,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     useEffect(() => {
-        if (location.pathname != '/' || location.pathname != 'signup') {
-            verifyUserSession();
-        }
+        verifyUserSession();
     }, []);
 
     const login = async (username, password) => {
