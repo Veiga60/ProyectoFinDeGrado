@@ -20,11 +20,9 @@ export const AuthProvider = ({ children }) => {
     const verifyUserSession = async () => {
         try {
             //Peticion al backend para recuperar informacion del usuario
-            if (location.pathname !== '/' && location.pathname !== '/signup') {
-                const response = await axios.get(`${SERVER_URL}/me`, { withCredentials: true });
-                setAuthenticatedUser(response.data);
-                return response.data;
-            }
+            const response = await axios.get(`${SERVER_URL}/me`, { withCredentials: true });
+            setAuthenticatedUser(response.data);
+            return response.data;
         } catch (error) {
             console.log('Error verificando sesión: ', error);
             setAuthenticatedUser(null);
@@ -35,7 +33,10 @@ export const AuthProvider = ({ children }) => {
     };
 
     useEffect(() => {
-        verifyUserSession();
+        if (location.pathname !== '/' && location.pathname !== '/signup') {
+            verifyUserSession();
+        }
+
     }, []);
 
     const login = async (username, password) => {
