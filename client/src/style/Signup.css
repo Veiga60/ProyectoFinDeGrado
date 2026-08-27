@@ -143,6 +143,7 @@
 
 .signupButton {
     background-color: rgb(7, 78, 200);
+    color: white;
     border: none;
     border-radius: 12px;
     width: 60%;
