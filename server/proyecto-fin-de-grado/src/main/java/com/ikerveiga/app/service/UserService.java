@@ -30,6 +30,9 @@ import com.ikerveiga.app.CustomUserDetails;
 import com.ikerveiga.app.dao.CoachRepository;
 import com.ikerveiga.app.entity.Coach;
 
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.oauth2.core.user.OAuth2User;
+
 @Service
 public class UserService {
 
@@ -61,17 +64,64 @@ public class UserService {
     public Map<String, Object> getAuthenticatedUser() {
         Map<String, Object> userInfo = new HashMap<>();
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String username = authentication.getName();
-        String email = ((CustomUserDetails) authentication.getPrincipal()).getEmail();
-        Boolean isCoach = ((CustomUserDetails) authentication.getPrincipal()).getIsCoach();
-        PlayerDTO player = ((CustomUserDetails) authentication.getPrincipal()).getPlayer();
-        CoachDTO coach = ((CustomUserDetails) authentication.getPrincipal()).getCoach();
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return userInfo;
+        }
 
-        userInfo.put("username", username);
-        userInfo.put("email", email);
-        userInfo.put("isCoach", isCoach);
-        userInfo.put("player", player);
-        userInfo.put("coach", coach);
+        Object principal = authentication.getPrincipal();
+
+        if (principal instanceof CustomUserDetails customUserDetails) {
+            userInfo.put("username", customUserDetails.getUsername());
+            userInfo.put("email", customUserDetails.getEmail());
+            userInfo.put("isCoach", customUserDetails.getIsCoach());
+            userInfo.put("player", customUserDetails.getPlayer());
+            userInfo.put("coach", customUserDetails.getCoach());
+        } else if (principal instanceof OAuth2User oAuth2User) {
+            String email = oAuth2User.getAttribute("email");
+            User user = userDAO.findByEmail(email);
+            if (user == null) {
+                user = oAuth2UserDAO.findByEmail(email);
+            }
+
+            if (user != null) {
+                PlayerDTO playerDTO = user.getPlayer() != null ? user.getPlayer().toDTOWithoutStatsAndCalls() : null;
+                CoachDTO coachDTO = user.getCoach() != null ? user.getCoach().toDTO() : null;
+
+                userInfo.put("username", user.getUsername());
+                userInfo.put("email", user.getEmail());
+                userInfo.put("isCoach", user.getIsCoach());
+                userInfo.put("player", playerDTO);
+                userInfo.put("coach", coachDTO);
+            } else {
+                userInfo.put("username", oAuth2User.getAttribute("name"));
+                userInfo.put("email", email);
+                userInfo.put("isCoach", false);
+                userInfo.put("player", null);
+                userInfo.put("coach", null);
+            }
+        } else if (principal instanceof UserDetails userDetails) {
+            String username = userDetails.getUsername();
+            User user = userDAO.findByUsername(username);
+            if (user == null) {
+                user = userDAO.findByEmail(username);
+            }
+            if (user == null) {
+                user = oAuth2UserDAO.findByUsername(username);
+            }
+            if (user == null) {
+                user = oAuth2UserDAO.findByEmail(username);
+            }
+            if (user != null) {
+                PlayerDTO playerDTO = user.getPlayer() != null ? user.getPlayer().toDTOWithoutStatsAndCalls() : null;
+                CoachDTO coachDTO = user.getCoach() != null ? user.getCoach().toDTO() : null;
+
+                userInfo.put("username", user.getUsername());
+                userInfo.put("email", user.getEmail());
+                userInfo.put("isCoach", user.getIsCoach());
+                userInfo.put("player", playerDTO);
+                userInfo.put("coach", coachDTO);
+            }
+        }
 
         return userInfo;
     }

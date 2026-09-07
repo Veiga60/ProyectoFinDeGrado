@@ -27,11 +27,11 @@ public class User {
     @Column(name = "user_isCoach", nullable = false, unique = false)
     protected boolean isCoach;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = { CascadeType.MERGE, CascadeType.REFRESH })
     @JoinColumn(name = "player_id", referencedColumnName = "player_id")
     protected Player player;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = { CascadeType.MERGE, CascadeType.REFRESH })
     @JoinColumn(name = "coach_id", referencedColumnName = "coach_id")
     protected Coach coach;
 
