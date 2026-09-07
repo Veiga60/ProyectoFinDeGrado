@@ -10,8 +10,10 @@ import com.ikerveiga.app.JWT.JwtUtil;
 import com.ikerveiga.app.cookies.CookiesService;
 import com.ikerveiga.app.dao.AuthorizedEmailRepository;
 import com.ikerveiga.app.dao.OAuth2UserRepository;
+import com.ikerveiga.app.dao.UserRepository;
 import com.ikerveiga.app.entity.AuthorizedEmail;
 import com.ikerveiga.app.entity.OAuth2User;
+import com.ikerveiga.app.entity.User;
 
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -23,28 +25,31 @@ public class OAuth2Service {
 
     JwtUtil jwtUtil;
     CookiesService cookiesService;
-    OAuth2UserRepository userDAO;
+    UserRepository userRepository;
+    OAuth2UserRepository oAuth2UserDAO;
     AuthorizedEmailRepository authorizedEmailDAO;
 
     @Autowired
-    public OAuth2Service(JwtUtil jwtUtil, CookiesService cookiesService, OAuth2UserRepository userDAO,
-            AuthorizedEmailRepository authorizedEmailDAO) {
+    public OAuth2Service(JwtUtil jwtUtil, CookiesService cookiesService, UserRepository userRepository,
+            OAuth2UserRepository oAuth2UserDAO, AuthorizedEmailRepository authorizedEmailDAO) {
         this.jwtUtil = jwtUtil;
         this.cookiesService = cookiesService;
-        this.userDAO = userDAO;
+        this.userRepository = userRepository;
+        this.oAuth2UserDAO = oAuth2UserDAO;
         this.authorizedEmailDAO = authorizedEmailDAO;
     }
 
     public String handleLoginSuccess(String username, String email, HttpServletResponse response) {
-        OAuth2User existingUser = userDAO.findByEmail(email);
+        User existingUser = userRepository.findByEmail(email);
 
-        String url = (existingUser == null) ? (clientUrl + "/select_role") : (clientUrl + "/home");
+        boolean isNewUser = (existingUser == null);
+        String url = isNewUser ? (clientUrl + "/select_role") : (clientUrl + "/home");
 
         if (existingUser == null) {
             AuthorizedEmail authorizedEmail = authorizedEmailDAO.findByEmail(email);
             if (authorizedEmail != null) {
                 OAuth2User user = new OAuth2User(username, email, false, authorizedEmail.getPlayer());
-                userDAO.save(user);
+                oAuth2UserDAO.save(user);
                 existingUser = user;
             } else {
                 throw new RuntimeException("Usuario no autorizado");
