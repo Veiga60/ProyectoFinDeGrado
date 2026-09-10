@@ -117,7 +117,7 @@ export default function PlayerStats() {
                                             <tbody id='tableBody'>
                                                 <tr>
                                                     <td className='bodyCell'><p>{playerStats?.gamesPlayed}</p></td>
-                                                    <td className='bodyCell'><p>{(((playerStats?.shotsReceived - playerStats?.goalsReceived) / playerStats?.shotsReceived).toFixed(3) == 'NaN') ? ('') : (((playerStats?.shotsReceived - playerStats?.goalsReceived) / playerStats?.shotsReceived).toFixed(3))}</p></td>
+                                                    <td className='bodyCell'><p>{(((playerStats?.shotsReceived - playerStats?.goalsReceived) / playerStats?.shotsReceived).toFixed(3) == 'NaN') ? ('-') : (((playerStats?.shotsReceived - playerStats?.goalsReceived) / playerStats?.shotsReceived).toFixed(3))}</p></td>
                                                     <td className='bodyCell'><p>{playerStats?.shotsReceived}</p></td>
                                                     <td className='bodyCell'><p>{playerStats?.goalsReceived}</p></td>
                                                     <td className='bodyCell'><p>{playerStats?.penaltyMins}</p></td>

@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ikerveiga.app.dto.DebateDTO;
 import com.ikerveiga.app.entity.Debate;
-import com.ikerveiga.app.enums.DebateCategory;
 import com.ikerveiga.app.service.DebateService;
 
 @RestController
@@ -32,7 +31,7 @@ public class DebateController {
     @PostMapping("/debates")
     public ResponseEntity<Void> createDebate(@RequestBody DebateDTO debate) {
         try {
-            debateService.createDebate(debate.getTitle(), debate.getCategory());
+            debateService.createDebate(debate.getTitle(), debate.getCategory().getId());
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (RuntimeException e) {
             if (e.getMessage().equals("Debate already exists")) {
@@ -43,11 +42,11 @@ public class DebateController {
         }
     }
 
-    @GetMapping("/debates/categories/{category}")
-    public ResponseEntity<List<DebateDTO>> getDebatesOfCategory(@PathVariable("category") DebateCategory category) {
+    @GetMapping("/debates/categories/{id}")
+    public ResponseEntity<List<DebateDTO>> getDebatesOfCategory(@PathVariable("id") long id) {
         try {
             List<DebateDTO> debatesDTO = new ArrayList<>();
-            List<Debate> debates = debateService.getDebatesOfCategory(category);
+            List<Debate> debates = debateService.getDebatesOfCategory(id);
 
             for (Debate debate : debates) {
                 debatesDTO.add(debate.toDTO());

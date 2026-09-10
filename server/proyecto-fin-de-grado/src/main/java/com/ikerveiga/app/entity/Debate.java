@@ -5,15 +5,15 @@ import java.util.List;
 
 import com.ikerveiga.app.dto.DebateDTO;
 import com.ikerveiga.app.dto.MessageDTO;
-import com.ikerveiga.app.enums.DebateCategory;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -29,8 +29,8 @@ public class Debate {
     @Column(name = "debate_title", nullable = false, unique = true)
     private String title;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "debate_category", nullable = false, unique = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id")
     private DebateCategory category;
 
     @OneToMany(mappedBy = "debate")
@@ -92,7 +92,7 @@ public class Debate {
             messagesDTO.add(message.toDTOWithoutDebate());
         }
 
-        DebateDTO debateDTO = new DebateDTO(this.id, this.title, this.category, messagesDTO);
+        DebateDTO debateDTO = new DebateDTO(this.id, this.title, this.category.toDTOWithoutDebates(), messagesDTO);
 
         return debateDTO;
     }
