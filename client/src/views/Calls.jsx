@@ -67,7 +67,11 @@ export default function Calls() {
     }, [clubTeamId]);
 
     useEffect(() => {
-        setClubTeamId(authenticatedUser?.player?.clubTeams[0].id);
+        if (authenticatedUser.isCoach == true) {
+            setClubTeamId(authenticatedUser?.coach?.clubTeams[0].id);
+        } else {
+            setClubTeamId(authenticatedUser?.player?.clubTeams[0].id);
+        }
     }, [authenticatedUser]);
 
     return (

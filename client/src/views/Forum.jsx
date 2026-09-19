@@ -34,13 +34,21 @@ export default function Forum() {
         if (defaultClubTeams?.length > 0 && !clubTeamId) {
             setClubTeamId(defaultClubTeams[0].id);
         }
-    }, [authenticatedUser]);
+    }, []);
 
     useEffect(() => {
         if (clubTeamId) {
             getCategories();
         }
     }, [clubTeamId]);
+
+    useEffect(() => {
+        if (authenticatedUser.isCoach == true) {
+            setClubTeamId(authenticatedUser?.coach?.clubTeams[0].id);
+        } else {
+            setClubTeamId(authenticatedUser?.player?.clubTeams[0].id);
+        }
+    }, [authenticatedUser]);
 
     return (
         <>
@@ -60,4 +68,4 @@ export default function Forum() {
             </div>
         </>
     )
-}
+}
