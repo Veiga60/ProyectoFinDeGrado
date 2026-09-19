@@ -9,7 +9,7 @@ import SERVER_URL from '../config.js'
 
 export default function SelectClubTeam() {
 
-    const { authenticatedUser } = useContext(AuthContext);
+    const { authenticatedUser, verifyUserSession } = useContext(AuthContext);
     const [clubTeams, setClubTeams] = useState([]);
     const [selectedClubTeams, setSelectedClubTeams] = useState([]);
     const navigate = useNavigate();
@@ -35,7 +35,8 @@ export default function SelectClubTeam() {
 
     const setCoachClubTeams = async () => {
         try {
-            const response = await axios.put(`${SERVER_URL}/coaches/clubTeams?email=${authenticatedUser?.email}`, selectedClubTeams, { withCredentials: true });
+            await axios.put(`${SERVER_URL}/coaches/clubTeams?email=${authenticatedUser?.email}`, selectedClubTeams, { withCredentials: true });
+            await verifyUserSession();
             navigate("/home");
         } catch (error) {
             console.log('Error al actualizar las categorías del entrenador', error);
