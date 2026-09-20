@@ -46,7 +46,7 @@ export default function StartMatchTeam() {
                     'Content-Type': 'application/json'
                 }, withCredentials: true
             });
-            navigate(`/matches/${matchId}/start_match`, { state: { matchPeriod: location.state.matchPeriod, matchEvents: location.state.matchEvents, teamStatsEdited: true } });
+            navigate(`/matches/${matchId}/start_match`, { state: { matchPeriod: location?.state?.matchPeriod, matchEvents: location.state.matchEvents, teamStatsEdited: true, selectedClubTeamId: location?.state?.selectedClubTeamId } });
         } catch (error) {
             console.log(`Error saving the stats of player: `, error);
         }
@@ -187,7 +187,7 @@ export default function StartMatchTeam() {
                     </div>
                     <div id='startMatchTeamButtonsDiv'>
                         <button className='startMatchTeamButton' onClick={() => saveMatchStats(matchId)}>GUARDAR</button>
-                        <button className='startMatchTeamButton' onClick={() => navigate(`/matches/${matchId}/start_match`, { state: { matchPeriod: location.state.matchPeriod, matchEvents: location.state.matchEvents, teamStatsEdited: false } })}>VOLVER</button>
+                        <button className='startMatchTeamButton' onClick={() => navigate(`/matches/${matchId}/start_match`, { state: { matchPeriod: location?.state?.matchPeriod, matchEvents: location.state.matchEvents, teamStatsEdited: false, selectedClubTeamId: location?.state?.selectedClubTeamId } })}>VOLVER</button>
                     </div>
                 </div>
             </div>
