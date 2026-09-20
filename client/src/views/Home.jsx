@@ -340,6 +340,7 @@ export default function Home() {
                     <StartMatchModal
                         matchId={nextMatch.id}
                         onClose={() => setShowStartMatchModal(false)}
+                        selectedClubTeamId={clubTeamId}
                     />
                 )
             }

@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import '../style/StartMatchModal.css'
 
-export default function StartMatchModal({ onClose, matchId }) {
+export default function StartMatchModal({ onClose, matchId, selectedClubTeamId }) {
 
     const navigate = useNavigate();
 
@@ -16,7 +16,7 @@ export default function StartMatchModal({ onClose, matchId }) {
                         <p id='startMatchModalContentText'>No podrás volver hasta finalizarlo</p>
                     </div>
                     <div id='startMatchModalButtonsDiv'>
-                        <button className='startMatchModalButton' onClick={() => { navigate(`/matches/${matchId}/start_match`); onClose(); }}>EMPEZAR</button>
+                        <button className='startMatchModalButton' onClick={() => { navigate(`/matches/${matchId}/start_match`, { state: { selectedClubTeamId: selectedClubTeamId } }); onClose(); }}>EMPEZAR</button>
                         <button className='startMatchModalButton' onClick={() => onClose()}>VOLVER</button>
                     </div>
                 </div>

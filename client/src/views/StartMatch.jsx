@@ -53,7 +53,7 @@ export default function StartMatch() {
 
     const getNextMatch = async () => {
         try {
-            const response = await axios.get(`${SERVER_URL}/matches/next`, { withCredentials: true });
+            const response = await axios.get(`${SERVER_URL}/matches/next/clubTeam/${location.state.selectedClubTeamId}`, { withCredentials: true });
             setMatch(response.data[0]);
             setPlayers(response.data[0].call.players);
         } catch (error) {
@@ -339,10 +339,10 @@ export default function StartMatch() {
                                     {players.map(player =>
                                         ((match.call.callPlayerStatus[player.id] == 'CONFIRMED') && player.playerType == 'RINK_PLAYER') && (
                                             <tr key={player.id} className='calledPlayerRow'>
-                                                <td className='calledPlayerNumber' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents } })}>
+                                                <td className='calledPlayerNumber' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents, selectedClubTeamId: location?.state?.selectedClubTeamId } })}>
                                                     {`${player.number}`.padStart(2, '0')}
                                                 </td>
-                                                <td className='calledPlayerName' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents } })}>
+                                                <td className='calledPlayerName' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents, selectedClubTeamId: location?.state?.selectedClubTeamId } })}>
                                                     {player.name} {player.lastName1} {player.lastName2}
                                                 </td>
                                             </tr>
@@ -358,10 +358,10 @@ export default function StartMatch() {
                                     {players.map(player =>
                                         ((match.call.callPlayerStatus[player.id] == 'CONFIRMED') && player.playerType == 'GOALIE') && (
                                             <tr key={player.id} className='calledGoalieRow'>
-                                                <td className='calledGoalieNumber' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents } })}>
+                                                <td className='calledGoalieNumber' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents, selectedClubTeamId: location?.state?.selectedClubTeamId } })}>
                                                     {`${player.number}`.padStart(2, '0')}
                                                 </td>
-                                                <td className='calledGoalieName' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents } })}>
+                                                <td className='calledGoalieName' onClick={() => navigate(`/matches/${matchId}/start_match/players/${player.id}`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents, selectedClubTeamId: location?.state?.selectedClubTeamId } })}>
                                                     {player.name} {player.lastName1} {player.lastName2}
                                                 </td>
                                             </tr>
@@ -371,8 +371,8 @@ export default function StartMatch() {
                             </table>
                         </div>
                         <div id='startMatchButtonsDiv'>
-                            <button className='startMatchButton' onClick={() => navigate(`/matches/${matchId}/start_match/team`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents } })}><RiTeamFill className='teamIcon' size={25} /><span>ESTADISTICAS EQUIPO</span></button>
-                            <button className='startMatchButton' onClick={() => navigate(`/matches/${matchId}/incidences`, { state: { match: match, matchPeriod: matchPeriod, matchEvents: matchEvents } })}><PiHockeyFill className='eventsIcon' size={25} /><span>INCIDENCIAS</span></button>
+                            <button className='startMatchButton' onClick={() => navigate(`/matches/${matchId}/start_match/team`, { state: { matchPeriod: matchPeriod, matchEvents: matchEvents, selectedClubTeamId: location?.state?.selectedClubTeamId } })}><RiTeamFill className='teamIcon' size={25} /><span>ESTADISTICAS EQUIPO</span></button>
+                            <button className='startMatchButton' onClick={() => navigate(`/matches/${matchId}/incidences`, { state: { match: match, matchPeriod: matchPeriod, matchEvents: matchEvents, selectedClubTeamId: location?.state?.selectedClubTeamId } })}><PiHockeyFill className='eventsIcon' size={25} /><span>INCIDENCIAS</span></button>
                         </div>
                     </div>
                     <div id='matchEventsContainer'>

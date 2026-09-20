@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useLocation, useNavigate, useParams } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import '../style/MatchEvents.css'
 import PenaltiesModal from '../components/PenaltiesModal';
 import GoalsModal from '../components/GoalsModal';
@@ -35,7 +35,7 @@ export default function MatchEvents() {
     }
 
     const finishEditingMatchEvents = async () => {
-        navigate(`/matches/${match.id}/start_match`, { state: { matchPeriod: location.state.matchPeriod, matchEvents: matchEvents } });
+        navigate(`/matches/${match.id}/start_match`, { state: { matchPeriod: location.state.matchPeriod, matchEvents: matchEvents, selectedClubTeamId: location?.state?.selectedClubTeamId } });
     }
 
     useEffect(() => {
@@ -68,7 +68,7 @@ export default function MatchEvents() {
                 </div>
                 <div id='saveIncidencesButtonDiv'>
                     <button id='saveIncidencesButton' onClick={() => finishEditingMatchEvents()}>GUARDAR</button>
-                    <button id='returnButton' onClick={() => navigate(`/matches/${match?.id}/start_match`, { state: { matchPeriod: location.state.matchPeriod, matchEvents: matchEvents } })}>VOLVER</button>
+                    <button id='returnButton' onClick={() => navigate(`/matches/${match?.id}/start_match`, { state: { matchPeriod: location.state.matchPeriod, matchEvents: matchEvents, selectedClubTeamId: location?.state?.selectedClubTeamId } })}>VOLVER</button>
                 </div>
                 {
                     (penaltiesModal &&
