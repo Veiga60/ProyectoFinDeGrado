@@ -31,8 +31,8 @@ public class TeamStatsService {
             int powerPlayNoGoals,
             int penaltyKillGoals,
             int penaltyKillNoGoals, int oneVsZero,
-            int oneVsOne, int twoVsOne, int twoVsTwo, int threeVsOne, int threeVsTwo) {
-        TeamStats teamStats = teamStatsDAO.findById(1);
+            int oneVsOne, int twoVsOne, int twoVsTwo, int threeVsOne, int threeVsTwo, long clubTeamId) {
+        TeamStats teamStats = teamStatsDAO.findByClubTeamId(clubTeamId);
 
         if (teamStats == null) {
             throw new RuntimeException("Team stats not found");

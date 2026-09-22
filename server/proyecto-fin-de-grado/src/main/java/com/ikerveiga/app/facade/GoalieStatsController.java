@@ -44,11 +44,13 @@ public class GoalieStatsController {
     }
 
     @Secured("ROLE_COACH")
-    @PutMapping("/goaliesStats/all/update")
-    public ResponseEntity<Void> updateGoaliesStats(@RequestBody List<GoalieStatsDTO> goaliesStats) {
+    @PutMapping("/goaliesStats/clubTeams/{clubTeamId}/all/update")
+    public ResponseEntity<Void> updateGoaliesStats(@RequestBody List<GoalieStatsDTO> goaliesStats,
+            @PathVariable("clubTeamId") long clubTeamId) {
         try {
             for (GoalieStatsDTO goalieStats : goaliesStats) {
-                goalieStatsService.updateGoaliesStats(goalieStats.getGoalie().getId(), goalieStats.getGoalsReceived(),
+                goalieStatsService.updateGoaliesStats(goalieStats.getGoalie().getId(), clubTeamId,
+                        goalieStats.getGoalsReceived(),
                         goalieStats.getShotsReceived(), goalieStats.getPenaltyMins(), goalieStats.getPenaltyShotGoals(),
                         goalieStats.getPenaltyShotSaves());
             }

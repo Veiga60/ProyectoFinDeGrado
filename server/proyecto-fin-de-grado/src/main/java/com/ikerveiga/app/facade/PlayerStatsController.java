@@ -44,12 +44,15 @@ public class PlayerStatsController {
     }
 
     @Secured("ROLE_COACH")
-    @PutMapping("/playersStats/all/update")
-    public ResponseEntity<Void> updatePlayersStats(@RequestBody List<PlayerStatsDTO> playersStats) {
+    @PutMapping("/playersStats/clubTeams/{clubTeamId}/all/update")
+    public ResponseEntity<Void> updatePlayersStats(@RequestBody List<PlayerStatsDTO> playersStats,
+            @PathVariable("clubTeamId") long clubTeamId) {
         try {
             for (PlayerStatsDTO playerStats : playersStats) {
-                playerStatsService.updatePlayersStats(playerStats.getPlayer().getId(), playerStats.getGoals(),
-                        playerStats.getAssists(), playerStats.getPlusMinus(), playerStats.getShots(),
+                playerStatsService.updatePlayersStats(playerStats.getPlayer().getId(),
+                        clubTeamId,
+                        playerStats.getGoals(), playerStats.getAssists(), playerStats.getPlusMinus(),
+                        playerStats.getShots(),
                         playerStats.getGoodPasses(), playerStats.getBadPasses(), playerStats.getRecoveredPucks(),
                         playerStats.getLostPucks(), playerStats.getPenaltyMins(), playerStats.getPenaltyShotGoals(),
                         playerStats.getPenaltyShotMisses());
@@ -57,7 +60,8 @@ public class PlayerStatsController {
 
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (RuntimeException e) {
-            if (e.getMessage().equals("Player stats not found")) {
+            e.printStackTrace();
+            if ("Player stats not found".equals(e.getMessage())) {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             } else {
                 return new ResponseEntity<>(HttpStatus.BAD_REQUEST);

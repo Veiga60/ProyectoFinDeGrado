@@ -39,15 +39,16 @@ public class TeamStatsController {
     }
 
     @Secured("ROLE_COACH")
-    @PutMapping("/teamStats/update")
-    public ResponseEntity<Void> updateTeamStats(@RequestBody TeamMatchStatsDTO teamMatchStats) {
+    @PutMapping("/teamStats/clubTeams/{clubTeamId}/update")
+    public ResponseEntity<Void> updateTeamStats(@RequestBody TeamMatchStatsDTO teamMatchStats,
+            @PathVariable("clubTeamId") long clubTeamId) {
         try {
             teamStatsService.updateTeamStats(teamMatchStats.getMatchResult(), teamMatchStats.getBonusPoint(),
                     teamMatchStats.getGoalsFor(), teamMatchStats.getGoalsAgainst(), teamMatchStats.getPowerPlayGoals(),
                     teamMatchStats.getPowerPlayNoGoals(), teamMatchStats.getPenaltyKillGoals(),
                     teamMatchStats.getPenaltyKillNoGoals(), teamMatchStats.getOneVsZero(), teamMatchStats.getOneVsOne(),
                     teamMatchStats.getTwoVsOne(), teamMatchStats.getTwoVsTwo(), teamMatchStats.getThreeVsOne(),
-                    teamMatchStats.getThreeVsTwo());
+                    teamMatchStats.getThreeVsTwo(), clubTeamId);
 
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (RuntimeException e) {
