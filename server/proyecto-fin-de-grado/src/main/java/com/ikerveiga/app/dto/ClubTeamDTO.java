@@ -6,6 +6,9 @@ public class ClubTeamDTO {
     String code;
     String description;
 
+    public ClubTeamDTO() {
+    }
+
     public ClubTeamDTO(long id, String code, String description) {
         this.id = id;
         this.code = code;
@@ -14,6 +17,14 @@ public class ClubTeamDTO {
 
     public ClubTeamDTO(String code, String description) {
         this.code = code;
+        this.description = description;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public void setDescription(String description) {
         this.description = description;
     }
 

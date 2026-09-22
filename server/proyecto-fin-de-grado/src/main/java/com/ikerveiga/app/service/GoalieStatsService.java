@@ -25,10 +25,11 @@ public class GoalieStatsService {
         return goalieStats;
     }
 
-    public void updateGoaliesStats(long goalieId, int goalsReceived, int shotsReceived, int penaltyMins,
+    public void updateGoaliesStats(long goalieId, long clubTeamId, int goalsReceived, int shotsReceived,
+            int penaltyMins,
             int penaltyShotGoals,
             int penaltyShotSaves) {
-        GoalieStats goalieStats = goalieStatsDAO.findByGoalieId(goalieId);
+        GoalieStats goalieStats = goalieStatsDAO.findByPlayerIdAndClubTeamId(goalieId, clubTeamId);
 
         if (goalieStats == null) {
             throw new RuntimeException("Player stats not found");

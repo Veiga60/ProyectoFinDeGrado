@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate, useParams, useLocation } from 'react-router-dom'
 import ScoreBoard from '../components/ScoreBoard.jsx'
 import UseAIModal from '../components/UseAIModal.jsx'
@@ -209,9 +209,9 @@ export default function StartMatch() {
 
     const finishMatch = async () => {
         try {
-            await axios.put(`${SERVER_URL}/playersStats/all/update`, playersMatchStats, { withCredentials: true });
-            await axios.put(`${SERVER_URL}/goaliesStats/all/update`, goaliesMatchStats, { withCredentials: true });
-            await axios.put(`${SERVER_URL}/teamStats/update`, teamMatchStats, { withCredentials: true });
+            await axios.put(`${SERVER_URL}/playersStats/clubTeams/${location.state.selectedClubTeamId}/all/update`, playersMatchStats, { withCredentials: true });
+            await axios.put(`${SERVER_URL}/goaliesStats/clubTeams/${location.state.selectedClubTeamId}/all/update`, goaliesMatchStats, { withCredentials: true });
+            await axios.put(`${SERVER_URL}/teamStats/clubTeams/${location.state.selectedClubTeamId}/update`, teamMatchStats, { withCredentials: true });
             await axios.put(`${SERVER_URL}/matches/${matchId}/update`, {}, { params: { localTeamGoals: Number(localTeamGoals), visitingTeamGoals: Number(visitingTeamGoals), bonusPoint: Number(bonusPointTeam?.id) || null }, withCredentials: true })
             navigate('/home');
         } catch (error) {
