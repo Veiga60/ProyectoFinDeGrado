@@ -89,8 +89,8 @@ public class PlayerMatchStatsService {
         return playersMatchStats;
     }
 
-    public PlayerMatchStats getLastPlayedMatchPlayerMatchStats(long playerId) {
-        List<Match> matches = matchDAO.findPlayedMatchesBackwards();
+    public PlayerMatchStats getLastPlayedMatchPlayerMatchStats(long playerId, long clubTeamId) {
+        List<Match> matches = matchDAO.findPlayedMatchesOfClubTeamBackwards(clubTeamId);
 
         Match match;
 

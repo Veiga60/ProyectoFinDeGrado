@@ -27,6 +27,7 @@ public class AIController {
             String response = aiService.getRecomendations(prompt);
             return ResponseEntity.ok(response);
         } catch (RuntimeException e) {
+            e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }

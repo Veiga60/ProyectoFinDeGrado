@@ -113,10 +113,10 @@ public class MatchController {
         }
     }
 
-    @GetMapping("/matches/lastPlayed")
-    public ResponseEntity<MatchDTO> getLastPlayedMatch() {
+    @GetMapping("/matches/clubTeams/{clubTeam}/lastPlayed")
+    public ResponseEntity<MatchDTO> getLastPlayedMatch(@PathVariable("clubTeamId") long clubTeamId) {
         try {
-            MatchDTO lastPlayedMatch = matchService.getLastPlayedMatch().toDTO();
+            MatchDTO lastPlayedMatch = matchService.getLastPlayedMatchOfClubTeam(clubTeamId).toDTO();
 
             return ResponseEntity.ok(lastPlayedMatch);
         } catch (RuntimeException e) {
@@ -128,10 +128,10 @@ public class MatchController {
         }
     }
 
-    @GetMapping("/matches/lastPlayedWithRecomendations")
-    public ResponseEntity<MatchDTO> getLastPlayedMatchWithRecomendations() {
+    @GetMapping("/matches/lastPlayedWithRecomendations/clubTeams/{clubTeamId}")
+    public ResponseEntity<MatchDTO> getLastPlayedMatchWithRecomendations(@PathVariable("clubTeamId") long clubTeamId) {
         try {
-            MatchDTO lastPlayedMatch = matchService.getLastPlayedMatchWithRecomendations().toDTO();
+            MatchDTO lastPlayedMatch = matchService.getLastPlayedMatchWithRecomendations(clubTeamId).toDTO();
 
             return ResponseEntity.ok(lastPlayedMatch);
         } catch (RuntimeException e) {
