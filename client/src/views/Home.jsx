@@ -1,9 +1,9 @@
-﻿import Header from '../components/Header.jsx'
+import Header from '../components/Header.jsx'
 import Match from '../components/Match.jsx'
 import MatchCompressed from '../components/MatchCompressed.jsx'
 import axios from 'axios'
 import { useState, useEffect, useContext } from 'react'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import coachHomePhoto from '../assets/images/coachHomePhoto.png'
 import '../style/Home.css'
 import basicLogo from '../assets/images/basicLogo.png'
@@ -44,7 +44,7 @@ export default function Home() {
 
     const getLastPlayedMatch = async () => {
         try {
-            const response = await axios.get(`${SERVER_URL}/matches/lastPlayedWithRecomendations`, { withCredentials: true });
+            const response = await axios.get(`${SERVER_URL}/matches/lastPlayedWithRecomendations/clubTeams/${clubTeamId}`, { withCredentials: true });
             setLastPlayedMatch(response.data);
             setRecomendationsAvailable(true);
         } catch (error) {
@@ -54,7 +54,7 @@ export default function Home() {
 
     const getLastPlayedMatchPlayerMatchStats = async (playerId) => {
         try {
-            const response = await axios.get(`${SERVER_URL}/playersMatchStats/matches/lastPlayed/players/${playerId}`, { withCredentials: true })
+            const response = await axios.get(`${SERVER_URL}/playersMatchStats/matches/clubTeams/${clubTeamId}/lastPlayed/players/${playerId}`, { withCredentials: true })
             setLastPlayedMatchPlayerMatchStats(response.data);
             setStatsAvailable(true);
         } catch (error) {
@@ -64,7 +64,7 @@ export default function Home() {
 
     const getLastPlayedMatchGoalieMatchStats = async (playerId) => {
         try {
-            const response = await axios.get(`${SERVER_URL}/playersMatchStats/matches/lastPlayed/goalies/${playerId}`, { withCredentials: true })
+            const response = await axios.get(`${SERVER_URL}/playersMatchStats/matches/clubTeams/${clubTeamId}/lastPlayed/goalies/${playerId}`, { withCredentials: true })
             setLastPlayedMatchGoalieMatchStats(response.data);
             setStatsAvailable(true);
         } catch (error) {
@@ -83,8 +83,18 @@ export default function Home() {
     }, []);
 
     useEffect(() => {
-        if (clubTeamId) {
-            getNextMatch();
+        if (!clubTeamId) return;
+
+        getNextMatch();
+
+        if (authenticatedUser?.isCoach) {
+            getLastPlayedMatch();
+        } else {
+            if (authenticatedUser?.player?.playerType == "RINK_PLAYER") {
+                getLastPlayedMatchPlayerMatchStats(authenticatedUser?.player?.id);
+            } else if (authenticatedUser?.player?.playerType == "GOALIE") {
+                getLastPlayedMatchGoalieMatchStats(authenticatedUser?.player?.id);
+            }
         }
     }, [clubTeamId]);
 
@@ -95,16 +105,6 @@ export default function Home() {
             : authenticatedUser?.player?.clubTeams;
         if (defaultClubTeams?.length > 0 && !clubTeamId) {
             setClubTeamId(defaultClubTeams[0].id);
-        }
-
-        if (authenticatedUser?.isCoach == true) {
-            getLastPlayedMatch();
-        } else {
-            if (authenticatedUser?.player?.playerType == "RINK_PLAYER") {
-                getLastPlayedMatchPlayerMatchStats(authenticatedUser?.player?.id);
-            } else if (authenticatedUser?.player?.playerType == "GOALIE") {
-                getLastPlayedMatchGoalieMatchStats(authenticatedUser?.player?.id);
-            }
         }
     }, [authenticatedUser]);
 

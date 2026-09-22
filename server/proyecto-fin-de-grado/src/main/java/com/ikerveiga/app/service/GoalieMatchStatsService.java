@@ -81,8 +81,8 @@ public class GoalieMatchStatsService {
         return goaliesMatchStats;
     }
 
-    public GoalieMatchStats getLastPlayedMatchGoalieMatchStats(long playerId) {
-        List<Match> matches = matchDAO.findPlayedMatchesBackwards();
+    public GoalieMatchStats getLastPlayedMatchGoalieMatchStats(long playerId, long clubTeamId) {
+        List<Match> matches = matchDAO.findPlayedMatchesOfClubTeamBackwards(clubTeamId);
 
         Match match;
         if (matches == null || matches.isEmpty()) {

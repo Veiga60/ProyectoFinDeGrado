@@ -83,12 +83,12 @@ public class PlayerMatchStatsController {
         }
     }
 
-    @GetMapping("/playersMatchStats/matches/lastPlayed/players/{playerId}")
+    @GetMapping("/playersMatchStats/matches/clubTeams/{clubTeamId}/lastPlayed/players/{playerId}")
     public ResponseEntity<PlayerMatchStatsDTO> getLastPlayedMatchPlayerMatchStats(
-            @PathVariable("playerId") long playerId) {
+            @PathVariable("clubTeamId") long clubTeamId, @PathVariable("playerId") long playerId) {
         try {
             PlayerMatchStatsDTO playerMatchStatsDTO = playerMatchStatsService
-                    .getLastPlayedMatchPlayerMatchStats(playerId).toDTO();
+                    .getLastPlayedMatchPlayerMatchStats(playerId, clubTeamId).toDTO();
 
             return ResponseEntity.ok(playerMatchStatsDTO);
         } catch (RuntimeException e) {

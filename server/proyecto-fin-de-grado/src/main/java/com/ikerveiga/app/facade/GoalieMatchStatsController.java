@@ -80,12 +80,12 @@ public class GoalieMatchStatsController {
         }
     }
 
-    @GetMapping("/playersMatchStats/matches/lastPlayed/goalies/{playerId}")
+    @GetMapping("/playersMatchStats/matches/clubTeams/{clubTeamId}/lastPlayed/goalies/{playerId}")
     public ResponseEntity<GoalieMatchStatsDTO> getLastPlayedMatchGoalieMatchStats(
-            @PathVariable("playerId") long playerId) {
+            @PathVariable("clubTeamId") long clubTeamId, @PathVariable("playerId") long playerId) {
         try {
             GoalieMatchStatsDTO goalieMatchStatsDTO = goalieMatchStatsService
-                    .getLastPlayedMatchGoalieMatchStats(playerId).toDTO();
+                    .getLastPlayedMatchGoalieMatchStats(playerId, clubTeamId).toDTO();
 
             return ResponseEntity.ok(goalieMatchStatsDTO);
         } catch (RuntimeException e) {

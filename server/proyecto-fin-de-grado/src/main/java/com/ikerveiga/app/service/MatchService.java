@@ -63,8 +63,8 @@ public class MatchService {
         matchDAO.save(match);
     }
 
-    public Match getLastPlayedMatch() {
-        List<Match> playedMatches = matchDAO.findPlayedMatchesBackwards();
+    public Match getLastPlayedMatchOfClubTeam(long clubTeamId) {
+        List<Match> playedMatches = matchDAO.findPlayedMatchesOfClubTeamBackwards(clubTeamId);
 
         if (playedMatches.isEmpty()) {
             throw new RuntimeException("No matches played");
@@ -75,8 +75,8 @@ public class MatchService {
         return lastPlayedMatch;
     }
 
-    public Match getLastPlayedMatchWithRecomendations() {
-        List<Match> playedMatches = matchDAO.findPlayedMatchesWithRecomendationsBackwards();
+    public Match getLastPlayedMatchWithRecomendations(long clubTeamId) {
+        List<Match> playedMatches = matchDAO.findPlayedMatchesOfClubTeamWithRecomendationsBackwards(clubTeamId);
 
         if (playedMatches.isEmpty()) {
             throw new RuntimeException("No matches played with recommendations");
