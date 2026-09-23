@@ -56,6 +56,7 @@ export default function UseAIModal({ onClose, onMatchFinished, prompt, matchId }
     const handleUseAI = async () => {
         document.getElementById("useAIText").innerHTML = 'Generando respuesta... Espera, por favor.'
         document.getElementById("useAIModalButtonsDiv").style.display = 'none';
+        document.getElementById("useAIModalLastButtonsDiv").style.display = 'none';
         const recomendations = await getRecomendations();
         if (recomendations) {
             await saveRecomendations(recomendations.teamRecomendations, recomendations.playerRecomendations);
