@@ -68,7 +68,7 @@ export default function GoalsModal({ teamGoal, onClose, matchEvents, setMatchEve
                             <input className='goalsModalInput' type="number" placeholder='Segundo' id="matchSecond" onChange={(e) => { setMatchSecond(e.target.value.padStart(2, '0')) }} />
                         </div>
                         <div className='goalsModalButtonDiv'>
-                            <button className='goalsModalButton' onClick={() => (matchMinute <= 20 && matchSecond <= 59 && matchMinute >= 0 && matchSecond >= 0) && [setGoal(scorer, assister), onClose()]}>GUARDAR</button>
+                            <button className='goalsModalButton' onClick={() => (matchMinute <= 25 && matchSecond <= 59 && matchMinute >= 0 && matchSecond >= 0) && [setGoal(scorer, assister), onClose()]}>GUARDAR</button>
                             <button className='goalsModalButton' onClick={() => onClose()}>CERRAR</button>
                         </div>
                     </div>
@@ -103,7 +103,7 @@ export default function GoalsModal({ teamGoal, onClose, matchEvents, setMatchEve
                             <input className='goalsModalInput' type="number" placeholder='Segundo' id="matchSecond" onChange={(e) => { setMatchSecond(e.target.value.padStart(2, '0')) }} />
                         </div>
                         <div className='goalsModalButtonDiv'>
-                            <button id='goalsModalSaveButton' className='goalsModalButton' onClick={() => (matchMinute <= 20 && matchSecond <= 59 && matchMinute >= 0 && matchSecond >= 0) && [setGoal(scorer, assister), onClose()]}>GUARDAR</button>
+                            <button id='goalsModalSaveButton' className='goalsModalButton' onClick={() => (matchMinute <= 25 && matchSecond <= 59 && matchMinute >= 0 && matchSecond >= 0) && [setGoal(scorer, assister), onClose()]}>GUARDAR</button>
                             <button id='goalsModalReturnButton' className='goalsModalButton' onClick={() => onClose()}>CERRAR</button>
                         </div>
                     </div>
