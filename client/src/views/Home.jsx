@@ -165,7 +165,7 @@ export default function Home() {
                                     <p id='recomendationsText'>Recomendaciones</p>
                                     {
                                         (recomendationsAvailable == true) ? (
-                                            <div id='recomendations' onClick={() => { navigate(`/recomendations/matches/${lastPlayedMatch.id}`, { match: lastPlayedMatch }) }}>
+                                            <div id='recomendations' onClick={() => { navigate(`/recomendations/matches/${lastPlayedMatch.id}`, { state: { match: lastPlayedMatch } }) }}>
                                                 <p id='seeRecomendationsText'>Ver recomendaciones del partido:</p>
                                                 <div id='lastPlayedMatchDiv'>
                                                     <img id='lastPlayedMatchLocalTeamImage' src={lastPlayedMatch?.localTeam?.logo ? `/logos/${lastPlayedMatch?.localTeam?.logo}` : basicLogo} alt={`${lastPlayedMatch?.localTeam?.name}`} />
