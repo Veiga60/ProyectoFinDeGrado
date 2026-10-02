@@ -1,4 +1,4 @@
-﻿import Header from '../components/Header.jsx'
+import Header from '../components/Header.jsx'
 import { useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import { useContext, useEffect, useState } from 'react';
@@ -8,7 +8,7 @@ import { AuthContext } from '../components/AuthContext.jsx';
 import SERVER_URL from '../config.js'
 
 export default function ForumDebates() {
-    const { category } = useParams();
+    const { categoryId } = useParams();
     const navigate = useNavigate();
 
     const [createDebateModal, setCreateDebateModal] = useState(false);
@@ -24,7 +24,7 @@ export default function ForumDebates() {
 
     const getDebates = async () => {
         try {
-            const response = await axios.get(`${SERVER_URL}/debates/categories/${String(category).toUpperCase()}`, { withCredentials: true })
+            const response = await axios.get(`${SERVER_URL}/debates/categories/${categoryId}`, { withCredentials: true })
             setDebates(response.data);
         } catch (error) {
             console.log('Error fetching debates: ', error);
@@ -35,8 +35,10 @@ export default function ForumDebates() {
         try {
             await axios.post(`${SERVER_URL}/debates`,
                 {
-                    'title': title,
-                    'category': String(category).toUpperCase()
+                    title: title,
+                    category: {
+                        id: categoryId
+                    }
                 },
                 {
                     headers: {
@@ -62,7 +64,7 @@ export default function ForumDebates() {
                     {
                         debates.map((debate) => {
                             return (
-                                <div key={debate.id} className='debateDiv' onClick={() => navigate(`/forum/categories/${category}/${debate.id}`)}>
+                                <div key={debate.id} className='debateDiv' onClick={() => navigate(`/forum/categories/${categoryId}/${debate.id}`)}>
                                     <p id='debateText'>{debate.title}</p>
                                 </div>
                             )
