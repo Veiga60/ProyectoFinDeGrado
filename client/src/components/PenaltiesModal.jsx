@@ -138,7 +138,7 @@ export default function PenaltiesModal({ teamPenalty, onClose, matchEvents, setM
                                 <input className='penaltiesModalInput' type="number" placeholder='Segundo' id="matchSecond" onChange={(e) => { setMatchSecond(e.target.value.padStart(2, '0')) }} />
                             </div>
                             <div id='penaltiesModalButtonsDiv' className='penaltiesModalButtonsDivNotMyTeam'>
-                                <button className='penaltiesModalButton' onClick={() => (penaltyTime == 2 || penaltyTime == 5 || penaltyTime == 10) && (matchMinute <= 20 && matchSecond <= 59 && matchMinute >= 0 && matchSecond >= 0) && ([setPenalty(), onClose()])}>GUARDAR</button>
+                                <button className='penaltiesModalButton' onClick={() => (penaltyTime == 2 || penaltyTime == 5 || penaltyTime == 10) && (matchMinute <= 25 && matchSecond <= 59 && matchMinute >= 0 && matchSecond >= 0) && ([setPenalty(), onClose()])}>GUARDAR</button>
                                 <button className='penaltiesModalButton' onClick={() => onClose()}>CERRAR</button>
                             </div>
                         </div>
@@ -232,7 +232,7 @@ export default function PenaltiesModal({ teamPenalty, onClose, matchEvents, setM
                                 <input className='penaltiesModalInput' type='number' placeholder='Segundo' onChange={(e) => setMatchSecond(e.target.value.padStart(2, '0'))} />
                             </div>
                             <div id='penaltiesModalButtonsDiv'>
-                                <button className='penaltiesModalButton' onClick={() => (penaltyTime == 2 || penaltyTime == 5 || penaltyTime == 10) && (matchMinute <= 20 && matchSecond <= 59 && matchMinute >= 0 && matchSecond >= 0) && ([setPenalty(), onClose()])}>GUARDAR</button>
+                                <button className='penaltiesModalButton' onClick={() => (penaltyTime == 2 || penaltyTime == 5 || penaltyTime == 10) && (matchMinute <= 25 && matchSecond <= 59 && matchMinute >= 0 && matchSecond >= 0) && ([setPenalty(), onClose()])}>GUARDAR</button>
                                 <button className='penaltiesModalButton' onClick={() => onClose()}>CERRAR</button>
                             </div>
                         </div>

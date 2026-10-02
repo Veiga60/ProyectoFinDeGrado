@@ -55,6 +55,7 @@
     font-family: Inria Sans;
     font-size: x-large;
     font-weight: bold;
+    user-select: none;
 }
 
 .matchStatDiv {
@@ -80,6 +81,7 @@
     font-family: Inria Sans;
     font-weight: bold;
     font-size: larger;
+    user-select: none;
 }
 
 .plusButton {
@@ -98,6 +100,7 @@
     font-family: Inria Sans;
     font-weight: bold;
     font-size: xx-large;
+    user-select: none;
 }
 
 #startMatchPlayerButtonsDiv {

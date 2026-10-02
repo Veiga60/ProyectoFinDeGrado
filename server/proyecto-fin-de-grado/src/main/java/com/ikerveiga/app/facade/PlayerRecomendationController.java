@@ -61,6 +61,7 @@ public class PlayerRecomendationController {
             if (e.getMessage().equals("Player not found") || e.getMessage().equals("Match not found")) {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             } else {
+                e.printStackTrace();
                 return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             }
         }
