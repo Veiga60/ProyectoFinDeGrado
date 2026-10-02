@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ikerveiga.app.dao.MatchRepository;
 import com.ikerveiga.app.dao.PlayerRecomendationRepository;
@@ -44,6 +45,7 @@ public class PlayerRecomendationService {
         playerRecomendationDAO.save(playerRecomendation);
     }
 
+    @Transactional
     public List<PlayerRecomendation> getPlayerRecomendations(long playerId, long matchId) {
         Player player = playerDAO.findById(playerId);
         Match match = matchDAO.findById(matchId);
