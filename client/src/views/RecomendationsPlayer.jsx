@@ -1,6 +1,7 @@
-﻿import { useLocation, useParams } from "react-router-dom"
+import { useLocation, useParams } from "react-router-dom"
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import Header from '../components/Header.jsx'
 import '../style/RecomendationsPlayer.css'
 import basicUser from '../assets/images/basicUser.png'
@@ -39,24 +40,32 @@ export default function RecomendationsPlayer() {
                     </div>
                 </div>
                 <div id='playerRecomendationsRightDiv'>
-                    <div id="playerRecomendationsDiv">
-                        {
-                            playerRecomendations?.map((playerRecomendation) => {
-                                return (
-                                    <div key={playerRecomendation.id} id="playerRecomendation">
-                                        <div id="playerRecomendationTitleDiv">
-                                            <p id="playerRecomendationTitleText">{`${playerRecomendation.area}`.replace('_', ' ').toUpperCase()}</p>
+                    <Tabs id="playerRecomendationsDiv" defaultIndex={0}>
+                        <TabList>
+                            <Tab>Recomendaciones</Tab>
+                            <Tab>Estadísticas</Tab>
+                        </TabList>
+                        <TabPanel id="playerRecomendationsPanel">
+                            {
+                                playerRecomendations?.map((playerRecomendation) => {
+                                    return (
+                                        <div key={playerRecomendation.id} id="playerRecomendation">
+                                            <div id="playerRecomendationTitleDiv">
+                                                <p id="playerRecomendationTitleText">{`${playerRecomendation.area}`.replace('_', ' ').toUpperCase()}</p>
+                                            </div>
+                                            <div id="playerRecomendationDescriptionDiv">
+                                                <p id="playerRecomendationDescriptionText">{playerRecomendation.description}</p>
+                                            </div>
                                         </div>
-                                        <div id="playerRecomendationDescriptionDiv">
-                                            <p id="playerRecomendationDescriptionText">{playerRecomendation.description}</p>
-                                        </div>
-                                    </div>
-                                )
-                            })
-                        }
-                    </div>
+                                    )
+                                })
+                            }
+                        </TabPanel>
+                        <TabPanel id="playerStatsPanel">
+                        </TabPanel>
+                    </Tabs>
                 </div>
-            </div>
+            </div >
         </>
     )
 }
