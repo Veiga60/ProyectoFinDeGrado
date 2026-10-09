@@ -1,6 +1,7 @@
 ﻿import { useLocation, useParams } from "react-router-dom"
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import Header from '../components/Header.jsx'
 import logo from '../assets/images/logo-metropolitanohc-negro-transparente.png'
 import '../style/RecomendationsTeam.css'
@@ -38,22 +39,30 @@ export default function RecomendationsTeam() {
                     </div>
                 </div>
                 <div id='teamRecomendationsRightDiv'>
-                    <div id="teamRecomendationsDiv">
-                        {
-                            teamRecomendations?.map((teamRecomendation) => {
-                                return (
-                                    <div key={teamRecomendation.id} id="teamRecomendation">
-                                        <div id="teamRecomendationTitleDiv">
-                                            <p id="teamRecomendationTitleText">{`${teamRecomendation.area}`.replace('_', ' ').toUpperCase()}</p>
+                    <Tabs id="teamRecomendationsDiv">
+                        <TabList>
+                            <Tab>Recomendaciones</Tab>
+                            <Tab>Estadísticas</Tab>
+                        </TabList>
+                        <TabPanel id="teamRecomendationsPanel">
+                            {
+                                teamRecomendations?.map((teamRecomendation) => {
+                                    return (
+                                        <div key={teamRecomendation.id} id="teamRecomendation">
+                                            <div id="teamRecomendationTitleDiv">
+                                                <p id="teamRecomendationTitleText">{`${teamRecomendation.area}`.replace('_', ' ').toUpperCase()}</p>
+                                            </div>
+                                            <div id="teamRecomendationDescriptionDiv">
+                                                <p id="teamRecomendationDescriptionText">{teamRecomendation.description}</p>
+                                            </div>
                                         </div>
-                                        <div id="teamRecomendationDescriptionDiv">
-                                            <p id="teamRecomendationDescriptionText">{teamRecomendation.description}</p>
-                                        </div>
-                                    </div>
-                                )
-                            })
-                        }
-                    </div>
+                                    )
+                                })
+                            }
+                        </TabPanel>
+                        <TabPanel id="playerStatsPanel">
+                        </TabPanel>
+                    </Tabs>
                 </div>
             </div>
         </>
