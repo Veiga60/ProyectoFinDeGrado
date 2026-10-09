@@ -13,19 +13,36 @@ export default function RecomendationsPlayer() {
     const { playerId } = useParams();
 
     const [playerRecomendations, setPlayerRecomendations] = useState([]);
+    const [playerLastPlayedMatchStats, setPlayerLastPlayedMatchStats] = useState();
 
     const getPlayerRecomendations = async () => {
         try {
             const response = await axios.get(`${SERVER_URL}/recomendations/matches/${matchId}/players/${playerId}`, { withCredentials: true })
             setPlayerRecomendations(response.data);
+            console.log(response.data);
         } catch (error) {
             console.log('Error fetching recomendations of player.', error);
+        }
+    }
+
+    const getPlayerLastPlayedMatchStats = async () => {
+        try {
+            const response = await axios.get(`${SERVER_URL}/playersMatchStats/matches/clubTeams/${playerRecomendations[0]?.match?.clubTeam?.id}/lastPlayed/players/${playerId}`, { withCredentials: true })
+            setPlayerLastPlayedMatchStats(response.data);
+            console.log(response.data);
+        } catch (error) {
+            console.log('Error recuperando estadísticas del último partido: ', error);
         }
     }
 
     useEffect(() => {
         getPlayerRecomendations();
     }, []);
+
+    useEffect(() => {
+        if (playerRecomendations[0]?.match?.clubTeam?.id)
+            getPlayerLastPlayedMatchStats();
+    }, [playerRecomendations])
 
     return (
         <>
