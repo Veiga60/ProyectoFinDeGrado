@@ -57,4 +57,17 @@ public class TeamMatchStatsController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
+
+    @GetMapping("/matchStats/clubTeams/{clubTeamId}/matches/lastPlayed")
+    public ResponseEntity<TeamMatchStatsDTO> getLastPlayedMatchTeamMatchStats(
+            @PathVariable("clubTeamId") long clubTeamId) {
+        try {
+            TeamMatchStatsDTO teamMatchStats = teamMatchStatsService.getLastPlayedMatchTeamMatchStats(clubTeamId)
+                    .toDTO();
+
+            return ResponseEntity.ok(teamMatchStats);
+        } catch (RuntimeException e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
 }

@@ -1,5 +1,7 @@
 package com.ikerveiga.app.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -62,6 +64,22 @@ public class TeamMatchStatsService {
         if (teamMatchStats == null) {
             return new TeamMatchStats(null, false, 0, 0, match, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         }
+
+        return teamMatchStats;
+    }
+
+    public TeamMatchStats getLastPlayedMatchTeamMatchStats(long clubTeamId) {
+        List<Match> matches = matchDAO.findPlayedMatchesOfClubTeamBackwards(clubTeamId);
+
+        Match match;
+
+        if (matches == null || matches.isEmpty()) {
+            match = new Match();
+        } else {
+            match = matches.get(0);
+        }
+
+        TeamMatchStats teamMatchStats = teamMatchStatsDAO.findByMatchId(match.getId());
 
         return teamMatchStats;
     }
