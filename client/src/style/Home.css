@@ -6,7 +6,7 @@
     width: 100%;
     height: calc(100% - 80px);
     overflow-y: auto;
-    scrollbar-color: rgb(7, 78, 200) transparent;
+    scrollbar-color: hsl(218, 93%, 41%) transparent;
 }
 
 #greetingDiv {

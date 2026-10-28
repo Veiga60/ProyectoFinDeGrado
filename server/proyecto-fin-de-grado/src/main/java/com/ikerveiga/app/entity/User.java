@@ -35,6 +35,10 @@ public class User {
     @JoinColumn(name = "coach_id", referencedColumnName = "coach_id")
     protected Coach coach;
 
+    @ManyToOne
+    @JoinColumn(name = "club_id")
+    private Club club;
+
     public User() {
 
     }
@@ -146,5 +150,12 @@ public class User {
                 playerDTO);
 
         return userDTO;
+    }
+    public Club getClub() {
+        return this.club;
+    }
+
+    public void setClub(Club club) {
+        this.club = club;
     }
 }

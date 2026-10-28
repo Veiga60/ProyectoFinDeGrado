@@ -15,6 +15,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -30,6 +31,10 @@ public class Coach {
     @JoinTable(name = "coach_club_teams", joinColumns = @JoinColumn(name = "coach_id"), inverseJoinColumns = @JoinColumn(name = "club_team_id"))
     private List<ClubTeam> clubTeams;
 
+    @ManyToOne
+    @JoinColumn(name = "club_id")
+    private Club club;
+
     public Coach() {
     }
 
@@ -38,8 +43,19 @@ public class Coach {
         this.clubTeams = clubTeams;
     }
 
+    public Coach(long id, List<ClubTeam> clubTeams, Club club) {
+        this.id = id;
+        this.clubTeams = clubTeams;
+        this.club = club;
+    }
+
     public Coach(List<ClubTeam> clubTeams) {
         this.clubTeams = clubTeams;
+    }
+
+    public Coach(List<ClubTeam> clubTeams, Club club) {
+        this.clubTeams = clubTeams;
+        this.club = club;
     }
 
     public long getId() {
@@ -56,6 +72,14 @@ public class Coach {
 
     public void setClubTeams(List<ClubTeam> clubTeams) {
         this.clubTeams = clubTeams;
+    }
+
+    public Club getClub() {
+        return this.club;
+    }
+
+    public void setClub(Club club) {
+        this.club = club;
     }
 
     public CoachDTO toDTO() {
