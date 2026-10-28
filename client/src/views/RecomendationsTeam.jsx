@@ -1,4 +1,4 @@
-﻿import { useLocation, useParams } from "react-router-dom"
+import { useLocation, useParams } from "react-router-dom"
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
@@ -44,10 +44,7 @@ export default function RecomendationsTeam() {
 
     return (
         <>
-            <Header
-                authenticatedUserPlayerId={location.state?.authenticatedUserPlayerId}
-                isCoach={location.state?.isCoach}
-            />
+            <Header />
             <div id="teamRecomendationsMainDiv">
                 <div id='teamRecomendationsLeftDiv'>
                     <div id="teamRecomendationsPlayerImageDiv">
@@ -76,78 +73,80 @@ export default function RecomendationsTeam() {
                                 })
                             }
                         </TabPanel>
-                        <TabPanel id="playerStatsPanel">
-                            <div className='playerStat'>
-                                <div className='playerStatDiv'>
-                                    <p className='playerStatText'>{lastPlayedMatchTeamMatchStats?.goalsFor}</p>
+                        <TabPanel className='matchStatsPanel' id="matchStatsPanel">
+                            <div id="matchStatsDiv">
+                                <div className='playerStat'>
+                                    <div className='playerStatDiv'>
+                                        <p className='playerStatText'>{lastPlayedMatchTeamMatchStats?.goalsFor}</p>
+                                    </div>
+                                    <p className='playerStatsTitle'>GOLES A FAVOR</p>
                                 </div>
-                                <p className='playerStatsTitle'>GOLES A FAVOR</p>
-                            </div>
-                            <div className='playerStat'>
-                                <div className='playerStatDiv'>
-                                    <p className='playerStatText'>{lastPlayedMatchTeamMatchStats?.goalsAgainst}</p>
+                                <div className='playerStat'>
+                                    <div className='playerStatDiv'>
+                                        <p className='playerStatText'>{lastPlayedMatchTeamMatchStats?.goalsAgainst}</p>
+                                    </div>
+                                    <p className='playerStatsTitle'>GOLES EN CONTRA</p>
                                 </div>
-                                <p className='playerStatsTitle'>GOLES EN CONTRA</p>
-                            </div>
-                            <div className='playerStat'>
-                                <div className='playerStatDiv'>
-                                    <p className='playerStatText'>{lastPlayedMatchTeamMatchStats?.oneVsZero}</p>
+                                <div className='playerStat'>
+                                    <div className='playerStatDiv'>
+                                        <p className='playerStatText'>{lastPlayedMatchTeamMatchStats?.oneVsZero}</p>
+                                    </div>
+                                    <p className='playerStatsTitle'>1VS0</p>
                                 </div>
-                                <p className='playerStatsTitle'>1VS0</p>
-                            </div>
-                            <div className='playerStat'>
-                                <div className='playerStatDiv'>
-                                    <p className='playerStatText'>{lastPlayedMatchTeamMatchStats?.oneVsOne}</p>
+                                <div className='playerStat'>
+                                    <div className='playerStatDiv'>
+                                        <p className='playerStatText'>{lastPlayedMatchTeamMatchStats?.oneVsOne}</p>
+                                    </div>
+                                    <p className='playerStatsTitle'>1VS1</p>
                                 </div>
-                                <p className='playerStatsTitle'>1VS1</p>
-                            </div>
-                            <div className='playerStat'>
-                                <div className='playerStatDiv'>
-                                    <p className='playerStatText'>{lastPlayedMatchTeamMatchStats?.twoVsOne}</p>
+                                <div className='playerStat'>
+                                    <div className='playerStatDiv'>
+                                        <p className='playerStatText'>{lastPlayedMatchTeamMatchStats?.twoVsOne}</p>
+                                    </div>
+                                    <p className='playerStatsTitle'>2VS1</p>
                                 </div>
-                                <p className='playerStatsTitle'>2VS1</p>
-                            </div>
-                            <div className='playerStat'>
-                                <div className='playerStatDiv'>
-                                    <p className='playerStatText'>{lastPlayedMatchTeamMatchStats?.twoVsTwo}</p>
+                                <div className='playerStat'>
+                                    <div className='playerStatDiv'>
+                                        <p className='playerStatText'>{lastPlayedMatchTeamMatchStats?.twoVsTwo}</p>
+                                    </div>
+                                    <p className='playerStatsTitle'>2VS2</p>
                                 </div>
-                                <p className='playerStatsTitle'>2VS2</p>
-                            </div>
-                            <div className='playerStat'>
-                                <div className='playerStatDiv'>
-                                    <p className='playerStatText'>{lastPlayedMatchTeamMatchStats?.threeVsOne}</p>
+                                <div className='playerStat'>
+                                    <div className='playerStatDiv'>
+                                        <p className='playerStatText'>{lastPlayedMatchTeamMatchStats?.threeVsOne}</p>
+                                    </div>
+                                    <p className='playerStatsTitle'>3VS1</p>
                                 </div>
-                                <p className='playerStatsTitle'>3VS1</p>
-                            </div>
-                            <div className='playerStat'>
-                                <div className='playerStatDiv'>
-                                    <p className='playerStatText'>{lastPlayedMatchTeamMatchStats?.threeVsTwo}</p>
+                                <div className='playerStat'>
+                                    <div className='playerStatDiv'>
+                                        <p className='playerStatText'>{lastPlayedMatchTeamMatchStats?.threeVsTwo}</p>
+                                    </div>
+                                    <p className='playerStatsTitle'>3VS2</p>
                                 </div>
-                                <p className='playerStatsTitle'>3VS2</p>
-                            </div>
-                            <div className='playerStat'>
-                                <div className='playerStatDiv'>
-                                    <p className='playerStatText'>{lastPlayedMatchTeamMatchStats?.powerPlayGoals}</p>
+                                <div className='playerStat'>
+                                    <div className='playerStatDiv'>
+                                        <p className='playerStatText'>{lastPlayedMatchTeamMatchStats?.powerPlayGoals}</p>
+                                    </div>
+                                    <p className='playerStatsTitle'>GOLES POWER PLAY</p>
                                 </div>
-                                <p className='playerStatsTitle'>GOLES POWER PLAY</p>
-                            </div>
-                            <div className='playerStat'>
-                                <div className='playerStatDiv'>
-                                    <p className='playerStatText'>{lastPlayedMatchTeamMatchStats?.powerPlayNoGoals}</p>
+                                <div className='playerStat'>
+                                    <div className='playerStatDiv'>
+                                        <p className='playerStatText'>{lastPlayedMatchTeamMatchStats?.powerPlayNoGoals}</p>
+                                    </div>
+                                    <p className='playerStatsTitle'>POWER PLAY SIN GOLES</p>
                                 </div>
-                                <p className='playerStatsTitle'>POWER PLAY SIN GOLES</p>
-                            </div>
-                            <div className='playerStat'>
-                                <div className='playerStatDiv'>
-                                    <p className='playerStatText'>{lastPlayedMatchTeamMatchStats?.penaltyKillGoals}</p>
+                                <div className='playerStat'>
+                                    <div className='playerStatDiv'>
+                                        <p className='playerStatText'>{lastPlayedMatchTeamMatchStats?.penaltyKillGoals}</p>
+                                    </div>
+                                    <p className='playerStatsTitle'>GOLES PENALTY KILL</p>
                                 </div>
-                                <p className='playerStatsTitle'>GOLES PENALTY KILL</p>
-                            </div>
-                            <div className='playerStat'>
-                                <div className='playerStatDiv'>
-                                    <p className='playerStatText'>{lastPlayedMatchTeamMatchStats?.penaltyKillNoGoals}</p>
+                                <div className='playerStat'>
+                                    <div className='playerStatDiv'>
+                                        <p className='playerStatText'>{lastPlayedMatchTeamMatchStats?.penaltyKillNoGoals}</p>
+                                    </div>
+                                    <p className='playerStatsTitle'>PENALTY KILL SIN GOLES</p>
                                 </div>
-                                <p className='playerStatsTitle'>PENALTY KILL SIN GOLES</p>
                             </div>
                         </TabPanel>
                     </Tabs>
