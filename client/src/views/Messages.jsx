@@ -49,10 +49,7 @@ export default function Messages() {
 
     return (
         <>
-            <Header
-                authenticatedUserPlayerId={location.state.authenticatedUserPlayerId}
-                isCoach={location.state.isCoach}
-            />
+            <Header />
             <div id='messagesMainDiv'>
                 <div id='messagesArea'>
                     {

@@ -18,10 +18,7 @@ export default function Recomendations() {
 
     return (
         <>
-            <Header
-                authenticatedUserPlayerId={location.state?.authenticatedUserPlayerId}
-                isCoach={location.state?.isCoach}
-            />
+            <Header />
             <div id='recomendationsMainDiv'>
                 <div id='recomendationsPlayersDiv'>
                     {

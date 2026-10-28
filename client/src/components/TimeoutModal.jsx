@@ -31,7 +31,7 @@ export default function TimeoutModal({ teamTimeout, onClose, matchEvents, setMat
                         <input className='timeoutModalInput' type="number" placeholder='Segundo' id="matchSecond" onChange={(e) => { setMatchSecond(e.target.value.padStart(2, '0')) }} />
                     </div>
                     <div id='timeoutModalButtonsDiv'>
-                        <button className='timeoutModalButton' onClick={() => (matchMinute <= 20 && matchSecond <= 59 && matchMinute >= 0 && matchSecond >= 0) && [setTimeout(), onClose()]}>GUARDAR</button>
+                        <button className='timeoutModalButton' onClick={() => (matchMinute <= 25 && matchSecond <= 59 && matchMinute >= 0 && matchSecond >= 0) && [setTimeout(), onClose()]}>GUARDAR</button>
                         <button className='timeoutModalButton' onClick={() => onClose()}>CERRAR</button>
                     </div>
                 </div>

@@ -11,6 +11,8 @@ import com.ikerveiga.app.dao.DebateCategoryRepository;
 import com.ikerveiga.app.entity.Debate;
 import com.ikerveiga.app.entity.DebateCategory;
 
+import org.springframework.transaction.annotation.Transactional;
+
 @Service
 public class DebateService {
 
@@ -41,6 +43,7 @@ public class DebateService {
         debateDAO.save(debate);
     }
 
+    @Transactional
     public List<Debate> getDebatesOfCategory(long id) {
 
         DebateCategory category = debateCategoryDAO.findById(id);

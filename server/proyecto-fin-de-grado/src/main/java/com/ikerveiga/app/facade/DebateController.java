@@ -57,6 +57,7 @@ public class DebateController {
             if (e.getMessage().equals("Category not found")) {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             } else {
+                e.printStackTrace();
                 return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             }
         }

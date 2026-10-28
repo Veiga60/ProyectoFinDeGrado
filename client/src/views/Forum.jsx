@@ -60,7 +60,7 @@ export default function Forum() {
             <div id='forumMainDiv'>
                 {
                     categories?.map((category) => (
-                        <div key={category.id} className='categoryDiv' onClick={() => navigate(`/forum/categories/${category.name ? category.name.replace(' ', '_').toLowerCase() : ''}`)}>
+                        <div key={category.id} className='categoryDiv' onClick={() => navigate(`/forum/categories/${category.id}`)}>
                             <p className='categoryText'>{category.name}</p>
                         </div>
                     ))

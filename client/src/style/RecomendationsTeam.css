@@ -48,8 +48,15 @@
 #teamRecomendationsDiv {
     width: 90%;
     height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+#teamRecomendationsDiv .react-tabs__tab-panel--selected {
+    width: 90%;
+    height: 100%;
     background-color: white;
-    border: 2px solid rgb(7, 78, 200);
+    border: 1px solid rgb(7, 78, 200);
     max-height: 80%;
     overflow-y: auto;
     scrollbar-color: rgb(7, 78, 200) transparent;
@@ -76,4 +83,26 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+}
+
+#matchStatsPanel,
+.matchStatsPanel.react-tabs__tab-panel--selected,
+#teamRecomendationsDiv .react-tabs__tab-panel--selected:has(#matchStatsDiv) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#matchStatsDiv {
+    width: 100%;
+    margin: auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#matchStatsDiv .playerStat {
+    width: 250px;
 }

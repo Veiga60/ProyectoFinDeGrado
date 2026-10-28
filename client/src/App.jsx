@@ -47,8 +47,8 @@ export default function App() {
           <Route path="/matches/:matchId/start_match/team" element={<StartMatchTeam />} />
           <Route path="/matches/:matchId/incidences" element={<MatchEvents />} />
           <Route path="/forum" element={<Forum />} />
-          <Route path="/forum/categories/:category" element={<ForumDebates />} />
-          <Route path="/forum/categories/:category/:debateId" element={<Messages />} />
+          <Route path="/forum/categories/:categoryId" element={<ForumDebates />} />
+          <Route path="/forum/categories/:categoryId/:debateId" element={<Messages />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/recomendations/matches/:matchId" element={<Recomendations />} />
           <Route path="/recomendations/matches/:matchId/players/:playerId" element={<RecomendationsPlayer />} />

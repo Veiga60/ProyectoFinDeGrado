@@ -9,7 +9,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -25,7 +24,6 @@ public class PlayerRecomendation {
     @Column(name = "player_recomendation_area", nullable = false, unique = false)
     private String area;
 
-    @Lob
     @Column(columnDefinition = "TEXT", name = "player_recomendation_description", nullable = false, unique = false)
     private String description;
 

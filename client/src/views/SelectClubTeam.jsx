@@ -3,7 +3,7 @@ import ClubTeam from "../components/ClubTeam";
 import Header from "../components/Header";
 import '../style/SelectClubTeam.css'
 import axios from 'axios'
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../components/AuthContext';
 import SERVER_URL from '../config.js'
 

@@ -54,6 +54,7 @@ public class TeamRecomendationController {
 
             return ResponseEntity.ok(teamRecomendationsDTO);
         } catch (RuntimeException e) {
+            e.printStackTrace();
             if (e.getMessage().equals("Match not found")) {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             } else {

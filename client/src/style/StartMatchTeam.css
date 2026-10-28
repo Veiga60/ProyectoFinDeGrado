@@ -26,6 +26,7 @@
     font-size: large;
     font-weight: bold;
     width: 100%;
+    user-select: none;
 }
 
 .matchStatTextDiv {
@@ -46,6 +47,7 @@
     font-weight: bold;
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 
 .statDiv {
