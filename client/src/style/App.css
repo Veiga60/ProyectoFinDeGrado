@@ -4,8 +4,13 @@
   text-align: center;
 }
 
+:root {
+  --club-primary-color: rgb(35, 35, 35);
+  --club-secondary-color: rgb(245, 245, 245);
+}
+
 body {
-  background-color: #ebf6ff;
+  background-color: var(--club-secondary-color);
   overscroll-behavior-y: none;
 }
 

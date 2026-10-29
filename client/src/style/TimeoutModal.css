@@ -16,7 +16,7 @@
     width: 30%;
     height: 30%;
     background-color: white;
-    border: 2px solid rgb(7, 78, 200);
+    border: 2px solid var(--club-primary-color);
     border-radius: 15px;
     gap: 20px;
 }
@@ -65,7 +65,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 2px solid rgb(7, 78, 200);
+    border: 2px solid var(--club-primary-color);
 }
 
 #timeoutModalButtonsDiv {
@@ -79,7 +79,7 @@
 }
 
 .timeoutModalButton {
-    background-color: rgb(7, 78, 200);
+    background-color: var(--club-primary-color);
     border: none;
     border-radius: 12px;
     width: 30%;

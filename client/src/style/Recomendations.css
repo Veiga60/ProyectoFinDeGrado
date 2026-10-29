@@ -25,7 +25,7 @@
 #myTeamImageDiv {
     width: 200px;
     height: 180px;
-    border: 2px solid rgb(7, 78, 200);
+    border: 2px solid var(--club-primary-color);
     background-color: white;
     border-radius: 20px;
     margin-top: 20px;

@@ -3,8 +3,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    border: 1px solid rgb(7, 78, 200);
-    border-bottom: 2px solid rgb(7, 78, 200);
+    border: 1px solid var(--club-primary-color);
+    border-bottom: 2px solid var(--club-primary-color);
     width: 100%;
     min-height: 72px;
     box-sizing: border-box;
@@ -34,7 +34,7 @@
 
 #periodText {
     color: white;
-    background-color: rgb(7, 78, 200);
+    background-color: var(--club-primary-color);
     border-radius: 1000px;
     font-family: Inria Sans, sans-serif;
     font-weight: bold;

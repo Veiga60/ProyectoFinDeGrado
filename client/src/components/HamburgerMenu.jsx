@@ -28,31 +28,31 @@ export default function HamburgerMenu({ className }) {
             <div id='hamburgerMenuDiv' className={className}>
                 <div id='navMenuDiv'>
                     <div id='menuHomeDiv' className='menuDiv' onClick={() => navigate('/home')}>
-                        <BiSolidHome className='hamburgerMenuIcon' color='rgb(7, 78, 200)' size={25} />
+                        <BiSolidHome className='hamburgerMenuIcon' color='var(--club-primary-color)' size={25} />
                         <p id='menuHomeText' className='menuText'>INICIO</p>
                     </div>
                     <div id='menuMatchesDiv' className='menuDiv' onClick={() => navigate('/matches')}>
-                        <GiHockey className='hamburgerMenuIcon' color='rgb(7, 78, 200)' size={25} />
+                        <GiHockey className='hamburgerMenuIcon' color='var(--club-primary-color)' size={25} />
                         <p id='menuMatchesText' className='menuText'>PARTIDOS</p>
                     </div>
                     <div id='menuStatsDiv' className='menuDiv' onClick={() => navigate('/stats')}>
-                        <IoStatsChart className='hamburgerMenuIcon' color='rgb(7, 78, 200)' size={25} />
+                        <IoStatsChart className='hamburgerMenuIcon' color='var(--club-primary-color)' size={25} />
                         <p id='menuStatsText' className='menuText'>ESTADÍSTICAS</p>
                     </div>
                     <div id='menuCallsDiv' className='menuDiv' onClick={() => navigate('/calls')}>
-                        <FaCalendarDays className='hamburgerMenuIcon' color='rgb(7, 78, 200)' size={25} />
+                        <FaCalendarDays className='hamburgerMenuIcon' color='var(--club-primary-color)' size={25} />
                         <p id='menuCallsText' className='menuText'>CONVOCATORIAS</p>
                     </div>
                     <div id='menuForumDiv' className='menuDiv' onClick={() => navigate('/forum')}>
-                        <BiSolidMessageDetail className='hamburgerMenuIcon' color='rgb(7, 78, 200)' size={25} />
+                        <BiSolidMessageDetail className='hamburgerMenuIcon' color='var(--club-primary-color)' size={25} />
                         <p id='menuForumText' className='menuText'>FORO</p>
                     </div>
                     <div id='menuOrdersDiv' className='menuDiv' onClick={() => navigate('/orders')}>
-                        <FaBox className='hamburgerMenuIcon' color='rgb(7, 78, 200)' size={25} />
+                        <FaBox className='hamburgerMenuIcon' color='var(--club-primary-color)' size={25} />
                         <p id='menuOrdersText' className='menuText'>PEDIDOS</p>
                     </div>
                     <div id='menuLogoutDiv' className='menuDiv' onClick={logout}>
-                        <FiLogOut className='hamburgerMenuIcon' color='rgb(7, 78, 200)' size={25} />
+                        <FiLogOut className='hamburgerMenuIcon' color='var(--club-primary-color)' size={25} />
                         <p id='menuLogoutText' className='menuText'>CERRAR SESIÓN</p>
                     </div>
                 </div>

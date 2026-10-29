@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: center;
     background-color: white;
-    border: 2px solid rgb(7, 78, 200);
+    border: 2px solid var(--club-primary-color);
 }
 
 #localDiv {

@@ -16,7 +16,7 @@
 }
 
 #finishMatchButton {
-    background-color: rgb(7, 78, 200);
+    background-color: var(--club-primary-color);
     border: none;
     border-radius: 12px;
     width: 60%;
@@ -50,12 +50,12 @@
 }
 
 #calledPlayersTable {
-    border: 1px solid rgb(7, 78, 200);
+    border: 1px solid var(--club-primary-color);
     width: 100%;
 }
 
 #calledGoaliesTable {
-    border: 1px solid rgb(7, 78, 200);
+    border: 1px solid var(--club-primary-color);
     width: 100%;
 }
 
@@ -76,7 +76,7 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    background-color: rgb(7, 78, 200);
+    background-color: var(--club-primary-color);
     border: none;
     border-radius: 12px;
     width: 80%;
@@ -105,7 +105,7 @@
 }
 
 .calledPlayerNumber {
-    background-color: rgb(7, 78, 200);
+    background-color: var(--club-primary-color);
     color: white;
     font-family: Inria Sans;
     font-weight: bold;
@@ -131,7 +131,7 @@
 }
 
 .calledGoalieNumber {
-    background-color: rgb(7, 78, 200);
+    background-color: var(--club-primary-color);
     color: white;
     font-family: Inria Sans;
     font-weight: bold;
@@ -183,7 +183,7 @@
     width: 100%;
     height: 500px;
     background-color: white;
-    border: 1px solid rgb(7, 78, 200);
+    border: 1px solid var(--club-primary-color);
     max-height: 500px;
     overflow-y: auto;
     display: flex;
@@ -210,7 +210,7 @@
 }
 
 .matchPeriod {
-    border: 2px solid rgb(7, 78, 200);
+    border: 2px solid var(--club-primary-color);
     background-color: white;
     padding: 0;
     width: 30px;
@@ -232,8 +232,8 @@
     align-items: center;
     justify-content: center;
     border-radius: 100px;
-    border: 2px solid rgb(7, 78, 200);
-    background-color: rgb(7, 78, 200);
+    border: 2px solid var(--club-primary-color);
+    background-color: var(--club-primary-color);
     color: white;
     padding: 0;
 }
@@ -1333,7 +1333,7 @@
     #calledGoaliesTable {
         display: table;
         width: 85%;
-        border: 1px solid rgb(7, 78, 200);
+        border: 1px solid var(--club-primary-color);
         background-color: transparent;
     }
 

@@ -19,7 +19,7 @@
     width: 30%;
     height: 30%;
     background-color: white;
-    border: 2px solid rgb(7, 78, 200);
+    border: 2px solid var(--club-primary-color);
     border-radius: 15px;
 }
 
@@ -68,7 +68,7 @@
 }
 
 .createDebateModalButton {
-    background-color: rgb(7, 78, 200);
+    background-color: var(--club-primary-color);
     border: none;
     color: white;
     border-radius: 12px;

@@ -32,12 +32,12 @@
 
 #playersDiv {
     background-color: white;
-    border: 1px solid rgb(7, 78, 200);
+    border: 1px solid var(--club-primary-color);
     display: flex;
     flex-direction: row;
     max-width: 90%;
     overflow-x: auto;
-    scrollbar-color: rgb(7, 78, 200) transparent;
+    scrollbar-color: var(--club-primary-color) transparent;
 }
 
 #playersText {

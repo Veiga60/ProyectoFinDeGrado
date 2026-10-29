@@ -179,61 +179,61 @@ export default function StartMatchPlayer() {
                                     </div>
                                     <div className='statDiv'>
                                         <div className='matchStatDiv'>
-                                            <FaCaretDown className='arrowDownIconPlayer' color='rgb(7, 78, 200)' size={40} onClick={() => setPlusMinus(plusMinus - 1)} />
+                                            <FaCaretDown className='arrowDownIconPlayer' color='var(--club-primary-color)' size={40} onClick={() => setPlusMinus(plusMinus - 1)} />
                                             <div className='matchStatTextDivPlayer'>
                                                 <p className='matchStatTextPlayer'>{plusMinus}</p>
                                             </div>
-                                            <FaCaretUp className='arrowUpIconPlayer' color='rgb(7, 78, 200)' size={40} onClick={() => setPlusMinus(plusMinus + 1)} />
+                                            <FaCaretUp className='arrowUpIconPlayer' color='var(--club-primary-color)' size={40} onClick={() => setPlusMinus(plusMinus + 1)} />
                                         </div>
                                         <p className='statTitlePlayer'>+/-</p>
                                     </div>
                                     <div className='statDiv'>
                                         <div className='matchStatDiv'>
-                                            <FaCaretDown className='arrowDownIconPlayer' color='rgb(7, 78, 200)' size={40} onClick={() => (shots > 0) && setShots(shots - 1)} />
+                                            <FaCaretDown className='arrowDownIconPlayer' color='var(--club-primary-color)' size={40} onClick={() => (shots > 0) && setShots(shots - 1)} />
                                             <div className='matchStatTextDivPlayer'>
                                                 <p className='matchStatTextPlayer'>{shots}</p>
                                             </div>
-                                            <FaCaretUp className='arrowUpIconPlayer' color='rgb(7, 78, 200)' size={40} onClick={() => setShots(shots + 1)} />
+                                            <FaCaretUp className='arrowUpIconPlayer' color='var(--club-primary-color)' size={40} onClick={() => setShots(shots + 1)} />
                                         </div>
                                         <p className='statTitlePlayer'>TIROS</p>
                                     </div>
                                     <div className='statDiv'>
                                         <div className='matchStatDiv'>
-                                            <FaCaretDown className='arrowDownIconPlayer' color='rgb(7, 78, 200)' size={40} onClick={() => (goodPasses > 0) && setGoodPasses(goodPasses - 1)} />
+                                            <FaCaretDown className='arrowDownIconPlayer' color='var(--club-primary-color)' size={40} onClick={() => (goodPasses > 0) && setGoodPasses(goodPasses - 1)} />
                                             <div className='matchStatTextDivPlayer'>
                                                 <p className='matchStatTextPlayer'>{goodPasses}</p>
                                             </div>
-                                            <FaCaretUp className='arrowUpIconPlayer' color='rgb(7, 78, 200)' size={40} onClick={() => setGoodPasses(goodPasses + 1)} />
+                                            <FaCaretUp className='arrowUpIconPlayer' color='var(--club-primary-color)' size={40} onClick={() => setGoodPasses(goodPasses + 1)} />
                                         </div>
                                         <p className='statTitlePlayer'>PASES DETERMINANTES</p>
                                     </div>
                                     <div className='statDiv'>
                                         <div className='matchStatDiv'>
-                                            <FaCaretDown className='arrowDownIconPlayer' color='rgb(7, 78, 200)' size={40} onClick={() => (badPasses > 0) && setBadPasses(badPasses - 1)} />
+                                            <FaCaretDown className='arrowDownIconPlayer' color='var(--club-primary-color)' size={40} onClick={() => (badPasses > 0) && setBadPasses(badPasses - 1)} />
                                             <div className='matchStatTextDivPlayer'>
                                                 <p className='matchStatTextPlayer'>{badPasses}</p>
                                             </div>
-                                            <FaCaretUp className='arrowUpIconPlayer' color='rgb(7, 78, 200)' size={40} onClick={() => setBadPasses(badPasses + 1)} />
+                                            <FaCaretUp className='arrowUpIconPlayer' color='var(--club-primary-color)' size={40} onClick={() => setBadPasses(badPasses + 1)} />
                                         </div>
                                         <p className='statTitlePlayer'>PASES FALLADOS</p>
                                     </div>
                                     <div className='statDiv'>
                                         <div className='matchStatDiv'>
-                                            <FaCaretDown className='arrowDownIconPlayer' color='rgb(7, 78, 200)' size={40} onClick={() => (recoveredPucks > 0) && setRecoveredPucks(recoveredPucks - 1)} />
+                                            <FaCaretDown className='arrowDownIconPlayer' color='var(--club-primary-color)' size={40} onClick={() => (recoveredPucks > 0) && setRecoveredPucks(recoveredPucks - 1)} />
                                             <div className='matchStatTextDivPlayer'>
                                                 <p className='matchStatTextPlayer'>{recoveredPucks}</p>
                                             </div>
-                                            <FaCaretUp className='arrowUpIconPlayer' color='rgb(7, 78, 200)' size={40} onClick={() => setRecoveredPucks(recoveredPucks + 1)} />
+                                            <FaCaretUp className='arrowUpIconPlayer' color='var(--club-primary-color)' size={40} onClick={() => setRecoveredPucks(recoveredPucks + 1)} />
                                         </div>
                                         <p className='statTitlePlayer'>PUCKS RECUPERADOS</p>
                                     </div>
                                     <div className='statDiv'>
                                         <div className='matchStatDiv'>
-                                            <FaCaretDown className='arrowDownIconPlayer' color='rgb(7, 78, 200)' size={40} onClick={() => (lostPucks > 0) && setLostPucks(lostPucks - 1)} />
+                                            <FaCaretDown className='arrowDownIconPlayer' color='var(--club-primary-color)' size={40} onClick={() => (lostPucks > 0) && setLostPucks(lostPucks - 1)} />
                                             <div className='matchStatTextDivPlayer'>
                                                 <p className='matchStatTextPlayer'>{lostPucks}</p>
                                             </div>
-                                            <FaCaretUp className='arrowUpIconPlayer' color='rgb(7, 78, 200)' size={40} onClick={() => setLostPucks(lostPucks + 1)} />
+                                            <FaCaretUp className='arrowUpIconPlayer' color='var(--club-primary-color)' size={40} onClick={() => setLostPucks(lostPucks + 1)} />
                                         </div>
                                         <p className='statTitlePlayer'>PUCKS PERDIDOS</p>
                                     </div>
@@ -247,21 +247,21 @@ export default function StartMatchPlayer() {
                                     </div>
                                     <div className='statDiv'>
                                         <div className='matchStatDiv'>
-                                            <FaCaretDown className='arrowDownIconPlayer' color='rgb(7, 78, 200)' size={40} onClick={() => (playerPenaltyShotGoals > 0) && setPlayerPenaltyShotGoals(playerPenaltyShotGoals - 1)} />
+                                            <FaCaretDown className='arrowDownIconPlayer' color='var(--club-primary-color)' size={40} onClick={() => (playerPenaltyShotGoals > 0) && setPlayerPenaltyShotGoals(playerPenaltyShotGoals - 1)} />
                                             <div className='matchStatTextDivPlayer'>
                                                 <p className='matchStatTextPlayer'>{playerPenaltyShotGoals}</p>
                                             </div>
-                                            <FaCaretUp className='arrowUpIconPlayer' color='rgb(7, 78, 200)' size={40} onClick={() => setPlayerPenaltyShotGoals(playerPenaltyShotGoals + 1)} />
+                                            <FaCaretUp className='arrowUpIconPlayer' color='var(--club-primary-color)' size={40} onClick={() => setPlayerPenaltyShotGoals(playerPenaltyShotGoals + 1)} />
                                         </div>
                                         <p className='statTitlePlayer'>PENALTIS METIDOS</p>
                                     </div>
                                     <div className='statDiv'>
                                         <div className='matchStatDiv'>
-                                            <FaCaretDown className='arrowDownIconPlayer' color='rgb(7, 78, 200)' size={40} onClick={() => setPenaltyShotMisses(penaltyShotMisses - 1)} />
+                                            <FaCaretDown className='arrowDownIconPlayer' color='var(--club-primary-color)' size={40} onClick={() => setPenaltyShotMisses(penaltyShotMisses - 1)} />
                                             <div className='matchStatTextDivPlayer'>
                                                 <p className='matchStatTextPlayer'>{penaltyShotMisses}</p>
                                             </div>
-                                            <FaCaretUp className='arrowUpIconPlayer' color='rgb(7, 78, 200)' size={40} onClick={() => setPenaltyShotMisses(penaltyShotMisses + 1)} />
+                                            <FaCaretUp className='arrowUpIconPlayer' color='var(--club-primary-color)' size={40} onClick={() => setPenaltyShotMisses(penaltyShotMisses + 1)} />
                                         </div>
                                         <p className='statTitlePlayer'>PENALTIS FALLADOS</p>
                                     </div>
@@ -279,21 +279,21 @@ export default function StartMatchPlayer() {
                                     </div>
                                     <div className='statDiv'>
                                         <div className='matchStatDiv'>
-                                            <FaCaretDown className='arrowDownIconPlayer' color='rgb(7, 78, 200)' size={40} onClick={() => (shotsReceived > 0) && setShotsReceived(shotsReceived - 1)} />
+                                            <FaCaretDown className='arrowDownIconPlayer' color='var(--club-primary-color)' size={40} onClick={() => (shotsReceived > 0) && setShotsReceived(shotsReceived - 1)} />
                                             <div className='matchStatTextDivPlayer'>
                                                 <p className='matchStatTextPlayer'>{shotsReceived}</p>
                                             </div>
-                                            <FaCaretUp className='arrowUpIconPlayer' color='rgb(7, 78, 200)' size={40} onClick={() => setShotsReceived(shotsReceived + 1)} />
+                                            <FaCaretUp className='arrowUpIconPlayer' color='var(--club-primary-color)' size={40} onClick={() => setShotsReceived(shotsReceived + 1)} />
                                         </div>
                                         <p className='statTitlePlayer'>TIROS RECIBIDOS</p>
                                     </div>
                                     <div className='statDiv'>
                                         <div className='matchStatDiv'>
-                                            <FaCaretDown className='arrowDownIconPlayer' color='rgb(7, 78, 200)' size={40} onClick={() => (goalsReceived > 0) && [setGoalsReceived(goalsReceived - 1), setShotsReceived(shotsReceived - 1)]} />
+                                            <FaCaretDown className='arrowDownIconPlayer' color='var(--club-primary-color)' size={40} onClick={() => (goalsReceived > 0) && [setGoalsReceived(goalsReceived - 1), setShotsReceived(shotsReceived - 1)]} />
                                             <div className='matchStatTextDivPlayer'>
                                                 <p className='matchStatTextPlayer'>{goalsReceived}</p>
                                             </div>
-                                            <FaCaretUp className='arrowUpIconPlayer' color='rgb(7, 78, 200)' size={40} onClick={() => [setGoalsReceived(goalsReceived + 1), setShotsReceived(shotsReceived + 1)]} />
+                                            <FaCaretUp className='arrowUpIconPlayer' color='var(--club-primary-color)' size={40} onClick={() => [setGoalsReceived(goalsReceived + 1), setShotsReceived(shotsReceived + 1)]} />
                                         </div>
                                         <p className='statTitlePlayer'>GOLES RECIBIDOS</p>
                                     </div>
@@ -307,21 +307,21 @@ export default function StartMatchPlayer() {
                                     </div>
                                     <div className='statDiv'>
                                         <div className='matchStatDiv'>
-                                            <FaCaretDown className='arrowDownIconPlayer' color='rgb(7, 78, 200)' size={40} onClick={() => (goaliePenaltyShotGoals > 0) && setGoaliePenaltyShotGoals(goaliePenaltyShotGoals - 1)} />
+                                            <FaCaretDown className='arrowDownIconPlayer' color='var(--club-primary-color)' size={40} onClick={() => (goaliePenaltyShotGoals > 0) && setGoaliePenaltyShotGoals(goaliePenaltyShotGoals - 1)} />
                                             <div className='matchStatTextDivPlayer'>
                                                 <p className='matchStatTextPlayer'>{goaliePenaltyShotGoals}</p>
                                             </div>
-                                            <FaCaretUp className='arrowUpIconPlayer' color='rgb(7, 78, 200)' size={40} onClick={() => setGoaliePenaltyShotGoals(goaliePenaltyShotGoals + 1)} />
+                                            <FaCaretUp className='arrowUpIconPlayer' color='var(--club-primary-color)' size={40} onClick={() => setGoaliePenaltyShotGoals(goaliePenaltyShotGoals + 1)} />
                                         </div>
                                         <p className='statTitlePlayer'>PENALTIS ENCAJADOS</p>
                                     </div>
                                     <div className='statDiv'>
                                         <div className='matchStatDiv'>
-                                            <FaCaretDown className='arrowDownIconPlayer' color='rgb(7, 78, 200)' size={40} onClick={() => (penaltyShotSaves > 0) && setPenaltyShotSaves(penaltyShotSaves - 1)} />
+                                            <FaCaretDown className='arrowDownIconPlayer' color='var(--club-primary-color)' size={40} onClick={() => (penaltyShotSaves > 0) && setPenaltyShotSaves(penaltyShotSaves - 1)} />
                                             <div className='matchStatTextDivPlayer'>
                                                 <p className='matchStatTextPlayer'>{penaltyShotSaves}</p>
                                             </div>
-                                            <FaCaretUp className='arrowUpIconPlayer' color='rgb(7, 78, 200)' size={40} onClick={() => setPenaltyShotSaves(penaltyShotSaves + 1)} />
+                                            <FaCaretUp className='arrowUpIconPlayer' color='var(--club-primary-color)' size={40} onClick={() => setPenaltyShotSaves(penaltyShotSaves + 1)} />
                                         </div>
                                         <p className='statTitlePlayer'>PENALTIS PARADOS</p>
                                     </div>

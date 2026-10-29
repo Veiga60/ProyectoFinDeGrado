@@ -29,7 +29,7 @@
 }
 
 #startMatchButton {
-    background-color: rgb(7, 78, 200);
+    background-color: var(--club-primary-color);
     border: none;
     border-radius: 12px;
     width: 100%;
@@ -46,7 +46,7 @@
 }
 
 #playerImage {
-    border: 2px solid rgb(7, 78, 200);
+    border: 2px solid var(--club-primary-color);
     border-radius: 20px;
 }
 
@@ -129,7 +129,7 @@
     width: 100%;
     height: 100%;
     background-color: white;
-    border: 2px solid rgb(7, 78, 200);
+    border: 2px solid var(--club-primary-color);
     border-radius: 10px;
 }
 
@@ -214,7 +214,7 @@
 }
 
 #lastMatchPlayerStats {
-    border: 2px solid rgb(7, 78, 200);
+    border: 2px solid var(--club-primary-color);
     width: 95%;
     height: 84.5%;
     max-height: 84.5%;
@@ -224,7 +224,7 @@
     align-items: center;
     justify-content: center;
     overflow-y: auto;
-    scrollbar-color: rgb(7, 78, 200) transparent;
+    scrollbar-color: var(--club-primary-color) transparent;
 }
 
 .playerStat {
@@ -236,7 +236,7 @@
 }
 
 .playerStatDiv {
-    border: 4px solid rgb(7, 78, 200);
+    border: 4px solid var(--club-primary-color);
     border-radius: 100000px;
     background-color: white;
     width: 70px;
@@ -264,7 +264,7 @@
     width: 100%;
     height: 100%;
     background-color: white;
-    border: 2px solid rgb(7, 78, 200);
+    border: 2px solid var(--club-primary-color);
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -289,7 +289,7 @@
 }
 
 #noStatsAvailable {
-    border: 2px solid rgb(7, 78, 200);
+    border: 2px solid var(--club-primary-color);
     width: 95%;
     height: 75%;
     background-color: white;
@@ -302,7 +302,7 @@
     width: 600px;
     height: 100px;
     background-color: white;
-    border: 2px solid rgb(7, 78, 200);
+    border: 2px solid var(--club-primary-color);
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -563,7 +563,7 @@
         margin: 0 auto;
         column-gap: 10px;
         width: 95%;
-        scrollbar-color: rgb(7, 78, 200) transparent;
+        scrollbar-color: var(--club-primary-color) transparent;
     }
 }
 
@@ -670,7 +670,7 @@
         margin: 0 auto;
         column-gap: 10px;
         width: 95%;
-        scrollbar-color: rgb(7, 78, 200) transparent;
+        scrollbar-color: var(--club-primary-color) transparent;
     }
 }
 

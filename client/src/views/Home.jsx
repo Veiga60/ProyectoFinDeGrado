@@ -10,7 +10,7 @@ import basicLogo from '../assets/images/basicLogo.png'
 import basicUser from '../assets/images/basicUser.png'
 import StartMatchModal from '../components/StartMatchModal.jsx'
 import ClubTeamSelector from '../components/ClubTeamSelector.jsx'
-import { AuthContext } from '../components/AuthContext.jsx'
+import { AuthContext } from '../context/AuthContext.jsx'
 import SERVER_URL from '../config.js'
 
 export default function Home() {

@@ -1,7 +1,7 @@
 import Header from '../components/Header.jsx'
 import ClubTeamSelector from '../components/ClubTeamSelector.jsx'
 import { useNavigate } from 'react-router-dom'
-import { AuthContext } from '../components/AuthContext.jsx'
+import { AuthContext } from '../context/AuthContext.jsx'
 import { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import SERVER_URL from '../config.js'

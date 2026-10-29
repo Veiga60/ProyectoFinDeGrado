@@ -31,7 +31,7 @@ export default function PenaltyEvent({ matchPeriod, matchTime, team, player, pen
                         ? (
                             <>
                                 <div id="penaltyEventInfoDivMyTeam">
-                                    <GiWhistle className="penaltyEventIcon" color="rgb(7, 78, 200)" size={40} />
+                                    <GiWhistle className="penaltyEventIcon" color="var(--club-primary-color)" size={40} />
                                     <p id="penaltyText">FALTA</p>
                                     <div id="penaltyTeamImageDivMyTeam">
                                         <img id="penaltyTeamImageMyTeam" src={team.logo ? `/logos/${team.logo}` : basicLogo} alt={team.logo} />
@@ -50,7 +50,7 @@ export default function PenaltyEvent({ matchPeriod, matchTime, team, player, pen
                         ) : (
                             <>
                                 <div id="penaltyEventInfoDiv">
-                                    <GiWhistle className="penaltyEventIcon" color="rgb(7, 78, 200)" size={40} />
+                                    <GiWhistle className="penaltyEventIcon" color="var(--club-primary-color)" size={40} />
                                     <p id="penaltyText">FALTA</p>
                                     <div id="penaltyTeamImageDiv">
                                         <img id="penaltyTeamImage" src={team.logo ? `/logos/${team.logo}` : basicLogo} alt={team.name} />

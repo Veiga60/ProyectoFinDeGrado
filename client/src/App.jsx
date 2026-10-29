@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { AuthProvider } from './components/AuthContext.jsx'
+import { AuthProvider } from './context/AuthContext.jsx'
 
 import Login from './views/Login.jsx'
 import Signup from './views/Signup.jsx'

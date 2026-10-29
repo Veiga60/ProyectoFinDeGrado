@@ -4,10 +4,10 @@ import '../style/Stats.css'
 import axios from 'axios'
 import { useState, useEffect, useContext } from 'react';
 import PlayerCard from '../components/PlayerCard';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import logoMetropolitano from '../assets/images/logo-metropolitanohc-negro-transparente.png'
 import ClubTeamSelector from '../components/ClubTeamSelector';
-import { AuthContext } from '../components/AuthContext';
+import { AuthContext } from '../context/AuthContext';
 import SERVER_URL from '../config.js'
 
 export default function Stats() {

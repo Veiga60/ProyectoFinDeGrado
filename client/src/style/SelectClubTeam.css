@@ -23,7 +23,7 @@
 }
 
 #confirmSelectedClubTeamsButton {
-    background-color: rgb(7, 78, 200);
+    background-color: var(--club-primary-color);
     border: none;
     border-radius: 12px;
     height: 45px;
