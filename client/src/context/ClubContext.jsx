@@ -45,7 +45,10 @@ export function ClubProvider({ children }) {
         setClub(null);
     }, []);
 
+    const PUBLIC_ROUTES = ["/", "/login", "/signup"]
+
     useEffect(() => {
+        if (PUBLIC_ROUTES.includes(window.location.pathname)) return;
         refreshClub();
     }, [refreshClub]);
 
