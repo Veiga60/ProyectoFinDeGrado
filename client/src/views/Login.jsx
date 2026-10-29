@@ -1,16 +1,18 @@
 import '../style/Login.css'
 import Header from '../components/Header.jsx'
 import { useNavigate } from 'react-router-dom'
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import googleLogo from '../assets/images/google.png'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { AuthContext } from '../context/AuthContext.jsx'
+import { useClub } from '../context/ClubContext.jsx'
 import SERVER_URL from '../config.js'
 
 export default function Login() {
     const navigate = useNavigate()
     const { login: loginContext, authenticatedUser } = useContext(AuthContext);
 
+    const { clearClub, refreshClub } = useClub();
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -23,8 +25,10 @@ export default function Login() {
         try {
             const user = await loginContext(username, password);
             if ((user?.isCoach == true) && (user?.coach?.clubTeams == null || user?.coach?.clubTeams.length == 0)) {
+                await refreshClub();
                 navigate("/select_clubTeams")
             } else {
+                await refreshClub();
                 navigate("/home");
             }
         } catch (error) {
@@ -50,6 +54,10 @@ export default function Login() {
             setShowPassword(false);
         }
     }
+
+    useEffect(() => {
+        clearClub();
+    }, [clearClub]);
 
     return (
         <>

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ikerveiga.app.dto.ClubDTO;
+import com.ikerveiga.app.security.TenantContext;
 import com.ikerveiga.app.service.ClubService;
 
 @RestController
@@ -21,6 +22,10 @@ public class ClubController {
 
     @GetMapping("/clubs/me")
     public ResponseEntity<ClubDTO> getCurrentClub() {
+        if (TenantContext.getCurrentTenant() == null) {
+            return ResponseEntity.noContent().build();
+        }
+
         try {
             ClubDTO club = clubService.getCurrentClub().toDTO();
 
