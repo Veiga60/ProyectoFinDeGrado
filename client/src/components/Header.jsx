@@ -27,10 +27,18 @@ function Header() {
     return (
         <div id='headerDiv'>
             <div id='titleDiv'>
-                <img id='logo' src={`/logos/${club?.logo}`} alt="logoApp" />
+                <img id='logo' src={((club == null) || (location.pathname == '/') || (location.pathname == '/signup')) ? ('logos/logo_optima.png') : (`/logos/${club?.logo}`)} alt={`${club?.name}_logo`} />
                 {
                     (width > 420 || location.pathname == '/') && (
-                        <h1 id='title'>METROPOLITANO HC</h1>
+                        <h1 id='title'>{
+                            ((club == null) || (location.pathname == '/') || (location.pathname == '/signup')) ?
+                                (
+                                    'OPTIMA'
+                                ) :
+                                (
+                                    `${String(club?.name).toUpperCase()}`
+                                )}
+                        </h1>
                     )
                 }
                 {

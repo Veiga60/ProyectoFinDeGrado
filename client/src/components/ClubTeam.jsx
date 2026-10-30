@@ -9,7 +9,7 @@ export default function ClubTeam({ description, isSelected, onClick }) {
         <>
             <div className={(isSelected) ? ("clubTeamMainDivSelected") : ("clubTeamMainDiv")} onClick={onClick}>
                 <div className="clubTeamImageDiv">
-                    <img src={`/logos/${club?.logo}`} alt="Metropolitano HC" />
+                    <img src={`/logos/${club?.logo}`} alt={`${club.name}`} />
                 </div>
                 <div className='clubTeamDescDiv'>
                     <p className={(isSelected) ? ('clubTeamDescTextSelected') : ('clubTeamDescText')}>{description}</p>
