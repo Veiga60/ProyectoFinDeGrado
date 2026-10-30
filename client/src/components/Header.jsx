@@ -29,7 +29,7 @@ function Header() {
             <div id='titleDiv'>
                 <img id='logo' src={((club == null) || (location.pathname == '/') || (location.pathname == '/signup')) ? ('logos/logo_optima.png') : (`/logos/${club?.logo}`)} alt={`${club?.name}_logo`} />
                 {
-                    (width > 420 || location.pathname == '/') && (
+                    (width > 420 || location.pathname == '/' || location.pathname == '/signup') && (
                         <h1 id='title'>{
                             ((club == null) || (location.pathname == '/') || (location.pathname == '/signup')) ?
                                 (
