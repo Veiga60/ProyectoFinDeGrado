@@ -1,9 +1,9 @@
 import '../style/Header.css'
-import logo from '../assets/images/tigre-transparente.png'
 import NavBar from '../components/NavBar.jsx'
 import { useLocation } from 'react-router-dom'
 import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx'
 import { useState, useEffect } from 'react'
+import { useClub } from '../context/ClubContext.jsx'
 import HamburgerMenu from './HamburgerMenu.jsx'
 
 
@@ -11,10 +11,13 @@ function Header() {
 
     const location = useLocation();
 
+    const { club } = useClub();
+
     const [width, setWidth] = useState(window.innerWidth);
     const [showHamburgerMenu, setShowHamburgerMenu] = useState(false);
 
     useEffect(() => {
+        console.log('Hola ', club);
         const handleResize = () => setWidth(window.innerWidth);
         window.addEventListener('resize', handleResize);
 
@@ -24,7 +27,7 @@ function Header() {
     return (
         <div id='headerDiv'>
             <div id='titleDiv'>
-                <img id='logo' src={logo} alt="logoApp" />
+                <img id='logo' src={`/logos/${club?.logo}`} alt="logoApp" />
                 {
                     (width > 420 || location.pathname == '/') && (
                         <h1 id='title'>METROPOLITANO HC</h1>
