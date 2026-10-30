@@ -10,7 +10,7 @@ import SERVER_URL from '../config.js'
 
 export default function Login() {
     const navigate = useNavigate()
-    const { login: loginContext, authenticatedUser } = useContext(AuthContext);
+    const { login: loginContext } = useContext(AuthContext);
 
     const { clearClub, refreshClub } = useClub();
 
@@ -19,7 +19,6 @@ export default function Login() {
 
     const [error, setError] = useState();
     const [showPassword, setShowPassword] = useState(false);
-    const [passwordInputType, setPasswordInputType] = useState('password');
 
     const login = async () => {
         try {
@@ -41,18 +40,13 @@ export default function Login() {
         }
     }
 
-    const googleLogin = async () => {
-        window.location.href = `${SERVER_URL}/oauth2/authorization/google`
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        login();
     }
 
-    const toggleShowPassword = () => {
-        if (!showPassword) {
-            setPasswordInputType('text');
-            setShowPassword(true);
-        } else {
-            setPasswordInputType('password');
-            setShowPassword(false);
-        }
+    const googleLogin = () => {
+        window.location.href = `${SERVER_URL}/oauth2/authorization/google`
     }
 
     useEffect(() => {
@@ -62,44 +56,74 @@ export default function Login() {
     return (
         <>
             <Header />
-            <div id='loginMainDiv'>
-                <div id='welcomeTextDiv'>
-                    <p id='welcomeText'>BIENVENIDO</p>
-                </div>
-                {
-                    (error !== undefined && error !== '') && (
-                        <p id='loginErrorText'>{error}</p>
-                    )
-                }
-                <div id='loginInputsDiv'>
-                    <input
-                        id='usernameInput'
-                        className='loginInput'
-                        type="text"
-                        placeholder='Nombre de usuario'
-                        onChange={(e) => setUsername(e.target.value)}
-                    />
-                    <div id='loginPasswordInputDiv'>
-                        <input
-                            id='passwordInput'
-                            className='loginInput'
-                            type={passwordInputType}
-                            placeholder='Contraseña'
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                        {
-                            (showPassword) ? (<FaEyeSlash className='eyeIcon' onClick={toggleShowPassword} />) : (<FaEye className='eyeIcon' onClick={toggleShowPassword} />)
-                        }
+            <main id='loginPage'>
+                <div id='loginMainDiv'>
+                    <div id='welcomeTextDiv'>
+                        <h1 id='welcomeText'>Bienvenido</h1>
+                        <p id='welcomeSubtext'>Inicia sesión para continuar</p>
+                    </div>
+
+                    {error && (
+                        <p id='loginErrorText' role='alert'>{error}</p>
+                    )}
+
+                    <form id='loginForm' onSubmit={handleSubmit}>
+                        <div className='loginField'>
+                            <input
+                                id='usernameInput'
+                                className='loginInput'
+                                type='text'
+                                placeholder='Nombre de usuario'
+                                autoComplete='username'
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                            />
+                        </div>
+
+                        <div className='loginField'>
+                            <div className='loginInputWrapper'>
+                                <input
+                                    id='passwordInput'
+                                    className='loginInput'
+                                    type={showPassword ? 'text' : 'password'}
+                                    placeholder='Contraseña'
+                                    autoComplete='current-password'
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                />
+                                <button
+                                    type='button'
+                                    className='eyeButton'
+                                    onClick={() => setShowPassword(!showPassword)}
+                                    aria-label={showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'}
+                                >
+                                    {showPassword ? <FaEyeSlash size={17} /> : <FaEye size={17} />}
+                                </button>
+                            </div>
+                        </div>
+
+                        <button id='loginButton' className='loginButton' type='submit'>
+                            Iniciar sesión
+                        </button>
+                    </form>
+
+                    <div id='loginDivider'>o</div>
+
+                    <button id='googleButton' className='loginButton' type='button' onClick={googleLogin}>
+                        <img id='googleLogo' src={googleLogo} alt='' />
+                        Continuar con Google
+                    </button>
+
+                    <div id='notHaveAccountDiv'>
+                        <p id='notHaveAccount'>
+                            ¿No tienes una cuenta?{' '}
+                            <button id='signupLink' type='button' onClick={() => navigate('/signup')}>
+                                Crea una
+                            </button>
+                        </p>
                     </div>
                 </div>
-                <div id='buttonsDiv'>
-                    <button id='loginButton' className='loginButton' onClick={login}>INICIAR SESIÓN</button>
-                    <button id='googleButton' className='loginButton' onClick={googleLogin}><img id='googleLogo' src={googleLogo} alt="Google" /><p id='loginGoogleText'>Continuar con Google</p></button>
-                </div>
-                <div id='notHaveAccountDiv'>
-                    <p id='notHaveAccount' onClick={() => navigate("/signup")}>¿No tienes una cuenta? Crea una.</p>
-                </div>
-            </div >
+            </main>
         </>
     )
 }
