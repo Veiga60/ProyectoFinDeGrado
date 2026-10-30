@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import '../style/SelectClubTeam.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../components/AuthContext';
+import { AuthContext } from '../context/AuthContext';
 import SERVER_URL from '../config.js'
 
 export default function SelectClubTeam() {

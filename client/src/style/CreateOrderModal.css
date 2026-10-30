@@ -14,7 +14,7 @@
     width: 450px;
     height: 200px;
     background-color: white;
-    border: 2px solid rgb(7, 78, 200);
+    border: 2px solid var(--club-primary-color);
     border-radius: 15px;
     padding-left: 10px;
     padding-right: 10px;
@@ -44,7 +44,7 @@
 }
 
 .createOrderModalButton {
-    background-color: rgb(7, 78, 200);
+    background-color: var(--club-primary-color);
     border: none;
     border-radius: 12px;
     height: 40px;
@@ -79,7 +79,7 @@
     height: 40px;
     width: 160px;
     border-radius: 10px;
-    border: 2px solid rgb(7, 78, 200);
+    border: 2px solid var(--club-primary-color);
     background-color: white;
     color: black;
     font-family: Inria Sans;
@@ -101,6 +101,6 @@
     height: 40px;
     border-radius: 10px;
     background-color: white;
-    border: 2px solid rgb(7, 78, 200);
+    border: 2px solid var(--club-primary-color);
     width: 160px;
 }

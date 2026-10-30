@@ -11,7 +11,7 @@
 }
 
 .categoryDiv {
-    border: 2px solid rgb(7, 78, 200);
+    border: 2px solid var(--club-primary-color);
     background-color: white;
     border-radius: 15px;
     margin-top: 1%;

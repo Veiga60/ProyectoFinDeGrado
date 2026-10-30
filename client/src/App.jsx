@@ -1,7 +1,8 @@
 import React from 'react'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { AuthProvider } from './components/AuthContext.jsx'
+import { AuthProvider } from './context/AuthContext.jsx'
+import { ClubProvider } from './context/ClubContext.jsx'
 
 import Login from './views/Login.jsx'
 import Signup from './views/Signup.jsx'
@@ -31,32 +32,34 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <AuthProvider>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/matches" element={<Matches />} />
-          <Route path="/stats" element={<Stats />} />
-          <Route path="/stats/players/:playerId" element={<PlayerStats />} />
-          <Route path="/select_role" element={<SelectRole />} />
-          <Route path="/calls" element={<Calls />} />
-          <Route path="/calls/match/:matchId" element={<CallDetail />} />
-          <Route path="/matches/:matchId/start_match" element={<StartMatch />} />
-          <Route path="/matches/:matchId/start_match/players/:playerId" element={<StartMatchPlayer />} />
-          <Route path="/matches/:matchId/start_match/team" element={<StartMatchTeam />} />
-          <Route path="/matches/:matchId/incidences" element={<MatchEvents />} />
-          <Route path="/forum" element={<Forum />} />
-          <Route path="/forum/categories/:categoryId" element={<ForumDebates />} />
-          <Route path="/forum/categories/:categoryId/:debateId" element={<Messages />} />
-          <Route path="/orders" element={<Orders />} />
-          <Route path="/recomendations/matches/:matchId" element={<Recomendations />} />
-          <Route path="/recomendations/matches/:matchId/players/:playerId" element={<RecomendationsPlayer />} />
-          <Route path="/recomendations/matches/:matchId/team" element={<RecomendationsTeam />} />
-          <Route path="/select_clubTeams" element={<SelectClubTeam />} />
-          <Route path="/error/unauthorized" element={<Unauthorized />} />
-        </Routes>
-      </AuthProvider>
+      <ClubProvider>
+        <AuthProvider>
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/matches" element={<Matches />} />
+            <Route path="/stats" element={<Stats />} />
+            <Route path="/stats/players/:playerId" element={<PlayerStats />} />
+            <Route path="/select_role" element={<SelectRole />} />
+            <Route path="/calls" element={<Calls />} />
+            <Route path="/calls/match/:matchId" element={<CallDetail />} />
+            <Route path="/matches/:matchId/start_match" element={<StartMatch />} />
+            <Route path="/matches/:matchId/start_match/players/:playerId" element={<StartMatchPlayer />} />
+            <Route path="/matches/:matchId/start_match/team" element={<StartMatchTeam />} />
+            <Route path="/matches/:matchId/incidences" element={<MatchEvents />} />
+            <Route path="/forum" element={<Forum />} />
+            <Route path="/forum/categories/:categoryId" element={<ForumDebates />} />
+            <Route path="/forum/categories/:categoryId/:debateId" element={<Messages />} />
+            <Route path="/orders" element={<Orders />} />
+            <Route path="/recomendations/matches/:matchId" element={<Recomendations />} />
+            <Route path="/recomendations/matches/:matchId/players/:playerId" element={<RecomendationsPlayer />} />
+            <Route path="/recomendations/matches/:matchId/team" element={<RecomendationsTeam />} />
+            <Route path="/select_clubTeams" element={<SelectClubTeam />} />
+            <Route path="/error/unauthorized" element={<Unauthorized />} />
+          </Routes>
+        </AuthProvider>
+      </ClubProvider>
     </BrowserRouter>
   )
 }

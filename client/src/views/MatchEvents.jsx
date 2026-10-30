@@ -51,9 +51,9 @@ export default function MatchEvents() {
                         <img id='indicencesLocalTeamImage' className='incidencesTeamImage' src={match?.localTeam.logo ? `/logos/${match?.localTeam.logo}` : basicLogo} alt={match?.localTeam.name} />
                     </div>
                     <div id='localTeamIncidencesButtonsDiv' className='incidencesButtonsDiv'>
-                        <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.localTeam), toggleGoalsModal()]}><AiFillAlert className='goalIcon' color='rgb(7, 78, 200)' size={30} />GOL ANOTADO</button>
-                        <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.localTeam), togglePenaltiesModal()]}><GiWhistle className='whistleIcon' color='rgb(7, 78, 200)' size={30} />FALTA COMETIDA</button>
-                        <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.localTeam), toggleTimeoutModal()]}><MdTimer className='timeoutIcon' color='rgb(7, 78, 200)' size={30} />TIEMPO MUERTO</button>
+                        <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.localTeam), toggleGoalsModal()]}><AiFillAlert className='goalIcon' color='var(--club-primary-color)' size={30} />GOL ANOTADO</button>
+                        <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.localTeam), togglePenaltiesModal()]}><GiWhistle className='whistleIcon' color='var(--club-primary-color)' size={30} />FALTA COMETIDA</button>
+                        <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.localTeam), toggleTimeoutModal()]}><MdTimer className='timeoutIcon' color='var(--club-primary-color)' size={30} />TIEMPO MUERTO</button>
                     </div>
                 </div>
                 <div id="incidencesVisitingTeamDiv" className='incidencesTeamDiv'>
@@ -61,9 +61,9 @@ export default function MatchEvents() {
                         <img id='indicencesVisitingTeamImage' className='incidencesTeamImage' src={match?.visitingTeam.logo ? `/logos/${match?.visitingTeam.logo}` : basicLogo} alt={match?.visitingTeam.name} />
                     </div>
                     <div id='visitingTeamIncidencesButtonsDiv' className='incidencesButtonsDiv'>
-                        <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.visitingTeam), toggleGoalsModal()]}><AiFillAlert className='goalIcon' color='rgb(7, 78, 200)' size={30} />GOL ANOTADO</button>
-                        <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.visitingTeam), togglePenaltiesModal()]}><GiWhistle className='whistleIcon' color='rgb(7, 78, 200)' size={30} />FALTA COMETIDA</button>
-                        <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.visitingTeam), toggleTimeoutModal()]}><MdTimer className='timeoutIcon' color='rgb(7, 78, 200)' size={30} />TIEMPO MUERTO</button>
+                        <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.visitingTeam), toggleGoalsModal()]}><AiFillAlert className='goalIcon' color='var(--club-primary-color)' size={30} />GOL ANOTADO</button>
+                        <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.visitingTeam), togglePenaltiesModal()]}><GiWhistle className='whistleIcon' color='var(--club-primary-color)' size={30} />FALTA COMETIDA</button>
+                        <button className='incidencesButton' onClick={() => [setSelectedTeam(match?.visitingTeam), toggleTimeoutModal()]}><MdTimer className='timeoutIcon' color='var(--club-primary-color)' size={30} />TIEMPO MUERTO</button>
                     </div>
                 </div>
                 <div id='saveIncidencesButtonDiv'>

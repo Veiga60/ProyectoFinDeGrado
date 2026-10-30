@@ -1,5 +1,5 @@
 #headerDiv {
-    background-color: rgb(7, 78, 200);
+    background-color: var(--club-primary-color);
     position: fixed;
     left: 0;
     top: 0;

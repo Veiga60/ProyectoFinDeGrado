@@ -25,7 +25,7 @@ export default function TimeoutEvent({ matchPeriod, matchTime, team }) {
                     </div>
                 </div>
                 <div id="timeoutEventInfoDiv">
-                    <MdTimer color="rgb(7, 78, 200)" size={40} />
+                    <MdTimer color="var(--club-primary-color)" size={40} />
                     <p id="timeoutText">TIEMPO MUERTO</p>
                 </div>
                 <div id="timeoutTeamDiv">

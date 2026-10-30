@@ -22,7 +22,7 @@
 #teamRecomendationsteamImageDiv {
     width: 80%;
     padding: 0;
-    border: 1px solid rgb(7, 78, 200);
+    border: 1px solid var(--club-primary-color);
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -56,15 +56,15 @@
     width: 90%;
     height: 100%;
     background-color: white;
-    border: 1px solid rgb(7, 78, 200);
+    border: 1px solid var(--club-primary-color);
     max-height: 80%;
     overflow-y: auto;
-    scrollbar-color: rgb(7, 78, 200) transparent;
+    scrollbar-color: var(--club-primary-color) transparent;
 }
 
 #teamRecomendationTitleText {
     font-family: Inria Sans;
-    color: rgb(7, 78, 200);
+    color: var(--club-primary-color);
     font-weight: bold;
     margin: 0;
 }

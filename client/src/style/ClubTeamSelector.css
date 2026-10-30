@@ -8,12 +8,12 @@
 }
 
 .clubTeamSelectorDiv {
-    border: 1px solid rgb(7, 78, 200);
+    border: 1px solid var(--club-primary-color);
     background-color: white;
 }
 
 .clubTeamSelectorText {
-    color: rgb(7, 78, 200);
+    color: var(--club-primary-color);
     font-family: Inria Sans;
     font-weight: bold;
     margin: 0;
@@ -31,29 +31,29 @@
 }
 
 .clubTeamSelectorDivFirst {
-    border: 1px solid rgb(7, 78, 200);
+    border: 1px solid var(--club-primary-color);
     background-color: white;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
 
 .clubTeamSelectorDivLast {
-    border: 1px solid rgb(7, 78, 200);
+    border: 1px solid var(--club-primary-color);
     background-color: white;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
 
 .clubTeamSelectorDivFirstSelected {
-    border: 1px solid rgb(7, 78, 200);
-    background-color: rgb(7, 78, 200);
+    border: 1px solid var(--club-primary-color);
+    background-color: var(--club-primary-color);
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
 
 .clubTeamSelectorDivLastSelected {
-    border: 1px solid rgb(7, 78, 200);
-    background-color: rgb(7, 78, 200);
+    border: 1px solid var(--club-primary-color);
+    background-color: var(--club-primary-color);
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }

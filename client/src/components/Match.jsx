@@ -12,7 +12,7 @@ export default function Match({ className, match }) {
                         </div>
                         <p className='matchText'>{match?.localTeam.name}</p>
                     </div>
-                    <div id='localTeamGoalsDiv' style={{ border: (match?.bonusPoint == match?.localTeam.id) && '2px solid rgb(7, 78, 200)' }}>
+                    <div id='localTeamGoalsDiv' style={{ border: (match?.bonusPoint == match?.localTeam.id) && '2px solid var(--club-primary-color)' }}>
                         <p className='matchGoals'>{match?.localTeamGoals}</p>
                     </div>
                     <div id='centralDiv'>
@@ -20,7 +20,7 @@ export default function Match({ className, match }) {
                         <p className='matchText'> - </p>
                         <p id='matchTime'>{match?.time?.substring(0, 5)}</p>
                     </div>
-                    <div id='visitingTeamGoalsDiv' style={{ border: (match?.bonusPoint == match?.visitingTeam.id) && '2px solid rgb(7, 78, 200)' }}>
+                    <div id='visitingTeamGoalsDiv' style={{ border: (match?.bonusPoint == match?.visitingTeam.id) && '2px solid var(--club-primary-color)' }}>
                         <p className='matchGoals'>{match?.visitingTeamGoals}</p>
                     </div>
                     <div id="visitingTeamDiv">

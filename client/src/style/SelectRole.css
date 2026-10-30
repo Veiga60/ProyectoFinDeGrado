@@ -1,5 +1,5 @@
 .selectText {
-    color: rgb(7, 78, 200);
+    color: var(--club-primary-color);
     font-family: Inria Sans;
     font-weight: bold;
     font-size: xx-large;
@@ -15,14 +15,14 @@
     cursor: pointer;
     background-color: white;
     border-radius: 10px;
-    border: 1px solid rgb(7, 78, 200);
+    border: 1px solid var(--club-primary-color);
     width: 300px;
     height: 70px;
     transition: 0.3s;
 }
 
 .option:hover {
-    box-shadow: 1px 1px 15px 1px rgb(7, 78, 200);
+    box-shadow: 1px 1px 15px 1px var(--club-primary-color);
     transition: 0.3s;
 }
 

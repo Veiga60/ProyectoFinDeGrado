@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import '../style/Calls.css'
 import ClubTeamSelector from '../components/ClubTeamSelector.jsx'
-import { AuthContext } from '../components/AuthContext.jsx'
+import { AuthContext } from '../context/AuthContext.jsx'
 import SERVER_URL from '../config.js'
 
 export default function Calls() {

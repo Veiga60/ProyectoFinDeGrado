@@ -55,6 +55,7 @@ public class SecurityConfig {
                                 .cors(Customizer.withDefaults())
                                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests
                                                 .requestMatchers("/login", "/users", "/health").permitAll())
+
                                 .authorizeHttpRequests(
                                                 authorizeRequests -> authorizeRequests.anyRequest().authenticated())
                                 .oauth2Login(

@@ -6,7 +6,7 @@ import { useParams, useLocation } from 'react-router-dom'
 import MatchCompressed from '../components/MatchCompressed.jsx'
 import axios from 'axios'
 import '../style/CallDetail.css'
-import { AuthContext } from '../components/AuthContext.jsx'
+import { AuthContext } from '../context/AuthContext.jsx'
 import SERVER_URL from '../config.js'
 
 export default function CallDetail() {

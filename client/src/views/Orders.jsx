@@ -7,7 +7,7 @@ import CreateOrderModal from '../components/CreateOrderModal.jsx'
 import OrderExpiredModal from '../components/OrderExpiredModal.jsx'
 import { PiMicrosoftExcelLogoFill } from "react-icons/pi";
 import '../style/Orders.css'
-import { AuthContext } from '../components/AuthContext.jsx'
+import { AuthContext } from '../context/AuthContext.jsx'
 import SERVER_URL from '../config.js'
 
 export default function Orders() {

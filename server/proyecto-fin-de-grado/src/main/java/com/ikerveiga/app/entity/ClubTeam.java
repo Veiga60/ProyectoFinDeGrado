@@ -6,6 +6,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 import com.ikerveiga.app.dto.ClubTeamDTO;
 
@@ -24,6 +26,10 @@ public class ClubTeam {
     @Column(name = "club_team_description", nullable = false, unique = true)
     String description;
 
+    @ManyToOne
+    @JoinColumn(name = "club_id")
+    private Club club;
+
     public ClubTeam() {
 
     }
@@ -34,9 +40,22 @@ public class ClubTeam {
         this.description = description;
     }
 
+    public ClubTeam(long id, String code, String description, Club club) {
+        this.id = id;
+        this.code = code;
+        this.description = description;
+        this.club = club;
+    }
+
     public ClubTeam(String code, String description) {
         this.code = code;
         this.description = description;
+    }
+
+    public ClubTeam(String code, String description, Club club) {
+        this.code = code;
+        this.description = description;
+        this.club = club;
     }
 
     public long getId() {
@@ -49,6 +68,14 @@ public class ClubTeam {
 
     public String getDescription() {
         return this.description;
+    }
+
+    public Club getClub() {
+        return this.club;
+    }
+
+    public void setClub(Club club) {
+        this.club = club;
     }
 
     public ClubTeamDTO toDTO() {

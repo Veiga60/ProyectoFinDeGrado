@@ -5,7 +5,7 @@ import axios from 'axios';
 import player from '../assets/images/player.png';
 import coach from '../assets/images/coach.png';
 import Header from '../components/Header.jsx';
-import { AuthContext } from '../components/AuthContext';
+import { AuthContext } from '../context/AuthContext';
 import SERVER_URL from '../config.js'
 
 export default function SelectRole() {

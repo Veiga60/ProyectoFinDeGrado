@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 import org.springframework.web.util.WebUtils;
 
+import com.ikerveiga.app.security.TenantContext;
 import com.ikerveiga.app.service.CustomUserDetailsService;
 
 import io.jsonwebtoken.Claims;
@@ -43,8 +44,13 @@ public class AuthTokenFilter extends OncePerRequestFilter {
                 final UserDetails userDetails = userDetailsService.loadUserByEmail(email);
                 final Claims claims = jwtUtil.extractAllClaims(jwt);
                 final String role = (String) claims.get("role");
-                Set<GrantedAuthority> authorities = new HashSet<>();
+                final String clubCode = (String) claims.get("clubCode");
 
+                if (clubCode != null) {
+                    TenantContext.setCurrentTenant(clubCode);
+                }
+
+                Set<GrantedAuthority> authorities = new HashSet<>();
                 GrantedAuthority authority = new SimpleGrantedAuthority(role);
                 authorities.add(authority);
 
@@ -56,7 +62,11 @@ public class AuthTokenFilter extends OncePerRequestFilter {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        filterChain.doFilter(request, response);
+        try {
+            filterChain.doFilter(request, response);
+        } finally {
+            TenantContext.clear();
+        }
     }
 
     public String getJwtfromCookie(HttpServletRequest request) {

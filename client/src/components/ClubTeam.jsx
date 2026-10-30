@@ -1,13 +1,15 @@
+import { useClub } from '../context/ClubContext';
 import '../style/ClubTeam.css'
-import logo from '../assets/images/tigre-transparente.png'
 
 export default function ClubTeam({ description, isSelected, onClick }) {
+
+    const { club } = useClub();
 
     return (
         <>
             <div className={(isSelected) ? ("clubTeamMainDivSelected") : ("clubTeamMainDiv")} onClick={onClick}>
                 <div className="clubTeamImageDiv">
-                    <img src={logo} alt="Metropolitano HC" />
+                    <img src={`/logos/${club?.logo}`} alt={`${club.name}`} />
                 </div>
                 <div className='clubTeamDescDiv'>
                     <p className={(isSelected) ? ('clubTeamDescTextSelected') : ('clubTeamDescText')}>{description}</p>

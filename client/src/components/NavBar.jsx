@@ -3,9 +3,12 @@ import axios from 'axios'
 import '../style/NavBar.css'
 import { FiLogOut } from "react-icons/fi";
 import SERVER_URL from '../config.js'
+import { useClub } from '../context/ClubContext.jsx';
 
 export default function NavBar() {
     const navigate = useNavigate();
+
+    const { clearClub } = useClub();
 
     const logout = async () => {
         try {
@@ -13,6 +16,7 @@ export default function NavBar() {
             localStorage.removeItem('jwt');
             localStorage.removeItem('isCoach');
             localStorage.removeItem('playerId');
+            clearClub();
             navigate('/');
         } catch (error) {
             console.log('Error al cerrar sesión: ', error);

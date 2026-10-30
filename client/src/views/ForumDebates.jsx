@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useContext, useEffect, useState } from 'react';
 import CreateDebateModal from '../components/CreateDebateModal.jsx'
 import '../style/ForumDebates.css'
-import { AuthContext } from '../components/AuthContext.jsx';
+import { AuthContext } from '../context/AuthContext.jsx';
 import SERVER_URL from '../config.js'
 
 export default function ForumDebates() {

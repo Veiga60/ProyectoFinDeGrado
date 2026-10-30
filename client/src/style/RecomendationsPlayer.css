@@ -22,7 +22,7 @@
 #playerRecomendationsPlayerImageDiv {
     width: 80%;
     padding: 0;
-    border: 1px solid rgb(7, 78, 200);
+    border: 1px solid var(--club-primary-color);
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -56,17 +56,17 @@
     width: 100%;
     flex: 1;
     background-color: white;
-    border: 1px solid rgb(7, 78, 200);
+    border: 1px solid var(--club-primary-color);
     overflow-y: auto;
-    scrollbar-color: rgb(7, 78, 200) transparent;
+    scrollbar-color: var(--club-primary-color) transparent;
     height: 100%;
 }
 
 #playerRecomendationsDiv .react-tabs__tab--selected {
     background: #fff;
-    border: 1px solid rgb(7, 78, 200);
+    border: 1px solid var(--club-primary-color);
     filter: brightness(1);
-    color: rgb(7, 78, 200);
+    color: var(--club-primary-color);
     border-radius: 5px 5px 0 0;
     padding-top: 10px;
     border-bottom: none;
@@ -74,7 +74,7 @@
 
 #playerRecomendationTitleText {
     font-family: Inria Sans;
-    color: rgb(7, 78, 200);
+    color: var(--club-primary-color);
     font-weight: bold;
     margin: 0;
 }

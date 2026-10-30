@@ -61,7 +61,7 @@
     width: 90%;
     max-width: 90%;
     overflow-x: auto;
-    scrollbar-color: rgb(7, 78, 200) transparent;
+    scrollbar-color: var(--club-primary-color) transparent;
 }
 
 #wheelOrdersTable {
@@ -71,7 +71,7 @@
 
 #wheelOrdersTableHead {
     color: white;
-    background-color: rgb(7, 78, 200);
+    background-color: var(--club-primary-color);
     font-family: Inria Sans;
     font-weight: bold;
     font-size: large;
@@ -107,7 +107,7 @@
 
 .orderButton,
 .stickOrderButton {
-    background-color: rgb(7, 78, 200);
+    background-color: var(--club-primary-color);
     border: none;
     border-radius: 12px;
     height: 40px;
@@ -146,7 +146,7 @@
 
 .ordersTableBodyDiv {
     margin: 0;
-    border: 1px solid rgb(7, 78, 200);
+    border: 1px solid var(--club-primary-color);
 }
 
 .inputsDiv {
@@ -193,7 +193,7 @@
 
 .orderInput:focus {
     outline: none;
-    border: 2px solid rgb(7, 78, 200);
+    border: 2px solid var(--club-primary-color);
 }
 
 .orderSelect,
@@ -202,7 +202,7 @@
     width: fit-content;
     background-color: white;
     color: black;
-    border: 2px solid rgb(7, 78, 200);
+    border: 2px solid var(--club-primary-color);
     outline: none;
     font-family: Inria Sans;
     border-radius: 10px;
@@ -225,7 +225,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(7, 78, 200);
+    background-color: var(--club-primary-color);
     border: none;
     border-radius: 12px;
     width: 80px;
@@ -257,7 +257,7 @@
     width: 90%;
     max-width: 90%;
     overflow-x: auto;
-    scrollbar-color: rgb(7, 78, 200) transparent;
+    scrollbar-color: var(--club-primary-color) transparent;
 }
 
 #nametagInput {

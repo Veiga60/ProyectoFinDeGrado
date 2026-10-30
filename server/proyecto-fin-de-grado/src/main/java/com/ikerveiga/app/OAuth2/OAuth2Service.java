@@ -12,6 +12,7 @@ import com.ikerveiga.app.dao.AuthorizedEmailRepository;
 import com.ikerveiga.app.dao.OAuth2UserRepository;
 import com.ikerveiga.app.dao.UserRepository;
 import com.ikerveiga.app.entity.AuthorizedEmail;
+import com.ikerveiga.app.entity.Club;
 import com.ikerveiga.app.entity.OAuth2User;
 import com.ikerveiga.app.entity.User;
 
@@ -49,6 +50,7 @@ public class OAuth2Service {
             AuthorizedEmail authorizedEmail = authorizedEmailDAO.findByEmail(email);
             if (authorizedEmail != null) {
                 OAuth2User user = new OAuth2User(username, email, false, authorizedEmail.getPlayer());
+                user.setClub(authorizedEmail.getClub());
                 oAuth2UserDAO.save(user);
                 existingUser = user;
             } else {
@@ -56,12 +58,9 @@ public class OAuth2Service {
             }
         }
 
-        String jwt;
-        if (existingUser.getIsCoach()) {
-            jwt = jwtUtil.generateJwtToken(email, "ROLE_COACH");
-        } else {
-            jwt = jwtUtil.generateJwtToken(email, "ROLE_PLAYER");
-        }
+        String role = existingUser.getIsCoach() ? "ROLE_COACH" : "ROLE_PLAYER";
+        String clubCode = resolveClubCode(existingUser);
+        String jwt = jwtUtil.generateJwtToken(email, role, clubCode);
         cookiesService.addHttpOnlyCookie("jwt", jwt, 30 * 60, response);
         try {
             response.sendRedirect(url);
@@ -70,5 +69,13 @@ public class OAuth2Service {
         }
 
         return jwt;
+    }
+
+    private String resolveClubCode(User user) {
+        Club club = user.getClub();
+        if (club != null) {
+            return club.getCode();
+        }
+        return "unknown";
     }
 }

@@ -14,6 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.ikerveiga.app.entity.AuthorizedEmail;
+import com.ikerveiga.app.entity.Club;
 import com.ikerveiga.app.entity.User;
 
 import jakarta.servlet.http.HttpServletResponse;
@@ -140,9 +141,11 @@ public class UserService {
                 if (matcher.matches()) {
                     User user = new User(userName, email, passwordEncoder.encode(password), isCoach,
                             authorizedEmail.getPlayer());
+                    user.setClub(authorizedEmail.getClub());
                     userDAO.save(user);
                     if (isCoach) {
                         Coach coach = new Coach(new ArrayList<>());
+                        coach.setClub(authorizedEmail.getClub());
                         coachDAO.save(coach);
                         user.setCoach(coach);
                         userDAO.save(user);
@@ -166,12 +169,9 @@ public class UserService {
         if (!passwordEncoder.matches(password, user.getPassword())) {
             throw new RuntimeException("Incorrect password");
         } else {
-            String jwt;
-            if (user.getIsCoach()) {
-                jwt = jwtUtil.generateJwtToken(user.getEmail(), "ROLE_COACH");
-            } else {
-                jwt = jwtUtil.generateJwtToken(user.getEmail(), "ROLE_PLAYER");
-            }
+            String role = user.getIsCoach() ? "ROLE_COACH" : "ROLE_PLAYER";
+            String clubCode = resolveClubCode(user);
+            String jwt = jwtUtil.generateJwtToken(user.getEmail(), role, clubCode);
             cookiesService.addHttpOnlyCookie("jwt", jwt, 30 * 60, response);
             return jwt;
         }
@@ -196,6 +196,7 @@ public class UserService {
         if (isCoach) {
             if (user.getCoach() == null) {
                 Coach coach = new Coach();
+                coach.setClub(user.getClub());
                 coachDAO.save(coach);
                 user.setCoach(coach);
             }
@@ -204,7 +205,27 @@ public class UserService {
         userDAO.save(user);
 
         String role = isCoach ? "ROLE_COACH" : "ROLE_PLAYER";
-        String jwt = jwtUtil.generateJwtToken(email, role);
+        String clubCode = resolveClubCode(user);
+        String jwt = jwtUtil.generateJwtToken(email, role, clubCode);
         cookiesService.addHttpOnlyCookie("jwt", jwt, 30 * 60, response);
+    }
+
+    /**
+     * Resolves the club code for the given user.
+     * Falls back to "default" if the user has no associated club yet (transitional
+     * period).
+     */
+    private String resolveClubCode(User user) {
+        Club club = user.getClub();
+        if (club != null) {
+            return club.getCode();
+        }
+        // Fallback: intenta obtenerlo desde el jugador o entrenador
+        if (user.getPlayer() != null && !user.getPlayer().getClubTeams().isEmpty()) {
+            Club playerClub = user.getPlayer().getClub();
+            if (playerClub != null)
+                return playerClub.getCode();
+        }
+        return "unknown";
     }
 }

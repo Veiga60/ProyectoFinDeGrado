@@ -22,6 +22,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -74,6 +75,10 @@ public class Player {
     @JoinTable(name = "player_club_team", joinColumns = @JoinColumn(name = "player_id"), inverseJoinColumns = @JoinColumn(name = "club_team_id"))
     List<ClubTeam> clubTeams;
 
+    @ManyToOne
+    @JoinColumn(name = "club_id")
+    private Club club;
+
     public Player() {
 
     }
@@ -95,78 +100,105 @@ public class Player {
         this.playerStats = playerStats;
         this.goalieStats = goalieStats;
         this.clubTeams = clubTeams;
+
     }
 
     public long getId() {
         return this.id;
+
     }
 
     public String getName() {
         return this.name;
+
     }
 
     public void setName(String name) {
         this.name = name;
+
     }
 
     public String getLastName1() {
         return this.lastName1;
+
     }
 
     public void setLastName1(String lastName1) {
         this.lastName1 = lastName1;
+
     }
 
     public String getLastName2() {
         return this.lastName2;
+
     }
 
     public void setLastName2(String lastName2) {
         this.lastName2 = lastName2;
+
     }
 
     public String getPhoto() {
         return this.photo;
+
     }
 
     public void setPhoto(String photo) {
         this.photo = photo;
+
     }
 
     public PlayerType getPlayerType() {
         return this.playerType;
+
     }
 
     public List<Call> getCalls() {
         return this.calls;
+
     }
 
     public void setCalls(List<Call> calls) {
         this.calls = calls;
+
     }
 
     public List<PlayerStats> getStats() {
         return this.playerStats;
+
     }
 
     public void setPlayerStats(List<PlayerStats> playerStats) {
         this.playerStats = playerStats;
+
     }
 
     public List<GoalieStats> getGoalieStats() {
         return this.goalieStats;
+
     }
 
     public void setGoalieStats(List<GoalieStats> goalieStats) {
         this.goalieStats = goalieStats;
+
     }
 
     public List<ClubTeam> getClubTeams() {
         return this.clubTeams;
+
     }
 
     public void setClubTeams(List<ClubTeam> clubTeams) {
         this.clubTeams = clubTeams;
+
+    }
+
+    public Club getClub() {
+        return this.club;
+    }
+
+    public void setClub(Club club) {
+        this.club = club;
     }
 
     public PlayerDTO toDTO() {
@@ -177,7 +209,9 @@ public class Player {
             callsDTO.add(call.toDTO());
         }
 
-        for (ClubTeam clubTeam : clubTeams) {
+        for (
+
+        ClubTeam clubTeam : clubTeams) {
             clubTeamsDTO.add(clubTeam.toDTO());
         }
 
@@ -187,23 +221,23 @@ public class Player {
 
             for (PlayerStats playerStats : this.playerStats) {
                 playerStatsDTO.add(playerStats.toDTOWithoutPlayer());
+
             }
 
             playerDTO = new PlayerDTO(this.id, this.name, this.lastName1, this.lastName2, this.birthDate, this.number,
-                    this.photo, this.playerType,
-                    callsDTO,
-                    playerStatsDTO, null, clubTeamsDTO);
+                    this.photo, this.playerType, callsDTO, playerStatsDTO, null, clubTeamsDTO);
+
         } else {
 
             List<GoalieStatsDTO> goalieStatsDTO = new ArrayList<>();
             for (GoalieStats playerStats : this.goalieStats) {
                 goalieStatsDTO.add(playerStats.toDTOWithoutGoalie());
+
             }
 
             playerDTO = new PlayerDTO(this.id, this.name, this.lastName1, this.lastName2, this.birthDate, this.number,
-                    this.photo, this.playerType,
-                    callsDTO, null,
-                    goalieStatsDTO, clubTeamsDTO);
+                    this.photo, this.playerType, callsDTO, null, goalieStatsDTO, clubTeamsDTO);
+
         }
 
         return playerDTO;
