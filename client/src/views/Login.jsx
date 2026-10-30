@@ -93,7 +93,7 @@ export default function Login() {
                     </div>
                 </div>
                 <div id='buttonsDiv'>
-                    <button className='loginButton' onClick={login}>INICIAR SESIÓN</button>
+                    <button id='loginButton' className='loginButton' onClick={login}>INICIAR SESIÓN</button>
                     <button id='googleButton' className='loginButton' onClick={googleLogin}><img id='googleLogo' src={googleLogo} alt="Google" /><p id='loginGoogleText'>Continuar con Google</p></button>
                 </div>
                 <div id='notHaveAccountDiv'>
